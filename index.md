@@ -2,7 +2,7 @@
 layout: home
 profile_picture:
   src: /assets/img/naren_profile.jpg
-  alt: website picture
+  alt: Narendhiran Saravanane
 ---
 
 <p>
