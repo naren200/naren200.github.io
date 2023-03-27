@@ -10,7 +10,7 @@ profile_picture:
   Welcome! I am Narendhiran Saravanane. My friends call me Naren (Naa-R-ehN).
 </p>
 <p>
-  I am currently living my dream — studying at the mecca of innovation,<a href="https://robotics.asu.edu/"> ASU Robotics @ ASU</a>, and working on Stretch R1 Robot. I am in the <a href="https://ras.engineering.asu.edu/"> M.S. in Robotics and Autonomous Systems program</a>, Batch of 2024. Through my life’s work, I want to advance robotic capabilities in unstructured environments with three focuses: perception, Machine Learning, and Aerial Robotics.  As an engineer, I believe incorporating automation with artificial intelligence in problem-solving would enlarge efficiency in operations.
+  I am currently living my dream — studying at the epicenter of innovation,<a href="https://robotics.asu.edu/"> ASU Robotics @ ASU</a>, and working on Stretch R1 Robot. I am in the <a href="https://ras.engineering.asu.edu/"> M.S. in Robotics and Autonomous Systems program</a>, Batch of 2024. Through my life’s work, I want to advance robotic capabilities in unstructured environments with three focuses: perception, Machine Learning, and Aerial Robotics.  As an engineer, I believe incorporating automation with artificial intelligence in problem-solving would enlarge efficiency in operations.
 
 </p>
 <p>
