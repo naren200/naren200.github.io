@@ -7,19 +7,25 @@ permalink: /art/
 
 <br>
 
-<h1 style="text-align: center;"><b>Life Goals!</b></h1>
+<h1 style="text-align: center;"><b>My Life Goals!</b></h1>
 
 <p style="text-align: center;">I am passionate about entrepreneurship and I believe that technology can be used to solve some of the world's biggest problems. I am excited to use my skills in robotics and artificial intelligence to create businesses that make a positive impact on the world.</p>
 
-<p><b>My long term goals are to:</b>
 
+<p>
 
+<b>My long term goals are to:</b></p>
+
+<p>
 <b> - At 30, Start my own business.</b> I want to create a business that uses technology to solve a real-world problem. I am currently working on several ideas, and I am excited to see which one I will pursue.
-
+</p>
+<p>
 <b> - At 40, Make a positive impact on the world.</b> I want to use my business to make a positive impact on the world. I am interested in working on projects that address issues such as poverty, hunger, and climate change.
-
+</p>
+<p>
 <b> - At 50, Help other entrepreneurs.</b> I want to use my experience and skills to help other entrepreneurs succeed. I plan to do this by providing mentorship, coaching, and consulting services.
-
+</p>
+<p>
 
 I am confident that I can achieve my goals with hard work and dedication. I am excited to see what the future holds and I am grateful for the opportunity to pursue my passion for entrepreneurship.
 </p>
@@ -32,7 +38,6 @@ With my background in robotics and AI, I am constantly exploring ways to harness
 
 My long-term goal is to establish a business that not only develops and manufactures advanced robotics but also integrates AI algorithms to enhance their capabilities further. I am passionate about creating intelligent machines that can autonomously perform complex tasks, revolutionizing industries such as healthcare, manufacturing, and logistics.
 
-</p>
 
 <p><b>Past entrepreneurial experience</b></p>
 
@@ -42,14 +47,15 @@ In this particular project, I engaged in thorough discussions with the business 
 
 This experience further fuelled my passion for entrepreneurship and demonstrated the immense potential to create value by combining my technical skills with my ability to understand and meet the needs of businesses.
 
-</p>
 
 <p>
 <p><b>Unlock your potential and join forces with a driven professional ready to fuel your business growth!</b></p>
 
 As you explore my portfolio, I hope to convey my enthusiasm for entrepreneurship and showcase how my robotics and AI expertise can be transformed into a successful business venture. I am excited to collaborate with like-minded individuals and organizations to shape the future with technology-driven innovation.
 
+
 If you share a similar passion for entrepreneurship or are interested in exploring potential collaborations, I invite you to connect with me on <a href="https://www.linkedin.com/in/narendhiran2000/">LinkedIn</a>. Together, let's create a future where robotics and AI redefine the possibilities.
+
 
 
 <p style="font-size: 18px"><b>Long Way to Go, Isn't it!?</b></p>
@@ -61,7 +67,7 @@ If you share a similar passion for entrepreneurship or are interested in explori
 
 <style>
     #owl-demo{
-      margin-top: 50px;
+      margin-top: 30px;
     }
     #owl-demo .item{
       border: 1px solid black;
@@ -70,7 +76,7 @@ If you share a similar passion for entrepreneurship or are interested in explori
     #owl-demo .item img{
       display: flex;
       width: 100%;
-      height: 75%;
+      height: 125%;
     }
   </style>
   <div id ="owl-demo" class="owl-carousel owl-theme">
