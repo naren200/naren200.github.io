@@ -13,7 +13,8 @@ permalink: /art/
 
 
 <p>
-
+<br>
+<br>
 <b>My long term goals are to:</b></p>
 
 <p>
@@ -30,6 +31,7 @@ permalink: /art/
 I am confident that I can achieve my goals with hard work and dedication. I am excited to see what the future holds and I am grateful for the opportunity to pursue my passion for entrepreneurship.
 </p>
 
+<br>
 <p><b>Describing my passion towards entrepreneurship</b></p>
 
 Entrepreneurship has always been a driving force in my life. The idea of taking innovative ideas and turning them into successful ventures ignites a fire within me. I firmly believe that my combination of technical expertise in robotics and AI, coupled with my entrepreneurial spirit, will pave the way for me to create a business that not only pushes the boundaries of technology but also makes a positive impact on society.
@@ -38,7 +40,7 @@ With my background in robotics and AI, I am constantly exploring ways to harness
 
 My long-term goal is to establish a business that not only develops and manufactures advanced robotics but also integrates AI algorithms to enhance their capabilities further. I am passionate about creating intelligent machines that can autonomously perform complex tasks, revolutionizing industries such as healthcare, manufacturing, and logistics.
 
-
+<br>
 <p><b>Past entrepreneurial experience</b></p>
 
 One of my most significant entrepreneurial experiences to date involved creating custom content through a series of one-on-one discussions with a business. This collaboration allowed me to understand their unique needs and develop tailored solutions. By delivering compelling content that met their requirements, I not only satisfied their expectations but also built a strong professional relationship. This experience reaffirmed my belief in the power of effective communication and the ability to deliver tangible results.
@@ -58,11 +60,9 @@ As you explore my portfolio, I hope to convey my enthusiasm for entrepreneurship
 
 If you share a similar passion for entrepreneurship or are interested in exploring potential collaborations, I invite you to connect with me on <a href="https://www.linkedin.com/in/narendhiran2000/">LinkedIn</a>. Together, let's create a future where robotics and AI redefine the possibilities.
 
-
-
-.
 </p>
-
+<br>
+<br>
 <p style="font-size: 22px"><b>Long Way to Go, Isn't it!?</b></p>
 
 
@@ -81,7 +81,7 @@ If you share a similar passion for entrepreneurship or are interested in explori
     #owl-demo .item img{
       display: flex;
       width: 100%;
-      height: 125%;
+      height: 100;
     }
   </style>
   <div id ="owl-demo" class="owl-carousel owl-theme">
@@ -103,24 +103,6 @@ If you share a similar passion for entrepreneurship or are interested in explori
     <div class="item">
       <img src="../imgs/FutureWorld3.jpg" alt="Image"/>
     </div>
-    <!-- <div class="item">
-      <img src="../imgs/FutureWorld2.jpg" alt="Image"/>
-    </div>
-    <div class="item">
-      <img src="../imgs/art13.jpeg" alt="Image"/>
-    </div>
-    <div class="item">
-      <img src="../imgs/art14.jpeg" alt="Image"/>
-    </div>
-    <div class="item">
-      <img src="../imgs/art15.jpeg" alt="Image"/>
-    </div>
-    <div class="item">
-      <img src="../imgs/art16.jpeg" alt="Image"/>
-    </div>
-    <div class="item">
-      <img src="../imgs/art17.jpeg" alt="Image"/>
-    </div> -->
 
     <!-- <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>1</h4></div>
     <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>2</h4></div>
