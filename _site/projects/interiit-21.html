@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100">
+
+<head>
+
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DRDO&#39;s Vision Based Obstacle Avoidance Drone Challenge">
+  <meta property="og:description" content="Worked in a team of 8 to autonomously explore static cluttered environments & land on target after detection">
+
+  <title>DRDO&#39;s Vision Based Obstacle Avoidance Drone Challenge</title>
+  <meta name="description" content="Worked in a team of 8 to autonomously explore static cluttered environments & land on target after detection">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+<!--JUST FRO ART LAYOUT-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- for the particles-->
+  <link href="/assets/css/style_particles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="h-100 d-flex flex-column">
+
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>Tejal Barnwal</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/about/">About</a>
+
+      <a class="nav-item nav-link active" href="/projects/">Projects</a>
+
+      <a class="nav-item nav-link " href="/pages/cv">CV</a>
+
+      <a class="nav-item nav-link " href="/art/">Fine Arts</a>
+
+      <a class="nav-item nav-link " href="/blog/">Blog</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <div class="col-lg-10 mx-auto mt-5 post">
+  <h1 id="vision-based-obstacle-avoidance-drone">Vision Based Obstacle Avoidance Drone</h1>
+
+<p>This compeititon was a part of <a href="https://www.facebook.com/interiit.tech/"><strong>Inter IIT Technical Meet ‘21</strong></a> where we had to simulate quadrotor capable of navigating in a complex static environment by avoiding on-field obstacle-collision and reaching the target destination after its correct detection.
+<img src="../imgs/projects/interiit1.png" alt="drawing" width="500" />
+<!-- <iframe width="600" height="512"
+src="https://www.youtube.com/watch?v=PdL64qHd97I&t=6930s">
+</iframe> --></p>
+
+<p>For this purpose we came up with a three-layered navigation pipeline- Greedy Expploration, Scan and Survey and Sense of Progree vectors.</p>
+<ul>
+  <li>For the first layer of decision making, we applied butterworth filters and performed manipulations on depth image to obtain the optimum waypoint for exploration.</li>
+  <li>In case of dead ends, scan and survey pipeline tackles it by performing a scan operation to expand its field of view similar to a cone. These scan operations are performed at different altitudes.</li>
+  <li>Though we could not implement it completely, the sense of progress vector pipeline intended at storing the history of poses to set a receding window to calculates the drone’s overall progress direction.
+The drone was simulated inside ROS/Gazebo using Ardupilot SITL.</li>
+</ul>
+
+<p>The details of the implementation could be found in the following <a href="https://drive.google.com/file/d/1S8aawsni-Yod5IolbUaHhbD5gRYDpB4e/view?usp=sharing">presentation</a> and <a href="https://drive.google.com/file/d/1S8aawsni-Yod5IolbUaHhbD5gRYDpB4e/view?usp=sharing">github repository </a>.</p>
+
+<p>Due to Covid, the technical meet was held in online mode and team consisting of 8 members worked on it from their own homes. A glimpse of the same could be found in the picture attached.</p>
+
+<p><img src="../imgs/family.jpg" alt="drawing" width="500" />
+<!-- ![preview](../imgs/family.jpg = 250x250) --></p>
+
+</div>
+  </main>
+  <!-- <style>
+    hr.new1 {
+      border-top: 1px solid #5f8efa;
+    }
+  </style>
+  <hr class="new1"> -->
+
+  <footer class="mt-auto py-3 text-center">
+<hr>
+  <p style="font-size: 15px" text-muted mb-2" >
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    <br>
+    <strong>Wanna discuss something? Feel free to ping me!</strong>
+  </p>
+
+  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:tejalbarnwal@gmail.com"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#db4437'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fas fa-envelope fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.facebook.com/tejalbarnwal"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#3b5998'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-facebook fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.github.com/tejalbarnwal"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#333333'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.linkedin.com/in/tejal-ashwini-barnwal-1a149389"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#007bb5'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-linkedin-in fa-1x"></i>
+    </a>
+
+</div><small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+  
+</footer>
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+</body>
+
+</html>

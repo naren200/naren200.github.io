@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100">
+
+<head>
+
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SeDriCa, Unmesh Mashruwala Innovation Cell">
+  <meta property="og:description" content="Working in a 20+ member team aiming to develop a self-driving car capable of transversing on Indian roads">
+
+  <title>SeDriCa, Unmesh Mashruwala Innovation Cell</title>
+  <meta name="description" content="Working in a 20+ member team aiming to develop a self-driving car capable of transversing on Indian roads">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+<!--JUST FRO ART LAYOUT-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- for the particles-->
+  <link href="/assets/css/style_particles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="h-100 d-flex flex-column">
+
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>Tejal Barnwal</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/about/">About</a>
+
+      <a class="nav-item nav-link active" href="/projects/">Projects</a>
+
+      <a class="nav-item nav-link " href="/pages/cv">CV</a>
+
+      <a class="nav-item nav-link " href="/art/">Fine Arts</a>
+
+      <a class="nav-item nav-link " href="/blog/">Blog</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <div class="col-lg-10 mx-auto mt-5 post">
+  <h1 id="sedrica-unmesh-mashruwaala-innovation-cell">SeDriCa, Unmesh Mashruwaala Innovation Cell</h1>
+
+<p>We are a team of 20+ students working on building a self-driving car. We are presently aiming at <a href="http://www.igvc.org/index.htm">Intelligent Ground Vehicle Challenge(IGVC) 2022</a> particularly the Self Drive Challenge, held at Oakland University, Michigan. Our SedriCa comprises five subsystems: Perception (CV), Localisation, Path Planning, Decision Making, and Controls!</p>
+
+<ul>
+  <li>
+    <p>Computer vision module defines the understanding of the world in which our car is driving. This allows identifying cars, pedestrians, lanes, traffic signs, etc.</p>
+  </li>
+  <li>
+    <p>The localisation pipeline uses odometry, Kalman filter and Lidar slam to help ego vehicle localise itself. It also perform sensor fusion and merge data from other sensors such as Lidar to complement those obtained by the camera, making it possible to estimate the object’s position identified by the camera.</p>
+  </li>
+  <li>
+    <p>We use an integrated motion Planning &amp; Decision-Making pipeline to implement the brain of the autonomous vehicle. It uses the knowledge of the environment and its position to plan trajectories. A finite state machine is used as a decision-making method to define possible states of the car according to the situation. The motion planning system uses Hybrid A* to find a path. Further, with decision making, it performs velocity planning on the trajectory.</p>
+  </li>
+  <li>
+    <p>The control module is responsible for moving the vehicle by generating an angle for the steering wheel and acceleration. 
+The reference path plan received by the planning subsystem and the current state obtained from the Localisation is fed into our control algorithm – NMPC,  which then solves an optimal control problem constrained by the vehicle dynamics model along with other mechanical constraints.
+The optimisation solver has three requirements-</p>
+    <ol>
+      <li>constraints such as road conditions, wheel slip and trajectory generated.</li>
+      <li>Next, a model which is a dynamic bicycle model</li>
+      <li>Finally, a cost function.</li>
+    </ol>
+  </li>
+</ul>
+
+<p>The NMPC algorithm looks at N-steps ahead using the vehicle model provided and calculates the best possible inputs for the system by optimising the cost function. The control outputs thus generated are then applied to the vehicle using drive by wire via the CAN module, and feedback is received for the next step, where this process is repeated to complete the closed-loop control.</p>
+
+<p>We also implement a CAN module to communicate data between the calculated control input and the actuators. Further, we also use it to get feedback on the odometer and the status of the battery.</p>
+
+<p>We have <a href="https://youtu.be/8lNKjX0-RKY">demonstration video</a> for the work that was done with SeDriCa.</p>
+
+</div>
+  </main>
+  <!-- <style>
+    hr.new1 {
+      border-top: 1px solid #5f8efa;
+    }
+  </style>
+  <hr class="new1"> -->
+
+  <footer class="mt-auto py-3 text-center">
+<hr>
+  <p style="font-size: 15px" text-muted mb-2" >
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    <br>
+    <strong>Wanna discuss something? Feel free to ping me!</strong>
+  </p>
+
+  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:tejalbarnwal@gmail.com"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#db4437'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fas fa-envelope fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.facebook.com/tejalbarnwal"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#3b5998'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-facebook fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.github.com/tejalbarnwal"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#333333'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.linkedin.com/in/tejal-ashwini-barnwal-1a149389"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#007bb5'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-linkedin-in fa-1x"></i>
+    </a>
+
+</div><small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+  
+</footer>
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+</body>
+
+</html>

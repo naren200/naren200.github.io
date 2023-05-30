@@ -1,64 +1,106 @@
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+### Site Settings ###
+title               : Tejal Barnwal
+description         : >-
+                      Welcome to my homepage!<br>
+                      I am Tejal Barnwal <br>
+                      This website is a quick outlet for my thoughts. <br>
+                      You can also read more 
+                      <a href="https://tejalbarnwal.github.io/about/">about me</a> & 
+                      <a href="https://tejalbarnwal.github.io/projects/">my key projects</a>.
 
-title: Bay Jekyll Theme
-description: >- # this means to ignore newlines until "baseurl:"
-  Bay is a minimal Jekyll Theme.
-baseurl: "/bay" # the subpath of the site
-url: "https://eliottvincent.github.io" # the base hostname & protocol for the site
-og_image: /assets/img/profile-pic.jpg
-google_analytics: "UA-121636368-3"
+baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
+repository          : tejalbarnwal/tejalbarnwal.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
+remote_theme        : YoussefRaafatNasry/portfolYOU
 
-header:
-  pages:
-    - name: Home
-      slug: /
-    - name: Work
-    - name: Blog
 
-footer:
-  show_powered_by: true
-  contact:
-    - name: Email
-      value: narendhiran2000@gmail.com
-      link: mailto:narendhiran2000@gmail.com
-    # - name: WeChat
-    #   value: YourWeChatUsername
-    #   link: "#"
-  follow:
-    # - name: Twitter
-    #   link: http://twitter.com/YourTwitterUsername
-    #   username: "@YourTwitterUsername"
-    - name: Facebook
-      link: https://www.facebook.com/narendhiran.saravanane.9/
-    - name: LinkedIn
-      link: https://www.linkedin.com/in/narendhiran13/
-    - name: GitHub
-      link: https://github.com/naren200
-    # - name: Dribbble
-    #   link: https://dribbble.com/YourDribbbleUsername
-    # - name: RSS
-    #   link: /feed.xml
-
-# Build settings
-markdown: kramdown
-sass:
-    style: :compressed
+### Plugins ###
 plugins:
-  - jekyll-feed
+  - jemoji
 
-# Excluded items
+
+### Navbar Settings ###
+nav_exclude:                                            # The following paths are excluded from navbar
+  - pages/tags.html
+  - pages/404.html
+  - pages/index.md
+#  - documentation/partials/**                           # For Documentation Only
+
+
+### Author Info ###
+author:
+  name              : Tejal Barnwal
+  image             : imgs/me4.jpeg
+  # behance           : your_username
+# dribbble          : your_username
+  email             : tejalbarnwal@gmail.com
+  facebook          : tejalbarnwal
+  github            : tejalbarnwal
+# gitlab            : your_username
+# instagram         : your_username
+# kaggle            : your_username
+  linkedin          : tejal-ashwini-barnwal-1a149389
+  # medium            : your_username
+# soundcloud        : your_username
+# spotify           : your_username
+# stackoverflow     : your_user_id
+# tumblr            : your_username.tumblr.com
+# twitch            : your_username
+  # twitter           : your_username
+# vimeo             : your_username
+# youtube           : your_channel_name
+# keybase           : your_username
+
+
+### Posts ###
+permalink: /blog/:title
+
+
+### Collections ###
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+  # elements:                                             # For Documentation Only
+  #   output: true                                        # For Documentation Only
+
+
+### Disqus ###
+disqus:
+  shortname: teju                 # Your website Shortname on disqus
+
+
+### Analytics ###
+analytics:
+  enabled: false                                        # Set true to enable analytics
+  google:
+    tracking_id: your-google-tracking-id
+
+
+### Defaults for collections ###
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+  # - scope:                                              # For Documentation Only
+  #     path: ""                                          # For Documentation Only
+  #     type: "elements"                                  # For Documentation Only
+  #   values:                                             # For Documentation Only
+  #     layout: "element"                                 # For Documentation Only
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: false                                   # Set to true to enable disqus comments
+
+### Exclude from processing ###
 exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - feed.xml
-  - gemfiles/
-  - Gemfile
-  - Gemfile.lock
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE
+  - "*.log"
 
-# Used for defeating caching
-version: 1
+# I turn coffee :coffee: into curosity,
+# use enthusiasm as fuel
+# and never broke production.
