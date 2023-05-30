@@ -1,17 +1,32 @@
-- title: Student, Harvard CS
-  from: 2014
-  to: 2018
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-               reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-- title: Software Engineer, Google, UK
+- title: Mechanical Student, Indian Institute of Technology Patna  
   from: 2018
+  to: 2022
+  description: I gained a strong foundation in mechanical engineering principles. I studied topics such as mechanics and design, 
+              thermodynamics and fluid mechanics, manufacturing processes, and control systems. Additionally, I actively 
+              participated in extracurricular activities like the RoboCon Competition, where I applied my engineering knowledge 
+              to design and build autonomous robots. These experiences enhanced my practical skills, problem-solving abilities, 
+              and project management capabilities. Overall, my education at IIT Patna equipped me with a comprehensive understanding 
+              of mechanical engineering and provided me with valuable hands-on experiences to tackle real-world engineering challenges.
+
+
+
+- title: Robotics and Autonomous Systems Student, ASU, USA
+  from: 2022
   to: present
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-               reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  description: I gained expertise in a comprehensive curriculum covering key areas of robotics engineering. 
+              I have studied robot design and control, perception and sensing, planning and navigation, and human-robot interaction. 
+              Through hands-on projects and research opportunities, I have developed practical skills in robot programming, system integration, 
+              and algorithm development. ASU's program has provided me with a strong foundation in robotics principles and equipped me 
+              to contribute to advancements in the field. I am prepared to tackle complex challenges and contribute to the development 
+              of intelligent and autonomous robotic systems
+
+
+
+- title: Artificial Intelligence Solutions Architect Intern, Brainchip, USA
+  from: 2023
+  to: present
+  description: I am a skilled machine learning engineer with expertise in developing and implementing machine learning models for 
+              practical applications. My experience extends to working with deep reinforcement learning techniques and physics engines 
+              to create self-balancing rods. Additionally, I excel in collaborating with diverse cross-functional teams to successfully 
+              launch products into the market. My strong understanding of machine learning algorithms and ability to deploy them 
+              effectively allows me to address real-world problems and deliver innovative solutions.
