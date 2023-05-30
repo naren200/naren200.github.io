@@ -18,7 +18,7 @@ weight: 1
 <div class="column" style="width: 88%; margin-left: 10px">
 
   <br>
-  <p style="font-size: 20px">Hello there  <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Naren</b>. You call me Naren (Naa-R-ehN). </p>
+  <p style="font-size: 20px">Hello there  <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>. You call me Naren (Naa-R-ehN). </p>
     <p style="font-size: 18px">
     I'm currently living my dream — studying at the epicenter of innovation,<a href="https://robotics.asu.edu/"> ASU Robotics @ ASU</a>, and working on Stretch R1 Robot. 
     
