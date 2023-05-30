@@ -1,147 +1,48 @@
-# bay
+# My Personal Portfolio Website
 
-[![Version](https://img.shields.io/gem/v/bay_jekyll_theme)](https://rubygems.org/gems/bay_jekyll_theme)
-[![Downloads](https://img.shields.io/gem/dt/bay_jekyll_theme)](https://rubygems.org/gems/bay_jekyll_theme)
+This repository contains the code and assets for my personal portfolio website. The website showcases my projects, skills, and experiences as a developer. It serves as a hub for potential clients or employers to learn more about me and my work.
 
-Bay is a simple theme for Jekyll. [[view live]](https://eliottvincent.github.io/bay)
+## Live Demo
 
-Inspired by [dangrover.com](http://dangrover.com/). Current theme used at [eliottvincent.com](http://eliottvincent.com/).
+A live demo of the website can be found at [naren200.github.io/](https://naren200.github.io/).
 
-![](/screenshot.png)
+## Technologies Used
 
-### Installation
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap 
+- ReactJS
 
+## Features
 
-The easiest solution is to [fork this repo](https://github.com/eliottvincent/bay/fork).
-If you want to start from a clean website, follow the steps bellow:
+- Home page: Provides an overview of my background, skills, and interests.
+- Projects page: Showcases my notable projects, including descriptions, screenshots, and links to their respective repositories or live demos.
+- Skills page: Highlights the programming languages, frameworks, and tools that I am proficient in.
+- Experience page: Displays my work experience and educational background.
+- Contact page: Includes a contact form for visitors to get in touch with me.
 
-Create a new Jekyll website:
-```
-jekyll new mysite
-```
+## Getting Started
 
-Open `Gemfile` and replace the line:
-```
-gem "minima"
-```
-with:
-```
-gem "bay_jekyll_theme"
-```
+To run the website locally, follow these steps:
 
-Open `_config.yml` and replace the line:
-```
-theme: minima
-```
-with:
-```
-theme: bay_jekyll_theme
-```
-or, for GitHub Pages:
-```
-remote_theme: eliottvincent/bay
-```
+1. Clone the repository: `git clone https://github.com/naren200/naren200.github.io.git`
+2. Open the project folder: `cd your-portfolio-website`
+3. Open the `index.html` file in your preferred web browser.
 
-Finally, install the dependencies:
-```
-bundle install
-```
+## Screenshots
 
-and build the website!
-```
-jekyll serve
-```
+![Screenshot 1](/screenshots/screenshot1.png)
+*Caption for screenshot 1.*
 
+![Screenshot 2](/screenshots/screenshot2.png)
+*Caption for screenshot 2.*
 
-The website will look somewhat empty at first. That's normal. Follow the next instructions to complete the header and footer components, and the home and blog pages.
+## Contributing
 
-### Header
-Open the `_config.yml` file and add the following:
-```yml
-header:
-  pages:
-    - name: Home
-      slug: /     # <-- index.md
-    - name: Blog  # <-- blog.md
-    - name: Whatever  # <-- whatever.md
-```
-Re-run `jekyll serve` to see the header updated.
+Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
-### Footer
-Open the `_config.yml` file and add the following:
-```yml
-footer:
-  show_powered_by: true
-  contact:
-    - name: Email
-      value: yourmail@domain.com
-      link: mailto:yourmail@domain.com
-    - name: WeChat
-      value: YourWeChatUsername
-      link: "#"
-  follow:
-    - name: Twitter
-      link: http://twitter.com/YourTwitterUsername
-      username: "@YourTwitterUsername"
-    - name: Facebook
-      link: http://facebook.com/YourFacebookUsername
-    - name: LinkedIn
-      link: http://linkedin.com/in/YourLinkedInUsername
-    - name: GitHub
-      link: http://github.com/YourGitHubUsername
-    - name: Dribbble
-      link: https://dribbble.com/YourDribbbleUsername
-    - name: Weibo
-      link: http://weibo.com/u/YourWeiboUsername
-    - name: RSS
-      link: /feed.xml
-```
-Re-run `jekyll serve` to see the footer updated.
+## License
 
-### Home page
-Create (or edit) the `index.markdown` file and add the following:
-```yml
----
-layout: home
-profile_picture:
-  src: /assets/img/profile-pic.jpg
-  alt: website picture
----
+This project is licensed under the [MIT License](LICENSE).
 
-<p>
-  Welcome to mysite!
-</p>
-```
-
-### Blog page
-Create `blog.markdown` file and add the following:
-```yml
----
-layout: blog
-title: Blog
-slug: /blog
----
-
-This is an example of a "Blog" page, displaying a list of posts.
-<br />
-```
-
-
-Your website is ready!
-
-
-### Development
-
-#### Run development instance (with hot-reload)
-```sh
-bundle exec jekyll serve
-```
-
-#### Build and publish the gem
-```sh
-gem build bay_jekyll_theme.gemspec
-```
-
-```sh
-gem push bay_jekyll_theme-1.x.x.gem
-```

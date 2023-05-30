@@ -1,47 +1,37 @@
-<!DOCTYPE html>
-<html>
-  {% include head.html %}
+---
+layout: page
+---
 
-  <body>
-    {% include header.html %}
+<h1><b>{{ page.title }}</b></h1>
 
-    <div class="page-content">
-      <div class="wrapper">
-        <div class="post">
+<p class="post-metadata text-muted">
+  {{ page.date | date_to_long_string }} -  
+  <b>
+  {%- assign words = content | number_of_words -%}
+  {%- if words < 360 -%}
+    less than 1 min read time
+  {%- else -%}
+    {{ words | divided_by: 180 }} mins read time
+  {%- endif -%}
+  </b>
 
-          <header class="post-header">
+  <br>
 
-            {% if page.draft %}
-              {% include draft-banner.html %}
-            {% endif %}
+  {%- if page.tags != empty -%}
+    Tags: 
+    {% for tag in page.tags %}
+    <a class="text-decoration-none no-underline" href="{{ tag | slugify | prepend:'/blog/tags#' | relative_url }}">
+      <span class="tag badge badge-pill text-primary border border-primary">{{ tag }}</span>
+    </a>
+    {% endfor %}
+  {%- endif -%}
 
-            <h1 class="post-title">
-            {% if page.headline_formatted_title %}
-              {{ page.headline_formatted_title | newline_to_br }}
-            {% else %}
-              {{ page.title }}
-            {% endif %}
-            </h1>
+</p>
 
-            {% if page.subtitle %}<h1 class="post-subtitle">{{ page.subtitle }}</h1>{% endif %}
-            <p class="post-meta"><span class="post-date">{{ page.date | date: "%B %-d, %Y" }}
-            </span>{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-          </header>
+{{ content }}
 
-          <article class="post-content">
-            {{ content }}
-          </article>
-
-          {% if page.draft %}
-              {% include draft-banner.html %}
-          {% endif %}
-
-      </div>
-      </div>
-    </div>
-
-    {% include footer.html %}
-
-    {% include foot.html %}
-  </body>
-</html>
+{% if page.comments %}
+<div class="pt-5">
+  {% include blog/disqus.html %}
+</div>
+{% endif %}
