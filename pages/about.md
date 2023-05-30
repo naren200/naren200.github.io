@@ -11,7 +11,7 @@ weight: 1
 
 <div class="row">
 
-  <div class="column" style="text-align: center;" >
+  <div style="text-align: center;" >
   <img class="profilepic" style="float: center; border-radius: 50%;" src="../imgs/NarenFormal.jpg" alt="Kitten" title="A cute kitten" width="300" height="200" />
   </div>
 
