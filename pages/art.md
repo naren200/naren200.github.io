@@ -7,9 +7,57 @@ permalink: /art/
 
 <br>
 
-<h1 style="text-align: center;"><b>ArtWorks!</b></h1>
+<h1 style="text-align: center;"><b>Life Goals!</b></h1>
 
-<p style="text-align: center;">I often like to try painting, quilling, or sketching! Here are some of my artworks..</p>
+<p style="text-align: center;">I am passionate about entrepreneurship and I believe that technology can be used to solve some of the world's biggest problems. I am excited to use my skills in robotics and artificial intelligence to create businesses that make a positive impact on the world.</p>
+
+<p><b>My long term goals are to:</b>
+
+
+<b> - At 30, Start my own business.</b> I want to create a business that uses technology to solve a real-world problem. I am currently working on several ideas, and I am excited to see which one I will pursue.
+
+<b> - At 40, Make a positive impact on the world.</b> I want to use my business to make a positive impact on the world. I am interested in working on projects that address issues such as poverty, hunger, and climate change.
+
+<b> - At 50, Help other entrepreneurs.</b> I want to use my experience and skills to help other entrepreneurs succeed. I plan to do this by providing mentorship, coaching, and consulting services.
+
+
+I am confident that I can achieve my goals with hard work and dedication. I am excited to see what the future holds and I am grateful for the opportunity to pursue my passion for entrepreneurship.
+</p>
+
+<p><b>Describing my passion towards entrepreneurship</b></p>
+
+Entrepreneurship has always been a driving force in my life. The idea of taking innovative ideas and turning them into successful ventures ignites a fire within me. I firmly believe that my combination of technical expertise in robotics and AI, coupled with my entrepreneurial spirit, will pave the way for me to create a business that not only pushes the boundaries of technology but also makes a positive impact on society.
+
+With my background in robotics and AI, I am constantly exploring ways to harness these technologies and leverage them for practical applications. I envision building a company that specializes in developing cutting-edge robotic systems and AI solutions that address real-world challenges across various industries.
+
+My long-term goal is to establish a business that not only develops and manufactures advanced robotics but also integrates AI algorithms to enhance their capabilities further. I am passionate about creating intelligent machines that can autonomously perform complex tasks, revolutionizing industries such as healthcare, manufacturing, and logistics.
+
+</p>
+
+<p><b>Past entrepreneurial experience</b></p>
+
+One of my most significant entrepreneurial experiences to date involved creating custom content through a series of one-on-one discussions with a business. This collaboration allowed me to understand their unique needs and develop tailored solutions. By delivering compelling content that met their requirements, I not only satisfied their expectations but also built a strong professional relationship. This experience reaffirmed my belief in the power of effective communication and the ability to deliver tangible results.
+
+In this particular project, I engaged in thorough discussions with the business to grasp their vision, target audience, and desired messaging. I then crafted customized content that aligned with their brand voice and effectively conveyed their message to their intended audience. The value I provided through my expertise and attention to detail resulted in a successful outcome, as evidenced by the client's satisfaction and willingness to invest 5000 rupees in the content.
+
+This experience further fuelled my passion for entrepreneurship and demonstrated the immense potential to create value by combining my technical skills with my ability to understand and meet the needs of businesses.
+
+</p>
+
+<p>
+<p><b>Unlock your potential and join forces with a driven professional ready to fuel your business growth!</b></p>
+
+As you explore my portfolio, I hope to convey my enthusiasm for entrepreneurship and showcase how my robotics and AI expertise can be transformed into a successful business venture. I am excited to collaborate with like-minded individuals and organizations to shape the future with technology-driven innovation.
+
+If you share a similar passion for entrepreneurship or are interested in exploring potential collaborations, I invite you to connect with me on <a href="https://www.linkedin.com/in/narendhiran2000/">LinkedIn</a>. Together, let's create a future where robotics and AI redefine the possibilities.
+
+
+<p style="font-size: 18px"><b>Long Way to Go, Isn't it!?</b></p>
+
+
+</p>
+
+
 
 <style>
     #owl-demo{
@@ -27,25 +75,25 @@ permalink: /art/
   </style>
   <div id ="owl-demo" class="owl-carousel owl-theme">
     <div class="item">
-      <img src="../imgs/art1.jpg" alt=" Image"/>
+      <img src="../imgs/FutureWorld.jpg" alt=" Image"/>
     </div>
     <div class="item">
-      <img src="../imgs/art2.jpg" alt="Image"/>
+      <img src="../imgs/FlyingShip.jpg" alt="Image"/>
     </div>
     <div class="item">
-      <img src="../imgs/art3.jpg" alt="Image"/>
+      <img src="../imgs/FlyingCommunity.jpg" alt="Image"/>
     </div>
     <div class="item">
-      <img src="../imgs/art4.jpg" alt="Image"/>
+      <img src="../imgs/HumanLikeRobot.jpg" alt="Image"/>
     </div>
     <div class="item">
-      <img src="../imgs/art10.jpeg" alt="Image"/>
+      <img src="../imgs/FutureWorld4.jpg" alt="Image"/>
     </div>
     <div class="item">
-      <img src="../imgs/art11.jpeg" alt="Image"/>
+      <img src="../imgs/FutureWorld3.jpg" alt="Image"/>
     </div>
-    <div class="item">
-      <img src="../imgs/art12.jpeg" alt="Image"/>
+    <!-- <div class="item">
+      <img src="../imgs/FutureWorld2.jpg" alt="Image"/>
     </div>
     <div class="item">
       <img src="../imgs/art13.jpeg" alt="Image"/>
@@ -61,7 +109,7 @@ permalink: /art/
     </div>
     <div class="item">
       <img src="../imgs/art17.jpeg" alt="Image"/>
-    </div>
+    </div> -->
 
     <!-- <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>1</h4></div>
     <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>2</h4></div>
