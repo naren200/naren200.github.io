@@ -1,15 +1,15 @@
 ### Site Settings ###
-title               : Tejal Barnwal
+title               : Narendhiran Saravanane
 description         : >-
                       Welcome to my homepage!<br>
-                      I am Tejal Barnwal <br>
-                      This website is a quick outlet for my thoughts. <br>
+                      I am Narendhiran Saravanane. My friends call me Naren (Naa-R-ehN)! <br>
+                      I'm Coder | AI & ML Developer | Robotics Engineer | Entrepreneurial Goals <br>
                       You can also read more 
-                      <a href="https://tejalbarnwal.github.io/about/">about me</a> & 
-                      <a href="https://tejalbarnwal.github.io/projects/">my key projects</a>.
+                      <a href="https://naren200.github.io/about/">about me</a> & 
+                      <a href="https://naren200.github.io/projects/">my key projects</a>.
 
-baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
-repository          : tejalbarnwal/tejalbarnwal.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
+baseurl             : "naren200.github.io"                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
+repository          : naren200/naren200.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : YoussefRaafatNasry/portfolYOU
 
 
@@ -28,17 +28,17 @@ nav_exclude:                                            # The following paths ar
 
 ### Author Info ###
 author:
-  name              : Tejal Barnwal
-  image             : imgs/me4.jpeg
+  name              : Narendhiran Saravanane
+  image             : imgs/NarenFormal.jpg
   # behance           : your_username
 # dribbble          : your_username
-  email             : tejalbarnwal@gmail.com
-  facebook          : tejalbarnwal
-  github            : tejalbarnwal
+  email             : narendhiran2000@gmail.com
+  facebook          : Naren Dhiran
+  github            : naren200
 # gitlab            : your_username
 # instagram         : your_username
 # kaggle            : your_username
-  linkedin          : tejal-ashwini-barnwal-1a149389
+  linkedin          : narendhiran2000
   # medium            : your_username
 # soundcloud        : your_username
 # spotify           : your_username
