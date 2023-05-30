@@ -51,14 +51,19 @@ This experience further fuelled my passion for entrepreneurship and demonstrated
 <p>
 <p><b>Unlock your potential and join forces with a driven professional ready to fuel your business growth!</b></p>
 
+<p>
 As you explore my portfolio, I hope to convey my enthusiasm for entrepreneurship and showcase how my robotics and AI expertise can be transformed into a successful business venture. I am excited to collaborate with like-minded individuals and organizations to shape the future with technology-driven innovation.
-
+</p>
+<p>
 
 If you share a similar passion for entrepreneurship or are interested in exploring potential collaborations, I invite you to connect with me on <a href="https://www.linkedin.com/in/narendhiran2000/">LinkedIn</a>. Together, let's create a future where robotics and AI redefine the possibilities.
 
 
 
-<p style="font-size: 18px"><b>Long Way to Go, Isn't it!?</b></p>
+.
+</p>
+
+<p style="font-size: 22px"><b>Long Way to Go, Isn't it!?</b></p>
 
 
 </p>
