@@ -1,7 +1,11 @@
-- name: Adobe Photoshop
+- name: ROS
   percentage: 95
   color: info
 
-- name: Adobe Illustrator
+- name: TensorFlow & Pytorch
+  percentage: 70
+  color: success
+
+- name: Physics Engines (Gazebo & Carlo)
   percentage: 90
   color: success
