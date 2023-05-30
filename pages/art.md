@@ -12,7 +12,7 @@ permalink: /art/
 <p style="text-align: center;">I am passionate about entrepreneurship and I believe that technology can be used to solve some of the world's biggest problems. I am excited to use my skills in robotics and artificial intelligence to create businesses that make a positive impact on the world.</p>
 
 
-<p>
+<p style="font-size: 22px">
 <br>
 <br>
 <b>My long term goals are to:</b></p>
@@ -31,7 +31,7 @@ permalink: /art/
 I am confident that I can achieve my goals with hard work and dedication. I am excited to see what the future holds and I am grateful for the opportunity to pursue my passion for entrepreneurship.
 </p>
 
-<p><b>Describing my passion towards entrepreneurship</b></p>
+<p style="font-size: 20px"><b>Describing my passion towards entrepreneurship</b></p>
 
 Entrepreneurship has always been a driving force in my life. The idea of taking innovative ideas and turning them into successful ventures ignites a fire within me. I firmly believe that my combination of technical expertise in robotics and AI, coupled with my entrepreneurial spirit, will pave the way for me to create a business that not only pushes the boundaries of technology but also makes a positive impact on society.
 
@@ -39,7 +39,7 @@ With my background in robotics and AI, I am constantly exploring ways to harness
 
 My long-term goal is to establish a business that not only develops and manufactures advanced robotics but also integrates AI algorithms to enhance their capabilities further. I am passionate about creating intelligent machines that can autonomously perform complex tasks, revolutionizing industries such as healthcare, manufacturing, and logistics.
 
-<p><b>Past entrepreneurial experience</b></p>
+<p style="font-size: 20px"><b>Past entrepreneurial experience</b></p>
 
 One of my most significant entrepreneurial experiences to date involved creating custom content through a series of one-on-one discussions with a business. This collaboration allowed me to understand their unique needs and develop tailored solutions. By delivering compelling content that met their requirements, I not only satisfied their expectations but also built a strong professional relationship. This experience reaffirmed my belief in the power of effective communication and the ability to deliver tangible results.
 
@@ -49,7 +49,7 @@ This experience further fuelled my passion for entrepreneurship and demonstrated
 
 
 <p>
-<p><b>Unlock your potential and join forces with a driven professional ready to fuel your business growth!</b></p>
+<p style="font-size: 20px"><b>Unlock your potential and join forces with a driven professional ready to fuel your business growth!</b></p>
 
 <p>
 As you explore my portfolio, I hope to convey my enthusiasm for entrepreneurship and showcase how my robotics and AI expertise can be transformed into a successful business venture. I am excited to collaborate with like-minded individuals and organizations to shape the future with technology-driven innovation.
