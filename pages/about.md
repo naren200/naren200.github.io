@@ -12,7 +12,7 @@ weight: 1
 <div class="row">
 
   <div class="column">
-  <img class="profilepic" style="float: middle; border-radius: 50%;" src="../imgs/NarenFormal.jpg" alt="Kitten" title="A cute kitten" width="300" height="200" />
+  <img class="profilepic" style="float: center; border-radius: 50%;" src="../imgs/NarenFormal.jpg" alt="Kitten" title="A cute kitten" width="300" height="200" />
   </div>
 
 <div class="column" style="width: 88%; margin-left: 10px">
@@ -62,7 +62,6 @@ weight: 1
     <b>Resilience</b>: As a student, I exhibited grit by persevering through disappointment in the JEE-Advanced exam and re-attempting it with passion and confidence, focusing on delivering my utmost effort and improving my skills through practical implications to impact society's ground reality. 
   </p>
   <p style="font-size: 18px">
-  
     <b>Curiosity</b>: I enjoy exploring the inner workings and technological innovations that power everyday devices as a pastime.
   </p>
   <p style="font-size: 18px">
