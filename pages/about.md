@@ -9,9 +9,9 @@ weight: 1
 <h1 style="text-align: center;"><b>About Me</b></h1>
 <br>
 
-<div class="row">
+<div class="column">
 
-  <div style="text-align: center;" >
+  <div>
   <img class="profilepic" style="float: center; border-radius: 50%;" src="../imgs/NarenFormal.jpg" alt="Kitten" title="A cute kitten" width="300" height="200" />
   </div>
 
