@@ -8,49 +8,12 @@ description         : >-
                       <a href="https://tejalbarnwal.github.io/about/">about me</a> & 
                       <a href="https://tejalbarnwal.github.io/projects/">my key projects</a>.
 
-title: Narendhiran Saravanane
-description: >- # this means to ignore newlines until "baseurl:"
-  Naren's is a minimal Jekyll Theme.
-# baseurl: "/bay" # the subpath of the site
-url: "https://naren200.github.io" # the base hostname & protocol for the site
-og_image: /assets/img/profile-pic.jpg
-google_analytics: "UA-193570686-1"
-
-permalink: /:year/:month/:day/:title
+baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
+repository          : tejalbarnwal/tejalbarnwal.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
+remote_theme        : YoussefRaafatNasry/portfolYOU
 
 
-# Build settings
-timezone: Asia/Kolkata
-
-
-footer:
-  show_powered_by: true
-  contact:
-    - name: Email
-      value: narendhiran2000@gmail.com
-      link: mailto:narendhiran2000@gmail.com
-    # - name: WeChat
-    #   value: YourWeChatUsername
-    #   link: "#"
-  follow:
-    # - name: Twitter
-    #   link: http://twitter.com/YourTwitterUsername
-    #   username: "@YourTwitterUsername"
-    - name: Facebook
-      link: https://www.facebook.com/narendhiran.saravanane.9/
-    - name: LinkedIn
-      link: https://www.linkedin.com/in/narendhiran13/
-    - name: GitHub
-      link: https://github.com/naren200
-    # - name: Dribbble
-    #   link: https://dribbble.com/YourDribbbleUsername
-    # - name: RSS
-    #   link: /feed.xml
-
-# Build settings
-markdown: kramdown
-sass:
-    style: :compressed
+### Plugins ###
 plugins:
   - jemoji
 
