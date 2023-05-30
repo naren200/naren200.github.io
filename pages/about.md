@@ -12,10 +12,10 @@ weight: 1
 <div class="row">
 
   <div class="column">
-  <img class="profilepic" style="float: left; border-radius: 50%;" src="../imgs/me5.jpg" alt="Kitten" title="A cute kitten" width="300" height="200" />
+  <img class="profilepic" style="float: left; border-radius: 50%;" src="../imgs/NarenFormal.jpg" alt="Kitten" title="A cute kitten" width="300" height="200" />
   </div>
 
-<div class="column" style="width: 66%; margin-left: 10px">
+<div class="column" style="width: 88%; margin-left: 10px">
   <!-- <br>
   <p style="font-size: 20px">Hello there  :wave: I am <b>Tejal</b>,</p>
     <p style="font-size: 18px">
