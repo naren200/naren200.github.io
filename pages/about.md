@@ -12,20 +12,10 @@ weight: 1
 <div class="row">
 
   <div class="column">
-  <img class="profilepic" style="float: left; border-radius: 50%;" src="../imgs/NarenFormal.jpg" alt="Kitten" title="A cute kitten" width="300" height="200" />
+  <img class="profilepic" style="float: middle; border-radius: 50%;" src="../imgs/NarenFormal.jpg" alt="Kitten" title="A cute kitten" width="300" height="200" />
   </div>
 
 <div class="column" style="width: 88%; margin-left: 10px">
-  <!-- <br>
-  <p style="font-size: 20px">Hello there  :wave: I am <b>Tejal</b>,</p>
-    <p style="font-size: 18px">
-    I'm a junior undergraduate at the <a href="https://www.iitb.ac.in/">Indian Institute of Technology, Bombay</a>majoring in <a href="https://www.me.iitb.ac.in/">Mechanical Engineering</a> and pursuing a minor degree in the <a href="https://www.cse.iitb.ac.in/">Department of Systems and Control Engineering</a>. <br> 
-    I am robotics enthusiast and I am always looking for opportunities to expand my horizon.
-    Learning new things is fun but applying them to real-life problems is what thrills me the most. I strive to see the big picture and understand the connections between basic tasks and long-term targets. 
-    <br>    
-    I intend to use this corner of the web to give the world a peek into my mind and to share updates about my work. -->
-
-
 
   <br>
   <p style="font-size: 20px">Hello there  <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Naren</b>. You call me Naren (Naa-R-ehN). </p>
@@ -44,13 +34,23 @@ weight: 1
   </p>
   <p style="font-size: 18px">
   
-    I graduated from <a href="https://www.iitp.ac.in/">IIT Patna</a> in 2022, attaining a Bachelor’s in <a href="https://www.me.iitb.ac.in/">Mechanical Engineering</a>. During my undergraduate, I was fortunate to work under the guidance of wonderful mentors. I worked with <a href="https://www.iitp.ac.in/index.php/people-6/faculty/2-uncategorised/241-view-profile-38">Prof. Subrata Kumar</a> on my Undergraduate Project to create a Motion Prediction model for a Towed floating object.
+    I graduated from <a href="https://www.iitp.ac.in/">IIT Patna</a> in 2022, attaining a Bachelor’s in <a href="https://www.iitp.ac.in/index.php/departments/engineering-technology/mechanical-engineering/">Mechanical Engineering</a>. Accomplished selection as an Undergraduate Project Finalist, measured by the successful development of a Motion Prediction model for a Towed floating object, through working with <a href="https://www.iitp.ac.in/index.php/people-6/faculty/2-uncategorised/241-view-profile-38">Prof. Subrata Kumar</a> at IIT Patna during my Mechanical Engineering degree program.
+
   </p>
   <p style="font-size: 18px">
-    The team I led developed an autonomous transportation mobile robot to compete in the <a href="https://portal.e-yantra.org/#about">e-Yantra International Robotics Competition</a> (e-YRC) organized by <a href="https://www.iitb.ac.in/">IIT Bombay</a>, intending to solve the international search and rescue for disaster management challenges. After six months of hard work and innovation, our efforts were recognized as <a href="https://drive.google.com/file/d/1kweAUygwfA52OVF7uBK29grWofsJmhxy/view?usp=sharing">one of the National finalists</a> in the 2019-20 e-YRC.
+    
+    Under my leadership, our team achieved recognition in robotics by developing an autonomous transportation mobile robot for international search and rescue challenges. We were selected as <a href="https://drive.google.com/file/d/1kweAUygwfA52OVF7uBK29grWofsJmhxy/view?usp=sharing">National finalists</a> in the 2019-20 <a href="https://portal.e-yantra.org/#about">e-Yantra International Robotics Competition</a> organized by <a href="https://www.iitb.ac.in/">IIT Bombay</a>, showcasing our innovative solution and potential impact in disaster management. Through 6 months of dedicated work, innovation, and teamwork, our robot's exceptional capabilities caught the judges' attention, cementing our accomplishment and affirming our commitment to leveraging robotics for meaningful impact.
+
+
+    <!-- The team I led developed an autonomous transportation mobile robot to compete in the <a href="https://portal.e-yantra.org/#about">e-Yantra International Robotics Competition</a> (e-YRC) organized by <a href="https://www.iitb.ac.in/">IIT Bombay</a>, intending to solve the international search and rescue for disaster management challenges. After six months of hard work and innovation, our efforts were recognized as <a href="https://drive.google.com/file/d/1kweAUygwfA52OVF7uBK29grWofsJmhxy/view?usp=sharing">one of the National finalists</a> in the 2019-20 e-YRC. -->
   </p>
   <p style="font-size: 18px">
-    In addition, I had the privilege of being selected to participate in the <a href="https://www.e-yantra.org/eysip">e-YIC program</a> under the guidance of <a href="https://www.it.iitb.ac.in/~kavi/">Prof. Kavi Arya</a> from the <a href="https://www.cse.iitb.ac.in/">Department of Computer Science & Engineering</a> at <a href="https://www.iitb.ac.in/">IIT Bombay</a>. During this program, I was able to develop a simulator ecosystem that could autonomously evaluate the <a href="https://portal.e-yantra.org/#about">e-YRC competition</a> in which I had previously participated.
+
+    Developed a simulator ecosystem for autonomous evaluation of the <a href="https://portal.e-yantra.org/#about">e-YRC competition</a>, recognized through selection in the prestigious <a href="https://www.e-yantra.org/eysip">e-YIC program</a> under <a href="https://www.it.iitb.ac.in/~kavi/">Prof. Kavi Arya</a> from <a href="https://www.iitb.ac.in/">IIT Bombay's </a> <a href="https://www.cse.iitb.ac.in/">Department of Computer Science & Engineering</a>. Demonstrated innovation and technical expertise by creating a comprehensive platform that seamlessly assessed the e-YRC competition, bridging theory and practical application in robotics and AI.
+
+
+
+    <!-- In addition, I had the privilege of being selected to participate in the <a href="https://www.e-yantra.org/eysip">e-YIC program</a> under the guidance of <a href="https://www.it.iitb.ac.in/~kavi/">Prof. Kavi Arya</a> from the <a href="https://www.cse.iitb.ac.in/">Department of Computer Science & Engineering</a> at <a href="https://www.iitb.ac.in/">IIT Bombay</a>. During this program, I was able to develop a simulator ecosystem that could autonomously evaluate the <a href="https://portal.e-yantra.org/#about">e-YRC competition</a> in which I had previously participated. -->
   </p>
   <p style="font-size: 18px">
     My research interests lie at the intersection of Artificial intelligence and robotics. You can read the research questions that I find very fascinating <a href="https://naren200.github.io/">here</a>.
@@ -76,11 +76,11 @@ weight: 1
     In addition to my passion for coding and robotics, I derive great joy from admiring the talent and creativity of artists and musicians who are more gifted than I am. Nothing electrifies me more than watching AC/DC's electrifying performance of "<a href="https://youtu.be/xRQnJyP77tY">Shoot To Thrill</a>" on the drums, and listening to Miles Teller's rendition of "<a href="https://youtu.be/pVcMsjyKlaM">Great Balls of Fire</a>" never fails to fill me with pure joy.
   </p>
 
-<!-- <div class="row">
+<div class="row">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
 
 <div class="row">
 {% include about/timeline.html %}
-</div> -->
+</div>
