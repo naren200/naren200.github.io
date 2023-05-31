@@ -59,7 +59,7 @@ weight: 1
     What distinguishes me, however, is my resilience, curiosity, and hacker mindset.
   </p>
   <p style="font-size: 18px">
-    <b>Resilience</b>: As a student, I exhibited grit by persevering through disappointment in the JEE-Advanced exam and re-attempting it with passion and confidence, focusing on delivering my utmost effort and improving my skills through practical implications to impact society's ground reality. 
+    <b>Resilience</b>:  I have demonstrated resilience by navigating complex projects with tight deadlines and overcoming technical obstacles by staying focused, adapting strategies, and collaborating with multidisciplinary teams. I am committed to delivering high-quality solutions, leveraging setbacks as learning opportunities, and consistently striving for excellence in the ever-evolving field of robotics. 
   </p>
   <p style="font-size: 18px">
     <b>Curiosity</b>: I enjoy exploring the inner workings and technological innovations that power everyday devices as a pastime.
@@ -71,6 +71,11 @@ weight: 1
     I utilize all of these skills and characteristics to tackle complex problems that require creative solutions. I particularly enjoy taking on challenging problems and prioritizing the quality of the problem over other factors. My greatest passion lies in the field of machine learning and perception methods as they relate to robotics.
     With experience ranging from short-term code that won me national and international robotics competitions to long-term contributions to open-source projects, my software engineering expertise is versatile and adaptive, honed through various professional experiences. 
   </p>
+  <p style="font-size: 18px">
+    In addition to my passion for coding and robotics, I derive great joy from admiring the talent and creativity of artists and musicians who are more gifted than I am. Nothing electrifies me more than watching AC/DC's electrifying performance of "<a href="https://youtu.be/xRQnJyP77tY">Shoot To Thrill</a>" on the drums, and listening to Miles Teller's rendition of "<a href="https://youtu.be/pVcMsjyKlaM">Great Balls of Fire</a>" never fails to fill me with pure joy.
+  </p>
+
+  <p style="font-size: 22px"><b>Questions that Excite me</b></p>
   <p style="font-size: 18px">
     In addition to my passion for coding and robotics, I derive great joy from admiring the talent and creativity of artists and musicians who are more gifted than I am. Nothing electrifies me more than watching AC/DC's electrifying performance of "<a href="https://youtu.be/xRQnJyP77tY">Shoot To Thrill</a>" on the drums, and listening to Miles Teller's rendition of "<a href="https://youtu.be/pVcMsjyKlaM">Great Balls of Fire</a>" never fails to fill me with pure joy.
   </p>
