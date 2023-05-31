@@ -19,6 +19,8 @@ weight: 1
 
   <br>
   <p style="font-size: 20px">Hello there  <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>. You call me Naren (Naa-R-ehN). </p>
+    <br>
+    <br>
     <p style="font-size: 18px">
     I'm currently living my dream — studying at the epicenter of innovation,<a href="https://robotics.asu.edu/"> ASU Robotics @ ASU</a>, and working on Stretch R1 Robot. 
     
@@ -55,6 +57,8 @@ weight: 1
   <p style="font-size: 18px">
     My research interests lie at the intersection of Artificial intelligence and robotics. You can read the research questions that I find very fascinating <a href="https://naren200.github.io/">here</a>.
   </p>
+  <br>
+  <br>
   <p style="font-size: 18px">
     What distinguishes me, however, is my resilience, curiosity, and hacker mindset.
   </p>
@@ -76,7 +80,7 @@ weight: 1
   </p>
 
   <p style="font-size: 22px"><b>Questions that Excite me</b></p>
-  <p style="font-size: 18px">
+  <p style="font-size: 20px">
   <ul>
   <li><b>Human-Robot Interaction:</b> How can we develop intuitive and natural interfaces that enable seamless communication and collaboration between humans and robots? I am fascinated by the possibilities of creating socially-aware robots that can understand human intentions, adapt to dynamic environments, and assist humans in various tasks while ensuring safety and trust.</li>
   <li><b>Explainable and Transparent AI:</b> How can we design AI algorithms and models that are interpretable and explainable, enabling humans to understand the decision-making process of autonomous systems? I am intrigued by the challenge of developing AI systems that not only provide accurate predictions and actions but also offer insights into their reasoning to build trust and facilitate collaboration between humans and robots.</li>
