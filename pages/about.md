@@ -82,9 +82,9 @@ weight: 1
   </p>
   <br>
 
-  <p style="font-size: 22px"><b>Questions that Excite me</b></p>
-  <p style="font-size: 20px">
-    <ul style="font-size: 20px">
+  <p style="font-size: 20px"><b>Questions that Excite me</b></p>
+  <p style="font-size: 18px">
+    <ul style="font-size: 18px">
     <li><b>Human-Robot Interaction:</b> How can we develop intuitive and natural interfaces that enable seamless communication and collaboration between humans and robots? I am fascinated by the possibilities of creating socially-aware robots that can understand human intentions, adapt to dynamic environments, and assist humans in various tasks while ensuring safety and trust.</li>
     <li><b>Explainable and Transparent AI:</b> How can we design AI algorithms and models that are interpretable and explainable, enabling humans to understand the decision-making process of autonomous systems? I am intrigued by the challenge of developing AI systems that not only provide accurate predictions and actions but also offer insights into their reasoning to build trust and facilitate collaboration between humans and robots.</li>
     <li><b>Lifelong Learning in Robotics:</b> How can we develop robots that can continuously learn and adapt to new situations, tasks, and environments? I am passionate about exploring lifelong learning algorithms and techniques that enable robots to acquire new knowledge, generalize from past experiences, and autonomously improve their performance over time, similar to how humans learn and adapt throughout their lives.</li>
