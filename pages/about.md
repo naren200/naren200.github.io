@@ -19,8 +19,7 @@ weight: 1
 
   <br>
   <p style="font-size: 20px">Hello there  <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>. You call me Naren (Naa-R-ehN). </p>
-    <br>
-    <br>
+    
     <p style="font-size: 18px">
     I'm currently living my dream — studying at the epicenter of innovation,<a href="https://robotics.asu.edu/"> ASU Robotics @ ASU</a>, and working on Stretch R1 Robot. 
     
@@ -28,10 +27,11 @@ weight: 1
 
     I am robotics enthusiast and I am always looking for opportunities to expand my horizon.
     Learning new things is fun but applying them to real-life problems is what thrills me the most. I strive to see the big picture and understand the connections between basic tasks and long-term targets. 
-    <br>
+  <br>
 
     I intend to use this corner of the web to give the world a peek into my mind and to share updates about my work.
-
+  <br>
+  <br>
 
   </p>
   <p style="font-size: 18px">
@@ -71,6 +71,8 @@ weight: 1
   <p style="font-size: 18px">
     <b>Hacker mindset</b>: When creating a robot in R.O.S., I find Visual Studio Code more efficient than editing in a terminal within a docker environment. The speed of VScode and the availability of helpful plugins make it easier for me to create an environment and build a URDF file for a robot, as well as develop C++ plugins. This has made the process smoother and more streamlined.
   </p>
+  <br>
+  <br>
   <p style="font-size: 18px">
     I utilize all of these skills and characteristics to tackle complex problems that require creative solutions. I particularly enjoy taking on challenging problems and prioritizing the quality of the problem over other factors. My greatest passion lies in the field of machine learning and perception methods as they relate to robotics.
     With experience ranging from short-term code that won me national and international robotics competitions to long-term contributions to open-source projects, my software engineering expertise is versatile and adaptive, honed through various professional experiences. 
@@ -78,15 +80,16 @@ weight: 1
   <p style="font-size: 18px">
     In addition to my passion for coding and robotics, I derive great joy from admiring the talent and creativity of artists and musicians who are more gifted than I am. Nothing electrifies me more than watching AC/DC's electrifying performance of "<a href="https://youtu.be/xRQnJyP77tY">Shoot To Thrill</a>" on the drums, and listening to Miles Teller's rendition of "<a href="https://youtu.be/pVcMsjyKlaM">Great Balls of Fire</a>" never fails to fill me with pure joy.
   </p>
+  <br>
 
   <p style="font-size: 22px"><b>Questions that Excite me</b></p>
   <p style="font-size: 20px">
-  <ul>
-  <li><b>Human-Robot Interaction:</b> How can we develop intuitive and natural interfaces that enable seamless communication and collaboration between humans and robots? I am fascinated by the possibilities of creating socially-aware robots that can understand human intentions, adapt to dynamic environments, and assist humans in various tasks while ensuring safety and trust.</li>
-  <li><b>Explainable and Transparent AI:</b> How can we design AI algorithms and models that are interpretable and explainable, enabling humans to understand the decision-making process of autonomous systems? I am intrigued by the challenge of developing AI systems that not only provide accurate predictions and actions but also offer insights into their reasoning to build trust and facilitate collaboration between humans and robots.</li>
-  <li><b>Lifelong Learning in Robotics:</b> How can we develop robots that can continuously learn and adapt to new situations, tasks, and environments? I am passionate about exploring lifelong learning algorithms and techniques that enable robots to acquire new knowledge, generalize from past experiences, and autonomously improve their performance over time, similar to how humans learn and adapt throughout their lives.</li>
-  <li><b>Ethical and Responsible AI:</b> How can we ensure that AI-powered robots operate ethically, responsibly, and in alignment with human values? I am interested in exploring frameworks and methodologies for integrating ethical considerations into the design and development of autonomous systems, such as fairness, transparency, privacy, and accountability, to ensure their safe and beneficial deployment in real-world scenarios.</li>
-  </ul>
+    <ul style="font-size: 20px">
+    <li><b>Human-Robot Interaction:</b> How can we develop intuitive and natural interfaces that enable seamless communication and collaboration between humans and robots? I am fascinated by the possibilities of creating socially-aware robots that can understand human intentions, adapt to dynamic environments, and assist humans in various tasks while ensuring safety and trust.</li>
+    <li><b>Explainable and Transparent AI:</b> How can we design AI algorithms and models that are interpretable and explainable, enabling humans to understand the decision-making process of autonomous systems? I am intrigued by the challenge of developing AI systems that not only provide accurate predictions and actions but also offer insights into their reasoning to build trust and facilitate collaboration between humans and robots.</li>
+    <li><b>Lifelong Learning in Robotics:</b> How can we develop robots that can continuously learn and adapt to new situations, tasks, and environments? I am passionate about exploring lifelong learning algorithms and techniques that enable robots to acquire new knowledge, generalize from past experiences, and autonomously improve their performance over time, similar to how humans learn and adapt throughout their lives.</li>
+    <li><b>Ethical and Responsible AI:</b> How can we ensure that AI-powered robots operate ethically, responsibly, and in alignment with human values? I am interested in exploring frameworks and methodologies for integrating ethical considerations into the design and development of autonomous systems, such as fairness, transparency, privacy, and accountability, to ensure their safe and beneficial deployment in real-world scenarios.</li>
+    </ul>
   </p>
 
 <div class="row">
