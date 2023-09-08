@@ -43,7 +43,7 @@ My long-term goal is to establish a business that not only develops and manufact
 
 One of my most significant entrepreneurial experiences to date involved creating custom content through a series of one-on-one discussions with a business. This collaboration allowed me to understand their unique needs and develop tailored solutions. By delivering compelling content that met their requirements, I not only satisfied their expectations but also built a strong professional relationship. This experience reaffirmed my belief in the power of effective communication and the ability to deliver tangible results.
 
-In this particular project, I engaged in thorough discussions with the business to grasp their vision, target audience, and desired messaging. I then crafted customized content that aligned with their brand voice and effectively conveyed their message to their intended audience. The value I provided through my expertise and attention to detail resulted in a successful outcome, as evidenced by the client's satisfaction and willingness to invest 5000 rupees in the content.
+In this particular project, I engaged in thorough discussions with the business to grasp their vision, target audience, and desired messaging. I then crafted customized content that aligned with their brand voice and effectively conveyed their message to their intended audience. The value I provided through my expertise and attention to detail resulted in a successful outcome, as evidenced by the client's satisfaction and willingness to invest on the content.
 
 This experience further fuelled my passion for entrepreneurship and demonstrated the immense potential to create value by combining my technical skills with my ability to understand and meet the needs of businesses.
 
