@@ -1,23 +1,51 @@
 ---
-name: Institute Mess Digitization Project
-tools: [Raspberry Pi, ESP32, MQTT protocol]
-image: ../imgs/projects/mess1.jpg
-description: Digitized institute mess to replace mess cards with student ID Cards reducing the workload of mess workers
+name: Home-Service Robot Project
+tools: [ROS, Gazebo, Mapping, Localization, Path Planning, Robotics]
+image: ../imgs/home-service-robot.jpg
+description: Demonstrating a mobile robot's autonomous navigation and manipulation capabilities in a simulated environment using ROS and Gazebo.
 ---
-# Institute Mess Digitization Project
+# Home-Service Robot Project
 
-### Problem Statement
-To digitize the mess to decrease mess workers’ burden to pick and place the mess cards and monthly bill calculation. Also, this would prevent someone from using other students’ mess cards.
+## Overview
+The **Home-Service Robot project** serves as a comprehensive showcase of robotics expertise, leveraging state-of-the-art technologies and methodologies to demonstrate a mobile robot's capabilities in a simulated environment. This project harnesses the power of **Robot Operating System (ROS)**, **Gazebo simulation**, advanced **mapping**, **localization**, and **path planning** to illustrate the robot's prowess in autonomous navigation and manipulation.
 
-<img src="../imgs/projects/mess2.png" alt="drawing" width="500"/>
+## **Environment Design and Modeling**
+### Building Editor, Model Editor, and Plugins
+The project entails the creation of a dynamic environment using the **Building Editor** in Gazebo, offering ample space for the robot's operations. The environment features diverse elements and vibrant colors, enhancing the robot's navigation experience. The robot itself is meticulously designed using the **Model Editor**, ensuring precise integration of sensors and mechanical components. **Fixed joints** connect the robot's model links, guaranteeing stability during movement.
 
-### Approach
-A database is stored in a central computer (RPI) made with Django, which Stores data like name, roll number, meal, card number, and the complete system is wireless based on MQTT protocol. 
+- **Building Editor**: 
+  ![Building Editor](../imgs/hsr-building-editor.png)
 
-As id cards are taken by students wherever they go, we thought of replacing them with mess cards. To do so, we use the RFID feature of our id cards which have unique numbers encoded into them.
-The encoded number is detected using the RC522( RFID scanner). 
-The ID card has to be placed over a box with an RFID scanner, an LCD indicating the meal approval, some LEDs to indicate pass or fail with the name and meal to be given printed on the LCD screen. This all is connected with a microcontroller( esp32) and all soldered into a single PCB and fitted in a 3D printed casing designed by us.
-Because there are three counters in a mess( main meal, milk, extras), we will have a box containing the circuitry for each of the counters, and the main single-board computer( RPI) would be used as the master to all three boards.
+- **Model Editor**: 
+  ![Model Editor](../imgs/hsr-model-editor.png)
 
-<img src="../imgs/projects/mess1.png" alt="drawing" width="500"/>
-<img src="../imgs/projects/mess3.png" alt="drawing" width="500"/>
+- **Gazebo Plugins**: The robot is equipped with advanced sensors, including **lidar** and **camera**, with **Gazebo plugins** seamlessly integrated to facilitate differential drive, lidar sensing, and camera functionality.
+
+## **Autonomous Operation**
+### Ball Chasing
+A key highlight of the project is the robot's ability to autonomously **chase a white-colored ball** within the environment. This impressive capability is achieved through the implementation of ROS nodes for interaction and navigation.
+
+- **Ball Chasing Video**: 
+  [Watch Ball Chasing Video](https://example.com/ball-chasing-video)
+
+## **Precise Localization**
+### AMCL Package
+Accurate **localization** is fundamental to the robot's autonomy. The project utilizes the **Adaptive Monte Carlo Localization (AMCL)** package, a particle filter-based algorithm. AMCL leverages a known map and sensor data, such as laser scans and odometry, to estimate the robot's pose (position and orientation) within the environment.
+
+![Localization](../imgs/hsr-localization.png)
+
+## **Mapping and Navigation**
+### Gmapping and Move_Base
+Efficient **mapping** and **navigation** are achieved using the **gmapping** package for 2D occupancy grid mapping. This technology allows the robot to build and utilize maps for its autonomous movement. The **move_base** package serves as the high-level navigation controller, employing a combination of global and local path planning algorithms to enable obstacle avoidance and efficient goal attainment.
+
+- **Mapping Images**: 
+  ![Mapping 1](../imgs/hsr-mapping1.png)
+  ![Mapping 2](../imgs/hsr-mapping2.png)
+
+- **Path Planning Video**: 
+  [Watch Path Planning Video](https://example.com/path-planning-video)
+
+## **Conclusion**
+The Home-Service Robot Project is a testament to the convergence of cutting-edge robotics concepts and technologies. It highlights the robot's prowess in autonomous navigation, localization, and interaction within a simulated environment. This project showcases the immense potential of ROS and Gazebo for simulating and validating robotic systems.
+
+For in-depth technical details and access to project code, please visit the [GitHub repository](https://github.com/example/home-service-robot).
