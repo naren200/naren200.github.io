@@ -1,5 +1,5 @@
 ---
-name: Touchless Elevator Control System
+name: Mambo Drone 
 tools: [Raspberry Pi]
 image:
 description: Devised a project from scratch to achieve touchless elevator control like behaviour to ensure safety during the pandemic
