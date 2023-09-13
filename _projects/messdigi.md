@@ -49,3 +49,7 @@ Efficient **mapping** and **navigation** are achieved using the **gmapping** pac
 The Home-Service Robot Project is a testament to the convergence of cutting-edge robotics concepts and technologies. It highlights the robot's prowess in autonomous navigation, localization, and interaction within a simulated environment. This project showcases the immense potential of ROS and Gazebo for simulating and validating robotic systems.
 
 For in-depth technical details and access to project code, please visit the [GitHub repository](https://github.com/example/home-service-robot).
+
+## **Certificates and Achievements**
+Secured an excellent completion reward from the Udacity Team. 
+<img src="../imgs/projects/hsr-certicates.png" alt="drawing" width="1050"/>
