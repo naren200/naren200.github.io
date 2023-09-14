@@ -98,6 +98,12 @@ By achieving its objectives and presenting valuable results, this project contri
 ----
 
 
+### Achievements
+
+```
+Selected as one of the Top set of Projects in the Mechanical Engineering Department, Indian Institute of Technology Patna, India.
+```
+
 ### References
 #### Presentation
 
