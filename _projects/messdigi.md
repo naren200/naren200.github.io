@@ -9,7 +9,7 @@ description: Demonstrating a mobile robot's autonomous navigation and manipulati
 ## Overview
 The **Home-Service Robot project** serves as a comprehensive showcase of robotics expertise, leveraging state-of-the-art technologies and methodologies to demonstrate a mobile robot's capabilities in a simulated environment. This project harnesses the power of **Robot Operating System (ROS)**, **Gazebo simulation**, advanced **mapping**, **localization**, and **path planning** to illustrate the robot's prowess in autonomous navigation and manipulation.
 
-## **Environment Design and Modeling**
+## **Designing in Physics Engine - Gazebo**
 ### Building Editor, Model Editor, and Plugins
 The project entails the creation of a dynamic environment using the **Building Editor** in Gazebo, offering ample space for the robot's operations. The environment features diverse elements and vibrant colors, enhancing the robot's navigation experience. The robot itself is meticulously designed using the **Model Editor**, ensuring precise integration of sensors and mechanical components. **Fixed joints** connect the robot's model links, guaranteeing stability during movement.
 
