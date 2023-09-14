@@ -93,5 +93,5 @@ By achieving its objectives and presenting valuable results, this project contri
 [Presentation Slides presented to the panel members](https://docs.google.com/presentation/d/1IUcf8SZGhImtNFdskbcalEr65jUCI7tMqxSCZA2hNxg/edit?usp=sharing)
 
 #### Capstone Published Report
-<iframe width="1860" height="1515" src="https://docs.google.com/document/d/e/2PACX-1vQEjvZ7WFPeaCaECitunE8KDouWRWg3FyvxoIi6ortcic_arMBw8hQPu8k_WMAXVg/pub?embedded=true"></iframe>
+<iframe width="560" height="915" src="https://docs.google.com/document/d/e/2PACX-1vQEjvZ7WFPeaCaECitunE8KDouWRWg3FyvxoIi6ortcic_arMBw8hQPu8k_WMAXVg/pub?embedded=true"></iframe>
 
