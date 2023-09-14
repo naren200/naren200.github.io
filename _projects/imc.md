@@ -1,6 +1,6 @@
 ---
 name: International eYantra Robotics Competition
-tools: [Vrep, Hardware Implementation, Sensors Integration, Actuators, Debugging, Troubleshooting, embedded C, Path Planning, Robot Communication, 3D Design, Prototyping, CNC Machining]
+tools: [Vrep, Hardware Implementation, Actuators, Sensors Integration, Troubleshooting, embedded C, Path Planning, Robot Communication, 3D Design, Prototyping, CNC Machining]
 image: ../imgs/projects/cob-homeImage.png
 description: Simulated an autonomous bot using ROS & Gazebo to solve an unknown maze in the shortest time
 number: three
@@ -103,6 +103,20 @@ These features highlight the key functionalities and components of this project,
 
 ----
 
+## Flow Charts
+### Wall Following Algorithm
+<img src="../imgs/projects/cob-wallfollowing.jpg" alt="drawing" width="350"/>
+
+### Zig Zag Following Algorithm
+<img src="../imgs/projects/cob-zigzag.jpg" alt="drawing" width="350"/>
+
+### Full Competition Algorithm 
+<img src="../imgs/projects/cob-fullalgo.jpg" alt="drawing" width="350"/>
+
+
+
+----
+
 
 ## Retrofitting Problems Faced
 
@@ -140,7 +154,7 @@ These features highlight the key functionalities and components of this project,
  
 
 ## Achievements 
-This team has been selected as one of **National Finalists out of 1051 teams** in the **Construct-O-Bot theme**. 
+##### This team has been selected as one of **National Finalists out of 1051 teams** in the **Construct-O-Bot theme**. 
 <iframe src="../pdfs/eyrc_certificate.pdf" width="80%" height="800px" frameborder="0"></iframe>
 
 
