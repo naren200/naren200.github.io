@@ -1,12 +1,15 @@
 ---
 name: Bachelor's Capstone Project
-tools: [Python, 2D Motion, Robotics]
+tools: [Python, 2D Dynamics, , Runge-Kutta, Robotics]
 image: ../imgs/projects/home-service-robot.png
 description: Demonstrating a mobile robot's autonomous navigation and manipulation capabilities in a simulated environment using ROS and Gazebo.
 ---
 
 
+
 # Visualization and Prediction of Two-Dimensional Motion of Towed Objects in Ship Operations
+
+
 
 ### Introduction
 
