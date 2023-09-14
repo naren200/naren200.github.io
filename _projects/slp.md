@@ -23,7 +23,7 @@ The primary objectives of this project are as follows:
 
 2. **Geo-Positioning:** Determine the geo-position of the towed object even when the ship is maneuvering or changing course.
 
-3. **Impact Analysis:** Investigate the impact of **mass** and **drag coefficient** variations on the trajectory of the towed object.
+3. **Impact Analysis:** Investigate the impact of mass and drag coefficient variations on the trajectory of the towed object.
 
 ### Methodology
 
@@ -61,21 +61,21 @@ The project utilizes a comprehensive methodology to achieve its objectives, incl
 The results and discussions chapter presents the outcomes of the project's methodology. It provides insights into different models, including one-element and two-element systems with varying drag force models. The results highlight the influence of parameters such as mass, drag coefficient, and reaction force on the path of the towed object.
 
 #### 2 element Pulled by a ship floating over water exempting reaction force
-<img src="../imgs/projects/btp-2eleSquareVel.png" alt="drawing" width="1050"/>
+<img src="../imgs/projects/btp-2eleSquareVel.png" alt="drawing" width="750"/>
 
 <iframe width="860" height="515" src="https://www.youtube.com/embed/YFoKVlstZ_M?si=KGWpGarvp4oo-uqT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 #### 2 element Pulled by a ship floating over water
-<img src="../imgs/projects/btp-2eleSquareVel.png" alt="drawing" width="1050"/>
+<img src="../imgs/projects/btp-2eleSquareVel.png" alt="drawing" width="750"/>
 
 <iframe width="860" height="515" src="https://www.youtube.com/embed/vceQAGDQ87Y?si=YR_2BpI2SnBR0yrh&amp;start=4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 #### 3 element Pulled by a ship floating over water
-<img src="../imgs/projects/btp-3eleSquareVelo.png" alt="drawing" width="1050"/>
+<img src="../imgs/projects/btp-3eleSquareVelo.png" alt="drawing" width="750"/>
 <iframe width="860" height="515" src="https://www.youtube.com/embed/a6lihBmAW-k?si=WKNcNfPCVYQ2RxZo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 #### Desgined a GUI for visualization
-<img src="../imgs/projects/btp-guiWebsite.png" alt="drawing" width="1050"/>
+<img src="../imgs/projects/btp-guiWebsite.png" alt="drawing" width="750"/>
 <iframe width="860" height="515" src="https://www.youtube.com/embed/YjliApwyPz8?si=iNXiWvH-jmig4GaZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ----
@@ -93,5 +93,5 @@ By achieving its objectives and presenting valuable results, this project contri
 [Presentation Slides presented to the panel members](https://docs.google.com/presentation/d/1IUcf8SZGhImtNFdskbcalEr65jUCI7tMqxSCZA2hNxg/edit?usp=sharing)
 
 #### Capstone Published Report
-<iframe width="560" height="915" src="https://docs.google.com/document/d/e/2PACX-1vQEjvZ7WFPeaCaECitunE8KDouWRWg3FyvxoIi6ortcic_arMBw8hQPu8k_WMAXVg/pub?embedded=true"></iframe>
+<iframe width="860" height="815" src="https://docs.google.com/document/d/e/2PACX-1vQEjvZ7WFPeaCaECitunE8KDouWRWg3FyvxoIi6ortcic_arMBw8hQPu8k_WMAXVg/pub?embedded=true"></iframe>
 
