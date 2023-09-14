@@ -9,7 +9,7 @@ number: three
 # International eYantra Robotics Competition
 
 ## Motivation
-<img src="../imgs/projects/cob-introduction.png" alt="drawing" width="800"/>
+<img src="../imgs/projects/cob-introduction.png" alt="drawing" width="1000"/>
 
 Environmental conditions such as extreme rainfall, earthquakes, landslides and floods often cause natural disasters which lead to tremendous loss of life and property, causing great disruption in people’s lives and the economy. In 2018, across the world there were 315 natural disaster events recorded with 11,804 deaths, over 68 millions of people were affected, and 131.7 billion dollars in economic losses.
 
@@ -22,44 +22,28 @@ The team that finishes the given task in the least amount of time whilst incurri
 <img src="../imgs/projects/cob-Arena.png" alt="drawing" width="850"/>
 
 ## Objective
-The objective was to design an autonomous bot simulated using ROS and Gazebo to reach from the corner square to the center of an unknown maze in the shortest time.
+Design and implement a robotic system capable of efficiently and safely assisting in disaster site reconstruction, addressing challenges such as material handling, navigation, and sensor calibration.
 
-My team consisted of <a href="https://trunc8.github.io/">Siddharth Saha</a> and Shubham Agrawal. Led by Siddharth, our team won the competition completeling the track in minimum time with no penalities!
+My team consisted of <a href="https://www.linkedin.com/in/neeraj-kumar-gond-543092170/">Neeraj Gond</a>, <a href="https://www.linkedin.com/in/nikhil-anand-3164b818b/">Nikhil Anand</a>, <a href="https://naren200.github.io/">Narendhiran Saravanane</a>, and <a href="https://www.linkedin.com/in/neeraj-goyal-85067014b/">Neeraj Goyal</a>. Led by Narendhiran, our team won the competition completeling the track in minimum time with no penalities!
 
 Our implementation can be seen <a href="https://www.youtube.com/watch?v=PcbNQ-tVwQw">here</a> and the link the repository is <a href="https://github.com/trunc8/international-micromouse-techfest2020">here.</a>
 
 
-1) white line sensor: 
-                line following           
-                node detection
-                Black-White-Black following 
-                zig zag line following   (time consuming & not effective)
-
-2) proximity sensor:
-                wall following 
-                House/Block detection 
-3) Servo motor:
-                Pick blocks
-                Place on different height (Low rise & High rise)
-                2 Servo arm design (effective & used)
-                1 servo arm design
-
-
 
 ## Hardware 
-- Sensors
-        - Proximity Sensor/ Sharp Sensor
-        - White Line Sensor
-- Actuators
-        - Geared DC Motor with Encoder
-        - Servo Motors
-- Micro-Controllers
-        - Atmega 2560 Development board
-- Miscellaneous
-        - LCD
-        - L298N Motor Driver
-        - Buzzers
-        - Potentiometers
+1. Sensors
+    - Proximity Sensor/ Sharp Sensor
+    - White Line Sensor
+2. Actuators
+    - Geared DC Motor with Encoder
+    - Servo Motors
+3. Micro-Controllers
+    - Atmega 2560 Development board
+4. Miscellaneous
+    - LCD
+    - L298N Motor Driver
+    - Buzzers
+    - Potentiometers
 
 ### Hardware Testing Before Assembly
 
@@ -73,16 +57,30 @@ Our implementation can be seen <a href="https://www.youtube.com/watch?v=PcbNQ-tV
 
 
 ## Virtual Simulation - V-Rep
-<iframe width="1060" height="515" src="https://www.youtube.com/embed/UqZlvbHdpMs?si=1xlNS-8Qw6fTCUFS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1060" height="815" src="https://www.youtube.com/embed/UqZlvbHdpMs?si=1xlNS-8Qw6fTCUFS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## <u> Solidworks Design and CNC Machining</u>
 <img src="../imgs/projects/cob-DesignSolidWorks.png" alt="drawing" width="650"/>
 
 
-## Final Task - Project Submission Video
+## Critical Features of the Project
 
-<iframe width="1060" height="515" src="https://www.youtube.com/embed/V-e3XbXu6AY?si=2X5BBffCpzHD_z1v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+1. white line sensor: 
+    - line following           
+    - node detection
+    - Black-White-Black following 
+    - zig zag line following   (time consuming & not effective)
+2. proximity sensor:
+    - wall following 
+    - House/Block detection 
+3. Servo motor:
+    - Pick blocks
+    - Place on different height (Low rise & High rise)
+    - 2 Servo arm design (effective & used)
+    - 1 servo arm design
 
+#### Note: Quick Highlights - All Essential Strategies Showcased.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w3wBqJ6DisA?si=7jdh7NidJmqMFRql" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Retrofitting Problems Faced
 
@@ -90,7 +88,7 @@ Our implementation can be seen <a href="https://www.youtube.com/watch?v=PcbNQ-tV
 
 **Problem:** Due to increased vibration and shivering of the robot during fast movement, misorientation of the gripper before picking the material (M) is possible, leading to the gripper not picking up the material during simulation in reality.
 
-**Solution:** Increase the contact-surface area of the gripper. (See Fig. 4 )
+**Solution:** Increase the contact-surface area of the gripper. (See Fig. 4)
 
 ### Challenge 2: Height of Material (M)
 
@@ -119,6 +117,17 @@ Our implementation can be seen <a href="https://www.youtube.com/watch?v=PcbNQ-tV
 **Solution:** Implement three sets of calibrated values dependent on the battery level of the robot. This calibration approach was determined through trial-and-error methods after various simulations.
  
 
-
-
 ## Achievements 
+<img src="../imgs/projects/cob-RoboticArm.png" alt="drawing" width="850"/>
+
+
+
+----
+
+## References
+
+### Project Submission Video
+
+<iframe width="1060" height="515" src="https://www.youtube.com/embed/V-e3XbXu6AY?si=2X5BBffCpzHD_z1v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
