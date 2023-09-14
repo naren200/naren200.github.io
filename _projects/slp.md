@@ -33,7 +33,8 @@ The primary objectives of this project are as follows:
 
 The project utilizes a comprehensive methodology to achieve its objectives, including the consideration of **drag forces** and various scenarios. The key components of the methodology include:
 
-<img src="../imgs/projects/btp-fbd.png" alt="drawing" width="550"/>
+#### Free Body Diagram of the 2 Element Mechanism
+<img src="../imgs/projects/btp-fbd.png" alt="drawing" width="350"/>
 
 
 1. **Drag Force Analysis:** The project considers drag forces acting on the towed object, taking into account both **form drag** and **skin friction drag**, and employs the **drag force coefficient** formula.
@@ -101,7 +102,7 @@ By achieving its objectives and presenting valuable results, this project contri
 ### Achievements
 
 ```
-Selected as one of the Top set of Projects in the Mechanical Engineering Department, Indian Institute of Technology Patna, India.
+Selected as one of the **Top Projects** in the **Mechanical Engineering Department**, Indian Institute of Technology Patna, India.
 ```
 
 ### References
