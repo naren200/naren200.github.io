@@ -15,6 +15,8 @@ description: Developing a visualizable model to predict the motion of towed obje
 
 This project aims to develop a visualizable prediction model for the **two-dimensional motion** of towed objects in ship operations, with a specific focus on situations involving **maneuvering or changing course**. The towed objects in question are hydrophone systems towed by military vessels, which are crucial for signal reception and tracking in both commercial and military applications.
 
+<img src="../imgs/projects/btp-introduction.png" alt="drawing" width="550"/>
+
 ### Objectives
 
 The primary objectives of this project are as follows:
@@ -30,6 +32,9 @@ The primary objectives of this project are as follows:
 ### Methodology
 
 The project utilizes a comprehensive methodology to achieve its objectives, including the consideration of **drag forces** and various scenarios. The key components of the methodology include:
+
+<img src="../imgs/projects/btp-fbd.png" alt="drawing" width="550"/>
+
 
 1. **Drag Force Analysis:** The project considers drag forces acting on the towed object, taking into account both **form drag** and **skin friction drag**, and employs the **drag force coefficient** formula.
 2. **Assumptions:** Several assumptions are made to simplify the problem, such as assuming 2D dynamics, a still water surface, and the ability of the towed array system to overcome disturbances caused by waves.
