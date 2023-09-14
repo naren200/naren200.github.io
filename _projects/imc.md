@@ -1,6 +1,6 @@
 ---
 name: International eYantra Robotics Competition
-tools: [Vrep, Hardware Implementation, Sensors Integration, Actuators, Debugging, Troubleshooting, embedded C, Path Planning, Robot Communication]
+tools: [Vrep, Hardware Implementation, Sensors Integration, Actuators, Debugging, Troubleshooting, embedded C, Path Planning, Robot Communication, 3D Design, Prototyping, CNC Machining]
 image: ../imgs/projects/cob-homeImage.png
 description: Simulated an autonomous bot using ROS & Gazebo to solve an unknown maze in the shortest time
 number: three
@@ -9,7 +9,7 @@ number: three
 # International eYantra Robotics Competition
 
 ## Motivation
-<img src="../imgs/projects/cob-introducion.png" alt="drawing" width="500"/>
+<img src="../imgs/projects/cob-introduction.png" alt="drawing" width="500"/>
 
 Environmental conditions such as extreme rainfall, earthquakes, landslides and floods often cause natural disasters which lead to tremendous loss of life and property, causing great disruption in people’s lives and the economy. In 2018, across the world there were 315 natural disaster events recorded with 11,804 deaths, over 68 millions of people were affected, and 131.7 billion dollars in economic losses.
 
@@ -31,27 +31,58 @@ Our implementation can be seen <a href="https://www.youtube.com/watch?v=PcbNQ-tV
 We came up with omni-wheeled bot to reduce steering latency.
 <img src="../imgs/projects/imc2.png" alt="drawing" width="250"/>
 
+Types of successful activities/features performed:
+ 
+1) white line sensor: 
+                line following           
+                node detection
+                Black-White-Black following 
+                zig zag line following   (time consuming & not effective)
 
-### <u>Navigation</u>
-The navigation problem was divided into two parts:<br>
-1.Incrementally building a maze representation<br>
-2.Path Planning & Control<br>
-
-Part 1: Maze Representation
-In the first part, there were several details adding to the complexity:
-
-multiple reference frames attached to the world, the mobile robot, and our maze representation
-odometry and laser scan data were in continuous position coordinates
-conversion from the continuous position coordinates to discrete entries in our maze representation
-After solving these, we dealt with the problem of noisy laser data. For this, we maintained a confidence matrix — if the same wall was seen above a threshold number of times, it would be added in the maze representation.
-
-Part 2: Path Search and Planning
-In order to deal with the lack of knowledge of the full maze in the exploration phase, we designed an online breadth-first search based planning algorithm that dynamically replanned whenever a new wall was seen and added to the modelled maze representation.
-
-Approach to Minimize Time
-The performance was timed in two phases: one exploratory phase and several final runs (best time considered). We began the exploration phase at a slower speed. Once it reached the target square, we incremented the speed by 0.03 m/s. This marked the end of exploration phase. Thereafter, each time it finished a final run, the speed was incremented. Evidently, it would reach high speeds within a few increments.
-
-At some point, the speed would overpower the controls where it would slip and collide against the maze wall. Our algorithm routine gracefully shut down at that point. Since the best of final run times was taken, we were able to minimize it greatly while ascertaining that we definitely got the solution by starting at a slow velocity!
+2) proximity sensor:
+                wall following 
+                House/Block detection 
+3) Servo motor:
+                Pick blocks
+                Place on different height (Low rise & High rise)
+                2 Servo arm design (effective & used)
+                1 servo arm design
 
 
 
+## Hardware 
+- Sensors
+    - Proximity Sensor/ Sharp Sensor
+    - White Line Sensor
+- Actuators
+    - Geared DC Motor with Encoder
+    - Servo Motors
+- Micro-Controllers
+    - Atmega 2560 Development board
+- Miscellaneous
+    - LCD
+    - L298N Motor Driver
+    - Buzzers
+    - Potentiometers
+
+### Hardware Testing Before Assembly
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AbuGMjoGe7Q?si=x4FHMmbtjjgI6C3F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+### Hardware Testing After Assembly
+<img src="../imgs/projects/cob-robotAllsideView.png" alt="drawing" width="650"/>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RYoa6PcAsZs?si=F6VTSUC6STHSGCrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+## Virtual Simulation - V-Rep
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UqZlvbHdpMs?si=1xlNS-8Qw6fTCUFS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## <u> Solidworks Design and CNC Machining</u>
+<img src="../imgs/projects/cob-DesignSolidWorks.png" alt="drawing" width="650"/>
+
+
+## Final Task - Project Submission Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/V-e3XbXu6AY?si=2X5BBffCpzHD_z1v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
