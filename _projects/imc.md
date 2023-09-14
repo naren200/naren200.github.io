@@ -75,7 +75,7 @@ In our project, **SolidWorks** played a pivotal role in the design phase, allowi
 <img src="../imgs/projects/cob-robotAllsideView.png" alt="drawing" width="650"/>
 
 
-## Critical Features of the Project
+## <u>Critical Features of the Project</u>
 
 **White Line Sensor:**
 1. Line Following
@@ -109,13 +109,13 @@ These features highlight the key functionalities and components of this project,
 
 **Problem:** Due to increased vibration and shivering of the robot during fast movement, misorientation of the gripper before picking the material (M) is possible, leading to the gripper not picking up the material during simulation in reality.
 
-**Solution:** Increase the contact-surface area of the gripper. (See Fig. 4)
+**Solution:** Increase the contact-surface area of the gripper. (See Fig. 4 & 6)
 
 ### Challenge 2: Height of Material (M)
 
 **Problem:** Our robot is 15cm in height, and it needs to pick up material (M) from a 3cm height.
 
-**Solution:** Implement an L-shaped arm or 2 movable links consisting of 2 servos for the arm and 1 servo for the gripper. This solution is chosen for cost-effectiveness and better problem-solving with limited time. (See Fig. 5 & 6)
+**Solution:** Implement an L-shaped arm or 2 movable links consisting of 2 servos for the arm and 1 servo for the gripper. This solution is chosen for cost-effectiveness and better problem-solving with limited time. (See Fig. 5)
 
 <img src="../imgs/projects/cob-RoboticArm.png" alt="drawing" width="850"/>
 
@@ -139,7 +139,8 @@ These features highlight the key functionalities and components of this project,
  
 
 ## Achievements 
-<img src="../imgs/projects/cob-RoboticArm.png" alt="drawing" width="850"/>
+This team has been selected as one of **National Finalists out of 1051 teams** in the **Construct-O-Bot theme**. 
+<iframe src="../pdfs/eyrc_certificate.pdf" width="100%" height="800px" frameborder="0"></iframe>
 
 
 
@@ -151,7 +152,6 @@ These features highlight the key functionalities and components of this project,
 
 <iframe width="860" height="515" src="https://www.youtube.com/embed/V-e3XbXu6AY?si=2X5BBffCpzHD_z1v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<iframe src="../pdfs/eyrc_certificate.pdf" width="100%" height="500px" frameborder="0"></iframe>
 
 
 
