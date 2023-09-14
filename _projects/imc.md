@@ -59,16 +59,17 @@ Our implementation can be seen <a href="https://www.youtube.com/watch?v=PcbNQ-tV
 </div>
 ----
 
-## <u>Virtual Simulation - V-Rep</u>
+## <u>Virtual Simulation</u>
+### Code Testing - Vrep Robotic Simulator
 In our project, we employed the versatile **V-rep** simulation robotic simulator as the testing ground for our autonomous robotic system. Utilizing **embedded C**, we meticulously coded our robot to seamlessly integrate a suite of sensors, including the **proximity sensor** and **white line sensor**, ensuring robust perception capabilities. For autonomous navigation, we implemented the renowned **A* algorithm**, enabling our robot to make intelligent decisions while navigating complex terrains and dynamic environments within the simulator. Furthermore, our system excelled in **picking and placing objects** with precision, a crucial skill in real-world applications. Key features of our project encompassed proficient **black and white line following**, sophisticated **wall following algorithms**, and agile **zigzag following algorithms**, showcasing our commitment to advancing automation and robotics in the **industry**.
 
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/UqZlvbHdpMs?si=1xlNS-8Qw6fTCUFS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-----
 
-### <u>Solidworks Design and CNC Machining</u>
+
+### Solidworks Design and CNC Machining
 In our project, **SolidWorks** played a pivotal role in the design phase, allowing us to create precise and intricate 3D models of the components and structures. These detailed designs were then translated into reality using a **CNC machine**, which skillfully carved the **acrylic sheets** with remarkable precision. The CNC machine ensured that the acrylic sheets were cut to exact specifications, maintaining the integrity and accuracy of the final product. This seamless synergy between advanced design software like SolidWorks and state-of-the-art CNC machining technology was instrumental in achieving high-quality results for our project in the **engineering industry**.
 
 <img src="../imgs/projects/cob-DesignSolidWorks.png" alt="drawing" width="650"/>
@@ -140,7 +141,7 @@ These features highlight the key functionalities and components of this project,
 
 ## Achievements 
 This team has been selected as one of **National Finalists out of 1051 teams** in the **Construct-O-Bot theme**. 
-<iframe src="../pdfs/eyrc_certificate.pdf" width="100%" height="800px" frameborder="0"></iframe>
+<iframe src="../pdfs/eyrc_certificate.pdf" width="80%" height="800px" frameborder="0"></iframe>
 
 
 
@@ -152,6 +153,7 @@ This team has been selected as one of **National Finalists out of 1051 teams** i
 
 <iframe width="860" height="515" src="https://www.youtube.com/embed/V-e3XbXu6AY?si=2X5BBffCpzHD_z1v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-
-
-
+### Presentation before Panel Members, Academic Experts, and Industry Leads
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/NCbEUZE8Mh8?si=8ZX-ViTfTSaYfeRE&amp;start=5811" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
