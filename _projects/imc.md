@@ -45,12 +45,13 @@ Our implementation can be seen <a href="https://www.youtube.com/watch?v=PcbNQ-tV
     - Buzzers
     - Potentiometers
 
-### Hardware Testing Before Assembly
+**Hardware Testing Before Assembly**
+<div style="text-align: center;">
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AbuGMjoGe7Q?si=x4FHMmbtjjgI6C3F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/AbuGMjoGe7Q?si=x4FHMmbtjjgI6C3F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
-
-### Hardware Testing After Assembly
+**Hardware Testing After Assembly**
 <img src="../imgs/projects/cob-robotAllsideView.png" alt="drawing" width="650"/>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RYoa6PcAsZs?si=F6VTSUC6STHSGCrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -59,28 +60,34 @@ Our implementation can be seen <a href="https://www.youtube.com/watch?v=PcbNQ-tV
 ## Virtual Simulation - V-Rep
 <iframe width="1060" height="815" src="https://www.youtube.com/embed/UqZlvbHdpMs?si=1xlNS-8Qw6fTCUFS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## <u> Solidworks Design and CNC Machining</u>
+### <u> Solidworks Design and CNC Machining</u>
 <img src="../imgs/projects/cob-DesignSolidWorks.png" alt="drawing" width="650"/>
 
 
 ## Critical Features of the Project
 
-1. white line sensor: 
-    - line following           
-    - node detection
-    - Black-White-Black following 
-    - zig zag line following   (time consuming & not effective)
-2. proximity sensor:
-    - wall following 
-    - House/Block detection 
-3. Servo motor:
-    - Pick blocks
-    - Place on different height (Low rise & High rise)
-    - 2 Servo arm design (effective & used)
-    - 1 servo arm design
+**White Line Sensor:**
+1. Line Following
+2. Node Detection
+3. Black-White-Black Line Following
+4. Zig Zag Line Following (Time Consuming & Not Effective)
+
+**Proximity Sensor:**
+1. Wall Following
+2. House/Block Detection
+
+**Servo Motor:**
+1. Pick Blocks
+2. Place Blocks at Different Heights (Low Rise & High Rise)
+3. 2 Servo Arm Design (Effective & Used)
+4. 1 Servo Arm Design
+
+These features highlight the key functionalities and components of this project, showcasing the capabilities of this robot, including its ability to follow lines, detect nodes, navigate black-white-black patterns, handle proximity to walls, detect houses or blocks, and effectively manipulate blocks using servo arms at varying heights.
+
+
 
 #### Note: Quick Highlights - All Essential Strategies Showcased.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/w3wBqJ6DisA?si=7jdh7NidJmqMFRql" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="860" height="515" src="https://www.youtube.com/embed/w3wBqJ6DisA?si=7jdh7NidJmqMFRql" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Retrofitting Problems Faced
 
@@ -128,9 +135,9 @@ Our implementation can be seen <a href="https://www.youtube.com/watch?v=PcbNQ-tV
 
 ### Project Submission Video
 
-<iframe width="1060" height="515" src="https://www.youtube.com/embed/V-e3XbXu6AY?si=2X5BBffCpzHD_z1v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="860" height="515" src="https://www.youtube.com/embed/V-e3XbXu6AY?si=2X5BBffCpzHD_z1v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<iframe src="../imgs/projects/eyrc_certificate.pdf" width="100%" height="500px" frameborder="0"></iframe>
+<iframe src="../pdfs/eyrc_certificate.pdf" width="100%" height="500px" frameborder="0"></iframe>
 
 
 
