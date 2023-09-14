@@ -158,6 +158,10 @@ These features highlight the key functionalities and components of this project,
 <iframe src="../pdfs/eyrc_certificate.pdf" width="80%" height="800px" frameborder="0"></iframe>
 
 
+## Paper Published on this working model - Indian Institute of Technology Science, Banglore
+<iframe src="../pdfs/ID50_Full_Paper.pdf" width="80%" height="800px" frameborder="0"></iframe>
+
+
 
 ----
 
