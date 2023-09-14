@@ -1,6 +1,6 @@
 ---
 name: International eYantra Robotics Competition
-tools: [Vrep, Hardware Implementation, Actuators, Sensors Integration, Troubleshooting, embedded C, Path Planning, Robot Communication, 3D Design, Prototyping, CNC Machining]
+tools: [Vrep, Hardware Implementation, Prototyping, Sensors Integration, Troubleshooting, embedded C, Path Planning, 3D Design, Robot Communication, CNC Machining]
 image: ../imgs/projects/cob-homeImage.png
 description: Simulated an autonomous bot using ROS & Gazebo to solve an unknown maze in the shortest time
 number: three
@@ -75,6 +75,7 @@ In our project, **SolidWorks** played a pivotal role in the design phase, allowi
 <img src="../imgs/projects/cob-DesignSolidWorks.png" alt="drawing" width="650"/>
 <img src="../imgs/projects/cob-robotAllsideView.png" alt="drawing" width="650"/>
 
+----
 
 ## <u>Critical Features of the Project</u>
 
