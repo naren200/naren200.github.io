@@ -29,39 +29,50 @@ My team consisted of <a href="https://www.linkedin.com/in/neeraj-kumar-gond-5430
 Our implementation can be seen <a href="https://www.youtube.com/watch?v=PcbNQ-tVwQw">here</a> and the link the repository is <a href="https://github.com/trunc8/international-micromouse-techfest2020">here.</a>
 
 
+## Hardware
+**Sensors**
+1. Proximity Sensor/Sharp Sensor
+2. White Line Sensor
 
-## Hardware 
-1. Sensors
-    - Proximity Sensor/ Sharp Sensor
-    - White Line Sensor
-2. Actuators
-    - Geared DC Motor with Encoder
-    - Servo Motors
-3. Micro-Controllers
-    - Atmega 2560 Development board
-4. Miscellaneous
-    - LCD
-    - L298N Motor Driver
-    - Buzzers
-    - Potentiometers
+**Actuators**
+1. Geared DC Motor with Encoder
+2. Servo Motors
+
+**Micro-Controllers**
+1. Atmega 2560 Development board
+
+**Miscellaneous**
+1. LCD
+2. L298N Motor Driver
+3. Buzzers
+4. Potentiometers
 
 **Hardware Testing Before Assembly**
 <div style="text-align: center;">
-
     <iframe width="560" height="315" src="https://www.youtube.com/embed/AbuGMjoGe7Q?si=x4FHMmbtjjgI6C3F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 **Hardware Testing After Assembly**
-<img src="../imgs/projects/cob-robotAllsideView.png" alt="drawing" width="650"/>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RYoa6PcAsZs?si=F6VTSUC6STHSGCrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/RYoa6PcAsZs?si=F6VTSUC6STHSGCrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+----
 
+## <u>Virtual Simulation - V-Rep</u>
+In our project, we employed the versatile **V-rep** simulation robotic simulator as the testing ground for our autonomous robotic system. Utilizing **embedded C**, we meticulously coded our robot to seamlessly integrate a suite of sensors, including the **proximity sensor** and **white line sensor**, ensuring robust perception capabilities. For autonomous navigation, we implemented the renowned **A* algorithm**, enabling our robot to make intelligent decisions while navigating complex terrains and dynamic environments within the simulator. Furthermore, our system excelled in **picking and placing objects** with precision, a crucial skill in real-world applications. Key features of our project encompassed proficient **black and white line following**, sophisticated **wall following algorithms**, and agile **zigzag following algorithms**, showcasing our commitment to advancing automation and robotics in the **industry**.
 
-## Virtual Simulation - V-Rep
-<iframe width="1060" height="815" src="https://www.youtube.com/embed/UqZlvbHdpMs?si=1xlNS-8Qw6fTCUFS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/UqZlvbHdpMs?si=1xlNS-8Qw6fTCUFS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
-### <u> Solidworks Design and CNC Machining</u>
+----
+
+### <u>Solidworks Design and CNC Machining</u>
+In our project, **SolidWorks** played a pivotal role in the design phase, allowing us to create precise and intricate 3D models of the components and structures. These detailed designs were then translated into reality using a **CNC machine**, which skillfully carved the **acrylic sheets** with remarkable precision. The CNC machine ensured that the acrylic sheets were cut to exact specifications, maintaining the integrity and accuracy of the final product. This seamless synergy between advanced design software like SolidWorks and state-of-the-art CNC machining technology was instrumental in achieving high-quality results for our project in the **engineering industry**.
+
 <img src="../imgs/projects/cob-DesignSolidWorks.png" alt="drawing" width="650"/>
+<img src="../imgs/projects/cob-robotAllsideView.png" alt="drawing" width="650"/>
 
 
 ## Critical Features of the Project
@@ -86,8 +97,11 @@ These features highlight the key functionalities and components of this project,
 
 
 
-#### Note: Quick Highlights - All Essential Strategies Showcased.
+<u>Note: Quick Highlights - All Essential Strategies Showcased.</u>
 <iframe width="860" height="515" src="https://www.youtube.com/embed/w3wBqJ6DisA?si=7jdh7NidJmqMFRql" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+----
+
 
 ## Retrofitting Problems Faced
 
