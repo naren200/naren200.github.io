@@ -87,3 +87,11 @@ The results and discussions chapter presents the outcomes of the project's metho
 In conclusion, this project addresses the critical need to predict and visualize the motion of towed objects in ship operations, especially in scenarios involving maneuvering. The developed visualizable model can assist military operations and enhance the effectiveness of towed array systems. Additionally, the project contributes to understanding the impact of drag forces and other parameters on the motion of towed objects.
 
 By achieving its objectives and presenting valuable results, this project contributes to the field of marine technology and hydrodynamics, benefiting both military and commercial applications.
+
+### References
+#### Presentation
+[Presentation Slides presented to the panel members](https://docs.google.com/presentation/d/1IUcf8SZGhImtNFdskbcalEr65jUCI7tMqxSCZA2hNxg/edit?usp=sharing)
+
+#### Capstone Published Report
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vQEjvZ7WFPeaCaECitunE8KDouWRWg3FyvxoIi6ortcic_arMBw8hQPu8k_WMAXVg/pub?embedded=true"></iframe>
+
