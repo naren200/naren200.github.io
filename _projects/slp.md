@@ -26,6 +26,7 @@ The primary objectives of this project are as follows:
 2. **Geo-Positioning:** Determine the geo-position of the towed object even when the ship is maneuvering or changing course.
 
 3. **Impact Analysis:** Investigate the impact of mass and drag coefficient variations on the trajectory of the towed object.
+
 ----
 
 
@@ -100,10 +101,8 @@ By achieving its objectives and presenting valuable results, this project contri
 
 
 ### Achievements
+##### Selected as one of the **Top Projects** in the **Mechanical Engineering Department**, Indian Institute of Technology Patna, India.
 
-```
-Selected as one of the **Top Projects** in the **Mechanical Engineering Department**, Indian Institute of Technology Patna, India.
-```
 
 ### References
 #### Presentation
