@@ -41,15 +41,17 @@ The project utilizes a comprehensive methodology to achieve its objectives, incl
 
 The results and discussions chapter presents the outcomes of the project's methodology. It provides insights into different models, including one-element and two-element systems with varying drag force models. The results highlight the influence of parameters such as mass, drag coefficient, and reaction force on the path of the towed object.
 
+##### 2 element Pulled by a ship floating over water exempting reaction force
+<iframe width="860" height="315" src="https://www.youtube.com/embed/YFoKVlstZ_M?si=KGWpGarvp4oo-uqT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+##### 2 element Pulled by a ship floating over water
+<iframe width="860" height="315" src="https://www.youtube.com/embed/vceQAGDQ87Y?si=YR_2BpI2SnBR0yrh&amp;start=4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-[2 element Pulled by a ship floating over water exempting reaction force](https://youtu.be/YFoKVlstZ_M)
-[2 element Pulled by a ship floating over water](https://youtu.be/vceQAGDQ87Y)
-[3 element Pulled by a ship floating over water](https://youtu.be/a6lihBmAW-k)
+##### 3 element Pulled by a ship floating over water
+<iframe width="860" height="315" src="https://www.youtube.com/embed/a6lihBmAW-k?si=WKNcNfPCVYQ2RxZo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-[GUI of the 1 element model](https://youtu.be/YjliApwyPz8)
 ##### Desgined a GUI for visualization
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YjliApwyPz8?si=iNXiWvH-jmig4GaZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="860" height="315" src="https://www.youtube.com/embed/YjliApwyPz8?si=iNXiWvH-jmig4GaZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Conclusion
 
