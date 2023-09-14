@@ -24,6 +24,8 @@ The primary objectives of this project are as follows:
 2. **Geo-Positioning:** Determine the geo-position of the towed object even when the ship is maneuvering or changing course.
 
 3. **Impact Analysis:** Investigate the impact of mass and drag coefficient variations on the trajectory of the towed object.
+----
+
 
 ### Methodology
 
@@ -61,17 +63,17 @@ The project utilizes a comprehensive methodology to achieve its objectives, incl
 The results and discussions chapter presents the outcomes of the project's methodology. It provides insights into different models, including one-element and two-element systems with varying drag force models. The results highlight the influence of parameters such as mass, drag coefficient, and reaction force on the path of the towed object.
 
 #### 2 element Pulled by a ship floating over water exempting reaction force
-<img src="../imgs/projects/btp-2eleSquareVel.png" alt="drawing" width="750"/>
+<img src="../imgs/projects/btp-2eleSquareVel.png" alt="drawing" width="450"/>
 
 <iframe width="860" height="515" src="https://www.youtube.com/embed/YFoKVlstZ_M?si=KGWpGarvp4oo-uqT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 #### 2 element Pulled by a ship floating over water
-<img src="../imgs/projects/btp-2eleSquareVel.png" alt="drawing" width="750"/>
+<img src="../imgs/projects/btp-2eleSquareVel.png" alt="drawing" width="450"/>
 
 <iframe width="860" height="515" src="https://www.youtube.com/embed/vceQAGDQ87Y?si=YR_2BpI2SnBR0yrh&amp;start=4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 #### 3 element Pulled by a ship floating over water
-<img src="../imgs/projects/btp-3eleSquareVelo.png" alt="drawing" width="750"/>
+<img src="../imgs/projects/btp-3eleSquareVelo.png" alt="drawing" width="450"/>
 <iframe width="860" height="515" src="https://www.youtube.com/embed/a6lihBmAW-k?si=WKNcNfPCVYQ2RxZo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 #### Desgined a GUI for visualization
@@ -88,10 +90,15 @@ In conclusion, this project addresses the critical need to predict and visualize
 
 By achieving its objectives and presenting valuable results, this project contributes to the field of marine technology and hydrodynamics, benefiting both military and commercial applications.
 
+----
+
+
 ### References
 #### Presentation
-[Presentation Slides presented to the panel members](https://docs.google.com/presentation/d/1IUcf8SZGhImtNFdskbcalEr65jUCI7tMqxSCZA2hNxg/edit?usp=sharing)
 
-#### Capstone Published Report
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS0RJFhrUeS5FA8i7XEwbZWVfNGFlW-1MuFLEV1Dqgy9I45SkpC43ROtj1-sLThOsvnsjhbm1e7GL8B/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+#### Capstone Published Report FYI - Takes time to load :) 
 <iframe width="860" height="815" src="https://docs.google.com/document/d/e/2PACX-1vQEjvZ7WFPeaCaECitunE8KDouWRWg3FyvxoIi6ortcic_arMBw8hQPu8k_WMAXVg/pub?embedded=true"></iframe>
 
