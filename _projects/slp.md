@@ -6,7 +6,7 @@ description: Demonstrating a mobile robot's autonomous navigation and manipulati
 ---
 
 
-**Title:** Visualization and Prediction of Two-Dimensional Motion of Towed Objects in Ship Operations
+# Visualization and Prediction of Two-Dimensional Motion of Towed Objects in Ship Operations
 
 ### Introduction
 
@@ -27,7 +27,6 @@ The primary objectives of this project are as follows:
 The project utilizes a comprehensive methodology to achieve its objectives, including the consideration of **drag forces** and various scenarios. The key components of the methodology include:
 
 1. **Drag Force Analysis:** The project considers drag forces acting on the towed object, taking into account both **form drag** and **skin friction drag**, and employs the **drag force coefficient** formula.
-
 2. **Assumptions:** Several assumptions are made to simplify the problem, such as assuming 2D dynamics, a still water surface, and the ability of the towed array system to overcome disturbances caused by waves.
 
 3. **Global Position Distribution:** A flow chart is presented to illustrate the process of determining the coordinates of the ship's position and each element's position along the trajectory.
@@ -47,9 +46,10 @@ The results and discussions chapter presents the outcomes of the project's metho
 [2 element Pulled by a ship floating over water exempting reaction force](https://youtu.be/YFoKVlstZ_M)
 [2 element Pulled by a ship floating over water](https://youtu.be/vceQAGDQ87Y)
 [3 element Pulled by a ship floating over water](https://youtu.be/a6lihBmAW-k)
-[GUI of the 1 element model](https://youtu.be/YjliApwyPz8)
-<iframe width="1050" height="591" src="https://youtu.be/YjliApwyPz8" frameborder="0" allowfullscreen></iframe>
 
+[GUI of the 1 element model](https://youtu.be/YjliApwyPz8)
+##### Desgined a GUI for visualization
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YjliApwyPz8?si=iNXiWvH-jmig4GaZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Conclusion
 
