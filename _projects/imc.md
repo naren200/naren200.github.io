@@ -130,4 +130,7 @@ Our implementation can be seen <a href="https://www.youtube.com/watch?v=PcbNQ-tV
 
 <iframe width="1060" height="515" src="https://www.youtube.com/embed/V-e3XbXu6AY?si=2X5BBffCpzHD_z1v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+<iframe src="../imgs/projects/eyrc_certificate.pdf" width="100%" height="500px" frameborder="0"></iframe>
+
+
 
