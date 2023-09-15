@@ -8,12 +8,12 @@ description: Worked in a team of 4 on a project involving DCGANs for realistic i
 
 ## Table of Content
 1. [**Project Overview**](#project-overview)
-    - [Key Components of DcGANs](#key-components-of-dcgans)
-    - [Dataset](#dataset)
+  - [Key Components of DcGANs](#key-components-of-dcgans)
+  - [Dataset](#dataset)
 2. [**Training Overview**](#training-overview)
-    - [Training Details](#training-details)
-    - [Evaluation Metrics](#evaluation-metrics)
-    - [Loss Function](#loss-function)
+  - [Training Details](#training-details)
+  - [Evaluation Metrics](#evaluation-metrics)
+  - [Loss Function](#loss-function)
 3. [**Project Outcome**](#project-outcome)
 4. [**Conclusion**](#conclusion)
 5. [**References**](#references)
@@ -76,6 +76,7 @@ The DCGAN is trained over several epochs, and the training process includes visu
 - **Loss Function**: Binary Cross-Entropy (Log Loss).
 <img src="../imgs/projects/gan-logloss.png" alt="drawing" width="850"/>
 
+<pre>
 - **Game of Minimax**: DCGAN involves two neural networks, the Generator and the Discriminator, in a minimax game.
   - Generator minimizes the loss function.
   - Discriminator maximizes the same loss function.
@@ -86,6 +87,7 @@ The DCGAN is trained over several epochs, and the training process includes visu
     - D(G(z)): Discriminator's estimate of the probability that a fake instance is real.
     - Ex: Expected value over all real data instances.
 
+</pre>
 <img src="../imgs/projects/gan-equation.jpg" alt="drawing" width="650"/>
 
 ----
@@ -104,6 +106,8 @@ DCGAN is a powerful generative model that has applications in image generation, 
 
 #### Graph of the DCGAN loss vs. epoch
 <img src="../imgs/projects/gan-graph.png" alt="drawing" width="550"/>
+
+----
 
 
 ## Conclusion
