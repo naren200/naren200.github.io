@@ -76,7 +76,8 @@ The DCGAN is trained over several epochs, and the training process includes visu
 - **Loss Function**: Binary Cross-Entropy (Log Loss).
 <img src="../imgs/projects/gan-logloss.png" alt="drawing" width="850"/>
 
-<pre>
+```
+
 - **Game of Minimax**: DCGAN involves two neural networks, the Generator and the Discriminator, in a minimax game.
   - Generator minimizes the loss function.
   - Discriminator maximizes the same loss function.
@@ -87,7 +88,8 @@ The DCGAN is trained over several epochs, and the training process includes visu
     - D(G(z)): Discriminator's estimate of the probability that a fake instance is real.
     - Ex: Expected value over all real data instances.
 
-</pre>
+```
+
 <img src="../imgs/projects/gan-equation.jpg" alt="drawing" width="650"/>
 
 ----

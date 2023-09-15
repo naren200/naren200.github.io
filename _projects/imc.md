@@ -8,17 +8,30 @@ number: three
 
 # International eYantra Robotics Competition
 
+## Table of Content
+1. [**International eYantra Robotics Competition**](#international-eyantra-robotics-competition)
+    - [Motivation](#motivation)
+    - [Theme - Construct-O-Bot](#theme---construct-o-bot)
+    - [Project Objective](#objective)
+2. [**Hardware**](#hardware)
+    - [Hardware Testing Before Assembly](#hardware-testing-before-assembly)
+    - [Hardware Testing After Assembly](#hardware-testing-after-assembly)
+3. [**Virtual Simulation**](#virtual-simulation) -> [Code Testing - Vrep Robotic Simulator](#code-testing---vrep-robotic-simulator) | [Solidworks Design and CNC Machining](#solidworks-design-and-cnc-machining)
+4. [**Critical Features of the Project**](#critical-features-of-the-project)
+5. [**Flow Charts**](#flow-charts) -> [Wall Following Algorithm](#wall-following-algorithm) | [Zig Zag Following Algorithm](#zig-zag-following-algorithm) | [Full Competition Algorithm](#full-competition-algorithm)
+6. [**Retrofitting challenges**](#retrofitting-challenges)
+7. [**Achievements**](#achievements)
+8. [**Paper Published on this working model - Indian Institute of Technology Science, Bangalore**](#paper-published-on-this-working-model---indian-institute-of-technology-science-bangalore)
+9. [**References**](#references)
+
 ## Motivation
 <img src="../imgs/projects/cob-introduction.png" alt="drawing" width="1000"/>
 
-Environmental conditions such as extreme rainfall, earthquakes, landslides and floods often cause natural disasters which lead to tremendous loss of life and property, causing great disruption in people’s lives and the economy. In 2018, across the world there were 315 natural disaster events recorded with 11,804 deaths, over 68 millions of people were affected, and 131.7 billion dollars in economic losses.
-
-After a disaster strikes, governments and private organizations engage in reconstruction efforts of infrastructure, such as roads, bridges, power and railway lines, houses etc. This is a very labor and capital-intensive task. Moreover, doing this at a disaster site, with its multiple associated risks and challenging terrain, poses an additional challenge. Motivated by this scenario, in order to help the needy victims in the affected areas, this edition of e-Yantra Robotics Competition (eYRC 2019-20) presents the theme Contruct-o-Bot.
+Natural disasters like extreme rainfall, earthquakes, landslides, and floods cause immense human and economic losses globally. In 2018 alone, 315 such disasters resulted in 11,804 fatalities, affecting over 68 million people and causing $131.7 billion in damages. Post-disaster, reconstruction efforts are essential, but they are capital and labor-intensive, especially in challenging terrains. The e-Yantra Robotics Competition (eYRC 2019-20) addresses this by introducing the theme "Construct-o-Bot" to aid disaster-stricken areas.
 
 ## Theme - Construct-O-Bot 
-In this theme, the arena is an abstraction of a disaster site where the robot picks the construction material and traverses paths in order to deposit it at the site to be reconstructed. In order to maneuver over these paths, the Construct-O-Bot has to use intelligent line-following and path-planning algorithms to reach safely and quickly using shortest paths. After reaching the site, the Construct-O-Bot carefully has to place the material at the required positions which may include placing the material at different heights from the ground. It has to deposit all required material at multiple construction sites, navigating through various terrains.
+The "Construct-o-Bot" theme simulates a disaster site, where robots retrieve construction materials and navigate complex paths to deliver them for reconstruction. Using intelligent line-following and path-planning algorithms, these robots aim to reach their destination swiftly and safely, choosing the shortest routes. At the site, they must precisely position materials at varying heights. Success requires efficient delivery to multiple sites, including diverse terrains. The winning team completes the task swiftly with minimal penalties.
 
-The team that finishes the given task in the least amount of time whilst incurring the least penalties will be declared the winner.
 <img src="../imgs/projects/cob-Arena.png" alt="drawing" width="850"/>
 
 ## Objective
@@ -59,7 +72,7 @@ My team consisted of <a href="https://www.linkedin.com/in/neeraj-kumar-gond-5430
 
 ## <u>Virtual Simulation</u>
 ### Code Testing - Vrep Robotic Simulator
-In our project, we employed the versatile **V-rep** simulation robotic simulator as the testing ground for our autonomous robotic system. Utilizing **embedded C**, we meticulously coded our robot to seamlessly integrate a suite of sensors, including the **proximity sensor** and **white line sensor**, ensuring robust perception capabilities. For autonomous navigation, we implemented the renowned **A* algorithm**, enabling our robot to make intelligent decisions while navigating complex terrains and dynamic environments within the simulator. Furthermore, our system excelled in **picking and placing objects** with precision, a crucial skill in real-world applications. Key features of our project encompassed proficient **black and white line following**, sophisticated **wall following algorithms**, and agile **zigzag following algorithms**, showcasing our commitment to advancing automation and robotics in the **industry**.
+In our project, we harnessed the power of **V-rep**, a versatile robotic simulator, to rigorously test our autonomous system. Leveraging **embedded C**, we expertly coded our robot, equipping it with **proximity** and **white line sensors** for robust perception. Implementing the renowned **A* algorithm**, our robot exhibited intelligent navigation in complex terrains. Our system excelled in **precise object manipulation**, emphasizing our dedication to automation and robotics in the industry.
 
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/UqZlvbHdpMs?si=1xlNS-8Qw6fTCUFS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -68,7 +81,8 @@ In our project, we employed the versatile **V-rep** simulation robotic simulator
 
 
 ### Solidworks Design and CNC Machining
-In our project, **SolidWorks** played a pivotal role in the design phase, allowing us to create precise and intricate 3D models of the components and structures. These detailed designs were then translated into reality using a **CNC machine**, which skillfully carved the **acrylic sheets** with remarkable precision. The CNC machine ensured that the acrylic sheets were cut to exact specifications, maintaining the integrity and accuracy of the final product. This seamless synergy between advanced design software like SolidWorks and state-of-the-art CNC machining technology was instrumental in achieving high-quality results for our project in the **engineering industry**.
+In our project, **SolidWorks** was instrumental in designing precise 3D models. These designs were brought to life through a **CNC machine**, which meticulously carved **acrylic sheets** with precision. This synergy between design software and CNC technology ensured high-quality results in the **engineering industry**.
+
 
 <img src="../imgs/projects/cob-DesignSolidWorks.png" alt="drawing" width="650"/>
 <img src="../imgs/projects/cob-robotAllsideView.png" alt="drawing" width="650"/>
@@ -116,39 +130,15 @@ These features highlight the key functionalities and components of this project,
 ----
 
 
-## Retrofitting Problems Faced
+## Retrofitting challenges:
 
-### Challenge 1: Misorientation of Gripper
+1. **Gripper Misorientation:** Fast robot movements caused gripper misorientation during material pickup, hindering simulation accuracy. The solution involved increasing gripper contact surface (Fig. 4 & 6).
 
-**Problem:** Due to increased vibration and shivering of the robot during fast movement, misorientation of the gripper before picking the material (M) is possible, leading to the gripper not picking up the material during simulation in reality.
-
-**Solution:** Increase the contact-surface area of the gripper. (See Fig. 4 & 6)
-
-### Challenge 2: Height of Material (M)
-
-**Problem:** Our robot is 15cm in height, and it needs to pick up material (M) from a 3cm height.
-
-**Solution:** Implement an L-shaped arm or 2 movable links consisting of 2 servos for the arm and 1 servo for the gripper. This solution is chosen for cost-effectiveness and better problem-solving with limited time. (See Fig. 5)
-
+2. **Height Discrepancy:** The robot's 15cm height had to pick up material from a 3cm elevation. An L-shaped arm with servos for arm and gripper was implemented for cost-effectiveness (Fig. 5).
 <img src="../imgs/projects/cob-RoboticArm.png" alt="drawing" width="850"/>
 
-### Challenge 3: Placing Material (M) at Different Heights (HHP)
+3. **Sensor Data Optimization:** LCD displays introduced lag during sensor calibration. Eliminating the LCD and using Tera-Term for serial communication resolved this issue.
 
-**Problem:** When placing the material (M) in high-height places (HHP), it's challenging to differentiate the elevation of the placement location.
-
-**Solution:** Assume a fixed map of the industrial place. Save the elevation of the house or structure near that NODE in the map of the algorithm.
-
-### Challenge 4: Sensor Data Display
-
-**Problem:** Initially, an LCD display was used to display all sensor readings to calibrate the robot's algorithm. The LCD display introduced lag, making it impossible to extract maximum sensor data for smooth simulation.
-
-**Solution:** Exclude the LCD display and establish serial communication using Tera-Term to log data via the serial port. This eliminates lag issues and allows for the extraction of maximum sensor data.
-
-### Challenge 5: Sharp Line Sensor Calibration
-
-**Problem:** The Sharp line sensor had issues when detecting black-colored lines. Sensor data extracted depended on the battery charge, leading to calibration problems.
-
-**Solution:** Implement three sets of calibrated values dependent on the battery level of the robot. This calibration approach was determined through trial-and-error methods after various simulations.
  
 
 ## Achievements 
