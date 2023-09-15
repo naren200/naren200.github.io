@@ -26,8 +26,6 @@ Design and implement a robotic system capable of efficiently and safely assistin
 
 My team consisted of <a href="https://www.linkedin.com/in/neeraj-kumar-gond-543092170/">Neeraj Gond</a>, <a href="https://www.linkedin.com/in/nikhil-anand-3164b818b/">Nikhil Anand</a>, <a href="https://naren200.github.io/">Narendhiran Saravanane</a>, and <a href="https://www.linkedin.com/in/neeraj-goyal-85067014b/">Neeraj Goyal</a>. Led by Narendhiran, our team won the competition completeling the track in minimum time with no penalities!
 
-Our implementation can be seen <a href="https://www.youtube.com/watch?v=PcbNQ-tVwQw">here</a> and the link the repository is <a href="https://github.com/trunc8/international-micromouse-techfest2020">here.</a>
-
 
 ## Hardware
 **Sensors**
@@ -106,13 +104,13 @@ These features highlight the key functionalities and components of this project,
 
 ## Flow Charts
 ### Wall Following Algorithm
-<img src="../imgs/projects/cob-wallfollowing.jpg" alt="drawing" width="450"/>
+<img src="../imgs/projects/cob-wallfollowing.jpg" alt="drawing" width="550"/>
 
 ### Zig Zag Following Algorithm
 <img src="../imgs/projects/cob-zigzag.jpg" alt="drawing" width="350"/>
 
 ### Full Competition Algorithm 
-<img src="../imgs/projects/cob-fullalgo.jpg" alt="drawing" width="450"/>
+<img src="../imgs/projects/cob-fullalgo.jpg" alt="drawing" width="400"/>
 
 
 
