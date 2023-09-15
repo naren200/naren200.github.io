@@ -19,7 +19,7 @@ The baseline model in this object goal navigation task involves an agent that st
 
 ## **Key Components:**
 1. **Semantic Mapping:** We leverage semantic segmentation and object detection models to predict object categories in first-person RGB and depth images. A spatial map is built, representing obstacles, explored areas, and object categories.
-<img src="../imgs/projects/goal-semanticMap.png" alt="drawing" width="850"/>
+<img src="../imgs/projects/goal-semanticMap.png" alt="drawing" width="750"/>
 
 2. **Goal-Oriented Semantic Policy:** This policy module selects a long-term goal based on the semantic map. It considers the relative arrangement of objects and areas to determine where the goal object category is most likely to be found.
 
@@ -28,24 +28,28 @@ The baseline model in this object goal navigation task involves an agent that st
 
 
 ## **Proposed Changes**
-<img src="../imgs/projects/goal-ProposedChanges.png" alt="drawing" width="1050"/>
+<img src="../imgs/projects/goal-ProposedChanges.png" alt="drawing" width="850"/>
 
 ## **Results:**
 Our project's empirical results in visually realistic simulation environments demonstrate that the proposed model outperforms a range of baselines, including end-to-end learning-based methods and modular map-based methods. It not only excels in exploration and long-term planning but also provides an effective solution for object goal navigation.
 
-#### Baseline of the Paper
-<img src="../imgs/projects/goal-baselineResults.png" alt="drawing" width="1050"/>
+#### **Baseline of the Paper**
+<img src="../imgs/projects/goal-baselineResults.png" alt="drawing" width="950"/>
 
-#### Enhancements on Computer Vision
+#### **Enhancements on Computer Vision**
 <img src="../imgs/projects/goal-cvResults.png" alt="drawing" width="1050"/>
 
 **Note**: Baseline paper trains for 10M timesteps, our work runs for 1M due to time constraints
 
-##### Metrics:
+##### **Metrics**:
+
 **SUCC**: Ratio of episodes where the method was successful.
+
 **SPL**: Success weighted by Path Length (measures the efficiency of reaching the goal in addition to the success rate)
+
 **DTG**: Distance to Success. (distance of the agent from the success threshold boundary when the episode ends)
-<img src="../imgs/projects/goal-dts.png" alt="drawing" width="1050"/>
+
+<img src="../imgs/projects/goal-dts.png" alt="drawing" width="850"/>
 
 ## **Achievements:**
 The modular system introduced in this project was the winning entry of the CVPR-2020 Habitat ObjectNav Challenge, showcasing its effectiveness and potential impact.
@@ -58,3 +62,5 @@ This project represents a significant contribution to the field of robotics and 
 ## References
 1. [Semantic Exploration for Object Goal Navigation](https://arxiv.org/pdf/2007.00643.pdf)
 2. [Project Website](https://devendrachaplot.github.io/projects/semantic-exploration)
+3. Presented to CSE Department, ASU.
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR9VradbqEfNySO1Fjpku2b4585q3omqgroM7CXoFyAkiPmHT6LWH7A8wXH3Lof2vSCia6NDczprC4-/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
