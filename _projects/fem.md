@@ -1,17 +1,11 @@
 ---
 name: Deep Convolutional Generative Adversial Network (DcGANs)
 tools: [Python, Tensorflow, fashion mnist, Keras, Numpy]
-image: ../imgs/projects/gan-homeImage.png
+image: ../imgs/projects/gan-homeImage_out.jpeg
 description: Worked in a team of 5 on an autonomous robotic arm capable of picking and transporting items in a warehouse
 
 ---
 
----
-layout: project
-title: "Deep Convolutional Generative Adversarial Networks (DCGAN)"
-date: 2023-09-13
-image: /assets/images/dcgan.jpg
----
 
 # Deep Convolutional Generative Adversarial Networks (DCGAN)
 
@@ -31,7 +25,7 @@ The primary goal of this project was to implement a DCGAN architecture using Pyt
 
 - **Data Preparation**: The project uses the Fashion MNIST dataset, which contains grayscale images of various fashion items. The dataset is preprocessed to scale pixel values to the range [-1, 1].
 
-<img src="../imgs/projects/gan-homeImage.png" alt="drawing" width="550"/>
+<img src="../imgs/projects/gan-Architecture.png" alt="drawing" width="950"/>
 
 ### Dataset
 
@@ -43,7 +37,9 @@ The primary goal of this project was to implement a DCGAN architecture using Pyt
   - Licensed under the MIT License.
   - Available in Keras.
 
-<img src="../imgs/projects/gan-mnist.png" alt="drawing" width="550"/>
+<img src="../imgs/projects/gan-mnist.png" alt="drawing" width="350"/>
+
+----
 
 ### Training Overview
 
@@ -79,20 +75,20 @@ The DCGAN is trained over several epochs, and the training process includes visu
     - D(G(z)): Discriminator's estimate of the probability that a fake instance is real.
     - Ex: Expected value over all real data instances.
 
-<img src="../imgs/projects/gan-equation.jpg" alt="drawing" width="850"/>
+<img src="../imgs/projects/gan-equation.jpg" alt="drawing" width="650"/>
 
+----
 
-### Visualizations
-
-The project includes visualizations of generated images at different training stages to showcase the progress and capabilities of the DCGAN.
 
 ## Project Outcome
 
 DCGAN is a powerful generative model that has applications in image generation, data augmentation, and more. This project demonstrates the implementation and training of a DCGAN architecture to generate fashion item images. It serves as a foundation for understanding GANs and their applications in the field of computer vision.
 
-<img src="../imgs/projects/gan-resultsepoch1and50.png" alt="drawing" width="850"/>
+<img src="../imgs/projects/gan-resultsepoch1and50.png" alt="drawing" width="950"/>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cyXw7y1FSA0?si=uLTzm8v80Qx5R5La" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div style="text-align: center;">
+    <iframe width="560" height="560" src="https://www.youtube.com/embed/cyXw7y1FSA0?si=uLTzm8v80Qx5R5La" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 
 #### Graph of the DCGAN loss vs. epoch
