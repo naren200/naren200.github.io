@@ -104,10 +104,10 @@ These features highlight the key functionalities and components of this project,
 
 ## Flow Charts
 ### Wall Following Algorithm
-<img src="../imgs/projects/cob-wallfollowing.jpg" alt="drawing" width="550"/>
+<img src="../imgs/projects/cob-wallfollowing.jpg" alt="drawing" width="650"/>
 
 ### Zig Zag Following Algorithm
-<img src="../imgs/projects/cob-zigzag.jpg" alt="drawing" width="350"/>
+<img src="../imgs/projects/cob-zigzag.jpg" alt="drawing" width="400"/>
 
 ### Full Competition Algorithm 
 <img src="../imgs/projects/cob-fullalgo.jpg" alt="drawing" width="400"/>
