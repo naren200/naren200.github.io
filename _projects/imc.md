@@ -1,8 +1,8 @@
 ---
-name: International eYantra Robotics Competition
+name: eYantra Robotics Competition
 tools: [Vrep, Hardware Implementation, Prototyping, Sensors Integration, Troubleshooting, embedded C, Path Planning, 3D Design, Robot Communication, CNC Machining]
 image: ../imgs/projects/cob-homeImage.png
-description: Simulated an autonomous bot using ROS & Gazebo to solve an unknown maze in the shortest time
+description: Designed and implemented a disaster response robot, integrating sensors, navigation algorithms, and precise hardware implementation.
 number: three
 ---
 
