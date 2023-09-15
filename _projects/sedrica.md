@@ -15,7 +15,7 @@ This project builds upon the foundation of the original research paper by introd
 
 ## **Baseline:**
 The baseline model in this object goal navigation task involves an agent that starts at a random location within an environment, with the goal of navigating to a specific object category, such as 'chair' or 'bed.' The agent receives visual observations in the form of first-person RGB and depth images, as well as sensor pose readings. It operates within an action space consisting of four actions: move_forward, turn_left, turn_right, and stop. The primary objective is to reach close proximity to the goal object and take the 'stop' action when it believes it has achieved this. If the agent's distance to the goal object falls below a threshold (ds = 1m), the episode is considered successful. Episodes are terminated after a fixed maximum number of time steps (timesteps = 500). The baseline serves as the starting point for evaluating the effectiveness of the proposed modular system, "Goal-Oriented Semantic Exploration," against other navigation methods, highlighting the challenges that traditional end-to-end learning-based approaches face in exploration and long-term planning within unfamiliar environments.
-<img src="../imgs/projects/goal-Visual2Map.gif" alt="drawing" width="1050"/>
+![Visual](../imgs/projects/goal-Visual2Map.gif)
 
 ## **Key Components:**
 1. **Semantic Mapping:** We leverage semantic segmentation and object detection models to predict object categories in first-person RGB and depth images. A spatial map is built, representing obstacles, explored areas, and object categories.
@@ -27,7 +27,7 @@ The baseline model in this object goal navigation task involves an agent that st
 <img src="../imgs/projects/goal-GlobalLocal.png" alt="drawing" width="850"/>
 
 
-## **Propsed Changes**
+## **Proposed Changes**
 <img src="../imgs/projects/goal-ProposedChanges.png" alt="drawing" width="1050"/>
 
 ## **Results:**
@@ -39,6 +39,14 @@ Our project's empirical results in visually realistic simulation environments de
 #### Enhancements on Computer Vision
 <img src="../imgs/projects/goal-cvResults.png" alt="drawing" width="1050"/>
 
+**Note**: Baseline paper trains for 10M timesteps, our work runs for 1M due to time constraints
+
+##### Metrics:
+**SUCC**: Ratio of episodes where the method was successful.
+**SPL**: Success weighted by Path Length (measures the efficiency of reaching the goal in addition to the success rate)
+**DTG**: Distance to Success. (distance of the agent from the success threshold boundary when the episode ends)
+<img src="../imgs/projects/goal-dts.png" alt="drawing" width="1050"/>
+
 ## **Achievements:**
 The modular system introduced in this project was the winning entry of the CVPR-2020 Habitat ObjectNav Challenge, showcasing its effectiveness and potential impact.
 
@@ -46,3 +54,7 @@ The modular system introduced in this project was the winning entry of the CVPR-
 The modular design of our system allows for easy adaptation to real-world mobile robot platforms, promising further advancements in object goal navigation in real-world scenarios.
 
 This project represents a significant contribution to the field of robotics and autonomous navigation, offering a versatile and efficient solution to the complex problem of finding and navigating to specific object categories in unfamiliar environments.
+
+## References
+1. [Semantic Exploration for Object Goal Navigation](https://arxiv.org/pdf/2007.00643.pdf)
+2. [Project Website](https://devendrachaplot.github.io/projects/semantic-exploration)
