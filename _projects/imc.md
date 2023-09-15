@@ -113,7 +113,6 @@ These features highlight the key functionalities and components of this project,
 <img src="../imgs/projects/cob-fullalgo.jpg" alt="drawing" width="400"/>
 
 
-
 ----
 
 
@@ -159,7 +158,6 @@ These features highlight the key functionalities and components of this project,
 
 ## Paper Published on this working model - Indian Institute of Technology Science, Banglore
 <iframe src="../pdfs/ID50_Full_Paper.pdf" width="80%" height="800px" frameborder="0"></iframe>
-
 
 
 ----

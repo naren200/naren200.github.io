@@ -1,30 +1,48 @@
 ---
-name: SeDriCa, Unmesh Mashruwala Innovation Cell
-tools: [Decision Making Subsystem]
-image:
-description: Working in a 20+ member team aiming to develop a self-driving car capable of transversing on Indian roads
+name: Object Goal Navigation Enhancement using Goal-Oriented Semantic Exploration
+tools: [Path Planning (RRT), Computer Vision (Yolov7), RL, Habitat Simulator]
+image: ../imgs/projects/goal-homeImage.png
+description: Advanced object goal navigation achieved through Goal-Oriented Semantic Exploration, combining semantic mapping, policy learning, and efficient path planning.
 external_url: 
 ---
 
-# SeDriCa, Unmesh Mashruwaala Innovation Cell
+# Object Goal Navigation Enhancement using Goal-Oriented Semantic Exploration
 
-We are a team of 20+ students working on building a self-driving car. We are presently aiming at <a href="http://www.igvc.org/index.htm">Intelligent Ground Vehicle Challenge(IGVC) 2022</a> particularly the Self Drive Challenge, held at Oakland University, Michigan. Our SedriCa comprises five subsystems: Perception (CV), Localisation, Path Planning, Decision Making, and Controls!
+## **Project Description:**
+This project builds upon the foundation of the original research paper by introducing significant enhancements to the object goal navigation task. The original research paper presents a groundbreaking modular system, "Goal-Oriented Semantic Exploration," addressing object goal navigation challenges. It outperforms existing methods and won the CVPR-2020 Habitat ObjectNav Challenge, showcasing its effectiveness in both simulations and real-world mobile robot applications. Leveraging the **Yolov7** computer vision algorithm and the **RRT** (Rapidly-exploring Random Trees) path planning algorithm, we aim to revolutionize how robots navigate to a specified object category in unfamiliar environments.
 
-* Computer vision module defines the understanding of the world in which our car is driving. This allows identifying cars, pedestrians, lanes, traffic signs, etc.
 
-* The localisation pipeline uses odometry, Kalman filter and Lidar slam to help ego vehicle localise itself. It also perform sensor fusion and merge data from other sensors such as Lidar to complement those obtained by the camera, making it possible to estimate the object's position identified by the camera.
 
-* We use an integrated motion Planning & Decision-Making pipeline to implement the brain of the autonomous vehicle. It uses the knowledge of the environment and its position to plan trajectories. A finite state machine is used as a decision-making method to define possible states of the car according to the situation. The motion planning system uses Hybrid A* to find a path. Further, with decision making, it performs velocity planning on the trajectory.
+## **Baseline:**
+The baseline model in this object goal navigation task involves an agent that starts at a random location within an environment, with the goal of navigating to a specific object category, such as 'chair' or 'bed.' The agent receives visual observations in the form of first-person RGB and depth images, as well as sensor pose readings. It operates within an action space consisting of four actions: move_forward, turn_left, turn_right, and stop. The primary objective is to reach close proximity to the goal object and take the 'stop' action when it believes it has achieved this. If the agent's distance to the goal object falls below a threshold (ds = 1m), the episode is considered successful. Episodes are terminated after a fixed maximum number of time steps (timesteps = 500). The baseline serves as the starting point for evaluating the effectiveness of the proposed modular system, "Goal-Oriented Semantic Exploration," against other navigation methods, highlighting the challenges that traditional end-to-end learning-based approaches face in exploration and long-term planning within unfamiliar environments.
+<img src="../imgs/projects/goal-Visual2Map.gif" alt="drawing" width="1050"/>
 
-* The control module is responsible for moving the vehicle by generating an angle for the steering wheel and acceleration. 
-The reference path plan received by the planning subsystem and the current state obtained from the Localisation is fed into our control algorithm -- NMPC,  which then solves an optimal control problem constrained by the vehicle dynamics model along with other mechanical constraints.
-The optimisation solver has three requirements-
-1. constraints such as road conditions, wheel slip and trajectory generated.
-2. Next, a model which is a dynamic bicycle model 
-3. Finally, a cost function.
+## **Key Components:**
+1. **Semantic Mapping:** We leverage semantic segmentation and object detection models to predict object categories in first-person RGB and depth images. A spatial map is built, representing obstacles, explored areas, and object categories.
+<img src="../imgs/projects/goal-semanticMap.png" alt="drawing" width="850"/>
 
-The NMPC algorithm looks at N-steps ahead using the vehicle model provided and calculates the best possible inputs for the system by optimising the cost function. The control outputs thus generated are then applied to the vehicle using drive by wire via the CAN module, and feedback is received for the next step, where this process is repeated to complete the closed-loop control.
+2. **Goal-Oriented Semantic Policy:** This policy module selects a long-term goal based on the semantic map. It considers the relative arrangement of objects and areas to determine where the goal object category is most likely to be found.
 
-We also implement a CAN module to communicate data between the calculated control input and the actuators. Further, we also use it to get feedback on the odometer and the status of the battery.
+3. **Deterministic Local Policy:** The local policy employs the Fast Marching Method for path planning from the current location to the long-term goal. It takes deterministic actions to reach the goal efficiently.
+<img src="../imgs/projects/goal-GlobalLocal.png" alt="drawing" width="850"/>
 
-We have <a href="https://youtu.be/8lNKjX0-RKY">demonstration video</a> for the work that was done with SeDriCa.
+
+## **Propsed Changes**
+<img src="../imgs/projects/goal-ProposedChanges.png" alt="drawing" width="1050"/>
+
+## **Results:**
+Our project's empirical results in visually realistic simulation environments demonstrate that the proposed model outperforms a range of baselines, including end-to-end learning-based methods and modular map-based methods. It not only excels in exploration and long-term planning but also provides an effective solution for object goal navigation.
+
+#### Baseline of the Paper
+<img src="../imgs/projects/goal-baselineResults.png" alt="drawing" width="1050"/>
+
+#### Enhancements on Computer Vision
+<img src="../imgs/projects/goal-cvResults.png" alt="drawing" width="1050"/>
+
+## **Achievements:**
+The modular system introduced in this project was the winning entry of the CVPR-2020 Habitat ObjectNav Challenge, showcasing its effectiveness and potential impact.
+
+## **Future Scope:**
+The modular design of our system allows for easy adaptation to real-world mobile robot platforms, promising further advancements in object goal navigation in real-world scenarios.
+
+This project represents a significant contribution to the field of robotics and autonomous navigation, offering a versatile and efficient solution to the complex problem of finding and navigating to specific object categories in unfamiliar environments.
