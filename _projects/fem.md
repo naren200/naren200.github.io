@@ -2,10 +2,21 @@
 name: Deep Convolutional Generative Adversial Network (DcGANs)
 tools: [Python, Tensorflow, fashion mnist, Keras, Numpy]
 image: ../imgs/projects/gan-homeImage_out.jpeg
-description: Worked in a team of 5 on an autonomous robotic arm capable of picking and transporting items in a warehouse
+description: Worked in a team of 4 on a project involving DCGANs for realistic image generation.
 
 ---
 
+## Table of Content
+1. [**Project Overview**](#project-overview)
+    - [Key Components of DcGANs](#key-components-of-dcgans)
+    - [Dataset](#dataset)
+2. [**Training Overview**](#training-overview)
+    - [Training Details](#training-details)
+    - [Evaluation Metrics](#evaluation-metrics)
+    - [Loss Function](#loss-function)
+3. [**Project Outcome**](#project-outcome)
+4. [**Conclusion**](#conclusion)
+5. [**References**](#references)
 
 # Deep Convolutional Generative Adversarial Networks (DCGAN)
 

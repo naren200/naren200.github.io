@@ -2,10 +2,14 @@
   percentage: 90
   color: danger
 
-- name: C/C++
+- name: C/C++ & Catkin
   percentage: 80
   color:
 
 - name: Matlab
   percentage: 70
+  color: secondary
+
+- name: embedded C
+  percentage: 90
   color: secondary
