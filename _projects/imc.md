@@ -9,19 +9,14 @@ number: three
 # International eYantra Robotics Competition
 
 ## Table of Content
-1. [**International eYantra Robotics Competition**](#international-eyantra-robotics-competition)
-    - [Motivation](#motivation)
-    - [Theme - Construct-O-Bot](#theme---construct-o-bot)
-    - [Project Objective](#objective)
-2. [**Hardware**](#hardware)
-    - [Hardware Testing Before Assembly](#hardware-testing-before-assembly)
-    - [Hardware Testing After Assembly](#hardware-testing-after-assembly)
-3. [**Virtual Simulation**](#virtual-simulation) -> [Code Testing - Vrep Robotic Simulator](#code-testing---vrep-robotic-simulator) | [Solidworks Design and CNC Machining](#solidworks-design-and-cnc-machining)
+1. [**International eYantra Robotics Competition**](#international-eyantra-robotics-competition) | [Motivation](#motivation) | [Theme - Construct-O-Bot](#theme---construct-o-bot) |  [Project Objective](#objective)
+2. [**Hardware**](#hardware) | [Hardware Testing Before Assembly](#hardware-testing-before-assembly) | [Hardware Testing After Assembly](#hardware-testing-after-assembly)
+3. [**Virtual Simulation**](#virtual-simulation) | [Code Testing - Vrep Robotic Simulator](#code-testing---vrep-robotic-simulator) | [Solidworks Design and CNC Machining](#solidworks-design-and-cnc-machining)
 4. [**Critical Features of the Project**](#critical-features-of-the-project)
 5. [**Flow Charts**](#flow-charts) -> [Wall Following Algorithm](#wall-following-algorithm) | [Zig Zag Following Algorithm](#zig-zag-following-algorithm) | [Full Competition Algorithm](#full-competition-algorithm)
 6. [**Retrofitting challenges**](#retrofitting-challenges)
 7. [**Achievements**](#achievements)
-8. [**Paper Published on this working model - Indian Institute of Technology Science, Bangalore**](#paper-published-on-this-working-model---indian-institute-of-technology-science-bangalore)
+8. [**Paper Published on this working model - Indian Institute of Technology Science, Bangalore**](#paper-published---indian-institute-of-technology-science-bangalore)
 9. [**References**](#references)
 
 ## Motivation
@@ -146,7 +141,7 @@ These features highlight the key functionalities and components of this project,
 <iframe src="../pdfs/eyrc_certificate.pdf" width="80%" height="800px" frameborder="0"></iframe>
 
 
-## Paper Published on this working model - Indian Institute of Technology Science, Banglore
+## Paper Published - Indian Institute of Technology Science, Banglore
 <iframe src="../pdfs/ID50_Full_Paper.pdf" width="80%" height="800px" frameborder="0"></iframe>
 
 
