@@ -5,7 +5,7 @@ permalink: /about/
 weight: 1
 ---
 
-**Table of Content** | <a href="#distinguishesme">What distinguishes me</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> |  <a href="#exp">Skills & Experience</a> 
+**Table of Content** | <a href="#distinguishesme">What Sets Me Apart</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> |  <a href="#exp">Skills & Experience</a> 
 
 <!-- # **About Me** -->
 <h1 style="text-align: center;"><b>About Me</b></h1>
@@ -20,7 +20,7 @@ weight: 1
 <div class="column" style="width: 88%; margin-left: 10px">
 
   <br>
-  <p style="font-size: 20px">Hello there  <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>. You call me Naren (Naa-R-ehN). </p>
+  <p style="font-size: 20px">Hello there  <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>. You call me Naren (Neh-R-ehN). </p>
     
   <br>
 
@@ -43,7 +43,7 @@ weight: 1
   <br>
 
   <p style="font-size: 18px">
-  Under my leadership, our team achieved recognition in robotics, becoming <a href="https://drive.google.com/file/d/1kweAUygwfA52OVF7uBK29grWofsJmhxy/view?usp=sharing">National finalists</a> in the 2019-20 <a href="https://portal.e-yantra.org/#about">e-Yantra International Robotics Competition</a> organized by <a href="https://www.iitb.ac.in/">IIT Bombay</a>. We developed an autonomous transportation mobile robot, showcasing innovation in disaster management. Additionally, I developed a simulator ecosystem for autonomous evaluation of the <a href="https://portal.e-yantra.org/#about">e-YRC competition</a>, earning recognition in the prestigious <a href="https://www.e-yantra.org/eysip">e-YIC program</a> under <a href="https://www.it.iitb.ac.in/~kavi/">Prof. Kavi Arya</a> from <a href="">IIT Bombay's Department of Computer Science & Engineering</a>.
+  Under my leadership, our team achieved recognition in robotics, becoming <a href="https://drive.google.com/file/d/1kweAUygwfA52OVF7uBK29grWofsJmhxy/view?usp=sharing">National finalists</a> in the 2019-20 <a href="https://portal.e-yantra.org/#about">e-Yantra International Robotics Competition</a> organized by <a href="https://www.iitb.ac.in/">IIT Bombay</a>. We developed an autonomous transportation mobile robot, showcasing innovation in disaster management. Additionally, I developed a simulator ecosystem for autonomous evaluation of the <a href="https://portal.e-yantra.org/#about">e-YRC competition</a>, earning recognition in the prestigious <a href="https://www.e-yantra.org/eysip">e-YIC program</a> under <a href="https://www.linkedin.com/in/kavi-arya/?originalSubdomain=in">Prof. Kavi Arya</a> from <a href="https://www.cse.iitb.ac.in/">IIT Bombay's Department of Computer Science & Engineering</a>.
   </p>
 
   <p style="font-size: 18px">
