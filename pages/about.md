@@ -5,11 +5,51 @@ permalink: /about/
 weight: 1
 ---
 
-**Table of Content** -->| <a href="#distinguishesme">What distinguishes me</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> |  <a href="#exp">Skills & Experience</a> 
+**Table of Content** | <a href="#distinguishesme">What distinguishes me</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> |  <a href="#exp">Skills & Experience</a> 
 
 <!-- # **About Me** -->
 <h1 style="text-align: center;"><b>About Me</b></h1>
 <br>
+
+
+**Table of Content** | [What Distinguishes Me](#distinguishesme) | [Questions That Excite Me](#Questionsexcitesme) | [Skills & Experience](#exp) 
+
+<h1 style="text-align: center;"><b>About Me</b></h1>
+
+<div class="column" style="width: 88%; margin-left: 10px">
+  <br>
+  <p style="font-size: 20px">Hello there <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>, but you can call me Naren (Naa-R-ehN).</p>
+    
+  <p style="font-size: 18px">
+  Currently, I'm studying at the epicenter of innovation, <a href="https://robotics.asu.edu/">ASU Robotics @ ASU</a>, and working on the Stretch R1 Robot as part of my <a href="https://ras.engineering.asu.edu/">M.S. in Robotics and Autonomous Systems program</a>, Batch of 2024. My life’s work focuses on advancing robotic capabilities in unstructured environments, emphasizing perception, Machine Learning, and Aerial Robotics. I believe that integrating automation with artificial intelligence can significantly enhance operational efficiency.
+  </p>
+
+  <p style="font-size: 18px">
+  I'm a passionate robotics enthusiast, constantly seeking opportunities to broaden my horizons. Learning new things is enjoyable, but applying them to real-life problems thrills me the most. I have a knack for understanding the big picture and recognizing the connections between fundamental tasks and long-term goals.
+  </p>
+
+  <p style="font-size: 18px">
+  This corner of the web is where I share insights into my mind and provide updates on my work.
+  </p>
+  <br>
+  <p style="font-size: 18px">
+  I graduated from <a href="https://www.iitp.ac.in/">IIT Patna</a> in 2022 with a Bachelor’s in <a href="https://www.iitp.ac.in/index.php/departments/engineering-technology/mechanical-engineering/">Mechanical Engineering</a>. Notably, I was selected as an Undergraduate Project Finalist for my successful development of a Motion Prediction model for a Towed floating object, in collaboration with <a href="https://www.iitp.ac.in/index.php/people-6/faculty/2-uncategorised/241-view-profile-38">Prof. Subrata Kumar</a> during my Mechanical Engineering degree program.
+  </p>
+
+  <p style="font-size: 18px">
+  Under my leadership, our team achieved recognition in robotics by developing an autonomous transportation mobile robot for international search and rescue challenges. We earned the title of <a href="https://drive.google.com/file/d/1kweAUygwfA52OVF7uBK29grWofsJmhxy/view?usp=sharing">National finalists</a> in the 2019-20 <a href="https://portal.e-yantra.org/#about">e-Yantra International Robotics Competition</a> organized by <a href="https://www.iitb.ac.in/">IIT Bombay</a>. Our innovative solution demonstrated its potential impact in disaster management. Over six months of dedicated work, innovation, and teamwork, our robot's exceptional capabilities captured the judges' attention, solidifying our accomplishment and commitment to leveraging robotics for meaningful impact.
+  </p>
+
+  <p style="font-size: 18px">
+  I also developed a simulator ecosystem for autonomous evaluation of the <a href="https://portal.e-yantra.org/#about">e-YRC competition</a>. This achievement led to my selection in the prestigious <a href="https://www.e-yantra.org/eysip">e-YIC program</a> under the guidance of <a href="https://www.it.iitb.ac.in/~kavi/">Prof. Kavi Arya</a> from <a href="https://www.iitb.ac.in/">IIT Bombay's</a> <a href="https://www.cse.iitb.ac.in/">Department of Computer Science & Engineering</a>. My work demonstrated innovation and technical expertise by creating a comprehensive platform that seamlessly assessed the e-YRC competition, bridging theory and practical application in robotics and AI.
+  </p>
+
+  <p style="font-size: 18px">
+  My research interests lie at the intersection of Artificial Intelligence and robotics. You can explore the fascinating research questions I'm passionate about <a href="#Questionsexcitesme">here</a>.
+  </p>
+</div>
+
+
 
 <div class="column">
 
@@ -51,13 +91,9 @@ weight: 1
   <p style="font-size: 18px">
 
     Developed a simulator ecosystem for autonomous evaluation of the <a href="https://portal.e-yantra.org/#about">e-YRC competition</a>, recognized through selection in the prestigious <a href="https://www.e-yantra.org/eysip">e-YIC program</a> under <a href="https://www.it.iitb.ac.in/~kavi/">Prof. Kavi Arya</a> from <a href="https://www.iitb.ac.in/">IIT Bombay's </a> <a href="https://www.cse.iitb.ac.in/">Department of Computer Science & Engineering</a>. Demonstrated innovation and technical expertise by creating a comprehensive platform that seamlessly assessed the e-YRC competition, bridging theory and practical application in robotics and AI.
-
-
-
-    <!-- In addition, I had the privilege of being selected to participate in the <a href="https://www.e-yantra.org/eysip">e-YIC program</a> under the guidance of <a href="https://www.it.iitb.ac.in/~kavi/">Prof. Kavi Arya</a> from the <a href="https://www.cse.iitb.ac.in/">Department of Computer Science & Engineering</a> at <a href="https://www.iitb.ac.in/">IIT Bombay</a>. During this program, I was able to develop a simulator ecosystem that could autonomously evaluate the <a href="https://portal.e-yantra.org/#about">e-YRC competition</a> in which I had previously participated. -->
   </p>
   <p style="font-size: 18px">
-    My research interests lie at the intersection of Artificial intelligence and robotics. You can read the research questions that I find very fascinating <a href="https://naren200.github.io/">here</a>.
+    My research interests lie at the intersection of Artificial intelligence and robotics. You can read the research questions that I find very fascinating <a href="#Questionsexcitesme">here</a>.
   </p>
   <br>
   <hr> <!-- This line creates a horizontal divider -->
@@ -97,13 +133,12 @@ weight: 1
   </p>
   <hr> <!-- This line creates a horizontal divider -->
 
-  <h2 id="exp" style="font-size: 20px"><b>Skills & Experience</b></h2>
+  <h2 id="exp" style="font-size: 30px"><b>Skills & Experience</b></h2>
 
 <div class="row">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
-<h2 style="font-size: 20px"><b>Questions that Excite me</b></h2>
 
 <div class="row">
 {% include about/timeline.html %}
