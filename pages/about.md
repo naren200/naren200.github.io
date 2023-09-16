@@ -5,7 +5,7 @@ permalink: /about/
 weight: 1
 ---
 
-**Table of Contents** | <a href="#distinguishesme">What distinguishes me</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> |
+**Table of Content** -->| <a href="#distinguishesme">What distinguishes me</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> |  <a href="#exp">Skills & Experience</a> 
 
 <!-- # **About Me** -->
 <h1 style="text-align: center;"><b>About Me</b></h1>
@@ -60,9 +60,9 @@ weight: 1
     My research interests lie at the intersection of Artificial intelligence and robotics. You can read the research questions that I find very fascinating <a href="https://naren200.github.io/">here</a>.
   </p>
   <br>
-  ----
   <br>
   <h2 id="distinguishesme" style="font-size: 20px">
+    ----
     <b>What distinguishes me, however, is my resilience, curiosity, and hacker mindset. </b>
   </h2>
   <p style="font-size: 18px">
@@ -75,9 +75,9 @@ weight: 1
     <b>Hacker mindset</b>: When creating a robot in R.O.S., I find Visual Studio Code more efficient than editing in a terminal within a docker environment. The speed of VScode and the availability of helpful plugins make it easier for me to create an environment and build a URDF file for a robot, as well as develop C++ plugins. This has made the process smoother and more streamlined.
   </p>
   <br>
-  ----
   <br>
   <p style="font-size: 18px">
+    ----
     I utilize all of these skills and characteristics to tackle complex problems that require creative solutions. I particularly enjoy taking on challenging problems and prioritizing the quality of the problem over other factors. My greatest passion lies in the field of machine learning and perception methods as they relate to robotics.
     With experience ranging from short-term code that won me national and international robotics competitions to long-term contributions to open-source projects, my software engineering expertise is versatile and adaptive, honed through various professional experiences. 
   </p>
@@ -97,10 +97,13 @@ weight: 1
   </p>
   ----
 
+  <h2 id="exp" style="font-size: 20px"><b>Skills & Experience</b></h2>
+
 <div class="row">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
+<h2 style="font-size: 20px"><b>Questions that Excite me</b></h2>
 
 <div class="row">
 {% include about/timeline.html %}
