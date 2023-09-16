@@ -6,12 +6,14 @@ permalink: /art/
 ---
 
 <br>
+<br>
+**Table of Content** | <a href="#Long-Term">Long-Term Goals</a> | <a href="#Past-Entrepreneurial">Past Entrepreneurial Experience</a> |  <a href="#Future-Imagination">A Long Way to Go</a> 
 
-<h1 style="text-align: center;">"My Entrepreneurial Journey: Pioneering with Purpose"</h1>
+<h1 style="text-align: center;">My Entrepreneurial Journey: Pioneering with Purpose</h1>
 
 <p style="text-align: center;">I am on a mission to leverage technology for global problem-solving through entrepreneurship. With a strong foundation in robotics and artificial intelligence, I am committed to creating businesses that drive positive change in the world.</p>
 
-<h2>Long-Term Goals:</h2>
+<h4  id="Long-Term">Long-Term Goals:</h4>
 
 <p><b>- At 30: Launch My Own Business</b> - My entrepreneurial spirit drives me to establish a technology-driven company that addresses real-world challenges. I'm currently exploring various ideas, eager to embark on this exciting journey.</p>
 
@@ -19,23 +21,23 @@ permalink: /art/
 
 <p><b>- At 50: Mentor Future Entrepreneurs</b> - Sharing my experience and expertise, I aspire to guide and support budding entrepreneurs. Through mentorship, coaching, and consulting, I aim to nurture the next generation of business leaders.</p>
 
-<h2>Passion for Entrepreneurship:</h2>
+<h4>Passion for Entrepreneurship:</h4>
 
 <p>Entrepreneurship is my driving force. I believe that my technical skills in robotics and AI, combined with my entrepreneurial mindset, can revolutionize industries. My vision includes developing cutting-edge robotics and AI solutions that solve real-world problems.</p>
 
-<h2>Past Entrepreneurial Experience:</h2>
+<h4 id="Past-Entrepreneurial">Past Entrepreneurial Experience:</h4>
 
 <p>In one significant project, I engaged in in-depth discussions with a business to understand its unique needs. Through tailored solutions and effective communication, I delivered valuable content that not only met expectations but also strengthened our professional relationship. This experience reinforced my belief in the power of technology and communication to create value.</p>
 
-<h2>Unlocking Potential:</h2>
+<h4>Unlocking Potential:</h4>
 
 <p>As you explore my portfolio, you'll discover my enthusiasm for entrepreneurship and how my technical expertise can drive successful ventures. I welcome collaborations with like-minded individuals and organizations to shape a future powered by technology-driven innovation.</p>
 
-<h2>Connect with Me:</h2>
+<h4>Connect with Me:</h4>
 
 <p>If you share my passion for entrepreneurship or seek collaboration opportunities, connect with me on <a href="https://www.linkedin.com/in/narendhiran2000/">LinkedIn</a>. Let's redefine possibilities with robotics and AI.</p>
 
-<h1>"A Long Way to Go: Isn't It!?"</h1>
+<h3 id="Future-Imagination">A Long Way to Go: Isn't It!?</h3>
 
 
 <style>
