@@ -5,13 +5,12 @@ weight: 4
 permalink: /art/
 ---
 
-**Table of Content** | <a href="#Long-Term">Long-Term Goals</a> | <a href="#Past-Entrepreneurial">Past Entrepreneurial Experience</a> |  <a href="#Future-Imagination">A Long Way to Go</a> 
-
 <br>
 <h1 style="text-align: center;">My Entrepreneurial Journey: Pioneering with Purpose</h1>
 
 <p style="text-align: center;">I am on a mission to leverage technology for global problem-solving through entrepreneurship. With a strong foundation in robotics and artificial intelligence, I am committed to creating businesses that drive positive change in the world.</p>
 
+<br>
 <h4  id="Long-Term">Long-Term Goals:</h4>
 
 <p><b>- At 30: Launch My Own Business</b> - My entrepreneurial spirit drives me to establish a technology-driven company that addresses real-world challenges. I'm currently exploring various ideas, eager to embark on this exciting journey.</p>
@@ -20,7 +19,7 @@ permalink: /art/
 
 <p><b>- At 50: Mentor Future Entrepreneurs</b> - Sharing my experience and expertise, I aspire to guide and support budding entrepreneurs. Through mentorship, coaching, and consulting, I aim to nurture the next generation of business leaders.</p>
 
-<h4>Passion for Entrepreneurship:</h4>
+<b>Passion for Entrepreneurship:</b>
 
 <p>Entrepreneurship is my driving force. I believe that my technical skills in robotics and AI, combined with my entrepreneurial mindset, can revolutionize industries. My vision includes developing cutting-edge robotics and AI solutions that solve real-world problems.</p>
 
@@ -32,7 +31,7 @@ permalink: /art/
 
 <p>As you explore my portfolio, you'll discover my enthusiasm for entrepreneurship and how my technical expertise can drive successful ventures. I welcome collaborations with like-minded individuals and organizations to shape a future powered by technology-driven innovation.</p>
 
-<h4>Connect with Me:</h4>
+<b>Connect with Me:</b>
 
 <p>If you share my passion for entrepreneurship or seek collaboration opportunities, connect with me on <a href="https://www.linkedin.com/in/narendhiran2000/">LinkedIn</a>. Let's redefine possibilities with robotics and AI.</p>
 
