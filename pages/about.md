@@ -48,8 +48,8 @@ weight: 1
   <br>
   <hr> <!-- This line creates a horizontal divider -->
   <br>
-  <h2 id="distinguishesme" style="font-size: 20px">
-    <b>What distinguishes me, however, is my resilience, curiosity, and hacker mindset. </b>
+  <h2 id="distinguishesme" style="font-size: 30px">
+    <b>What Sets Me Apart: Resilience, Curiosity, and Hacker Mindset.</b>
   </h2>
   <p style="font-size: 18px">
     <b>Resilience</b>: I excel in navigating complex projects, meeting tight deadlines, and overcoming technical obstacles by staying focused, adapting strategies, and collaborating with multidisciplinary teams. I'm committed to delivering high-quality solutions, leveraging setbacks as learning opportunities, and consistently striving for excellence in robotics. 
@@ -71,7 +71,7 @@ weight: 1
   </p>
   <br>
   <hr> <!-- This line creates a horizontal divider -->
-  <h2 id="Questionsexcitesme" style="font-size: 20px"><b>Questions that Excite me</b></h2>
+  <h2 id="Questionsexcitesme" style="font-size: 30px"><b>Questions that Excite me</b></h2>
   <p style="font-size: 18px">
     <ul style="font-size: 18px">
     <li><b>Robotic Autonomy in Unstructured Environments:</b> How can we enhance the autonomy of robots to navigate and perform complex tasks in unstructured, unpredictable environments such as disaster-stricken areas or space exploration missions? This question explores the challenges of developing robots that can adapt and make decisions independently in challenging scenarios.</li>
