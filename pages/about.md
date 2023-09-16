@@ -5,20 +5,13 @@ permalink: /about/
 weight: 1
 ---
 
-**Table of Content** | 
-Certainly! Here's a table of contents with hyperlinks for the page:
+**Table of Content** 
+    <ul>
+        <li><a href="#distinguishesme">What distinguishes me</a></li>
+        <li><a href="#Questionsexcitesme">Questions That Excites me</a></li>
+        <!-- Add more list items for other sections -->
+    </ul>
 
-1. [About Me](#about-me)
-2. [Hello there, I am Narendhiran](#hello-there-i-am-narendhiran)
-3. [My Academic Journey](#my-academic-journey)
-4. [My Research Interests](#my-research-interests)
-5. [Distinguishing Qualities](#distinguishing-qualities)
-6. [Questions that Excite Me](#questions-that-excite-me)
-7. [Programming Skills](#programming-skills)
-8. [Other Skills](#other-skills)
-9. [Timeline](#timeline)
-
-You can click on any of the links above to jump directly to that section of the page.
 <!-- # **About Me** -->
 <h1 style="text-align: center;"><b>About Me</b></h1>
 <br>
@@ -73,9 +66,9 @@ You can click on any of the links above to jump directly to that section of the 
   </p>
   <br>
   <br>
-  <p style="font-size: 18px">
+  <h2 id="distinguishesme" style="font-size: 18px">
     What distinguishes me, however, is my resilience, curiosity, and hacker mindset.
-  </p>
+  </h2>
   <p style="font-size: 18px">
     <b>Resilience</b>:  I have demonstrated resilience by navigating complex projects with tight deadlines and overcoming technical obstacles by staying focused, adapting strategies, and collaborating with multidisciplinary teams. I am committed to delivering high-quality solutions, leveraging setbacks as learning opportunities, and consistently striving for excellence in the ever-evolving field of robotics. 
   </p>
@@ -96,7 +89,7 @@ You can click on any of the links above to jump directly to that section of the 
   </p>
   <br>
 
-  <h2 style="font-size: 20px"><b>Questions that Excite me</b></h2>
+  <h2 id="Questionsexcitesme" style="font-size: 20px"><b>Questions that Excite me</b></h2>
   <p style="font-size: 18px">
     <ul style="font-size: 18px">
     <li><b>Human-Robot Interaction:</b> How can we develop intuitive and natural interfaces that enable seamless communication and collaboration between humans and robots? I am fascinated by the possibilities of creating socially-aware robots that can understand human intentions, adapt to dynamic environments, and assist humans in various tasks while ensuring safety and trust.</li>
