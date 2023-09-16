@@ -5,12 +5,7 @@ permalink: /about/
 weight: 1
 ---
 
-**Table of Content** 
-    <ul>
-        <li><a href="#distinguishesme">What distinguishes me</a></li>
-        <li><a href="#Questionsexcitesme">Questions That Excites me</a></li>
-        <!-- Add more list items for other sections -->
-    </ul>
+**Table of Content** | <a href="#distinguishesme">What distinguishes me</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> |
 
 <!-- # **About Me** -->
 <h1 style="text-align: center;"><b>About Me</b></h1>
