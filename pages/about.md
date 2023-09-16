@@ -5,7 +5,7 @@ permalink: /about/
 weight: 1
 ---
 
-**Table of Content** | <a href="#distinguishesme">What distinguishes me</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> |
+**Table of Contents** | <a href="#distinguishesme">What distinguishes me</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> |
 
 <!-- # **About Me** -->
 <h1 style="text-align: center;"><b>About Me</b></h1>
@@ -60,9 +60,10 @@ weight: 1
     My research interests lie at the intersection of Artificial intelligence and robotics. You can read the research questions that I find very fascinating <a href="https://naren200.github.io/">here</a>.
   </p>
   <br>
+  ----
   <br>
-  <h2 id="distinguishesme" style="font-size: 18px">
-    What distinguishes me, however, is my resilience, curiosity, and hacker mindset.
+  <h2 id="distinguishesme" style="font-size: 20px">
+    <b>What distinguishes me, however, is my resilience, curiosity, and hacker mindset. </b>
   </h2>
   <p style="font-size: 18px">
     <b>Resilience</b>:  I have demonstrated resilience by navigating complex projects with tight deadlines and overcoming technical obstacles by staying focused, adapting strategies, and collaborating with multidisciplinary teams. I am committed to delivering high-quality solutions, leveraging setbacks as learning opportunities, and consistently striving for excellence in the ever-evolving field of robotics. 
@@ -74,6 +75,7 @@ weight: 1
     <b>Hacker mindset</b>: When creating a robot in R.O.S., I find Visual Studio Code more efficient than editing in a terminal within a docker environment. The speed of VScode and the availability of helpful plugins make it easier for me to create an environment and build a URDF file for a robot, as well as develop C++ plugins. This has made the process smoother and more streamlined.
   </p>
   <br>
+  ----
   <br>
   <p style="font-size: 18px">
     I utilize all of these skills and characteristics to tackle complex problems that require creative solutions. I particularly enjoy taking on challenging problems and prioritizing the quality of the problem over other factors. My greatest passion lies in the field of machine learning and perception methods as they relate to robotics.
@@ -83,7 +85,7 @@ weight: 1
     In addition to my passion for coding and robotics, I derive great joy from admiring the talent and creativity of artists and musicians who are more gifted than I am. Nothing electrifies me more than watching AC/DC's electrifying performance of "<a href="https://youtu.be/xRQnJyP77tY">Shoot To Thrill</a>" on the drums, and listening to Miles Teller's rendition of "<a href="https://youtu.be/pVcMsjyKlaM">Great Balls of Fire</a>" never fails to fill me with pure joy.
   </p>
   <br>
-
+  ----
   <h2 id="Questionsexcitesme" style="font-size: 20px"><b>Questions that Excite me</b></h2>
   <p style="font-size: 18px">
     <ul style="font-size: 18px">
@@ -93,6 +95,7 @@ weight: 1
     <li><b>Ethical and Responsible AI:</b> How can we ensure that AI-powered robots operate ethically, responsibly, and in alignment with human values? I am interested in exploring frameworks and methodologies for integrating ethical considerations into the design and development of autonomous systems, such as fairness, transparency, privacy, and accountability, to ensure their safe and beneficial deployment in real-world scenarios.</li>
     </ul>
   </p>
+  ----
 
 <div class="row">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
