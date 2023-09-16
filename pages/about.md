@@ -5,6 +5,20 @@ permalink: /about/
 weight: 1
 ---
 
+**Table of Content** | 
+Certainly! Here's a table of contents with hyperlinks for the page:
+
+1. [About Me](#about-me)
+2. [Hello there, I am Narendhiran](#hello-there-i-am-narendhiran)
+3. [My Academic Journey](#my-academic-journey)
+4. [My Research Interests](#my-research-interests)
+5. [Distinguishing Qualities](#distinguishing-qualities)
+6. [Questions that Excite Me](#questions-that-excite-me)
+7. [Programming Skills](#programming-skills)
+8. [Other Skills](#other-skills)
+9. [Timeline](#timeline)
+
+You can click on any of the links above to jump directly to that section of the page.
 <!-- # **About Me** -->
 <h1 style="text-align: center;"><b>About Me</b></h1>
 <br>
@@ -82,7 +96,7 @@ weight: 1
   </p>
   <br>
 
-  <p style="font-size: 20px"><b>Questions that Excite me</b></p>
+  <h2 style="font-size: 20px"><b>Questions that Excite me</b></h2>
   <p style="font-size: 18px">
     <ul style="font-size: 18px">
     <li><b>Human-Robot Interaction:</b> How can we develop intuitive and natural interfaces that enable seamless communication and collaboration between humans and robots? I am fascinated by the possibilities of creating socially-aware robots that can understand human intentions, adapt to dynamic environments, and assist humans in various tasks while ensuring safety and trust.</li>
