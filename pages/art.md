@@ -6,9 +6,10 @@ permalink: /art/
 ---
 
 <br>
-<br>
+
 **Table of Content** | <a href="#Long-Term">Long-Term Goals</a> | <a href="#Past-Entrepreneurial">Past Entrepreneurial Experience</a> |  <a href="#Future-Imagination">A Long Way to Go</a> 
 
+<br>
 <h1 style="text-align: center;">My Entrepreneurial Journey: Pioneering with Purpose</h1>
 
 <p style="text-align: center;">I am on a mission to leverage technology for global problem-solving through entrepreneurship. With a strong foundation in robotics and artificial intelligence, I am committed to creating businesses that drive positive change in the world.</p>
@@ -100,6 +101,8 @@ permalink: /art/
     margin:10,
     nav:true,
     autoHeight:true,
+    autoplay: true, // Enable autoplay
+    autoplayTimeout: 3000, // Set autoplay timeout in milliseconds (3 seconds in this example)
     responsive:{
         0:{
             items:1
