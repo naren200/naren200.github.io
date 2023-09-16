@@ -5,8 +5,6 @@ weight: 4
 permalink: /art/
 ---
 
-<br>
-
 **Table of Content** | <a href="#Long-Term">Long-Term Goals</a> | <a href="#Past-Entrepreneurial">Past Entrepreneurial Experience</a> |  <a href="#Future-Imagination">A Long Way to Go</a> 
 
 <br>
@@ -102,7 +100,7 @@ permalink: /art/
     nav:true,
     autoHeight:true,
     autoplay: true, // Enable autoplay
-    autoplayTimeout: 3000, // Set autoplay timeout in milliseconds (3 seconds in this example)
+    autoplayTimeout: 2000, // Set autoplay timeout in milliseconds (2 seconds in this example)
     responsive:{
         0:{
             items:1
