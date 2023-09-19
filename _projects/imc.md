@@ -1,5 +1,5 @@
 ---
-name: eYantra Robotics Competition
+name: IIT Bombay's Robotics Challenge - MoE, India
 tools: [Vrep, Hardware Implementation, Prototyping, Sensors Integration, Troubleshooting, embedded C, Path Planning, 3D Design, Robot Communication, CNC Machining]
 image: ../imgs/projects/cob-homeImage.png
 description: Led team of 4 to design and implement a disaster response robot, integrating sensors, navigation algorithms, and hardware implementation.
