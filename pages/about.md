@@ -56,10 +56,10 @@ weight: 1
     <b>What Sets Me Apart</b>
   </h2>
   <p style="font-size: 18px">
-    <u><b>Resilience</b></u>: I excel in navigating complex projects, meeting tight deadlines, and overcoming technical obstacles by staying focused, adapting strategies, and collaborating with multidisciplinary teams. I'm committed to delivering high-quality solutions, leveraging setbacks as learning opportunities, and consistently striving for excellence in robotics. 
+    <u><b>Resilience</b></u>: My resilience shone through when I overcame the initial setback of failing the JEE Advanced exam, eventually securing admission to my dream institute, IIT. This determination persisted through challenges in robotics competitions, internships, and research, shaping me into a tenacious problem solver and innovator.
   </p>
   <p style="font-size: 18px">
-    <u><b>Curiosity</b></u>: I have an inherent curiosity that drives me to explore the inner workings and technological innovations behind everyday devices.
+    <u><b>Curiosity</b></u>: I possess a natural eagerness to delve into the mechanics and technological advancements that power everyday gadgets.
   </p>
   <p style="font-size: 18px">
     <u><b>Hacker mindset</b></u>: When creating a robot in R.O.S., I find Visual Studio Code more efficient than editing in a terminal within a docker environment. The speed of VScode and the availability of helpful plugins make it easier for me to create an environment and build a URDF file for a robot, as well as develop C++ plugins. This has made the process smoother and more streamlined.
