@@ -5,7 +5,7 @@ permalink: /about/
 weight: 1
 ---
 
-**Table of Content** | <a href="#distinguishesme">What Sets Me Apart</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> |  <a href="#exp">Skills & Experience</a> 
+**Table of Content** | <a href="#distinguishesme">What Sets Me Apart</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> | 
 
 <!-- # **About Me** -->
 <h1 style="text-align: center;"><b>About Me</b></h1>
@@ -65,7 +65,6 @@ weight: 1
   </p>
   <br>
 
-  <hr> <!-- This line creates a horizontal divider -->
   <h2 style="font-size: 25px">My Approach: Tackling Complex Problems with Passion</h2>
 
   <br>
@@ -88,9 +87,9 @@ weight: 1
 
   <hr> <!-- This line creates a horizontal divider -->
 </div>
-
-  <center><font size="1">This country counter shows visits to this landing page since Sep 19, 2023. <a href="https://www.revolvermaps.com/">Credits</a></font></center>
-  <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5zwgjoimiv8&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-820&amp;ly=820&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
 </div>
+
+<center><font size="1">This country counter shows visits to this landing page since Sep 19, 2023. <a href="https://www.revolvermaps.com/">Credits</a></font></center>
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5zwgjoimiv8&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-820&amp;ly=820&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
 
 
