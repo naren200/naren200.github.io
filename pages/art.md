@@ -11,7 +11,7 @@ permalink: /art/
 <!-- <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5zwgjoimiv8&amp;m=2&amp;c=ff0000&amp;cr1=ffffff&amp;f=calibri&amp;l=0&amp;bv=95&amp;v0=30&amp;z=50&amp;lx=360&amp;ly=180&amp;hi=90" async="async"></script> -->
 
 
-<div class="row">
+<div class="row" style="width: 88%; margin-left: 10px">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
