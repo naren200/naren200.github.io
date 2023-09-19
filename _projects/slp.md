@@ -1,5 +1,5 @@
 ---
-name: DRDO Main Project Involvement - My Bachelor's Capstone
+name: DRDO's Project - My Bachelor's Capstone Contribution
 tools: [2D Dynamics, Runge-Kutta, GUI, Robotics, Python]
 image: ../imgs/projects/btp-homeImage.jpg
 description: Developing a visualizable model to predict the motion of towed objects in ship operations under varying conditions.
