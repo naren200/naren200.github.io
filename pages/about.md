@@ -79,9 +79,9 @@ weight: 1
   <h2 id="Questionsexcitesme" style="font-size: 30px"><b>Questions that Excite me</b></h2>
   <p style="font-size: 18px">
     <ul style="font-size: 18px">
-    <li><b>Robotic Autonomy in Unstructured Environments:</b> How can we enhance the autonomy of robots to navigate and perform complex tasks in unstructured, unpredictable environments such as disaster-stricken areas or space exploration missions? This question explores the challenges of developing robots that can adapt and make decisions independently in challenging scenarios.</li>
-    <li><b>AI for Sustainability:</b> How can AI-powered robotics contribute to sustainable practices in agriculture, energy, and environmental monitoring? Engineers can work on developing robots that optimize resource usage, reduce waste, and address critical sustainability challenges.</li>
-    <li><b>Experiential Learning in Robotics:</b> How can robots gain real-world experience to improve their performance and adaptability? This area explores methods for robots to accumulate knowledge through practical experience, similar to how humans learn from trial and error.</li>
+    <li><b>Robotic Autonomy in Unstructured Environments:</b> How can we enhance the autonomy of robots to navigate and perform complex tasks in unstructured, unpredictable environments such as disaster-stricken areas or space exploration missions? </li>
+    <li><b>AI for Sustainability:</b> How can AI-powered robotics contribute to sustainable practices in agriculture, energy, and environmental monitoring? </li>
+    <li><b>Experiential Learning in Robotics:</b> How can robots gain real-world experience to improve their performance and adaptability? </li>
     </ul>
   </p>
 
