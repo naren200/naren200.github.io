@@ -4,6 +4,9 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+
 }
 
 .badge {
@@ -26,9 +29,3 @@ body {
   }
 }
 
-.single-x-portfolio .x-portfolio .entry-extra {
-  display: none !important;
-}
-.single-x-portfolio .x-portfolio .entry-info {
-  width: 100% !important;
-}

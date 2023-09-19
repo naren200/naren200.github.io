@@ -8,7 +8,7 @@ permalink: /art/
 
 <h2 id="exp" style="font-size: 30px"><b>Skills</b></h2>
 
-<div class="row" style="width: 88%; margin-left: 10px">
+<div class="row" style="width: 100%; margin-left: 10px">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
