@@ -17,7 +17,7 @@ weight: 1
   <img class="profilepic" style="float: center; border-radius: 50%;" src="../imgs/NarenFormal.jpg" alt="Kitten" title="A cute kitten" width="300" height="200" />
   </div>
 
-<div class="column" style="width: 88%; margin-left: 10px">
+<div class="column" style="width: 100%; margin-left: 5px">
 
   <br>
   <p style="font-size: 20px">Hello there  <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>. You call me Naren (Neh-R-ehN). </p>
