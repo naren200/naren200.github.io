@@ -92,12 +92,11 @@ weight: 1
   <div class="page-content">
     <div class="wrapper">
       <center><font size="1">This country counter shows visits to this landing page since Sep 19, 2023. <a href="https://www.revolvermaps.com/">Credits</a></font></center>
-
-      <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5zwgjoimiv8&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+      <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5zwgjoimiv8&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
     </div>
   </div>
 
-  <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5zwgjoimiv8&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
+  <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5zwgjoimiv8&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
 
 
   <h2 id="exp" style="font-size: 30px"><b>Skills & Experience</b></h2>
