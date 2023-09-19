@@ -1,5 +1,5 @@
 ---
-name: Object Goal Navigation Enhancement using Goal-Oriented Semantic Exploration
+name: Meta's Research Enhancement for Object Goal Navigation
 tools: [Path Planning (RRT), Computer Vision (Yolov7), RL, Habitat Simulator]
 image: ../imgs/projects/goal-homeImage.png
 description: Advanced object goal navigation achieved through Goal-Oriented Semantic Exploration, combining semantic mapping, policy learning, and efficient path planning.
