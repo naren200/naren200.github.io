@@ -1,9 +1,10 @@
 ---
-layout: default
-title: Life Goals
+layout: page
+title: Experience
 weight: 4
 permalink: /art/
 ---
+
 
 <br>
 <h1 style="text-align: center;">My Entrepreneurial Journey: Pioneering with Purpose</h1>

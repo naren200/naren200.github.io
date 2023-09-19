@@ -65,6 +65,7 @@ weight: 1
     <u><b>Hacker mindset</b></u>: When creating a robot in R.O.S., I find Visual Studio Code more efficient than editing in a terminal within a docker environment. The speed of VScode and the availability of helpful plugins make it easier for me to create an environment and build a URDF file for a robot, as well as develop C++ plugins. This has made the process smoother and more streamlined.
   </p>
   <br>
+
   <hr> <!-- This line creates a horizontal divider -->
   <h2 style="font-size: 25px"><b>My Approach: Tackling Complex Problems with Passion</b></h2>
 
@@ -85,7 +86,11 @@ weight: 1
     <li><b>Experiential Learning in Robotics:</b> How can robots gain real-world experience to improve their performance and adaptability? This area explores methods for robots to accumulate knowledge through practical experience, similar to how humans learn from trial and error.</li>
     </ul>
   </p>
+
   <hr> <!-- This line creates a horizontal divider -->
+  
+  <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5zwgjoimiv8&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
+
 
   <h2 id="exp" style="font-size: 30px"><b>Skills & Experience</b></h2>
 
