@@ -79,11 +79,10 @@ weight: 1
   <h2 id="Questionsexcitesme" style="font-size: 25px"><b>Questions that Excite me</b></h2>
   <p style="font-size: 18px">
     <ul style="font-size: 18px">
-    <li><b>Robotic Autonomy in Unstructured Environments:</b> <br>
-    How can we enhance the autonomy of robots to navigate and perform complex tasks in unstructured, unpredictable environments such as disaster-stricken areas or space exploration missions? 
-    </li>
-    <li><b>AI for Sustainability:</b> <br>How can AI-powered robotics contribute to sustainable practices in agriculture, energy, and environmental monitoring? </li>
-    <li><b>Experiential Learning in Robotics:</b> How can robots gain real-world experience to improve their performance and adaptability? </li>
+    <li><b>Robotic Autonomy in Unstructured Environments:</b> <br> How can we enhance the autonomy of robots to navigate and perform complex tasks in unstructured, unpredictable environments such as disaster-stricken areas or space exploration missions? </li>
+    <li><b>Robots for Ocean Exploration:</b> <br>What advancements are needed in AI and robotics to explore and preserve the mysteries of the deep sea, studying marine life and ecosystems with minimal environmental impact? </li>
+    <li><b>Experiential Learning in Robotics:</b> <br> How can robots gain real-world experience to improve their performance and adaptability? </li>
+    <li><b>AI-Driven Precision Agriculture:</b> <br> How can AI-powered robots and drones be employed for precision agriculture, not only optimizing crop yields but also minimizing resource usage and environmental impact? </li>
     </ul>
   </p>
 </div></div>
