@@ -67,7 +67,7 @@ weight: 1
   <br>
 
   <hr> <!-- This line creates a horizontal divider -->
-  <h2 style="font-size: 25px"><b>My Approach: Tackling Complex Problems with Passion</b></h2>
+  <h2 style="font-size: 25px">My Approach: Tackling Complex Problems with Passion</h2>
 
   <br>
   <p style="font-size: 18px">
