@@ -6,23 +6,30 @@ permalink: /art/
 ---
 
 
-<h2 id="exp" style="font-size: 30px"><b>Skills & Experience</b></h2>
+<h2 id="exp" style="font-size: 30px"><b>Skills</b></h2>
 
 <div class="row" style="width: 88%; margin-left: 10px">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
 
+<h2 id="exp" style="font-size: 30px"><b>Experience</b></h2>
+
 <div class="row">
-{% include about/timeline.html %}
+{% include about/timeline_EXP.html %}
+</div>
+
+<h2 id="exp" style="font-size: 30px"><b>Education</b></h2>
+
+<div class="row">
+{% include about/timeline_EDU.html %}
 </div>
 
 
-
 <br>
-<h1>My Entrepreneurial Journey: Pioneering with Purpose</h1>
+<h2>My Entrepreneurial Journey: Pioneering with Purpose</h2>
 
-<p style="text-align: center;">I am on a mission to leverage technology for global problem-solving through entrepreneurship. With a strong foundation in robotics and artificial intelligence, I am committed to creating businesses that drive positive change in the world.</p>
+<p>I am on a mission to leverage technology for global problem-solving through entrepreneurship. With a strong foundation in robotics and artificial intelligence, I am committed to creating businesses that drive positive change in the world.</p>
 
 <br>
 <h4  id="Long-Term">Long-Term Goals:</h4>
