@@ -13,7 +13,7 @@ permalink: /art/
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
 
-<h2 id="exp" style="font-size: 30px"><b>Experience</b></h2>
+<!-- <h2 id="exp" style="font-size: 30px"><b>Experience</b></h2> -->
 
 <div class="row">
 {% include experience/work.html %}
