@@ -12,9 +12,8 @@ weight: 1
 <br>
 
 <div class="column">
-
   <div>
-  <img class="profilepic" style="float: center; border-radius: 50%;" src="../imgs/NarenFormal.jpg" alt="Kitten" title="A cute kitten" width="300" height="200" />
+    <img class="profilepic" style="float: center; border-radius: 50%;" src="../imgs/NarenFormal.jpg" alt="Kitten" title="A cute kitten" width="300" height="200" />
   </div>
 
 <div class="column" style="width: 100%; margin-left: 0px">
