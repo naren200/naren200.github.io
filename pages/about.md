@@ -5,7 +5,7 @@ permalink: /about/
 weight: 1
 ---
 
-**Table of Content** | <a href="#distinguishesme">What Sets Me Apart</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> | 
+**Table of Content** | <a href="#achievements">Achievements - Robotics</a> | <a href="#distinguishesme">What Sets Me Apart</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> | 
 
 <!-- # **About Me** -->
 <h1 style="text-align: center;"><b>About Me</b></h1>
@@ -23,7 +23,7 @@ weight: 1
     
   <br>
 
-  <h2 style="font-size: 25px"><b>Academic and Robotics Pursuits</b></h2>
+  <h2 style="font-size: 20px"><b>Academic and Robotics Pursuits</b></h2>
   <br>
 
   <p style="font-size: 18px">
@@ -38,7 +38,7 @@ weight: 1
   I graduated from <a href="https://www.iitp.ac.in/">IIT Patna</a> in 2022 with a Bachelor’s in <a href="https://www.iitp.ac.in/index.php/departments/engineering-technology/mechanical-engineering/">Mechanical Engineering</a>. I was recognized as an Undergraduate Project Finalist for successfully developing a Motion Prediction model for a Towed floating object under <a href="https://www.iitp.ac.in/index.php/people-6/faculty/2-uncategorised/241-view-profile-38">Prof. Subrata Kumar</a> during my Mechanical Engineering degree program.
   </p>
 
-  <h2 style="font-size: 25px"><b>Robotic Achievements and Research</b></h2>
+  <h2 style="font-size: 20px" id="achievements"><b>Robotic Achievements and Research</b></h2>
   <br>
 
   <p style="font-size: 18px">
@@ -51,7 +51,7 @@ weight: 1
   <br>
   <hr> <!-- This line creates a horizontal divider -->
   <br>
-  <h2 id="distinguishesme" style="font-size: 30px">
+  <h2 id="distinguishesme" style="font-size: 25px">
     <b>What Sets Me Apart</b>
   </h2>
   <p style="font-size: 18px">
@@ -65,7 +65,7 @@ weight: 1
   </p>
   <br>
 
-  <h2 style="font-size: 25px">My Approach: Tackling Complex Problems with Passion</h2>
+  <h4 style="font-size: 20px">My Approach: Tackling Complex Problems with Passion</h2>
 
   <br>
   <p style="font-size: 18px">
@@ -76,11 +76,13 @@ weight: 1
   </p>
   <br>
   <hr> <!-- This line creates a horizontal divider -->
-  <h2 id="Questionsexcitesme" style="font-size: 30px"><b>Questions that Excite me</b></h2>
+  <h2 id="Questionsexcitesme" style="font-size: 25px"><b>Questions that Excite me</b></h2>
   <p style="font-size: 18px">
     <ul style="font-size: 18px">
-    <li><b>Robotic Autonomy in Unstructured Environments:</b> How can we enhance the autonomy of robots to navigate and perform complex tasks in unstructured, unpredictable environments such as disaster-stricken areas or space exploration missions? </li>
-    <li><b>AI for Sustainability:</b> How can AI-powered robotics contribute to sustainable practices in agriculture, energy, and environmental monitoring? </li>
+    <li><b>Robotic Autonomy in Unstructured Environments:</b> <br>
+    How can we enhance the autonomy of robots to navigate and perform complex tasks in unstructured, unpredictable environments such as disaster-stricken areas or space exploration missions? 
+    </li>
+    <li><b>AI for Sustainability:</b> <br>How can AI-powered robotics contribute to sustainable practices in agriculture, energy, and environmental monitoring? </li>
     <li><b>Experiential Learning in Robotics:</b> How can robots gain real-world experience to improve their performance and adaptability? </li>
     </ul>
   </p>
