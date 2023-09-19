@@ -93,9 +93,12 @@ weight: 1
 
 <center><font size="1">This country counter shows visits to this landing page since Sep 19, 2023. <a href="https://www.revolvermaps.com/">Credits</a></font></center>
 
-<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5zwgjoimiv8&amp;m=2&amp;c=ff0000&amp;cr1=ffffff&amp;f=calibri&amp;l=0&amp;bv=95&amp;v0=30&amp;z=50&amp;lx=360&amp;ly=180&amp;hi=90" async="async"></script>
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5zwgjoimiv8&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+
 
 <h2 id="exp" style="font-size: 30px"><b>Skills & Experience</b></h2>
+
+<!-- <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5zwgjoimiv8&amp;m=2&amp;c=ff0000&amp;cr1=ffffff&amp;f=calibri&amp;l=0&amp;bv=95&amp;v0=30&amp;z=50&amp;lx=360&amp;ly=180&amp;hi=90" async="async"></script> -->
 
 
 <div class="row">
