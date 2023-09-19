@@ -10,12 +10,18 @@
 
 <head>
 
-  <meta http-equiv = "refresh" content = "3; url = https://naren200.github.io/about/" />
+  <meta http-equiv 6= "refresh" content = "3; url = https://naren200.github.io/about/" />
   <script>
-    var timer = setTimeout(function() {
-        window.location='https://naren200.github.io/about/'
-    }, 3000);
-  </script>
+    function redirect () {
+       setTimeout(myURL, 5000);
+       var result = document.getElementById("result");
+       result.innerHTML = "<b> The page will redirect after delay of 5 seconds";
+    }
+
+    function myURL() {
+       document.location.href = 'https://www.tutorialspoint.com/index.htm';
+    }
+ </script>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
