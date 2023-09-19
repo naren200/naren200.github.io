@@ -16,7 +16,7 @@ permalink: /art/
 <h2 id="exp" style="font-size: 30px"><b>Experience</b></h2>
 
 <div class="row">
-{% include about/timeline_EXP.html %}
+{% include experience/work.html %}
 </div>
 
 <h2 id="exp" style="font-size: 30px"><b>Education</b></h2>

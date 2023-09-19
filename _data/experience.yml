@@ -1,0 +1,42 @@
+- title: System Dev Intern (C++ Specialist)
+  company: Amazon Robotics, Westborough, MA
+  image:
+    src: /assets/img/work/ar-logo.png
+    alt: Amazon Robotics
+  date: May '23 - Aug '23
+  description: Prototyping a novel perceptual approach to guide manipulation robots using a rich understanding of the scene
+- title: Graduate Research Assistant (Robotic Exploration Lab)
+  company: Carnegie Mellon University, Pittsburgh, PA
+  image:
+    src: /assets/img/work/rex-logo.png
+    alt: Robotic Exploration Lab
+  date: Nov '22 - Present
+  description: Implemented hybrid trajectory optimization for a biped in simulation to traverse unknown rough terrains
+- title: Structuring Analyst
+  company: Goldman Sachs, Bengaluru
+  image:
+    src: /assets/img/work/gs-logo.png
+    alt: Goldman Sachs
+  date: Jul '21 - Jul '22
+  description: Returned to a full-time role in the Mortgage Structuring Strategies team, Global Markets Division
+- title: Student Developer
+  company: Google Summer of Code @JdeRobot
+  image:
+    src: /assets/img/work/gsoc-logo.png
+    alt: Google Summer of Code
+  date: Jun '21 - Aug '21
+  description: Worked on the project titled *ROS2-RADI and Amazon warehouse exercise in web-based template for ROS2*
+- title: Quantitative Summer Analyst
+  company: Goldman Sachs, Bengaluru
+  image:
+    src: /assets/img/work/gs-logo.png
+    alt: Goldman Sachs
+  date: May '20 - Jun '20
+  description: Interned in the Mortgage Structuring Strategies team, GMD. We achieved a sharp improvement in arbitrage by optimizing cash-flows through different derivative instruments
+- title: Developer Intern
+  company: Synergistic Financial Network Pvt Ltd, Mumbai
+  image:
+    src: /assets/img/work/mosbi-logo.png
+    alt: Mosambee
+  date: Dec '18 - Feb '19
+  description: The firm offers payment solutions by providing EMV enabled mobile Point of Sale (POS) devices. My team delivered a Java platform to migrate existing Transaction Manager to Apache Kafka in order to process 100+ transaction requests/second
