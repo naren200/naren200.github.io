@@ -6,7 +6,7 @@ permalink: /art/
 ---
 
 
-<!-- <h2 id="exp" style="font-size: 30px"><b>Skills & Experience</b></h2>
+<h2 id="exp" style="font-size: 30px"><b>Skills & Experience</b></h2>
 
 <div class="row" style="width: 88%; margin-left: 10px">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
@@ -15,12 +15,12 @@ permalink: /art/
 
 <div class="row">
 {% include about/timeline.html %}
-</div> -->
+</div>
 
 
 
 <br>
-<h1 style="text-align: center;">My Entrepreneurial Journey: Pioneering with Purpose</h1>
+<h1>My Entrepreneurial Journey: Pioneering with Purpose</h1>
 
 <p style="text-align: center;">I am on a mission to leverage technology for global problem-solving through entrepreneurship. With a strong foundation in robotics and artificial intelligence, I am committed to creating businesses that drive positive change in the world.</p>
 
@@ -33,19 +33,17 @@ permalink: /art/
 
 <p><b>- At 50: Mentor Future Entrepreneurs</b> - Sharing my experience and expertise, I aspire to guide and support budding entrepreneurs. Through mentorship, coaching, and consulting, I aim to nurture the next generation of business leaders.</p>
 
-<b>Passion for Entrepreneurship:</b>
+<!-- <b>Passion for Entrepreneurship:</b>
 
-<p>Entrepreneurship is my driving force. I believe that my technical skills in robotics and AI, combined with my entrepreneurial mindset, can revolutionize industries. My vision includes developing cutting-edge robotics and AI solutions that solve real-world problems.</p>
+<p>Entrepreneurship is my driving force. I believe that my technical skills in robotics and AI, combined with my entrepreneurial mindset, can revolutionize industries. My vision includes developing cutting-edge robotics and AI solutions that solve real-world problems.</p> -->
 
-<h4 id="Past-Entrepreneurial">Past Entrepreneurial Experience:</h4>
+<!-- <h4 id="Past-Entrepreneurial">Past Entrepreneurial Experience:</h4>
 
-<p>In one significant project, I engaged in in-depth discussions with a business to understand its unique needs. Through tailored solutions and effective communication, I delivered valuable content that not only met expectations but also strengthened our professional relationship. This experience reinforced my belief in the power of technology and communication to create value.</p>
-
-<h4>Unlocking Potential:</h4>
-
-<p>As you explore my portfolio, you'll discover my enthusiasm for entrepreneurship and how my technical expertise can drive successful ventures. I welcome collaborations with like-minded individuals and organizations to shape a future powered by technology-driven innovation.</p>
+<p>In one significant project, I engaged in in-depth discussions with a business to understand its unique needs. Through tailored solutions and effective communication, I delivered valuable content that not only met expectations but also strengthened our professional relationship. This experience reinforced my belief in the power of technology and communication to create value.</p> -->
 
 <b>Connect with Me:</b>
+
+<p>As you explore my portfolio, you'll discover my enthusiasm for entrepreneurship and how my technical expertise can drive successful ventures. I welcome collaborations with like-minded individuals and organizations to shape a future powered by technology-driven innovation.</p>
 
 <p>If you share my passion for entrepreneurship or seek collaboration opportunities, connect with me on <a href="https://www.linkedin.com/in/narendhiran2000/">LinkedIn</a>. Let's redefine possibilities with robotics and AI.</p>
 
@@ -57,7 +55,7 @@ permalink: /art/
       margin-top: 30px;
     }
     #owl-demo .item{
-      border: 0px solid black;
+      border: 1px solid black;
 
     }
     #owl-demo .item img{
@@ -109,7 +107,7 @@ permalink: /art/
 
   <script type="text/javascript">$('.owl-carousel').owlCarousel({
     loop:true,
-    margin:10,
+    margin:0,
     nav:true,
     autoHeight:true,
     autoplay: true, // Enable autoplay
