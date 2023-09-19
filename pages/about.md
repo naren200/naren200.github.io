@@ -17,7 +17,7 @@ weight: 1
   <img class="profilepic" style="float: center; border-radius: 50%;" src="../imgs/NarenFormal.jpg" alt="Kitten" title="A cute kitten" width="300" height="200" />
   </div>
 
-<div class="column" style="width: 100%; margin-left: 5px">
+<div class="column" style="width: 100%; margin-left: 0px">
 
   <br>
   <p style="font-size: 20px">Hello there  <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>. You call me Naren (Neh-R-ehN). </p>
@@ -88,23 +88,10 @@ weight: 1
   </p>
 
   <hr> <!-- This line creates a horizontal divider -->
-  </div>
+</div>
 
   <center><font size="1">This country counter shows visits to this landing page since Sep 19, 2023. <a href="https://www.revolvermaps.com/">Credits</a></font></center>
   <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5zwgjoimiv8&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-820&amp;ly=820&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
 </div>
 
 
-<h2 id="exp" style="font-size: 30px"><b>Skills & Experience</b></h2>
-
-<!-- <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5zwgjoimiv8&amp;m=2&amp;c=ff0000&amp;cr1=ffffff&amp;f=calibri&amp;l=0&amp;bv=95&amp;v0=30&amp;z=50&amp;lx=360&amp;ly=180&amp;hi=90" async="async"></script> -->
-
-
-<div class="row">
-{% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
-{% include about/skills.html title="Other Skills" source=site.data.other-skills %}
-</div>
-
-<div class="row">
-{% include about/timeline.html %}
-</div>
