@@ -86,10 +86,8 @@ weight: 1
     <li><b>Experiential Learning in Robotics:</b> How can robots gain real-world experience to improve their performance and adaptability? </li>
     </ul>
   </p>
+</div></div>
 
-  <hr> <!-- This line creates a horizontal divider -->
-</div>
-</div>
 <style>
   /* Target the div containing the country counter */
   div.revolvermap-container {
