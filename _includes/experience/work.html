@@ -2,7 +2,7 @@
 <div class="page-content">
     <div class="wrapper">
     <div class="work">
-        <h1 class="page-heading">{{ page.title }}</h1>
+        <!-- <h1 class="page-heading">{{ page.title }}</h1> -->
 
         <h1 class="page-heading">Education</h1>
 
@@ -28,7 +28,7 @@
             &mdash;
             {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
         </p>
-        </div>
+        </div>  
         {% endfor %}
         
         <hr>
@@ -51,14 +51,15 @@
             <h6>{{ item.date }}</h6>
             {% endif %}
         </div>
-        <p class="work-text">
+        <div class="work-text">
             <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
             &mdash;
             {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
-        </p>
+        </div>
         </div>
         {% endfor %}
         
     </div>
     </div>
 </div>
+
