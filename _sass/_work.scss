@@ -36,3 +36,10 @@
   padding-right: 50px;
 
 }
+
+.container{
+  min-width:1200px;         
+  width: auto !important;   /* Firefox will set width as auto */
+  width:1200px;             /* As IE ignores !important it will set width as 1000px; */
+ }
+ 
