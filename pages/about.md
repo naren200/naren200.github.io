@@ -4,6 +4,7 @@ title: About
 permalink: /about/
 weight: 1
 ---
+<link rel="stylesheet" type="text/css" href="../_sass/_base.scss">
 
 **Table of Content** | <a href="#achievements">Achievements - Robotics</a> | <a href="#distinguishesme">What Sets Me Apart</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> | 
 
