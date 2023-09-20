@@ -11,11 +11,12 @@
     src: /imgs/education/uda-logo.jpeg
     alt: Udacity
   date: Dec '22
-  description: 
+  description: Awarded the prestigious Udacity Scholarship. Completed challenging robotic projects and received industry-recognized certification.
+
 - title: B.Tech in Mechanical Engineering
   company: IIT Patna, India
   image:
     src: /imgs/education/iitp-logo.png
     alt: Indian Institute of Technology Patna
   date: Jul '18 - Aug '22
-  description: Capstone Project Finalists Recognized for Technical Excellence in Mechanical Engineering Department. Founded and led a student technical quadrupedal robot team & Awarded National (India) Finalists Status with Paid Internship (99.7 percentile). Achieved 99.4 percentile in JEE Advanced (All India Rank 6973).
+  description: Capstone Project Finalists Recognized for Technical Excellence in Mechanical Engineering Department. Founded and led a student technical quadrupedal robot team & Awarded National (India)Finalists Status with Paid Internship (99.7 percentile). Achieved 99.4 percentile in JEE Advanced (All India Rank 6973).

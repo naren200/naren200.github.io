@@ -6,7 +6,7 @@ permalink: /art/
 ---
 
 
-<h2 class="page-heading">Skills</h2>
+<h4 class="page-heading">Skills</h4>
 <br>
 <div class="row" style="width: 100%; margin-left: 10px">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
@@ -17,9 +17,10 @@ permalink: /art/
 
 <br>
 <hr> 
+<br>
 
 <h3 id="Future-Imagination">A Long Way to Go: Isn't It!?</h3>
-
+<br>
 
 <style>
     #owl-demo{
