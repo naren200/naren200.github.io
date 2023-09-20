@@ -23,11 +23,11 @@
             <h6>{{ item.date }}</h6>
             {% endif %}
         </div>
-        <span class="work-text">
+        <p class="work-text">
             <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
             &mdash;
             {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
-        </span>
+        </p>
         </div>
         {% endfor %}
         
