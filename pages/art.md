@@ -7,46 +7,16 @@ permalink: /art/
 
 
 <h2 class="page-heading">Skills</h2>
-
+<br>
 <div class="row" style="width: 100%; margin-left: 10px">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
 
-<!-- <h2 id="exp" style="font-size: 30px"><b>Experience</b></h2> -->
-
 {% include experience/work.html %}
 
-<!-- <h2 id="exp" style="font-size: 30px"><b>Education</b></h2>
-
-<div class="row">
-{% include about/timeline_EDU.html %}
-</div> -->
-
-<!-- 
 <br>
-<h2>My Entrepreneurial Journey: Pioneering with Purpose</h2>
-
-<p>I am on a mission to leverage technology for global problem-solving through entrepreneurship. With a strong foundation in robotics and artificial intelligence, I am committed to creating businesses that drive positive change in the world.</p>
-
-<br>
-<h4  id="Long-Term">Long-Term Goals:</h4>
-
-<p><b>- At 30: Launch My Own Business</b> - My entrepreneurial spirit drives me to establish a technology-driven company that addresses real-world challenges. I'm currently exploring various ideas, eager to embark on this exciting journey.</p>
-
-<p><b>- At 40: Impact the World Positively</b> - I envision using my business as a force for good, tackling issues like poverty, hunger, and climate change. My goal is to make a meaningful difference on a global scale.</p>
-
-<p><b>- At 50: Mentor Future Entrepreneurs</b> - Sharing my experience and expertise, I aspire to guide and support budding entrepreneurs. Through mentorship, coaching, and consulting, I aim to nurture the next generation of business leaders.</p> -->
-
-<!-- <b>Passion for Entrepreneurship:</b>
-
-<p>Entrepreneurship is my driving force. I believe that my technical skills in robotics and AI, combined with my entrepreneurial mindset, can revolutionize industries. My vision includes developing cutting-edge robotics and AI solutions that solve real-world problems.</p> -->
-
-<!-- <h4 id="Past-Entrepreneurial">Past Entrepreneurial Experience:</h4>
-
-<p>In one significant project, I engaged in in-depth discussions with a business to understand its unique needs. Through tailored solutions and effective communication, I delivered valuable content that not only met expectations but also strengthened our professional relationship. This experience reinforced my belief in the power of technology and communication to create value.</p> -->
-
-<br><hr> 
+<hr> 
 
 <h3 id="Future-Imagination">A Long Way to Go: Isn't It!?</h3>
 
