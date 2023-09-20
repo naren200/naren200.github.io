@@ -11,30 +11,30 @@
     src: /imgs/work/asu-logo.png
     alt: Zhe Xu Lab
   date: Nov '22 - Present
-  description: Implemented 
+  description: Implemented Differential Control Synthesis for Multi-Agent Systems. Devised ROS1 Nodes for perception and RL Architecture with the Hello Robot.
 
-- title: Robotic Software Engineer (Embedded C Specialist + VRep)
-  company: e-Yantra Robotic Educational Program, IIT Bombay, MoE of India
+- title: Robotic Software Engineer Intern (Embedded C Specialist + VRep)
+  company: e-Yantra Robotic Internship Program, IIT Bombay, MoE of India
   image:
     src: /imgs/work/iitb-logo.png
     alt: e-Yantra 
   date: May '20 - Aug '20
   description: I was among 95 students (97.76 Percentile) to be awarded the e-Yantra Summer Internship Program at IIT Bombay. Developed an innovative automation algorithm for streamlining robotic processes.
 
-- title: Robotics Engineer
+- title: Robotics Engineer 
   company: e-Yantra Robotic Educational Program, IIT Bombay, MoE of India
   image:
     src: /imgs/work/eyantra-logo.png
     alt: e-Yantra
   date: Oct '19 - Feb '20
   description: Represented IIT Patna on National Stage & Awarded National Finalists (99.7 Percentile) at e-Yantra  funded by Ministry of Education, India. Recognized for technical excellence, offered Summer Internship at prestigious IIT Bombay.
-# - title: Quantitative Summer Analyst
-#   company: Goldman Sachs, Bengaluru
-#   image:
-#     src: /imgs/work/gs-logo.png
-#     alt: Goldman Sachs
-#   date: May '20 - Jun '20
-#   description: Interned in the Mortgage Structuring Strategies team, GMD. We achieved a sharp improvement in arbitrage by optimizing cash-flows through different derivative instruments
+- title: Mechanical Engineer Intern
+  company: Neyveli Lignite Corporation, Neyveli, TamilNadu
+  image:
+    src: /imgs/work/nlc-logo.jpeg
+    alt: NLC
+  date: May '19 - Aug '19
+  description: Interned in the Mortgage Structuring Strategies team, GMD. We achieved a sharp improvement in arbitrage by optimizing cash-flows through different derivative instruments
 # - title: Developer Intern
 #   company: Synergistic Financial Network Pvt Ltd, Mumbai
 #   image:
