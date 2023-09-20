@@ -69,8 +69,8 @@ weight: 1
 
   <br>
   <p style="font-size: 18px">
-  I harness these skills and traits to tackle complex problems, prioritizing problem quality. My passion lies in machine learning and perception methods as they relate to robotics. With experience ranging from short-term code that secured wins in national and international robotics competitions to long-term contributions to open-source projects, my software engineering expertise is versatile and adaptive, honed through various professional experiences.
-  </p>
+  I harness the <a href="#distinguishesme">above mentioned skills and traits</a> to tackle complex problems, prioritizing problem quality. My passion lies in machine learning and perception methods as they relate to robotics. With experience ranging from short-term code that secured wins in national and international robotics competitions to long-term contributions to open-source projects, my software engineering expertise is versatile and adaptive, honed through various professional experiences.
+  </p><br>
   <p style="font-size: 18px">
     In addition to coding and robotics, I find immense joy in appreciating the talent and creativity of artists and musicians. There's nothing that electrifies me more than watching AC/DC's mesmerizing performance of "<a href="https://youtu.be/xRQnJyP77tY">Shoot To Thrill</a>" on the drums, and listening to Miles Teller's rendition of "<a href="https://youtu.be/pVcMsjyKlaM">Great Balls of Fire</a>" never fails to fill me with pure joy.
   </p>
@@ -87,15 +87,7 @@ weight: 1
   </p>
 </div></div>
 
-<style>
-  /* Target the div containing the country counter */
-  div.revolvermap-container {
-    width: 100%; /* Set the width to 100% */
-    max-width: none; /* Remove any max-width restrictions */
-  }
-</style>
-
-
+<br><br><br>
 <center><font size="1">This country counter shows visits to this landing page since Sep 19, 2023. <a href="https://www.revolvermaps.com/">Credits</a></font></center>
 <div class="revolvermap-container">
 

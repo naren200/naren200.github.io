@@ -23,7 +23,7 @@ permalink: /art/
 {% include about/timeline_EDU.html %}
 </div>
 
-
+<!-- 
 <br>
 <h2>My Entrepreneurial Journey: Pioneering with Purpose</h2>
 
@@ -36,7 +36,7 @@ permalink: /art/
 
 <p><b>- At 40: Impact the World Positively</b> - I envision using my business as a force for good, tackling issues like poverty, hunger, and climate change. My goal is to make a meaningful difference on a global scale.</p>
 
-<p><b>- At 50: Mentor Future Entrepreneurs</b> - Sharing my experience and expertise, I aspire to guide and support budding entrepreneurs. Through mentorship, coaching, and consulting, I aim to nurture the next generation of business leaders.</p>
+<p><b>- At 50: Mentor Future Entrepreneurs</b> - Sharing my experience and expertise, I aspire to guide and support budding entrepreneurs. Through mentorship, coaching, and consulting, I aim to nurture the next generation of business leaders.</p> -->
 
 <!-- <b>Passion for Entrepreneurship:</b>
 
