@@ -20,11 +20,11 @@ weight: 1
 <div class="column" style="width: 100%; margin-left: 0px">
 
   <br>
-  <p style="font-size: 20px">Hello there  <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>. My friends call me Naren (Neh-R-ehN). </p>
+  <p>Hello there  <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>. My friends call me Naren (Neh-R-ehN). </p>
     
   <br>
 
-  <h2 style="font-size: 20px"><b>Academic and Robotics Pursuits</b></h2>
+  <h2><b>Academic and Robotics Pursuits</b></h2>
   <br>
 
   <p style="font-size: 18px">
