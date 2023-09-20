@@ -60,7 +60,7 @@ permalink: /art/
       margin-top: 30px;
     }
     #owl-demo .item{
-      border: 1px solid black;
+      border: 0px solid black;
 
     }
     #owl-demo .item img{
