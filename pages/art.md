@@ -46,11 +46,7 @@ permalink: /art/
 
 <p>In one significant project, I engaged in in-depth discussions with a business to understand its unique needs. Through tailored solutions and effective communication, I delivered valuable content that not only met expectations but also strengthened our professional relationship. This experience reinforced my belief in the power of technology and communication to create value.</p> -->
 
-<b>Connect with Me:</b>
-
-<p>As you explore my portfolio, you'll discover my enthusiasm for entrepreneurship and how my technical expertise can drive successful ventures. I welcome collaborations with like-minded individuals and organizations to shape a future powered by technology-driven innovation.</p>
-
-<p>If you share my passion for entrepreneurship or seek collaboration opportunities, connect with me on <a href="https://www.linkedin.com/in/narendhiran2000/">LinkedIn</a>. Let's redefine possibilities with robotics and AI.</p>
+<br><hr> 
 
 <h3 id="Future-Imagination">A Long Way to Go: Isn't It!?</h3>
 
