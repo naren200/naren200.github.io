@@ -6,7 +6,7 @@ permalink: /art/
 ---
 
 
-<h2 id="exp" style="font-size: 30px"><b>Skills</b></h2>
+<h2 class="page-heading">Skills</h2>
 
 <div class="row" style="width: 100%; margin-left: 10px">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
@@ -17,11 +17,11 @@ permalink: /art/
 
 {% include experience/work.html %}
 
-<h2 id="exp" style="font-size: 30px"><b>Education</b></h2>
+<!-- <h2 id="exp" style="font-size: 30px"><b>Education</b></h2>
 
 <div class="row">
 {% include about/timeline_EDU.html %}
-</div>
+</div> -->
 
 <!-- 
 <br>
