@@ -5,13 +5,14 @@
     alt: Brainchip
   date: May '23 - Aug '23
   description: Prototyping a novel Self-Balancing Bot controlled through a RL-architecture.
+
 - title: Graduate Research Volunteer (Zhe Xu Lab)
   company: Arizona State University, Tempe, AZ
   image:
     src: /imgs/work/asu-logo.png
     alt: Zhe Xu Lab
   date: Nov '22 - Present
-  description: Implemented Differential Control Synthesis for Multi-Agent Systems. Devised ROS1 Nodes for perception and RL Architecture with the Hello Robot.
+  description: Implemented Differential Control Synthesis for Multi-Agent Systems. Devised ROS1 Nodes for perception and RL Architecture with the Hello Robot Strech R1.
 
 - title: Robotic Software Engineer Intern (Embedded C Specialist + VRep)
   company: e-Yantra Robotic Internship Program, IIT Bombay, MoE of India
@@ -28,13 +29,15 @@
     alt: e-Yantra
   date: Oct '19 - Feb '20
   description: Represented IIT Patna on National Stage & Awarded National Finalists (99.7 Percentile) at e-Yantra  funded by Ministry of Education, India. Recognized for technical excellence, offered Summer Internship at prestigious IIT Bombay.
+
 - title: Mechanical Engineer Intern
   company: Neyveli Lignite Corporation, Neyveli, TamilNadu
   image:
-    src: /imgs/work/nlc-logo.jpeg
+    src: /imgs/work/nlc-logo.jpg
     alt: NLC
   date: May '19 - Aug '19
-  description: Interned in the Mortgage Structuring Strategies team, GMD. We achieved a sharp improvement in arbitrage by optimizing cash-flows through different derivative instruments
+  description: Led team to assess and maintain water circulating pump through coatings. Research Survey on Improved circulating water pump efficiency with a payback period of < 2 months.
+
 # - title: Developer Intern
 #   company: Synergistic Financial Network Pvt Ltd, Mumbai
 #   image:

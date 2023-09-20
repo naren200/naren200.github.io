@@ -5,7 +5,6 @@
     <div class="wrapper">
     <div class="work">
         <br>
-        <br>
         <h4 class="page-heading">Education</h4>
 
         {% for item in site.data.education %}
@@ -13,9 +12,9 @@
         <!-- <img
             src="{{ item.image.src | absolute_url }}"
             alt="{{ item.image.alt }}"
-            class="work-bubble"
+            class="work-bubble" 
         /> -->
-        <div class="work-bubble-with-date">
+        <div class="work-bubble-with-date" style="font-size: 6; font-family: sans-serif;">
             <img
             src="{{ item.image.src | absolute_url }}"
             alt="{{ item.image.alt }}"
@@ -34,7 +33,6 @@
         {% endfor %}
         
         <hr>
-        <br>
         <br>
         <h4 class="page-heading">Work</h4>
         
