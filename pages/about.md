@@ -32,9 +32,9 @@ weight: 1
   </p>
 
   <p style="font-size: 18px">
-  I'm currently living my dream, studying at <a href="https://robotics.asu.edu/">ASU Robotics @ ASU</a>, and working on Stretch R1 Robot. Pursuing an <a href="https://ras.engineering.asu.edu/">M.S. in Robotics and Autonomous Systems</a>, Batch of 2024, I aim to advance robotic capabilities in unstructured environments with a focus on perception, Machine Learning, and Aerial Robotics. My engineering philosophy merges automation and AI for operational efficiency. I am a passionate robotics enthusiast, continuously seeking opportunities for growth and innovation, applying my knowledge to real-world challenges.
+  I'm currently living my dream, studying at <a href="https://robotics.asu.edu/">ASU Robotics @ ASU</a>, and working on Stretch R1 Robot. Pursuing an <a href="https://ras.engineering.asu.edu/">M.S. in Robotics and Autonomous Systems</a>, Batch of 2024, I aim to advance robotic capabilities in unstructured environments with a focus on perception, Machine Learning, and Aerial Robotics. 
   </p>
-
+  <br>
   <p style="font-size: 18px">
   I graduated from <a href="https://www.iitp.ac.in/">IIT Patna</a> in 2022 with a Bachelor’s in <a href="https://www.iitp.ac.in/index.php/departments/engineering-technology/mechanical-engineering/">Mechanical Engineering</a>. I was recognized as an Undergraduate Project Finalist for successfully developing a Motion Prediction model for a Towed floating object under <a href="https://www.iitp.ac.in/index.php/people-6/faculty/2-uncategorised/241-view-profile-38">Prof. Subrata Kumar</a> during my Mechanical Engineering degree program.
   </p>

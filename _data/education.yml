@@ -1,21 +1,21 @@
-- title: M.S. in Robotic Systems Development
-  company: Carnegie Mellon University, Pittsburgh, PA
+- title: M.S. in Robotic and Autonomous Systems
+  company: Arizona State University, Tempe, AZ
   image:
-    src: /imgs/education/cmu-logo.png
-    alt: Carnegie Mellon University
+    src: /imgs/education/asu-logo.png
+    alt: Arizona State University
   date: Aug '22 - May '24
-  description: Awarded the prestigious J.N. Tata scholarship. Student representative of the MRSD cohort. Represented CMU at ICRA '23 in Quadruped Robot Challenge (3rd Prize).
-- title: Sakura Research Exchange
-  company: Hiroshima University, Japan
+  description: 
+- title: Robotics Software Engineer Nanodegree
+  company: Udacity
   image:
-    src: /imgs/education/hu-logo.png
-    alt: Hiroshima University
-  date: Jun '19
-  description: My visit was under the Sakura Research Exchange Programme spanning a week. I was among 15 students from India to be awarded the Sakura Science Plan scholarship ’19 from Japan Science & Technology Agency
+    src: /imgs/education/uda-logo.jpeg
+    alt: Udacity
+  date: Dec '22
+  description: 
 - title: B.Tech in Mechanical Engineering
-  company: IIT Bombay, India
+  company: IIT Patna, India
   image:
-    src: /imgs/education/iitb-logo.png
-    alt: Hiroshima University
-  date: Jul '17 - Aug '21
-  description: Citation award for technical excellence. Department rank 5 in Mechanical Engineering. Founded and led a student technical quadruped robot team. Highest number of projects in the graduating batch. Achieved 99.7 percentile in JEE Advanced (All India Rank 698).
+    src: /imgs/education/iitp-logo.png
+    alt: Indian Institute of Technology Patna
+  date: Jul '18 - Aug '22
+  description: Capstone Project Finalists Recognized for Technical Excellence in Mechanical Engineering Department. Founded and led a student technical quadrupedal robot team & Awarded National (India) Finalists Status with Paid Internship (99.7 percentile). Achieved 99.4 percentile in JEE Advanced (All India Rank 6973).
