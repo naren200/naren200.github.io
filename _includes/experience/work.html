@@ -4,8 +4,8 @@
 <div class="page-content">
     <div class="wrapper">
     <div class="work">
-        <h4 class="page-heading">Education</h4>
-        <br>
+        
+        <h4 class="page-heading">Education</h4><br>
         {% for item in site.data.education %}
         <div class="work-item">
         <!-- <img
@@ -13,14 +13,14 @@
             alt="{{ item.image.alt }}"
             class="work-bubble" 
         /> -->
-        <div class="work-bubble-with-date" style="font-size: 2;"> #  font-family: sans-serif;
+        <div class="work-bubble-with-date"> 
             <img
             src="{{ item.image.src | absolute_url }}"
             alt="{{ item.image.alt }}"
             class="work-bubble"
             />
             {% if item.date %}
-            <h6>{{ item.date }}</h6>
+            <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
             {% endif %}
         </div>
         <p class="work-text">
@@ -31,9 +31,8 @@
         </div>
         {% endfor %}
         
-        <hr><br><br>
+        <br><hr>
         <h4 class="page-heading">Work</h4>
-        <br>
         {% for item in site.data.work %}
         <div class="work-item">
         <!-- <img
@@ -48,7 +47,7 @@
             class="work-bubble"
             />
             {% if item.date %}
-            <h6>{{ item.date }}</h6>
+            <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
             {% endif %}
         </div>
         <p class="work-text">
@@ -58,8 +57,8 @@
         </p>
         </div>
         {% endfor %}
-        <hr>
-        <br>
+        
+
     </div>
     </div>
 </div>
