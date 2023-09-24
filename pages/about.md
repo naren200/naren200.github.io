@@ -6,7 +6,7 @@ weight: 1
 ---
 <link rel="stylesheet" type="text/css" href="../_sass/_base.scss">
 
-**Table of Content** | <a href="#achievements">Achievements - Robotics</a> | <a href="#distinguishesme">What Sets Me Apart</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> | 
+<a style="text-align: center;"> **Table of Content** | <a href="#achievements">Achievements - Robotics</a> | <a href="#distinguishesme">What Sets Me Apart</a> | <a href="#Questionsexcitesme">Questions That Excites me</a> | </a>
 
 <!-- # **About Me** -->
 <h1 style="text-align: center;"><b>About Me</b></h1>

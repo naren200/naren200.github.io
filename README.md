@@ -30,6 +30,17 @@ To run the website locally, follow these steps:
 2. Open the project folder: `cd your-portfolio-website`
 3. Open the `index.html` file in your preferred web browser.
 
+
+### Acknowledgement
+- Jekyll template: [Bay Theme](https://github.com/eliottvincent/bay) by Elliot Vincent
+- Back-to-top button inspiration: [Matthew Cain's Codepen](https://codepen.io/matthewcain/pen/ZepbeR)
+- Search inspiration: [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
+- Javascript widget: [Revolvermaps](https://www.revolvermaps.com/)
+- Several hours of tinkering and fine-tuning
+
+
+<p align='center'>Created with :heart: by <a href="https://www.linkedin.com/in/narendhiran2000/">Narendhiran</a></p>
+
 ## Screenshots
 
 ![Screenshot 1](/screenshots/screenshot1.png)
