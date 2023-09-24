@@ -39,7 +39,6 @@ To run the website locally, follow these steps:
 - Several hours of tinkering and fine-tuning
 
 
-<p align='center'>Created with :heart: by <a href="https://www.linkedin.com/in/narendhiran2000/">Narendhiran</a></p>
 
 ## Screenshots
 
@@ -56,4 +55,6 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+<p align='center'>Created with :heart: by <a href="https://www.linkedin.com/in/narendhiran2000/">Narendhiran</a></p>
 

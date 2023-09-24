@@ -25,12 +25,11 @@ permalink: /experience/
 <hr> 
 <br>
 
-<h3 id="Future-Imagination">A Long Way to Go: Isn't It!?</h3>
-<br>
+<h4 class="page-heading" id="Future-Imagination">There's a long road ahead, but we're on the right track.</h4><br>
 
 <style>
     #owl-demo{
-      margin-top: 30px;
+      margin-top: 10px;
     }
     #owl-demo .item{
       border: 0px solid black;
@@ -44,6 +43,9 @@ permalink: /experience/
   </style>
   <div id ="owl-demo" class="owl-carousel owl-theme">
     <div class="item">
+      <img src="../imgs/HumanLikeRobot.jpg" alt="Image"/>
+    </div>
+    <div class="item">
       <img src="../imgs/FutureWorld.jpg" alt=" Image"/>
     </div>
     <div class="item">
@@ -51,9 +53,6 @@ permalink: /experience/
     </div>
     <div class="item">
       <img src="../imgs/FlyingCommunity.jpg" alt="Image"/>
-    </div>
-    <div class="item">
-      <img src="../imgs/HumanLikeRobot.jpg" alt="Image"/>
     </div>
     <div class="item">
       <img src="../imgs/FutureWorld4.jpg" alt="Image"/>

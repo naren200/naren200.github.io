@@ -3,7 +3,7 @@
   overflow: hidden;
   padding-bottom: 2em;
   font-family: "San Francisco", sans-serif;
-  font-size: 23px; /* Adjust the font size as needed */
+  font-size: 21px; /* Adjust the font size as needed */
 
 }
 
@@ -11,16 +11,16 @@
   // float: left;
   // padding-right: 20px;
   // padding-bottom: 1.5em;
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   object-fit: cover;
 }
 
 .work-bubble-with-date {
   float: left;
-  padding-right: 50px;
+  padding-right: 60px;
   // padding-bottom: 1.5em;
-  width: 130 px;
+  width: 120 px;
   text-align: center;
   // height: 100px;
   // object-fit: cover;
@@ -32,7 +32,7 @@
 .work-text {
   font-family: "San Francisco", sans-serif;
   overflow: hidden;
-  font-size: 20px; /* Adjust the font size as needed */
+  font-size: 21px; /* Adjust the font size as needed */
   padding-right: 50px;
 
 }

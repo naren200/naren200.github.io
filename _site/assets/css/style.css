@@ -474,10 +474,10 @@ body { font-family: "San Francisco", sans-serif; }
 [data-theme="dark"] .post footer { text-decoration: none; }
 [data-theme="dark"] .timeline-body .timeline-item:after { background-color: #17191a; }
 
-.work-item { clear: both; overflow: hidden; padding-bottom: 2em; font-family: "San Francisco", sans-serif; font-size: 23px; /* Adjust the font size as needed */ }
+.work-item { clear: both; overflow: hidden; padding-bottom: 2em; font-family: "San Francisco", sans-serif; font-size: 21px; /* Adjust the font size as needed */ }
 
-.work-bubble { width: 100px; height: 100px; object-fit: cover; }
+.work-bubble { width: 130px; height: 130px; object-fit: cover; }
 
-.work-bubble-with-date { float: left; padding-right: 50px; width: 130 px; text-align: center; font-family: "San Francisco", sans-serif; font-size: 4px; /* Adjust the font size as needed */ }
+.work-bubble-with-date { float: left; padding-right: 60px; width: 120 px; text-align: center; font-family: "San Francisco", sans-serif; font-size: 4px; /* Adjust the font size as needed */ }
 
-.work-text { font-family: "San Francisco", sans-serif; overflow: hidden; font-size: 20px; /* Adjust the font size as needed */ padding-right: 50px; }
+.work-text { font-family: "San Francisco", sans-serif; overflow: hidden; font-size: 21px; /* Adjust the font size as needed */ padding-right: 50px; }
