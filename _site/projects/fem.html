@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100 w-100">
+
+<head>
+
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=1200, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Deep Convolutional Generative Adversial Network (DcGANs)">
+  <meta property="og:description" content="Worked in a team of 4 on a project involving DCGANs for realistic image generation.">
+
+  <title>Deep Convolutional Generative Adversial Network (DcGANs)</title>
+  <meta name="description" content="Worked in a team of 4 on a project involving DCGANs for realistic image generation.">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <!--JUST FRO ART LAYOUT-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- for the particles-->
+  <link href="/assets/css/style_particles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="h-100 w-100 d-flex flex-column">
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>Narendhiran Saravanane</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/about/">About</a>
+
+      <a class="nav-item nav-link active" href="/projects/">Projects</a>
+
+      <a class="nav-item nav-link " href="/pages/cv">CV</a>
+
+      <a class="nav-item nav-link " href="/experience/">Experience</a>
+
+      <a class="nav-item nav-link " href="/blog/">Blog</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <div class="col-lg-10 h-100 w-100 mx-auto mt-5 post">
+  <h2 id="table-of-content">Table of Content</h2>
+<ol>
+  <li><a href="#project-overview"><strong>Project Overview</strong></a>
+    <ul>
+      <li><a href="#key-components-of-dcgans">Key Components of DcGANs</a></li>
+      <li><a href="#dataset">Dataset</a></li>
+    </ul>
+  </li>
+  <li><a href="#training-overview"><strong>Training Overview</strong></a>
+    <ul>
+      <li><a href="#training-details">Training Details</a></li>
+      <li><a href="#evaluation-metrics">Evaluation Metrics</a></li>
+      <li><a href="#loss-function">Loss Function</a></li>
+    </ul>
+  </li>
+  <li><a href="#project-outcome"><strong>Project Outcome</strong></a></li>
+  <li><a href="#conclusion"><strong>Conclusion</strong></a></li>
+  <li><a href="#references"><strong>References</strong></a></li>
+</ol>
+
+<h1 id="deep-convolutional-generative-adversarial-networks-dcgan">Deep Convolutional Generative Adversarial Networks (DCGAN)</h1>
+
+<p>DCGAN is a project that explores the world of Generative Adversarial Networks (GANs) to create realistic images. GANs consist of two networks, a Generator, and a Discriminator, that are trained together in a competitive setting. The Generator learns to create images that are similar to a given dataset, while the Discriminator learns to distinguish between real and generated images.</p>
+
+<h2 id="project-overview">Project Overview</h2>
+
+<p>The primary goal of this project was to implement a DCGAN architecture using Python and popular deep learning libraries like TensorFlow and Keras. This DCGAN was designed to generate images that resemble a dataset of fashion items. Here’s a brief overview of the project:</p>
+
+<h3 id="key-components-of-dcgans">Key Components of DcGANs</h3>
+
+<ul>
+  <li>
+    <p><strong>Generator</strong>: The Generator network takes random noise as input and generates images. It consists of multiple layers of transposed convolutional layers, batch normalization, and activation functions.</p>
+  </li>
+  <li>
+    <p><strong>Discriminator</strong>: The Discriminator network evaluates the authenticity of an image, determining whether it’s real (from the dataset) or fake (generated by the Generator). It uses convolutional layers, LeakyReLU activation, and sigmoid activation for binary classification.</p>
+  </li>
+  <li>
+    <p><strong>Training</strong>: The DCGAN is trained in a two-step process. First, the Discriminator is trained to distinguish real from generated images. Then, the Generator is trained to produce images that can fool the Discriminator.</p>
+  </li>
+  <li>
+    <p><strong>Data Preparation</strong>: The project uses the Fashion MNIST dataset, which contains grayscale images of various fashion items. The dataset is preprocessed to scale pixel values to the range [-1, 1].</p>
+  </li>
+</ul>
+
+<p><img src="../imgs/projects/gan-Architecture.png" alt="drawing" width="950" /></p>
+
+<h3 id="dataset">Dataset</h3>
+
+<ul>
+  <li><strong>Fashion MNIST Dataset</strong>:
+    <ul>
+      <li>Contains 70,000 grayscale images.</li>
+      <li>Split into 60,000 training and 10,000 testing images.</li>
+      <li>Images are 28 x 28 pixels in size.</li>
+      <li>Includes 10 fashion categories.</li>
+      <li>Licensed under the MIT License.</li>
+      <li>Available in Keras.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="../imgs/projects/gan-mnist.png" alt="drawing" width="350" /></p>
+
+<hr />
+
+<h3 id="training-overview">Training Overview</h3>
+
+<p>The DCGAN is trained over several epochs, and the training process includes visualizing generated images and monitoring losses. The goal is to achieve a Generator that can produce fashion item images that are visually similar to the dataset.</p>
+
+<h3 id="training-details">Training Details</h3>
+
+<ul>
+  <li><strong>Bird’s Eye View</strong>:
+    <ul>
+      <li>Trained for 50 epochs.</li>
+      <li>Batch size of 128.</li>
+      <li>Learning rate set to 2e-4.</li>
+      <li>Generator input: Random noise vectors of 100 numbers, sampled from a uniform distribution between -1 and 1.</li>
+      <li>Generator uses deconvolution layers for upsampling.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="evaluation-metrics">Evaluation Metrics</h3>
+
+<ul>
+  <li><strong>Metric</strong>: Accuracy.</li>
+  <li><strong>Use</strong>: Binary classification accuracy for generated images.</li>
+  <li><strong>Note</strong>: Both classes (real and generated) are equally important.</li>
+</ul>
+
+<h3 id="loss-function">Loss Function</h3>
+
+<ul>
+  <li><strong>Loss Function</strong>: Binary Cross-Entropy (Log Loss).
+<img src="../imgs/projects/gan-logloss.png" alt="drawing" width="850" /></li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+- **Game of Minimax**: DCGAN involves two neural networks, the Generator and the Discriminator, in a minimax game.
+  - Generator minimizes the loss function.
+  - Discriminator maximizes the same loss function.
+  - Loss function components:
+    - D(x): Discriminator's estimate of the probability that real data is real.
+    - Ez: Expected value over all random inputs to the generator.
+    - G(z): Generator's output when given noise z.
+    - D(G(z)): Discriminator's estimate of the probability that a fake instance is real.
+    - Ex: Expected value over all real data instances.
+
+</code></pre></div></div>
+
+<p><img src="../imgs/projects/gan-equation.jpg" alt="drawing" width="650" /></p>
+
+<hr />
+
+<h2 id="project-outcome">Project Outcome</h2>
+
+<p>DCGAN is a powerful generative model that has applications in image generation, data augmentation, and more. This project demonstrates the implementation and training of a DCGAN architecture to generate fashion item images. It serves as a foundation for understanding GANs and their applications in the field of computer vision.</p>
+
+<p><img src="../imgs/projects/gan-resultsepoch1and50.png" alt="drawing" width="950" /></p>
+
+<div style="text-align: center;">
+    <iframe width="560" height="560" src="https://www.youtube.com/embed/cyXw7y1FSA0?si=uLTzm8v80Qx5R5La" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+</div>
+
+<h4 id="graph-of-the-dcgan-loss-vs-epoch">Graph of the DCGAN loss vs. epoch</h4>
+<p><img src="../imgs/projects/gan-graph.png" alt="drawing" width="550" /></p>
+
+<hr />
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The DCGAN project provides insights into the world of generative modeling and its potential for creating realistic images. It’s a stepping stone for further exploration of GANs and their applications in various domains, including art generation, image-to-image translation, and more.</p>
+
+<p>If you have any questions or want to learn more about this project, feel free to <a href="mailto:narendhiran2000@gmail.com">contact me</a>. I’m excited to share my insights into DCGAN and its applications.</p>
+
+<h2 id="references">References</h2>
+<h3 id="presentation">Presentation</h3>
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRwE-h8yMDveiIq3h6_MtQ96N4QFU5X8byeOiijf3DdCqHvgrp4M9eKtCF_lP_3VpuyQnjRd922wssc/embed?start=true&amp;loop=true&amp;delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+</div>
+
+  </main>
+  <!-- <style>
+    hr.new1 {
+      border-top: 1px solid #5f8efa;
+    }
+  </style>
+  <hr class="new1"> -->
+
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+
+  <footer class="mt-auto py-3 text-center">
+<hr>
+  <p style="font-size: 15px" text-muted mb-2 >
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    <br>
+    <strong>Wanna discuss something? Feel free to ping me!</strong>
+  </p>
+  <a id="button"/>
+
+  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:narendhiran2000@gmail.com"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#db4437'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fas fa-envelope fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.facebook.com/narendhiran.saravanane.9"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#3b5998'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-facebook fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.github.com/naren200"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#333333'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.linkedin.com/in/narendhiran2000"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#007bb5'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-linkedin-in fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.twitter.com/narendhiran2000"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#1da1f2'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-twitter fa-1x"></i>
+    </a>
+
+</div><small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+  
+</footer>
+
+</body>
+
+</html>
