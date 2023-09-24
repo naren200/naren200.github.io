@@ -1,11 +1,3 @@
-- title: Robotics & AI Solutions Architect Intern (AI Specialist)
-  company: Brainchip, Laguna Hills, CA
-  image:
-    src: /imgs/work/bnchp-logo.png
-    alt: Brainchip
-  date: May '23 - Aug '23
-  description: Prototyping a novel Self-Balancing Bot controlled through a RL-architecture.
-
 - title: Graduate Research Volunteer (Zhe Xu Lab)
   company: Arizona State University, Tempe, AZ
   image:
@@ -13,6 +5,14 @@
     alt: Zhe Xu Lab
   date: Nov '22 - Present
   description: Implemented Differential Control Synthesis for Multi-Agent Systems. Devised ROS1 Nodes for perception and RL Architecture with the Hello Robot Strech R1.
+
+- title: Robotics & AI Solutions Architect Intern (AI Specialist)
+  company: Brainchip, Laguna Hills, CA
+  image:
+    src: /imgs/work/bnchp-logo.png
+    alt: Brainchip
+  date: May '23 - Aug '23
+  description: Prototyping a novel Self-Balancing Bot controlled through a RL-architecture.
 
 - title: Robotic Software Engineer Intern (Embedded C Specialist + VRep)
   company: e-Yantra Robotic Internship Program, IIT Bombay, MoE of India

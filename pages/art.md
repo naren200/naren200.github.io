@@ -2,8 +2,15 @@
 layout: page
 title: Experience
 weight: 4
-permalink: /art/
+permalink: /experience/
 ---
+
+
+{% include experience/work.html %}
+
+<br>
+<hr> 
+<br>
 
 
 <h4 class="page-heading">Skills</h4>
@@ -13,7 +20,6 @@ permalink: /art/
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
 
-{% include experience/work.html %}
 
 <br>
 <hr> 
