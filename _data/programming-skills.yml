@@ -1,15 +1,19 @@
 - name: Python
   percentage: 90
   color: danger
-
+  showPercentage: false
+  
 - name: C/C++ & Catkin
   percentage: 80
   color:
+  showPercentage: false
 
 - name: Matlab
   percentage: 70
   color: secondary
+  showPercentage: false
 
 - name: embedded C
   percentage: 90
   color: secondary
+  showPercentage: false

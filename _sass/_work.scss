@@ -1,0 +1,45 @@
+.work-item {
+  clear: both;
+  overflow: hidden;
+  padding-bottom: 2em;
+  font-family: "San Francisco", sans-serif;
+  font-size: 21px; /* Adjust the font size as needed */
+
+}
+
+.work-bubble {
+  // float: left;
+  // padding-right: 20px;
+  // padding-bottom: 1.5em;
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+}
+
+.work-bubble-with-date {
+  float: left;
+  padding-right: 60px;
+  // padding-bottom: 1.5em;
+  width: 120 px;
+  text-align: center;
+  // height: 100px;
+  // object-fit: cover;
+  font-family: "San Francisco", sans-serif;
+  font-size: 4px; /* Adjust the font size as needed */
+
+}
+
+.work-text {
+  font-family: "San Francisco", sans-serif;
+  overflow: hidden;
+  font-size: 21px; /* Adjust the font size as needed */
+  padding-right: 50px;
+
+}
+
+// .container{
+//   min-width:1200px;         
+//   width: auto !important;   /* Firefox will set width as auto */
+//   width:1200px;             /* As IE ignores !important it will set width as 1000px; */
+//  }
+ 

@@ -1,15 +1,19 @@
 - name: ROS & V-Rep
   percentage: 95
   color: info
+  showPercentage: false
 
 - name: TensorFlow & Pytorch
   percentage: 70
   color: success
+  showPercentage: false
 
 - name: Physics Engines (Gazebo & Carlo)
   percentage: 90
   color: success
+  showPercentage: false
 
 - name: Solidworks & Ansys
   percentage: 100
   color: success
+  showPercentage: false
