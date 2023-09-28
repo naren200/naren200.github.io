@@ -85,7 +85,7 @@ permalink: /experience/
 
   <script type="text/javascript">$('.owl-carousel').owlCarousel({
     loop:true,
-    margin:10,
+    margin:0,
     nav:true,
     autoHeight:true,
     autoplay: true, // Enable autoplay
