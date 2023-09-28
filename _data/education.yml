@@ -1,0 +1,22 @@
+- title: M.S. in Robotic and Autonomous Systems
+  company: Arizona State University, Tempe, AZ
+  image:
+    src: /imgs/education/asu-logo.png
+    alt: Arizona State University
+  date: Aug '22 - May '24
+  description: Career transitioned with challenging AI & ML courses. Researched on control synthesis of Multi-Agent Systems under Prof. Zhe Xu. 
+- title: Robotics Software Engineer Nanodegree
+  company: Udacity
+  image:
+    src: /imgs/education/uda-logo.jpeg
+    alt: Udacity
+  date: Dec '22
+  description: Awarded the prestigious Udacity Scholarship. Completed challenging robotic projects and received industry-recognized certification.
+
+- title: B.Tech in Mechanical Engineering
+  company: IIT Patna, India
+  image:
+    src: /imgs/education/iitp-logo.png
+    alt: Indian Institute of Technology Patna
+  date: Jul '18 - Aug '22
+  description: Capstone Project Recognized for Technical Excellence in Mechanical Engineering Department. Led IIT Patna's student quadrupedal robot team to National (India) Finalist Status (99.7 percentile). Achieved 99.4 percentile in JEE Advanced (All India Rank 6973).
