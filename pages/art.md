@@ -3,6 +3,7 @@ layout: page
 title: Experience
 weight: 4
 permalink: /experience/
+permalink: /experience/
 ---
 
 
@@ -30,9 +31,10 @@ permalink: /experience/
 
 <style>
     #owl-demo{
-      margin-top: 30px;
+      margin-top: 10px;
     }
     #owl-demo .item{
+      border: 0px solid black;
       border: 0px solid black;
 
     }
@@ -43,6 +45,9 @@ permalink: /experience/
     }
   </style>
   <div id ="owl-demo" class="owl-carousel owl-theme">
+    <div class="item">
+      <img src="../imgs/HumanLikeRobot.jpg" alt="Image"/>
+    </div>
     <div class="item">
       <img src="../imgs/HumanLikeRobot.jpg" alt="Image"/>
     </div>
@@ -85,6 +90,7 @@ permalink: /experience/
 
   <script type="text/javascript">$('.owl-carousel').owlCarousel({
     loop:true,
+    margin:0,
     margin:0,
     nav:true,
     autoHeight:true,
