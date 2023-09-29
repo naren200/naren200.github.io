@@ -4,6 +4,7 @@ title: About
 permalink: /about/
 weight: 1
 ---
+<link rel="stylesheet" type="text/css" href="../_sass/_base.scss">
 
 <link rel="stylesheet" type="text/css" href="../_sass/_base.scss">
 
@@ -17,15 +18,16 @@ weight: 1
 <div class="column">
   <div>
     <img class="profilepic" style="float: center; border-radius: 50%;" src="../imgs/NarenFormal.jpg" alt="Kitten" title="Naren (Neh-R-ehN)" width="300" height="200" />
+    <img class="profilepic" style="float: center; border-radius: 50%;" src="../imgs/NarenFormal.jpg" alt="Kitten" title="Naren (Neh-R-ehN)" width="300" height="200" />
   </div>
 
 <div class="column" style="width: 100%; margin-left: 0px">
-
   <br>
   <p style="font-size: 20px">Hello there  <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>. My friends call me Naren (Neh-R-ehN). </p>
     
   <br>
 
+  <h2><b>Academic and Robotics Pursuits</b></h2>
   <h2><b>Academic and Robotics Pursuits</b></h2>
   <br>
 
@@ -53,6 +55,7 @@ weight: 1
   <h2 id="distinguishesme" style="font-size: 25px">
     <b>What Sets Me Apart</b>
   </h2><br>
+  </h2><br>
   <p style="font-size: 18px">
     <u><b>Resilience</b></u>: My resilience shone through when I overcame the initial setback of failing the JEE Advanced exam, eventually securing admission to my dream institute, IIT. This determination persisted through challenges in robotics competitions, internships, and research, shaping me into a tenacious problem solver and innovator.
   </p>
@@ -65,9 +68,11 @@ weight: 1
   <br>
 
   <h4 style="font-size: 20px">My Approach: Tackling Complex Problems with Passion</h4><br>
+  <h4 style="font-size: 20px">My Approach: Tackling Complex Problems with Passion</h4><br>
 
-  <br>
   <p style="font-size: 18px">
+  I harness the <a href="#distinguishesme">above mentioned skills and traits</a> to tackle complex problems, prioritizing problem quality. My passion lies in machine learning and perception methods as they relate to robotics. With experience ranging from short-term code that secured wins in national and international robotics competitions to long-term contributions to open-source projects, my software engineering expertise is versatile and adaptive, honed through various professional experiences.
+  </p><br>
   I harness the <a href="#distinguishesme">above mentioned skills and traits</a> to tackle complex problems, prioritizing problem quality. My passion lies in machine learning and perception methods as they relate to robotics. With experience ranging from short-term code that secured wins in national and international robotics competitions to long-term contributions to open-source projects, my software engineering expertise is versatile and adaptive, honed through various professional experiences.
   </p><br>
   <p style="font-size: 18px">
@@ -76,8 +81,13 @@ weight: 1
   <br>
   <hr> <!-- This line creates a horizontal divider -->
   <h2 id="Questionsexcitesme" style="font-size: 25px"><b>Questions that Excite me</b></h2><br>
+  <h2 id="Questionsexcitesme" style="font-size: 25px"><b>Questions that Excite me</b></h2><br>
   <p style="font-size: 18px">
     <ul style="font-size: 18px">
+    <li><b>Robotic Autonomy in Unstructured Environments:</b> <br> How can we enhance the autonomy of robots to navigate and perform complex tasks in unstructured, unpredictable environments such as disaster-stricken areas or space exploration missions? </li>
+    <li><b>Robots for Ocean Exploration:</b> <br>What advancements are needed in AI and robotics to explore and preserve the mysteries of the deep sea, studying marine life and ecosystems with minimal environmental impact? </li>
+    <li><b>Experiential Learning in Robotics:</b> <br> How can robots gain real-world experience to improve their performance and adaptability? </li>
+    <li><b>AI-Driven Precision Agriculture:</b> <br> How can AI-powered robots and drones be employed for precision agriculture, not only optimizing crop yields but also minimizing resource usage and environmental impact? </li>
     <li><b>Robotic Autonomy in Unstructured Environments:</b> <br> How can we enhance the autonomy of robots to navigate and perform complex tasks in unstructured, unpredictable environments such as disaster-stricken areas or space exploration missions? </li>
     <li><b>Robots for Ocean Exploration:</b> <br>What advancements are needed in AI and robotics to explore and preserve the mysteries of the deep sea, studying marine life and ecosystems with minimal environmental impact? </li>
     <li><b>Experiential Learning in Robotics:</b> <br> How can robots gain real-world experience to improve their performance and adaptability? </li>
@@ -86,6 +96,15 @@ weight: 1
   </p>
 </div></div>
 
+<br><br><br>
+
+<div class="page-content">
+  <div class="wrapper">
+    <center><font size="1">This country counter shows visits to this landing page since Sep 19, 2023. <a href="https://www.revolvermaps.com/">Credits</a></font></center>
+    <div class="revolvermap-container">
+      <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5zwgjoimiv8&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=120&amp;lx=-320&amp;ly=320&amp;hi=50&amp;he=10&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+    </div>
+  </div>
 <br><br><br>
 
 <div class="page-content">
