@@ -1,0 +1,16 @@
+- title: Design of Autonomous Carrier Robot - Task and Validation
+  company: Indian Institute of Science, Bangalore.
+  image:
+    src: /imgs/publication/i4am22.png
+    alt: I4AM 2022
+  date: Nov '21 - Jan '22
+  description: A robotic prototype equipped with a white line sensor follows predefined paths, detects and navigates around obstacles, and performs various material handling tasks, specifically designed for applications in production and healthcare environments with a focus on General Hospital operations.
+
+
+- title: Energy Efficient Coatings for Improved Wear and Tear Performance
+  company: Neyveli Lignite Corporation, TamilNadu
+  image:
+    src: /imgs/publication/nlc.png
+    alt: NLC
+  date: Aug '21 - Nov '21
+  description: The application of polymer coating in circulating water pumps' hydraulic passages increased pump efficiency from 84.17% to 88.42%, handling a higher flow rate and saving power for the NLCIL plant in southern India
