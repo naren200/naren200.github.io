@@ -58,6 +58,33 @@
         </div>
         {% endfor %}
         
+        <hr>
+        <br><h4 class="page-heading">Publications</h4><br>
+        {% for item in site.data.publication %}
+        <div class="work-item">
+        <!-- <img
+            src="{{ item.image.src | absolute_url }}"
+            alt="{{ item.image.alt }}"
+            class="work-bubble"
+        /> -->
+        <div class="work-bubble-with-date">
+            <img
+            src="{{ item.image.src | absolute_url }}"
+            alt="{{ item.image.alt }}"
+            class="work-bubble"
+            />
+            {% if item.date %}
+            <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
+            {% endif %}
+        </div>
+        <p class="work-text">
+            <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
+            &mdash;
+            {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+        </p>
+        </div>
+        {% endfor %}
+        
 
     </div>
     </div>
