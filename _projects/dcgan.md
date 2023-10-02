@@ -6,28 +6,23 @@ description: Worked in a team of 4 on a project involving DCGANs for realistic i
 
 ---
 
-## Table of Content
-1. [**Project Overview**](#project-overview)
-   - [Key Components of DcGANs](#key-components-of-dcgans)
-   - [Dataset](#dataset)
-2. [**Training Overview**](#training-overview)
-   - [Training Details](#training-details)
-   - [Evaluation Metrics](#evaluation-metrics)
-   - [Loss Function](#loss-function)
-3. [**Project Outcome**](#project-outcome)
-4. [**Conclusion**](#conclusion)
-5. [**References**](#references)
+##### Table of Content
+
+* [**Project Overview**](#project-overview)
+* [**Training Overview**](#training-overview)
+* [**Project Outcome**](#project-outcome) :point_left:
+* [**Conclusion**](#conclusion)
 
 
-# Deep Convolutional Generative Adversarial Networks (DCGAN)
+### **Deep Convolutional Generative Adversarial Networks (DCGAN)**
 
 DCGAN is a project that explores the world of Generative Adversarial Networks (GANs) to create realistic images. GANs consist of two networks, a Generator, and a Discriminator, that are trained together in a competitive setting. The Generator learns to create images that are similar to a given dataset, while the Discriminator learns to distinguish between real and generated images.
 
-## Project Overview
+#### **Project Overview**
 
 The primary goal of this project was to implement a DCGAN architecture using Python and popular deep learning libraries like TensorFlow and Keras. This DCGAN was designed to generate images that resemble a dataset of fashion items. Here's a brief overview of the project:
 
-### Key Components of DcGANs
+##### Key Components of DcGANs
 
 - **Generator**: The Generator network takes random noise as input and generates images. It consists of multiple layers of transposed convolutional layers, batch normalization, and activation functions.
 
@@ -39,64 +34,62 @@ The primary goal of this project was to implement a DCGAN architecture using Pyt
 
 <img src="../imgs/projects/gan-Architecture.png" alt="drawing" width="950"/>
 
-### Dataset
+##### Dataset
 
-- **Fashion MNIST Dataset**:
-  - Contains 70,000 grayscale images.
-  - Split into 60,000 training and 10,000 testing images.
-  - Images are 28 x 28 pixels in size.
-  - Includes 10 fashion categories.
-  - Licensed under the MIT License.
-  - Available in Keras.
+**Fashion MNIST Dataset**:
+- Contains 70,000 grayscale images.
+- Split into 60,000 training and 10,000 testing images.
+- Images are 28 x 28 pixels in size.
+- Includes 10 fashion categories.
+- Licensed under the MIT License.
+- Available in Keras.
 
 <img src="../imgs/projects/gan-mnist.png" alt="drawing" width="350"/>
 
 ----
 
-### Training Overview
+#### **Training Overview**
 
 The DCGAN is trained over several epochs, and the training process includes visualizing generated images and monitoring losses. The goal is to achieve a Generator that can produce fashion item images that are visually similar to the dataset.
 
-### Training Details
+##### Training Details
 
-- **Bird's Eye View**:
-  - Trained for 50 epochs.
-  - Batch size of 128.
-  - Learning rate set to 2e-4.
-  - Generator input: Random noise vectors of 100 numbers, sampled from a uniform distribution between -1 and 1.
-  - Generator uses deconvolution layers for upsampling.
+**Bird's Eye View**:
+- Trained for 50 epochs.
+- Batch size of 128.
+- Learning rate set to 2e-4.
+- Generator input: Random noise vectors of 100 numbers, sampled from a uniform distribution between -1 to 1.
+- Generator uses deconvolution layers for upsampling.
 
-### Evaluation Metrics
+##### Evaluation Metrics
 
 - **Metric**: Accuracy.
 - **Use**: Binary classification accuracy for generated images.
 - **Note**: Both classes (real and generated) are equally important.
 
-### Loss Function
+##### Loss Function
 
 - **Loss Function**: Binary Cross-Entropy (Log Loss).
 <img src="../imgs/projects/gan-logloss.png" alt="drawing" width="850"/>
 
-```
 
-- **Game of Minimax**: DCGAN involves two neural networks, the Generator and the Discriminator, in a minimax game.
-  - Generator minimizes the loss function.
-  - Discriminator maximizes the same loss function.
-  - Loss function components:
-    - D(x): Discriminator's estimate of the probability that real data is real.
-    - Ez: Expected value over all random inputs to the generator.
-    - G(z): Generator's output when given noise z.
-    - D(G(z)): Discriminator's estimate of the probability that a fake instance is real.
-    - Ex: Expected value over all real data instances.
+**Game of Minimax**: DCGAN involves two neural networks, the Generator and the Discriminator, in a minimax game.
+- Generator minimizes the loss function.
+- Discriminator maximizes the same loss function.
+- Loss function components:
+  - D(x): Discriminator's estimate of the probability that real data is real.
+  - Ez: Expected value over all random inputs to the generator.
+  - G(z): Generator's output when given noise z.
+  - D(G(z)): Discriminator's estimate of the probability that a fake instance is real.
+  - Ex: Expected value over all real data instances.
 
-```
 
 <img src="../imgs/projects/gan-equation.jpg" alt="drawing" width="650"/>
 
 ----
 
 
-## Project Outcome
+#### **Project Outcome**
 
 DCGAN is a powerful generative model that has applications in image generation, data augmentation, and more. This project demonstrates the implementation and training of a DCGAN architecture to generate fashion item images. It serves as a foundation for understanding GANs and their applications in the field of computer vision.
 
@@ -107,21 +100,21 @@ DCGAN is a powerful generative model that has applications in image generation, 
 </div>
 
 
-#### Graph of the DCGAN loss vs. epoch
+##### Graph of the DCGAN loss vs. epoch
 <img src="../imgs/projects/gan-graph.png" alt="drawing" width="550"/>
 
 ----
 
 
-## Conclusion
+#### **Conclusion**
 
 The DCGAN project provides insights into the world of generative modeling and its potential for creating realistic images. It's a stepping stone for further exploration of GANs and their applications in various domains, including art generation, image-to-image translation, and more.
 
 If you have any questions or want to learn more about this project, feel free to [contact me](mailto:narendhiran2000@gmail.com). I'm excited to share my insights into DCGAN and its applications.
 
 
-## References
-### Presentation 
+#### References
+###### Presentation 
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRwE-h8yMDveiIq3h6_MtQ96N4QFU5X8byeOiijf3DdCqHvgrp4M9eKtCF_lP_3VpuyQnjRd922wssc/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
