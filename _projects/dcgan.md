@@ -8,15 +8,16 @@ description: Worked in a team of 4 on a project involving DCGANs for realistic i
 
 ## Table of Content
 1. [**Project Overview**](#project-overview)
-  - [Key Components of DcGANs](#key-components-of-dcgans)
-  - [Dataset](#dataset)
+   - [Key Components of DcGANs](#key-components-of-dcgans)
+   - [Dataset](#dataset)
 2. [**Training Overview**](#training-overview)
-  - [Training Details](#training-details)
-  - [Evaluation Metrics](#evaluation-metrics)
-  - [Loss Function](#loss-function)
+   - [Training Details](#training-details)
+   - [Evaluation Metrics](#evaluation-metrics)
+   - [Loss Function](#loss-function)
 3. [**Project Outcome**](#project-outcome)
 4. [**Conclusion**](#conclusion)
 5. [**References**](#references)
+
 
 # Deep Convolutional Generative Adversarial Networks (DCGAN)
 
