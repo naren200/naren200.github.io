@@ -6,15 +6,15 @@ description: Led team of 4 to design and implement a disaster response robot, in
 number: three
 ---
 
-# International eYantra Robotics Competition
 
-#### Table of Content
+###### Table of Content
 - [**International eYantra Robotics Competition**](#objective)
 - [**Virtual Simulation**](#virtual-simulation) 
 - [**Critical Features of the Project**](#critical-features-of-the-project) 
 - [**Achievements**](#achievements) :point_left:
 - [**Miscellaneous**](#Miscellaneous)
 
+### International eYantra Robotics Competition
 
 #### Motivation
 <img src="../imgs/projects/cob-introduction.png" alt="drawing" width="1000"/>

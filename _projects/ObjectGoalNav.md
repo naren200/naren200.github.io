@@ -7,10 +7,10 @@ external_url:
 ---
 
 ##### Table of Contents
-* [Project Description](#project-description)
-* [Baseline](#baseline)
-* [Proposed Changes](#proposed-changes) :point_left:
-* [Results](#results)
+* [**Project Description**](#project-description)
+* [**Baseline**](#baseline)
+* [**Proposed Changes**](#proposed-changes) :point_left:
+* [**Results**](#results)
 
 ### Object Goal Navigation Enhancement using Goal-Oriented Semantic Exploration
 

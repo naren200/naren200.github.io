@@ -6,10 +6,10 @@ description: Demonstrating a mobile robot's autonomous navigation and manipulati
 ---
 
 ##### Table of Content
-- [Overview](#overview)
-- [Designing in Physics Engine - Gazebo](#designing-in-physics-engine---gazebo)
-- [Autonomous Operation](#autonomous-operation)
-- [Mapping and Navigation](#mapping-and-navigation) :point_left:
+- [**Overview**](#overview)
+- [**Designing in Physics Engine - Gazebo**](#designing-in-physics-engine---gazebo)
+- [**Autonomous Operation**](#autonomous-operation)
+- [**Mapping and Navigation**](#mapping-and-navigation) :point_left:
 
 
 ### Home-Service Robot Project
