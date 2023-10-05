@@ -63,7 +63,8 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/about/">About</a>
+    <div class="navbar-nav ml-auto">
+<a class="nav-item nav-link " href="/about/">About</a>
 
       <a class="nav-item nav-link active" href="/projects/">Projects</a>
 
@@ -81,68 +82,92 @@
 
 </nav>
     <div class="col-lg-10 mx-auto mt-5 post">
-  <h1 id="home-service-robot-project">Home-Service Robot Project</h1>
+  <h5 id="table-of-content">Table of Content</h5>
+<ul>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#designing-in-physics-engine---gazebo">Designing in Physics Engine - Gazebo</a></li>
+  <li><a href="#autonomous-operation">Autonomous Operation</a></li>
+  <li>
+<a href="#mapping-and-navigation">Mapping and Navigation</a> <img class="emoji" title=":point_left:" alt=":point_left:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f448.png" height="20" width="20">
+</li>
+</ul>
 
-<h2 id="overview">Overview</h2>
+<h3 id="home-service-robot-project">Home-Service Robot Project</h3>
+
+<h4 id="overview"><strong>Overview</strong></h4>
 <p>The <strong>Home-Service Robot project</strong> serves as a comprehensive showcase of robotics expertise, leveraging state-of-the-art technologies and methodologies to demonstrate a mobile robot’s capabilities in a simulated environment. This project harnesses the power of <strong>Robot Operating System (ROS)</strong>, <strong>Gazebo simulation</strong>, advanced <strong>mapping</strong>, <strong>localization</strong>, and <strong>path planning</strong> to illustrate the robot’s prowess in autonomous navigation and manipulation.</p>
 
-<h2 id="designing-in-physics-engine---gazebo"><strong>Designing in Physics Engine - Gazebo</strong></h2>
-<h3 id="building-editor-model-editor-and-plugins">Building Editor, Model Editor, and Plugins</h3>
+<h4 id="designing-in-physics-engine---gazebo"><strong>Designing in Physics Engine - Gazebo</strong></h4>
+<h5 id="building-editor-model-editor-and-plugins">Building Editor, Model Editor, and Plugins</h5>
 <p>The project entails the creation of a dynamic environment using the <strong>Building Editor</strong> in Gazebo, offering ample space for the robot’s operations. The environment features diverse elements and vibrant colors, enhancing the robot’s navigation experience. The robot itself is meticulously designed using the <strong>Model Editor</strong>, ensuring precise integration of sensors and mechanical components. <strong>Fixed joints</strong> connect the robot’s model links, guaranteeing stability during movement.</p>
 
 <ul>
   <li>
     <p><strong>Building Editor</strong>: 
-<img src="../imgs/projects/hsr-building-editor.png" alt="drawing" width="1050" /></p>
+<img src="../imgs/projects/hsr-building-editor.png" alt="drawing" width="550"></p>
   </li>
   <li>
     <p><strong>Model Editor</strong>: 
-<img src="../imgs/projects/hsr-model-editor.png" alt="drawing" width="1050" /></p>
+<img src="../imgs/projects/hsr-model-editor.png" alt="drawing" width="550"></p>
   </li>
   <li>
     <p><strong>Gazebo Plugins</strong>: The robot is equipped with advanced sensors, including <strong>lidar</strong> and <strong>camera</strong>, with <strong>Gazebo plugins</strong> seamlessly integrated to facilitate differential drive, lidar sensing, and camera functionality.</p>
   </li>
 </ul>
 
-<h2 id="autonomous-operation"><strong>Autonomous Operation</strong></h2>
-<h3 id="ball-chasing">Ball Chasing</h3>
+<h4 id="autonomous-operation"><strong>Autonomous Operation</strong></h4>
+<h5 id="ball-chasing">Ball Chasing</h5>
 <p>A key highlight of the project is the robot’s ability to autonomously <strong>chase a white-colored ball</strong> within the environment. This impressive capability is achieved through the implementation of ROS nodes for interaction and navigation.</p>
 
 <ul>
-  <li><strong>Ball Chasing Video</strong>: 
-<a href="https://example.com/ball-chasing-video">Watch Ball Chasing Video</a></li>
+  <li>
+<strong>Ball Chasing Video</strong>:</li>
 </ul>
 
-<h2 id="precise-localization"><strong>Precise Localization</strong></h2>
-<h3 id="amcl-package">AMCL Package</h3>
+<div style="text-align: center;">
+  <iframe width="660" height="415" src="https://www.youtube.com/embed/bR12gWMfKFI?si=rR5MFLuPMTm61K83" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+</div>
+
+<h4 id="precise-localization"><strong>Precise Localization</strong></h4>
+<h5 id="amcl-package">AMCL Package</h5>
 <p>Accurate <strong>localization</strong> is fundamental to the robot’s autonomy. The project utilizes the <strong>Adaptive Monte Carlo Localization (AMCL)</strong> package, a particle filter-based algorithm. AMCL leverages a known map and sensor data, such as laser scans and odometry, to estimate the robot’s pose (position and orientation) within the environment.</p>
 
-<p><img src="../imgs/projects/hsr-localization.png" alt="drawing" width="1050" /></p>
+<p><img src="../imgs/projects/hsr-localization.png" alt="drawing" width="550"></p>
 
-<h2 id="mapping-and-navigation"><strong>Mapping and Navigation</strong></h2>
-<h3 id="gmapping-and-move_base">Gmapping and Move_Base</h3>
+<h4 id="mapping-and-navigation"><strong>Mapping and Navigation</strong></h4>
+<h5 id="gmapping-and-move_base">Gmapping and Move_Base</h5>
 <p>Efficient <strong>mapping</strong> and <strong>navigation</strong> are achieved using the <strong>gmapping</strong> package for 2D occupancy grid mapping. This technology allows the robot to build and utilize maps for its autonomous movement. The <strong>move_base</strong> package serves as the high-level navigation controller, employing a combination of global and local path planning algorithms to enable obstacle avoidance and efficient goal attainment.</p>
 
 <ul>
   <li>
-    <p><strong>Mapping Images</strong>: 
-<img src="../imgs/projects/hsr-mapping1.png" alt="drawing" width="1050" />
-<img src="../imgs/projects/hsr-mapping2.png" alt="drawing" width="1050" /></p>
-  </li>
-  <li>
-    <p><strong>Path Planning Video</strong>: 
-<a href="https://example.com/path-planning-video">Watch Path Planning Video</a></p>
-  </li>
+<strong>Mapping Images</strong>:</li>
 </ul>
 
-<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<table>
+  <tbody>
+    <tr>
+      <td><img src="../imgs/projects/hsr-mapping1.png" alt="drawing" width="550"></td>
+      <td><img src="../imgs/projects/hsr-mapping2.png" alt="drawing" width="1350"></td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+<strong>Path Planning Video</strong>:</li>
+</ul>
+<div style="text-align: center;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ik1velzFdnU?si=VNzeOj0Sr-WkwXTc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+</div>
+
+<h4 id="conclusion"><strong>Conclusion</strong></h4>
 <p>The Home-Service Robot Project is a testament to the convergence of cutting-edge robotics concepts and technologies. It highlights the robot’s prowess in autonomous navigation, localization, and interaction within a simulated environment. This project showcases the immense potential of ROS and Gazebo for simulating and validating robotic systems.</p>
 
-<p>For in-depth technical details and access to project code, please visit the <a href="https://github.com/example/home-service-robot">GitHub repository</a>.</p>
+<!-- For in-depth technical details and access to project code, please visit the [GitHub repository](https://github.com/example/home-service-robot). -->
 
-<h2 id="certificates-and-achievements"><strong>Certificates and Achievements</strong></h2>
+<h4 id="certificates-and-achievements"><strong>Certificates and Achievements</strong></h4>
 <p>Secured an excellent completion reward from the Udacity Team. <a href="https://confirm.udacity.com/e/2f4b0cdc-83f2-11ed-8b40-43252fe017cf">Graduation Credential</a>
-<img src="../imgs/projects/hsr-certificates.png" alt="drawing" width="1050" /></p>
+<img src="../imgs/projects/hsr-certificates.png" alt="drawing" width="550"></p>
 
 </div>
   </main>
@@ -155,40 +180,27 @@
 
   <footer class="mt-auto py-3 text-center">
 <hr>
-  <p style="font-size: 15px" text-muted mb-2 >
+  <p style="font-size: 15px" text-muted mb-2>
     <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
     <br>
     <strong>Wanna discuss something? Feel free to ping me!</strong>
   </p>
 
-  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:narendhiran2000@gmail.com"
-       style="color: #6c757d;font-size: 30px;"
-       onMouseOver="this.style.color='#db4437'"
-       onMouseOut="this.style.color='#6c757d'">
+  <div class="container-fluid justify-content-center">
+<a class="social mx-1" href="mailto:narendhiran2000@gmail.com" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#db4437'" onmouseout="this.style.color='#6c757d'">
       <i class="fas fa-envelope fa-1x"></i>
-    </a><a class="social mx-1"  href="https://www.facebook.com/narendhiran.saravanane.9"
-       style="color: #6c757d;font-size: 30px;"
-       onMouseOver="this.style.color='#3b5998'"
-       onMouseOut="this.style.color='#6c757d'">
+    </a><a class="social mx-1" href="https://www.facebook.com/narendhiran.saravanane.9" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#3b5998'" onmouseout="this.style.color='#6c757d'">
       <i class="fab fa-facebook fa-1x"></i>
-    </a><a class="social mx-1"  href="https://www.github.com/naren200"
-       style="color: #6c757d;font-size: 30px;"
-       onMouseOver="this.style.color='#333333'"
-       onMouseOut="this.style.color='#6c757d'">
+    </a><a class="social mx-1" href="https://www.github.com/naren200" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#333333'" onmouseout="this.style.color='#6c757d'">
       <i class="fab fa-github fa-1x"></i>
-    </a><a class="social mx-1"  href="https://www.linkedin.com/in/narendhiran2000"
-       style="color: #6c757d;font-size: 30px;"
-       onMouseOver="this.style.color='#007bb5'"
-       onMouseOut="this.style.color='#6c757d'">
+    </a><a class="social mx-1" href="https://www.linkedin.com/in/narendhiran2000" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#007bb5'" onmouseout="this.style.color='#6c757d'">
       <i class="fab fa-linkedin-in fa-1x"></i>
-    </a><a class="social mx-1"  href="https://www.twitter.com/narendhiran2000"
-       style="color: #6c757d;font-size: 30px;"
-       onMouseOver="this.style.color='#1da1f2'"
-       onMouseOut="this.style.color='#6c757d'">
+    </a><a class="social mx-1" href="https://www.twitter.com/narendhiran2000" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#1da1f2'" onmouseout="this.style.color='#6c757d'">
       <i class="fab fa-twitter fa-1x"></i>
     </a>
 
-</div><small id="attribution">
+</div>
+<small id="attribution">
     theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
   </small>
   
