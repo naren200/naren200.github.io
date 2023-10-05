@@ -1,16 +1,15 @@
 ---
 name: DRDO's Project - My Bachelor's Capstone Contribution
-tools: [2D Dynamics, Runge-Kutta, GUI, Robotics, Python]
+tools: [Multi-Body Dynamics, 2D Dynamics, Runge-Kutta, GUI, Robotics, Python]
 image: ../imgs/projects/btp-homeImage.jpg
 description: Developing a visualizable model to predict the motion of towed objects in ship operations under varying conditions.
 ---
 
 ##### Table of Contents
-* [Objectives](#objectives)
-* [Results and Achievements](#results-and-achievements) :point_left:
-* [Conclusion](#conclusion)
-* [Achievements](#achievements)
-* [Miscellaneous](#Miscellaneous)
+* [**Objectives**](#objectives)
+* [**Results and Achievements**](#results-and-achievements) :point_left:
+* [**Conclusion**](#conclusion)
+* [**Miscellaneous**](#Miscellaneous)
 
 <br><br>
 
