@@ -63,7 +63,8 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/about/">About</a>
+    <div class="navbar-nav ml-auto">
+<a class="nav-item nav-link " href="/about/">About</a>
 
       <a class="nav-item nav-link active" href="/projects/">Projects</a>
 
@@ -83,76 +84,169 @@
     <div class="col-lg-10 mx-auto mt-5 post">
   <h1 id="international-eyantra-robotics-competition">International eYantra Robotics Competition</h1>
 
-<h2 id="table-of-content">Table of Content</h2>
-<ol>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td><a href="#international-eyantra-robotics-competition"><strong>International eYantra Robotics Competition</strong></a></td>
-          <td><a href="#motivation">Motivation</a></td>
-          <td><a href="#theme---construct-o-bot">Theme - Construct-O-Bot</a></td>
-          <td><a href="#objective">Project Objective</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td><a href="#hardware"><strong>Hardware</strong></a></td>
-          <td><a href="#hardware-testing-before-assembly">Hardware Testing Before Assembly</a></td>
-          <td><a href="#hardware-testing-after-assembly">Hardware Testing After Assembly</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td><a href="#virtual-simulation"><strong>Virtual Simulation</strong></a></td>
-          <td><a href="#code-testing---vrep-robotic-simulator">Code Testing - Vrep Robotic Simulator</a></td>
-          <td><a href="#solidworks-design-and-cnc-machining">Solidworks Design and CNC Machining</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+<h4 id="table-of-content">Table of Content</h4>
+<ul>
+  <li><a href="#objective"><strong>International eYantra Robotics Competition</strong></a></li>
+  <li><a href="#virtual-simulation"><strong>Virtual Simulation</strong></a></li>
   <li><a href="#critical-features-of-the-project"><strong>Critical Features of the Project</strong></a></li>
   <li>
-    <table>
-      <tbody>
-        <tr>
-          <td><a href="#flow-charts"><strong>Flow Charts</strong></a> -&gt; <a href="#wall-following-algorithm">Wall Following Algorithm</a></td>
-          <td><a href="#zig-zag-following-algorithm">Zig Zag Following Algorithm</a></td>
-          <td><a href="#full-competition-algorithm">Full Competition Algorithm</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li><a href="#retrofitting-challenges"><strong>Retrofitting challenges</strong></a></li>
-  <li><a href="#achievements"><strong>Achievements</strong></a></li>
-  <li><a href="#paper-published---indian-institute-of-technology-science-bangalore"><strong>Paper Published on this working model - Indian Institute of Technology Science, Bangalore</strong></a></li>
-  <li><a href="#references"><strong>References</strong></a></li>
-</ol>
+<a href="#achievements"><strong>Achievements</strong></a> <img class="emoji" title=":point_left:" alt=":point_left:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f448.png" height="20" width="20">
+</li>
+  <li><a href="#Miscellaneous"><strong>Miscellaneous</strong></a></li>
+</ul>
 
-<h2 id="motivation">Motivation</h2>
-<p><img src="../imgs/projects/cob-introduction.png" alt="drawing" width="1000" /></p>
+<h4 id="motivation">Motivation</h4>
+<p><img src="../imgs/projects/cob-introduction.png" alt="drawing" width="1000"></p>
 
-<p>Natural disasters like extreme rainfall, earthquakes, landslides, and floods cause immense human and economic losses globally. In 2018 alone, 315 such disasters resulted in 11,804 fatalities, affecting over 68 million people and causing $131.7 billion in damages. Post-disaster, reconstruction efforts are essential, but they are capital and labor-intensive, especially in challenging terrains. The e-Yantra Robotics Competition (eYRC 2019-20) addresses this by introducing the theme “Construct-o-Bot” to aid disaster-stricken areas.</p>
+<p>Natural disasters like earthquakes, and landslides cause immense human and economic losses globally. In 2018 alone, 315 such disasters, affecting over 68 million people and causing $131.7 billion in damages. Post-disaster, reconstruction efforts are essential, but they are capital and labor-intensive, especially in challenging terrains. The e-Yantra Robotics Competition (eYRC 2019-20) addresses this by introducing the theme “Construct-o-Bot” to aid disaster-stricken areas.</p>
 
-<h2 id="theme---construct-o-bot">Theme - Construct-O-Bot</h2>
-<p>The “Construct-o-Bot” theme simulates a disaster site, where robots retrieve construction materials and navigate complex paths to deliver them for reconstruction. Using intelligent line-following and path-planning algorithms, these robots aim to reach their destination swiftly and safely, choosing the shortest routes. At the site, they must precisely position materials at varying heights. Success requires efficient delivery to multiple sites, including diverse terrains. The winning team completes the task swiftly with minimal penalties.</p>
+<h5 id="theme---construct-o-bot">Theme - Construct-O-Bot</h5>
+<p>The “Construct-o-Bot” theme simulates a disaster site, where robots retrieve construction materials and navigate complex paths to deliver them for reconstruction. Using intelligent line-following and path-planning algorithms, these robots aim to reach their destination swiftly and safely, choosing the shortest routes. Success requires efficient delivery to multiple sites, including diverse terrains. <u>The winning team completes the task swiftly with minimal penalties</u>.</p>
 
-<p><img src="../imgs/projects/cob-Arena.png" alt="drawing" width="850" /></p>
+<p><img src="../imgs/projects/cob-Arena.png" alt="drawing" width="250"></p>
 
-<h2 id="objective">Objective</h2>
+<h4 id="objective">Objective</h4>
 <p>Design and implement a robotic system capable of efficiently and safely assisting in disaster site reconstruction, addressing challenges such as material handling, navigation, and sensor calibration.</p>
 
 <p>My team consisted of <a href="https://www.linkedin.com/in/neeraj-kumar-gond-543092170/">Neeraj Gond</a>, <a href="https://www.linkedin.com/in/nikhil-anand-3164b818b/">Nikhil Anand</a>, <a href="https://naren200.github.io/">Narendhiran Saravanane</a>, and <a href="https://www.linkedin.com/in/neeraj-goyal-85067014b/">Neeraj Goyal</a>. Led by Narendhiran, our team won the competition completeling the track in minimum time with no penalities!</p>
 
-<h2 id="hardware">Hardware</h2>
+<hr>
+
+<h4 id="virtual-simulation">Virtual Simulation</h4>
+<h5 id="code-testing---vrep-robotic-simulator">Code Testing - Vrep Robotic Simulator</h5>
+<p>In our project, we harnessed the power of <strong>V-rep</strong>, a versatile robotic simulator, to rigorously test our autonomous system. Leveraging <strong>embedded C</strong>, we expertly coded our robot, equipping it with <strong>proximity</strong> and <strong>white line sensors</strong> for robust perception. Implementing the renowned <strong>A* algorithm</strong>, our robot exhibited intelligent navigation in complex terrains. Our system excelled in <strong>precise object manipulation</strong>, emphasizing our dedication to automation and robotics in the industry.</p>
+
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/UqZlvbHdpMs?si=1xlNS-8Qw6fTCUFS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+</div>
+
+<h5 id="solidworks-design-and-cnc-machining">Solidworks Design and CNC Machining</h5>
+<p>In our project, <strong>SolidWorks</strong> was instrumental in designing precise 3D models. These designs were brought to life through a <strong>CNC machine</strong>, which meticulously carved <strong>acrylic sheets</strong> with precision. This synergy between design software and CNC technology ensured high-quality results in the <strong>engineering industry</strong>.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="../imgs/projects/cob-DesignSolidWorks.png" alt="drawing" width="350"></td>
+      <td><img src="../imgs/projects/cob-robotAllsideView.png" alt="drawing" width="350"></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h4 id="critical-features-of-the-project">Critical Features of the Project</h4>
+
+<h5 id="electronics">Electronics</h5>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Sensors</strong></td>
+      <td>Proximity Sensor/Sharp Sensor &amp; White Line Sensor</td>
+    </tr>
+    <tr>
+      <td><strong>Actuators</strong></td>
+      <td>Geared DC Motor with Encoder &amp; Servo Motors</td>
+    </tr>
+    <tr>
+      <td><strong>Micro-Controllers</strong></td>
+      <td>Atmega 2560 Development board</td>
+    </tr>
+    <tr>
+      <td><strong>Miscellaneous</strong></td>
+      <td>LCD, L298N Motor Driver, Buzzers &amp; Potentiometers</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="actuations-categorized-based-on-sensors">Actuations categorized based on sensors</h5>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>White Line Sensor</strong></td>
+      <td>Line Following, Node Detection, Black-White-Black Line Following &amp; Zig Zag Line Following (Time Consuming &amp; Not Effective)</td>
+    </tr>
+    <tr>
+      <td><strong>Proximity Sensor</strong></td>
+      <td>Wall Following &amp; House/Block Detection</td>
+    </tr>
+    <tr>
+      <td><strong>Servo Motor</strong></td>
+      <td>Pick Blocks, Place Blocks at Different Heights (Low Rise &amp; High Rise), 2 Servo Arm Design (Effective &amp; Used) &amp; 1 Servo Arm Design</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="quick-highlights---all-essential-actuations-visual-representation">Quick Highlights - All Essential Actuations (Visual Representation)</h5>
+
+<iframe width="860" height="515" src="https://www.youtube.com/embed/w3wBqJ6DisA?si=7jdh7NidJmqMFRql" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+
+<p><br><br></p>
+
+<hr>
+
+<h3 id="achievements">Achievements</h3>
+<p><br></p>
+
+<h5 id="1-selected-as-one-of-national-finalists-997-percentile-in-the-construct-o-bot-theme">1) Selected as one of <strong>National Finalists (99.7 Percentile)</strong> in the <strong>Construct-O-Bot theme</strong>.</h5>
+<div style="text-align: center;">
+    <iframe src="../pdfs/eyrc_certificate.pdf" width="80%" height="500px" frameborder="0"></iframe>
+</div>
+<p><br></p>
+
+<h5 id="2-paper-published---indian-institute-of-science-banglore">2) Paper Published - Indian Institute of Science, Banglore</h5>
+<div style="text-align: center;">
+    <iframe src="../pdfs/ID50_Full_Paper.pdf" width="80%" height="500px" frameborder="0"></iframe>
+</div>
+
+<hr>
+
+<p><br><br><br><br><br><br></p>
+
+<h4 id="miscellaneous">Miscellaneous</h4>
+
+<h5 id="project-submission-video">Project Submission Video</h5>
+
+<iframe width="860" height="515" src="https://www.youtube.com/embed/V-e3XbXu6AY?si=2X5BBffCpzHD_z1v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+
+<h5 id="presentation-before-panel-members-academic-experts-and-industry-leads">Presentation before Panel Members, Academic Experts, and Industry Leads</h5>
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/NCbEUZE8Mh8?si=8ZX-ViTfTSaYfeRE&amp;start=5811" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+</div>
+
+<hr>
+
+<h4 id="flow-charts">Flow Charts</h4>
+<h5 id="wall-following-algorithm">Wall Following Algorithm</h5>
+<p><img src="../imgs/projects/cob-wallfollowing.jpg" alt="drawing" width="650"></p>
+
+<h5 id="zig-zag-following-algorithm">Zig Zag Following Algorithm</h5>
+<p><img src="../imgs/projects/cob-zigzag.jpg" alt="drawing" width="400"></p>
+
+<h5 id="full-competition-algorithm">Full Competition Algorithm</h5>
+<p><img src="../imgs/projects/cob-fullalgo.jpg" alt="drawing" width="400"></p>
+
+<hr>
+
+<h4 id="retrofitting-challenges">Retrofitting challenges:</h4>
+
+<ol>
+  <li>
+    <p><strong>Gripper Misorientation:</strong> Fast robot movements caused gripper misorientation during material pickup, hindering simulation accuracy. The solution involved increasing gripper contact surface (Fig. 4 &amp; 6).</p>
+  </li>
+  <li>
+    <p><strong>Height Discrepancy:</strong> The robot’s 15cm height had to pick up material from a 3cm elevation. An L-shaped arm with servos for arm and gripper was implemented for cost-effectiveness (Fig. 5).
+<img src="../imgs/projects/cob-RoboticArm.png" alt="drawing" width="850"></p>
+  </li>
+  <li>
+    <p><strong>Sensor Data Optimization:</strong> LCD displays introduced lag during sensor calibration. Eliminating the LCD and using Tera-Term for serial communication resolved this issue.</p>
+  </li>
+</ol>
+
+<hr>
+
+<h4 id="hardware">Hardware</h4>
 <p><strong>Sensors</strong></p>
 <ol>
   <li>Proximity Sensor/Sharp Sensor</li>
@@ -188,101 +282,6 @@
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/RYoa6PcAsZs?si=F6VTSUC6STHSGCrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 </div>
-<hr />
-
-<h2 id="virtual-simulation"><u>Virtual Simulation</u></h2>
-<h3 id="code-testing---vrep-robotic-simulator">Code Testing - Vrep Robotic Simulator</h3>
-<p>In our project, we harnessed the power of <strong>V-rep</strong>, a versatile robotic simulator, to rigorously test our autonomous system. Leveraging <strong>embedded C</strong>, we expertly coded our robot, equipping it with <strong>proximity</strong> and <strong>white line sensors</strong> for robust perception. Implementing the renowned <strong>A* algorithm</strong>, our robot exhibited intelligent navigation in complex terrains. Our system excelled in <strong>precise object manipulation</strong>, emphasizing our dedication to automation and robotics in the industry.</p>
-
-<div style="text-align: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/UqZlvbHdpMs?si=1xlNS-8Qw6fTCUFS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-</div>
-
-<h3 id="solidworks-design-and-cnc-machining">Solidworks Design and CNC Machining</h3>
-<p>In our project, <strong>SolidWorks</strong> was instrumental in designing precise 3D models. These designs were brought to life through a <strong>CNC machine</strong>, which meticulously carved <strong>acrylic sheets</strong> with precision. This synergy between design software and CNC technology ensured high-quality results in the <strong>engineering industry</strong>.</p>
-
-<p><img src="../imgs/projects/cob-DesignSolidWorks.png" alt="drawing" width="650" />
-<img src="../imgs/projects/cob-robotAllsideView.png" alt="drawing" width="650" /></p>
-
-<hr />
-
-<h2 id="critical-features-of-the-project"><u>Critical Features of the Project</u></h2>
-
-<p><strong>White Line Sensor:</strong></p>
-<ol>
-  <li>Line Following</li>
-  <li>Node Detection</li>
-  <li>Black-White-Black Line Following</li>
-  <li>Zig Zag Line Following (Time Consuming &amp; Not Effective)</li>
-</ol>
-
-<p><strong>Proximity Sensor:</strong></p>
-<ol>
-  <li>Wall Following</li>
-  <li>House/Block Detection</li>
-</ol>
-
-<p><strong>Servo Motor:</strong></p>
-<ol>
-  <li>Pick Blocks</li>
-  <li>Place Blocks at Different Heights (Low Rise &amp; High Rise)</li>
-  <li>2 Servo Arm Design (Effective &amp; Used)</li>
-  <li>1 Servo Arm Design</li>
-</ol>
-
-<p>These features highlight the key functionalities and components of this project, showcasing the capabilities of this robot, including its ability to follow lines, detect nodes, navigate black-white-black patterns, handle proximity to walls, detect houses or blocks, and effectively manipulate blocks using servo arms at varying heights.</p>
-
-<p><u>Note: Quick Highlights - All Essential Strategies Showcased.</u></p>
-<iframe width="860" height="515" src="https://www.youtube.com/embed/w3wBqJ6DisA?si=7jdh7NidJmqMFRql" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-
-<hr />
-
-<h2 id="flow-charts">Flow Charts</h2>
-<h3 id="wall-following-algorithm">Wall Following Algorithm</h3>
-<p><img src="../imgs/projects/cob-wallfollowing.jpg" alt="drawing" width="650" /></p>
-
-<h3 id="zig-zag-following-algorithm">Zig Zag Following Algorithm</h3>
-<p><img src="../imgs/projects/cob-zigzag.jpg" alt="drawing" width="400" /></p>
-
-<h3 id="full-competition-algorithm">Full Competition Algorithm</h3>
-<p><img src="../imgs/projects/cob-fullalgo.jpg" alt="drawing" width="400" /></p>
-
-<hr />
-
-<h2 id="retrofitting-challenges">Retrofitting challenges:</h2>
-
-<ol>
-  <li>
-    <p><strong>Gripper Misorientation:</strong> Fast robot movements caused gripper misorientation during material pickup, hindering simulation accuracy. The solution involved increasing gripper contact surface (Fig. 4 &amp; 6).</p>
-  </li>
-  <li>
-    <p><strong>Height Discrepancy:</strong> The robot’s 15cm height had to pick up material from a 3cm elevation. An L-shaped arm with servos for arm and gripper was implemented for cost-effectiveness (Fig. 5).
-<img src="../imgs/projects/cob-RoboticArm.png" alt="drawing" width="850" /></p>
-  </li>
-  <li>
-    <p><strong>Sensor Data Optimization:</strong> LCD displays introduced lag during sensor calibration. Eliminating the LCD and using Tera-Term for serial communication resolved this issue.</p>
-  </li>
-</ol>
-
-<h2 id="achievements">Achievements</h2>
-<h5 id="this-team-has-been-selected-as-one-of-national-finalists-out-of-1051-teams-in-the-construct-o-bot-theme">This team has been selected as one of <strong>National Finalists out of 1051 teams</strong> in the <strong>Construct-O-Bot theme</strong>.</h5>
-<iframe src="../pdfs/eyrc_certificate.pdf" width="80%" height="800px" frameborder="0"></iframe>
-
-<h2 id="paper-published---indian-institute-of-technology-science-banglore">Paper Published - Indian Institute of Technology Science, Banglore</h2>
-<iframe src="../pdfs/ID50_Full_Paper.pdf" width="80%" height="800px" frameborder="0"></iframe>
-
-<hr />
-
-<h2 id="references">References</h2>
-
-<h3 id="project-submission-video">Project Submission Video</h3>
-
-<iframe width="860" height="515" src="https://www.youtube.com/embed/V-e3XbXu6AY?si=2X5BBffCpzHD_z1v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-
-<h3 id="presentation-before-panel-members-academic-experts-and-industry-leads">Presentation before Panel Members, Academic Experts, and Industry Leads</h3>
-<div style="text-align: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/NCbEUZE8Mh8?si=8ZX-ViTfTSaYfeRE&amp;start=5811" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-</div>
 
 </div>
   </main>
@@ -295,40 +294,27 @@
 
   <footer class="mt-auto py-3 text-center">
 <hr>
-  <p style="font-size: 15px" text-muted mb-2 >
+  <p style="font-size: 15px" text-muted mb-2>
     <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
     <br>
     <strong>Wanna discuss something? Feel free to ping me!</strong>
   </p>
 
-  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:narendhiran2000@gmail.com"
-       style="color: #6c757d;font-size: 30px;"
-       onMouseOver="this.style.color='#db4437'"
-       onMouseOut="this.style.color='#6c757d'">
+  <div class="container-fluid justify-content-center">
+<a class="social mx-1" href="mailto:narendhiran2000@gmail.com" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#db4437'" onmouseout="this.style.color='#6c757d'">
       <i class="fas fa-envelope fa-1x"></i>
-    </a><a class="social mx-1"  href="https://www.facebook.com/narendhiran.saravanane.9"
-       style="color: #6c757d;font-size: 30px;"
-       onMouseOver="this.style.color='#3b5998'"
-       onMouseOut="this.style.color='#6c757d'">
+    </a><a class="social mx-1" href="https://www.facebook.com/narendhiran.saravanane.9" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#3b5998'" onmouseout="this.style.color='#6c757d'">
       <i class="fab fa-facebook fa-1x"></i>
-    </a><a class="social mx-1"  href="https://www.github.com/naren200"
-       style="color: #6c757d;font-size: 30px;"
-       onMouseOver="this.style.color='#333333'"
-       onMouseOut="this.style.color='#6c757d'">
+    </a><a class="social mx-1" href="https://www.github.com/naren200" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#333333'" onmouseout="this.style.color='#6c757d'">
       <i class="fab fa-github fa-1x"></i>
-    </a><a class="social mx-1"  href="https://www.linkedin.com/in/narendhiran2000"
-       style="color: #6c757d;font-size: 30px;"
-       onMouseOver="this.style.color='#007bb5'"
-       onMouseOut="this.style.color='#6c757d'">
+    </a><a class="social mx-1" href="https://www.linkedin.com/in/narendhiran2000" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#007bb5'" onmouseout="this.style.color='#6c757d'">
       <i class="fab fa-linkedin-in fa-1x"></i>
-    </a><a class="social mx-1"  href="https://www.twitter.com/narendhiran2000"
-       style="color: #6c757d;font-size: 30px;"
-       onMouseOver="this.style.color='#1da1f2'"
-       onMouseOut="this.style.color='#6c757d'">
+    </a><a class="social mx-1" href="https://www.twitter.com/narendhiran2000" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#1da1f2'" onmouseout="this.style.color='#6c757d'">
       <i class="fab fa-twitter fa-1x"></i>
     </a>
 
-</div><small id="attribution">
+</div>
+<small id="attribution">
     theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
   </small>
   
