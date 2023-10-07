@@ -20,10 +20,14 @@ weight: 1
   </div>
 
 <div class="column" style="width: 100%; margin-left: 0px">
+  <audio id="person1" >
+    <source src="../imgs/name.aac" type="audio/aac">
+  Your browser does not support the audio element.
+  </audio>
 
   <br>
-  <p style="font-size: 20px">Hello there  <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>. My friends call me Naren (Neh-R-ehN). </p>
-    
+  <p style="font-size: 20px">Hello there <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>. My friends call me Naren (Neh-R-ehN). <img class="emoji" title=":play:" alt=":play:" src="https://github.githubassets.com/images/icons/emoji/unicode/25b6.png?v8" height="22" width="22" style="vertical-align: middle;" onclick="document.getElementById('person1').play()"> </p>
+
   <br>
 
   <h2><b>Academic and Robotics Pursuits</b></h2>
@@ -54,7 +58,7 @@ weight: 1
     <b>What Sets Me Apart</b>
   </h2><br>
   <p style="font-size: 18px">
-    <u><b>Resilience</b></u>: My resilience shone through when I overcame the initial setback of failing the JEE Advanced exam (96.85 percentile), eventually securing admission (99.49 percentile) to my dream institute, IIT. This determination persisted through challenges in robotics competitions, internships, and research, shaping me into a tenacious problem solver and innovator.
+    <u><b>Resilience</b></u>: My resilience shone through when I overcame the initial setback of failing (96.85 percentile) the JEE Advanced exam, eventually securing admission (with 99.49 percentile) to my dream institute, IIT. This determination persisted through challenges in robotics competitions, internships, and research, shaping me into a tenacious problem solver and innovator.
   </p>
   <p style="font-size: 18px">
     <u><b>Curiosity</b></u>: I possess a natural eagerness to delve into the mechanics and technological advancements that power everyday gadgets.
