@@ -1,10 +1,8 @@
 ### Site Settings ###
 title               : Narendhiran Saravanane
 description         : >-
-                      <br> Welcome to my homepage! <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20">    I am Naren.  <br><br>
+                      <br> Welcome <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20">    I am <u>Naren</u>.  <br><br>
                       <b>Robotics Engineer | AI & ML Developer</b> <br>
-                    # <a href="https://naren200.github.io/about/">About me</a> | <a href="https://naren200.github.io/projects/">Projects</a> | 
-                    # <a href="https://naren200.github.io/pages/cv">Resume</a> | <a href="https://naren200.github.io/art/">Life Goals</a>.
 
 baseurl             :                      # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : naren200/naren200.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
