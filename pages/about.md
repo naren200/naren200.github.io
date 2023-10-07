@@ -5,7 +5,7 @@ permalink: /about/
 weight: 1
 ---
 
-<link rel="stylesheet" type="text/css" href="../_sass/_base.scss">
+<!-- <link rel="stylesheet" type="text/css" href="../_sass/_base.scss"> -->
 
 <h6 style="text-align: center;"> <strong>Table of Content&ensp;</strong> | <a href="#achievements">&ensp;Achievements - Robotics&ensp; </a> | <a href="#distinguishesme">&ensp;What Sets Me Apart&ensp;</a> | <a href="#Questionsexcitesme">&ensp;Questions That Excites me</a> </h6>
 
