@@ -11,6 +11,7 @@
     @extend .link-after;
     width: 0;
     transition: width 0.35s;
+    text-decoration: none;
   }
 
   &:hover::after {
@@ -32,4 +33,6 @@
   &::after {
     margin-top: -0.25em;
   }
+}
+.navbar-nav a {
 }
