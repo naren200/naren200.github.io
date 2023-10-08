@@ -5,7 +5,7 @@ $dark-900: #17191a;
 
 [data-theme="dark"] {
   body {
-    background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);	
+    background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72);//, #a8eb12);	
     // background-image: radial-gradient(circle, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     color: $text-white;
   }
@@ -68,8 +68,8 @@ $dark-900: #17191a;
   /* Hyperlink styles on hover and focus */
   a:hover,
   a:focus {
-    color: #ff9000; /* Change the color on hover or focus */
-    text-decoration: underline; /* Add underline on hover or focus */
+    color: #ff9000 !important;  /* Change the color on hover or focus */
+    // text-decoration: underline; /* Add underline on hover or focus */
   }
 
   // /* Visited hyperlinks styles */

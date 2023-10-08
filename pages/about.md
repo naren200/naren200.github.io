@@ -68,12 +68,12 @@ weight: 1
   </p>
   <br>
 
-  <h4 style="font-size: 20px">My Approach: Tackling Complex Problems with Passion</h4><br>
+  <h4 style="font-size: 20px">My Approach: Tackling Complex Problems with Passion</h4>
 
-  <br>
+
   <p style="font-size: 18px">
   I harness the <a href="#distinguishesme">above mentioned skills and traits</a> to tackle complex problems, prioritizing problem quality. My passion lies in machine learning and perception methods as they relate to robotics. With experience ranging from short-term code that secured wins in national and international robotics competitions to long-term contributions to open-source projects, my software engineering expertise is versatile and adaptive, honed through various professional experiences.
-  </p><br>
+  </p>
   <p style="font-size: 18px">
     In addition to coding and robotics, I find immense joy in appreciating the talent and creativity of artists and musicians. There's nothing that electrifies me more than watching AC/DC's mesmerizing performance of "<a href="https://youtu.be/xRQnJyP77tY">Shoot To Thrill</a>" on the drums, and listening to Miles Teller's rendition of "<a href="https://youtu.be/pVcMsjyKlaM">Great Balls of Fire</a>" never fails to fill me with pure joy.
   </p>
