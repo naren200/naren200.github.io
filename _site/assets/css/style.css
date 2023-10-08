@@ -899,8 +899,8 @@ canvas { display: block; vertical-align: bottom; }
 [data-theme="dark"] .card.border .card-footer { background-color: rgba(114, 107, 107, 0.548); }
 [data-theme="dark"] table:not(.highlight) td, [data-theme="dark"] .post table:not(.highlight) th, .post [data-theme="dark"] table:not(.highlight) th { border-color: #242526; }
 [data-theme="dark"] table:not(.highlight) tr:nth-child(even) { background-color: #343a40; }
-[data-theme="dark"] a { color: #ff9900; /* Change to your desired hyperlink color */ }
-[data-theme="dark"] a:hover, [data-theme="dark"] a:focus { color: #ff9000 !important; /* Change the color on hover or focus */ }
+[data-theme="dark"] a { color: #0ce088; /* Change to your desired hyperlink color */ }
+[data-theme="dark"] a:hover, [data-theme="dark"] a:focus { color: #0ce088 !important; /* Change the color on hover or focus */ }
 [data-theme="dark"] .list-group-item-action { background-color: #242526; color: rgba(255, 255, 255, 0.9); }
 [data-theme="dark"] .list-group-item-action:hover, [data-theme="dark"] .list-group-item-action:focus { background-color: #1d1d1e; }
 [data-theme="dark"] .post footer { text-decoration: none; }
