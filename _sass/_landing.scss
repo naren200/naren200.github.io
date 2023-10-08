@@ -322,11 +322,13 @@ body {
 a {
 	display: inline-block;
 	text-decoration: none;
-	color: --secondary;
+	color: --black;
 	font-family: inherit;
 	cursor: pointer !important;
-}
+	transition: text-decoration 0.2s; /* Add a smooth transition */
 
+}
+  
 header {
 	min-height: 100vh;
 	color: var(--white);

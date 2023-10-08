@@ -5,7 +5,8 @@ $dark-900: #17191a;
 
 [data-theme="dark"] {
   body {
-    background-color: $dark-900;
+    background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);	
+    // background-image: radial-gradient(circle, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     color: $text-white;
   }
 
@@ -46,7 +47,7 @@ $dark-900: #17191a;
 
   .card.border {
     .card-footer {
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: rgba(114, 107, 107, 0.548);
     }
   }
 
@@ -60,6 +61,26 @@ $dark-900: #17191a;
       background-color: $dark;
     }
   }
+  a {
+      color: #ff9900; /* Change to your desired hyperlink color */
+  }
+
+  /* Hyperlink styles on hover and focus */
+  a:hover,
+  a:focus {
+    color: #ff9000; /* Change the color on hover or focus */
+    text-decoration: underline; /* Add underline on hover or focus */
+  }
+
+  // /* Visited hyperlinks styles */
+  // a:visited {
+  //   color: #cc66ff; /* Color for visited links */
+  // }
+
+  // /* Active hyperlinks styles (when clicked) */
+  // a:active {
+  //   color: #ff6600; /* Color for active links */
+  // }
 
   // Lists
   .list-group-item-action {

@@ -209,7 +209,7 @@ p.intro { opacity: 0; -webkit-transform: translateY(10px); transform: translateY
 
 body { background-color: var(--white); font-family: lato, sans-serif; font-size: 1.1rem; color: var(--black); -webkit-transition: var(--transition); transition: var(--transition); overflow-x: hidden; }
 
-a { display: inline-block; text-decoration: none; color: --secondary; font-family: inherit; cursor: pointer !important; }
+a { display: inline-block; text-decoration: none; color: --black; font-family: inherit; cursor: pointer !important; transition: text-decoration 0.2s; /* Add a smooth transition */ }
 
 header { min-height: 100vh; color: var(--white); overflow: hidden; }
 
@@ -810,8 +810,8 @@ canvas { display: block; vertical-align: bottom; }
 [data-theme="light"] .bg-themed { background-color: #f8f9fa; }
 [data-theme="dark"] .bg-themed { background-color: #343a40; }
 
-[data-theme="dark"] { /* Comment */ /* Error */ /* Escape */ /* Generic */ /* Keyword */ /* Literal */ /* Name */ /* Operator */ /* Other */ /* Punctuation */ /* Comment.Hashbang */ /* Comment.Multiline */ /* Comment.Preproc */ /* Comment.PreprocFile */ /* Comment.Single */ /* Comment.Special */ /* Generic.Deleted */ /* Generic.Emph */ /* Generic.Error */ /* Generic.Heading */ /* Generic.Inserted */ /* Generic.Output */ /* Generic.Prompt */ /* Generic.Strong */ /* Generic.Subheading */ /* Generic.Traceback */ /* Keyword.Constant */ /* Keyword.Declaration */ /* Keyword.Namespace */ /* Keyword.Pseudo */ /* Keyword.Reserved */ /* Keyword.Type */ /* Literal.Date */ /* Literal.Number */ /* Literal.String */ /* Name.Attribute */ /* Name.Builtin */ /* Name.Class */ /* Name.Constant */ /* Name.Decorator */ /* Name.Entity */ /* Name.Exception */ /* Name.Function */ /* Name.Label */ /* Name.Namespace */ /* Name.Other */ /* Name.Property */ /* Name.Tag */ /* Name.Variable */ /* Operator.Word */ /* Text.Whitespace */ /* Literal.Number.Bin */ /* Literal.Number.Float */ /* Literal.Number.Hex */ /* Literal.Number.Integer */ /* Literal.Number.Oct */ /* Literal.String.Affix */ /* Literal.String.Backtick */ /* Literal.String.Char */ /* Literal.String.Delimiter */ /* Literal.String.Doc */ /* Literal.String.Double */ /* Literal.String.Escape */ /* Literal.String.Heredoc */ /* Literal.String.Interpol */ /* Literal.String.Other */ /* Literal.String.Regex */ /* Literal.String.Single */ /* Literal.String.Symbol */ /* Name.Builtin.Pseudo */ /* Name.Function.Magic */ /* Name.Variable.Class */ /* Name.Variable.Global */ /* Name.Variable.Instance */ /* Name.Variable.Magic */ /* Literal.Number.Integer.Long */ }
-[data-theme="dark"] body { background-color: #17191a; color: rgba(255, 255, 255, 0.9); }
+[data-theme="dark"] { /* Comment */ /* Error */ /* Escape */ /* Generic */ /* Keyword */ /* Literal */ /* Name */ /* Operator */ /* Other */ /* Punctuation */ /* Comment.Hashbang */ /* Comment.Multiline */ /* Comment.Preproc */ /* Comment.PreprocFile */ /* Comment.Single */ /* Comment.Special */ /* Generic.Deleted */ /* Generic.Emph */ /* Generic.Error */ /* Generic.Heading */ /* Generic.Inserted */ /* Generic.Output */ /* Generic.Prompt */ /* Generic.Strong */ /* Generic.Subheading */ /* Generic.Traceback */ /* Keyword.Constant */ /* Keyword.Declaration */ /* Keyword.Namespace */ /* Keyword.Pseudo */ /* Keyword.Reserved */ /* Keyword.Type */ /* Literal.Date */ /* Literal.Number */ /* Literal.String */ /* Name.Attribute */ /* Name.Builtin */ /* Name.Class */ /* Name.Constant */ /* Name.Decorator */ /* Name.Entity */ /* Name.Exception */ /* Name.Function */ /* Name.Label */ /* Name.Namespace */ /* Name.Other */ /* Name.Property */ /* Name.Tag */ /* Name.Variable */ /* Operator.Word */ /* Text.Whitespace */ /* Literal.Number.Bin */ /* Literal.Number.Float */ /* Literal.Number.Hex */ /* Literal.Number.Integer */ /* Literal.Number.Oct */ /* Literal.String.Affix */ /* Literal.String.Backtick */ /* Literal.String.Char */ /* Literal.String.Delimiter */ /* Literal.String.Doc */ /* Literal.String.Double */ /* Literal.String.Escape */ /* Literal.String.Heredoc */ /* Literal.String.Interpol */ /* Literal.String.Other */ /* Literal.String.Regex */ /* Literal.String.Single */ /* Literal.String.Symbol */ /* Name.Builtin.Pseudo */ /* Name.Function.Magic */ /* Name.Variable.Class */ /* Name.Variable.Global */ /* Name.Variable.Instance */ /* Name.Variable.Magic */ /* Literal.Number.Integer.Long */ /* Hyperlink styles on hover and focus */ }
+[data-theme="dark"] body { background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12); color: rgba(255, 255, 255, 0.9); }
 [data-theme="dark"] .highlight .hll, [data-theme="dark"] pre .hll, [data-theme="dark"] code.highlighter-rouge .hll { background-color: #404040; }
 [data-theme="dark"] .highlight, [data-theme="dark"] pre, [data-theme="dark"] code.highlighter-rouge { background: #202020; color: #d0d0d0; }
 [data-theme="dark"] .highlight .c, [data-theme="dark"] pre .c, [data-theme="dark"] code.highlighter-rouge .c { color: #999999; font-style: italic; }
@@ -896,9 +896,11 @@ canvas { display: block; vertical-align: bottom; }
 [data-theme="dark"] input::placeholder { color: rgba(255, 255, 255, 0.64); }
 [data-theme="dark"] input:focus { background-color: #242526; color: rgba(255, 255, 255, 0.9); }
 [data-theme="dark"] .card { background-color: #242526; }
-[data-theme="dark"] .card.border .card-footer { background-color: rgba(0, 0, 0, 0.1); }
+[data-theme="dark"] .card.border .card-footer { background-color: rgba(114, 107, 107, 0.548); }
 [data-theme="dark"] table:not(.highlight) td, [data-theme="dark"] .post table:not(.highlight) th, .post [data-theme="dark"] table:not(.highlight) th { border-color: #242526; }
 [data-theme="dark"] table:not(.highlight) tr:nth-child(even) { background-color: #343a40; }
+[data-theme="dark"] a { color: #ff9900; /* Change to your desired hyperlink color */ }
+[data-theme="dark"] a:hover, [data-theme="dark"] a:focus { color: #ff9000; /* Change the color on hover or focus */ text-decoration: underline; /* Add underline on hover or focus */ }
 [data-theme="dark"] .list-group-item-action { background-color: #242526; color: rgba(255, 255, 255, 0.9); }
 [data-theme="dark"] .list-group-item-action:hover, [data-theme="dark"] .list-group-item-action:focus { background-color: #1d1d1e; }
 [data-theme="dark"] .post footer { text-decoration: none; }
