@@ -1,0 +1,13 @@
+*
+{
+    margin: 0;
+    padding: 0px;
+}
+#particles-js{
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}

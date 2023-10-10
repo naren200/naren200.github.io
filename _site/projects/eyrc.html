@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100">
+
+<head>
+
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="IIT Bombay&#39;s Robotics Challenge - MoE, India">
+  <meta property="og:description" content="Led team of 4 to design and implement a disaster response robot, integrating sensors, navigation algorithms, and hardware implementation.">
+
+  <title>IIT Bombay&#39;s Robotics Challenge - MoE, India</title>
+  <meta name="description" content="Led team of 4 to design and implement a disaster response robot, integrating sensors, navigation algorithms, and hardware implementation.">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+<!--JUST FRO ART LAYOUT-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- for the particles-->
+  <link href="/assets/css/style_particles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="h-100 w-100 d-flex flex-column">
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>Narendhiran Saravanane</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+<a class="nav-item nav-link " href="/about/">About</a>
+
+      <a class="nav-item nav-link active" href="/projects/">Projects</a>
+
+      <a class="nav-item nav-link " href="/pages/cv">CV</a>
+
+      <a class="nav-item nav-link " href="/experience/">Experience</a>
+
+      <a class="nav-item nav-link " href="/blog/">Blog</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <div class="col-lg-10 mx-auto mt-5 post">
+  <h6 id="table-of-content">Table of Content</h6>
+<ul>
+  <li><a href="#objective"><strong>International eYantra Robotics Competition</strong></a></li>
+  <li><a href="#virtual-simulation"><strong>Virtual Simulation</strong></a></li>
+  <li><a href="#critical-features-of-the-project"><strong>Critical Features of the Project</strong></a></li>
+  <li>
+<a href="#achievements"><strong>Achievements</strong></a> <img class="emoji" title=":point_left:" alt=":point_left:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f448.png" height="20" width="20">
+</li>
+  <li><a href="#Miscellaneous"><strong>Miscellaneous</strong></a></li>
+</ul>
+
+<h3 id="international-eyantra-robotics-competition">International eYantra Robotics Competition</h3>
+
+<h4 id="motivation">Motivation</h4>
+<p><img src="../imgs/projects/cob-introduction.png" alt="drawing" width="1000"></p>
+
+<p>Natural disasters like earthquakes, and landslides cause immense human and economic losses globally. In 2018 alone, 315 such disasters, affecting over 68 million people and causing $131.7 billion in damages. Post-disaster, reconstruction efforts are essential, but they are capital and labor-intensive, especially in challenging terrains. The e-Yantra Robotics Competition (eYRC 2019-20) addresses this by introducing the theme “Construct-o-Bot” to aid disaster-stricken areas.</p>
+
+<h5 id="theme---construct-o-bot">Theme - Construct-O-Bot</h5>
+<p>The “Construct-o-Bot” theme simulates a disaster site, where robots retrieve construction materials and navigate complex paths to deliver them for reconstruction. Using intelligent line-following and path-planning algorithms, these robots aim to reach their destination swiftly and safely, choosing the shortest routes. Success requires efficient delivery to multiple sites, including diverse terrains. <u>The winning team completes the task swiftly with minimal penalties</u>.</p>
+
+<p><img src="../imgs/projects/cob-Arena.png" alt="drawing" width="250"></p>
+
+<h4 id="objective">Objective</h4>
+<p>Design and implement a robotic system capable of efficiently and safely assisting in disaster site reconstruction, addressing challenges such as material handling, navigation, and sensor calibration.</p>
+
+<p>My team consisted of <a href="https://www.linkedin.com/in/neeraj-kumar-gond-543092170/">Neeraj Gond</a>, <a href="https://www.linkedin.com/in/nikhil-anand-3164b818b/">Nikhil Anand</a>, <a href="https://naren200.github.io/">Narendhiran Saravanane</a>, and <a href="https://www.linkedin.com/in/neeraj-goyal-85067014b/">Neeraj Goyal</a>. Led by Narendhiran, our team won the competition completeling the track in minimum time with no penalities!</p>
+
+<hr>
+
+<h4 id="virtual-simulation">Virtual Simulation</h4>
+<h5 id="code-testing---vrep-robotic-simulator">Code Testing - Vrep Robotic Simulator</h5>
+<p>In our project, we harnessed the power of <strong>V-rep</strong>, a versatile robotic simulator, to rigorously test our autonomous system. Leveraging <strong>embedded C</strong>, we expertly coded our robot, equipping it with <strong>proximity</strong> and <strong>white line sensors</strong> for robust perception. Implementing the renowned <strong>A* algorithm</strong>, our robot exhibited intelligent navigation in complex terrains. Our system excelled in <strong>precise object manipulation</strong>, emphasizing our dedication to automation and robotics in the industry.</p>
+
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/UqZlvbHdpMs?si=1xlNS-8Qw6fTCUFS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+</div>
+
+<h5 id="solidworks-design-and-cnc-machining">Solidworks Design and CNC Machining</h5>
+<p>In our project, <strong>SolidWorks</strong> was instrumental in designing precise 3D models. These designs were brought to life through a <strong>CNC machine</strong>, which meticulously carved <strong>acrylic sheets</strong> with precision. This synergy between design software and CNC technology ensured high-quality results in the <strong>engineering industry</strong>.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="../imgs/projects/cob-DesignSolidWorks.png" alt="drawing" width="350"></td>
+      <td><img src="../imgs/projects/cob-robotAllsideView.png" alt="drawing" width="350"></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h4 id="critical-features-of-the-project">Critical Features of the Project</h4>
+
+<h5 id="electronics">Electronics</h5>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Sensors</strong></td>
+      <td>Proximity Sensor/Sharp Sensor &amp; White Line Sensor</td>
+    </tr>
+    <tr>
+      <td><strong>Actuators</strong></td>
+      <td>Geared DC Motor with Encoder &amp; Servo Motors</td>
+    </tr>
+    <tr>
+      <td><strong>Micro-Controllers</strong></td>
+      <td>Atmega 2560 Development board</td>
+    </tr>
+    <tr>
+      <td><strong>Miscellaneous</strong></td>
+      <td>LCD, L298N Motor Driver, Buzzers &amp; Potentiometers</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="actuations-categorized-based-on-sensors">Actuations categorized based on sensors</h5>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>White Line Sensor</strong></td>
+      <td>Line Following, Node Detection, Black-White-Black Line Following &amp; Zig Zag Line Following (Time Consuming &amp; Not Effective)</td>
+    </tr>
+    <tr>
+      <td><strong>Proximity Sensor</strong></td>
+      <td>Wall Following &amp; House/Block Detection</td>
+    </tr>
+    <tr>
+      <td><strong>Servo Motor</strong></td>
+      <td>Pick Blocks, Place Blocks at Different Heights (Low Rise &amp; High Rise), 2 Servo Arm Design (Effective &amp; Used) &amp; 1 Servo Arm Design</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="quick-highlights---all-essential-actuations-visual-representation">Quick Highlights - All Essential Actuations (Visual Representation)</h5>
+
+<iframe width="860" height="515" src="https://www.youtube.com/embed/w3wBqJ6DisA?si=7jdh7NidJmqMFRql" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+
+<p><br><br></p>
+
+<hr>
+
+<h3 id="achievements">Achievements</h3>
+<p><br></p>
+
+<h5 id="1-selected-as-one-of-national-finalists-997-percentile-in-the-construct-o-bot-theme">1) Selected as one of <strong>National Finalists (99.7 Percentile)</strong> in the <strong>Construct-O-Bot theme</strong>.</h5>
+<div style="text-align: center;">
+    <iframe src="../pdfs/eyrc_certificate.pdf" width="80%" height="500px" frameborder="0"></iframe>
+</div>
+<p><br></p>
+
+<h5 id="2-paper-published---indian-institute-of-science-banglore">2) Paper Published - Indian Institute of Science, Banglore</h5>
+<div style="text-align: center;">
+    <iframe src="../pdfs/ID50_Full_Paper.pdf" width="80%" height="500px" frameborder="0"></iframe>
+</div>
+
+<hr>
+
+<p><br><br><br><br><br><br></p>
+
+<h4 id="miscellaneous">Miscellaneous</h4>
+
+<h5 id="project-submission-video">Project Submission Video</h5>
+
+<iframe width="860" height="515" src="https://www.youtube.com/embed/V-e3XbXu6AY?si=2X5BBffCpzHD_z1v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+
+<h5 id="presentation-before-panel-members-academic-experts-and-industry-leads">Presentation before Panel Members, Academic Experts, and Industry Leads</h5>
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/NCbEUZE8Mh8?si=8ZX-ViTfTSaYfeRE&amp;start=5811" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+</div>
+
+<hr>
+
+<h4 id="flow-charts">Flow Charts</h4>
+<h5 id="wall-following-algorithm">Wall Following Algorithm</h5>
+<p><img src="../imgs/projects/cob-wallfollowing.jpg" alt="drawing" width="650"></p>
+
+<h5 id="zig-zag-following-algorithm">Zig Zag Following Algorithm</h5>
+<p><img src="../imgs/projects/cob-zigzag.jpg" alt="drawing" width="400"></p>
+
+<h5 id="full-competition-algorithm">Full Competition Algorithm</h5>
+<p><img src="../imgs/projects/cob-fullalgo.jpg" alt="drawing" width="400"></p>
+
+<hr>
+
+<h4 id="retrofitting-challenges">Retrofitting challenges:</h4>
+
+<ol>
+  <li>
+    <p><strong>Gripper Misorientation:</strong> Fast robot movements caused gripper misorientation during material pickup, hindering simulation accuracy. The solution involved increasing gripper contact surface (Fig. 4 &amp; 6).</p>
+  </li>
+  <li>
+    <p><strong>Height Discrepancy:</strong> The robot’s 15cm height had to pick up material from a 3cm elevation. An L-shaped arm with servos for arm and gripper was implemented for cost-effectiveness (Fig. 5).
+<img src="../imgs/projects/cob-RoboticArm.png" alt="drawing" width="850"></p>
+  </li>
+  <li>
+    <p><strong>Sensor Data Optimization:</strong> LCD displays introduced lag during sensor calibration. Eliminating the LCD and using Tera-Term for serial communication resolved this issue.</p>
+  </li>
+</ol>
+
+<hr>
+
+<h4 id="hardware">Hardware</h4>
+<p><strong>Sensors</strong></p>
+<ol>
+  <li>Proximity Sensor/Sharp Sensor</li>
+  <li>White Line Sensor</li>
+</ol>
+
+<p><strong>Actuators</strong></p>
+<ol>
+  <li>Geared DC Motor with Encoder</li>
+  <li>Servo Motors</li>
+</ol>
+
+<p><strong>Micro-Controllers</strong></p>
+<ol>
+  <li>Atmega 2560 Development board</li>
+</ol>
+
+<p><strong>Miscellaneous</strong></p>
+<ol>
+  <li>LCD</li>
+  <li>L298N Motor Driver</li>
+  <li>Buzzers</li>
+  <li>Potentiometers</li>
+</ol>
+
+<p><strong>Hardware Testing Before Assembly</strong></p>
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/AbuGMjoGe7Q?si=x4FHMmbtjjgI6C3F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+</div>
+
+<p><strong>Hardware Testing After Assembly</strong></p>
+
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/RYoa6PcAsZs?si=F6VTSUC6STHSGCrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+</div>
+
+</div>
+  </main>
+  <!-- <style>
+    hr.new1 {
+      border-top: 1px solid #5f8efa;
+    }
+  </style>
+  <hr class="new1"> -->
+
+  <footer class="mt-auto py-3 text-center">
+<hr>
+  <p style="font-size: 15px" text-muted mb-2>
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    <br>
+    <strong>Wanna discuss something? Feel free to ping me!</strong>
+  </p>
+
+  <div class="container-fluid justify-content-center">
+<a class="social mx-1" href="mailto:narendhiran2000@gmail.com" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#db4437'" onmouseout="this.style.color='#6c757d'">
+      <i class="fas fa-envelope fa-1x"></i>
+    </a><a class="social mx-1" href="https://www.facebook.com/narendhiran.saravanane.9" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#3b5998'" onmouseout="this.style.color='#6c757d'">
+      <i class="fab fa-facebook fa-1x"></i>
+    </a><a class="social mx-1" href="https://www.github.com/naren200" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#333333'" onmouseout="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-1x"></i>
+    </a><a class="social mx-1" href="https://www.linkedin.com/in/narendhiran2000" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#007bb5'" onmouseout="this.style.color='#6c757d'">
+      <i class="fab fa-linkedin-in fa-1x"></i>
+    </a><a class="social mx-1" href="https://www.twitter.com/narendhiran2000" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#1da1f2'" onmouseout="this.style.color='#6c757d'">
+      <i class="fab fa-twitter fa-1x"></i>
+    </a>
+
+</div>
+<small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+  
+</footer>
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+</body>
+
+</html>
+
+<style>
+  /* Default font size for smaller screens */
+  body {
+    font-size: 12px;
+  }
+
+  /* Larger font size for screens with a minimum width of 1200px (adjust as needed) */
+  @media (min-width: 1200px) {
+    body {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<script>
+  function rotateImage(deg, duration, callback) {
+    const image = document.getElementById('rotating-image');
+    const step = 1; // Rotation step in degrees
+    let currentDeg = 0;
+    const direction = deg > 0 ? 1 : -1;
+
+    function rotateStep() {
+      if ((direction === 1 && currentDeg < deg) || (direction === -1 && currentDeg > deg)) {
+        currentDeg += step * direction;
+        image.style.transform = `rotate(${currentDeg}deg)`;
+        setTimeout(rotateStep, duration);
+      } else {
+        if (typeof callback === 'function') {
+          callback();
+        }
+      }
+    }
+
+    rotateStep();
+  }
+
+  function startRotationSequence() {
+    rotateImage(15, 4, () => {
+      rotateImage(-15, 4, () => {
+        setTimeout(() => {
+          startRotationSequence();
+        }, 300);
+      });
+    });
+  }
+
+  startRotationSequence();
+</script>
+
+  <script>
+  document.getElementById('play-button').addEventListener('click', function() {
+    this.classList.add('bounce-animation');
+    document.getElementById('person1').play();
+  });
+  </script>
+
+<style>
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-15px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .bounce-animation {
+    animation: bounce 3s ease;
+  }
+</style>
+
+<audio id="person1" >
+  <source src="../imgs/name.aac" type="audio/aac">
+Your browser does not support the audio element.
+</audio>
+
