@@ -17,6 +17,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 9999; /* Set a high z-index to place it on top */
 
 }
 
@@ -59,19 +60,6 @@
 	--box-shadow-1: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
-#particles-js {
-	// background: linear-gradient(to bottom, #e6ab5e, #bbcf8d, #8bd6d6);
-	// background: linear-gradient(to top right, #8bd6d6, #98fb98);
-	// background: linear-gradient(to bottom, #a6c0fe, #f68084);
-	background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);	
-
-	/* Adjust the gradient direction and colors as needed */
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-  } //	background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);	
 
   
 .loader span {
@@ -337,7 +325,9 @@ body {
 		width: 60%; /* Adjust the width as needed */
 		height: 60%; /* Allow the height to adjust based on the image's aspect ratio */
 		margin: 0 auto; /* Center the "element" div horizontally */
-		position: relative;
+		position: relative;	
+		z-index: 9999; /* Set a high z-index to place it on top */
+
 	}
 	#dummy {
 		width: 100%; /* Match the width of the parent (#element) div */
@@ -370,42 +360,6 @@ p {
     }
 }
 
-// /* Default styles for smaller screens */
-// main {
-// 	font-size: 12px; /* Default font size for smaller screens */
-//   }
-  
-//   main h1 {
-// 	font-size: 30px; /* Heading 1 font size for smaller screens */
-//   }
-  
-//   main h2 {
-// 	font-size: 20px; /* Heading 2 font size for smaller screens */
-//   }
-  
-//   main p {
-// 	font-size: 12px; /* Paragraph font size for smaller screens */
-//   }
-  
-//   /* Larger font sizes for screens with a min width of 1200px (adjust as needed) */
-//   @media (min-width: 800px) {
-// 	main {
-// 		font-size: 25px; /* Default font size for larger screens */
-// 	}
-  
-// 	main h1 {
-// 		font-size: 30px; /* Heading 1 font size for larger screens */
-// 	}
-  
-// 	main h2 {
-// 		font-size: 24px; /* Heading 2 font size for larger screens */
-// 	}
-  
-// 	main p {
-// 		font-size: 25px; /* Paragraph font size for larger screens */
-// 	}
-//   }
-  
 
 a {
 	display: inline-block;
@@ -1444,16 +1398,17 @@ canvas {
 	vertical-align: bottom;
 }
 
-/* ---- particles.js container ---- */
-.particles-js {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-image: url("");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50% 50%;
-}
+// /* ---- particles.js container ---- */
+// .particles-js {
+// 	position: absolute;
+// 	width: 100%;
+// 	height: 100%;
+// 	background-image: url("../imgs/landing/4015765_195_removeBG.png");
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+// 	background-position: 50% 50%;
+// }
+
 
 @media (max-width: 490px) {
 	.header-content .right-header .name .loader span {
