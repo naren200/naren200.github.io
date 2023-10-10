@@ -41,11 +41,16 @@ h2 {
 }
 
 h6 {
-  font-size: 19px; /* Default font size for h6 headings on smaller screens */
+  font-size: 22px; /* Default font size for h6 headings on smaller screens */
 }
 h4 {
-  font-size: 13px; /* Adjust font size for h6 headings on larger screens */
+  font-size: 10px; /* Adjust font size for h6 headings on larger screens */
 }
+img.emoji {
+  width: 20px; /* Default width for smaller screens */
+  height: 20px; /* Default height for smaller screens */
+}
+
 
 
 
@@ -64,10 +69,14 @@ h4 {
   }
 
   h6 {
-    font-size: 22px; /* Adjust font size for h6 headings on medium screens */
+    font-size: 24px; /* Adjust font size for h6 headings on medium screens */
   }
   h4 {
-    font-size: 15px; /* Adjust font size for h6 headings on larger screens */
+    font-size: 14px; /* Adjust font size for h6 headings on larger screens */
+  }
+  img.emoji {
+    width: 30px; /* Adjust width for medium-sized screens */
+    height: 30px; /* Adjust height for medium-sized screens */
   }
 
 
@@ -88,10 +97,14 @@ h4 {
   }
 
   h6 {
-    font-size: 26px; /* Adjust font size for h6 headings on larger screens */
+    font-size: 28px; /* Adjust font size for h6 headings on larger screens */
   }
   h4 {
     font-size: 17px; /* Adjust font size for h6 headings on larger screens */
+  }
+  img.emoji {
+    width: 35px; /* Adjust width for larger screens */
+    height: 35px; /* Adjust height for larger screens */
   }
 
 }

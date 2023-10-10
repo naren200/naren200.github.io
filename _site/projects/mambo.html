@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100">
+
+<head>
+
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Visual Tracking Unmanned Vehicle - Mambo Drone">
+  <meta property="og:description" content="Developing a low-cost mini drone line-tracking algorithm using vision-based control and model-based software design, with rigorous testing and MATLAB-based i...">
+
+  <title>Visual Tracking Unmanned Vehicle - Mambo Drone</title>
+  <meta name="description" content="Developing a low-cost mini drone line-tracking algorithm using vision-based control and model-based software design, with rigorous testing and MATLAB-based i...">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+<!--JUST FRO ART LAYOUT-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- for the particles-->
+  <link href="/assets/css/style_particles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="h-100 w-100 d-flex flex-column">
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>Narendhiran Saravanane</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/about/">About</a>
+
+      <a class="nav-item nav-link active" href="/projects/">Projects</a>
+
+      <a class="nav-item nav-link " href="/pages/cv">CV</a>
+
+      <a class="nav-item nav-link " href="/experience/">Experience</a>
+
+      <a class="nav-item nav-link " href="/blog/">Blog</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <div class="col-lg-10 mx-auto mt-5 post">
+  <h3 id="mambo-drone---line-following-algorithm-through-image-processing">Mambo Drone - Line Following Algorithm through Image Processing</h3>
+
+<h5 id="project-overview">Project Overview</h5>
+<p>The Mambo Drone Line Following Algorithm project showcases an innovative application of robotics and computer vision technology. This project’s primary objective is to enable a Parrot Mambo Fly mini-drone to autonomously follow a designated path using image processing techniques. By harnessing the power of control systems, sensor fusion, localization, mapping, and a sophisticated navigation module, this project aims to demonstrate the mini-drone’s ability to track and follow a predefined line accurately.</p>
+<div style="text-align: center;">
+  <iframe width="320" height="515" src="https://youtube.com/embed/MADCy3qH31s?si=fOtMf02AwO2WgmiZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+</div>
+
+<h5 id="control-systems-for-drone">Control Systems for Drone</h5>
+<p>In this project, the control system is at the heart of ensuring precise and stable flight for the Mambo drone. The control system consists of several components, including altitude control, orientation control (roll, pitch, and yaw), and line following control. Each of these components plays a crucial role in maintaining the drone’s stability and alignment with the desired path.</p>
+
+<h5 id="sensor-fusion-and-kalman-filter">Sensor Fusion and Kalman Filter</h5>
+<p>To achieve accurate and reliable flight control, sensor fusion is implemented. The drone relies on various sensors, such as accelerometers, gyroscope, barometer, and an optical flow sensor from its downward-facing camera. The Kalman filter algorithm is utilized to combine data from these sensors, providing an accurate estimation of the drone’s state, including position, orientation, and velocity. Sensor fusion ensures that the drone can maintain stable flight even in the presence of external disturbances.</p>
+
+<h5 id="localization-and-mapping">Localization and Mapping</h5>
+<p>Accurate localization and mapping are essential for the drone to understand its position relative to the predefined path. Through the fusion of sensor data and advanced algorithms, the drone builds a map of its environment and continuously updates its position within that map. This mapping and localization information are used to ensure the drone remains on the desired path, adjusting its trajectory as needed.</p>
+
+<h5 id="navigation-module">Navigation Module</h5>
+<p>The navigation module is the brain behind the Mambo drone’s ability to follow the line accurately. It takes the processed image data from the downward-facing camera, detects the line’s position, and calculates the necessary control inputs to keep the drone on track. The navigation module is equipped with image processing techniques, including edge detection, color thresholding, and contour analysis, to precisely follow the line’s path.</p>
+
+<h5 id="conclusion">Conclusion</h5>
+<p>The Mambo Drone Line Following Algorithm project demonstrates the integration of control systems, sensor fusion, localization, mapping, and advanced image processing for autonomous navigation. By successfully implementing these components, the mini-drone can autonomously follow a designated line, showcasing the potential of robotics and computer vision in real-world applications. This project serves as a testament to the capabilities of modern drones and their potential in various industries, from logistics to agriculture and beyond.</p>
+
+</div>
+  </main>
+  <!-- <style>
+    hr.new1 {
+      border-top: 1px solid #5f8efa;
+    }
+  </style>
+  <hr class="new1"> -->
+
+  <footer class="mt-auto py-3 text-center">
+<hr>
+  <p style="font-size: 15px" text-muted mb-2 >
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    <br>
+    <strong>Wanna discuss something? Feel free to ping me!</strong>
+  </p>
+
+  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:narendhiran2000@gmail.com"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#db4437'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fas fa-envelope fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.facebook.com/narendhiran.saravanane.9"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#3b5998'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-facebook fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.github.com/naren200"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#333333'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.linkedin.com/in/narendhiran2000"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#007bb5'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-linkedin-in fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.twitter.com/narendhiran2000"
+       style="color: #6c757d;font-size: 30px;"
+       onMouseOver="this.style.color='#1da1f2'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-twitter fa-1x"></i>
+    </a>
+
+</div><small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+  
+</footer>
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+</body>
+
+</html>
+
+<style>
+  /* Default font size for smaller screens */
+  body {
+    font-size: 12px;
+  }
+
+  /* Larger font size for screens with a minimum width of 1200px (adjust as needed) */
+  @media (min-width: 1200px) {
+    body {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<script>
+  function rotateImage(deg, duration, callback) {
+    const image = document.getElementById('rotating-image');
+    const step = 1; // Rotation step in degrees
+    let currentDeg = 0;
+    const direction = deg > 0 ? 1 : -1;
+
+    function rotateStep() {
+      if ((direction === 1 && currentDeg < deg) || (direction === -1 && currentDeg > deg)) {
+        currentDeg += step * direction;
+        image.style.transform = `rotate(${currentDeg}deg)`;
+        setTimeout(rotateStep, duration);
+      } else {
+        if (typeof callback === 'function') {
+          callback();
+        }
+      }
+    }
+
+    rotateStep();
+  }
+
+  function startRotationSequence() {
+    rotateImage(15, 4, () => {
+      rotateImage(-15, 4, () => {
+        setTimeout(() => {
+          startRotationSequence();
+        }, 300);
+      });
+    });
+  }
+
+  startRotationSequence();
+</script>
+
+  <script>
+  document.getElementById('play-button').addEventListener('click', function() {
+    this.classList.add('bounce-animation');
+    document.getElementById('person1').play();
+  });
+  </script>
+
+<style>
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-15px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .bounce-animation {
+    animation: bounce 3s ease;
+  }
+</style>
+
+<audio id="person1" >
+  <source src="../imgs/name.aac" type="audio/aac">
+Your browser does not support the audio element.
+</audio>
+
