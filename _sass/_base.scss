@@ -27,30 +27,93 @@ body {
   }
 }
 
-// /* Default styles for smaller screens */
-// h1 {
-//   font-size: 2px; /* Default font size for h1 on smaller screens */
-// }
+/* Default styles for smaller screens */
+p {
+  font-size: 18px; /* Default font size for paragraphs on smaller screens */
+}
+  
+h1 {
+  font-size: 30px; /* Adjust font size for h2 headings on medium screens */
+}
 
-// h2 {
-//   font-size: 2px; /* Default font size for h2 on smaller screens */
-// }
+h2 {
+  font-size: 24px; /* Default font size for h2 headings on smaller screens */
+}
 
-// p {
-//   font-size: 1px; /* Default font size for paragraphs on smaller screens */
-// }
+h6 {
+  font-size: 19px; /* Default font size for h6 headings on smaller screens */
+}
+h4 {
+  font-size: 13px; /* Adjust font size for h6 headings on larger screens */
+}
 
-// /* Larger font size for screens with a min width of 1200px (adjust as needed) */
-// @media (min-width: 800px) {
-//   h1 {
-//       font-size: 30px; /* Larger font size for h1 on larger screens */
-//   }
 
-//   h2 {
-//       font-size: 24px; /* Larger font size for h2 on larger screens */
-//   }
 
-//   p {
-//       font-size: 22px; /* Larger font size for paragraphs on larger screens */
-//   }
-// }
+/* Medium-sized screens (adjust the max-width as needed) */
+@media (min-width: 768px) {
+  p {
+    font-size: 20px; /* Adjust font size for paragraphs on medium screens */
+  }
+    
+  h1 {
+    font-size: 34px; /* Adjust font size for h2 headings on medium screens */
+  }
+
+  h2 {
+    font-size: 28px; /* Adjust font size for h2 headings on medium screens */
+  }
+
+  h6 {
+    font-size: 22px; /* Adjust font size for h6 headings on medium screens */
+  }
+  h4 {
+    font-size: 15px; /* Adjust font size for h6 headings on larger screens */
+  }
+
+
+}
+
+/* Larger screens (adjust the min-width as needed) */
+@media (min-width: 1200px) {
+  p {
+    font-size: 24px; /* Adjust font size for paragraphs on larger screens */
+  }
+  
+  h1 {
+    font-size: 39px; /* Adjust font size for h2 headings on medium screens */
+  }
+
+  h2 {
+    font-size: 32px; /* Adjust font size for h2 headings on larger screens */
+  }
+
+  h6 {
+    font-size: 26px; /* Adjust font size for h6 headings on larger screens */
+  }
+  h4 {
+    font-size: 17px; /* Adjust font size for h6 headings on larger screens */
+  }
+
+}
+
+/* Default image size for smaller screens */
+img.profilepic {
+  width: 180px; /* Default image width for smaller screens */
+  height: 180px; /* Default image height for smaller screens */
+}
+
+/* Adjust image size for medium-sized screens (adjust the width and height as needed) */
+@media (min-width: 800px) {
+  img.profilepic {
+    width: 250px; /* Adjust image width for medium-sized screens */
+    height: 250px; /* Adjust image height for medium-sized screens */
+  }
+}
+
+/* Adjust image size for larger screens (adjust the width and height as needed) */
+@media (min-width: 1200px) {
+  img.profilepic {
+    width: 300px; /* Adjust image width for larger screens */
+    height: 300px; /* Adjust image height for larger screens */
+  }
+}
