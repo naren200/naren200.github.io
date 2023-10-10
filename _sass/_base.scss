@@ -26,3 +26,31 @@ body {
     color: $text-white !important;
   }
 }
+
+// /* Default styles for smaller screens */
+// h1 {
+//   font-size: 2px; /* Default font size for h1 on smaller screens */
+// }
+
+// h2 {
+//   font-size: 2px; /* Default font size for h2 on smaller screens */
+// }
+
+// p {
+//   font-size: 1px; /* Default font size for paragraphs on smaller screens */
+// }
+
+// /* Larger font size for screens with a min width of 1200px (adjust as needed) */
+// @media (min-width: 800px) {
+//   h1 {
+//       font-size: 30px; /* Larger font size for h1 on larger screens */
+//   }
+
+//   h2 {
+//       font-size: 24px; /* Larger font size for h2 on larger screens */
+//   }
+
+//   p {
+//       font-size: 22px; /* Larger font size for paragraphs on larger screens */
+//   }
+// }
