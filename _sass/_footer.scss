@@ -9,6 +9,9 @@
     font-weight: bold;
   }
 }
+footer strong {
+  font-size: 12px; /* Adjust the font size as needed for smaller screens */
+}
 
 @media only screen and (min-width: 768px) {
   #attribution {
@@ -17,5 +20,14 @@
     position: fixed;
     bottom: 56px;
     right: 22px;
+    a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+  } 
+  footer strong {
+    font-size: 15px; /* Larger font size for larger screens */
   }
 }
+
+
