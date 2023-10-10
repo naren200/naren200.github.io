@@ -20,13 +20,11 @@ weight: 1
   </div>
 
 <div class="column" style="width: 100%; margin-left: 0px">
-  <audio id="person1" >
-    <source src="../imgs/name.aac" type="audio/aac">
-  Your browser does not support the audio element.
-  </audio>
 
   <br>
-  <p style="font-size: 20px">Hello there <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I am <b>Narendhiran</b>. My friends call me Naren (Neh-R-ehN). <img class="emoji" title=":play:" alt=":play:" src="https://github.githubassets.com/images/icons/emoji/unicode/25b6.png?v8" height="22" width="22" style="vertical-align: middle;" onclick="document.getElementById('person1').play()"> </p>
+  <p style="font-size: 20px">Hello there <img  id="rotating-image" class="emoji" title=":wave:" alt=":wave:" src="../imgs/hi.webp" height="50" width="50"> I am <b>Narendhiran</b>. My friends call me Naren (Neh-R-ehN). 
+  <!-- https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png -->
+  <img class="emoji" title=":play:" alt=":play:" src="../imgs/loudspeaker_3d.png" height="30" width="30" style="vertical-align: middle; cursor: pointer;" id="play-button">  </p>
 
   <br>
 
