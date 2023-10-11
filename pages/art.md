@@ -21,10 +21,10 @@ permalink: /experience/
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
 <br>
-<hr> 
+<!-- <hr>  -->
 <br>
 
-<h4 class="page-heading" id="Future-Imagination">There's a long road ahead, but we're on the right track.</h4><br>
+<!-- <h4 class="page-heading" id="Future-Imagination">There's a long road ahead, but we're on the right track.</h4><br>
 
 
 
@@ -62,7 +62,7 @@ permalink: /experience/
       <img src="../imgs/FutureWorld3.jpg" alt="Image"/>
     </div>
 
-    <!-- <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>1</h4></div>
+    <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>1</h4></div>
     <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>2</h4></div>
     <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>3</h4></div>
     <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>4</h4></div>
@@ -73,7 +73,7 @@ permalink: /experience/
     <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>9</h4></div>
     <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>10</h4></div>
     <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>11</h4></div>
-    <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>12</h4></div> -->
+    <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>12</h4></div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -102,5 +102,5 @@ permalink: /experience/
         }
     }
   })
-  </script>
+  </script> -->
 
