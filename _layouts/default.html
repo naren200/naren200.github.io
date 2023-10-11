@@ -80,12 +80,15 @@
   startRotationSequence();
 </script>
 
-  <script>
+<script>
   document.getElementById('play-button').addEventListener('click', function() {
-    this.classList.add('bounce-animation');
+    var element = this;
+    element.classList.remove('bounce-animation'); // Remove the class first
+    void element.offsetWidth; // Trigger reflow to apply class removal
+    element.classList.add('bounce-animation'); // Add the class back
     document.getElementById('person1').play();
   });
-  </script>
+</script>
 
 <style>
   @keyframes bounce {

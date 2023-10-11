@@ -9,7 +9,7 @@
       <div id="container" class="my-2">
         <div id="dummy" ></div>
         <div id="element">
-          <img src="imgs/naren_about.png" alt="{{ site.title }}" class="circle-image wow animated" data-wow-delay=".1s" >
+          <img src="imgs/naren_about.png" alt="{{ site.title }}" class="circle-image wow animated " data-wow-delay=".1s" >
         </div>
       </div>
     </div>
@@ -17,16 +17,84 @@
 
   <div class="row justify-content-center align-items-center p-10">
     <div class="col-lg-6 col-md-9 text-center mt-10">
-      <p style="font-size: 20px;" class="text-muted wow animated slideInUp" data-wow-delay=".1s">{{ site.description }}</p>
+      <p class="text-muted wow animated slideInUp" data-wow-delay=".1s">{{ site.description }}</p>
     </div>
   </div>
 
 </body>
-
-<!-- <html>
+<!-- 
+<html>
    <head>
       <meta http-equiv = "refresh" content = "3; url = /about/" />
    </head>
 </html> -->
+
+<html>
+<body>
+    <!-- Add a button for users to stay longer -->
+    <button id ="stay-longer" onclick="cancelRedirect()"  class="styled-button">Stay Longer here! (Landing Page)</button>
+
+    <!-- JavaScript to cancel the automatic refresh -->
+    <script>
+        function cancelRedirect() {
+            // Clear the automatic refresh timeout
+            clearTimeout(redirectTimeout);
+
+            // Optionally, you can hide or remove the button
+            var button = document.querySelector("stay-longer");
+            if (button) {
+                button.style.display = "none"; // Hides the button
+                // Or you can remove the button from the DOM: button.remove();
+            }
+        }
+
+        // Set the automatic refresh timeout
+        var redirectTimeout = setTimeout(function () {
+            window.location.href = "/about/"; // Redirect to the about page
+        }, 3500); // 3 seconds
+    </script>
+</body>
+</html>
+<style>
+  /* Style for the button */
+  #stay-longer {
+      position: fixed;
+      bottom: 10px; /* Adjust the bottom distance as needed */
+      left: 10px;   /* Adjust the left distance as needed */
+      z-index: 999; /* Ensure the button is on top of other content */
+  }
+  /* Style for the "Stay Longer" button */
+  /* Common button styles */
+  .styled-button {
+    background-color: #007BFF; /* Background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    font-size: 8px; /* Reduce font size for smaller screens */
+    opacity: 0.50;
+  }
+
+  /* Adjust button size for smaller screens (e.g., mobile devices) */
+  @media (max-width: 768px) {
+    .styled-button {
+      font-size: 8px; /* Reduce font size for smaller screens */
+      padding: 8px 16px; /* Adjust padding for smaller screens */
+      
+    }
+  }
+
+  /* Default button size for larger screens */
+  .styled-button {
+    font-size: 10px; /* Default font size for larger screens */
+    padding: 10px 20px; /* Default padding for larger screens */
+  }
+
+  .styled-button:hover {
+    background-color: #0056b3; /* Change the background color on hover */
+  }
+  
+</style>
+
 
 

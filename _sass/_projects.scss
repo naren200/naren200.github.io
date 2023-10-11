@@ -7,7 +7,7 @@
   .card-img-top {
     border-radius: $rounded-borders $rounded-borders 0 0;
     width: 100%;
-    height: 8vw;
+    height: 30vw;
     object-fit: cover;
   }
 
@@ -20,3 +20,58 @@
 }
 
 
+
+
+/* Default styles for smaller screens */
+.card-title {
+  font-size: 14px; /* Default font size for h5 */
+}
+
+.card-text {
+  font-size: 14px; /* Default font size for p */
+}
+
+/* Medium-sized screens (adjust the max-width as needed) */
+@media (min-width: 575px) {
+  .card-title {
+    font-size: 17px; /* Adjust font size for h5 on medium screens */
+  }
+
+  .card-text {
+    font-size: 14px; /* Adjust font size for p on medium screens */
+  }
+
+
+  .project.card {
+    border-radius: $rounded-borders;
+    text-decoration: none !important;
+    margin: 0px auto;
+    margin-top: 10px;
+  
+    .card-img-top {
+      border-radius: $rounded-borders $rounded-borders 0 0;
+      width: 100%;
+      height: 8vw;
+      object-fit: cover;
+    }
+  
+    transition: transform 400ms;
+  
+    &:hover:not(.post) {
+      transform: translateY(-8px);
+      box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
+    }
+  }
+  
+}
+
+/* Larger screens (adjust the min-width as needed) */
+@media (min-width: 1200px) {
+  .card-title {
+    font-size: 22px; /* Adjust font size for h5 on larger screens */
+  }
+
+  .card-text {
+    font-size: 18px; /* Adjust font size for p on larger screens */
+  }
+}

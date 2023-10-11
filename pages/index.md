@@ -12,92 +12,38 @@ permalink: /
 <!-- style="background-image: url('imgs/landing/4015765_195_removeBG.png'); background-size: 40% auto; background-repeat: no-repeat; background-position: bottom right;"></div> -->
 
 <style>
-	
-/* Default styles for smaller screens */
-		#particles-js {
-			background-image: url('../imgs/landing/4015765_195_removeBG.png');
-			background-size: 40% auto; /* Default background size for smaller screens */
-			background-repeat: no-repeat; /* Default background repeat for smaller screens */
-			background-position: bottom right; /* Default background position for smaller screens */
-   /* animation: fadeIn 2s ease-in forwards; */
-		}
-
-/* Medium-sized screens (adjust the max-width as needed) */
-  @media (max-width: 447px) {
-    #particles-js {
-        background-repeat: no-repeat;
-        background-size: 75% auto; /* Adjust background size for medium screens */
-        background-position: bottom 10vh right 0;
-								/* animation: fadeIn 3s ease-out 2s forwards; Adjust animation duration and delay as needed */
+    #particles-js::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../imgs/landing/4015765_195_removeBG.png');
+    background-size: cover; /* Adjust the size as needed */
+    background-repeat: no-repeat; /* Adjust the repeat as needed */
+    animation: yourAnimation 2.5s ease-in forwards; /* Adjust the animation as needed */
+    background-size: 40% auto; /* Default background size for smaller screens */
+        background-repeat: no-repeat; /* Default background repeat for smaller screens */
+        /* background-position: bottom -10vh right -10vh ; Default background position for smaller screens */
+    background-position: 99% 100%; /* Background position at the bottom center of the page */
 
     }
-  }
-  /* Medium-sized screens (adjust the max-width as needed) */
-  @media (min-width: 447px) {
-    #particles-js {
-        background-repeat: no-repeat;
-        background-size: 75% auto; /* Adjust background size for medium screens */
-        background-position: bottom 5vh right -5vh;
 
+    @keyframes yourAnimation {
+    0% {
+      opacity: 0.2;
+      /* Define initial background properties */
     }
-  }
-  /* Medium-sized screens (adjust the max-width as needed) */
-  @media (min-width: 487px) {
-    #particles-js {
-        background-repeat: no-repeat;
-        background-size: 75% auto; /* Adjust background size for medium screens */
-        background-position: bottom -10vh right -15vh;
-
+    60%{
+      opacity: 0.8;
     }
-  }
+    100% {
+      opacity: 0.1;
 
-  /* Medium-sized screens (adjust the max-width as needed) */
-  @media (min-width: 560px) {
-    #particles-js {
-        background-repeat: no-repeat;
-        background-size: 75% auto; /* Adjust background size for medium screens */
-        background-position: bottom -10vh right -15vh;
-
+      /* Define final background properties */
     }
-  }
-		/* Medium-sized screens (adjust the max-width as needed) */
-  @media (min-width: 660px) {
-    #particles-js {
-        background-repeat: no-repeat;
-        background-size: 55% auto; /* Adjust background size for medium screens */
-        background-position: bottom -5vh right -10vh;
-
     }
-  }
-		/* Medium-sized screens (adjust the max-width as needed) */
-  @media (min-width: 770px) {
-    #particles-js {
-        background-repeat: no-repeat;
-        background-size: 55% auto; /* Adjust background size for medium screens */
-        background-position: bottom right;
-
-    }
-  }
-
-  /* Medium-sized screens (adjust the max-width as needed) */
-  @media (min-width: 850px) {
-    #particles-js {
-        background-repeat: no-repeat;
-        background-size: 40% auto; /* Adjust background size for medium screens */
-        background-position: right -10vh bottom 30vh; /* Align the image 30% from the max-height of the page */
-								animation: fadeIn 3s ease-out 2s forwards; /* Adjust animation duration and delay as needed */
-
-    }
-  }
-
-  /* Larger screens (adjust the min-width as needed) */
-  @media (min-width: 1200px) {
-    #particles-js {
-        background-repeat: no-repeat;
-        background-size: 40% auto; /* Adjust background size for larger screens */
-        background-position: bottom right;
-    }
-  }
 </style>
 
 <script src="../particles.js"></script>

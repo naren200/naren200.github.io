@@ -89,6 +89,37 @@
 }
 
 
+// Default heading size for smaller screens
+h4.page-heading {
+  font-size: 23px; // Default font size for smaller screens
+  font-family: sans-serif;
+}
+h4.mb-3 {
+  font-size: 18px; // Default font size for smaller screens
+}
+
+
+// Adjust heading size for medium-sized screens (768px partition)
+@media (min-width: 768px) {
+  h4.page-heading {
+    font-size: 26px; // Adjust font size for medium-sized screens
+  }
+  h4.mb-3 {
+    font-size: 21px; // Default font size for smaller screens
+  }
+
+}
+
+// Adjust heading size for larger screens (1200px partition)
+@media (min-width: 1200px) {
+  h4.page-heading {
+    font-size: 30px; // Adjust font size for larger screens
+  }
+  h4.mb-3 {
+    font-size: 24px; // Default font size for smaller screens
+  }
+
+}
 
 // .container{
 //   min-width:1200px;         

@@ -43,11 +43,11 @@ weight: 1
   <br>
 
   <p >
-  Under my leadership, our team achieved recognition in robotics, becoming <a href="https://drive.google.com/file/d/1kweAUygwfA52OVF7uBK29grWofsJmhxy/view?usp=sharing">National finalists</a> in the 2019-20 <a href="https://portal.e-yantra.org/#about">e-Yantra International Robotics Competition</a> organized by <a href="https://www.iitb.ac.in/">IIT Bombay</a>. We developed an autonomous transportation mobile robot, showcasing innovation in disaster management. Additionally, I devised a simulator ecosystem for autonomous evaluation of the <a href="https://portal.e-yantra.org/#about">e-YRC competition</a>, earning recognition in the prestigious <a href="https://www.e-yantra.org/eysip">e-YIC program</a> under <a href="https://www.linkedin.com/in/kavi-arya/?originalSubdomain=in">Prof. Kavi Arya</a> from <a href="https://www.cse.iitb.ac.in/">IIT Bombay's Department of Computer Science & Engineering</a>.
+  Under my leadership, our team achieved recognition in robotics, becoming <a href="https://drive.google.com/file/d/1kweAUygwfA52OVF7uBK29grWofsJmhxy/view?usp=sharing">National finalists</a> in the 2019-20 <a href="https://portal.e-yantra.org/#about">e-Yantra International Robotics Competition</a> organized by <a href="https://www.iitb.ac.in/">IIT Bombay</a>. We developed an autonomous transportation mobile robot, showcasing innovation in disaster management. Additionally, I devised a simulator ecosystem for autonomous evaluation of the <a href="https://portal.e-yantra.org/#about">e-YRC competition</a>, earning recognition in the prestigious <a href="https://www.e-yantra.org/eysip">e-YIC program</a> under <a href="https://www.linkedin.com/in/kavi-arya/?originalSubdomain=in">Prof. Kavi Arya</a> from <a href="https://www.cse.iitb.ac.in/">IIT Bombay's Department of Computer Science & Engineering.</a>
   </p>
 
   <p >
-    My research interests lie at the intersection of Artificial intelligence and robotics. You can read the research questions that I find very fascinating <a href="#Questionsexcitesme">here</a>.
+    My research interests lie at the intersection of Artificial intelligence and robotics. You can read the research questions that I find very fascinating <a href="#Questionsexcitesme">here.</a>
   </p>
   <br>
   <hr> <!-- This line creates a horizontal divider -->
