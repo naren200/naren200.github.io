@@ -19,7 +19,7 @@ permalink: /
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../imgs/landing/4015765_195_removeBG.png');
+    background-image: url('../imgs/landing/Final_reduced.jpeg');
     background-size: cover; /* Adjust the size as needed */
     background-repeat: no-repeat; /* Adjust the repeat as needed */
     animation: yourAnimation 2.5s ease-in forwards; /* Adjust the animation as needed */
