@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100">
+
+<head>
+
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Meta&#39;s Research Enhancement for Object Goal Navigation">
+  <meta property="og:description" content="Advanced object goal navigation achieved through Goal-Oriented Semantic Exploration, combining semantic mapping, policy learning, and efficient path planning.">
+
+  <title>Meta&#39;s Research Enhancement for Object Goal Navigation</title>
+  <meta name="description" content="Advanced object goal navigation achieved through Goal-Oriented Semantic Exploration, combining semantic mapping, policy learning, and efficient path planning.">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+<!--JUST FRO ART LAYOUT-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- for the particles-->
+  <link href="/assets/css/style_particles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="h-100 w-100 d-flex flex-column">
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>Narendhiran Saravanane</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+<a class="nav-item nav-link " href="/about/">About</a>
+
+      <a class="nav-item nav-link active" href="/projects/">Projects</a>
+
+      <a class="nav-item nav-link " href="/pages/cv">CV</a>
+
+      <a class="nav-item nav-link " href="/experience/">Experience</a>
+
+      <a class="nav-item nav-link " href="/blog/">Blog</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <div class="col-lg-10 mx-auto mt-5 post">
+  <h5 id="table-of-contents">Table of Contents</h5>
+<ul>
+  <li><a href="#project-description"><strong>Project Description</strong></a></li>
+  <li><a href="#baseline"><strong>Baseline</strong></a></li>
+  <li>
+<a href="#proposed-changes"><strong>Proposed Changes</strong></a> <img class="emoji" title=":point_left:" alt=":point_left:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f448.png" height="20" width="20">
+</li>
+  <li><a href="#results"><strong>Results</strong></a></li>
+</ul>
+
+<h3 id="object-goal-navigation-enhancement-using-goal-oriented-semantic-exploration">Object Goal Navigation Enhancement using Goal-Oriented Semantic Exploration</h3>
+
+<h4 id="project-description"><strong>Project Description:</strong></h4>
+<p>This project builds upon the foundation of the original research paper by introducing significant enhancements to the object goal navigation task. The original research paper presents a groundbreaking modular system, “Goal-Oriented Semantic Exploration,” addressing object goal navigation challenges. It outperforms existing methods and won the CVPR-2020 Habitat ObjectNav Challenge, showcasing its effectiveness in both simulations and real-world mobile robot applications. Leveraging the <strong>Yolov7</strong> computer vision algorithm and the <strong>RRT</strong> (Rapidly-exploring Random Trees) path planning algorithm, we aim to revolutionize how robots navigate to a specified object category in unfamiliar environments.</p>
+
+<h4 id="baseline"><strong>Baseline:</strong></h4>
+<p>The baseline model in this object goal navigation task involves an agent that starts at a random location within an environment, with the goal of navigating to a specific object category, such as ‘chair’ or ‘bed.’ The agent receives visual observations in the form of first-person RGB and depth images, as well as sensor pose readings. It operates within an action space consisting of four actions: move_forward, turn_left, turn_right, and stop. The primary objective is to reach close proximity to the goal object and take the ‘stop’ action when it believes it has achieved this. If the agent’s distance to the goal object falls below a threshold (ds = 1m), the episode is considered successful. Episodes are terminated after a fixed maximum number of time steps (timesteps = 500). The baseline serves as the starting point for evaluating the effectiveness of the proposed modular system, “Goal-Oriented Semantic Exploration,” against other navigation methods, highlighting the challenges that traditional end-to-end learning-based approaches face in exploration and long-term planning within unfamiliar environments.
+<img src="../imgs/projects/goal-Visual2Map.gif" alt="Visual"></p>
+
+<h4 id="key-components"><strong>Key Components:</strong></h4>
+<ol>
+  <li>
+    <p><strong>Semantic Mapping:</strong> We leverage semantic segmentation and object detection models to predict object categories in first-person RGB and depth images. A spatial map is built, representing obstacles, explored areas, and object categories.
+<img src="../imgs/projects/goal-semanticMap.png" alt="drawing" width="750"></p>
+  </li>
+  <li>
+    <p><strong>Goal-Oriented Semantic Policy:</strong> This policy module selects a long-term goal based on the semantic map. It considers the relative arrangement of objects and areas to determine where the goal object category is most likely to be found.</p>
+  </li>
+  <li>
+    <p><strong>Deterministic Local Policy:</strong> The local policy employs the Fast Marching Method for path planning from the current location to the long-term goal. It takes deterministic actions to reach the goal efficiently.
+<img src="../imgs/projects/goal-GlobalLocal.png" alt="drawing" width="850"></p>
+  </li>
+</ol>
+
+<h5 id="proposed-changes"><strong>Proposed Changes</strong></h5>
+<p><img src="../imgs/projects/goal-ProposedChanges.png" alt="drawing" width="850"></p>
+
+<h5 id="results"><strong>Results:</strong></h5>
+<p>Our project’s empirical results in visually realistic simulation environments demonstrate that the proposed model outperforms a range of baselines, including end-to-end learning-based methods and modular map-based methods. It not only excels in exploration and long-term planning but also provides an effective solution for object goal navigation.</p>
+
+<h6 id="baseline-of-the-paper"><strong>Baseline of the Paper</strong></h6>
+<p><img src="../imgs/projects/goal-baselineResults.png" alt="drawing" width="950"></p>
+
+<h6 id="enhancements-on-computer-vision"><strong>Enhancements on Computer Vision</strong></h6>
+<p><img src="../imgs/projects/goal-cvResults.png" alt="drawing" width="1050"></p>
+
+<p><strong>Note</strong>: Baseline paper trains for 10M timesteps, our work runs for 1M due to time constraints</p>
+
+<h6 id="metrics">
+<strong>Metrics</strong>:</h6>
+
+<p><strong>SUCC</strong>: Ratio of episodes where the method was successful.</p>
+
+<p><strong>SPL</strong>: Success weighted by Path Length (measures the efficiency of reaching the goal in addition to the success rate)</p>
+
+<p><strong>DTG</strong>: Distance to Success. (distance of the agent from the success threshold boundary when the episode ends)</p>
+
+<p><img src="../imgs/projects/goal-dts.png" alt="drawing" width="850"></p>
+
+<h4 id="future-scope"><strong>Future Scope:</strong></h4>
+<p>The modular design of our system allows for easy adaptation to real-world mobile robot platforms, promising further advancements in object goal navigation in real-world scenarios.</p>
+
+<p>This project represents a significant contribution to the field of robotics and autonomous navigation, offering a versatile and efficient solution to the complex problem of finding and navigating to specific object categories in unfamiliar environments.</p>
+
+<h4 id="references">References</h4>
+<ol>
+  <li><a href="https://arxiv.org/pdf/2007.00643.pdf">Semantic Exploration for Object Goal Navigation</a></li>
+  <li><a href="https://devendrachaplot.github.io/projects/semantic-exploration">Project Website</a></li>
+  <li>Presented to CSE Department, ASU.</li>
+</ol>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR9VradbqEfNySO1Fjpku2b4585q3omqgroM7CXoFyAkiPmHT6LWH7A8wXH3Lof2vSCia6NDczprC4-/embed?start=true&amp;loop=true&amp;delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+</div>
+  </main>
+  <!-- <style>
+    hr.new1 {
+      border-top: 1px solid #5f8efa;
+    }
+  </style>
+  <hr class="new1"> -->
+
+  <footer class="mt-auto py-3 text-center">
+<hr>
+  <p style="font-size: 15px" text-muted mb-2>
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    <br>
+    <strong>Wanna discuss something? Feel free to ping me!</strong>
+  </p>
+
+  <div class="container-fluid justify-content-center">
+<a class="social mx-1" href="mailto:narendhiran2000@gmail.com" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#db4437'" onmouseout="this.style.color='#6c757d'">
+      <i class="fas fa-envelope fa-1x"></i>
+    </a><a class="social mx-1" href="https://www.facebook.com/narendhiran.saravanane.9" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#3b5998'" onmouseout="this.style.color='#6c757d'">
+      <i class="fab fa-facebook fa-1x"></i>
+    </a><a class="social mx-1" href="https://www.github.com/naren200" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#333333'" onmouseout="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-1x"></i>
+    </a><a class="social mx-1" href="https://www.linkedin.com/in/narendhiran2000" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#007bb5'" onmouseout="this.style.color='#6c757d'">
+      <i class="fab fa-linkedin-in fa-1x"></i>
+    </a><a class="social mx-1" href="https://www.twitter.com/narendhiran2000" style="color: #6c757d;font-size: 30px;" onmouseover="this.style.color='#1da1f2'" onmouseout="this.style.color='#6c757d'">
+      <i class="fab fa-twitter fa-1x"></i>
+    </a>
+
+</div>
+<small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+  
+</footer>
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+</body>
+
+</html>
+
+<style>
+  /* Default font size for smaller screens */
+  body {
+    font-size: 12px;
+  }
+
+  /* Larger font size for screens with a minimum width of 1200px (adjust as needed) */
+  @media (min-width: 1200px) {
+    body {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<script>
+  function rotateImage(deg, duration, callback) {
+    const image = document.getElementById('rotating-image');
+    const step = 1; // Rotation step in degrees
+    let currentDeg = 0;
+    const direction = deg > 0 ? 1 : -1;
+
+    function rotateStep() {
+      if ((direction === 1 && currentDeg < deg) || (direction === -1 && currentDeg > deg)) {
+        currentDeg += step * direction;
+        image.style.transform = `rotate(${currentDeg}deg)`;
+        setTimeout(rotateStep, duration);
+      } else {
+        if (typeof callback === 'function') {
+          callback();
+        }
+      }
+    }
+
+    rotateStep();
+  }
+
+  function startRotationSequence() {
+    rotateImage(15, 4, () => {
+      rotateImage(-15, 4, () => {
+        setTimeout(() => {
+          startRotationSequence();
+        }, 300);
+      });
+    });
+  }
+
+  startRotationSequence();
+</script>
+
+<script>
+  document.getElementById('play-button').addEventListener('click', function() {
+    var element = this;
+    element.classList.remove('bounce-animation'); // Remove the class first
+    void element.offsetWidth; // Trigger reflow to apply class removal
+    element.classList.add('bounce-animation'); // Add the class back
+    document.getElementById('person1').play();
+  });
+</script>
+
+<style>
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-15px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .bounce-animation {
+    animation: bounce 3s ease;
+  }
+</style>
+
+<audio id="person1" >
+  <source src="../imgs/name.aac" type="audio/aac">
+Your browser does not support the audio element.
+</audio>
+
