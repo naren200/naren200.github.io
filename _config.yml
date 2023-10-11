@@ -1,12 +1,13 @@
 ### Site Settings ###
 title               : Narendhiran Saravanane
 description         : >-
-                      <strong><h3 style=" color: #fff;"><br> I'm <b>Naren</b><br><br> <b>Robotic Engineer<br>&emsp;\n &emsp;<br>AI & ML Developer</b> <br></h3></strong>
+                      <strong><h3 style=" color: #fff;"> <b>Roboticists&emsp;| &emsp;AI Developer</b> <br></h3></strong>
 
 baseurl             :                      # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : naren200/naren200.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : YoussefRaafatNasry/portfolYOU
 #  Welcome <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> 
+#  I'm <b>Naren</b><br><br>
 
 ### Plugins ###
 plugins:

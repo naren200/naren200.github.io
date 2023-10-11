@@ -35,11 +35,11 @@ permalink: /
       opacity: 0.2;
       /* Define initial background properties */
     }
-    60%{
-      opacity: 0.8;
+    30%{
+      opacity: 1;
     }
     100% {
-      opacity: 0.1;
+      opacity: 0.05;
 
       /* Define final background properties */
     }
