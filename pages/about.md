@@ -16,7 +16,7 @@ weight: 1
 
 <div class="column">
   <div>
-    <img class="profilepic" style="float: center; border-radius: 50%;" src="../imgs/naren_about.png" alt="Naren" title="Naren (Neh-R-ehN)" />
+    <img class="profilepic" style="float: center; border-radius: 50%;" src="../imgs/naren_about.jpeg" alt="Naren" title="Naren (Neh-R-ehN)" />
   </div>
 
 <div class="column" style="width: 100%; margin-left: 0px">
@@ -66,7 +66,7 @@ weight: 1
   </p>
   <br>
 
-  <h6 id="achievements"><b>My Approach: Tackling Complex Problems with Passion</b></h6>
+  <h6><b>My Approach: Tackling Complex Problems with Passion</b></h6>
 
 
   <p >
