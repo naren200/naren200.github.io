@@ -89,4 +89,24 @@ $(function () {
   Your browser does not support the audio element.
   </audio>
   
+
+  <script>
+    const scrollTopButton = document.getElementById("scrollTopButton");
+  
+    // Show the button when the user scrolls down
+    window.addEventListener("scroll", () => {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollTopButton.style.display = "block";
+      } else {
+        scrollTopButton.style.display = "none";
+      }
+    });
+  
+    // Scroll to the top when the button is clicked
+    scrollTopButton.addEventListener("click", () => {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    });
+  </script>
+  
   
