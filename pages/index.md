@@ -1,5 +1,6 @@
 ---
 layout: default
+is_landing_page: true
 permalink: /
 ---
 
