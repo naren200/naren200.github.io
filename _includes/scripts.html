@@ -20,3 +20,73 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
 </script>
+
+<script>
+    function rotateImage(deg, duration, callback) {
+      const image = document.getElementById('rotating-image');
+      const step = 1; // Rotation step in degrees
+      let currentDeg = 0;
+      const direction = deg > 0 ? 1 : -1;
+  
+      function rotateStep() {
+        if ((direction === 1 && currentDeg < deg) || (direction === -1 && currentDeg > deg)) {
+          currentDeg += step * direction;
+          image.style.transform = `rotate(${currentDeg}deg)`;
+          setTimeout(rotateStep, duration);
+        } else {
+          if (typeof callback === 'function') {
+            callback();
+          }
+        }
+      }
+  
+      rotateStep();
+    }
+  
+    function startRotationSequence() {
+      rotateImage(15, 4, () => {
+        rotateImage(-15, 4, () => {
+          setTimeout(() => {
+            startRotationSequence();
+          }, 300);
+        });
+      });
+    }
+  
+    startRotationSequence();
+  </script>
+  
+  <script>
+    document.getElementById('play-button').addEventListener('click', function() {
+      var element = this;
+      element.classList.remove('bounce-animation'); // Remove the class first
+      void element.offsetWidth; // Trigger reflow to apply class removal
+      element.classList.add('bounce-animation'); // Add the class back
+      document.getElementById('person1').play();
+    });
+  </script>
+  
+  <style>
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-15px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+    }
+  
+    .bounce-animation {
+      animation: bounce 3s ease;
+    }
+  </style>
+  
+  <audio id="person1" >
+    <source src="../imgs/name.aac" type="audio/aac">
+  Your browser does not support the audio element.
+  </audio>
+  
+  
