@@ -99,6 +99,46 @@ weight: 1
   </div>
 </div>
 
+<br><br><br>
 
+<style>
+  iframe{
+    width: 110%; /* Set a different width for screens <= 600px */
+    height: 400px; /* Set a different height for screens <= 600px */
+    /* text-align: center; */
+  }
+</style>
 
+<!-- 
+<script>
+  // Function to scroll down by a specific number of pixels
+  function scrollDownByPixels(pixels) {
+      // Scroll to the top of the page
+      window.scrollTo(0, 0);
 
+      window.scrollBy(0, pixels);
+  }
+
+  // Scroll down by 200 pixels when the page loads
+  window.onload = function() {
+      scrollDownByPixels(200); // Adjust the value as needed
+  }
+</script> -->
+
+<script>
+    // Function to scroll down by a percentage of the width of the screen
+    function scrollDownByPercentage(percentage) {
+        // if (isFirstVisit()) {
+        if (!localStorage.getItem('visited')) {
+          const windowHeight = window.innerHeight; // Height of the viewpor t
+          const pixelsToScroll = (percentage / 100) * windowHeight; // Calculate pixels based on percentage
+          window.scrollBy(0, pixelsToScroll);
+          localStorage.setItem('visited', 'true'); // Set the 'visited' flag in localStorage
+        }
+    }
+
+    // Scroll down by 50% of the width of the screen when the page loads
+    window.onload = function() {
+        scrollDownByPercentage(10); // Adjust the percentage as needed
+    }
+</script>

@@ -34,6 +34,7 @@
 <body>
     <!-- Add a button for users to stay longer -->
     <button id ="stay-longer" onclick="cancelRedirect()"  class="styled-button">Stay Longer here? Press</button>
+    <div id="countdown"></div>
 
     <!-- JavaScript to cancel the automatic refresh -->
     <script>
@@ -42,9 +43,11 @@
             clearTimeout(redirectTimeout);
 
             // Optionally, you can hide or remove the button
-            var button = document.querySelector("stay-longer");
+            var button = document.querySelector("#stay-longer");
+            var redirect_text = document.querySelector("#countdown");
             if (button) {
                 button.style.display = "none"; // Hides the button
+                redirect_text.style.display = "none"; // Hides the redirect prompt
                 // Or you can remove the button from the DOM: button.remove();
             }
         }
@@ -64,6 +67,8 @@
       bottom: 10px; /* Adjust the bottom distance as needed */
       left: 10px;   /* Adjust the left distance as needed */
       z-index: 999; /* Ensure the button is on top of other content */
+      font-size: 14px; /* Reduce font size for smaller screens */
+
   }
   /* Style for the "Stay Longer" button */
   /* Common button styles */
@@ -73,8 +78,8 @@
     border: none; /* Remove border */
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Add a pointer cursor on hover */
-    font-size: 8px; /* Reduce font size for smaller screens */
-    opacity: 0.50;
+    /* font-size: 16px; Reduce font size for smaller screens */
+    opacity: 0.70;
   }
 
   /* Adjust button size for smaller screens (e.g., mobile devices) */
@@ -95,8 +100,58 @@
   .styled-button:hover {
     background-color: #0056b3; /* Change the background color on hover */
   }
-  
+    /* Add CSS styles here if needed */
+  body {
+      text-align: center;
+  }
+
+  #countdown {
+    position: fixed;
+    bottom: 50px; /* Adjust the bottom distance as needed */
+    left: 10px;   /* Adjust the left distance as needed */
+    z-index: 999; /* Ensure the button is on top of other content */
+    font-size: 14px;
+  }
+
 </style>
 
+
+<script>
+  // Function to scroll down by a specific number of pixels
+  function scrollDownByPixels(pixels) {
+    window.scrollBy(0, pixels);
+  }
+
+  // Scroll down by 200 pixels when the page loads
+  window.onload = function() {
+      scrollDownByPixels(400); // Adjust the value as needed
+  }
+</script>
+
+<script>
+  // Function to start the countdown and redirect when it reaches zero
+  function startCountdown() {
+      var countdown = document.getElementById('countdown');
+      var seconds = 3; // Set the countdown duration in seconds
+
+      function updateCountdown() {
+          countdown.textContent = 'Welcome! Discover more in '+seconds;
+          seconds--;
+
+          // if (seconds < 0) {
+          //     clearInterval(interval);
+          //     window.location.href = "https://example.com"; // Replace with your desired URL
+          // }
+      }
+
+      updateCountdown();
+      var interval = setInterval(updateCountdown, 1000); // Update every second
+  }
+
+  // Start the countdown when the page loads
+  window.onload = function() {
+      startCountdown();
+  }
+</script>
 
 
