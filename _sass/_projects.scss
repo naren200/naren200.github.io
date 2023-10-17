@@ -75,3 +75,74 @@
     font-size: 18px; /* Adjust font size for p on larger screens */
   }
 }
+
+
+/* Default styles for the iframe */
+iframe {
+  width: 100%; /* Default width for all screens */
+  height: 100px; /* Default height for all screens */
+  margin: 0 auto;
+  
+}
+
+/* Media query for screens with a maximum width of 600px */
+@media (max-width: 600px) {
+  iframe{
+    width: 100%; /* Set a different width for screens <= 600px */
+    height: 200px; /* Set a different height for screens <= 600px */
+  }
+}
+
+/* Media query for screens with a minimum width of 601px and a maximum width of 1200px */
+@media (min-width: 601px) and (max-width: 1200px) {
+  iframe {
+    width: 100%; /* Set a different width for screens between 601px and 1200px */
+    height: 400px; /* Set a different height for screens between 601px and 1200px */
+    display: block;
+  }
+}
+
+/* Media query for screens with a minimum width of 1201px */
+@media (min-width: 1201px) {
+  iframe {
+    width: 70%; /* Set a different width for screens >= 1201px */
+    height: 400px; /* Set a different height for screens >= 1201px */
+    text-align: center;
+    display: block; // Ensures the iframe is treated as a block-level element
+  }
+
+}
+
+
+
+// /* Default styles for the iframe */
+// iframe-yb {
+//   width: 100%; /* Default width for all screens */
+//   height: 100px; /* Default height for all screens */
+//   margin: 0 auto;
+  
+// }
+
+// /* Media query for screens with a maximum width of 600px */
+// @media (max-width: 600px) {
+//   iframe-yb {
+//     width: 100%; /* Set a different width for screens <= 600px */
+//     height: 200px; /* Set a different height for screens <= 600px */
+//   }
+// }
+
+// /* Media query for screens with a minimum width of 601px and a maximum width of 1200px */
+// @media (min-width: 601px) and (max-width: 1200px) {
+//   iframe-yb {
+//     width: 100%; /* Set a different width for screens between 601px and 1200px */
+//     height: 400px; /* Set a different height for screens between 601px and 1200px */
+//   }
+// }
+
+// /* Media query for screens with a minimum width of 1201px */
+// @media (min-width: 1201px) {
+//   iframe-yb {
+//     width: 100%; /* Set a different width for screens >= 1201px */
+//     height: 500px; /* Set a different height for screens >= 1201px */
+//   }
+// }
