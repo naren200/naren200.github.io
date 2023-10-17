@@ -114,7 +114,7 @@ By achieving its objectives and presenting valuable results, this project contri
 #### Miscellaneous
 ###### Presentation
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS0RJFhrUeS5FA8i7XEwbZWVfNGFlW-1MuFLEV1Dqgy9I45SkpC43ROtj1-sLThOsvnsjhbm1e7GL8B/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe  height="515" src="https://docs.google.com/presentation/d/e/2PACX-1vS0RJFhrUeS5FA8i7XEwbZWVfNGFlW-1MuFLEV1Dqgy9I45SkpC43ROtj1-sLThOsvnsjhbm1e7GL8B/embed?start=true&loop=true&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 
 #### Capstone Published Report FYI - Takes time to load :) 

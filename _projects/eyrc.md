@@ -14,9 +14,9 @@ number: three
 - [**Achievements**](#achievements) :point_left:
 - [**Miscellaneous**](#Miscellaneous)
 
-### International eYantra Robotics Competition
+# International eYantra Robotics Competition
 
-#### Motivation
+## Motivation
 <img src="../imgs/projects/cob-introduction.png" alt="drawing" width="1000"/>
 
 Natural disasters like earthquakes, and landslides cause immense human and economic losses globally. In 2018 alone, 315 such disasters, affecting over 68 million people and causing $131.7 billion in damages. Post-disaster, reconstruction efforts are essential, but they are capital and labor-intensive, especially in challenging terrains. The e-Yantra Robotics Competition (eYRC 2019-20) addresses this by introducing the theme "Construct-o-Bot" to aid disaster-stricken areas.
@@ -26,7 +26,7 @@ The "Construct-o-Bot" theme simulates a disaster site, where robots retrieve con
 
 <img src="../imgs/projects/cob-Arena.png" alt="drawing" width="250"/>
 
-#### Objective
+## Objective
 Design and implement a robotic system capable of efficiently and safely assisting in disaster site reconstruction, addressing challenges such as material handling, navigation, and sensor calibration.
 
 My team consisted of <a href="https://www.linkedin.com/in/neeraj-kumar-gond-543092170/">Neeraj Gond</a>, <a href="https://www.linkedin.com/in/nikhil-anand-3164b818b/">Nikhil Anand</a>, <a href="https://naren200.github.io/">Narendhiran Saravanane</a>, and <a href="https://www.linkedin.com/in/neeraj-goyal-85067014b/">Neeraj Goyal</a>. Led by Narendhiran, our team won the competition completeling the track in minimum time with no penalities!
@@ -34,8 +34,8 @@ My team consisted of <a href="https://www.linkedin.com/in/neeraj-kumar-gond-5430
 
 ----
 
-#### Virtual Simulation
-##### Code Testing - Vrep Robotic Simulator
+## Virtual Simulation
+### Code Testing - Vrep Robotic Simulator
 In our project, we harnessed the power of **V-rep**, a versatile robotic simulator, to rigorously test our autonomous system. Leveraging **embedded C**, we expertly coded our robot, equipping it with **proximity** and **white line sensors** for robust perception. Implementing the renowned **A* algorithm**, our robot exhibited intelligent navigation in complex terrains. Our system excelled in **precise object manipulation**, emphasizing our dedication to automation and robotics in the industry.
 
 <div style="text-align: center;">
@@ -44,7 +44,7 @@ In our project, we harnessed the power of **V-rep**, a versatile robotic simulat
 
 
 
-##### Solidworks Design and CNC Machining
+### Solidworks Design and CNC Machining
 In our project, **SolidWorks** was instrumental in designing precise 3D models. These designs were brought to life through a **CNC machine**, which meticulously carved **acrylic sheets** with precision. This synergy between design software and CNC technology ensured high-quality results in the **engineering industry**.
 
 
@@ -52,22 +52,22 @@ In our project, **SolidWorks** was instrumental in designing precise 3D models. 
 
 ----
 
-#### Critical Features of the Project
+## Critical Features of the Project
 
-##### Electronics
+### Electronics
 
 **Sensors** | Proximity Sensor/Sharp Sensor & White Line Sensor
 **Actuators** | Geared DC Motor with Encoder & Servo Motors
 **Micro-Controllers** | Atmega 2560 Development board
 **Miscellaneous** | LCD, L298N Motor Driver, Buzzers & Potentiometers
 
-##### Actuations categorized based on sensors
+### Actuations categorized based on sensors
 
 **White Line Sensor** | Line Following, Node Detection, Black-White-Black Line Following & Zig Zag Line Following (Time Consuming & Not Effective)
 **Proximity Sensor** | Wall Following & House/Block Detection
 **Servo Motor** | Pick Blocks, Place Blocks at Different Heights (Low Rise & High Rise), 2 Servo Arm Design (Effective & Used) & 1 Servo Arm Design
 
-##### Quick Highlights - All Essential Actuations (Visual Representation)
+### Quick Highlights - All Essential Actuations (Visual Representation)
 
 <iframe width="860" height="515" src="https://www.youtube.com/embed/w3wBqJ6DisA?si=7jdh7NidJmqMFRql" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -78,54 +78,59 @@ In our project, **SolidWorks** was instrumental in designing precise 3D models. 
 ----
  
 
-### Achievements 
+## Achievements 
 <br>   
 
-##### 1) Selected as one of **National Finalists (99.7 Percentile)** in the **Construct-O-Bot theme**. 
+### 1) Selected as one of **National Finalists (99.7 Percentile)** in the **Construct-O-Bot theme**. 
 <div style="text-align: center;">
-    <iframe src="../pdfs/eyrc_certificate.pdf" width="80%" height="500px" frameborder="0"></iframe>
+    <iframe class="pdfiframe" src="../pdfs/eyrc_certificate.pdf" width="80%" height="500px" frameborder="0"></iframe>
 </div>
 <br>
 
 ##### 2) Paper Published - Indian Institute of Science, Banglore
 <div style="text-align: center;">
-    <iframe src="../pdfs/ID50_Full_Paper.pdf" width="80%" height="500px" frameborder="0"></iframe>
+    <iframe class="pdfiframe" src="../pdfs/ID50_Full_Paper.pdf" width="80%" height="500px" frameborder="0"></iframe>
+
 </div>
+<style>
+    .pdfiframe {
+    height: 300px !important;
+    }
+</style>
 
 
 ----
 
-<br><br><br><br><br><br>
+<br><br><br>
 
 
-#### Miscellaneous
+## Miscellaneous
 
-##### Project Submission Video
+### Project Submission Video
 
 <iframe width="860" height="515" src="https://www.youtube.com/embed/V-e3XbXu6AY?si=2X5BBffCpzHD_z1v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ##### Presentation before Panel Members, Academic Experts, and Industry Leads
-<div style="text-align: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/NCbEUZE8Mh8?si=8ZX-ViTfTSaYfeRE&amp;start=5811" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NCbEUZE8Mh8?si=Re9wuAIVKaiZ2lTI&amp;start=5810" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ----
 
-#### Flow Charts
-##### Wall Following Algorithm
-<img src="../imgs/projects/cob-wallfollowing.jpg" alt="drawing" width="650"/>
+## Flow Charts
+### Wall Following Algorithm
+<img src="../imgs/projects/cob-wallfollowing.jpg" alt="drawing" width="450"/>
 
 ##### Zig Zag Following Algorithm
-<img src="../imgs/projects/cob-zigzag.jpg" alt="drawing" width="400"/>
+<img src="../imgs/projects/cob-zigzag.jpg" alt="drawing" width="300"/>
 
 ##### Full Competition Algorithm 
-<img src="../imgs/projects/cob-fullalgo.jpg" alt="drawing" width="400"/>
+<img src="../imgs/projects/cob-fullalgo.jpg" alt="drawing" width="300"/>
 
 
 ----
 
 
-#### Retrofitting challenges:
+## Retrofitting challenges:
 
 1. **Gripper Misorientation:** Fast robot movements caused gripper misorientation during material pickup, hindering simulation accuracy. The solution involved increasing gripper contact surface (Fig. 4 & 6).
 
@@ -136,7 +141,7 @@ In our project, **SolidWorks** was instrumental in designing precise 3D models. 
 
 ----
 
-#### Hardware
+## Hardware
 **Sensors**
 1. Proximity Sensor/Sharp Sensor
 2. White Line Sensor
