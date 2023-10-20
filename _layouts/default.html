@@ -12,7 +12,10 @@
 
 <body class="h-100 w-100 d-flex flex-column">
   <main class="flex-shrink-0 container mt-5">
-    {% include navbar.html %}
+    {% if page.is_landing_page != true %}
+      {% include navbar.html %}
+    {% endif %}
+
     {{ content }}
   </main>
   <!-- <style>

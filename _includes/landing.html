@@ -1,6 +1,11 @@
 
-<br>
-<br>
+<br><br>
+<!-- Name Section -->
+<div class="name-section">
+  <span style="font-family: Sequel,Arial,Helvetica,sans-serif; font-weight: bold; font-size: 40px;">{{site.title}}</span>
+</div>
+<br><br>
+
 <body class ="landing-body">
   <div class="row justify-content-center align-items-center p-10">
     <div class="col-lg-4 col-md-6 text-center mt-10">
@@ -9,17 +14,18 @@
       <div id="container" class="my-2">
         <div id="dummy" ></div>
         <div id="element">
-          <img src="imgs/naren_about.jpeg" alt="{{ site.title }}" class="circle-image wow animated " data-wow-delay=".1s" >
+          <img src="imgs/naren_landing_page_red.jpg" alt="{{ site.title }}" class="circle-image wow animated " data-wow-delay=".1s" >
         </div>
       </div>
     </div>
   </div>
-
+  <br><br>
   <div class="row justify-content-center align-items-center p-10">
     <div class="col-lg-6 col-md-9 text-center mt-10">
       <p class="text-muted wow animated slideInUp" data-wow-delay=".1s">{{ site.description }}</p>
     </div>
   </div>
+
 </body>
 
 
@@ -33,7 +39,7 @@
 <html>
 <body>
     <!-- Add a button for users to stay longer -->
-    <button id ="stay-longer" onclick="cancelRedirect()"  class="styled-button">Stay Longer here? Press</button>
+    <button id ="stay-longer" onclick="cancelRedirect()"  class="styled-button">Stay Longer? Click me</button>
     <div id="countdown"></div>
 
     <!-- JavaScript to cancel the automatic refresh -->
@@ -135,7 +141,8 @@
       var seconds = 3; // Set the countdown duration in seconds
 
       function updateCountdown() {
-          countdown.textContent = 'Welcome! Discover more in '+seconds;
+          countdown.textContent = 'Discover more in '+seconds+' sec';
+
           seconds--;
 
           // if (seconds < 0) {
