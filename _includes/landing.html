@@ -1,10 +1,10 @@
 
-<br><br>
+<br>
 <!-- Name Section -->
-<div class="name-section">
-  <span style="font-family: Sequel,Arial,Helvetica,sans-serif; font-weight: bold; font-size: 40px;">{{site.title}}</span>
+<div class="name-section" style="text-align: center;">
+  <span style="font-family: Sequel,Arial,Helvetica,sans-serif; font-weight: bold; font-size: 40px; text-align: center;">Narendhiran Saravanane</span>
 </div>
-<br><br>
+<br>
 
 <body class ="landing-body">
   <div class="row justify-content-center align-items-center p-10">
@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-  <br><br>
+  <br>
   <div class="row justify-content-center align-items-center p-10">
     <div class="col-lg-6 col-md-9 text-center mt-10">
       <p class="text-muted wow animated slideInUp" data-wow-delay=".1s">{{ site.description }}</p>
@@ -28,21 +28,289 @@
 
 </body>
 
-
-<!-- 
 <html>
    <head>
-      <meta http-equiv = "refresh" content = "3; url = /about/" />
+      <meta http-equiv = "refresh" content = "4; url = /about/" />
    </head>
-</html> -->
+</html>
 
 <html>
+
+<head>
+    <style>
+
+      body {
+          background-color: #cecbc4;
+          background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #fbfbfb),
+              color-stop(100%, #cecbc4));
+          background-image: -webkit-linear-gradient(top, #fbfbfb 0%, #cecbc4 100%);
+          background-image: -moz-linear-gradient(top, #fbfbfb 0%, #cecbc4 100%);
+          background-image: -ms-linear-gradient(top, #fbfbfb 0%, #cecbc4 100%);
+          background-image: -o-linear-gradient(top, #fbfbfb 0%, #cecbc4 100%);
+          background-image: linear-gradient(to bottom, #fbfbfb 0%, #cecbc4 100%);
+      }
+
+      div#loader_container {
+          width: 80%;
+          max-width: 400px;
+          margin: 10px auto;
+          text-align: center;
+          padding-top: 50px;
+      }
+
+      div#bar_container {
+          height: 14px;
+          background: #dcdbd7;
+          border-radius: 20px;
+          border-top: 1px solid #cfcec9;
+          border-bottom: 1px solid #f7f6f4;
+          box-shadow: 0 -1px 0 #bab9b4;
+          margin-bottom: 24px;
+          position: relative;
+      }
+
+      div#progress_bar {
+          background-color: #dcf1c6;
+          background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #9fbff4),
+              color-stop(100%, #555bb4));
+          background-image: -webkit-linear-gradient(top, #9fbff4 0%, #555bb4 100%);
+          background-image: -moz-linear-gradient(top, #9fbff4 0%, #555bb4 100%);
+          background-image: -ms-linear-gradient(top, #9fbff4 0%, #555bb4 100%);
+          background-image: -o-linear-gradient(top, #9fbff4 0%, #555bb4 100%);
+          background-image: linear-gradient(to bottom, #9fbff4 0%, #555bb4 100%);
+          height: 110%;
+          position: absolute;
+          top: -3px;
+          left: 0px;
+          border-top: 1px solid #e5ebf4;
+          border-radius: 20px;
+          box-shadow: 0 3px 10px #717171;
+          width: 10%;
+          transition: width 0.1s ease-in-out;
+      }
+
+
+      div#text_container {
+          color: #def3e0;
+          font-weight: bold;
+          font-size: 22px;
+          text-shadow: -1px 1px 1px #d1d0cc;
+      }
+
+      div#text_container span {
+          display: block;
+          font-weight: normal;
+          font-size: 11px;
+          margin-top: 6px;
+      }
+  </style>
+
+</head>
+
 <body>
-    <!-- Add a button for users to stay longer -->
+    <div id="loader_container">
+        <div id="bar_container">
+            <div id="progress_bar"></div>
+        </div>
+        <div id="text_container">
+          <!-- Fasten your seatbelt, we're taking off! -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var bar = $('#progress_bar');
+        var width = 10;
+
+        function stopProgress() {
+            clearInterval(progress);
+        }
+
+        var progress = setInterval(function () {
+            width += 1;
+            if (width <= 100) {
+                bar.css('width', width + '%');
+            } else {
+                stopProgress()
+            }
+        }, 40);
+    </script>
+</body>
+
+</html>
+<!-- 
+<html>
+
+<head>
+    <style>
+        /* * {
+            box-sizing: border-box;
+        } */
+
+        /* html {
+            height: 100%;
+        } */
+
+        body {
+            background-color: #cecbc4;
+            background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #fbfbfb),
+                color-stop(100%, #cecbc4));
+            background-image: -webkit-linear-gradient(top, #fbfbfb 0%, #cecbc4 100%);
+            background-image: -moz-linear-gradient(top, #fbfbfb 0%, #cecbc4 100%);
+            background-image: -ms-linear-gradient(top, #fbfbfb 0%, #cecbc4 100%);
+            background-image: -o-linear-gradient(top, #fbfbfb 0%, #cecbc4 100%);
+            background-image: linear-gradient(to bottom, #fbfbfb 0%, #cecbc4 100%);
+        }
+
+        div#loader_container {
+            width: 400px;
+            margin: 50px auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        div#bar_container {
+            height: 24px;
+            background: #dcdbd7;
+            border-radius: 20px;
+            border-top: 1px solid #cfcec9;
+            border-bottom: 1px solid #f7f6f4;
+            box-shadow: 0 -1px 0 #bab9b4;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        div#progress_bar {
+            background-color: #dcf1c6;
+            background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #9fbff4),
+                color-stop(100%, #555bb4));
+            background-image: -webkit-linear-gradient(top, #9fbff4 0%, #555bb4 100%);
+            background-image: -moz-linear-gradient(top, #9fbff4 0%, #555bb4 100%);
+            background-image: -ms-linear-gradient(top, #9fbff4 0%, #555bb4 100%);
+            background-image: -o-linear-gradient(top, #9fbff4 0%, #555bb4 100%);
+            background-image: linear-gradient(to bottom, #9fbff4 0%, #555bb4 100%);
+            height: 110%;
+            position: absolute;
+            top: -3px;
+            left: 0px;
+            border-top: 1px solid #e5ebf4;
+            border-radius: 20px;
+            box-shadow: 0 3px 10px #717171;
+            width: 10%;
+            transition: width 0.1s ease-in-out;
+        }
+
+        div#progress_percentage {
+            position: absolute;
+            top: -40px;
+            right: -10px;
+            width: 40px;
+            height: 24px;
+            padding-top: 6px;
+            background: #edeef2;
+            background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #edeef2),
+                color-stop(100%, #c9c9d3));
+            background-image: -webkit-linear-gradient(top, #edeef2 0%, #c9c9d3 100%);
+            background-image: -moz-linear-gradient(top, #edeef2 0%, #c9c9d3 100%);
+            background-image: -ms-linear-gradient(top, #edeef2 0%, #c9c9d3 100%);
+            background-image: -o-linear-gradient(top, #edeef2 0%, #c9c9d3 100%);
+            background-image: linear-gradient(to bottom, #edeef2 0%, #c9c9d3 100%);
+            border-top: 1px solid white;
+            border-right: 1px solid #d2d2d0;
+            border-bottom: 1px solid #999999;
+            border-left: 1px solid #d2d2d0;
+            border-radius: 7px;
+            font-size: 10px;
+            color: #737371;
+            text-shadow: 0 0 2px #bebfc3;
+            box-shadow: 0 2px 5px #c1c1bf;
+        }
+
+        div#progress_percentage::before {
+            content: "";
+            position: absolute;
+            left: 14px;
+            bottom: -11px;
+            border-top: 5px solid #999;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid transparent;
+        }
+
+        div#progress_percentage::after {
+            content: "";
+            position: absolute;
+            left: 14px;
+            bottom: -10px;
+            border-top: 5px solid #c9c9d3;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid transparent;
+        }
+
+        div#text_container {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 22px;
+            text-shadow: -1px 1px 1px #85e978;
+        }
+
+        div#text_container span {
+            display: block;
+            font-weight: normal;
+            font-size: 11px;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader_container">
+        <div id="bar_container">
+            <div id="progress_bar">
+                <div id="progress_percentage">
+                    10%
+                </div>
+            </div>
+        </div>
+        <div id="text_container">
+            Welcome! Discover about me.
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var bar = $('#progress_bar');
+        var percentage = parseInt($('#progress_percentage').html());
+
+        function stopProgress() {
+            clearInterval(progress);
+        }
+
+        var progress = setInterval(function () {
+            percentage++;
+            if (percentage <= 100) {
+                $('#progress_percentage').html(percentage + '%');
+                if (percentage > 10) {
+                    bar.css('width', percentage + '%');
+                    console.log(percentage);
+                }
+            } else {
+                stopProgress()
+            }
+        }, 40);
+    </script>
+</body>
+
+</html> -->
+
+<!-- <html>
+<body>
+    Add a button for users to stay longer
     <button id ="stay-longer" onclick="cancelRedirect()"  class="styled-button">Stay Longer? Click me</button>
     <div id="countdown"></div>
 
-    <!-- JavaScript to cancel the automatic refresh -->
+    JavaScript to cancel the automatic refresh
     <script>
         function cancelRedirect() {
             // Clear the automatic refresh timeout
@@ -64,9 +332,9 @@
         }, 3500); // 3 seconds
     </script>
 </body>
-</html>
+</html> -->
 
-<style>
+<!-- <style>
   /* Style for the button */
   #stay-longer {
       position: fixed;
@@ -161,4 +429,4 @@
   }
 </script>
 
-
+ -->
