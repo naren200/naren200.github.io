@@ -6,12 +6,11 @@ permalink: /
 
 {% include landing.html %}
 
-<!-- <div id="particles-js" style="background-image: url('imgs/landing/4015765_195_removeBG.png'); background-size: 40% auto; background-repeat: no-repeat;background-position: bottom right;" ></div> -->
 
 <div id="particles-js"></div> 
 
-<!-- style="background-image: url('imgs/landing/4015765_195_removeBG.png'); background-size: 40% auto; background-repeat: no-repeat; background-position: bottom right;"></div> -->
 
+<!-- 
 <style>
     #particles-js::before {
     content: "";
@@ -45,7 +44,8 @@ permalink: /
       /* Define final background properties */
     }
     }
-</style>
+</style> -->
+
 
 <script src="../particles.js"></script>
 <script src="../app.js"></script>
