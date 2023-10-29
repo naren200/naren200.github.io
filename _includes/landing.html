@@ -25,12 +25,12 @@
       <p class="text-muted wow animated slideInUp" data-wow-delay=".1s">{{ site.description }}</p>
     </div>
   </div>
-
+  <br><br>
 </body>
 
 <html>
    <head>
-      <meta http-equiv = "refresh" content = "4; url = /about/" />
+      <meta http-equiv = "refresh" content = "3.5; url = /about/" />
    </head>
 </html>
 
@@ -55,11 +55,21 @@
           max-width: 400px;
           margin: 10px auto;
           text-align: center;
-          padding-top: 50px;
+          padding-top: 10px;
       }
 
+      div#redirecting_text {
+            position: absolute;
+            font-size: 16px;
+            font-weight: bold; /* Make it bold */
+            top: -7px;
+            left: 30%;
+            transform: translateX(-50%);
+            color: #fff; /* White color */
+        }
+
       div#bar_container {
-          height: 14px;
+          height: 10px;
           background: #dcdbd7;
           border-radius: 20px;
           border-top: 1px solid #cfcec9;
@@ -70,17 +80,17 @@
       }
 
       div#progress_bar {
-          background-color: #dcf1c6;
+          background-color: #81e615;
           background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #9fbff4),
               color-stop(100%, #555bb4));
-          background-image: -webkit-linear-gradient(top, #9fbff4 0%, #555bb4 100%);
-          background-image: -moz-linear-gradient(top, #9fbff4 0%, #555bb4 100%);
-          background-image: -ms-linear-gradient(top, #9fbff4 0%, #555bb4 100%);
-          background-image: -o-linear-gradient(top, #9fbff4 0%, #555bb4 100%);
-          background-image: linear-gradient(to bottom, #9fbff4 0%, #555bb4 100%);
+          background-image: -webkit-linear-gradient(top, #03e2ff 0%, #8400ff 100%);
+          background-image: -moz-linear-gradient(top, #03e2ff 0%, #8400ff 100%);
+          background-image: -ms-linear-gradient(top, #03e2ff 0%, #8400ff 100%);
+          background-image: -o-linear-gradient(top, #03e2ff 0%, #8400ff 100%);
+          background-image: linear-gradient(to bottom, #03e2ff 0%, #8400ff 100%);
           height: 110%;
           position: absolute;
-          top: -3px;
+          top: -1px;
           left: 0px;
           border-top: 1px solid #e5ebf4;
           border-radius: 20px;
@@ -92,8 +102,8 @@
 
       div#text_container {
           color: #def3e0;
-          font-weight: bold;
-          font-size: 22px;
+          /* font-weight: bold; */
+          font-size: 20px;
           text-shadow: -1px 1px 1px #d1d0cc;
       }
 
@@ -111,9 +121,10 @@
     <div id="loader_container">
         <div id="bar_container">
             <div id="progress_bar"></div>
+            <!-- <div id="redirecting_text">Redirecting...</div> -->
         </div>
         <div id="text_container">
-          <!-- Fasten your seatbelt, we're taking off! -->
+            Hang tight! Redirecting...
         </div>
     </div>
 

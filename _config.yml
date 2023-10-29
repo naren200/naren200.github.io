@@ -21,12 +21,6 @@ nav_exclude:                                            # The following paths ar
   - pages/index.md
 #  - documentation/partials/**                           # For Documentation Only
 
-# ### Footer Settings ###
-# foot_exclude:                                            # The following paths are excluded from footer
-#   - pages/index.md
-
-# header_exculde:
-#   - pages/index.md
 
 
 ### Author Info ###
