@@ -1,15 +1,15 @@
 ---
-title: Installing Tensorflow and Pytorch with GPU/CUDA access- Question based documentation
+title: Installing Tensorflow and Pytorch with GPU access 
 tags: [Blog]
 style: fill
-color: danger
-description: 
+color: primary
+description: Covered installation methods to ensure that PyTorch and TensorFlow can coexist on your Ubuntu system with GPU acceleration
 ---
 
 
 # Installing PyTorch and TensorFlow on Ubuntu for GPU Acceleration
 
-If you're looking to set up PyTorch and TensorFlow on an Ubuntu system with GPU acceleration, this guide will walk you through the installation process. We'll cover the key components and potential issues you might encounter, along with solutions. Please note that this guide is current as of my last knowledge update in January 2022, and there may have been updates or changes since then. Let's get started!
+If you're looking to set up PyTorch and TensorFlow on an Ubuntu system with GPU acceleration, this guide will walk you through the installation process. We'll cover the key components and potential issues you might encounter, along with solutions. Please note that this guide is current as of my last knowledge update in October 2023, and there may have been updates or changes since then. Let's get started!
 
 ## Prerequisites
 
@@ -22,17 +22,13 @@ Before we dive into the installation steps, make sure you have the following pre
 
 ### Installing PyTorch
 
-1. Install Nvidia Drivers:
-   - Ensure your Nvidia driver version is at least 535 for compatibility with PyTorch.
-   
-2. Install Global CUDA 12.2:
-   - Make sure to install CUDA 12.2 globally.
+<div class="bullet">&#8226; Install Nvidia Drivers: Ensure your Nvidia driver version is at least 535 for compatibility with PyTorch.</div>
 
-3. Install CuDNN:
-   - Install CuDNN version 8.9. You can check compatibility on the [NVIDIA CuDNN Support Matrix](https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html).
+<div class="bullet">&#8226;Install Global CUDA 12.2: Make sure to install CUDA 12.2 globally.</div>
 
-4. Install PyTorch:
-   - You can install PyTorch with the appropriate CUDA version using the following command:
+<div class="bullet">&#8226;Install CuDNN: Install CuDNN version 8.9. You can check compatibility on the <a href="https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html">NVIDIA CuDNN Support Matrix</a></div>
+
+<div class="bullet">&#8226;Install PyTorch:  You can install PyTorch with the appropriate CUDA version using the following command:</div>
 
    ```bash
    conda install pytorch torchvision torchaudio pytorch-cuda=12.2 -c pytorch -c nvidia
@@ -40,18 +36,15 @@ Before we dive into the installation steps, make sure you have the following pre
 
 ### Installing TensorFlow
 
-1. Install Nvidia Drivers and Global CUDA:
-   - Follow the same steps as mentioned for PyTorch.
+<div class="bullet">&#8226;Install Nvidia Drivers and Global CUDA: Follow the same steps as mentioned for PyTorch.</div>
 
-2. Install TensorFlow with CUDA:
-   - Install TensorFlow with GPU support using pip:
+<div class="bullet">&#8226;Install TensorFlow with CUDA: Install TensorFlow with GPU support using pip:</div>
 
    ```bash
    python3 -m pip install tensorflow[and-cuda]
    ```
 
-3. Verify GPU Access:
-   - You can check if TensorFlow can access the GPU using:
+<div class="bullet">&#8226;Verify GPU Access: You can check if TensorFlow can access the GPU using: </div>
 
    ```python
    import tensorflow as tf
@@ -62,8 +55,8 @@ Before we dive into the installation steps, make sure you have the following pre
 
 If you face issues with conflicting GPU driver versions between PyTorch and TensorFlow, consider the following method:
 
-1. Purge Nvidia and CUDA:
-   - Remove existing Nvidia drivers, CUDA installations, and related libraries.
+<div class="bullet">&#8226;Purge Nvidia and CUDA: Remove existing Nvidia drivers, CUDA installations, and related libraries.</div>
+
 
    ```bash
    sudo apt-get purge nvidia*
@@ -75,19 +68,16 @@ If you face issues with conflicting GPU driver versions between PyTorch and Tens
    sudo rm -rf /etc/apt/sources.list.d/cuda-ubuntu2004-*
    ```
 
-2. Install Compatible Versions:
-   - Reinstall Nvidia drivers (version 535) and CUDA (11.8) to match PyTorch's requirements.
+<div class="bullet">&#8226;Install Compatible Versions: Reinstall Nvidia drivers (version 535) and CUDA (11.8) to match PyTorch's requirements.</div>
 
-3. Install TensorFlow:
-   - After installing the compatible Nvidia drivers and CUDA, you can install TensorFlow with GPU support using pip.
+<div class="bullet">&#8226;Install TensorFlow: After installing the compatible Nvidia drivers and CUDA, you can install TensorFlow with GPU support using pip.</div>
 
-4. Verify GPU Access:
-   - Check if TensorFlow can access the GPU as mentioned earlier.
+<div class="bullet">&#8226;Verify GPU Access: Check if TensorFlow can access the GPU as mentioned earlier.</div>
 
 ## Learnables
 
-- When checking CUDA versions, use `sudo apt-get nvidia-cuda-toolkit` for CUDA installation rather than relying on `nvcc -V`.
-- Avoid conflicting global CUDA versions by installing CUDA Toolkit directly from the [NVIDIA website](https://developer.nvidia.com/cuda-toolkit).
+<div class="bullet">&#8226; When checking CUDA versions, use `sudo apt-get nvidia-cuda-toolkit` for CUDA installation rather than relying on `nvcc -V`.</div>
+<div class="bullet">&#8226; Avoid conflicting global CUDA versions by installing CUDA Toolkit directly from the <a href="https://developer.nvidia.com/cuda-toolkit">NVIDIA website</a></div>
 
 ## 3rd Method: Working GPU-Accessible Environments with Conda
 
