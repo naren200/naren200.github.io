@@ -39,7 +39,7 @@ weight: 1
   I graduated from <a href="https://www.iitp.ac.in/">IIT Patna</a> in 2022 with a Bachelor’s in <a href="https://www.iitp.ac.in/index.php/departments/engineering-technology/mechanical-engineering/">Mechanical Engineering</a>. During my program, I developed a Motion Prediction model for a Towed floating object under the guidance of <a href="https://www.iitp.ac.in/index.php/people-6/faculty/2-uncategorised/241-view-profile-38">Prof. Subrata Kumar</a>. My Bachelor's Capstone project earned recognition as an Undergraduate Project Finalist for its technical excellence in this area.
   </p>
 
-  <h6   id="achievements"><b>Robotic Achievements and Research</b></h6>
+  <h6   id="achievements"><b>Achievements on Robotics and it's Research</b></h6>
   <br>
 
   <p >
@@ -80,12 +80,11 @@ weight: 1
   <hr> <!-- This line creates a horizontal divider -->
   <h2 id="Questionsexcitesme"><b>Questions that Excite me</b></h2><br>
   <p>
-    <b>1) Robotic Autonomy in Unstructured Environments:</b> <br> &emsp;&ensp;How can we enhance the autonomy of robots to navigate and perform complex tasks in unstructured, unpredictable environments such as disaster-stricken areas or space exploration missions? <br> 
+    <b>1) Robotic Autonomy in Unstructured Environments:</b> <br> &emsp;&ensp;How can we enhance the autonomy of robots to navigate and perform complex tasks in unstructured, unpredictable environments such as disaster-stricken areas or space exploration missions? An extension of my work, <a href="/projects/eyrc">mentioned here</a> <br> 
     <b>2) Robots for Ocean Exploration:</b> <br>&emsp;&ensp;What advancements are needed in AI and robotics to explore and preserve the mysteries of the deep sea, studying marine life and ecosystems with minimal environmental impact?   <br>
-    <b>3) Experiential Learning in Robotics:</b> <br>&emsp;&ensp; How can robots gain real-world experience to improve their performance and adaptability? <br>  
-    <b>4) AI-Driven Precision Agriculture:</b> <br>&emsp;&ensp;  How can AI-powered robots and drones be employed for precision agriculture, optimizing crop yields and minimizing resource usage and environmental impact?   <br>
+    <b>3) Experiential Learning in Robotics:</b> <br>&emsp;&ensp; How can robots gain real-world experience to improve their performance and adaptability? <a href="/projects/objectgoalnav">Related work</a> <br>  
+    <b>4) AI-Driven Precision Agriculture:</b> <br>&emsp;&ensp;  How can AI-powered robots and drones be employed for precision agriculture, optimizing crop yields and minimizing resource usage and environmental impact? <a href="/projects/mambo">Related work</a> <br>
   </p>
-
 </div></div>
 
 <br><br><br>
