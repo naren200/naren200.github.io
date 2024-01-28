@@ -2,7 +2,7 @@
 name: DRDO's Project - My Bachelor's Capstone Contribution
 tools: [Multi-Body Dynamics, 2D Dynamics, Runge-Kutta, GUI, Robotics, Python]
 image: ../imgs/projects/btp-homeImage.jpg
-description: Developing a visualizable model to predict the motion of towed objects in ship operations under varying conditions.
+description: Developed a visualizable model to predict the motion of towed objects in ship operations under varying conditions.
 ---
 
 ##### Table of Contents
@@ -14,8 +14,6 @@ description: Developing a visualizable model to predict the motion of towed obje
 <br><br>
 
 ### Visualization and Prediction of Two-Dimensional Motion of Towed Objects in Ship Operations
-
-
 
 #### Introduction
 

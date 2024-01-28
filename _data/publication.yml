@@ -1,9 +1,9 @@
 - title: RHC approach for multi-agent systems with metric temporal logic (MTL)
-  company: IEEE Control Systems Society Conference (Submitted).
+  company: IEEE Control Systems Society, American Control Conference (Accepted).
   image:
-    src: /imgs/publication/ieee.png
+    src: /imgs/publication/aacc.png
     alt: IEEE 2023
-  date: Jan '23 - Sep '23
+  date: Jan '23 - Jan '24
   description: This approach employs distributed RHC, noise addition, Kalman filters, and MILP to ensure privacy while meeting both agent-level and system-level MTL specifications in multi-agent systems.
 
 

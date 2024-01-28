@@ -22,15 +22,56 @@ A live demo of the website can be found at [naren200.github.io/](https://naren20
 - Experience page: Displays my work experience and educational background.
 - Contact page: Includes a contact form for visitors to get in touch with me.
 
+
 ## Getting Started
 
-To run the website locally, follow these steps:
+To run the website locally and preview changes, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/naren200/naren200.github.io.git`
-2. Open the project folder: `cd your-portfolio-website`
-3. Open the `index.html` file in your preferred web browser.
+1. **Clone the repository:** Open your terminal and run the following command to clone the repository to your local machine.
+    ```bash
+    git clone https://github.com/naren200/naren200.github.io.git
+    ```
 
+2. **Navigate to the project folder:** Change into the project directory by running the following command.
+    ```bash
+    cd your-portfolio-website
+    ```
 
+3. **Install Jekyll and Bundler:** Before running the site locally, ensure you have Jekyll and Bundler installed on your machine. Follow the steps:
+
+    - Install [Jekyll](https://jekyllrb.com/docs/installation/).
+    - Create a Jekyll site. For more information, see "[Creating a GitHub Pages site with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll)."
+
+    - Install Ruby. Refer to the ["Installing Ruby" guide](https://www.ruby-lang.org/en/documentation/installation/) for details.
+    - Install Bundler using the following command:
+        ```bash
+        gem install bundler
+        ```
+
+4. **Install Jekyll dependencies:** While in the project directory, run the following command to install the necessary dependencies using Bundler.
+    ```bash
+    bundle install
+    ```
+
+5. **Run your Jekyll site locally:** Start the local development server using the following command:
+    ```bash
+    bundle exec jekyll serve
+    ```
+    Your site will be available at `http://localhost:4000` in your web browser.
+
+6. **Preview Changes:** Open your web browser and navigate to [http://localhost:4000](http://localhost:4000) to preview the locally running site.
+
+7. **Updating the GitHub Pages gem:** Keep your Jekyll environment up-to-date. Open your terminal and run the following command:
+    - If you installed Bundler:
+        ```bash
+        bundle update github-pages
+        ```
+    - If you don't have Bundler installed:
+        ```bash
+        gem update github-pages
+        ```
+
+By following these steps, you'll have the necessary programs installed, and you'll be able to launch and preview your GitHub Pages site locally.
 ### Acknowledgement
 - Jekyll template: [Bay Theme](https://github.com/eliottvincent/bay) by Elliot Vincent
 - Back-to-top button inspiration: [Matthew Cain's Codepen](https://codepen.io/matthewcain/pen/ZepbeR)
@@ -39,15 +80,16 @@ To run the website locally, follow these steps:
 - Several hours of tinkering and fine-tuning
 
 
-
-
 ## Screenshots
 
-![Screenshot 1](/screenshots/screenshot1.png)
-*Caption for screenshot 1.*
+![Screenshot 1](/imgs/ReadMe/Landing_page.png)
+*Figure 1: Landing Page Layout*
 
-![Screenshot 2](/screenshots/screenshot2.png)
-*Caption for screenshot 2.*
+![Screenshot 2](/imgs/ReadMe/AboutMe_page.png)
+*Figure 2: About Me Page Layout*
+
+![Screenshot 2](/imgs/ReadMe/PortfolioPage.png)
+*Figure 3: Project Portfolio Page Layout*
 
 ## Contributing
 
