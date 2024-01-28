@@ -64,7 +64,7 @@ The modular design of our system allows for easy adaptation to real-world mobile
 This project represents a significant contribution to the field of robotics and autonomous navigation, offering a versatile and efficient solution to the complex problem of finding and navigating to specific object categories in unfamiliar environments.
 
 #### References
-1. [Semantic Exploration for Object Goal Navigation](https://arxiv.org/pdf/2007.00643.pdf)
+1. [Semantic Exploration for Object Goal Navigation - Paper](https://arxiv.org/pdf/2007.00643.pdf)
 2. [Project Website](https://devendrachaplot.github.io/projects/semantic-exploration)
 3. Presented to CSE Department, ASU.
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR9VradbqEfNySO1Fjpku2b4585q3omqgroM7CXoFyAkiPmHT6LWH7A8wXH3Lof2vSCia6NDczprC4-/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
