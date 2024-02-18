@@ -48,11 +48,11 @@ Congratulations on choosing to create your own website using GitHub Pages. Follo
 To run the website locally and preview changes, follow these steps:
 
 1. **Clone a repository:** Open your terminal and run the following command to clone the repository to your local machine.
-    - If you didn't fork my website, then follow the instructions.
+    - If you didn't fork my website, then follow the below command.
     ```bash
     git clone https://github.com/naren200/naren200.github.io.git
     ```
-    - If you published your site and looking to host it locally, then follow the instructions.
+    - If you published your site and looking to host it locally, then follow the below command.
     ```bash
     git clone https://github.com/your_github_page_name/your_github_page_name.github.io.git
     ```
@@ -64,11 +64,11 @@ To run the website locally and preview changes, follow these steps:
 
 3. **Install Jekyll and Bundler:** Before running the site locally, ensure you have Jekyll and Bundler installed on your machine. Follow the steps:
 
-    - Install [Jekyll](https://jekyllrb.com/docs/installation/).
-    - Create a Jekyll site. For more information, see "[Creating a GitHub Pages site with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll)."
+    - Install [Jekyll](https://jekyllrb.com/docs/installation/). For more information about the prerequisites, see "[Creating a GitHub Pages site with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#prerequisites)."
 
-    - Install Ruby. Refer to the ["Installing Ruby" guide](https://www.ruby-lang.org/en/documentation/installation/) for details.
-    - Install Bundler using the following command:
+    - Install Ruby. Refer to the Installing "[Ruby](https://www.ruby-lang.org/en/documentation/installation/)" guide for details.
+    
+    - Install [Bundler](https://bundler.io/) using the following command:
         ```bash
         gem install bundler
         ```
