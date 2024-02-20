@@ -38,6 +38,17 @@ I expanded the social information section to include links to my LinkedIn, GitHu
 \homepage{Your Portfolio URL}
 ```
 
+At the social information header, If you want add "https://portfolio.github.io" instead of "portfolio.github.io", then you need to modify the `resume.cls` file. 
+
+Navigate to the current file `resume.cls` and Remove the `http://` from the 5th line.
+```latex
+      \ifthenelse{\isundefined{\@homepage}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{http://\@homepage}{\@homepage}%
+        }%
+```
 ## Personal Information
 
 I replaced placeholder information with my actual name, contact details, and a link to my portfolio website. This ensures that the personal information section reflects accurate and up-to-date details.
