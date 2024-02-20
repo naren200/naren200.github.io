@@ -35,19 +35,15 @@ I expanded the social information section to include links to my LinkedIn, GitHu
 ```latex
 \linkedin{YourLinkedInID}
 \github{YourGitHubID}
-\homepage{Your Portfolio URL}
+\homepage{portfolio.github.io}
 ```
 
-At the social information header, If you want add "https://portfolio.github.io" instead of "portfolio.github.io", then you need to modify the `resume.cls` file. 
+Tips: At the social information header, If you want display "https://portfolio.github.io" instead of "portfolio.github.io", then you need to modify the `resume.cls` file. 
 
-Navigate to the current file `resume.cls` and Remove the `http://` from the 5th line.
+Navigate to the current file `resume.cls` and Remove the `http://` from the 2nd line.
 ```latex
-      \ifthenelse{\isundefined{\@homepage}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{http://\@homepage}{\@homepage}%
-        }%
+\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+\href{http://\@homepage}{\@homepage}%
 ```
 ## Personal Information
 
