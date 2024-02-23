@@ -12,6 +12,8 @@ remote_theme        : YoussefRaafatNasry/portfolYOU
 ### Plugins ###
 plugins:
   - jemoji
+  - jekyll-seo-tag # SEO Tag: https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/installation.md
+
 
 
 ### Navbar Settings ###
@@ -20,10 +22,6 @@ nav_exclude:                                            # The following paths ar
   - pages/404.html
   - pages/index.md
 #  - documentation/partials/**                           # For Documentation Only
-
-# SEO Tag: https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/installation.md
-plugins:
-  - jekyll-seo-tag
 
 ### Author Info ###
 author:
