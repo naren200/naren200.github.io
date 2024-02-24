@@ -142,3 +142,42 @@
     }
   }
 }
+
+// Custom styling for inline code blocks (e.g., `code here`)
+code {
+  font-family: 'Courier New', monospace;
+  background-color: #00000000;
+  padding: 1px 4px;
+  border-radius: 5px;
+}
+
+// Custom styling for code blocks (e.g., ``` code block ```)
+pre code {
+  display: block;
+  white-space: pre;
+  font-family: 'Courier New', monospace;
+  background-color: #ffffff00;
+  padding: 1px;
+  margin: 1px 0;
+  border-radius: 5px;
+}
+
+// Custom styling for list items with specific indentation
+body {
+  ul {
+    list-style-type: none;
+    padding-left: 20px; // Adjust the indentation as needed
+  }
+
+  li {
+    position: relative;
+    padding-left: 30px; // Adjust the indentation as needed
+    margin-bottom: 10px; // Adjust the spacing between list items as needed
+
+    &:before {
+      content: "•"; // Use a bullet point as a marker
+      position: absolute;
+      left: 0;
+    }
+  }
+}
