@@ -7,7 +7,38 @@
     heading: Hieee
 - year: 2018
   details:
+  - period: Aug 2019
+    heading: e-yantra International Robotics Competition
+    description: Participated in Robotics Competition.
+    url: https://naren200.github.io/projects/eyrc#achievements
+  - period: 34 Feb
+    description: Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch, art director at Harper's Bazaar, and works as his assistant
+- year: 2011
+  details:
   - period: 24 Feb
     description: Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch, art director at Harper's Bazaar, and works as his assistant
   - period: 34 Feb
     description: Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch, art director at Harper's Bazaar, and works as his assistant
+- year: 2014
+  details:
+  - period: Aug 2019
+    heading: e-yantra International Robotics Competition
+    description: Participated in Robotics Competition.
+    url: https://naren200.github.io/projects/eyrc#achievements
+  - period: 34 Feb
+    description: Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch, art director at Harper's Bazaar, and works as his assistant
+- year: 2020
+  details:
+  - period: Aug 2019
+    heading: e-yantra International Robotics Competition
+    description: Participated in Robotics Competition.
+    url: https://naren200.github.io/projects/eyrc#achievements
+
+
+- year: 2019
+  details:
+  - period: Dec 6th 
+    heading: Cleared Construct-O-Bot Stage 1 - eYRC Robotics Competition
+    description: Designed embedded C algorithm to perform multi-tasks in V-Rep Robotic Simulator
+    url: https://naren200.github.io/projects/eyrc#achievements
+

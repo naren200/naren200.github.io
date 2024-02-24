@@ -70,25 +70,25 @@ The results and discussions chapter presents the outcomes of the project's metho
 ###### **2 element Pulled by a ship floating over water exempting reaction force**
 <img src="../imgs/projects/btp-2eleSquareVel.png" alt="drawing" width="450"/>
 <div style="text-align: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/YFoKVlstZ_M?si=KGWpGarvp4oo-uqT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YFoKVlstZ_M?si=KGWpGarvp4oo-uqT" title="YouTube video player" frameborder="0" allow="accelerometer;   clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 ###### **2 element Pulled by a ship floating over water**
 <img src="../imgs/projects/btp-2eleSquareVel.png" alt="drawing" width="450"/>
 <div style="text-align: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/vceQAGDQ87Y?si=YR_2BpI2SnBR0yrh&amp;start=4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/vceQAGDQ87Y?si=YR_2BpI2SnBR0yrh&amp;start=4" title="YouTube video player" frameborder="0" allow="accelerometer;   clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 ###### **3 element Pulled by a ship floating over water**
 <img src="../imgs/projects/btp-3eleSquareVelo.png" alt="drawing" width="450"/>
 <div style="text-align: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/a6lihBmAW-k?si=WKNcNfPCVYQ2RxZo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/a6lihBmAW-k?si=WKNcNfPCVYQ2RxZo" title="YouTube video player" frameborder="0" allow="accelerometer;   clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 ###### **Desgined a GUI for visualization**
 <img src="../imgs/projects/btp-guiWebsite.png" alt="drawing" width="550"/>
 <div style="text-align: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/YjliApwyPz8?si=iNXiWvH-jmig4GaZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YjliApwyPz8?si=iNXiWvH-jmig4GaZ" title="YouTube video player" frameborder="0" allow="accelerometer;   clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 ----

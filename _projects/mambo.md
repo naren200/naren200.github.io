@@ -12,7 +12,7 @@ description: Developed a low-cost mini drone using vision-based control and mode
 ##### Project Overview
 The Mambo Drone Line Following Algorithm project showcases an innovative application of robotics and computer vision technology. This project's primary objective is to enable a Parrot Mambo Fly mini-drone to autonomously follow a designated path using image processing techniques. By harnessing the power of control systems, sensor fusion, localization, mapping, and a sophisticated navigation module, this project aims to demonstrate the mini-drone's ability to track and follow a predefined line accurately.
 <div style="text-align: center;">
-  <iframe width="320" height="515" src="https://youtube.com/embed/MADCy3qH31s?si=fOtMf02AwO2WgmiZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="320" height="515" src="https://youtube.com/embed/MADCy3qH31s?si=fOtMf02AwO2WgmiZ" title="YouTube video player" frameborder="0" allow="accelerometer;   clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 ##### Control Systems for Drone
