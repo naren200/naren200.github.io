@@ -1,0 +1,44 @@
+ <div class="page" data-uia-timeline-skin="3" data-uia-timeline-adapter-skin-3="uia-card-skin-#1">
+	<div class="uia-timeline">
+	  <div class="uia-timeline__container">
+		<div class="uia-timeline__line"></div>
+		{% for item in site.data.news %}
+		<div class="uia-timeline__annual-sections">
+		  <span class="uia-timeline__year" aria-hidden="true">{{item.year}}</span>
+		  <div class="uia-timeline__groups">
+			{% for section in item.details %}
+			<section class="uia-timeline__group" aria-labelledby="timeline-demo-1-heading-1">
+			  <div class="uia-timeline__point uia-card" data-uia-card-skin="1" data-uia-card-mod="1">
+				<div class="uia-card__container">
+				  <div class="uia-card__intro">
+					{% if section.heading %}
+						<h3 id="timeline-demo-1-heading-2" class="ra-heading">{{ section.heading }}</h3>
+					{% endif %}
+					<span class="uia-card__time">
+					  <time>
+						{% if section.period %}
+							<span>{{section.period}}<span class="ha-screen-reader"></span></span>
+						{% endif %}
+					  </time>
+					</span>
+				  </div>
+				  <div class="uia-card__body">
+					<div class="uia-card__description">
+					  <p>{{section.description}}</p>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</section>
+			{% endfor %}
+		  </div>
+		</div>
+		{% endfor %}
+	  </div>
+	</div>
+  </div>
+  <div class="linktr">
+	<a href="https://cssisntmagic.substack.com" target="_blank" class="ra-link uia-control">
+		<span class="linktr__goal uia-control__group">Subscribe on my email newsletter with CSS tips <span aria-hidden="true">💪💪💪</span></span>
+	</a>
+  </div>
