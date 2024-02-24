@@ -22,13 +22,13 @@ Before we dive into the installation steps, make sure you have the following pre
 
 ### Installing PyTorch
 
-<div class="bullet">&#8226; Install Nvidia Drivers: Ensure your Nvidia driver version is at least 535 for compatibility with PyTorch.</div>
+ - Install Nvidia Drivers: Ensure your Nvidia driver version is at least 535 for compatibility with PyTorch. 
 
-<div class="bullet">&#8226;Install Global CUDA 12.2: Make sure to install CUDA 12.2 globally.</div>
+ - Install Global CUDA 12.2: Make sure to install CUDA 12.2 globally. 
 
-<div class="bullet">&#8226;Install CuDNN: Install CuDNN version 8.9. You can check compatibility on the <a href="https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html">NVIDIA CuDNN Support Matrix</a></div>
+ - Install CuDNN: Install CuDNN version 8.9. You can check compatibility on the <a href="https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html">NVIDIA CuDNN Support Matrix</a> 
 
-<div class="bullet">&#8226;Install PyTorch:  You can install PyTorch with the appropriate CUDA version using the following command:</div>
+ - Install PyTorch:  You can install PyTorch with the appropriate CUDA version using the following command: 
 
    ```bash
    conda install pytorch torchvision torchaudio pytorch-cuda=12.2 -c pytorch -c nvidia
@@ -36,15 +36,15 @@ Before we dive into the installation steps, make sure you have the following pre
 
 ### Installing TensorFlow
 
-<div class="bullet">&#8226;Install Nvidia Drivers and Global CUDA: Follow the same steps as mentioned for PyTorch.</div>
+ - Install Nvidia Drivers and Global CUDA: Follow the same steps as mentioned for PyTorch. 
 
-<div class="bullet">&#8226;Install TensorFlow with CUDA: Install TensorFlow with GPU support using pip:</div>
+ - Install TensorFlow with CUDA: Install TensorFlow with GPU support using pip: 
 
    ```bash
    python3 -m pip install tensorflow[and-cuda]
    ```
 
-<div class="bullet">&#8226;Verify GPU Access: You can check if TensorFlow can access the GPU using: </div>
+ - Verify GPU Access: You can check if TensorFlow can access the GPU using:  
 
    ```python
    import tensorflow as tf
@@ -55,7 +55,7 @@ Before we dive into the installation steps, make sure you have the following pre
 
 If you face issues with conflicting GPU driver versions between PyTorch and TensorFlow, consider the following method:
 
-<div class="bullet">&#8226;Purge Nvidia and CUDA: Remove existing Nvidia drivers, CUDA installations, and related libraries.</div>
+ - Purge Nvidia and CUDA: Remove existing Nvidia drivers, CUDA installations, and related libraries. 
 
 
    ```bash
@@ -68,16 +68,16 @@ If you face issues with conflicting GPU driver versions between PyTorch and Tens
    sudo rm -rf /etc/apt/sources.list.d/cuda-ubuntu2004-*
    ```
 
-<div class="bullet">&#8226;Install Compatible Versions: Reinstall Nvidia drivers (version 535) and CUDA (11.8) to match PyTorch's requirements.</div>
+ - Install Compatible Versions: Reinstall Nvidia drivers (version 535) and CUDA (11.8) to match PyTorch's requirements. 
 
-<div class="bullet">&#8226;Install TensorFlow: After installing the compatible Nvidia drivers and CUDA, you can install TensorFlow with GPU support using pip.</div>
+ - Install TensorFlow: After installing the compatible Nvidia drivers and CUDA, you can install TensorFlow with GPU support using pip. 
 
-<div class="bullet">&#8226;Verify GPU Access: Check if TensorFlow can access the GPU as mentioned earlier.</div>
+ - Verify GPU Access: Check if TensorFlow can access the GPU as mentioned earlier. 
 
 ## Learnables
 
-<div class="bullet">&#8226; When checking CUDA versions, use `sudo apt-get nvidia-cuda-toolkit` for CUDA installation rather than relying on `nvcc -V`.</div>
-<div class="bullet">&#8226; Avoid conflicting global CUDA versions by installing CUDA Toolkit directly from the <a href="https://developer.nvidia.com/cuda-toolkit">NVIDIA website</a></div>
+ - When checking CUDA versions, use `sudo apt-get nvidia-cuda-toolkit` for CUDA installation rather than relying on `nvcc -V`. 
+ - Avoid conflicting global CUDA versions by installing CUDA Toolkit directly from the <a href="https://developer.nvidia.com/cuda-toolkit">NVIDIA website</a> 
 
 ## 3rd Method: Working GPU-Accessible Environments with Conda
 
