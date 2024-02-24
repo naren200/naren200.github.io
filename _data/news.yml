@@ -1,53 +1,51 @@
-- year: 2008
+- year: 2024
   details:
-  - period: 14 Feb 
-    heading: hello
-    description: Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch, art director at Harper's Bazaar, and works as his assistant
-  - period: 44 Feb
-    heading: Hieee
-- year: 2018
+  - period: 21 Feb
+    heading: Appeared in News Report - Contribution to Prof. Xu's work
+    description: Prof. Xu's awarded 2024 NSF Faculty Early Career Development Program ($550,000) over Temporal Casual Reinforcement Learning.
+    url: https://fullcircle.asu.edu/faculty/sparking-an-evolution-in-robotics/
+  - period: 22 Jan
+    heading: Publication Accepted - IEEE Control Systems Society Conference
+    description: Contributed to paper about Control Synthesis of Multi-Agent Systems under Prof. Zhe Xu. Scheduled to present at American Control Conference at Toronto, Canada.
+- year: 2023
   details:
-  - period: Aug 2019
-    heading: e-yantra International Robotics Competition
-    description: Participated in Robotics Competition.
-    url: https://naren200.github.io/projects/eyrc#achievements
-  - period: 34 Feb
-    description: Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch, art director at Harper's Bazaar, and works as his assistant
-- year: 2011
+  - period: 22 Dec
+    description: Qualified for Udacity Scholarhip 2023 - Robotics Software Engineer Nanodegree.
+    url: https://naren200.github.io/projects/servicebot#conclusion
+  - period: 5 May
+    heading: Internship Offered - Brainchip
+    description: Secured Internship at Brainchip as a Solutions Architect in RL & Robotics operations and expected to work over proprietary Brainchip Chip API's.
+- year: 2022
   details:
-  - period: 24 Feb
-    description: Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch, art director at Harper's Bazaar, and works as his assistant
-  - period: 34 Feb
-    description: Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch, art director at Harper's Bazaar, and works as his assistant
-- year: 2014
-  details:
-  - period: Aug 2019
-    heading: e-yantra International Robotics Competition
-    description: Participated in Robotics Competition.
-    url: https://naren200.github.io/projects/eyrc#achievements
-  - period: 34 Feb
-    description: Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch, art director at Harper's Bazaar, and works as his assistant
+  - period: 3 May
+    heading: Cleared Stage 1, Finalists - Best BTP Award, Proficiency Prize 
+    description: Predicted motion of towed objects in ship operations including maneuvering. Established visualizable model for military vessels. 
+    url: https://naren200.github.io/projects/btechproj
+  - period: 26 Apr 
+    heading: Secured Admit into Arizona State Univesity - M.S. Robotics and Autonomous Systems
+    description: "#1 most innovative universities. My dream to pursue Robotics in Top colleges securing a strong fundamentals & everlasting network."
+    url: ../imgs/news/asuAcceptance.png
 - year: 2020
   details:
   - period: 1 Jul 
     heading: National Finalists - e-yantra International Robotics Competition
-    description: Reviewed by Academic panel members of the Indian Institute of Technology Bombay and the industrial specialists. Honored to be mentioned as the "First team to represent all branches of the Indian Institute of Technology" and achieved the "National Finalists" Status.
+    description: Reviewed by Academic panel members of the Indian Institute of Technology Bombay and the industrial specialists. Honored to be mentioned as the "First team to represent all branches of the Indian Institute of Technology" and achieved the "National Finalists" Status of eYRC 2019-20.
     url: ../pdfs/eyrc_certificate.pdf
   - period: 10 Apr 
-    heading: Selected - Internship Results Out! - e-yantra, IIT Bombay
+    heading: Bagged Internship offer - eYSIP, e-yantra, IIT Bombay
     description: Interviewed by Academic and Industrial Panel members of the Indian Institute of Technology Bombay. Selected for Internship under Prof. Kavi Arya, Dept. CSE, IIT Bombay.
     url: ../imgs/news/eysip_internshipoffer.png
-  - period: 9 March
-    heading: Task 5 Triumph in Construct-O-Bot - eYRC Robotics Competition
-    description: Orchestrated 20 uninterrupted pick and place fully autonomous operations under 4 mins. Secured highest score with bonus points. Achieved within 48 hours
+  - period: 9 Mar
+    # heading: Task 5 Triumph in Construct-O-Bot - eYRC Robotics Competition
+    description: Task 5 Triumph in Construct-O-Bot -- Orchestrated 20 uninterrupted pick and place fully autonomous operations under 4 mins. Secured highest score with bonus points. Achieved within 48 hours of the task.
     url: https://youtu.be/w3wBqJ6DisA
   - period: 18 Feb 
-    heading: Accomplished Task 4 Construct-O-Bot - eYRC Robotics Competition
-    description:  Performed line and wall following locomotion and Executed 4 pick and place actions. Scored above and beyond, qualified with bonus.
+    # heading: Accomplished Task 4 Construct-O-Bot - eYRC Robotics Competition
+    description: Accomplished Task 4 Construct-O-Bot -- Performed line and wall following locomotion and Executed 4 pick and place actions. Scored above and beyond, qualified with bonus.
     url: https://youtu.be/iJuiQmlL3tY
   - period: 28 Jan
-    heading: Cleared Task 3 Construct-O-Bot - eYRC Robotics Competition
-    description: 3D designed a Robot & Deployed from scratch. Transformed the 3D twin with Embedded C architecture and performed locomotion.
+    # heading:  - eYRC Robotics Competition
+    description: Cleared Task 3 Construct-O-Bot -- 3D designed a Robot & Deployed from scratch. Transformed the 3D twin with Embedded C architecture and performed locomotion.
     url: https://youtu.be/RYoa6PcAsZs
 
 
@@ -57,7 +55,7 @@
     heading: Cleared Construct-O-Bot Stage 1 - eYRC Robotics Competition
     description: Designed embedded C software architecture to perform multi-tasks in V-Rep Robotic Simulator using 
     url: https://youtu.be/UqZlvbHdpMs?si=BGI-n7xKc0ZYUJqn
-  - period: 10 Jun - 6 Jul
+  - period: 6 Jul
     heading: Mechanical Engineer Intern @ Neyveli Lignite Corporation, India
     description: Surveyed enhanced efficiency of circulating water pump in 2*210 MW power plant.
     url: ../imgs/news/nlcinternshipcertificate.png

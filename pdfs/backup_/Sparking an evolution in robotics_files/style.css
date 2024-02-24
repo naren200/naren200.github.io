@@ -1,0 +1,719 @@
+/*
+ Theme Name:   Extra Child Theme
+ Theme URI:    http://elegantthemes.com/
+ Description:  Extra Child Theme
+ Author:       ElegantThemes
+ Author URI:   http://elegantthemes.com
+ Template:     Extra
+ Version:      0.7
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags: responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, featured-images, full-width-template, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready
+ Text Domain:  extra-child-theme
+*/
+
+/* Theme customziations - Some specific to ASU, some not. 
+  - "Hard code" max-width values in header & footer containers 
+  - Footer background color adjustment. Effects bottom "border." 
+ ==================================================================  */
+.et_fullwidth_nav #main-header .container, .et_fullwidth_secondary_nav #top-header .container { max-width:1950px; }
+#footer .container { max-width: 1950px; padding: 0 20px; }
+#footer-bottom { background-color:transparent; }
+
+/* Adjust School Drop Down Menu Width
+======================================== */
+#et-secondary-menu li.fse-school-dropdown .sub-menu {
+    width: 300px;
+}
+
+/*ASU footer styling
+=======================================  */
+@media (min-width: 931px) {
+    #innovation-footer .footer-menu ul {
+        width: 768px
+    }
+}
+@media (min-width: 992px) {
+    #innovation-footer .footer-menu ul {
+        width: 931px
+    }
+}
+@media (min-width: 1200px) {
+    #innovation-footer .footer-menu ul {
+        width: 1080px
+    }
+}
+@media only screen and (max-width: 930px) {
+
+    #innovation-bar .innovation-status {
+        width: 95%!important
+    }
+    #innovation-footer .footer-menu {
+        margin-left: 0
+    }
+    #innovation-footer .footer-menu ul {
+        padding-left: 0
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #innovation-footer .footer-menu ul li {
+        clear: left
+    }
+    #innovation-footer .footer-menu ul.default {
+        margin-left: 0
+    }
+    .innovation-hidden {
+        display:none;
+    }
+}
+
+#innovation-bar,
+#innovation-footer .footer-menu ul li a {
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+#innovation-bar .innovation-hidden {
+    float: right;
+    width: 19%;
+    height: 0
+}
+#innovation-bar img {
+    margin-top: -2em;
+    height: 6em
+}
+#innovation-bar {
+    background-color: #FFC627
+}
+#innovation-bar .innovation-status {
+    text-align: right;
+    width: 78%;
+    display: inline-block;
+    margin-bottom: .7em;
+    margin-top: .7em
+}
+#innovation-bar a {
+    border-bottom: 0;
+    color: #000;
+    font-size: x-large;
+    font-weight: 700;
+    text-decoration: none
+}
+#innovation-footer {
+    position: absolute;
+    left: 0;
+    right: 0
+}
+#innovation-footer .footer-menu {
+    padding: 0 15px;
+    background-color: #e5e5e5
+}
+#innovation-footer .footer-menu ul {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: table;
+    list-style: none;
+    margin: 0 auto;
+    padding-bottom: .5em;
+    padding-top: 1em
+}
+#innovation-footer .footer-menu ul.default {
+    padding-left: 15px
+}
+#innovation-footer .footer-menu ul li {
+    float: left;
+    padding-bottom: 12px
+}
+#innovation-footer .footer-menu ul li a {
+    color: #333;
+    font-weight: 400;
+    font-size: 1em;
+    margin-right: 30px;
+    text-decoration: none;
+    border-bottom: none;
+    transition: all .25s ease-in-out
+}
+
+/* Additional Widget Styles, Social Media Icons, Endorsed Footer.
+=======================================  */
+
+/* Class is added arbitrarily to an uploaded image.
+Image located here: /wp-content/themes/fultonSchoolsExtra/assets/endorsed-footer/img/asu_fultonengineering_horiz_white.png */
+#footer .fse-endorsed-logo {
+    max-width:300px;
+}
+
+#footer .asu-socialicons-footer-widget .button {
+    background-color:#8c1d40;
+}
+
+#footer .et_pb_widget ul.fc-social-icons {
+    float: none;
+    text-align: left;
+    padding-bottom: 1em;
+    display:block;
+}
+
+#footer .et_pb_widget ul.fc-social-icons li {
+    border-bottom:0;
+    padding:0;
+    display:inline;
+    margin-right:5px;
+}
+
+#footer .fc-social-icons li {
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: 10px;
+}
+
+#footer .fc-social-icon a {
+    color: #a9a9a9;
+    font-size: 38px;
+    border-bottom: none;
+}
+
+#footer .fc-social-icon a:hover {
+    color: #ffffff;
+    transition:.25s;
+}
+
+#footer .fc-social-icon a span {
+    display:none; /*text within the line-break; */
+}
+
+#footer .fc-social-icon a:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: none !important;
+}
+
+/*  Supporting CSS for the In the News Plugin
+=============================================== */
+
+/* Styles for Intro text. Above the first article on the archive page. */
+.post-type-archive-external_news .intro-text {  
+    padding-bottom:2em;
+}
+
+.post-type-archive-external_news .intro-text h1 {  
+    font-size:4em;
+}
+
+.post-type-archive-external_news .intro-text p {  
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.single-external_news .post-header {
+    margin-top:20px;
+    padding:20px 0;
+}
+
+.single-external_news .entry-title {
+    text-align:left;
+}
+
+.single-external_news .post-meta h3 {
+    margin-bottom:0;
+}
+
+.single-external_news .post-meta h3+h3 {
+    margin-top:0;
+    margin-bottom:1rem;
+}
+
+.single-external_news .post-meta h3 a {
+    font-weight:700;
+    color: #8c1d40;
+}
+
+#external-timeline .posts-list .post .post-meta {
+    padding-left:0;
+}
+
+#external-timeline .post-meta svg,
+.single-external_news .post-meta svg {
+    margin-right:10px;
+}
+
+#external-timeline .post-meta svg + svg,
+.single-external_news .post-meta svg + svg {
+    margin-left:5%;
+}
+
+#external-timeline .post-thumbnail {
+    width:40%;
+    height:auto;
+    margin-left:30px;
+    float:right;
+}
+
+#external-timeline article .post-title {
+    font-size:1.8rem;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+#external-timeline article .post-title a{
+    color:#8c1d40;
+}
+
+#external-timeline article .post-title a:hover {
+    text-decoration: underline;
+}
+
+#external-timeline article .post-content {
+    overflow: hidden;
+}
+
+#external-timeline article .post-content p {
+    color:#222;
+    font-size:14px;
+}
+
+#external-timeline article .post-content h1 {
+    margin:14px 0 7px;
+}
+
+#external-timeline-menu.timeline-menu {
+    border-left:none;
+}
+
+#external-timeline-menu.timeline-menu li {
+    margin-bottom:0;
+}
+#external-timeline-menu a:before {
+    display:none;
+}
+
+#external-timeline-menu .year {
+    background-color:#3e5062;
+    color:#ffffff;
+    font-weight:bold;
+    display:block;
+    padding:2px 0 2px 10px;
+    border-radius:3px 3px 0 0;
+}
+
+#external-timeline-menu .month {
+    background:#fff;
+    color:#222;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding:10px;
+}
+
+#external-timeline-menu .month + .year {
+    margin-top:20px;
+}
+
+#external-timeline-menu a {
+    padding-left:10px;
+}
+
+/* Overwrite bullet points within bulleted list. */
+#external-timeline article .post-content li {
+    border-bottom: 0px;
+    margin: .5em;
+    padding: 0px;
+}   
+
+/*  Outstanding Grad - Single View
+=============================================== */
+
+.single-outstand_grad .post-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.single-outstand_grad .post-header {
+    flex: 0 0 100%;
+    padding: 2em 1em;
+}
+
+.single-outstand_grad .post-meta {
+    flex: 0 0 40%;
+    text-align:left;
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    padding-right:2em;
+}
+
+.single-outstand_grad .post-thumbnail {
+    margin-right:5%;
+    margin-bottom:10px;
+}
+
+.single-outstand_grad .fake-thumbnail {
+    width: 300px;
+    height: 300px;
+    background: #5C6670;
+    color:#ffffff;
+    text-transform:uppercase;
+    padding-top:3em;
+    font-size:1.5rem;
+}
+
+.single-outstand_grad .post-header .pre-title {
+    font-size:1.65rem;
+    background: linear-gradient(180deg, 
+        rgba(0,0,0,0) calc(50% - 4px), 
+        rgba(140,29,64,1) calc(50% - 2px), 
+        rgba(0,0,0,0) calc(50%),
+        rgba(140,29,64,1) calc(50% + 2px), 
+        rgba(0,0,0,0) calc(50% + 4px)
+    );
+    display:inline-block;
+    padding:0 2em
+}
+
+p.pre-title span {
+    background-color:#ffffff;
+    padding:0 .5em
+}
+
+.single-outstand_grad .post-header .entry-title {
+    font-size:3rem;
+    border:1px solid #ffffff;
+    text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+}
+
+.single-outstand_grad .post-meta .details {
+    font-size: 1.25rem;
+    border-left: 5px solid #ffc627;
+    padding: 1em 20px;
+    background-color: #f0f0f0;
+    margin: 1em 0;
+}
+
+.single-outstand_grad .post-meta .details p {
+    line-height: 1.35;
+    margin-bottom: 15px;
+}
+
+.single-outstand_grad .post-meta .details svg {
+    margin-right: 15px;
+}
+
+.single-outstand_grad .post-meta .grad-survey dl {
+    margin-bottom:2em;
+}
+
+
+.single-outstand_grad .post-meta .grad-survey p,
+.single-outstand_grad .post-meta .grad-survey dl {
+	border-left:5px solid #8c1d40;
+	padding-left:20px;
+    padding-top:15px;
+    font-size:1rem;
+    background-color:#f0f0f0;
+}
+
+.single-outstand_grad .post-meta .grad-survey p {
+    padding:10px 20px;
+    margin-bottom:0;
+}
+
+.single-outstand_grad .post-meta .grad-survey a {
+    color:#8c1d40;
+    border-bottom:1px solid #8c1d40;
+}
+
+.single-outstand_grad .post-meta .grad-survey dt {
+    position:relative;
+    font-weight:700;
+}
+
+.single-outstand_grad .post-meta .grad-survey dt:after{
+	content: "\0020"; /* Just a space */
+    position: absolute;
+    top: 3px;
+    left: -30px;
+    height: 15px;
+    width: 15px;
+    background-color: #8C1d40;	
+}
+
+.single-outstand_grad .post-meta .grad-survey dd {
+	padding-bottom:20px;
+	margin:0;
+}
+
+.single-outstand_grad .post-meta .grad-survey dd:last-child {
+	padding-bottom:10px;
+}
+
+.single-outstand_grad .post-wrap .post-content {
+    flex: 0 0 60%;
+    margin-top:0;
+}
+
+@media only screen and (max-width: 768px) {
+    .single-outstand_grad .post-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .single-outstand_grad .post-meta {
+        padding-right:0;
+    }
+
+    .single-outstand_grad .post-header .pre-title {
+        background:none;
+        padding:0;
+    }
+}
+
+@media only screen and (max-width: 424px) {
+    .single-outstand_grad .post-header .entry-title {
+        font-size:2rem;
+    }
+
+    .single-outstand_grad .post-header .pre-title {
+        font-size:1rem;
+    }
+}
+
+/*  Graduation Date - Taxonomy Term View
+=============================================== */
+
+.tax-graduation_date .intro-text {
+    background-color:#ffffff;
+    font-size:1.25rem;
+    padding:1em;
+}
+
+.tax-graduation_date .post-module {
+    background-color: transparent;
+    border: 0px;
+    box-shadow: initial;
+}
+
+.tax-graduation_date .paginated_content h3 {
+    padding:2em 0 1em 0;
+}
+
+.tax-graduation_date .paginated_content .internal-anchor {
+    margin-left:15px;
+}
+
+.tax-graduation_date .paginated_page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.tax-graduation_date article.outstand_grad {
+    flex: 0 1 48%;
+    margin-bottom: 10px;
+    margin-right:1.5%;
+    background: #FFFFFF;
+    border-top: 6px solid #8C1D40;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    overflow: hidden;
+    padding:0;
+    display: flex;
+    flex-direction: row;
+}
+
+.tax-graduation_date article.outstand_grad header {
+    flex: 0 1 300px;
+    margin-bottom:-10px;
+}
+
+.tax-graduation_date article.outstand_grad .post-content {
+    padding: 20px;
+}
+
+.tax-graduation_date article.outstand_grad .post-title {
+    font-size:26px;
+}
+
+.tax-graduation_date article.outstand_grad .post-meta {
+    margin-bottom:30px;
+}
+
+.tax-graduation_date article.outstand_grad .post-meta p {
+    font-size:1.1rem;
+    margin-bottom:0;
+}
+
+/* Media Queries - Taxonomy View */
+@media only screen and (max-width: 800px) {
+    .tax-graduation_date article.outstand_grad {
+        flex-direction:column;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .tax-graduation_date .paginated_page {
+        flex-direction:column;
+    }
+}
+
+
+/*  Faculty Profile - Single View
+=============================================== */
+
+.single-faculty .post-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.single-faculty .post-header {
+    flex: 0 0 100%;
+    padding: 2em 1em;
+}
+
+.single-faculty .post-meta {
+    flex: 0 0 40%;
+    text-align:left;
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    padding-right:2em;
+}
+
+.single-faculty .post-thumbnail {
+    margin-right:5%;
+    margin-bottom:10px;
+}
+
+.single-faculty .fake-thumbnail {
+    width: 300px;
+    height: 300px;
+    background: #5C6670;
+    color:#ffffff;
+    text-transform:uppercase;
+    padding-top:3em;
+    font-size:1.5rem;
+}
+
+.single-faculty .post-header .pre-title {
+    font-size:1.65rem;
+    background: linear-gradient(180deg, 
+        rgba(0,0,0,0) calc(50% - 4px), 
+        rgba(140,29,64,1) calc(50% - 2px), 
+        rgba(0,0,0,0) calc(50%),
+        rgba(140,29,64,1) calc(50% + 2px), 
+        rgba(0,0,0,0) calc(50% + 4px)
+    );
+    display:inline-block;
+    padding:0 2em;
+    margin-bottom:0;
+}
+
+.single-faculty p.pre-title span {
+    background-color:#ffffff;
+    padding:0 .5em
+}
+
+.single-faculty .post-header .entry-title {
+    font-size:3rem;
+    text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+    line-height: 1;
+    padding-bottom: 0;
+}
+
+.single-faculty .post-header .post-title {
+    font-size:1.25rem;
+}
+
+.single-faculty .post-meta .faculty-details {
+    font-size: 1.25rem;
+    border-left: 5px solid #8c1d40;
+    padding: 1em 20px;
+    background-color: #f0f0f0;
+    margin: 1em 0;
+}
+
+.single-faculty .post-meta .faculty-details p {
+    line-height: 1.35;
+    margin-bottom: 15px;
+    font-weight:700;
+}
+
+.single-faculty .post-meta .faculty-details p:last-child {
+    margin-bottom: 5px;
+}
+
+.single-faculty .post-meta .faculty-details svg {
+    margin-right: 15px;
+}
+
+.single-faculty .post-meta .faculty-survey {
+	border-left:5px solid #8c1d40;
+	padding-left:20px;
+    padding-top:15px;
+    font-size:1rem;
+    background-color:#f0f0f0;
+    margin-top:1em 0;
+}
+
+.single-faculty .post-meta .faculty-survey dt {
+    position:relative;
+    font-weight:700;
+}
+
+.single-faculty .post-meta .faculty-survey dt:after{
+	content: "\0020"; /* Just a space */
+    position: absolute;
+    top: 3px;
+    left: -30px;
+    height: 15px;
+    width: 15px;
+    background-color: #8C1d40;	
+}
+
+.single-faculty .post-meta .faculty-survey dd + dt {
+	padding-top:20px;
+}
+
+.single-faculty .post-meta .faculty-survey dd {
+	padding-bottom:10px;
+	margin:0;
+}
+
+.single-faculty .post-wrap .post-content {
+    flex: 0 0 60%;
+    margin-top:0;
+}
+
+@media only screen and (max-width: 768px) {
+    .single-faculty .post-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .single-faculty .post-meta {
+        padding-right:0;
+    }
+
+    .single-faculty .post-header .pre-title {
+        background:none;
+        padding:0;
+    }
+}
+
+@media only screen and (max-width: 424px) {
+    .single-faculty .post-header .entry-title {
+        font-size:2rem;
+    }
+
+    .single-faculty .post-header .pre-title {
+        font-size:1rem;
+    }
+}

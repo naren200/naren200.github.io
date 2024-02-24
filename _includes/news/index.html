@@ -25,7 +25,7 @@
 				  <div class="uia-card__body">
 					<div class="uia-card__description">
 						{% if section.url %}
-						<p><a href="{{ section.url }}">{{ section.description }}</a></p>
+						<p>{{ section.description }} <a href="{{ section.url }}">Explore Further!</a></p>
 					  {% else %}
 						<p>{{ section.description }}</p>
 					  {% endif %}
