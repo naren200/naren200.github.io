@@ -96,7 +96,7 @@ DCGAN is a powerful generative model that has applications in image generation, 
 <img src="../imgs/projects/gan-resultsepoch1and50.png" alt="drawing" width="950"/>
 
 <div style="text-align: center;">
-    <iframe width="560" height="560" src="https://www.youtube.com/embed/cyXw7y1FSA0?si=uLTzm8v80Qx5R5La" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="560" src="https://www.youtube.com/embed/cyXw7y1FSA0?si=uLTzm8v80Qx5R5La" title="YouTube video player" frameborder="0" allow="accelerometer;   clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 

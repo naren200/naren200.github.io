@@ -36,7 +36,7 @@ A key highlight of the project is the robot's ability to autonomously **chase a 
 - **Ball Chasing Video**: 
 
 <div style="text-align: center;">
-  <iframe width="660" height="415" src="https://www.youtube.com/embed/bR12gWMfKFI?si=rR5MFLuPMTm61K83" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="660" height="415" src="https://www.youtube.com/embed/bR12gWMfKFI?si=rR5MFLuPMTm61K83" title="YouTube video player" frameborder="0" allow="accelerometer;   clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 
@@ -56,7 +56,7 @@ Efficient **mapping** and **navigation** are achieved using the **gmapping** pac
 
 - **Path Planning Video**: 
 <div style="text-align: center;">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ik1velzFdnU?si=VNzeOj0Sr-WkwXTc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ik1velzFdnU?si=VNzeOj0Sr-WkwXTc" title="YouTube video player" frameborder="0" allow="accelerometer;   clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 
