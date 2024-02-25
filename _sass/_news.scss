@@ -55,10 +55,10 @@ position: relative;
 isolation: isolate;
 }
 
-[data-uia-timeline-skin="3"] .uia-timeline__point{
-background-color: var(--uia-timeline-point-background-color, rgba(0, 53, 32, 0.616));
-border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
-}
+// [data-uia-timeline-skin="3"] .uia-timeline__point{
+// background-color: var(--uia-timeline-point-background-color, rgba(0, 53, 32, 0.616));
+// border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
+// }
 
 // [data-uia-timeline-skin="3"] .uia-timeline__point::before{
 // content: "";
