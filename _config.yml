@@ -1,7 +1,7 @@
 ### Site Settings ###
 title               : Narendhiran Saravanane
 description         : >-
-                      <h3 style=" color: #fff;"> <b>Roboticists&emsp;| &emsp;AI Developer</b> <br></h3>
+                      <b>Roboticists&emsp;| &emsp;AI Developer</b> <br>
 
 baseurl             :                      # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : naren200/naren200.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
