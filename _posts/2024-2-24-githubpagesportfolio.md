@@ -91,9 +91,7 @@ To preview changes locally, follow these steps:
 
 6. **Preview Changes:** Open your web browser and navigate to [http://localhost:4000](http://localhost:4000) or [http://127.0.0.1:4000/](http://127.0.0.1:4000/) to preview the locally running site.
 
-7. **Publish Your Changes**
-
-Once satisfied with your changes:
+7. **Publish Your Changes:** Once satisfied with your changes:
 
 - Commit and push your changes to GitHub.
 - GitHub Pages will automatically build and reflect your updates.
@@ -118,7 +116,7 @@ Congratulations! You've successfully turned any GitHub Pages website into your p
 
 ## Contributing
 
-Contributions are welcome! If you find issues or have suggestions, open an issue or submit a pull request.
+Contributions are welcome! If you find issues or have suggestions over [my template](https://naren200.github.io), open an issue or submit a pull request.
 
 ## Acknowledgements
 

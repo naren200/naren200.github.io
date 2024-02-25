@@ -8,10 +8,12 @@ permalink: /
 
 
 <div id="particles-js"></div> 
+<script src="../particles.js"></script>
+<script src="../app.js"></script>
 
 
-<!-- 
-<style>
+
+<!-- <style>
     #particles-js::before {
     content: "";
     position: absolute;
@@ -44,8 +46,5 @@ permalink: /
       /* Define final background properties */
     }
     }
-</style> -->
-
-
-<script src="../particles.js"></script>
-<script src="../app.js"></script>
+</style>
+ -->

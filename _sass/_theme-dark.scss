@@ -9,6 +9,17 @@ $dark-900: #000000;
     // background-image: radial-gradient(circle, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     color: $text-white;
   }
+  #text_container {
+    // Existing styles for text container
+    color: #fff; // Set the text color to the primary text color
+  }
+  #text_container {
+    text-align: center;
+
+    h3.text-muted.wow.animated.slideInUp {
+      color: #fff; // Set the text color to the primary text color
+    }
+  }
 
   // Code blocks & Syntax highlighting
 
@@ -68,7 +79,7 @@ $dark-900: #000000;
   /* Hyperlink styles on hover and focus */
   a:hover,
   a:focus {
-    color: #6be9ff ;  /* Change the color on hover or focus */
+    color: #6be9ff !important;  /* Change the color on hover or focus */
     // text-decoration: underline; /* Add underline on hover or focus */
   }
 
@@ -131,8 +142,25 @@ $dark-900: #000000;
     background: #fff;//, #a8eb12);	
     // background-image: radial-gradient(circle, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     color: $text-black;
+    color: #000; /* Set text color to black */
   }
+  body.landing-body {
+    background-color: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72);
+    // background-image: radial-gradient(circle, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    // color: $text-white; // Replace with the desired text color
+  }
+  
+  #text_container {
+    // Existing styles for text container
+    color: #000; // Set the text color to the primary text color
+  }
+  #text_container {
+    text-align: center;
 
+    h3.text-muted.wow.animated.slideInUp {
+      color: #000; // Set the text color to the primary text color
+    }
+  }
 
   @import "native.scss";
 
@@ -165,12 +193,12 @@ $dark-900: #000000;
 
   // Cards
   .card {
-    background-color: $dark-600;
+    background-color: rgba(187, 255, 213, 0.46);
   }
 
   .card.border {
     .card-footer {
-      background-color: rgba(114, 107, 107, 0.548);
+      background-color: rgba(255, 255, 255, 0.548);
     }
   }
 
@@ -185,7 +213,7 @@ $dark-900: #000000;
     }
   }
   a {
-      color: #1537f6b4 !important; /* Change to your desired hyperlink color */
+      color: #001dfb9e //#1537f6b4 !important; /* Change to your desired hyperlink color */
   }
 
   /* Hyperlink styles on hover and focus */
