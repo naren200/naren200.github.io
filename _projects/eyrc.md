@@ -56,10 +56,13 @@ In our project, **SolidWorks** was instrumental in designing precise 3D models. 
 
 ### Electronics
 
-**Sensors** | Proximity Sensor/Sharp Sensor & White Line Sensor
-**Actuators** | Geared DC Motor with Encoder & Servo Motors
-**Micro-Controllers** | Atmega 2560 Development board
-**Miscellaneous** | LCD, L298N Motor Driver, Buzzers & Potentiometers
+| **Category**        | **Components**                            |
+|---------------------|------------------------------------------|
+| **Sensors**         | Proximity Sensor/Sharp Sensor, White Line Sensor |
+| **Actuators**       | Geared DC Motor with Encoder, Servo Motors |
+| **Micro-Controllers**| Atmega 2560 Development board              |
+| **Miscellaneous**   | LCD, L298N Motor Driver, Buzzers, Potentiometers |
+
 
 ### Actuations categorized based on sensors
 
