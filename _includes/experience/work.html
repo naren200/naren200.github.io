@@ -5,7 +5,7 @@
     <div class="wrapper">
     <div class="work">
         <br>
-        <h4 class="page-heading">Education</h4><br>
+        <h4 class="page-heading">EDUCATION</h4><br>
         {% for item in site.data.education %}
         <div class="work-item">
         <!-- <img
@@ -23,16 +23,18 @@
             <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
             {% endif %}
         </div>
+        <div class="uia-card__container">
         <p class="work-text">
             <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
             &mdash;
             {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
         </p>
         </div>
+        </div>
         {% endfor %}
 
         <hr>
-        <br><h4 class="page-heading">Professional Experience</h4><br>
+        <br><h4 class="page-heading">PROFESSIONAL EXPERIENCE</h4><br>
         {% for item in site.data.work %}
         <div class="work-item">
         <!-- <img
@@ -50,16 +52,18 @@
             <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
             {% endif %}
         </div>
-        <p class="work-text">
-            <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
-            &mdash;
-            {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
-        </p>
+        <div class="uia-card__container">
+            <p class="work-text">
+                <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
+                &mdash;
+                {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+            </p>
+        </div>
         </div>
         {% endfor %}
         
         <hr>
-        <br><h4 class="page-heading">Publications</h4><br>
+        <br><h4 class="page-heading">PUBLICATIONS</h4><br>
         {% for item in site.data.publication %}
         <div class="work-item">
         <!-- <img
@@ -77,11 +81,13 @@
             <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
             {% endif %}
         </div>
-        <p class="work-text">
-            <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
-            &mdash;
-            {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
-        </p>
+        <div class="uia-card__container">
+            <p class="work-text">
+                <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
+                &mdash;
+                {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+            </p>
+        </div>
         </div>
         {% endfor %}
         

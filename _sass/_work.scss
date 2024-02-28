@@ -127,3 +127,18 @@ h4.mb-3 {
 //   width:1200px;             /* As IE ignores !important it will set width as 1000px; */
 //  }
  
+.uia-card__container{
+  display: grid;
+  gap: var(--uia-card-content-gap, .5rem);
+  padding: var(--uia-card-padding, 1rem 1.75rem);
+  
+  background-color: var(--uia-card-background-color);
+  border-radius: var(--uia-card-border-radius, 2px);
+  }
+  
+.uia-card__container{
+    border-inline-start:	var(--uia-card-border-thickness, 2px) var(--uia-card-border-style, solid) var(--uia-card-border-color, currentColor);
+    box-shadow: var(--uia-card-box-shadow, 0 4px 8px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
+    border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
+    background-color: transparent; /* Ensure the background is transparent */
+}
