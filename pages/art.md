@@ -9,7 +9,7 @@ permalink: /experience/
 {% include experience/work.html %}
 
 
-<br>
+<!-- <br>
 <hr> 
 <br>
 
@@ -21,8 +21,7 @@ permalink: /experience/
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
 <br>
-<!-- <hr>  -->
-<br>
+<br> -->
 
 <!-- <h4 class="page-heading" id="Future-Imagination">There's a long road ahead, but we're on the right track.</h4><br>
 
