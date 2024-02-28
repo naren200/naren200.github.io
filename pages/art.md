@@ -14,7 +14,7 @@ permalink: /experience/
 <br>
 
 
-<h4 class="page-heading">Skills</h4>
+<h4 class="page-heading">SKILLS</h4>
 <br>
 <div class="row" style="width: 100%; margin-left: 10px">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}

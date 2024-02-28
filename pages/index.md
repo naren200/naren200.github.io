@@ -8,8 +8,8 @@ permalink: /
 
 
 <div id="particles-js"></div> 
-<script src="../particles.js"></script>
-<script src="../app.js"></script>
+<script src="../assets/js/particles.js"></script>
+<script src="../assets/js/app.js"></script>
 
 
 

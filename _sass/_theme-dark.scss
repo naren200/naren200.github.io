@@ -53,7 +53,8 @@ $dark-900: #000000;
 
   // Cards
   .card {
-    background-color: $dark-600;
+    // background-color: $dark-600;
+    background-color: var(--uia-timeline-point-background-color, rgba(0, 53, 32, 0.616));
   }
 
   .card.border {
@@ -73,9 +74,17 @@ $dark-900: #000000;
     }
   }
   a {
-      color: #6be9ff; /* Change to your desired hyperlink color */
+      // color: #6be9ff; /* Change to your desired hyperlink color */
+      color: #6be9ff;
   }
-
+  // [data-project-card-skin="1"] .a {
+  //   color: #fff;
+  // }
+  .custom-project-link {
+    color: #fff;/* your desired color */;
+    /* Add any other styles you want */
+  }
+  
   /* Hyperlink styles on hover and focus */
   a:hover,
   a:focus {
@@ -128,7 +137,11 @@ $dark-900: #000000;
     background-color: var(--uia-timeline-point-background-color, rgba(0, 53, 32, 0.616));
     border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
     }
-    
+
+  .uia-card__container {
+      background-color: rgba(0, 53, 32, 0.616); // Set the background color to white or any desired color
+    }
+        
 }
 
 
@@ -269,7 +282,9 @@ $dark-900: #000000;
     background-color: var(--uia-timeline-point-background-color, rgba(187, 255, 213, 0.46));
     border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
     }
-    
+  .uia-card__container {
+    background-color: rgba(187, 255, 213, 0.46); // Set the background color to white or any desired color
+  }
 }
 
 

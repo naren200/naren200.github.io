@@ -12,6 +12,8 @@
 
 <sub><sup>© 2023 naren200, licensed under the <a href="./LICENSE">MIT License</a>.</sup></sub>
 
+<!-- Request before copying
+Remove the Google Publication tag and world globe tag under  -->
 </div>
 
 
