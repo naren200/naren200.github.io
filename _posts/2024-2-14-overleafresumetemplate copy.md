@@ -1,7 +1,7 @@
 ---
 title: Design your Modern CV Now! 
 tags: [Blog, Open Source Contributions]
-style: fill
+# style: 
 color: secondary
 description: Stand out with a vibrant and colorful LaTeX template for your career.
 ---

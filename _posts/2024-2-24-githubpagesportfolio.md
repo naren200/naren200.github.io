@@ -1,7 +1,7 @@
 ---
 title: Design your Modern Porfolio Now! 
 tags: [Blog, Open Source Contributions]
-style: fill
+# style: fill
 color: secondary
 description: Elevate your personal website with a dynamic and vibrant GitHub Page template. Stand out with a burst of colors that reflect your unique style and personality.
 ---

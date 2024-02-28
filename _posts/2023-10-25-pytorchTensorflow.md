@@ -1,8 +1,8 @@
 ---
 title: Installing Tensorflow and Pytorch with GPU access 
 tags: [Blog]
-style: fill
-color: primary
+# style: 
+color: secondary
 description: Covered installation methods to ensure that PyTorch and TensorFlow can coexist on your Ubuntu system with GPU acceleration
 ---
 
