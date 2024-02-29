@@ -8,7 +8,7 @@
   •
   <a href="https://naren200.github.io/blog/githubpagesportfolio">Blog- Publish your github pages</a>
 
-<a href="https://naren200.github.io/about/"><img src="assets/demo_showcase.gif"></a>
+<a href="https://naren200.github.io/about/"><img src="assets/demo.gif"></a>
 
 <sub><sup>© 2023 naren200, licensed under the <a href="./LICENSE">MIT License</a>.</sup></sub>
 
