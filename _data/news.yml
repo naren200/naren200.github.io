@@ -22,9 +22,14 @@
     description: Predicted motion of towed objects in ship operations including maneuvering. Established visualizable model for military vessels. 
     url: https://naren200.github.io/projects/btechproj
   - period: 20 Apr 
-    heading: Secured Admit into Arizona State Univesity - M.S. Robotics and Autonomous Systems
-    description: "#1 most innovative universities. My dream to pursue Robotics in Top colleges securing a strong fundamentals & everlasting network."
+    # heading: Secured Admit into Arizona State Univesity - M.S. Robotics and Autonomous Systems
+    description: "Secured Admit into Arizona State Univesity - #1 most innovative universities. My dream to pursue Robotics in Top colleges securing a strong fundamentals & everlasting network."
     url: ../imgs/news/asuAcceptance.png
+  - period: 11 Jan 
+    heading: Industry 4.0 Conference - Indian Institute of Science, Banglore
+    description: Simulated Operations of the robot under medical environments and presented an implemented case study for swift transporation and sanitation management.
+    url: ../pdfs/i4amcertificate.jpg
+
 - year: 2020
   details:
   - period: 10 Jul 
@@ -37,8 +42,8 @@
     url: ../imgs/news/eysip_internshipoffer.png
   - period: 9 Mar
     # heading: Task 5 Triumph in Construct-O-Bot - eYRC Robotics Competition
-    description: Task 5 Triumph in Construct-O-Bot -- Orchestrated 20 uninterrupted pick and place fully autonomous operations under 4 mins. Secured highest score with bonus points. Achieved within 48 hours of the task.
-    url: https://youtu.be/w3wBqJ6DisA
+    description: "Task 5 Triumph in Construct-O-Bot: Orchestrated 20 uninterrupted pick and place fully autonomous operations under 4 mins. Secured highest score with bonus points. Achieved within 48 hours of the task."
+    url: https://youtu.be/V-e3XbXu6AY
   - period: 18 Feb 
     # heading: Accomplished Task 4 Construct-O-Bot - eYRC Robotics Competition
     description: Accomplished Task 4 Construct-O-Bot -- Performed line and wall following locomotion and Executed 4 pick and place actions. Scored above and beyond, qualified with bonus.

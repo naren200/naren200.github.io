@@ -7,7 +7,7 @@ weight: 1
 
 <!-- <link rel="stylesheet" type="text/css" href="../_sass/_base.scss"> -->
 
-<h4 style="text-align: center;"> <strong>Table of Content&ensp;</strong> | <a href="#achievements">&ensp;Achievements - Robotics&ensp; </a> | <a href="#distinguishesme">&ensp;What Sets Me Apart&ensp;</a> | <a href="#Questionsexcitesme">&ensp;Questions That Excite Me</a> </h4>
+<div style="text-align: center;"> <strong>Table of Content&ensp;</strong> | <a href="#achievements">&ensp;Achievements - Robotics&ensp; </a> | <a href="#distinguishesme">&ensp;What Sets Me Apart&ensp;</a> | <a href="#Questionsexcitesme">&ensp;Questions That Excite Me</a> </div>
 
 
 <!-- # **About Me** -->

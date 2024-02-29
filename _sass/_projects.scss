@@ -100,6 +100,7 @@ iframe {
     height: 400px; /* Set a different height for screens between 601px and 1200px */
     display: block;
   }
+
 }
 
 /* Media query for screens with a minimum width of 1201px */
@@ -113,6 +114,87 @@ iframe {
 
 }
 
+
+/* Media query for screens with a maximum width of 600px */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.3em; /* Set a different font size for h1 on screens <= 600px */
+  }
+
+  h2 {
+    font-size: 1.2em; /* Set a different font size for h2 on screens <= 600px */
+  }
+
+  h3 {
+    font-size: 1.1em; /* Set a different font size for h3 on screens <= 600px */
+  }
+
+  h4 {
+    font-size: 1.15em; /* Set a different font size for h4 on screens <= 600px */
+  }
+
+  h5 {
+    font-size: 1em; /* Set a different font size for h5 on screens <= 600px */
+  }
+
+  body {
+    font-size: 0.9em; /* Set a different font size for body on screens <= 600px */
+  }
+}
+
+/* Media query for screens with a minimum width of 601px and a maximum width of 1200px */
+@media (min-width: 601px) and (max-width: 1200px) {
+  h1 {
+    font-size: 2em; /* Set a different font size for h1 on screens between 601px and 1200px */
+  }
+
+  h2 {
+    font-size: 1.8em; /* Set a different font size for h2 on screens between 601px and 1200px */
+  }
+
+  h3 {
+    font-size: 1.6em; /* Set a different font size for h3 on screens between 601px and 1200px */
+  }
+
+  h4 {
+    font-size: 1.4em; /* Set a different font size for h4 on screens between 601px and 1200px */
+  }
+
+  h5 {
+    font-size: 1.2em; /* Set a different font size for h5 on screens between 601px and 1200px */
+  }
+
+  body {
+    font-size: 1em; /* Set a different font size for body on screens between 601px and 1200px */
+  }
+}
+
+/* Media query for screens with a minimum width of 1201px */
+@media (min-width: 1201px) {
+  h1 {
+    font-size: 2.5em; /* Set a different font size for h1 on screens >= 1201px */
+  }
+
+  h2 {
+    font-size: 2.2em; /* Set a different font size for h2 on screens >= 1201px */
+  }
+
+  h3 {
+    font-size: 1.8em; /* Set a different font size for h3 on screens >= 1201px */
+  }
+
+  h4 {
+    font-size: 1.6em; /* Set a different font size for h4 on screens >= 1201px */
+  }
+
+  h5 {
+    font-size: 1.4em; /* Set a different font size for h5 on screens >= 1201px */
+  }
+
+  body {
+    font-size: 1.2em; /* Set a different font size for body on screens >= 1201px */
+  }
+}
 
 
 // /* Default styles for the iframe */

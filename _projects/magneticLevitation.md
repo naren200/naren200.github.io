@@ -15,37 +15,31 @@ Characterize a Single Input Single Output (SISO) system by identifying the input
 
 #### **PID - Block Diagram & Results**
 
-<img src="../imgs/projects/pidResults2.png" alt="drawing" width="850"/> <br>
+<img src="../imgs/projects/pidResults2.png" alt="drawing" width="850"/>
+<div style="text-align: center;"><i>Figure 1: Block Diagram for closed Loop System</i></div>
 
-*Figure 1: Block Diagram for closed Loop System* 
 
-<img src="../imgs/projects/pidResults.png" alt="drawing" width="850"/> <br>
+<img src="../imgs/projects/pidResults.png" alt="drawing" width="850"/> 
+<div style="text-align: center;"><i>Figure 2:  Amplitude response plot of Tuned and Blocked PID controllers</i></div>
 
-*Figure 2:  Amplitude response plot of Tuned and Blocked PID controllers*
-
+<br>
 
 #### **LQR - Block Diagram & Results**
 
-<img src="../imgs/projects/lqr_results2.png" alt="drawing" width="850"/> <br>
+<img src="../imgs/projects/lqr_results2.png" alt="drawing" width="850"/>
+<div style="text-align: center;"><i>Figure 3: Block Diagram for State Feedback Controller with pre-compensator</i></div>
 
-*Figure 3: Block Diagram for State Feedback Controller with pre-compensator*
 
 <img src="../imgs/projects/lqr_results1.png" alt="drawing" width="850"/>
+<div style="text-align: center;"><i>Figure 4: Step response with LQR and pre-compensator (for each states)</i></div>
 
-*Figure 4: Step response with LQR and pre-compensator (for each states)*
 
+<br>
 
 #### **Conclusion of Observations**
 The project successfully achieves stable closed-loop system dynamics through the designed LQR state feedback controller and precompensator. The simulation results demonstrate impressive metrics such as swift rise time, settling time, and absence of overshoot. The incorporation of a precompensator significantly eliminates steady-state errors, highlighting its pivotal role in achieving precise control. Challenges related to inherent nonlinearities are acknowledged, and ongoing efforts towards refining the model for robustness and real-world applicability are emphasized. The project underscores the importance of linearization in controller design and sets the stage for further improvements and experimental validation.
 
 
-
-#### **Presentation Slides**
-
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQOPmrw99LojSj1vn1lqA9D9t3CDSyMnwWv-j59ZS4JJp3nwmKeWRWIORwgPBjfrIlLO0OWt7BFIQ9Y/embed?start=false&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
-
-#### **Report**
-<div style="text-align: center;">
-    <iframe class="pdfiframe" src="../pdfs/MAE506_Advanced_modeling.pdf" width="80%" height="900px" frameborder="0"></iframe>
-</div>
+#### **References**
+- Presentation Slides can be found [here](https://docs.google.com/presentation/d/1mgIk_qbnqi0Q6mV9Qtt4uMvJehv3Yw2CoEjgVGXfmmk/edit?usp=sharing)
+- Report of the project can be found [here](../pdfs/MAE506_Advanced_modeling.pdf)
