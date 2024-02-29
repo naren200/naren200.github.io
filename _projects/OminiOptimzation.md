@@ -12,8 +12,17 @@ description: Achieved efficient control and trajectory optmization through MPC.
 #### **Problem Statement**
 <html>
 <head>  
- <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
- </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@media only screen and (max-width: 1000px) {
+        .math-content {
+                display: none; /* Hide math-content for smaller screens */
+            }
+}
+</style>
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+</script>
 </head>
 <body>
 
@@ -24,7 +33,7 @@ Consider a simple formulation of rocket landing where the rocket state \(\textbf
 
 <img src="../imgs/projects/omni_ps.png" alt="drawing" width="350"/>
 
-#### **Gradient Based Algorithm - Optmization problem definition & Results**
+#### **Gradient Based algorithm & Optmization**
 
 <html>
 <head>  
@@ -32,7 +41,8 @@ Consider a simple formulation of rocket landing where the rocket state \(\textbf
  </script>
 </head>
 <body>
-
+<div class="math-content">
+<b>Problem Statement: </b>
 The optimization problem is now formulated as
 
 \[
@@ -49,22 +59,24 @@ The optimization problem is now formulated as
 \]
 
 While this problem is constrained, it is easy to see that the objective function can be expressed as a function of \(\textbf{x}(T-1)\) and \(\textbf{u}(T-1)\), where \(\textbf{x}(T-1)\) as a function of \(\textbf{x}(T-2)\) and \(\textbf{u}(T-2)\), and so on. Thus it is essentially an unconstrained problem with respect to \(w\).
-
+</div>
 </body>
 </html>
 This will be the navigation of the Omini Wheel Controller optimized using Gradient Based Algorithm using Neural Network.
 
+###### Results: Gradient-based algorithm
 
 <img src="../imgs/projects/OminiWheel_Gradient.gif" alt="Animated GIF" width="350"> <br>
 
-#### **MPC - Optmization problem definition & Results**
+#### **MPC & Optmization**
 <html>
 <head>  
  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
  </script>
 </head>
 <body>
-
+<div class="math-content">
+<b>Problem Statement: </b>
 Using taylor's series, linearized dynamics is passed into MPC algorithm of the dynamics \(f(\textbf{x},u(t))\) at the current state \(\textbf{x}_0\) and zero control input.
 
 \[ A = \nabla_x f = \left[\begin{array}{llll}
@@ -92,17 +104,18 @@ Then we have
 \[ f(\textbf{x},u) \approx f(\textbf{x}_0,0) + A(\textbf{x}-\textbf{x}_0) + Bu \]
 
 \[ f(\textbf{x},u) \approx A\textbf{x} + Bu \]
-
-This will be the navigation of the Omini Wheel Controller optimized using MPC.
+</div>
 
 </body>
 </html>
+This will be the navigation of the Omini Wheel Controller optimized using MPC.
+
+###### Results: MPC Optimization algorithm
 
 <img src="../imgs/projects/OminiMovement_MPC.gif" alt="Animated GIF" width="350"> <br>
 
 
 #### **Repositories of Each Project**
 
-Gradient Based algorithm using Neural Network - [https://github.com/naren200/DesignOptimization/blob/master/Project%201/Project%201%20Updated%20Gradient.ipynb](https://github.com/naren200/DesignOptimization/blob/master/Project%201/Project%201%20Updated%20Gradient.ipynb)
-
-MPC based controller- [https://github.com/naren200/DesignOptimization/blob/master/Project%202/Project%202%20MPC%20.ipynb](https://github.com/naren200/DesignOptimization/blob/master/Project%202/Project%202%20MPC%20.ipynb)
+- Gradient Based algorithm using Neural Network - Blogged [here](https://github.com/naren200/DesignOptimization/blob/master/Project%201/Project%201%20Updated%20Gradient.ipynb)
+- MPC based controller - Blogged [here](https://github.com/naren200/DesignOptimization/blob/master/Project%202/Project%202%20MPC%20.ipynb)
