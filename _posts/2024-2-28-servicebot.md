@@ -1,6 +1,6 @@
 ---
 title: Home Service Robot
-tags: [Blog, Neural Networks, Project]
+tags: [ROS, Project]
 # style: 
 color: secondary
 description: Documented the tools and features performed.

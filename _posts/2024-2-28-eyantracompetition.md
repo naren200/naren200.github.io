@@ -1,6 +1,6 @@
 ---
 title: eYantra Robotics Competition (eYRC)
-tags: [Blog, competitions]
+tags: [Competition]
 # style: 
 color: secondary
 description: Designed and deployed a disaster response robot, integrated sensors, navigation algorithms, and hardware implementation.

@@ -2,11 +2,11 @@
   details:
   - period: 21 Feb
     heading: Appeared in News Report - Contribution to Prof. Xu's work
-    description: Prof. Xu's awarded 2024 NSF Faculty Early Career Development Program ($550,000) over Temporal Casual Reinforcement Learning.
+    description: Prof. Xu's awarded 2024 NSF Faculty Early Career Development Program ($550,000) in the "Temporal Causal Reinforcement Learning and Control for Autonomous and Swarm Cyber-Physical Systems" field.
     url: https://fullcircle.asu.edu/faculty/sparking-an-evolution-in-robotics/
   - period: 22 Jan
-    heading: Publication Accepted - IEEE Control Systems Society Conference
-    description: Contributed to paper about Control Synthesis of Multi-Agent Systems under Prof. Zhe Xu. Scheduled to present at American Control Conference at Toronto, Canada.
+    heading: Publication Accepted - IEEE Control Systems Society Conference '24
+    description: Contributed my co-authored paper about "Temporal Causal Models for Control Synthesis of Multi-Agent Robot Systems," under Prof. Zhe Xu. Scheduled to be presented at American Control Conference at Toronto, Canada.
     url: ../imgs/news/publication.png
 - year: 2023
   details:
