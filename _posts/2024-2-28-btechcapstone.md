@@ -1,6 +1,6 @@
 ---
 title: DRDO's Project - My Bachelor's Capstone Contribution
-tags: [Blog, 2D Dynamics, Runge-Kutta, Project]
+tags: [2D Dynamics, Runge-Kutta, Project]
 # style: 
 color: secondary
 description: Developed a visualizable model to predict the motion of towed objects in ship operations under varying conditions.

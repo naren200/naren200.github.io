@@ -1,6 +1,6 @@
 ---
 title: DcGANs
-tags: [Blog, Neural Networks, Project]
+tags: [Neurons, Project]
 # style: 
 color: secondary
 description: Documented the tools and features performed during the competition.
