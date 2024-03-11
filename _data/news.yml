@@ -34,13 +34,18 @@
 - year: 2020
   details:
   - period: 10 Jul 
-    heading: National Finalists - e-yantra International Robotics Competition
+    heading: National Finalists - eYantra International Robotics Challenge
     description: Reviewed by Academic panel members of the Indian Institute of Technology Bombay and the industrial specialists. Honored to be mentioned as the "First team to represent all branches of the Indian Institute of Technology" and achieved the "National Finalists" Status of eYRC 2019-20.
     url: ../pdfs/eyrc_certificate.pdf
+  - period: 7 Jul 
+    description: Demonstrated the Internship outcomes to the public, students, academic experts & industrial experts for suggestions on utility and feedback. 
+    # url: ../imgs/work/eysipinternship.webp
+    url: https://youtu.be/MkAJUwg7B-s?si=2JrPPGU-8O_tOto2
   - period: 10 Apr 
     heading: Bagged Internship offer - eYSIP, e-yantra, IIT Bombay
     description: Interviewed by Academic and Industrial Panel members of the Indian Institute of Technology Bombay. Selected for Internship under Prof. Kavi Arya, Dept. CSE, IIT Bombay.
     url: ../imgs/news/eysip_internshipoffer.png
+    # url: https://vrep-eysip-reports.readthedocs.io/en/latest/squads.html
   - period: 9 Mar
     # heading: Task 5 Triumph in Construct-O-Bot - eYRC Robotics Competition
     description: "Task 5 Triumph in Construct-O-Bot: Orchestrated 20 uninterrupted pick and place fully autonomous operations under 4 mins. Secured highest score with bonus points. Achieved within 48 hours of the task."
@@ -70,12 +75,12 @@
   details:
   - period: 31 May 
     heading: Qualified JEE Advanced 2020 - Exam Result Update 
-    description: Successfully mastered the art of exam, and got admit into Indian Institute of Technology Patna. 
+    description: Successfully mastered the art of exam, and got admit into Indian Institute of Technology Patna. Percentile - 99.49
 
 - year: 2017
   details:
   - period: 31 May
     heading: Setback JEE Advanced 2019 - Exam Result Update 
-    description: Unsuccessful in mastering the art of exam after 2 years of hardship to expertize in Physics, Chemistry and Mathematics subjects.
+    description: Unsuccessful in mastering the art of exam after 2 years of hardship to expertize in Physics, Chemistry and Mathematics subjects. Percentile - 96.85
 
 

@@ -70,3 +70,12 @@ footer strong {
     left: calc(50% + 500px);
   }
 }
+
+footer i {
+  color: #fff;
+}
+
+/* Change color for the icons on hover */
+footer i:hover {
+  color: #6be9ff;
+}
