@@ -4,11 +4,11 @@
   <h1>Portfolio • naren200</h1>
   <i>This repository hosts my concise portfolio website, highlighting projects, skills, and developer experiences for potential clients or employers.</i>
 
-  <a href="https://naren200.github.io/about/">Live Demo</a>
+  <a href="https://naren200.github.io/">Live Demo</a>
   •
   <a href="https://naren200.github.io/blog/githubpagesportfolio">Blog- Publish your github pages</a>
 
-<a href="https://naren200.github.io/about/"><img src="assets/demo.gif"></a>
+<a href="https://naren200.github.io/"><img src="assets/demo.gif"></a>
 
 <sub><sup>© 2023 naren200, licensed under the <a href="./LICENSE">MIT License</a>.</sup></sub>
 
