@@ -1,6 +1,22 @@
 .search-box {
   box-shadow: none !important;
 }
+/* Change the color of the search button */
+.btn-outline-primary {
+  color: #fff; /* Text color */
+  background-color: rgba(15, 66, 33, 0.733); /* Background color */
+}
+
+/* Change the color of the tag bar button */
+.btn.btn-outline-primary {
+  color: #a9d5f3; /* Text color */
+}
+
+/* Change the color of the tag bar button on hover */
+.btn.btn-outline-primary:hover {
+  color: #fff; /* Text color on hover */
+  background-color: rgba(7, 39, 18, 0.801); /* Background color on hover */
+}
 
 .post.card {
   border-radius: $rounded-borders;
@@ -11,7 +27,7 @@
   .card-footer {
     font-size: 14px;
     margin: 0 -15px -15px -15px;
-    padding: 15px 35px;
+    padding: 10px 35px;
   }
 }
 
