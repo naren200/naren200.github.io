@@ -28,13 +28,13 @@ permalink: /
   <div id="academic-pursuits" class="background-block">
     <h2><b>Academic and Robotics Pursuits</b></h2>
     <p>
-    I'm living my dream, studying at <a href="https://robotics.asu.edu/">A.S.U. Robotics @ A.S.U.</a>, and working on Stretch R1 Robot. Pursuing an <a href="https://ras.engineering.asu.edu/">M.S. in Robotics and Autonomous Systems</a>, Batch of 2024, I aim to advance robotic capabilities in unstructured environments with a focus on perception, Machine Learning, and Aerial Robotics. 
+    I'm living my dream, studying at <a href="https://robotics.asu.edu/">A.S.U. Robotics @ A.S.U.</a>, and working on Autonomous Driving on Carla Simulator. Pursuing an <a href="https://ras.engineering.asu.edu/">M.S. in Robotics and Autonomous Systems</a>, Batch of 2024, I aim to advance robotic capabilities in unstructured environments with a focus on perception, Machine Learning, and Aerial Robotics. 
     </p>
     <br>
     <p >
     I graduated from <a href="https://www.iitp.ac.in/">IIT Patna</a> in 2022 with a Bachelor’s in <a href="https://www.iitp.ac.in/index.php/departments/engineering-technology/mechanical-engineering/">Mechanical Engineering</a>. During my program, I developed a Motion Prediction model for a Towed floating object under the guidance of <a href="https://www.iitp.ac.in/index.php/people-6/faculty/2-uncategorised/241-view-profile-38">Prof. Subrata Kumar</a>. My Bachelor's Capstone project earned recognition as an Undergraduate Project Finalist for its technical excellence in this area.
     </p>
-    <h6   id="achievements"><b>Achievements on Robotics and it's Research</b></h6>
+    <h6   id="achievements"><b>Achievements and Research on Robotics</b></h6>
     <br>
     <p >
     Under my leadership, our team achieved recognition in robotics, becoming <a href="https://drive.google.com/file/d/1kweAUygwfA52OVF7uBK29grWofsJmhxy/view?usp=sharing">National finalists</a> in the 2019-20 <a href="https://portal.e-yantra.org/#about">e-Yantra International Robotics Competition</a> organized by <a href="https://www.iitb.ac.in/">IIT Bombay</a>. We developed an autonomous transportation mobile robot, showcasing innovation in disaster management. Additionally, I devised a simulator ecosystem for autonomous evaluation of the <a href="https://portal.e-yantra.org/#about">e-YRC competition</a>, earning recognition in the prestigious <a href="https://www.e-yantra.org/eysip">e-YIC program</a> under <a href="https://www.linkedin.com/in/kavi-arya/?originalSubdomain=in">Prof. Kavi Arya</a> from <a href="https://www.cse.iitb.ac.in/">IIT Bombay's Department of Computer Science & Engineering.</a>
