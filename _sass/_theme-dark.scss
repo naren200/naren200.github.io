@@ -376,6 +376,48 @@ $dark-900: #000000;
       border-radius: 18px; /* Adjust border radius */
       padding: 10px 20px; /* Adjust padding */
   }
+
+  .post.cardblog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: left; /* Center horizontally */
+    border-radius: $rounded-borders;
+    text-decoration: none !important;
+    margin: 0px auto;
+    background-color: rgba(187, 255, 213, 0.46);
+
+    .card-footer {
+      font-size: 14px;
+      // margin: 0 -15px -15px -15px;
+      // padding: 10px 35px;
+      width: 100%;
+      height: 3vw;
+      object-fit: cover;
+      background-color: rgba(187, 255, 213, 0.733);
+      border-radius: $rounded-borders;
+    }
+    transition: transform 400ms;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.44);
+      color: #6be9ff !important;
+    }
+  }
+  
+  /* CSS */
+  #scrollTopButton .fas.fa-arrow-up {
+    color: #fff; /* Red color example */
+  }
+  
+  /* SCSS */
+  #scrollTopButton {
+    .fas.fa-arrow-up {
+      color: #fff; /* Red color example */
+    }
+  }
+      
 }
 
 
