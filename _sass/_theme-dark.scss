@@ -349,11 +349,31 @@ $dark-900: #000000;
     margin-top: 10px; /* Adjust margin to pull down without affecting upper layer */
     height: 60px; /* Adjust height to make it shorter */
     // width: 80%; /* Reduce width by half */
-    width: 60%; /* Reduce width by half */
     margin-left: auto; /* Center horizontally */
     margin-right: auto; /* Center horizontally */
   }
-
+  /* CSS */
+  /* For screens smaller than 576px (extra small devices) */
+  @media (max-width: 575.98px) {
+    .navbar-themed {
+      width: 100%; /* Reduce width by half */
+    }
+  }
+  
+  /* For screens between 576px and 991px (small devices) */
+  @media (min-width: 576px) and (max-width: 991.98px) {
+    .navbar-themed {
+      width: 80%; /* Adjust width as needed */
+    }
+  }
+  
+  /* For screens larger than 992px (medium and larger devices) */
+  @media (min-width: 992px) {
+    .navbar-themed {
+      width: 70%; /* Adjust width as needed */
+    }
+  }
+  
   footer i {
     color: #08910f;
   }
