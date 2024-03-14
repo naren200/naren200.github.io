@@ -21,6 +21,18 @@
   }
 }
 
+// Cards
+.card {
+  // background-color: $dark-600;
+  background-color: var(--uia-timeline-point-background-color, rgba(0, 53, 32, 0.616));
+}
+
+.card.border {
+  .card-footer {
+    background-color: rgba(248, 248, 248, 0.548);
+  }
+}
+
 
 
 /* Default styles for smaller screens */
@@ -196,36 +208,3 @@ iframe {
     font-size: 1.2em; /* Set a different font size for body on screens >= 1201px */
   }
 }
-
-
-// /* Default styles for the iframe */
-// iframe-yb {
-//   width: 100%; /* Default width for all screens */
-//   height: 100px; /* Default height for all screens */
-//   margin: 0 auto;
-  
-// }
-
-// /* Media query for screens with a maximum width of 600px */
-// @media (max-width: 600px) {
-//   iframe-yb {
-//     width: 100%; /* Set a different width for screens <= 600px */
-//     height: 200px; /* Set a different height for screens <= 600px */
-//   }
-// }
-
-// /* Media query for screens with a minimum width of 601px and a maximum width of 1200px */
-// @media (min-width: 601px) and (max-width: 1200px) {
-//   iframe-yb {
-//     width: 100%; /* Set a different width for screens between 601px and 1200px */
-//     height: 400px; /* Set a different height for screens between 601px and 1200px */
-//   }
-// }
-
-// /* Media query for screens with a minimum width of 1201px */
-// @media (min-width: 1201px) {
-//   iframe-yb {
-//     width: 100%; /* Set a different width for screens >= 1201px */
-//     height: 500px; /* Set a different height for screens >= 1201px */
-//   }
-// }
