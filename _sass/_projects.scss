@@ -3,6 +3,8 @@
   text-decoration: none !important;
   margin: 0px auto;
   margin-top: 10px;
+  margin-bottom: 10px !important;/* Adjust the margin-bottom value for more spacing */
+
 
   .card-img-top {
     border-radius: $rounded-borders $rounded-borders 0 0;
@@ -15,10 +17,9 @@
 
   &:hover:not(.post) {
     transform: translateY(-8px);
-    box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
+    box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.44);
   }
 }
-
 
 
 

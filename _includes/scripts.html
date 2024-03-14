@@ -109,4 +109,19 @@ $(function () {
     });
   </script>
   
+  <script>
+    var lastScrollTop = 0;
+  
+    window.addEventListener("scroll", function() {
+      var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll > lastScrollTop) {
+        // Scroll down, hide the navbar
+        document.querySelector(".navbar").style.top = "-100px";
+      } else {
+        // Scroll up, show the navbar
+        document.querySelector(".navbar").style.top = "0";
+      }
+      lastScrollTop = currentScroll;
+    });
+  </script>
   
