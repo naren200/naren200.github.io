@@ -57,17 +57,6 @@ $dark-900: #000000;
     }
   }
 
-  // Cards
-  .card {
-    // background-color: $dark-600;
-    background-color: var(--uia-timeline-point-background-color, rgba(0, 53, 32, 0.616));
-  }
-
-  .card.border {
-    .card-footer {
-      background-color: rgba(114, 107, 107, 0.548);
-    }
-  }
 
   // Tables
   table:not(.highlight) {
@@ -119,10 +108,10 @@ $dark-900: #000000;
     }
   }
 
-  // Post
-  .post footer {
-    text-decoration: none;
-  }
+  // // Post
+  // .post footer {
+  //   text-decoration: none;
+  // }
 
   // Timeline 
   .timeline-body .timeline-item:after{
@@ -147,7 +136,11 @@ $dark-900: #000000;
   .uia-card__container {
       background-color: rgba(0, 53, 32, 0.616); // Set the background color to white or any desired color
     }
-        
+  hr {
+      border: none;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.473); /* Change the color to white */
+  }   
 }
 
 
@@ -263,10 +256,10 @@ $dark-900: #000000;
     }
   }
 
-  // Post
-  .post footer {
-    text-decoration: none;
-  }
+  // // Post
+  // .post footer {
+  //   text-decoration: none;
+  // }
 
   // Timeline 
   .timeline-body .timeline-item:after{
@@ -292,7 +285,7 @@ $dark-900: #000000;
     background-color: rgba(187, 255, 213, 0.46); // Set the background color to white or any desired color
   }
 
-    /* Change the color of the search button */
+  /* Change the color of the search button */
   .btn-outline-primary {
     color: #3498db; /* Text color */
     background-color: #fff; /* Background color */
@@ -359,7 +352,6 @@ $dark-900: #000000;
     width: 80%; /* Reduce width by half */
     margin-left: auto; /* Center horizontally */
     margin-right: auto; /* Center horizontally */
-
   }
 
   footer i {
@@ -370,7 +362,20 @@ $dark-900: #000000;
   footer i:hover {
     color: #6be9ff;
   }
+  hr {
+      border: none;
+      height: 1px;
+      background-color: rgb(0, 0, 0); /* Change the color to white */
+  }
   
+  #academic-pursuits,
+  #robotics-achievements,
+  #sets-apart {
+      background-color: rgba(187, 255, 213, 0.46);
+      padding: 20px;
+      border-radius: 18px; /* Adjust border radius */
+      padding: 10px 20px; /* Adjust padding */
+  }
 }
 
 

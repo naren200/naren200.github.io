@@ -38,13 +38,3 @@
   @include themed(background-color, $light, $dark);
 }
 
-// [data-uia-timeline-skin="3"] .uia-timeline__point {
-//     border-inline-start:	var(--uia-card-border-thickness, 2px) var(--uia-card-border-style, solid) var(--uia-card-border-color, currentColor);
-//     box-shadow: var(--uia-card-box-shadow, 0 4px 8px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
-//     border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
-//     background-color: transparent; /* Ensure the background is transparent */
-// }
-
-// [data-uia-card-skin="1"] .uia-card__time {
-//   background-color: #1021b9 ; /* Set to white background color */
-// }

@@ -130,3 +130,13 @@ img.profilepic {
     height: 300px; /* Adjust image height for larger screens */
   }
 }
+
+#academic-pursuits,
+#robotics-achievements,
+#sets-apart {
+    background-color: rgba(0, 0, 0, 0.318);
+    padding: 20px;
+    border-radius: 18px; /* Adjust border radius */
+    padding: 10px 20px; /* Adjust padding */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
