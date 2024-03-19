@@ -156,12 +156,6 @@ $dark-900: #000000;
     color: $text-black;
     color: #000; /* Set text color to black */
   }
-  body.landing-body {
-    background-color: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72);
-    // background-image: radial-gradient(circle, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-    // color: $text-white; // Replace with the desired text color
-  }
-  
   #text_container {
     // Existing styles for text container
     color: #000; // Set the text color to the primary text color
@@ -327,7 +321,7 @@ $dark-900: #000000;
     background-color: rgba(255, 255, 255, 0); /* Use rgba for transparency */
     .nav-item.nav-link {
       color: #000000; /* Example text color */
-      background-color: rgba(255, 255, 255, 0.438); /* Use rgba for transparency */
+      background-color: #75f3c156; /* Use rgba for transparency */
       backdrop-filter: blur(20px); /* Add a blur effect */
       border-radius: 8px; /* Adjust border radius */
       padding-top: 100px; /* Adjust padding-top to match the upper part */
@@ -336,10 +330,6 @@ $dark-900: #000000;
     }
   }
 
-  // .navbar-themed::before {
-  //   background-color: rgba(0, 0, 0, 0.342); /* Semi-transparent background color */
-  //   backdrop-filter: blur(20px); /* Add a blur effect to the background */
-  // }
   .navbar-themed {
     transition: top 0.5s ease; /* Apply transition to the 'top' property */
     background-color: #75f3c156; /* Use rgba for transparency */
@@ -411,18 +401,47 @@ $dark-900: #000000;
       color: #6be9ff !important;
     }
   }
+  // /* CSS */
+  // #scrollTopButton .fas.fa-arrow-up {
+  //   color: #fff; /* Red color example */
+  //   background-color: rgba(0, 41, 153, 0.438); /* Use rgba for transparency */
+  //   backdrop-filter: blur(10px); /* Add a blur effect */
+  //   }
   
-  /* CSS */
-  #scrollTopButton .fas.fa-arrow-up {
-    color: #fff; /* Red color example */
-  }
-  
-  /* SCSS */
+  // /* SCSS */
+  // #scrollTopButton {
+  // }
   #scrollTopButton {
-    .fas.fa-arrow-up {
-      color: #fff; /* Red color example */
-    }
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: none;
+    z-index: 99;
+    width: 50px;
+    height: 50px;
+    // opacity: 0.5;
+    border-radius: 50%;
+    background-color: rgba(0, 75, 0, 0.171); /* Use rgba for transparency */
+    backdrop-filter: blur(10px); /* Add a blur effect */
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* Add transition for smooth opacity change */
+    // .fas.fa-arrow-up {
+    //   color: #fff; /* Red color example */
+    //   backdrop-filter: blur(10px); /* Apply blur effect to the background */
+    //   transition: opacity 0.3s ease; /* Add transition for smooth opacity change */  
+    // }
+
   }
+  
+  #scrollTopButton:hover {
+    transform: scale(1.1); /* Scale up the button on hover */
+    opacity: 0.8;
+  }
+  
   #results-container a {
     background-color: rgba(187, 255, 213, 0.46);
     color: #000; /* Example text color */

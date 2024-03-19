@@ -26,7 +26,7 @@ permalink: /
   </div>
   <br> <br>
   <div id="academic-pursuits" class="background-block">
-    <h2><b>Academic and Robotics Pursuits</b></h2>
+    <h1><b>Academic and Robotics Pursuits</b></h1>
     <p>
     I'm living my dream, studying at <a href="https://robotics.asu.edu/">A.S.U. Robotics @ A.S.U.</a>, and working on Autonomous Driving on Carla Simulator. Pursuing an <a href="https://ras.engineering.asu.edu/">M.S. in Robotics and Autonomous Systems</a>, Batch of 2024, I aim to advance robotic capabilities in unstructured environments with a focus on perception, Machine Learning, and Aerial Robotics. 
     </p>
