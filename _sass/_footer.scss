@@ -46,15 +46,16 @@ footer strong {
   z-index: 99;
   width: 50px;
   height: 50px;
-  opacity: 0.5;
+  // opacity: 0.5;
   border-radius: 50%;
-  background-color: #007bff;
+  background-color: rgba(0, 37, 138, 0.24); /* Use rgba for transparency */
+  backdrop-filter: blur(5px); /* Add a blur effect */
   color: #fff;
   text-align: center;
   line-height: 40px;
   font-size: 24px;
   cursor: pointer;
-  transition: transform 0.3s; /* Add a transition for smooth scaling */
+  transition: opacity 0.3s ease; /* Add transition for smooth opacity change */
 
 }
 

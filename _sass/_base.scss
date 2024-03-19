@@ -1,7 +1,7 @@
-html {
-  padding-left: calc(100vw - 100%);
-  // text-align: justify;
-}
+// html {
+//   padding-left: calc(100vw - 100%);
+//   // text-align: justify;
+// }
 
 body {
   font-family: "San Francisco", sans-serif;
@@ -30,21 +30,24 @@ body {
 /* Default styles for smaller screens */
 p {
   font-size: 18px; /* Default font size for paragraphs on smaller screens */
-}
-  
+} 
 h1 {
   font-size: 30px; /* Adjust font size for h2 headings on medium screens */
 }
-
 h2 {
   font-size: 24px; /* Default font size for h2 headings on smaller screens */
 }
-
-h6 {
-  font-size: 22px; /* Default font size for h6 headings on smaller screens */
+h3 {
+  font-size: 22px; /* Adjust font size for h2 headings on medium screens */
 }
 h4 {
-  font-size: 10px; /* Adjust font size for h6 headings on larger screens */
+  font-size: 20px; /* Default font size for h2 headings on smaller screens */
+}
+h5 {
+  font-size: 18px; /* Default font size for h2 headings on smaller screens */
+}
+h6 {
+  font-size: 16px; /* Default font size for h6 headings on smaller screens */
 }
 img.emoji {
   width: 20px; /* Default width for smaller screens */
@@ -52,34 +55,33 @@ img.emoji {
 }
 
 
-
-
 /* Medium-sized screens (adjust the max-width as needed) */
 @media (min-width: 768px) {
   p {
-    font-size: 20px; /* Adjust font size for paragraphs on medium screens */
+    font-size: 21px; /* Adjust font size for paragraphs on medium screens */
   }
-    
   h1 {
+    font-size: 36px; /* Adjust font size for h2 headings on medium screens */
+  }
+  h2 {
     font-size: 34px; /* Adjust font size for h2 headings on medium screens */
   }
-
-  h2 {
-    font-size: 28px; /* Adjust font size for h2 headings on medium screens */
-  }
-
-  h6 {
-    font-size: 24px; /* Adjust font size for h6 headings on medium screens */
+  h3 {
+    font-size: 32px; /* Adjust font size for h2 headings on medium screens */
   }
   h4 {
-    font-size: 14px; /* Adjust font size for h6 headings on larger screens */
+    font-size: 30px;
+  }
+  h5 {
+    font-size: 28px; /* Adjust font size for h6 headings on larger screens */
+  }
+  h6 {
+    font-size: 26px; /* Adjust font size for h6 headings on medium screens */
   }
   img.emoji {
     width: 30px; /* Adjust width for medium-sized screens */
     height: 30px; /* Adjust height for medium-sized screens */
   }
-
-
 }
 
 /* Larger screens (adjust the min-width as needed) */
@@ -93,14 +95,19 @@ img.emoji {
   }
 
   h2 {
-    font-size: 32px; /* Adjust font size for h2 headings on larger screens */
+    font-size: 36px; /* Adjust font size for h2 headings on larger screens */
   }
-
-  h6 {
-    font-size: 28px; /* Adjust font size for h6 headings on larger screens */
+  h3 {
+    font-size: 34px; /* Adjust font size for h2 headings on medium screens */
   }
   h4 {
-    font-size: 17px; /* Adjust font size for h6 headings on larger screens */
+    font-size: 32px; /* Adjust font size for h6 headings on larger screens */
+  }
+  h5 {
+    font-size: 30px; /* Adjust font size for h6 headings on larger screens */
+  }
+  h6 {
+    font-size: 28px; /* Adjust font size for h6 headings on larger screens */
   }
   img.emoji {
     width: 35px; /* Adjust width for larger screens */
