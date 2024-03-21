@@ -2,11 +2,11 @@
 
 <!-- Light Mode -->
 <div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="{{ project_url }}" class="project card text-themed-light custom-project-link">
+  <a href="{{ project_url }}" class="landing-project landing-card text-themed-light custom-project-link">
     {%- if project_img -%}
-    <img id="{{ project_id }}-img" class="card-img-top" src="{{ project_img }}" alt="{{ project_name }}" />
+    <img id="{{ project_id }}-img" class="landing-card-img-top" src="{{ project_img }}" alt="{{ project_name }}" />
     {%- endif -%}
-    <div class="card-body">
+    <div class="landing-card-body">
       <h5 id="{{ project_id }}-name" class="card-title">
           {%- if project_type == "remote" -%}
           <i class="fab fa-github" data-toggle="tooltip" data-placement="bottom" data-delay="250" title="GitHub Repository"></i> |&nbsp;
@@ -14,8 +14,8 @@
         {{ project_name }}
       </h5>
       
-      <p id="{{ project_id }}-desc" class="card-text"><hr>{{ project_desc }}</p>
-      <p id="{{ project_id }}-tools" class="card-text">
+      <p id="{{ project_id }}-desc" class="landing-card-text"><hr>{{ project_desc }}</p>
+      <p id="{{ project_id }}-tools" class="landing-card-text">
         {%- for tool in project_tools -%}
         <span class="badge badge-pill ml-1 text-themed-light" style="color: #000000; background-color: #ffffff; border: 1px solid #000000; font-size: 14px;">{{ tool }}</span>
         {%- endfor -%}
