@@ -61,7 +61,8 @@ footer strong {
 
 #scrollTopButton:hover {
   transform: scale(1.1); /* Scale up the button on hover */
-  opacity: 0.8;
+  // opacity: 0.8;
+  background-color: rgba(0, 5, 36, 0.371); /* Use rgba for transparency */
 }
 
 /* Media query for screens wider than 1200px */
@@ -72,11 +73,12 @@ footer strong {
   }
 }
 
-footer i {
-  color: #fff;
-}
+// footer i {
+//   color: #fff;
+// }
 
-/* Change color for the icons on hover */
-footer i:hover {
-  color: #6be9ff;
-}
+// /* Change color for the icons on hover */
+// footer i:hover {
+//   color: #ffffff;
+//   backdrop-filter: blur(20px);
+// }

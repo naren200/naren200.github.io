@@ -1,6 +1,6 @@
 ---
 name: Control Of Magnetic Levitation Using PID and LQR Controllers
-tools: [Matlab, SISO, LQR Controller, PID, Pre-compensator]
+tools: [Matlab, SISO, LQR, PID]
 image: ../imgs/projects/pidLqr.png
 description: Achieved stable closed-loop dynamics, demonstrating precise control and eliminating steady-state errors.
 ---
