@@ -4,7 +4,6 @@
   height: 0.15em;
   background: $primary;
   background-color: rgba(0, 0, 0, 0.342); /* Use rgba for transparency */
-
 }
 
 .nav-link,
@@ -36,15 +35,12 @@
     margin-top: -0.25em;
   }
 }
-.navbar-nav a {
-}
 
 .navbar-fixed-top {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Ensure th
-  e navbar appears above other elements */
+  z-index: 1000; /* Ensure the navbar appears above other elements */
 }
 
 #navbarNavAltMarkup.show .navbar-nav {
@@ -61,10 +57,6 @@
   }
 }
 
-// .navbar-themed::before {
-//   background-color: rgba(0, 0, 0, 0.342); /* Semi-transparent background color */
-//   backdrop-filter: blur(20px); /* Add a blur effect to the background */
-// }
 .navbar-themed {
   transition: top 0.5s ease; /* Apply transition to the 'top' property */
   background-color: rgba(0, 94, 36, 0.336); /* Use rgba for transparency */

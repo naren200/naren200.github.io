@@ -1,6 +1,6 @@
 ---
 name: Enhancement on Meta's Research
-tools: [Path Planning (RRT), Computer Vision (Yolov7), RL, Habitat Simulator, Robotics]
+tools: [Path Planning, Computer Vision, RL, Simulator, Robotics]
 image: ../imgs/projects/goal-homeImage.png
 description: Advanced object goal navigation achieved through Goal-Oriented Semantic Exploration, combining semantic mapping, policy learning, and efficient path planning.
 external_url: 

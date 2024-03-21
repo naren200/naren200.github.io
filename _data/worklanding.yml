@@ -1,10 +1,3 @@
-- title: Graduate Research Volunteer (Zhe Xu Lab)
-  company: Arizona State University, Tempe, AZ
-  image:
-    src: /imgs/work/asu-logo.png
-    alt: Zhe Xu Lab
-  date: Nov '22 - Present
-  description: Implemented Differential Control Synthesis for Multi-Agent Systems. Devised ROS1 Nodes for perception and RL Architecture with the Hello Robot Strech R1.
 
 - title: Robotics & AI Solutions Architect Intern (AI Specialist)
   company: Brainchip, Laguna Hills, CA
@@ -29,11 +22,3 @@
     alt: e-Yantra
   date: Oct '19 - Aug '20
   description: Represented IIT Patna on National Stage & Awarded National Finalists (99.7 Percentile) at e-Yantra  funded by Ministry of Education, India. Recognized for technical excellence, offered Summer Internship at prestigious IIT Bombay.
-
-- title: Mechanical Engineer Intern
-  company: Neyveli Lignite Corporation, Neyveli, TamilNadu
-  image:
-    src: /imgs/work/nlc.png
-    alt: NLC
-  date: May '19 - Aug '19
-  description: Led team to assess and maintain water circulating pump through coatings. Research Survey on Improved circulating water pump efficiency with a payback period of < 2 months.

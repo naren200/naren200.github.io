@@ -1,0 +1,26 @@
+{% for item in site.data.worklanding %}
+<div class="work-item">
+<!-- <img
+    src="{{ item.image.src | absolute_url }}"
+    alt="{{ item.image.alt }}"
+    class="work-bubble"
+/> -->
+<div class="work-bubble-with-date">
+    <img
+    src="{{ item.image.src | absolute_url }}"
+    alt="{{ item.image.alt }}"
+    class="work-bubble"
+    />
+    {% if item.date %}
+    <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
+    {% endif %}
+</div>
+<div class="uia-card__container">
+    <p class="work-text">
+        <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
+        &mdash;
+        {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+    </p>
+</div>
+</div>
+{% endfor %}
