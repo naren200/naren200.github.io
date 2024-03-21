@@ -5,11 +5,12 @@
 	margin: 0;
 	padding: 0;
 	scroll-behavior: auto;
+	text-emphasis-color: #fff !important;
 }
 
 body.landing {
-	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
-  }
+	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147)) !important;//, #a8eb12);	
+}
 
 .parallax {
 	position: relative;
@@ -45,6 +46,71 @@ body.landing {
 	object-fit: cover;
 	overflow: hidden;
 	pointer-events: none;
+}
+
+
+.about-me-title {
+    margin-bottom: 30px
+}
+
+.about-me-text {
+    width: 1000px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 15px
+}
+
+.about-me-awards {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 40px
+}
+
+.about-me-award {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 16px;
+    padding-right: 16px
+}
+
+.project-section {
+	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
+	
+}
+.experience-section {
+	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
+}
+.parallax:after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(to right, rgba(5, 25, 55, 0.55), rgba(0, 77, 122, 0.40), rgba(0, 135, 147, 0.45)); //, rgba(0, 191, 114, 0.35));
+z-index: 1000;
+mix-blend-mode: color;
+}
+
+.sec {
+    color: white; /* Set the text color to white */
+}
+
+// footer {
+// 	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
+// }
+
+footer i {
+	color: #08910f;
+}
+
+/* Change color for the icons on hover */
+footer i:hover {
+	color: #6be9ff;
 }
 
 /* Small devices (phones) */
@@ -137,104 +203,525 @@ body.landing {
 /* Bigger devices (Tablets) */
 @media only screen and (max-width: 1867px) {
 	.about-me-text {
-		width: 750px;
+		width: 800px;
 		text-align: center;
 		font-size: 24px;
 		font-weight: 300;
 		margin: 0 auto;
 		padding-top: 30px;
-		padding-bottom: 15px
+		padding-bottom: 15px;
+	}
+	.experience-section {
+		background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));
 	}
 }
 
 /* Medium devices (phones) */
 @media only screen and (max-width: 967px) {
 	.about-me-text {
-		width: 350px;
+		width: 100%;
 		text-align: center;
 		font-size: 20px;
 		font-weight: 300;
 		margin: 0 auto;
 		padding-top: 30px;
-		padding-bottom: 15px
+		padding-bottom: 15px;
 	}
+	.experience-section {
+		padding: 10px;
+		background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
+	}
+	
 }
 /* Small devices (phones) */
 @media only screen and (max-width: 367px) {
 	.about-me-text {
-		width: 350px;
+		// padding: 100px;
 		text-align: center;
-		font-size: 24px;
+		font-size: 16px;
 		font-weight: 300;
 		margin: 0 auto;
 		padding-top: 30px;
 		padding-bottom: 15px
 	}
+	.experience-section {
+		padding: 5px;
+		background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
+	}
+	
 	}
 
 
 
-.about-me-title {
-    margin-bottom: 30px
-}
+// =================================================
+// PROFESSIONAL EXPERIENCE
+// =================================================
 
-.about-me-text {
-    width: 750px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 300;
-    margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 15px
-}
+.landing-work-item {
+	clear: both;
+	overflow: hidden;
+	padding-bottom: 2em;
+	font-family: "San Francisco", sans-serif;
+	font-size: 21px; /* Adjust the font size as needed */
+	max-width: 1400px;
+	// display: flex; /* Add this line to activate flexbox behavior */
+	margin: 0 auto; /* Center the element horizontally */
 
-.about-me-awards {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    padding-bottom: 40px
-}
-
-.about-me-award {
-    display: inline-block;
-    vertical-align: middle;
-    padding-left: 16px;
-    padding-right: 16px
-}
-
-.project-section {
-	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
-}
-.experience-section {
-	padding: 80px;
-	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
-}
-.parallax:after {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: linear-gradient(to right, rgba(5, 25, 55, 0.55), rgba(0, 77, 122, 0.40), rgba(0, 135, 147, 0.45)); //, rgba(0, 191, 114, 0.35));
-z-index: 1000;
-mix-blend-mode: color;
-}
-
-.sec {
-    color: white; /* Set the text color to white */
-}
-
-// footer {
-// 	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
-// }
-
-footer i {
-    color: #08910f;
   }
   
-  /* Change color for the icons on hover */
-  footer i:hover {
-    color: #6be9ff;
+  .landing-work-bubble {
+	// float: left;
+	// padding-right: 20px;
+	// padding-bottom: 1.5em;
+	width: 60px;
+	height: 60px;
+	object-fit: contain !important;
+	font-size: 2px; /* Adjust the font size as needed */
+	// padding-left: 2px;
+	  }
+  
+  .landing-work-bubble-with-date {
+	float: left;
+	padding-right: 20px;
+	
+	// padding-bottom: 1.5em;
+	width: 60 px;
+	text-align: center;
+	// height: 100px;
+	font-family: "San Francisco", sans-serif;
+	// font-size: 2px; /* Adjust the font size as needed */
+  }
+  .landing-work-bubble-with-date h6 {
+	font-size: 8px; /* Adjust the font size as needed for smaller screens */
+	text-transform: uppercase; /* Capitalize all text */
+	font-weight: bold; /* Make the font thicker */
+	color: #fff !important;
+  }
+  
+  .landing-work-text {
+	font-family: "San Francisco", sans-serif;
+	overflow: hidden;
+	font-size: 12px; /* Adjust the font size as needed */
+	padding-right: 2px;
+	color: #fff !important;
+  
+  }
+  
+  /* Styles for screens with a min width of 1200px (adjust as needed) */
+  @media (min-width: 800px) {
+	  .landing-work-item {
+			clear: both;
+			overflow: hidden;
+			padding-bottom: 2em;
+			font-family: "San Francisco", sans-serif;
+			font-size: 21px; /* Adjust the font size as needed */
+			padding: 50px;
+		  }
+  
+	  .landing-work-bubble {
+		  // float: left;
+		  // padding-right: 20px;
+		  // padding-bottom: 1.5em;
+		  width: 130px;
+		  height: 130px;
+		  object-fit: contain !important;
+		}
+  
+	  .landing-work-bubble-with-date {
+			float: left;
+			padding-right: 50px;
+			// padding-bottom: 1.5em;
+			width: 120 px;
+			text-align: center;
+			// height: 100px;
+			// object-fit: cover;
+			font-family: "San Francisco", sans-serif;
+			font-size: 4px; /* Adjust the font size as needed */
+		  }
+  
+	  .landing-work-text {
+			font-family: "San Francisco", sans-serif;
+			overflow: hidden;
+			// font-size: 21px; /* Adjust the font size as needed */
+			color: #fff !important;
+		}
+  
+	  .landing-work-bubble-with-date h6 {
+			font-size: 18px; /* Larger font size for larger screens */
+			text-transform: uppercase; /* Capitalize all text */
+			font-weight: bold; /* Make the font thicker */
+			color: #fff !important;
+		}
+	  
+  }
+    
+  /* Styles for screens with a min width of 400px (adjust as needed) */
+  @media (min-width: 600px) {
+	.landing-work-item {
+		  clear: both;
+		  overflow: hidden;
+		  padding-bottom: 2em;
+		  font-family: "San Francisco", sans-serif;
+		//   font-size: 21px; /* Adjust the font size as needed *
+	      padding: 20px;
+
+		}
+
+	.landing-work-bubble {
+		// float: left;
+		// padding-right: 20px;
+		// padding-bottom: 1.5em;
+		width: 130px;
+		height: 130px;
+		object-fit: contain !important;
+	}
+
+	.landing-work-bubble-with-date {
+		  float: left;
+		  padding-right: 30px;
+		  // padding-bottom: 1.5em;
+		  width: 120 px;
+		  text-align: center;
+		  // height: 100px;
+		  // object-fit: cover;
+		  font-family: "San Francisco", sans-serif;
+		  font-size: 4px; /* Adjust the font size as needed */
+		}
+
+	.landing-work-text {
+		  font-family: "San Francisco", sans-serif;
+		  overflow: hidden;
+		  font-size: 21px; /* Adjust the font size as needed */
+		  color: #fff !important;
+		}
+
+	.landing-work-bubble-with-date h6 {
+		  font-size: 18px; /* Larger font size for larger screens */
+		  text-transform: uppercase; /* Capitalize all text */
+		  font-weight: bold; /* Make the font thicker */
+		  color: #fff !important;
+	  }
+	
+}
+  
+  // Default heading size for smaller screens
+  h4.page-heading {
+	font-size: 23px; // Default font size for smaller screens
+	font-family: sans-serif;
+  }
+  h4.mb-3 {
+	font-size: 18px; // Default font size for smaller screens
+  }
+  
+  
+  // Adjust heading size for medium-sized screens (768px partition)
+  @media (min-width: 768px) {
+	h4.page-heading {
+	  font-size: 26px; // Adjust font size for medium-sized screens
+	}
+	h4.mb-3 {
+	  font-size: 21px; // Default font size for smaller screens
+	}
+  
+  }
+  
+  // Adjust heading size for larger screens (1200px partition)
+  @media (min-width: 1200px) {
+	h4.page-heading {
+	  font-size: 30px; // Adjust font size for larger screens
+	}
+	h4.mb-3 {
+	  font-size: 24px; // Default font size for smaller screens
+	}
+  
+  }
+  
+  // .container{
+  //   min-width:1200px;         
+  //   width: auto !important;   /* Firefox will set width as auto */
+  //   width:1200px;             /* As IE ignores !important it will set width as 1000px; */
+  //  }
+   
+  .landing-uia-card__container{
+	display: grid;
+	gap: var(--uia-card-content-gap, .5rem);
+	padding: var(--uia-card-padding, 1rem 1.75rem);
+	
+	background-color: var(--uia-card-background-color);
+	border-radius: var(--uia-card-border-radius, 2px);
+	}
+	
+  .landing-uia-card__container{
+	  border-inline-start:	var(--uia-card-border-thickness, 2px) var(--uia-card-border-style, solid) var(--uia-card-border-color, currentColor);
+	  box-shadow: var(--uia-card-box-shadow, 0 4px 8px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
+	  border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
+	  background-color: transparent; /* Ensure the background is transparent */
+  }
+  .landing-uia-card__container {
+	background-color: rgba(0, 53, 32, 0.616) !important; // Set the background color to white or any desired color
   }
 
+
+
+// =================================================
+// PROJECTS
+// =================================================
+
+.landing-project.landing-card {
+	border-radius: $rounded-borders;
+	text-decoration: none !important;
+	margin: 0px auto;
+	margin-top: 10px;
+	margin-bottom: 10px !important;/* Adjust the margin-bottom value for more spacing */
+	background-color: #08910f !important;
+  
+	.landing-card-img-top {
+	  border-radius: $rounded-borders $rounded-borders 0 0;
+	  width: 100%;
+	  height: 30vw;
+	  object-fit: cover;
+	}
+  
+	transition: transform 400ms;
+  
+	&:hover:not(.post) {
+	  transform: translateY(-8px);
+	  box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.44);
+	}
+  }
+  
+  // Cards
+  .landing-card {
+	// background-color: $dark-600;
+	background-color: var(--uia-timeline-point-background-color, rgba(0, 53, 32, 0.616)) !important;
+  }
+  .landing-container {
+	display: flex;
+	justify-content: center;
+  }
+  
+  .card-columns{
+	max-width: 1440px;
+	
+  }
+  .card.border {
+	.card-footer {
+	  background-color: rgba(248, 248, 248, 0.548) !important;
+	}
+  }
+  
+  /* Default styles for smaller screens */
+  .landing-card-title {
+	font-size: 14px; /* Default font size for h5 */
+  }
+  
+  .landing-card-text {
+	font-size: 14px; /* Default font size for p */
+  }
+  
+  /* Medium-sized screens (adjust the max-width as needed) */
+  @media (min-width: 575px) {
+	.landing-card-title {
+	  font-size: 17px; /* Adjust font size for h5 on medium screens */
+	}
+  
+	.landing-card-text {
+	  font-size: 14px; /* Adjust font size for p on medium screens */
+	}
+  
+  
+	.landing-project.card {
+	  border-radius: $rounded-borders;
+	  text-decoration: none !important;
+	  margin: 0px auto;
+	  margin-top: 10px;
+	
+	  .landing-card-img-top {
+		border-radius: $rounded-borders $rounded-borders 0 0;
+		width: 100%;
+		height: 8vw;
+		object-fit: cover;
+	  }
+	
+	  transition: transform 400ms;
+	
+	  &:hover:not(.post) {
+		transform: translateY(-8px);
+		box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
+	  }
+	}
+
+  }
+  
+  /* Larger screens (adjust the min-width as needed) */
+  @media (min-width: 1200px) {
+	.landing-card-title {
+	  font-size: 22px; /* Adjust font size for h5 on larger screens */
+	}
+  
+	.landing-card-text {
+	  font-size: 18px; /* Adjust font size for p on larger screens */
+	}
+  }
+  
+  
+  /* Default styles for the iframe */
+  iframe {
+	width: 100%; /* Default width for all screens */
+	height: 100px; /* Default height for all screens */
+	margin: 0 auto;
+	
+  }
+  
+  /* Media query for screens with a maximum width of 600px */
+  @media (max-width: 600px) {
+	iframe{
+	  width: 100%; /* Set a different width for screens <= 600px */
+	  height: 200px; /* Set a different height for screens <= 600px */
+	}
+  }
+  
+  /* Media query for screens with a minimum width of 601px and a maximum width of 1200px */
+  @media (min-width: 601px) and (max-width: 1200px) {
+	iframe {
+	  width: 100%; /* Set a different width for screens between 601px and 1200px */
+	  height: 400px; /* Set a different height for screens between 601px and 1200px */
+	  display: block;
+	}
+  
+  }
+  
+  /* Media query for screens with a minimum width of 1201px */
+  @media (min-width: 1201px) {
+	iframe {
+	  width: 70%; /* Set a different width for screens >= 1201px */
+	  height: 400px; /* Set a different height for screens >= 1201px */
+	  text-align: center;
+	  display: block; // Ensures the iframe is treated as a block-level element
+	}
+  
+  }
+  
+  
+  /* Media query for screens with a maximum width of 600px */
+  @media (max-width: 600px) {
+	h1 {
+	  font-size: 1.3em; /* Set a different font size for h1 on screens <= 600px */
+	}
+  
+	h2 {
+	  font-size: 1.2em; /* Set a different font size for h2 on screens <= 600px */
+	}
+  
+	h3 {
+	  font-size: 1.1em; /* Set a different font size for h3 on screens <= 600px */
+	}
+  
+	h4 {
+	  font-size: 1.15em; /* Set a different font size for h4 on screens <= 600px */
+	}
+  
+	h5 {
+	  font-size: 1em; /* Set a different font size for h5 on screens <= 600px */
+	}
+  
+	body {
+	  font-size: 0.9em; /* Set a different font size for body on screens <= 600px */
+	}
+  }
+  
+  /* Media query for screens with a minimum width of 601px and a maximum width of 1200px */
+  @media (min-width: 601px) and (max-width: 1200px) {
+	h1 {
+	  font-size: 2em; /* Set a different font size for h1 on screens between 601px and 1200px */
+	}
+  
+	h2 {
+	  font-size: 1.8em; /* Set a different font size for h2 on screens between 601px and 1200px */
+	}
+  
+	h3 {
+	  font-size: 1.6em; /* Set a different font size for h3 on screens between 601px and 1200px */
+	}
+  
+	h4 {
+	  font-size: 1.4em; /* Set a different font size for h4 on screens between 601px and 1200px */
+	}
+  
+	h5 {
+	  font-size: 1.2em; /* Set a different font size for h5 on screens between 601px and 1200px */
+	}
+  
+	body {
+	  font-size: 1em; /* Set a different font size for body on screens between 601px and 1200px */
+	}
+  }
+  
+  /* Media query for screens with a minimum width of 1201px */
+  @media (min-width: 1201px) {
+	h1 {
+	  font-size: 2.5em; /* Set a different font size for h1 on screens >= 1201px */
+	}
+  
+	h2 {
+	  font-size: 2.2em; /* Set a different font size for h2 on screens >= 1201px */
+	}
+  
+	h3 {
+	  font-size: 1.8em; /* Set a different font size for h3 on screens >= 1201px */
+	}
+  
+	h4 {
+	  font-size: 1.6em; /* Set a different font size for h4 on screens >= 1201px */
+	}
+  
+	h5 {
+	  font-size: 1.4em; /* Set a different font size for h5 on screens >= 1201px */
+	}
+  
+	body {
+	  font-size: 1.2em; /* Set a different font size for body on screens >= 1201px */
+	}
+  }
+  
+// =================================================
+// SCROLL BUTTON
+// =================================================
+
+
+  #scrollTopButton {
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	display: none;
+	z-index: 99;
+	width: 50px;
+	height: 50px;
+	// opacity: 0.5;
+	border-radius: 50%;
+	background-color: rgba(0, 37, 138, 0.24); /* Use rgba for transparency */
+	backdrop-filter: blur(5px); /* Add a blur effect */
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	font-size: 24px;
+	cursor: pointer;
+	transition: opacity 0.3s ease; /* Add transition for smooth opacity change */
+  
+  }
+  
+  #scrollTopButton:hover {
+	transform: scale(1.1); /* Scale up the button on hover */
+	// opacity: 0.8;
+	background-color: rgba(0, 5, 36, 0.371); /* Use rgba for transparency */
+  }
+  
+  /* Media query for screens wider than 1200px */
+  @media (min-width: 1200px) {
+	#scrollTopButton {
+	  right: auto;
+	  left: calc(50% + 500px);
+	}
+  }
+  
+  
