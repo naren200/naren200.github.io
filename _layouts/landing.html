@@ -17,7 +17,7 @@
         <img src="../imgs/landing/background2.png" id="house">
         <img id="robot">
         <img src="../imgs/landing/sun_export1.png" id="sun">
-        <img src="../imgs/landing/name.png" id="name">
+        <img src="../imgs/landing/name1.png" id="name">
         <img src="../imgs/landing/grass.png" id="grass">
 
         <!-- <img src="../imgs/landing/background2.png" id="mask" class="bottom-mask"> -->
@@ -81,7 +81,10 @@
   <section class="project-section" >
     <br><h1 class="project-page-heading" style="text-align: center; color: #fff !important;">PROJECTS</h1><br>
     {% include landing/project.html %}
-    <br><h1 class="contact-page-heading" style="text-align: center; color: #fff !important;">LET'S CONNECT!</h1><br>
+  </section>
+  <section class="landing-footer">
+    <br><h1 class="contact-page-heading" style="text-align: center; color: #fff !important;">CONNECT</h1>
+    {% include landing/footer.html %}
   </section>
 
   <script type="text/javascript">
@@ -174,7 +177,6 @@
 
   {% include analytics.html %}
   {% include scripts.html %}
-  {% include footer.html %}
   <button id="scrollTopButton" class="btn btn-primary" style="display: none;z-index: 100000;">
     <i class="fas fa-arrow-up"></i>
   </button>

@@ -24,9 +24,11 @@ body.landing {
 	background-attachment: fixed;
 	#house {
 		z-index: 3;
+		height: 100% !important;
 	}
 	#robot {
 		z-index: 4;
+		height: 100% !important;
 	}
 	#name {
 		z-index: 2;
@@ -199,7 +201,12 @@ footer i:hover {
     padding-bottom: 10px;
 	text-align: center;
 }
-
+.landing-footer {
+	font-size: large;
+    padding-top: 60px;
+    padding-bottom: 10px;
+	text-align: center;
+}
 /* Bigger devices (Tablets) */
 @media only screen and (max-width: 1867px) {
 	.about-me-text {
