@@ -84,7 +84,7 @@ weight: 1
 </div>
 
 <br><br><br>
-
+<center><font size="2">This country counter shows visits to this landing page since Sep 19, 2023. <a href="https://www.revolvermaps.com/">Credits</a></font></center>
 {% include globe.html %}
 
 

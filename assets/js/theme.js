@@ -33,7 +33,7 @@ function initTheme() {
 function toggleTheme() {
   // console.log("Current path:", window.location.pathname);
     // Check if the current page is /home
-    if (window.location.pathname === "/home") {
+    if (window.location.pathname === "/") {
       setTheme(themes.DARK);
       localStorage.setItem(STORAGE_KEY, themes.DARK);
       return; // Exit the function
