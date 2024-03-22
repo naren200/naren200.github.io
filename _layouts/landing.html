@@ -80,12 +80,15 @@
   </section>
   <section class="project-section" >
     <br><h1 class="project-page-heading" style="text-align: center; color: #fff !important;">PROJECTS</h1><br>
-    {% include landing/project.html %}
+    {% include landing/project.html %} <br>
   </section>
   <section class="landing-footer">
     <br><h1 class="contact-page-heading" style="text-align: center; color: #fff !important;">CONNECT</h1>
     {% include landing/footer.html %}
-  </section>
+  </section><br>
+  
+  {% include globe.html %}
+  <br><br><br>
 
   <script type="text/javascript">
     let mountain = document.getElementById("mountain")
@@ -194,6 +197,17 @@
         row.style.transform = `skewY(${skewAmount}deg)`;
     });
   </script>
+
+<style>
+  iframe{
+    width: 100%; /* Set a different width for screens <= 600px */
+    height: 300px; /* Set a different height for screens <= 600px */
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+  }
+</style>
+
 </html>
 
 
