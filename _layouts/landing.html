@@ -19,26 +19,7 @@
         <img src="../imgs/landing/sun_export1.png" id="sun">
         <img src="../imgs/landing/name1.png" id="name">
         <img src="../imgs/landing/grass.png" id="grass">
-
-        <!-- <img src="../imgs/landing/background2.png" id="mask" class="bottom-mask"> -->
-
-        <!-- <img src="../imgs/landing/bg.jpg" id="background1">
-        <img src="../imgs/landing/mountain.png" id="background2">
-        <img src="../imgs/landing/road.png" id="robotlanding"> -->
-        <!-- <h2 id="text">naren</h2> -->
-        <div id="arrowdown" style="display: block; z-index: 10000;">
-          <div id="arrowdown-trail" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-            <div id="arrowdown-caps">
-            
-            <div class="rotateLeft">
-                <div class="arrowdown-caps-one arrow-caps" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-            </div>
-            
-            <div class="rotateRight"> 
-                <div class="arrowdown-caps-two arrow-caps" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-            </div>
-          </div>
-        </div>
+        <img src="../imgs/landing/arrow1.png" id="arrow">
       </section>
       <section class="sec">
                 
@@ -73,6 +54,24 @@
         </ul>
       </section>
   </body> 
+  <style>
+    /* Define blink animation */
+    @keyframes blink {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0.8; }
+    }
+    #arrow {
+      animation: blink 2ms; /* Blink animation twice with 2ms gap */
+        opacity: 0; /* Initially visible */
+        transition: opacity 0.5s ease-out; /* Smooth fade-out transition */
+    }
+
+    /* Hide arrow when scrolling */
+    .scrolling #arrow {
+        opacity: 0;
+    }
+</style>
 
   <section class="experience-section">
     <br><h1 class="experience-page-heading" style="text-align: center; color: #fff !important;">PROFESSIONAL EXPERIENCE</h1><br>
@@ -88,7 +87,30 @@
   </section><br>
   
   {% include globe.html %}
+  <center><font size="3">This country counter shows visits to this landing page since Sep 19, 2023. <a href="https://www.revolvermaps.com/">Credits</a></font></center>
   <br><br><br>
+  <script>
+      // Function to start scrolling and fade out the arrow
+      function startScroll() {
+          document.body.classList.add('scrolling'); // Add scrolling class to body
+          document.getElementById('arrow').style.opacity = '0.5'; // Hide arrow
+      }
+
+      // Function to toggle arrow visibility
+      function toggleArrow() {
+          var arrow = document.getElementById('arrow');
+          arrow.style.opacity = arrow.style.opacity === '1' ? '0' : '1';
+      }
+
+      // Blink the arrow every 1 second
+      var blinkInterval = setInterval(toggleArrow, 1000);
+
+      // Wait for 2 seconds and then start scrolling
+      setTimeout(function() {
+          clearInterval(blinkInterval); // Stop blinking
+          startScroll(); // Start scrolling and fade out arrow
+      }, 2000);
+  </script>
 
   <script type="text/javascript">
     let mountain = document.getElementById("mountain")
@@ -180,9 +202,6 @@
 
   {% include analytics.html %}
   {% include scripts.html %}
-  <button id="scrollTopButton" class="btn btn-primary" style="display: none;z-index: 100000;">
-    <i class="fas fa-arrow-up"></i>
-  </button>
   <!-- <div id="particles-js"></div> 
   <script src="../assets/js/particles.js"></script>
   <script src="../assets/js/app.js"></script> -->

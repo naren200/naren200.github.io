@@ -9,8 +9,13 @@
 
 <url>
   <loc>https://naren200.github.io/</loc>
-  <lastmod>2024-03-11T10:19:56+00:00</lastmod>
+  <lastmod>2024-03-21T10:19:56+00:00</lastmod>
   <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://naren200.github.io/about/</loc>
+  <lastmod>2024-03-21T10:19:56+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://naren200.github.io/news/</loc>
