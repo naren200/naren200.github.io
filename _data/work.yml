@@ -12,7 +12,7 @@
     src: /imgs/work/brainchip.jpg
     alt: Brainchip
   date: May '23 - Aug '23
-  description: Prototyped a novel Self-Balancing Bot controlled through a RL-architecture.
+  description: Prototyped a novel Self-Balancing Bot controlled through a AI-architecture entirely from the ground up and expedited development by 40%..
 
 - title: Robotic Software Engineer Intern (Embedded C Specialist + VRep)
   company: e-Yantra Robotic Internship Program, IIT Bombay, MoE of India
@@ -37,3 +37,11 @@
     alt: NLC
   date: May '19 - Aug '19
   description: Led team to assess and maintain water circulating pump through coatings. Research Survey on Improved circulating water pump efficiency with a payback period of < 2 months.
+
+- title: Robotics Engineer 
+  company: ABU Robocon 2020, India
+  image:
+    src: /imgs/landing/robo.webp
+    alt: e-Yantra
+  date: Jan '19 - Feb '20
+  description: Directed team efforts, achieved top 15 (national) in ABU Robocon Stage 1 through innovative robot design. Engineered precise movement for the Pass Robot through Omini-wheeled robot and modeled a throwing design with Catapult mechanism using pneumatics.
