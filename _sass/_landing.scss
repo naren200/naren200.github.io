@@ -33,6 +33,9 @@ body.landing {
 	#name {
 		z-index: 2;
 	}
+	#mountain {
+		height: 100% !important;
+	}
 	#grass {
 		z-index: 2;
 		height: 100% !important;
@@ -118,6 +121,47 @@ footer i {
 footer i:hover {
 	color: #6be9ff;
 }
+/* Small devices (phones) */
+@media only screen and (max-width: 507px) {
+    .parallax {
+        height: 50vh;
+        align-items: center;
+        width:auto;
+    }
+
+	#house{
+		z-index: 3;
+		height: 100% !important;
+	}
+	#mountain {
+		z-index: 1;
+		height: 100% !important;
+	}
+	#robot {
+		z-index: 5;
+		right: 0;
+        // transform: scale(0.2); /* Adjust the scale as needed */
+		height: 100% !important;
+	}
+
+	#name {
+		z-index: 2;
+		transform: scale(1.6) translate(0%, 50%) !important;
+	}
+	#sun {
+		z-index: 6;
+	}
+	#grass {
+		z-index: 2;
+		height: 100% !important;
+	}
+	#arrow {
+		z-index: 100;
+		height: 100% !important;
+	}
+
+}
+
 
 /* Small devices (phones) */
 @media only screen and (max-width: 967px) {
@@ -185,7 +229,9 @@ footer i:hover {
 
 	#name {
 		z-index: 2;
-		top: 7%;
+	}
+	#mountain {
+		height: 100% !important;
 	}
 	#sun {
 		z-index: 6;
