@@ -78,12 +78,8 @@ footer i:hover {
     }
   }
   a {
-      // color: #6be9ff; /* Change to your desired hyperlink color */
       color: #6be9ff;
   }
-  // [data-project-card-skin="1"] .a {
-  //   color: #fff;
-  // }
   .custom-project-link {
     color: #fff;/* your desired color */;
     /* Add any other styles you want */
@@ -93,18 +89,7 @@ footer i:hover {
   a:hover,
   a:focus {
     color: #6be9ff !important;  /* Change the color on hover or focus */
-    // text-decoration: underline; /* Add underline on hover or focus */
   }
-
-  // /* Visited hyperlinks styles */
-  // a:visited {
-  //   color: #cc66ff; /* Color for visited links */
-  // }
-
-  // /* Active hyperlinks styles (when clicked) */
-  // a:active {
-  //   color: #ff6600; /* Color for active links */
-  // }
 
   // Lists
   .list-group-item-action {
@@ -117,26 +102,11 @@ footer i:hover {
     }
   }
 
-  // // Post
-  // .post footer {
-  //   text-decoration: none;
-  // }
-
   // Timeline 
   .timeline-body .timeline-item:after{
     background-color: $dark-900;
   }
 
-  // [data-uia-timeline-skin="3"] .uia-timeline__point {
-  //   border-inline-start:	var(--uia-card-border-thickness, 2px) var(--uia-card-border-style, solid) var(--uia-card-border-color, currentColor);
-  //   box-shadow: var(--uia-card-box-shadow, 0 4px 8px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24)) !important;
-  //   border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
-  //   background-color: transparent; /* Ensure the background is transparent */
-  // }
-
-  // [data-uia-card-skin="1"] .uia-card__time {
-  //   background-color: #4557bb77 ; /* Set to white background color */
-  // }
   [data-uia-timeline-skin="3"] .uia-timeline__point{
     background-color: var(--uia-timeline-point-background-color, rgba(0, 53, 32, 0.616));
     border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
@@ -161,7 +131,6 @@ $dark-900: #000000;
 [data-theme="light"] {
   body {
     background: #fff;//, #a8eb12);	
-    // background-image: radial-gradient(circle, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     color: $text-black;
     color: #000; /* Set text color to black */
   }
@@ -235,18 +204,7 @@ $dark-900: #000000;
   a:hover,
   a:focus {
     color: #1537f6 !important;  /* Change the color on hover or focus */
-    // text-decoration: underline; /* Add underline on hover or focus */
   }
-
-  // /* Visited hyperlinks styles */
-  // a:visited {
-  //   color: #cc66ff; /* Color for visited links */
-  // }
-
-  // /* Active hyperlinks styles (when clicked) */
-  // a:active {
-  //   color: #ff6600; /* Color for active links */
-  // }
 
   // Lists
   .list-group-item-action {
@@ -259,23 +217,12 @@ $dark-900: #000000;
     }
   }
 
-  // // Post
-  // .post footer {
-  //   text-decoration: none;
-  // }
-
   // Timeline 
   .timeline-body .timeline-item:after{
     background-color: $dark-900;
   }
 
 
-  // [data-uia-timeline-skin="3"] .uia-timeline__point {
-  //   border-inline-start:	var(--uia-card-border-thickness, 2px) var(--uia-card-border-style, solid) var(--uia-card-border-color, currentColor);
-  //   // box-shadow: var(--uia-card-box-shadow, 0 4px 8px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
-  //   border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
-  //   background-color: transparent; /* Ensure the background is transparent */
-  // }
 
   [data-uia-card-skin="1"] .uia-card__time {
     background-color: #4557bb77 ; /* Set to white background color */
@@ -347,7 +294,6 @@ $dark-900: #000000;
     border-radius: 100px; /* Adjust border radius */
     margin-top: 10px; /* Adjust margin to pull down without affecting upper layer */
     height: 60px; /* Adjust height to make it shorter */
-    // width: 80%; /* Reduce width by half */
     margin-left: auto; /* Center horizontally */
     margin-right: auto; /* Center horizontally */
   }
@@ -410,16 +356,8 @@ $dark-900: #000000;
       color: #6be9ff !important;
     }
   }
-  // /* CSS */
-  // #scrollTopButton .fas.fa-arrow-up {
-  //   color: #fff; /* Red color example */
-  //   background-color: rgba(0, 41, 153, 0.438); /* Use rgba for transparency */
-  //   backdrop-filter: blur(10px); /* Add a blur effect */
-  //   }
   
   // /* SCSS */
-  // #scrollTopButton {
-  // }
   #scrollTopButton {
     position: fixed;
     bottom: 50px;
@@ -438,12 +376,6 @@ $dark-900: #000000;
     font-size: 24px;
     cursor: pointer;
     transition: opacity 0.3s ease; /* Add transition for smooth opacity change */
-    // .fas.fa-arrow-up {
-    //   color: #fff; /* Red color example */
-    //   backdrop-filter: blur(10px); /* Apply blur effect to the background */
-    //   transition: opacity 0.3s ease; /* Add transition for smooth opacity change */  
-    // }
-
   }
   
   #scrollTopButton:hover {
@@ -451,7 +383,6 @@ $dark-900: #000000;
     color: rgba(0, 131, 0, 0.781); /* Use rgba for transparency */
     background-color: rgba(0, 5, 36, 0.371); /* Use rgba for transparency */
     backdrop-filter: blur(10px); /* Add a blur effect */
-    // opacity: 0.8;
   }
   
   #results-container a {

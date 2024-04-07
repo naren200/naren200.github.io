@@ -8,13 +8,6 @@
   }
 }
 
-// [data-theme="light"] {
-//   body {
-//     background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72);//, #a8eb12);	
-//     // background-image: radial-gradient(circle, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-//     color: $text-white;
-//   }
-
 #theme-toggler:before {
   @include themed(content, "🌙", "🌞");
 }

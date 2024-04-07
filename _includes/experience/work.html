@@ -1,6 +1,4 @@
 
-<!-- <link rel="stylesheet" type="text/css" href="../../_sass/_work.scss"> -->
-
 <div class="page-content">
     <div class="wrapper">
     <div class="work">
@@ -8,11 +6,6 @@
         <h4 class="page-heading">EDUCATION</h4><br>
         {% for item in site.data.education %}
         <div class="work-item">
-        <!-- <img
-            src="{{ item.image.src | absolute_url }}"
-            alt="{{ item.image.alt }}"
-            class="work-bubble" 
-        /> -->
         <div class="work-bubble-with-date"> 
             <img
             src="{{ item.image.src | absolute_url }}"
@@ -37,11 +30,6 @@
         <br><h4 class="page-heading">PROFESSIONAL EXPERIENCE</h4><br>
         {% for item in site.data.work %}
         <div class="work-item">
-        <!-- <img
-            src="{{ item.image.src | absolute_url }}"
-            alt="{{ item.image.alt }}"
-            class="work-bubble"
-        /> -->
         <div class="work-bubble-with-date">
             <img
             src="{{ item.image.src | absolute_url }}"
@@ -66,11 +54,6 @@
         <br><h4 class="page-heading">PUBLICATIONS</h4><br>
         {% for item in site.data.publication %}
         <div class="work-item">
-        <!-- <img
-            src="{{ item.image.src | absolute_url }}"
-            alt="{{ item.image.alt }}"
-            class="work-bubble"
-        /> -->
         <div class="work-bubble-with-date">
             <img
             src="{{ item.image.src | absolute_url }}"
@@ -90,8 +73,6 @@
         </div>
         </div>
         {% endfor %}
-        
-
     </div>
     </div>
 </div>

@@ -55,23 +55,6 @@ position: relative;
 isolation: isolate;
 }
 
-// [data-uia-timeline-skin="3"] .uia-timeline__point{
-// background-color: var(--uia-timeline-point-background-color, rgba(0, 53, 32, 0.616));
-// border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
-// }
-
-// [data-uia-timeline-skin="3"] .uia-timeline__point::before{
-// content: "";
-// inline-size: 100%;
-// block-size: var(--_uia-timeline-line-thickness);
-// background-color: var(--uia-timeline-line-color, var(--_uia-timeline-line-color_default));
-// background: linear-gradient(to right, var(--uia-timeline-line-color, var(--_uia-timeline-line-color_default)), transparent);
-
-// position: absolute;
-// inset-block-start: var(--_uia-timeline-point-line-position);
-// inset-inline-start: calc(-1 * var(--_uia-timeline-space));
-// z-index: -1;
-// }
 [data-uia-timeline-skin="3"] .uia-timeline__point::before {
     content: "";
     inline-size: 100%;

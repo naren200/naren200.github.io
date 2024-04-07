@@ -65,25 +65,7 @@ $(function () {
       document.getElementById('person1').play();
     });
   </script>
-  
-  <!-- <style>
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-15px);
-      }
-      60% {
-        transform: translateY(-10px); 
-      }
-    }
-  
-    .bounce-animation {
-      animation: bounce 3s ease;
-    }
-  </style> -->
-  
+    
   <audio id="person1" >
     <source src="../imgs/name.aac" type="audio/aac">
   Your browser does not support the audio element.
@@ -125,3 +107,99 @@ $(function () {
     });
   </script>
   
+
+  <!-- Landing Page -->
+  <script>
+    // Function to start scrolling and fade out the arrow
+    function startScroll() {
+        document.body.classList.add('scrolling'); // Add scrolling class to body
+        document.getElementById('arrow').style.opacity = '0.5'; // Hide arrow
+    }
+
+    // Function to toggle arrow visibility
+    function toggleArrow() {
+        var arrow = document.getElementById('arrow');
+        arrow.style.opacity = arrow.style.opacity === '1' ? '0' : '1';
+    }
+
+    // Blink the arrow every 1 second
+    var blinkInterval = setInterval(toggleArrow, 1000);
+
+    // Wait for 2 seconds and then start scrolling
+    setTimeout(function() {
+        clearInterval(blinkInterval); // Stop blinking
+        startScroll(); // Start scrolling and fade out arrow
+    }, 2000);
+  </script>
+
+<script type="text/javascript">
+  let mountain = document.getElementById("mountain")
+  let house = document.getElementById("house")
+  let robot = document.getElementById("robot")
+  let maskHouse = document.getElementById("mask")
+  let sun = document.getElementById("sun")
+  let name = document.getElementById("name")
+
+  window.addEventListener('scroll', function(){
+    var value = window.scrollY;
+    mountain.style.top = value * -0.18 + 'px';
+    house.style.top = -value * 0.14 + 'px';
+    robot.style.top = -value * 0.19 + 'px';
+    sun.style.top = -value * 0.8 + 'px';
+    sun.style.left = value * 0.89 + 'px';
+    robot.style.transform = `scale(${1 - value * 0.00005})`; // Adjust the scaling factor as needed
+    // Get the screen height
+    var screenHeight = window.innerHeight;
+
+    // Limit the movement of the name element
+    var nameTop = value * 0.891;
+    if (nameTop > screenHeight * 0.40) {
+        nameTop = screenHeight * 0.40; // Limit the top position to 700px
+    }
+    name.style.top = nameTop + 'px';
+    })    
+
+  // Get the viewport height and set the height of .parallax section
+    window.addEventListener('DOMContentLoaded', function() {
+        var parallaxSection = document.querySelector('.parallax');
+        var viewportHeight = window.innerHeight;
+        parallaxSection.style.height = viewportHeight * 1 + 'px'; // Set height to 50% of viewport height
+    });
+
+
+    // Function to replace the robot image based on screen size
+    function replaceRobotImage() {
+        // Get the robot image element
+        var robotImage = document.getElementById('robot');
+
+        // Get the current screen width
+        var screenWidth = window.innerWidth;
+
+        // Check if the screen width is less than 1967px
+        if (screenWidth < 1867) {
+            // Replace the src attribute with the new image (robot2.png)
+            robotImage.src = '../imgs/landing/robot2.png';
+        } else {
+            // If the screen width is greater than or equal to 1967px, revert back to the original image (robothuman.png)
+            robotImage.src = '../imgs/landing/robothuman.png';
+        }
+    }
+
+    // Call the function initially to replace the image based on the initial screen size
+    replaceRobotImage();
+
+    // Add a resize event listener to dynamically update the image when the window is resized
+    window.addEventListener('resize', replaceRobotImage);
+  </script>
+
+  <script>
+    const row = document.querySelector('.row');
+    
+    document.addEventListener('mousemove', function(e) {
+        const mouseX = e.clientX;
+        const windowWidth = window.innerWidth;
+        const skewAmount = (mouseX / windowWidth - 0.5) * 6; // Adjust skew amount as needed
+        
+        row.style.transform = `skewY(${skewAmount}deg)`;
+    });
+  </script>
