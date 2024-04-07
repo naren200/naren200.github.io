@@ -5,9 +5,7 @@ description         : >-
 
 baseurl             :                      # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : naren200/naren200.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
-remote_theme        : YoussefRaafatNasry/portfolYOU
-#  Welcome <img class="emoji" title=":wave:" alt=":wave:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> 
-#  I'm <b>Naren</b><br><br>
+remote_theme        : naren200/naren200.github.io
 
 ### Plugins ###
 plugins:
@@ -72,6 +70,15 @@ analytics:
   google:
     tracking_id: G-0B45SLBC4K                          # your-google-tracking-id
 
+### Buy me a coffee ###
+# See https://www.buymeacoffee.com/naren200
+buymeacoffee:
+  enabled: false
+  username: naren200
+  color: "#007bff"
+  message: "Thank you for visiting."                    # Message to be displayed aside from the button for a few seconds.
+  description: "Support me on Buy me a coffee! - See https://www.buymeacoffee.com/naren200"
+
 
 ### Defaults for collections ###
 defaults:
@@ -98,6 +105,3 @@ exclude:
   - LICENSE
   - "*.log"
 
-# I turn coffee :coffee: into curosity,
-# use enthusiasm as fuel
-# and never broke production.

@@ -22,7 +22,6 @@ weight: 1
 <div class="column" style="width: 100%; margin-left: 0px">
   <div id="academic-pursuits" class="background-block">
     <p  >Hello there <img  id="rotating-image" class="emoji" title=":wave:" alt=":wave:" src="../imgs/hi.webp" height="50" width="50"> I am <b>Narendhiran</b>. My friends call me Naren (Neh-R-ehN). 
-    <!-- https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png -->
     <img class="emoji" title=":play:" alt=":play:" src="../imgs/loudspeaker_3d.png" height="30" width="30" style="vertical-align: middle; cursor: pointer;" id="play-button">  </p>
   </div>
   <br> <br>

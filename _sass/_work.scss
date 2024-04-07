@@ -8,29 +8,18 @@
 }
 
 .work-bubble {
-  // float: left;
-  // padding-right: 20px;
-  // padding-bottom: 1.5em;
   width: 60px;
   height: 60px;
   object-fit: cover;
   font-size: 2px; /* Adjust the font size as needed */
-  // padding-left: 2px;
-
 }
 
 .work-bubble-with-date {
   float: left;
   padding-right: 20px;
-  
-  // padding-bottom: 1.5em;
   width: 60 px;
   text-align: center;
-  // height: 100px;
-  // object-fit: cover;
   font-family: "San Francisco", sans-serif;
-  // font-size: 2px; /* Adjust the font size as needed */
-
 }
 .work-bubble-with-date h6 {
   font-size: 8px; /* Adjust the font size as needed for smaller screens */
@@ -57,9 +46,6 @@
         }
 
     .work-bubble {
-        // float: left;
-        // padding-right: 20px;
-        // padding-bottom: 1.5em;
         width: 130px;
         height: 130px;
         object-fit: cover;
@@ -68,11 +54,8 @@
     .work-bubble-with-date {
           float: left;
           padding-right: 50px;
-          // padding-bottom: 1.5em;
           width: 120 px;
           text-align: center;
-          // height: 100px;
-          // object-fit: cover;
           font-family: "San Francisco", sans-serif;
           font-size: 4px; /* Adjust the font size as needed */
         }
@@ -81,7 +64,6 @@
           font-family: "San Francisco", sans-serif;
           overflow: hidden;
           font-size: 21px; /* Adjust the font size as needed */
-          // padding-right: 10px;
         }
 
     .work-bubble-with-date h6 {
@@ -124,12 +106,6 @@ h4.mb-3 {
   }
 
 }
-
-// .container{
-//   min-width:1200px;         
-//   width: auto !important;   /* Firefox will set width as auto */
-//   width:1200px;             /* As IE ignores !important it will set width as 1000px; */
-//  }
  
 .uia-card__container{
   display: grid;

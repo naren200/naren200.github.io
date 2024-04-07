@@ -5,10 +5,5 @@ permalink: /
 # weight: 1
 ---
 
-{% include landing.html %}
+{% include landing/landing.html %}
 
-
-<!-- <div id="particles-js"></div> 
-<script src="../assets/js/particles.js"></script>
-<script src="../assets/js/app.js"></script>
- -->

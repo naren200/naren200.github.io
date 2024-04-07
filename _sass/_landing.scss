@@ -109,9 +109,6 @@ mix-blend-mode: color;
     color: white; /* Set the text color to white */
 }
 
-// footer {
-// 	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
-// }
 
 footer i {
 	color: #08910f;
@@ -341,15 +338,11 @@ footer i:hover {
   }
   
   .landing-work-bubble {
-	// float: left;
-	// padding-right: 20px;
-	// padding-bottom: 1.5em;
 	width: 60px;
 	height: 60px;
 	object-fit: contain !important;
 	font-size: 2px; /* Adjust the font size as needed */
-	// padding-left: 2px;
-	  }
+    }
   
   .landing-work-bubble-with-date {
 	float: left;
@@ -391,9 +384,6 @@ footer i:hover {
 		  }
   
 	  .landing-work-bubble {
-		  // float: left;
-		  // padding-right: 20px;
-		  // padding-bottom: 1.5em;
 		  width: 130px;
 		  height: 130px;
 		  object-fit: contain !important;
@@ -402,11 +392,8 @@ footer i:hover {
 	  .landing-work-bubble-with-date {
 			float: left;
 			padding-right: 50px;
-			// padding-bottom: 1.5em;
 			width: 120 px;
 			text-align: center;
-			// height: 100px;
-			// object-fit: cover;
 			font-family: "San Francisco", sans-serif;
 			font-size: 4px; /* Adjust the font size as needed */
 		  }
@@ -414,7 +401,6 @@ footer i:hover {
 	  .landing-work-text {
 			font-family: "San Francisco", sans-serif;
 			overflow: hidden;
-			// font-size: 21px; /* Adjust the font size as needed */
 			color: #fff !important;
 		}
   
@@ -434,15 +420,11 @@ footer i:hover {
 		  overflow: hidden;
 		  padding-bottom: 2em;
 		  font-family: "San Francisco", sans-serif;
-		//   font-size: 21px; /* Adjust the font size as needed *
 	      padding: 20px;
 
 		}
 
 	.landing-work-bubble {
-		// float: left;
-		// padding-right: 20px;
-		// padding-bottom: 1.5em;
 		width: 130px;
 		height: 130px;
 		object-fit: contain !important;
@@ -451,11 +433,8 @@ footer i:hover {
 	.landing-work-bubble-with-date {
 		  float: left;
 		  padding-right: 30px;
-		  // padding-bottom: 1.5em;
 		  width: 120 px;
 		  text-align: center;
-		  // height: 100px;
-		  // object-fit: cover;
 		  font-family: "San Francisco", sans-serif;
 		  font-size: 4px; /* Adjust the font size as needed */
 		}
@@ -507,13 +486,7 @@ footer i:hover {
 	}
   
   }
-  
-  // .container{
-  //   min-width:1200px;         
-  //   width: auto !important;   /* Firefox will set width as auto */
-  //   width:1200px;             /* As IE ignores !important it will set width as 1000px; */
-  //  }
-   
+     
   .landing-uia-card__container{
 	display: grid;
 	gap: var(--uia-card-content-gap, .5rem);
@@ -796,4 +769,24 @@ footer i:hover {
 	}
   }
   
-  
+// =================================================
+// ARROW BLINK
+// =================================================
+
+/* Define blink animation */
+@keyframes blink {
+0% { opacity: 0; }
+50% { opacity: 1; }
+100% { opacity: 0.8; }
+}
+#arrow {
+animation: blink 2ms; /* Blink animation twice with 2ms gap */
+	opacity: 0; /* Initially visible */
+	transition: opacity 0.5s ease-out; /* Smooth fade-out transition */
+}
+
+/* Hide arrow when scrolling */
+.scrolling #arrow {
+	opacity: 0;
+}
+
