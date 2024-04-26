@@ -7,6 +7,73 @@ number: three
 ---
 
 
-# ChatGPT Controlled Autonomous Vehicle
+# Improved Safety Control for Autonomous Driving using GPT (LLMs) - Case Study
 
-!- Release on Apr 25th 2024 -!
+## Problem Statement
+An  open-source  platform, Carla Simulator  that facilitates  tackling  the  complexities  of  autonomous driving by enhancing safety and scene perception. Autonomous  driving  safety  is hindered  by  unexpected  behaviors  in  dense  traffic. Enhanced Safety control using multi-domain skilled GPT to make decision for better decision making process.
+<img src="../imgs/projects/GPTCarla/masterPoster.jpg" alt="drawing" width="850"/>
+<div style="text-align: center;"><i>Curved Lane Following</i></div>
+
+## Results
+
+<div style="text-align: center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6bzMPuyov90?si=hNONuZh5rbvhqXwm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!-- <img src="../imgs/projects/GPTCarla/CurvedLaneFollowing.gif" alt="drawing" width="850"/> -->
+<div style="text-align: center;"><i>Curved Lane Following</i></div>
+---
+<div style="text-align: center;">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/foH7Dd48Lwc?si=sox_IoDxvuE0EewD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!-- <img src="../imgs/projects/GPTCarla/FreeRightLaneChange.gif" alt="drawing" width="850"/> -->
+<div style="text-align: center;"><i>Smart Lane Change Actions for taking Free-Right</i></div>
+---
+<div style="text-align: center;">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Mwf--qOuObY?si=r_ohwfmxfa7mI1g5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!-- <img src="../imgs/projects/GPTCarla/HumanObstacleAware.gif" alt="drawing" width="850"/> -->
+<div style="text-align: center;"><i>Environment Aware Decision making for Collision Avoidance</i></div>
+---
+<div style="text-align: center;">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0BENUpvEezE?si=cooI84Tg6Xb2SIfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!-- <img src="../imgs/projects/GPTCarla/overtake.gif" alt="drawing" width="850"/> -->
+<div style="text-align: center;"><i>Overtaking Obstacle</i></div>
+---
+<div style="text-align: center;">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P9r-5-0wSMo?si=qK1tMFsRA5yURkH2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!-- <img src="../imgs/projects/GPTCarla/UnexpectedOvertaking.gif" alt="drawing" width="850"/> -->
+<div style="text-align: center;"><i>Unexpected Overtaking - Rash Drivers</i></div>
+---
+
+
+## Challenges & Future Research Work
+<div style="text-align: center;">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lJbwbrMoVrs?si=tTWL-2ifV2jMoEPm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!-- <img src="../imgs/projects/GPTCarla/ImproperCurvedLaneFollowing.gif" alt="drawing" width="850"/> -->
+<div style="text-align: center;"><i>Uncertain Decision Making at Long Curved Track</i></div>
+---
+<div style="text-align: center;">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9g3hN4gV6t4?si=kyWIhe3mkoIudrtZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!-- <img src="../imgs/projects/GPTCarla/LackingLongTermDecisionforTrafficLight.gif" alt="drawing" width="850"/> -->
+<div style="text-align: center;"><i>Lacking Long Term Decision considering time taken to cross the intersection</i></div>
+
+### Reference
+- For Poster, Click [here](../pdfs/masterPoster.pdf)
+- Baseline project's repository, [Interfuser](https://github.com/opendilab/InterFuser/)
