@@ -11,18 +11,22 @@ number: three
 
 ## Problem Statement
 An  open-source  platform, Carla Simulator  that facilitates  tackling  the  complexities  of  autonomous driving by enhancing safety and scene perception. Autonomous  driving  safety  is hindered  by  unexpected  behaviors  in  dense  traffic. Enhanced Safety control using multi-domain skilled GPT to make decision for better decision making process.
-<img src="../imgs/projects/GPTCarla/masterPoster.jpg" alt="drawing" width="850"/>
+<img src="../imgs/projects/GPTCarla/flowchat.png" alt="drawing" width="350"/>
 <div style="text-align: center;"><i>Curved Lane Following</i></div>
+<img src="../imgs/projects/GPTCarla/carsimulator.png" alt="drawing" width="650"/>
+<div style="text-align: center;"><i>Simulator Representation</i></div>
 
 ## Results
 
 <div style="text-align: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6bzMPuyov90?si=hNONuZh5rbvhqXwm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P9r-5-0wSMo?si=qK1tMFsRA5yURkH2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-<!-- <img src="../imgs/projects/GPTCarla/CurvedLaneFollowing.gif" alt="drawing" width="850"/> -->
-<div style="text-align: center;"><i>Curved Lane Following</i></div>
+<!-- <img src="../imgs/projects/GPTCarla/UnexpectedOvertaking.gif" alt="drawing" width="850"/> -->
+<div style="text-align: center;"><i>Unexpected Overtaking - Rash Drivers</i></div>
 ---
+
 <div style="text-align: center;">
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/foH7Dd48Lwc?si=sox_IoDxvuE0EewD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -47,15 +51,16 @@ An  open-source  platform, Carla Simulator  that facilitates  tackling  the  com
 <!-- <img src="../imgs/projects/GPTCarla/overtake.gif" alt="drawing" width="850"/> -->
 <div style="text-align: center;"><i>Overtaking Obstacle</i></div>
 ---
-<div style="text-align: center;">
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/P9r-5-0wSMo?si=qK1tMFsRA5yURkH2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<!-- 
+<div style="text-align: center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6bzMPuyov90?si=hNONuZh5rbvhqXwm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-<!-- <img src="../imgs/projects/GPTCarla/UnexpectedOvertaking.gif" alt="drawing" width="850"/> -->
-<div style="text-align: center;"><i>Unexpected Overtaking - Rash Drivers</i></div>
+<!-- <img src="../imgs/projects/GPTCarla/CurvedLaneFollowing.gif" alt="drawing" width="850"/> 
+<div style="text-align: center;"><i>Curved Lane Following</i></div>
 ---
-
+-->
 
 ## Challenges & Future Research Work
 <div style="text-align: center;">
@@ -73,6 +78,8 @@ An  open-source  platform, Carla Simulator  that facilitates  tackling  the  com
 
 <!-- <img src="../imgs/projects/GPTCarla/LackingLongTermDecisionforTrafficLight.gif" alt="drawing" width="850"/> -->
 <div style="text-align: center;"><i>Lacking Long Term Decision considering time taken to cross the intersection</i></div>
+
+---
 
 ### Reference
 - For Poster, Click [here](../pdfs/masterPoster.pdf)
