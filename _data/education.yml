@@ -1,10 +1,10 @@
-- title: M.S. in Robotic and Autonomous Systems
+- title: M.S. in Robotic and Autonomous Systems (with Honors)
   company: Arizona State University, Tempe, AZ
   image:
     src: /imgs/education/asu-logo.png
     alt: Arizona State University
   date: Aug '22 - May '24
-  description: Career transitioned with challenging AI & ML courses. Researched on control synthesis of Multi-Agent Systems under Prof. Zhe Xu. 
+  description: "Career transitioned with challenging AI & ML courses. Researched on LLMs, RL, & control synthesis of Multi-Agent Systems under Prof. Zhe Xu." 
 - title: Robotics Software Engineer Nanodegree
   company: Udacity
   image:
