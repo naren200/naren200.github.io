@@ -1,8 +1,8 @@
 ---
-name: ChatGPT controlled Autonomous Vehicle
-tools: [LLMs, chatGPT, Autonomous, Carla, Simulator]
+name: GPT & LLM assisted Autonomous Vehicle
+tools: [LLMs, GPT, Autonomous, Carla, Simulator]
 image: ../imgs/projects/carla-gpt-promo.png
-description: Designed algorithm for chatGPT to control the autonomous vehicle in Carla Simulator
+description: Designed algorithm for GPT to control the autonomous vehicle in Carla Simulator
 number: three
 ---
 
@@ -84,3 +84,4 @@ An  open-source  platform, Carla Simulator  that facilitates  tackling  the  com
 ### Reference
 - For Poster, Click [here](../pdfs/masterPoster.pdf)
 - Baseline project's repository, [Interfuser](https://github.com/opendilab/InterFuser/)
+- For posted Linkedin Post, Click [here](https://www.linkedin.com/posts/narendhiran2000_symposium-autonomousdriving-carla-activity-7191559855181070336-TcLM?utm_source=share&utm_medium=member_desktop)

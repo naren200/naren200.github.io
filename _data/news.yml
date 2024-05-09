@@ -1,5 +1,13 @@
 - year: 2024
   details:
+  - period: 6th May
+    heading: Hurray! 🥳 Graduated with distinction from a Masters program at Arizona State University
+    description: Secured A's in all 10 courses in the field of robotics, machine learning, reinforcement learning and artificial intelligence. 
+    url: ../pdfs/Transcripts.pdf
+  - period: 26th Apr
+    heading: Presented my capstone research project presentation at the ASU Symposium 2024
+    description: Titled, "Improved Safety Control for Autonomous Driving using GPT (LLMs) - Case Study" 
+    url: https://naren200.github.io/projects/gptcarla
   - period: 21 Feb
     heading: Appeared in News Report - Contribution to Prof. Xu's work
     description: Prof. Xu's awarded 2024 NSF Faculty Early Career Development Program ($550,000) in the "Temporal Causal Reinforcement Learning and Control for Autonomous and Swarm Cyber-Physical Systems" field.
