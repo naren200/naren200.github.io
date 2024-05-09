@@ -82,6 +82,6 @@ An  open-source  platform, Carla Simulator  that facilitates  tackling  the  com
 ---
 
 ### Reference
-- For Poster, Click [here](../pdfs/masterPoster.pdf)
+- For Capstone project Poster, Click [here](../pdfs/masterPoster.pdf)
 - Baseline project's repository, [Interfuser](https://github.com/opendilab/InterFuser/)
-- For posted Linkedin Post, Click [here](https://www.linkedin.com/posts/narendhiran2000_symposium-autonomousdriving-carla-activity-7191559855181070336-TcLM?utm_source=share&utm_medium=member_desktop)
+- For Linkedin Post, Click [here](https://www.linkedin.com/posts/narendhiran2000_symposium-autonomousdriving-carla-activity-7191559855181070336-TcLM?utm_source=share&utm_medium=member_desktop)
