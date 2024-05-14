@@ -1,6 +1,11 @@
 // Fine Circle Responsive Image
 // Inspired by https://stackoverflow.com/a/6615994/10194811
-
+/* Define the variable */
+:root {
+	--background-img: url(../../imgs/assets/5.webp);
+  }
+  
+  
 * {
 	margin: 0;
 	padding: 0;
@@ -9,55 +14,101 @@
 }
 
 body.landing {
-	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147)) !important;//, #a8eb12);	
-}
-
-.parallax {
-	position: relative;
-	display: flex; 
-	justify-content: center;
-	height: 100vh;
-	width: 100%;
-	overflow: hidden;
-    // background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72);//, #a8eb12);	
-	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
-	background-attachment: fixed;
-	#house {
-		z-index: 3;
-		height: 100% !important;
-	}
-	#robot {
-		z-index: 4;
-		height: 100% !important;
-	}
-	#name {
-		z-index: 2;
-	}
-	#mountain {
-		height: 100% !important;
-	}
-	#grass {
-		z-index: 2;
-		height: 100% !important;
-	}
-	#arrow {
-		z-index: 100;
-		height: 100% !important;
-	}
-}
-.parallax img {
-	position: absolute;
-	background-position: 50% 50%;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	object-fit: cover;
-	overflow: hidden;
-	pointer-events: none;
+	// background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147)) !important;//, #a8eb12);	
+	background-image: var(--background-img);
+	text-align: left;
 }
 
 
+.idcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  // Full viewport height
+	max-width: 1200px;
+    // padding: 20px;  // Add padding for some spacing
+    box-sizing: border-box;  // Includes padding in height calculation
+	margin: 0 auto; /* Center the elements horizontantlly w.r.t parent */
+}
+
+.div-text-l {
+    flex: 1;  // Take up half of the container
+    max-width: 50%;  // Limit width to 50% of the parent container
+    padding: 20px;  // Space between text and image
+}
+
+.image-column {
+    flex: 1;  // Take up half of the container
+    max-width: 50%;  // Limit width to 50% of the parent container
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.body-hero {
+	backdrop-filter: blur(100px);
+	border-radius: 10px;
+	padding: 10px;
+
+}
+
+.image-column img {
+    max-width: 100%;  // Ensure the image does not overflow its container
+    height: auto;  // Maintain aspect ratio
+}
+
+/* Media query for smaller screens - makes image and container fit better */
+@media (max-width: 630px) {
+	
+	.idcontainer {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;  // Full viewport height
+		padding: 20px;  // Add padding for some spacing
+		box-sizing: border-box;  // Includes padding in height calculation
+	}
+	
+	.div-text-l {
+		flex: 1;  // Take up half of the container
+		max-width: 90%;  // Limit width to 50% of the parent container
+		padding-right: 20px;  // Space between text and image
+		transform: translateY(15px);
+	}
+	.body-hero {
+		backdrop-filter: blur(100px);
+		border-radius: 10px;
+		padding: 10px;
+
+	}
+	
+	.image-column {
+		flex: 1;  // Take up half of the container
+		max-width: 90%;  // Limit width to 50% of the parent container
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.image-column img {
+		max-width: 100%;  // Ensure the image does not overflow its container
+		height: auto;  // Maintain aspect ratio
+	}
+	
+}
+
+
+.heading-3 {
+	margin-top: 0;
+	margin-bottom: 25px;
+  }
+
+.heading-4 {
+	margin-top: 0;
+	margin-bottom: 10px;
+  }
+  
 .about-me-title {
     margin-bottom: 30px
 }
@@ -68,8 +119,16 @@ body.landing {
     font-size: 24px;
     font-weight: 300;
     margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 15px
+    padding-top: 5px;
+    padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	backdrop-filter: blur(0px);
+	border-radius: 10px;
+	// background-color:  rgba(0, 53, 32, 0.716);
+	padding: 5px;
+	backdrop-filter: blur(100px);
+	background-color: rgba(0, 8, 79, 0.127) !important; // Set the background color to white or any desired color
 }
 
 .about-me-awards {
@@ -87,23 +146,24 @@ body.landing {
 }
 
 .project-section {
-	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
-	
+	// background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
+	background-image: var(--background-img);
 }
 .experience-section {
-	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
+	background-image: var(--background-img);
+	// background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
 }
-.parallax:after {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: linear-gradient(to right, rgba(5, 25, 55, 0.55), rgba(0, 77, 122, 0.40), rgba(0, 135, 147, 0.45)); //, rgba(0, 191, 114, 0.35));
-z-index: 1000;
-mix-blend-mode: color;
-}
+// .parallax:after {
+// content: '';
+// position: absolute;
+// top: 0;
+// left: 0;
+// width: 100%;
+// height: 100%;
+// // background: linear-gradient(to right, rgba(7,13,20,0.7), rgba(0, 77, 122, 0.70), rgba(7,13,20,0.7)); //, rgba(0, 191, 114, 0.35));
+// z-index: 1000;
+// mix-blend-mode: color;
+// }
 
 .sec {
     color: white; /* Set the text color to white */
@@ -118,142 +178,18 @@ footer i {
 footer i:hover {
 	color: #6be9ff;
 }
-/* Small devices (phones) */
-@media only screen and (max-width: 507px) {
-    .parallax {
-        height: 50vh;
-        align-items: center;
-        width:auto;
-    }
-
-	#house{
-		z-index: 3;
-		height: 100% !important;
-	}
-	#mountain {
-		z-index: 1;
-		height: 100% !important;
-	}
-	#robot {
-		z-index: 5;
-		right: 0;
-        // transform: scale(0.2); /* Adjust the scale as needed */
-		height: 100% !important;
-	}
-
-	#name {
-		z-index: 2;
-		transform: scale(1.6) translate(0%, 50%) !important;
-	}
-	#sun {
-		z-index: 6;
-	}
-	#grass {
-		z-index: 2;
-		height: 100% !important;
-	}
-	#arrow {
-		z-index: 100;
-		height: 100% !important;
-	}
-
-}
-
-
-/* Small devices (phones) */
-@media only screen and (max-width: 967px) {
-    .parallax {
-        height: 50vh;
-        align-items: center;
-        width:auto;
-    }
-
-	#house{
-		z-index: 3;
-		height: 100% !important;
-	}
-	#mountain {
-		z-index: 1;
-		height: 100% !important;
-	}
-	#robot {
-		z-index: 5;
-		right: 0;
-        // transform: scale(0.2); /* Adjust the scale as needed */
-		height: 100% !important;
-	}
-
-	#name {
-		z-index: 2;
-		transform: scale(1.1) translate(0%, 20%);
-	}
-	#sun {
-		z-index: 6;
-	}
-	#grass {
-		z-index: 2;
-		height: 100% !important;
-	}
-	#arrow {
-		z-index: 100;
-		height: 100% !important;
-	}
-
-}
-
-/* Small devices (phones) */
-@media only screen and (max-width: 1867px) {
-    .parallax {
-        height: 50vh;
-        align-items: center;
-        width:auto;
-    }
-
-	#house{
-		z-index: 3;
-		height: 100% !important;
-	}
-	#mountain {
-		z-index: 1;
-		height: 100% !important;
-	}
-	#robot {
-		z-index: 5;
-		right: 0;
-        // transform: scale(0.2); /* Adjust the scale as needed */
-		height: 100% !important;
-	}
-
-	#name {
-		z-index: 2;
-	}
-	#mountain {
-		height: 100% !important;
-	}
-	#sun {
-		z-index: 6;
-	}
-	#grass {
-		z-index: 2;
-		height: 100% !important;
-	}
-	#arrow {
-		z-index: 100;
-		height: 100% !important;
-	}
-
-}
 
 .sec {
 	position: relative;
 	padding: 50px;
 	overflow: hidden;
 	height: 100%;
-	background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
+	// background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
+	background-image: var(--background-img);
 }
 
 .HeadingFullTime {
-	text-align: center;
+	// text-align: center;
 	font-size: 20px;
 	text-transform: capitalize;
 }
@@ -280,11 +216,17 @@ footer i:hover {
 		font-size: 24px;
 		font-weight: 300;
 		margin: 0 auto;
-		padding-top: 30px;
-		padding-bottom: 15px;
-	}
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 5px;
+		padding-right: 5px;
+		padding: 5px;
+		backdrop-filter: blur(100px);
+		background-color: rgba(0, 8, 79, 0.127) !important; // Set the background color to white or any desired color
+			}
 	.experience-section {
-		background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));
+		// background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));
+		background-image: var(--background-img);
 	}
 }
 
@@ -296,12 +238,18 @@ footer i:hover {
 		font-size: 20px;
 		font-weight: 300;
 		margin: 0 auto;
-		padding-top: 30px;
-		padding-bottom: 15px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 5px;
+		padding-right: 5px;
+		padding: 5px;
+		backdrop-filter: blur(100px);
+		background-color: rgba(0, 8, 79, 0.127) !important; // Set the background color to white or any desired color
 	}
 	.experience-section {
 		padding: 10px;
-		background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
+		// background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
+		background-image: var(--background-img);
 	}
 	
 }
@@ -313,16 +261,60 @@ footer i:hover {
 		font-size: 16px;
 		font-weight: 300;
 		margin: 0 auto;
-		padding-top: 30px;
-		padding-bottom: 15px
-	}
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 5px;
+		padding-right: 5px;
+		padding: 5px;
+		backdrop-filter: blur(100px);
+		background-color: rgba(0, 8, 79, 0.127) !important; // Set the background color to white or any desired color
+		}
 	.experience-section {
 		padding: 5px;
-		background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
+		// background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
+		background-image: var(--background-img);
 	}
 	
 	}
 
+// =================================================
+// SCROLL BUTTON
+// =================================================
+.scroll-down-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    animation: bounce 2s infinite;  /* Bounce animation to attract attention */
+}
+
+.arrow.down {
+    width: 24px;
+    height: 24px;
+    background-image: url('/imgs/landing/doublearrow.png'); /* Path to arrow icon */
+    background-size: cover;
+    margin-left: 5px;
+}
+
+/* Keyframes for the bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
 
 
 // =================================================
@@ -338,7 +330,7 @@ footer i:hover {
 	max-width: 1400px;
 	// display: flex; /* Add this line to activate flexbox behavior */
 	margin: 0 auto; /* Center the element horizontally */
-
+	padding: 5px;
   }
   
   .landing-work-bubble {
@@ -373,8 +365,9 @@ footer i:hover {
 	font-size: 12px; /* Adjust the font size as needed */
 	padding-right: 2px;
 	color: #fff !important;
-  
-  }
+	text-align: left;
+
+}
   
   /* Styles for screens with a min width of 1200px (adjust as needed) */
   @media (min-width: 800px) {
@@ -406,6 +399,7 @@ footer i:hover {
 			font-family: "San Francisco", sans-serif;
 			overflow: hidden;
 			color: #fff !important;
+			text-align: left;
 		}
   
 	  .landing-work-bubble-with-date h6 {
@@ -448,6 +442,7 @@ footer i:hover {
 		  overflow: hidden;
 		  font-size: 21px; /* Adjust the font size as needed */
 		  color: #fff !important;
+		  text-align: left;
 		}
 
 	.landing-work-bubble-with-date h6 {
@@ -490,25 +485,35 @@ footer i:hover {
 	}
   
   }
-     
+       	
   .landing-uia-card__container{
 	display: grid;
 	gap: var(--uia-card-content-gap, .5rem);
 	padding: var(--uia-card-padding, 1rem 1.75rem);
-	
+	position: relative;
+  
 	background-color: var(--uia-card-background-color);
-	border-radius: var(--uia-card-border-radius, 2px);
+	border-inline-start:	var(--uia-card-border-thickness, 2px) var(--uia-card-border-style, solid) var(--uia-card-border-color, currentColor);
+	box-shadow: var(--uia-card-box-shadow, 0 4px 8px 0 rgba(0, 0, 0, .62), 0 1px 2px 0 rgba(0, 0, 0, .64));
+	border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
+	background-color: transparent; /* Ensure the background is transparent */
+	backdrop-filter: blur(50px); /* Add a blur effect */
+	background-color: rgba(0, 8, 79, 0.127) !important; // Set the background color to white or any desired color
+
 	}
-	
-  .landing-uia-card__container{
-	  border-inline-start:	var(--uia-card-border-thickness, 2px) var(--uia-card-border-style, solid) var(--uia-card-border-color, currentColor);
-	  box-shadow: var(--uia-card-box-shadow, 0 4px 8px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
-	  border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
-	  background-color: transparent; /* Ensure the background is transparent */
-  }
-  .landing-uia-card__container {
-	background-color: rgba(0, 53, 32, 0.616) !important; // Set the background color to white or any desired color
-  }
+  
+  .landing-uia-card__container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
+
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+    z-index: -1; /* Ensure the overlay is behind the content */
+}
 
 
 
@@ -794,3 +799,18 @@ animation: blink 2ms; /* Blink animation twice with 2ms gap */
 	opacity: 0;
 }
 
+// =================================================
+// RESUME PAGE HEADING
+// =================================================
+
+.resume-page-heading {
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5); /* Adds a glow-like effect around the text */
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+	backdrop-filter: blur(100px);
+	padding: 15px;
+    padding: 5px 10px; /* Adds padding around the text */
+    background: rgba(0, 7, 82, 0.222); /* Optional: Adds a semi-transparent background */
+}

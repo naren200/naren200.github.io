@@ -15,8 +15,16 @@
     {% if page.is_landing_page != true %}
       {% include navbar.html %}
     {% endif %}
+    
+    {% assign project_page = page.is_project_page | default: false %}
+    {% if project_page %}
+      <div class="overlay">
+        {{ content }}
+      </div>
+    {% else %}
+      {{ content }}
+    {% endif %}
 
-    {{ content }}
   </main>
 
   {% if page.is_landing_page != true %}
@@ -28,4 +36,11 @@
 
 </body>
 
-</html>
+<style>
+  .overlay{
+    border-radius: 10px;
+    backdrop-filter: blur(100px);
+    padding-top: 2px;
+    padding-bottom: 65px;
+  }
+</style>

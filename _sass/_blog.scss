@@ -4,7 +4,8 @@
 /* Change the color of the search button */
 .btn-outline-primary {
   color: #fff; /* Text color */
-  background-color: rgba(15, 66, 33, 0.733); /* Background color */
+  background-color: rgba(0, 2, 53, 0.272); //rgba(0, 0, 0, 0.318);
+  // background-color: transparent;
 }
 
 /* Change the color of the tag bar button */
@@ -15,11 +16,12 @@
 /* Change the color of the tag bar button on hover */
 .btn.btn-outline-primary:hover {
   color: #fff; /* Text color on hover */
-  background-color: rgba(7, 39, 18, 0.801); /* Background color on hover */
+  background-color: rgba(0, 2, 53, 0.272); //rgba(0, 0, 0, 0.318);
+  // background-color: transparent;
 }
 
 #results-container a {
-  background-color: rgba(0, 53, 32, 0.616);
+  // background-color: rgba(0, 53, 32, 0.616);
   color: #fff; /* Example text color */
   border-radius: 5px; /* Example border radius */
   padding: 10px; /* Example padding */
@@ -32,7 +34,9 @@
   border-radius: $rounded-borders;
   text-decoration: none !important;
   margin: 0px auto;
-  background-color: rgba(0, 53, 32, 0.616);
+  background-color: rgba(0, 2, 53, 0.064); //rgba(0, 0, 0, 0.318);
+  // background-color: transparent;
+  backdrop-filter: blur(100px); /* Add a blur effect */
 
   .card-footer {
     font-size: 14px;
@@ -41,7 +45,7 @@
     width: 100%;
     height: auto;
     object-fit: cover;
-    background-color: rgba(0, 114, 68, 0.337);
+    background-color: rgba(0, 2, 53, 0.139); //rgba(0, 0, 0, 0.318);
     border-radius: $rounded-borders;
   }
   transition: transform 400ms;
@@ -220,4 +224,14 @@ body {
       left: 0;
     }
   }
+}
+
+// ############################################################
+// BLOG PAGE 
+// ############################################################
+
+.overlay{
+  backdrop-filter: blur(100px);
+  border-radius: 20px;
+  padding: 30px;
 }

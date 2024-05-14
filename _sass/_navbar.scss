@@ -48,8 +48,9 @@
   background-color: rgba(255, 255, 255, 0); /* Use rgba for transparency */
   .nav-item.nav-link {
     color: #ffffff; /* Example text color */
-    background-color: rgba(0, 94, 36, 0.336); /* Use rgba for transparency */
-    backdrop-filter: blur(20px); /* Add a blur effect */
+    // background-color: rgba(0, 94, 36, 0.336); /* Use rgba for transparency */
+    background-color: transparent;
+    backdrop-filter: blur(100px); /* Add a blur effect */
     border-radius: 8px; /* Adjust border radius */
     padding-top: 100px; /* Adjust padding-top to match the upper part */
     margin-bottom:3px; /* Example margin bottom */
@@ -59,7 +60,7 @@
 
 .navbar-themed {
   transition: top 0.5s ease; /* Apply transition to the 'top' property */
-  background-color: rgba(0, 94, 36, 0.336); /* Use rgba for transparency */
+  background-color: rgba(7,20,31,0.4); /* Use rgba for transparency */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   padding: 10px 20px; /* Adjust padding */
   border-radius: 100px; /* Adjust border radius */

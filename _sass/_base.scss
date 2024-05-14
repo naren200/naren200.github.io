@@ -137,9 +137,10 @@ img.profilepic {
 #academic-pursuits,
 #robotics-achievements,
 #sets-apart {
-    background-color: rgba(0, 53, 32, 0.616); //rgba(0, 0, 0, 0.318);
+    background-color: rgba(0, 2, 53, 0.272); //rgba(0, 0, 0, 0.318);
     padding: 20px;
     border-radius: 18px; /* Adjust border radius */
     padding: 10px 20px; /* Adjust padding */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    backdrop-filter: blur(100px); /* Add a blur effect */
 }

@@ -24,7 +24,10 @@
 // Cards
 .card {
   // background-color: $dark-600;
-  background-color: var(--uia-timeline-point-background-color, rgba(0, 53, 32, 0.616));
+  // background-color: transparent;
+  background-color: rgba(0, 2, 53, 0.175); //rgba(0, 0, 0, 0.318);
+  // background-color: var(--uia-timeline-point-background-color, rgba(0, 53, 32, 0.616));
+  backdrop-filter: blur(100px); /* Add a blur effect */
 }
 
 .card.border {

@@ -92,6 +92,11 @@ $(function () {
   </script>
   
   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var navbar = document.querySelector(".navbar");
+        navbar.style.top = "0px";  // Set navbar to be visible at the top of the page
+    });
+
     var lastScrollTop = 0;
   
     window.addEventListener("scroll", function() {
@@ -130,9 +135,22 @@ $(function () {
         clearInterval(blinkInterval); // Stop blinking
         startScroll(); // Start scrolling and fade out arrow
     }, 2000);
+
   </script>
 
-<script type="text/javascript">
+
+
+<script>   
+   //Button for the scroll Down
+  document.querySelector('.scroll-down-btn').addEventListener('click', function() {
+      window.scrollBy({
+          top: window.innerHeight, // Scroll down one full window height
+          behavior: 'smooth' // Smooth scroll
+      });
+  });
+</script>
+
+<!-- <script type="text/javascript">
   let mountain = document.getElementById("mountain")
   let house = document.getElementById("house")
   let robot = document.getElementById("robot")
@@ -190,7 +208,7 @@ $(function () {
 
     // Add a resize event listener to dynamically update the image when the window is resized
     window.addEventListener('resize', replaceRobotImage);
-  </script>
+  </script> -->
 
   <script>
     const row = document.querySelector('.row');
