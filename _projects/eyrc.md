@@ -4,6 +4,8 @@ tools: [Vrep, Hardware, Prototyping, Sensors, Troubleshooting, embedded C, Path 
 image: ../imgs/projects/cob-homeImage.png
 description: Led team of 4 to design and implemented a disaster response robot, integrated sensors, navigation algorithms, and hardware implementation.
 number: three
+is_project_page: true
+
 ---
 
 

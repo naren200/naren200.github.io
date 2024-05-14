@@ -147,7 +147,7 @@ margin-inline: var(--uia-card-time-divider-margin-inline, .15rem);
 display: grid;
 gap: var(--uia-card-content-gap, .5rem);
 padding: var(--uia-card-padding, 1rem 1.75rem);
-
+backdrop-filter: blur(100px); /* Add a blur effect */
 background-color: var(--uia-card-background-color);
 border-radius: var(--uia-card-border-radius, 2px);
 }

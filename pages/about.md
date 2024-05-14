@@ -8,9 +8,8 @@ weight: 1
 
 <div style="text-align: center;"> <strong>Table of Content&ensp;</strong> | <a href="#achievements">&ensp;Achievements - Robotics&ensp; </a> | <a href="#distinguishesme">&ensp;What Sets Me Apart&ensp;</a> | <a href="#Questionsexcitesme">&ensp;Questions That Excite Me</a> </div>
 
-
 <!-- # **About Me** -->
-<h1 style="text-align: center;"><b>About Me</b></h1>
+<h1 style="text-align: center;"><b>ABOUT ME</b></h1>
 <br>
 
 <div class="column">

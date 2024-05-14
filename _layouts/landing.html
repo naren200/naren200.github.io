@@ -12,16 +12,37 @@
   {% include navbar.html %}
 
 <body class="landing">  
-      <section class="parallax">
-        <img src="../imgs/landing/background1.png" id="mountain" style="height: 100%;">
+      <!-- <section class="parallax"> -->
+        <!-- <img src="../imgs/landing/background1.png" id="mountain" style="height: 100%;">
         <img src="../imgs/landing/background2.png" id="house" style="height: 100%;">
         <img id="robot" style="height: 100%;">
         <img src="../imgs/landing/sun_export1.png" id="sun" style="height: 100%;">
         <img src="../imgs/landing/name1.png" id="name" style="height: auto;">
         <img src="../imgs/landing/grass.png" id="grass">
-        <img src="../imgs/landing/arrow1.png" id="arrow">
-      </section>
-      <section class="sec">
+        <img src="../imgs/landing/arrow1.png" id="arrow"> -->
+        <div class="idcontainer">
+          <div class="div-text-l">
+            <h1 class="heading-4">
+              <strong class="bold-text">👋</strong>
+            </h1>
+            <h1 class="heading-3">
+                <strong class="h1">Hello, I'm Naren</strong>
+            </h1>
+            <p class="body-hero">I am a Robotics & AI Engineer with Master's degree, focusing in building software and robotic systems. I am also a proud gardner, and movie enthusiast.</p>
+          </div>
+          <div class="image-column">
+              <img src="../imgs/landing/img_frontwaistup.png" alt="Naren">
+          </div>
+            <!-- Scroll Down Button -->
+            <button class="scroll-down-btn" aria-label="Scroll Down">
+              <span>Scroll Down</span>
+              <i class="arrow down"></i> <!-- Assuming you have an arrow icon -->
+            </button>
+        </div>
+    
+      <!-- </section> -->
+
+      <!-- <section class="sec"> -->
         <div class="content about-me" id="o-estudio">
         
         <i><h3 class="experience-page-heading" style="text-align: center; color: #fff !important;">
@@ -30,11 +51,11 @@
         <br><h1 class="about-me-page-heading" style="text-align: center;">ABOUT ME</h1>
 
         <div class="about-me-text">
-        <p>Proven robotics and AI engineer, graduating with distinction in Robotics and Autonomous Systems from Arizona State University. 
+        <p><strong>Proven robotics and AI engineer, graduated with distinction in Robotics and Autonomous Systems from Arizona State University. 
           Contributed two papers on LLMs, Autonomous Driving, and Multi-Robotic Agents, demonstrating leading-edge research capabilities. 
-          Excelled in international arenas through hands-on projects elevated to the Top 0.1% via robotics systems expertise.
-          Known for developing innovative solutions that enhance efficiency and technical skills.</p>
+          Excelled in international arenas through hands-on projects elevated to the Top 0.1% via robotics systems expertise.</strong></p>
         </div> 
+        <br>
 
         <ul class="about-me-awards">
         <li class="about-me-award">
@@ -53,20 +74,20 @@
         </a>
         </li>
         </ul>
-      </section>
-      <section class="HeadingFullTime">
-      </section>     
+      <!-- </section> -->
   </body>
 
 
-  <section class="experience-section">
+  <!-- <section class="experience-section"> -->
     <br><h1 class="experience-page-heading" style="text-align: center; color: #fff !important;">PROFESSIONAL EXPERIENCE</h1><br>
     {% include landing/work-exp.html %}
-  </section>
-  <section class="project-section" >
+  <!-- </section> -->
+  <!-- <section class="project-section" > -->
     <br><h1 class="project-page-heading" style="text-align: center; color: #fff !important;">PROJECTS</h1><br>
     {% include landing/project.html %} <br>
-  </section>
+  <!-- </section> -->
+  <br><a href="https://docs.google.com/viewerng/viewer?url=https://naren200.github.io/pdfs/CV.pdf" style="text-align: center; color: #fff !important;"><h3 class="resume-page-heading" >Take a copy of my resume</h3></a><br>
+
   <section class="landing-footer">
     <br><h1 class="contact-page-heading" style="text-align: center; color: #fff !important;">CONNECT</h1>
     {% include landing/footer.html %}

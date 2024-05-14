@@ -4,6 +4,7 @@ tools: [LLMs, GPT, Autonomous, Carla, Simulator]
 image: ../imgs/projects/carla-gpt-promo.png
 description: Designed algorithm for GPT to control the autonomous vehicle in Carla Simulator
 number: three
+is_project_page: true
 ---
 
 

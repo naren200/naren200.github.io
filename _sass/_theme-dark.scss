@@ -5,9 +5,20 @@ $dark-900: #000000;
 
 [data-theme="dark"] {
   body {
-    background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72);//, #a8eb12);	
+    // background: linear-gradient(to right, hwb(215 2% 78%), #004d7a, #008793, #00bf72);//, #a8eb12);	
+    background-image: url(../../imgs/assets/5.webp);
+    background-position: center;
     color: $text-white;
   }
+  // .overlay {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   background-color: rgba(0, 0, 0, 0.5); /* Change the alpha value to adjust opacity */
+  //   backdrop-filter: blur(7px); /* Add a blur effect */
+  // }
+  
   #text_container {
     // Existing styles for text container
     color: #fff; // Set the text color to the primary text color
@@ -108,12 +119,14 @@ footer i:hover {
   }
 
   [data-uia-timeline-skin="3"] .uia-timeline__point{
-    background-color: var(--uia-timeline-point-background-color, rgba(0, 53, 32, 0.616));
+    // background-color: var(--uia-timeline-point-background-color, rgba(0, 53, 32, 0.616));
+    background-color: rgba(0, 2, 53, 0.272); //rgba(0, 0, 0, 0.318);
     border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
     }
 
   .uia-card__container {
-      background-color: rgba(0, 53, 32, 0.616); // Set the background color to white or any desired color
+      // background-color: rgba(0, 53, 32, 0.616); // Set the background color to white or any desired color
+      backdrop-filter: blur(100px); /* Add a blur effect */
     }
   hr {
       border: none;
