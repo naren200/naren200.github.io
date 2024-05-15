@@ -1,9 +1,5 @@
 // Fine Circle Responsive Image
 // Inspired by https://stackoverflow.com/a/6615994/10194811
-/* Define the variable */
-:root {
-	--background-img: url(../../imgs/assets/5.webp);
-  }
   
   
 * {
@@ -51,6 +47,23 @@ body.landing {
 	padding: 10px;
 
 }
+.heading-3 {
+	margin-top: 0;
+	margin-bottom: 25px;
+	backdrop-filter: blur(100px);
+	border-radius: 10px;
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+  }
+
+.h1-frontpage {
+	font-size: 34px;
+}
+.heading-4 {
+	margin-top: 0;
+	margin-bottom: 10px;
+  }
 
 .image-column img {
     max-width: 100%;  // Ensure the image does not overflow its container
@@ -60,6 +73,10 @@ body.landing {
 /* Media query for smaller screens - makes image and container fit better */
 @media (max-width: 630px) {
 	
+	.h1-frontpage {
+		font-size: 20px;
+	}
+
 	.idcontainer {
 		display: flex;
 		flex-direction: column;
@@ -80,7 +97,7 @@ body.landing {
 		backdrop-filter: blur(100px);
 		border-radius: 10px;
 		padding: 10px;
-
+		font-size: 15px;
 	}
 	
 	.image-column {
@@ -99,15 +116,6 @@ body.landing {
 }
 
 
-.heading-3 {
-	margin-top: 0;
-	margin-bottom: 25px;
-  }
-
-.heading-4 {
-	margin-top: 0;
-	margin-bottom: 10px;
-  }
   
 .about-me-title {
     margin-bottom: 30px
@@ -145,30 +153,6 @@ body.landing {
     padding-right: 16px
 }
 
-.project-section {
-	// background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
-	background-image: var(--background-img);
-}
-.experience-section {
-	background-image: var(--background-img);
-	// background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
-}
-// .parallax:after {
-// content: '';
-// position: absolute;
-// top: 0;
-// left: 0;
-// width: 100%;
-// height: 100%;
-// // background: linear-gradient(to right, rgba(7,13,20,0.7), rgba(0, 77, 122, 0.70), rgba(7,13,20,0.7)); //, rgba(0, 191, 114, 0.35));
-// z-index: 1000;
-// mix-blend-mode: color;
-// }
-
-.sec {
-    color: white; /* Set the text color to white */
-}
-
 
 footer i {
 	color: #08910f;
@@ -179,14 +163,7 @@ footer i:hover {
 	color: #6be9ff;
 }
 
-.sec {
-	position: relative;
-	padding: 50px;
-	overflow: hidden;
-	height: 100%;
-	// background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
-	background-image: var(--background-img);
-}
+
 
 .HeadingFullTime {
 	// text-align: center;
@@ -232,6 +209,10 @@ footer i:hover {
 
 /* Medium devices (phones) */
 @media only screen and (max-width: 967px) {
+	.h1-frontpage {
+		font-size: 22px;
+	}
+
 	.about-me-text {
 		width: 100%;
 		text-align: center;
@@ -246,12 +227,6 @@ footer i:hover {
 		backdrop-filter: blur(100px);
 		background-color: rgba(0, 8, 79, 0.127) !important; // Set the background color to white or any desired color
 	}
-	.experience-section {
-		padding: 10px;
-		// background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
-		background-image: var(--background-img);
-	}
-	
 }
 /* Small devices (phones) */
 @media only screen and (max-width: 367px) {
@@ -269,12 +244,6 @@ footer i:hover {
 		backdrop-filter: blur(100px);
 		background-color: rgba(0, 8, 79, 0.127) !important; // Set the background color to white or any desired color
 		}
-	.experience-section {
-		padding: 5px;
-		// background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147));//, #a8eb12);	
-		background-image: var(--background-img);
-	}
-	
 	}
 
 // =================================================
@@ -309,10 +278,10 @@ footer i:hover {
         transform: translateY(0);
     }
     40% {
-        transform: translateY(-30px);
+        transform: translateY(-10px);
     }
     60% {
-        transform: translateY(-15px);
+        transform: translateY(-5px);
     }
 }
 

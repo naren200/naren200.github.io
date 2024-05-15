@@ -1,7 +1,7 @@
 ---
 name: Kinova Gen 3 Robotic Arm - Singularity analysis
 tools: [Matlab, Robotic arm, Singularity, 6-DoF, Trajectory Planner, Inverse Kinematics]
-image: ../imgs/projects/roboticarm.png
+image: ../imgs/projects/roboticarm.webp
 description: Gain understanding of 6 DoF robotic arm's behavior in complex manipulation scenarios.
 is_project_page: true
 ---

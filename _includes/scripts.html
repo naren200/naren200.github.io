@@ -92,11 +92,6 @@ $(function () {
   </script>
   
   <script>
-    // document.addEventListener("DOMContentLoaded", function() {
-    //     var navbar = document.querySelector(".navbar");
-    //     navbar.style.top = "0px";  // Set navbar to be visible at the top of the page
-    // });
-
     var lastScrollTop = 0;
   
     window.addEventListener("scroll", function() {
@@ -144,71 +139,23 @@ $(function () {
    //Button for the scroll Down
   document.querySelector('.scroll-down-btn').addEventListener('click', function() {
       window.scrollBy({
-          top: window.innerHeight, // Scroll down one full window height
+          top: window.innerHeight - 50, // Scroll down one full window height
           behavior: 'smooth' // Smooth scroll
       });
   });
+  // Event listener for hiding the button on scroll
+  window.addEventListener('scroll', function() {
+    var scrollPos = window.scrollY || window.pageYOffset; // Current scroll position
+    var button = document.querySelector('.scroll-down-btn');
+    
+    if (scrollPos > 100) { // If the user scrolls down more than 100 pixels
+        button.style.display = 'none'; // Hide the scroll button
+    } else {
+        button.style.display = 'flex'; // Otherwise, show it
+    }
+  });
+
 </script>
-
-<!-- <script type="text/javascript">
-  let mountain = document.getElementById("mountain")
-  let house = document.getElementById("house")
-  let robot = document.getElementById("robot")
-  let maskHouse = document.getElementById("mask")
-  let sun = document.getElementById("sun")
-  let name = document.getElementById("name")
-
-  window.addEventListener('scroll', function(){
-    var value = window.scrollY;
-    mountain.style.top = value * -0.18 + 'px';
-    house.style.top = -value * 0.14 + 'px';
-    robot.style.top = -value * 0.19 + 'px';
-    sun.style.top = -value * 0.8 + 'px';
-    sun.style.left = value * 0.89 + 'px';
-    robot.style.transform = `scale(${1 - value * 0.00005})`; // Adjust the scaling factor as needed
-    // Get the screen height
-    var screenHeight = window.innerHeight;
-
-    // Limit the movement of the name element
-    var nameTop = value * 0.891;
-    if (nameTop > screenHeight * 0.40) {
-        nameTop = screenHeight * 0.40; // Limit the top position to 700px
-    }
-    name.style.top = nameTop + 'px';
-    })    
-
-  // Get the viewport height and set the height of .parallax section
-    window.addEventListener('DOMContentLoaded', function() {
-        var parallaxSection = document.querySelector('.parallax');
-        var viewportHeight = window.innerHeight;
-        parallaxSection.style.height = viewportHeight * 1 + 'px'; // Set height to 50% of viewport height
-    });
-
-
-    // Function to replace the robot image based on screen size
-    function replaceRobotImage() {
-        // Get the robot image element
-        var robotImage = document.getElementById('robot');
-
-        // Get the current screen width
-        var screenWidth = window.innerWidth;
-
-        // Check if the screen width is less than 1967px
-        if (screenWidth < 1867) {
-            // Replace the src attribute with the new image (robot2.png)
-            robotImage.src = '../imgs/landing/robot2.png';
-        } else {
-            // If the screen width is greater than or equal to 1967px, revert back to the original image (robothuman.png)
-            robotImage.src = '../imgs/landing/robothuman.png';
-        }
-    }
-
-    // Call the function initially to replace the image based on the initial screen size
-    replaceRobotImage();
-
-    // Add a resize event listener to dynamically update the image when the window is resized
-    window.addEventListener('resize', replaceRobotImage);
-  </script> -->
 
   <script>
     const row = document.querySelector('.row');

@@ -1,7 +1,7 @@
 ---
 name: Deep Convolutional Generative Adversial Network (DcGANs)
 tools: [Python, Tensorflow, Large Dataset, Keras, Numpy]
-image: ../imgs/projects/gan-homeImage_out.jpeg
+image: ../imgs/projects/gan-homeImage_out.webp
 description: Worked in a team of 4 on a project involving DCGANs for realistic image generation.
 is_project_page: true
 

@@ -1,7 +1,7 @@
 ---
 name: GPT & LLM assisted Autonomous Vehicle
 tools: [LLMs, GPT, Autonomous, Carla, Simulator]
-image: ../imgs/projects/carla-gpt-promo.png
+image: ../imgs/projects/carla-gpt-promo.webp
 description: Designed algorithm for GPT to control the autonomous vehicle in Carla Simulator
 number: three
 is_project_page: true

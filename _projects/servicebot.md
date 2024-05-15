@@ -1,7 +1,7 @@
 ---
 name: Home-Service Robot Project
 tools: [ROS, Gazebo, Mapping, Localization, Path Planning, Robotics]
-image: ../imgs/projects/home-service-robot.png
+image: ../imgs/projects/home-service-robot.webp
 description: Demonstrated a mobile robot's autonomous navigation and manipulated capabilities in a simulated environment using ROS and Gazebo.
 is_project_page: true
 ---

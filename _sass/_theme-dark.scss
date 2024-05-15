@@ -6,18 +6,10 @@ $dark-900: #000000;
 [data-theme="dark"] {
   body {
     // background: linear-gradient(to right, hwb(215 2% 78%), #004d7a, #008793, #00bf72);//, #a8eb12);	
-    background-image: url(../../imgs/assets/5.webp);
+    background-image: url(../../imgs/assets/3.webp);
     background-position: center;
     color: $text-white;
   }
-  // .overlay {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   background-color: rgba(0, 0, 0, 0.5); /* Change the alpha value to adjust opacity */
-  //   backdrop-filter: blur(7px); /* Add a blur effect */
-  // }
   
   #text_container {
     // Existing styles for text container
