@@ -9,25 +9,25 @@ const themes = {
 
 initTheme();
 
+// Ensure the dark theme on the landing page
 function initTheme() {
-  const savedTheme = localStorage.getItem(STORAGE_KEY);
+  const currentPath = window.location.pathname;
 
-  if (savedTheme) {
-    // Storage theme
-    setTheme(savedTheme);
-  } else if (window.matchMedia && window.matchMedia(QUERY_KEY).matches) {
-    // system theme
+  if (currentPath === "/" || currentPath === "/index.html") {
     setTheme(themes.DARK);
   } else {
-    // Default theme
-    setTheme(themes.DARK);
+    const savedTheme = localStorage.getItem(STORAGE_KEY) || themes.DARK;
+    setTheme(savedTheme);
   }
 
-  // Watch for system theme changes
-  window.matchMedia(QUERY_KEY).addEventListener("change", (e) => {
-    const newTheme = e.matches ? themes.DARK : themes.LIGHT;
-    setTheme(newTheme);
-  });
+  // System theme change listener for non-landing pages
+  if (currentPath !== "/" && currentPath !== "/index.html") {
+    window.matchMedia(QUERY_KEY).addEventListener("change", (e) => {
+      const newTheme = e.matches ? themes.DARK : themes.LIGHT;
+      setTheme(newTheme);
+      localStorage.setItem(STORAGE_KEY, newTheme);
+    });
+  }
 }
 
 function toggleTheme() {
