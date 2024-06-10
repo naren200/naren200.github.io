@@ -13,7 +13,7 @@ is_project_page: true
 ## Problem Statement
 An  open-source  platform, Carla Simulator  that facilitates  tackling  the  complexities  of  autonomous driving by enhancing safety and scene perception. Autonomous  driving  safety  is hindered  by  unexpected  behaviors  in  dense  traffic. Enhanced Safety control using multi-domain skilled GPT to make decision for better decision making process.
 <img src="../imgs/projects/GPTCarla/flowchat.png" alt="drawing" width="350"/>
-<div style="text-align: center;"><i>Curved Lane Following</i></div>
+<div style="text-align: center;"><i>Designed LLM cum Autonomous Driving Pipeline</i></div>
 <img src="../imgs/projects/GPTCarla/carsimulator.png" alt="drawing" width="650"/>
 <div style="text-align: center;"><i>Simulator Representation</i></div>
 
