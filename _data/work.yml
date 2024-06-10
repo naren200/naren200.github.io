@@ -1,9 +1,17 @@
+- title: Robotics Software Engineer
+  company: Padma Agrobotics, Mesa, Arizona
+  image:
+    src: /imgs/work/agrobotics.jpeg
+    alt: Agrobotics
+  date: Jun '24 - Jul '24
+  description: Deploy ROS2 managed nodes through Docker on an Agricultural Robot for field testing & Design PLCs for robots.
+
 - title: Graduate Research Volunteer (Zhe Xu Lab)
   company: Arizona State University, Tempe, AZ
   image:
     src: /imgs/work/asu-logo.png
     alt: Zhe Xu Lab
-  date: Nov '22 - Present
+  date: Nov '22 - May '24
   description: Implemented Differential Control Synthesis for Multi-Agent Systems. Devised ROS1 Nodes for perception and RL Architecture with the Hello Robot Strech R1.
 
 - title: Robotics & AI Solutions Architect Intern (AI Specialist)
