@@ -3,8 +3,8 @@
   image:
     src: /imgs/work/agrobotics.jpeg
     alt: Agrobotics
-  date: Jun '24 - Jul '24
-  description: Deploy ROS2 managed nodes through Docker on an Agricultural Robot for field testing & Design PLCs for robots.
+  date: Jun '24 - PRESENT
+  description: Design and implement Docker-ROS2 nodes for integrating GPS, camera, sensors, and pneumatics, develop automated data processing pipelines for ros2bag data, and create Python and Bash-based field testing protocols for real-time robotic troubleshooting.
 
 - title: Graduate Research Volunteer (Zhe Xu Lab)
   company: Arizona State University, Tempe, AZ
