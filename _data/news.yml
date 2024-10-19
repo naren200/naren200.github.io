@@ -1,7 +1,11 @@
 - year: 2024
   details:
+  - period: Oct 11
+    heading: Completed 6-month Contract with Padma Agrobotics - Robotic Software Engineer
+    description: Optimized ROS2 robotic systems, integrating sensors and cameras, automating data pipelines, and fine-tuning AI models for feature detection. 
+    url: https://www.padmaagrobotics.com/
   - period: 6 May
-    heading: Hurray! 🥳 Graduated with distinction from a Masters program at Arizona State University
+    heading: Graduated with distinction from a Masters program at Arizona State University
     description: Secured A's in all 10 courses in the field of robotics, machine learning, reinforcement learning and artificial intelligence. 
     url: ../pdfs/Transcripts.pdf
   - period: 26 Apr
