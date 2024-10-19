@@ -1,10 +1,10 @@
 - title: Robotics Software Engineer
-  company: Padma Agrobotics, Mesa, Arizona
+  company: Padma Agrobotics, Mesa, AZ
   image:
     src: /imgs/work/agrobotics.jpeg
     alt: Agrobotics
-  date: Jun '24 - Jul '24
-  description: Deploy ROS2 managed nodes through Docker on an Agricultural Robot for field testing & Design PLCs for robots.
+  date: May '24 - Oct '24
+  description: Developed and optimized ROS2-based robotic systems, integrating GPS, sensors, cameras, and pneumatics, while automating data pipelines, configuring motor control systems, and fine-tuning AI models for advanced feature detection.
 
 - title: Solutions Architect Intern (Robotics & AI Specialist)
   company: Brainchip, Laguna Hills, CA
