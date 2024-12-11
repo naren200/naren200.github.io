@@ -4,7 +4,7 @@
     src: /imgs/work/agrobotics.jpeg
     alt: Agrobotics
   date: May '24 - Oct '24
-  description: Led a 2-month solo on-site engineering effort with the CEO, delivering robotic solutions through AI, ROS and Docker tech. \n Achieved positional accuracy below 0.3cm by fine-tuning Kalman filter & optimizing GPS-encoder-based localization for precision agriculture.  \n Collected on-field datasets & optimized ML models to enhance object detection under varying lighting conditions. \n Integrated IFM Digital IO Link Master using Ethernet/IP and EtherCAT across 3+ sensor modules through PLC. \n Designed a robot's software architecture to control actuators using PLC, Embedded C++, integrating dynamic motor control, encoders, solenoids, pumps powered by joystick. 
+  description: Led a 2-month solo on-site engineering effort with the CEO, delivering robotic solutions through AI, ROS and Docker tech. \n Achieved positional accuracy  ≤ 0.3cm by fine-tuning Kalman filter & optimizing GPS-encoder-based localization for precision agriculture.  \n Collected on-field datasets & optimized ML models to enhance object detection under varying lighting conditions. \n Integrated Digital IO Link Master using Ethernet/IP and EtherCAT across 3+ sensor modules through PLC. \n Designed a robot's software architecture to control actuators using PLC, Embedded C++, integrating dynamic motor control, encoders, solenoids, pumps powered by joystick. 
 
 - title: Solutions Architect Intern (Robotics & AI Specialist)
   company: Brainchip, California
@@ -23,7 +23,7 @@
   description: I was among 95 students (97.76 Percentile) to be awarded the e-Yantra Summer Internship Program at IIT Bombay. \n Led an 4-person team to develop a fiducial-marker-based localization model with calibration error of ≤ 0.5%. \n Amplified design, combined rule-based script, and unit tested to validate auto-evaluators with 95% coverage.
 
 - title: Robotics Engineer 
-  company: e-Yantra Educational Program, IIT Bombay (Ministry of India Funded)
+  company: e-Yantra Educational Program, IIT Bombay (Ministry of Education Funded)
   image:
     src: /imgs/work/eyantra-logo.png
     alt: e-Yantra
