@@ -336,7 +336,31 @@ footer i:hover {
 	color: #fff !important;
 	text-align: left;
 
-}
+  }
+  .landing-uia-card__container ul {
+    padding-left: 0px; /* Reduce left padding for the list */
+    margin-left: 0; /* Ensure alignment to the left edge */
+    list-style-position: inside; /* Move the bullet points inside the padding */
+  }
+
+	.landing-uia-card__container li {
+		margin-bottom: 3px; /* Reduce spacing between list items */
+		padding-left: 10px; /* Minimize left padding for items */
+		color: #fff; /* Keep consistent color for list items */
+		font-size: 12px; /* Keep a uniform font size */
+		line-height: 1.4; /* Adjust line height for better readability */
+    text-align: left; /* Ensure text aligns to the left */
+  }
+
+  // .landing-uia-card__container li {
+  //   margin-bottom: 5px; /* Add some space between list items */
+  //   color: #fff; /* Ensure list items have the same color */
+  //   font-size: 12px; /* Ensure list items have the same font size */
+  // }
+
+
+
+
   
   /* Styles for screens with a min width of 1200px (adjust as needed) */
   @media (min-width: 800px) {
@@ -377,7 +401,14 @@ footer i:hover {
 			font-weight: bold; /* Make the font thicker */
 			color: #fff !important;
 		}
-	  
+	  		
+	  .landing-uia-card__container li {
+      padding-left: 25px; /* Minimize left padding for items */ 
+			margin-bottom: 15px; /* Add some space between list items */
+			color: #fff; /* Ensure list items have the same color */
+			font-size: 21px; /* Ensure list items have the same font size */
+	  }
+		
   }
     
   /* Styles for screens with a min width of 400px (adjust as needed) */
@@ -419,6 +450,13 @@ footer i:hover {
 		  text-transform: uppercase; /* Capitalize all text */
 		  font-weight: bold; /* Make the font thicker */
 		  color: #fff !important;
+	  }
+	
+	.landing-uia-card__container li {
+    padding-left: 25px; /* Minimize left padding for items */ 
+		margin-bottom: 5px; /* Add some space between list items */
+		color: #fff; /* Ensure list items have the same color */
+		font-size: 21px; /* Ensure list items have the same font size */
 	  }
 	
 }

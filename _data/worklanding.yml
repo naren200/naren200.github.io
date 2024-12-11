@@ -1,34 +1,34 @@
 - title: Robotics Software Engineer
-  company: Padma Agrobotics, Mesa, AZ
+  company: Padma Agrobotics (USDA Funded Startup), Arizona
   image:
     src: /imgs/work/agrobotics.jpeg
     alt: Agrobotics
   date: May '24 - Oct '24
-  description: Developed and optimized ROS2-based robotic systems, integrating GPS, sensors, cameras, and pneumatics, while automating data pipelines, configuring motor control systems, and fine-tuning AI models for advanced feature detection.
+  description: Led a 2-month solo on-site engineering effort with the CEO, delivering robotic solutions through AI, ROS and Docker tech. \n Achieved positional accuracy below 0.3cm by fine-tuning Kalman filter & optimizing GPS-encoder-based localization for precision agriculture.  \n Collected on-field datasets & optimized ML models to enhance object detection under varying lighting conditions. \n Integrated IFM Digital IO Link Master using Ethernet/IP and EtherCAT across 3+ sensor modules through PLC. \n Designed a robot's software architecture to control actuators using PLC, Embedded C++, integrating dynamic motor control, encoders, solenoids, pumps powered by joystick. 
 
 - title: Solutions Architect Intern (Robotics & AI Specialist)
-  company: Brainchip, Laguna Hills, CA
+  company: Brainchip, California
   image:
     src: /imgs/work/brainchip.jpg
     alt: Brainchip
   date: May '23 - Aug '23
-  description: Prototyped a novel Self-Balancing Bot controlled through a custom AI-architecture entirely from the ground up and expedited development by 40%.
+  description: Prototyped a Self-Balancing  AI-controlled bot entirely from the ground up and expedited development by 40%. \n Constructed 3D CAD models and ROS-joints controlled through Q-Learning, RL model operated on AKD1000 Chip. \n Transitioned from TF to BrainChip’s MetaTF framework, enriching customer acquisition.
 
-- title: Robotic Software Engineer Intern (Embedded C Specialist + VRep)
-  company: e-Yantra Robotic Internship Program, IIT Bombay, MoE of India
+- title: Robotic Software Engineer Intern (Embedded C Specialist)
+  company: e-Yantra Robotic Internship, IIT Bombay
   image:
     src: /imgs/work/iitb-logo.png
     alt: e-Yantra 
   date: May '20 - Aug '20
-  description: I was among 95 students (97.76 Percentile) to be awarded the e-Yantra Summer Internship Program at IIT Bombay. Developed an innovative automation algorithm for streamlining robotic processes.
+  description: I was among 95 students (97.76 Percentile) to be awarded the e-Yantra Summer Internship Program at IIT Bombay. \n Led an 4-person team to develop a fiducial-marker-based localization model with calibration error of ≤ 0.5%. \n Amplified design, combined rule-based script, and unit tested to validate auto-evaluators with 95% coverage.
 
 - title: Robotics Engineer 
-  company: e-Yantra Robotic Educational Program, IIT Bombay, MoE of India
+  company: e-Yantra Educational Program, IIT Bombay (Ministry of India Funded)
   image:
     src: /imgs/work/eyantra-logo.png
     alt: e-Yantra
   date: Oct '19 - Aug '20
-  description: Represented IIT Patna on National Stage & Awarded National Finalists (99.7 Percentile) at e-Yantra  funded by Ministry of Education, India. Recognized for technical excellence, offered Summer Internship at prestigious IIT Bombay.
+  description: Represented IIT Patna on National Stage for technical excellence. & Awarded National Finalists (99.7 Percentile). \n Built a robot from scratch possessing vision, picking, placing, and autonomous decision-making (A* & Dijkstra).
 
 # - title: Robotics Engineer 
 #   company: ABU Robocon 2020, India
