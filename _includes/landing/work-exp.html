@@ -13,9 +13,17 @@
 <div class="landing-uia-card__container"> 
     <p class="landing-work-text">
         <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
-        &mdash;
-        {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+        <!-- &mdash; -->
+        <!-- {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }} -->
     </p>
+    
+    <ul>
+        {% assign description_lines = item.description | split: '\n' %}
+        {% for line in description_lines %}
+            <li>{{ line | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+        {% endfor %}
+    </ul>
+    
 </div>
 </div>
 {% endfor %}
