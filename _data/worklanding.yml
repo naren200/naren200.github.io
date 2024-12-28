@@ -4,7 +4,7 @@
     src: /imgs/work/agrobotics.jpeg
     alt: Agrobotics
   date: May '24 - Oct '24
-  description: Led a 2-month solo on-site engineering effort with the CEO, delivering robotic solutions through AI, ROS and Docker tech. \n Achieved positional accuracy  ≤ 0.3cm by fine-tuning Kalman filter & optimizing GPS-encoder-based localization for precision agriculture.  \n Collected on-field datasets & optimized ML models to enhance object detection under varying lighting conditions. \n Integrated Digital IO Link Master using Ethernet/IP and EtherCAT across 3+ sensor modules through PLC. \n Designed a robot's software architecture to control actuators using PLC, Embedded C++, integrating dynamic motor control, encoders, solenoids, pumps powered by joystick. 
+  description: Led a 2-month solo on-site engineering effort with the CEO, delivering robotic solutions through AI, ROS and Docker tech. \n Achieved positional accuracy  ≤ 0.3 cm by fine-tuning Kalman filter & optimizing GPS-encoder-based localization for precision agriculture.  \n Collected on-field datasets & optimized AI models to enhance object detection under varying lighting conditions. \n Integrated Digital IO-Link Master using Ethernet/IP and EtherCAT across 3+ sensor modules through PLC. \n Designed a robot's software architecture to control actuators using PLC, and Embedded C++, integrating dynamic motor control, encoders, solenoids, and pumps powered by a joystick. 
 
 - title: Solutions Architect Intern (Robotics & AI Specialist)
   company: Brainchip, California

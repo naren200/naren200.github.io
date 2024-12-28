@@ -235,3 +235,181 @@ body {
   border-radius: 20px;
   padding: 30px;
 }
+
+
+/*-------------------------------------------------------
+  BLOG PAGE - Additional Custom Styles
+-------------------------------------------------------*/
+
+/* 1. AUTO-LINK & STYLE NUMERIC REFERENCES (e.g. [1], [2]) */
+a[href^="#reference-"] {
+  color: $primary; /* Adjust to your preferred color variable */
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Style the references list area if you have one */
+.references-list {
+  margin-top: 2rem;
+  font-size: 0.9em;
+
+  li {
+    margin-bottom: 0.5rem;
+    
+    a {
+      color: $primary;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* 2. IMPROVE “AUTHOR COMMENTS” SECTION */
+.author-comments {
+  // General Styling for the Container
+  margin: 2em 0;
+  padding: 1em 1.5em;
+  background-color: rgba(0, 2, 53, 0.184); /* Light overlay effect */
+  border-left: 4px solid #445b75;          /* Visual accent on the left */
+  border-radius: 8px;
+
+  h4 {
+    font-size: 1.5rem; // Default heading size for large screens
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.25rem; // Default paragraph size for large screens
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  em {
+    font-size: 1rem; // Smaller size for the author's name
+    display: block;
+    text-align: right;
+    margin-top: 1em;
+    font-style: italic;
+    color: #498eca; // Subtle text color
+  }
+
+  // Responsive Font Sizes
+  @media (max-width: 1199px) and (min-width: 992px) {
+    h4 {
+      font-size: 1.4rem;
+    }
+    p {
+      font-size: 1.15rem;
+    }
+    em {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 991px) and (min-width: 768px) {
+    h4 {
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    em {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 767px) and (min-width: 576px) {
+    h4 {
+      font-size: 1.2rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    em {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 575px) {
+    h4 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+    em {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+// Base styles for the <ul> and <li>
+#bullet-points {
+    list-style: none; // Removes default bullet styling
+    padding: 0; // Removes default padding
+    margin: 0; // Removes default margin
+  
+    li {
+      font-size: 1.2rem; // Default font size for medium screens
+      margin-bottom: 1rem; // Adds spacing between list items
+  
+      @media (max-width: 1200px) {
+        font-size: 1.2rem; // Slightly smaller for screens <= 1200px
+      }
+  
+      @media (max-width: 992px) {
+        font-size: 1.2rem; // Medium screens (tablets, etc.)
+      }
+  
+      @media (max-width: 768px) {
+        font-size: 1.2rem; // Small screens (phones in landscape)
+      }
+  
+      @media (max-width: 576px) {
+        font-size: 0.8rem; // Extra-small screens (phones in portrait)
+      }
+    }
+  }
+  
+
+// Styling for Descriptions (Direct Text or Parent Containers)
+.description, body > div, body > section, body > article {
+  font-size: 1.25rem; // Default for large screens
+  line-height: 1.6;
+}
+
+// Responsive Font Sizes
+@media (min-width: 1200px) {
+  .description, body > div, body > section, body > article {
+    font-size: 1.25rem; // For large screens
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .description, body > div, body > section, body > article {
+    font-size: 1.15rem; // Medium screens
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .description, body > div, body > section, body > article {
+    font-size: 1rem; // Small screens
+  }
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+  .description, body > div, body > section, body > article {
+    font-size: 0.9rem; // Extra-small screens
+  }
+}
+
+@media (max-width: 575px) {
+  .description, body > div, body > section, body > article {
+    font-size: 0.8rem; // Ultra-small screens
+  }
+}
