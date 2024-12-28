@@ -59,6 +59,15 @@ Massive urban centers frequently prioritize infrastructure and economic growth o
 In times past, large families—often living together or close by—could unite to weather hardships as a whole entity, tackling challenges as a group and reducing the workload for each individual <a href="#reference-10">[10]</a>. Today, a parent in one suburb, a sibling in another, and grandparents in another city can leave each individual more vulnerable, lacking the tight-knit circle that shares not just resources but also emotional and moral support <a href="#reference-11">[11]</a>. With smaller household sizes and perpetually shifting populations, many residents find themselves without a robust safety net when crisis strikes <a href="#reference-12">[12]</a>. To reclaim a measure of this human connection, we need urban designs and social policies that encourage stable communities, ensuring families and neighborhoods are not merely cogs in the economic machine, but living, resilient networks of mutual care <a href="#reference-13">[13]</a>.
 
 </div>
+<div class="image-container">
+    <img src="/imgs/blog/familybroken.webp" 
+         alt="Dall E 2024 (AI Generated): family ties severed" 
+         style="width: 100%; max-width: 300px; margin: 20px auto; display: block; border-radius: 8px;">
+    <p style="text-align: center; font-size: 14px; color: #fff;">
+        <em>Credits: Dall E 2024 (AI Generated): Family ties severed</em> 
+    </p>
+</div>
+
 <br>
 
 ### 2. Resource Diversification: The Overlooked Pillar of Sustainability
@@ -79,6 +88,20 @@ Beyond the erosion of family ties, resource mismanagement often serves as a hidd
 Urban theorists like Jane Jacobs have long advocated for resource diversification—ensuring that everything from transportation to energy production has multiple, renewable pathways <a href="#reference-19">[19]</a> <a href="#reference-20">[20]</a>. By decentralizing essentials like food production or power grids, cities can avoid the perils of “all eggs in one basket” economics and reduce vulnerability to global supply-chain disruptions <a href="#reference-21">[21]</a>.
 
 </div>
+<div class="image-container">
+    <img src="/imgs/blog/sustainablelandmanagement.jpg" 
+         alt="Credits: IPCC Land Report - Climate Change and Land" 
+         style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+    <p style="text-align: center; font-size: 14px; color: #fff;">
+        <em>Credits: IPCC Land Report - Climate Change and Land</em> 
+        <a href="https://wwf.panda.org/discover/our_focus/climate_and_energy_practice/ipcc_land/?" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           style="text-decoration: none; color:rgb(78, 153, 199);">
+           Source
+        </a>
+    </p>
+</div>
 <br>
 
 ### 3. Environmental Limits and the Biodiversity Reckoning
@@ -93,6 +116,21 @@ Urban theorists like Jane Jacobs have long advocated for resource diversificatio
 <div class="description">
 
 Massively populated cities also strain the planet’s ecological limits. As they expand, they encroach on habitats and disrupt natural ecosystems—escalating the rate at which species become endangered or extinct <a href="#reference-22">[22]</a> <a href="#reference-23">[23]</a>. Elizabeth Kolbert’s investigation into the ongoing mass extinction event reveals how urban sprawl, pollution, and climate change compound to threaten biodiversity <a href="#reference-24">[24]</a> <a href="#reference-25">[25]</a>. While skyscrapers symbolize progress, their sprawling footprints leave little room for wildlife corridors or essential green belts <a href="#reference-26">[26]</a>. The result is a devastating domino effect: once-thriving ecosystems collapse, pollinators decline, and local water sources become contaminated or overdrawn <a href="#reference-27">[27]</a> <a href="#reference-28">[28]</a>. Bridging the gap between urban needs and ecological wisdom—by preserving wetlands, supporting urban forests, and enforcing sustainable zoning laws—becomes imperative if we hope to maintain the diverse life forms that make our world livable <a href="#reference-29">[29]</a> <a href="#reference-30">[30]</a>.
+</div>
+
+<div class="image-container">
+    <img src="/imgs/blog/biodiversityloss.webp" 
+         alt="Credits: DreamsTime" 
+         style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+    <p style="text-align: center; font-size: 14px; color: #fff;">
+        <em>Credits: DreamsTime</em> 
+        <a href="https://www.dreamstime.com/global-environmental-problems-biodiversiry-loss-infographic-plants-animals-destruction-global-environmental-problems-image206766580" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           style="text-decoration: none; color:rgb(78, 153, 199);">
+           Source
+        </a>
+    </p>
 </div>
 <br>
 
@@ -109,7 +147,7 @@ Mega-cities might symbolize modern progress, but their unchecked growth comes at
 <ul id="bullet-points">
 <li><b>Healthy Urban Communities</b>: Prioritize neighborhood-level designs and policies that keep families close.</li>  
 <li><b>Sustainable Resource Management</b>: Adopt diversified approaches for food, energy, and infrastructure to avoid single points of failure.</li>  
-<li><b>Protect Biodiversity</b>: Balance urban development with ecological preservation to maintain the planet’s life-support systems.</li>
+<li><b>Protect Biodiversity</b>: Ensure a balanced approach to urban development and ecological preservation across all states to safeguard the planet’s vital life-support systems.</li>
 </ul>
 
 <div class="author-comments">
@@ -158,10 +196,10 @@ Mega-cities might symbolize modern progress, but their unchecked growth comes at
 </ul>
 <br>
 
-##### Should governments focus more on preserving green spaces or improving urban infrastructure?
+##### Should governments prioritize diversified development or focus on enhancing megacities?
 <ul>
-<li>Green Spaces (Equally diversified developments across country)</li>
-<li>Only Urban Infrastructure</li>
+<li>Equitable and diversified development across the country</li>
+<li>Improve only Urban Infrastructure/ Mega cities</li>
 <li>Both</li>
 </ul>
 <br>
