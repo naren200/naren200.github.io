@@ -134,18 +134,17 @@ Mega-cities might symbolize modern progress, but their unchecked growth comes at
 
 </ul>
 <br>
-
 <script src="https://giscus.app/client.js"
         data-repo="naren200/naren200.github.io"
         data-repo-id="R_kgDOJHzC3A"
-        data-category="Brainstorm"
-        data-category-id="[ENTER CATEGORY ID HERE]"
+        data-category="Brainstorm Urban developments"
+        data-category-id="DIC_kwDOJHzC3M4ClkrZ"
         data-mapping="/blog/metrocities"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="cobalt"
+        data-theme="noborder_dark"
         data-lang="en"
         data-loading="lazy"
         crossorigin="anonymous"
