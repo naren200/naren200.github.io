@@ -100,7 +100,7 @@ Mega-cities might symbolize modern progress, but their unchecked growth comes at
 ### Get Involved!
 <ul id="bullet-points">
 <li> <b>Share Your Story</b>: Have you experienced similar shifts in your city or country? Share your thoughts in the comments below.  </li>
-<li><b>Spread the Word</b>: If you found this post helpful, consider sharing it on social media to spark broader conversations about <b>urban sustainability</b>.  <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20urban%20sustainability%20blog!&url=http://127.0.0.1:4000/blog/metrocities"
+<li><b>Spread the Word</b>: If you found this post helpful, consider sharing it on social media to spark broader conversations about <b>urban sustainability</b>.  <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20urban%20sustainability%20blog!&url=https://naren200.github.io/blog/metrocities"
    target="_blank" 
    rel="noopener noreferrer"
    style="
