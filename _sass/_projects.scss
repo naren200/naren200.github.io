@@ -21,6 +21,59 @@
   }
 }
 
+.mermaid {
+  background: rgba(3, 20, 61, 0.082) !important; /* Dark blue with 90% opacity */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fdfdfd1f;
+}
+
+/* Add these specific styles */
+.mermaid .node.input rect {
+  fill: rgba(56, 178, 172, 0.15) !important; /* Teal background */
+  stroke: rgba(56, 178, 172, 0.4) !important;
+}
+
+.mermaid .node.output rect {
+  fill: rgba(159, 122, 234, 0.15) !important; /* Purple background */
+  stroke: rgba(159, 122, 234, 0.4) !important;
+}
+
+.mermaid .node rect {
+  opacity: 0.7;
+  filter: drop-shadow(0 0 5px rgba(79,209,197,0.3));
+}
+/* Audio Input (D) */
+.mermaid .node.id-D rect {
+  fill: rgba(43, 122, 120, 0.2) !important; /* Teal background */
+  stroke: rgba(56, 178, 172, 0.5) !important; /* Teal border */
+  rx: 8px !important; /* Rounded corners */
+  filter: drop-shadow(0 2px 4px rgba(56, 178, 172, 0.2));
+}
+
+/* Synthesized Speech (E) */
+.mermaid .node.id-E rect {
+  fill: rgba(107, 70, 193, 0.2) !important; /* Purple background */
+  stroke: rgba(159, 122, 234, 0.5) !important; /* Purple border */
+  rx: 8px !important; /* Rounded corners */
+  filter: drop-shadow(0 2px 4px rgba(159, 122, 234, 0.2));
+}
+
+.mermaid .cluster rect {
+  fill: rgba(79, 209, 197, 0.1) !important; /* Teal tint with 10% opacity */
+  stroke: rgba(79,209,197,0.3) !important;
+}
+
+/* For entire flowchart background */
+.mermaid {
+  backdrop-filter: blur(2px);
+}
+.mermaid .node.llm rect {
+  fill: rgba(74,85,104,0.15) !important; /* LLM */
+  stroke: rgba(113,128,150,0.4) !important;
+}
+
+
 // Cards
 .card {
   // background-color: $dark-600;
@@ -35,7 +88,6 @@
     background-color: rgba(248, 248, 248, 0.548);
   }
 }
-
 
 
 /* Default styles for smaller screens */
