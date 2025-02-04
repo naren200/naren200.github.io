@@ -1,79 +1,140 @@
 
 <div class="page-content">
     <div class="wrapper">
-    <div class="work">
-        <br>
-        <h4 class="page-heading"><strong>EDUCATION</strong></h4><br>
-        {% for item in site.data.education %}
-        <div class="work-item">
-        <div class="work-bubble-with-date"> 
-            <img
-            src="{{ item.image.src | absolute_url }}"
-            alt="{{ item.image.alt }}"
-            class="work-bubble"
-            />
-            {% if item.date %}
-            <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
-            {% endif %}
-        </div>
-        <div class="uia-card__container">
-        <p class="work-text">
-            <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
-            &mdash;
-            {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
-        </p>
-        </div>
-        </div>
-        {% endfor %}
+        <div class="work">
 
-        <hr>
-        <br><h4 class="page-heading"><strong>PROFESSIONAL EXPERIENCE</strong></h4><br>
-        {% for item in site.data.work %}
-        <div class="work-item">
-        <div class="work-bubble-with-date">
-            <img
-            src="{{ item.image.src | absolute_url }}"
-            alt="{{ item.image.alt }}"
-            class="work-bubble"
-            />
-            {% if item.date %}
-            <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
-            {% endif %}
+            <!-- Experience Section -->
+            <br><h4 class="page-heading"><strong>PROFESSIONAL EXPERIENCE</strong></h4><br>
+            <div class="expandable-section">
+                {% for item in site.data.work limit:2 %}
+                <div class="work-item">
+                    <div class="work-bubble-with-date">
+                        <img src="{{ item.image.src | absolute_url }}" alt="{{ item.image.alt }}" class="work-bubble"/>
+                        {% if item.date %}
+                        <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
+                        {% endif %}
+                    </div>
+                    <div class="uia-card__container">
+                        <p class="work-text">
+                            <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
+                            &mdash;
+                            {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+                
+                <div class="hidden-content">
+                    {% for item in site.data.work offset:2 %}
+                    <div class="work-item">
+                        <!-- Same structure as above -->
+                        <div class="work-bubble-with-date">
+                            <img src="{{ item.image.src | absolute_url }}" alt="{{ item.image.alt }}" class="work-bubble"/>
+                            {% if item.date %}
+                            <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
+                            {% endif %}
+                        </div>
+                        <div class="uia-card__container">
+                            <p class="work-text">
+                                <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
+                                &mdash;
+                                {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="show-more-btn">Show More</button>
+            </div>
+            <hr>
+
+            <!-- Education Section -->
+            <br>
+            <h4 class="page-heading"><strong>EDUCATION</strong></h4><br>
+            <div class="expandable-section">
+                {% for item in site.data.education limit:2 %}
+                <div class="work-item">
+                    <div class="work-bubble-with-date"> 
+                        <img src="{{ item.image.src | absolute_url }}" alt="{{ item.image.alt }}" class="work-bubble"/>
+                        {% if item.date %}
+                        <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
+                        {% endif %}
+                    </div>
+                    <div class="uia-card__container">
+                        <p class="work-text">
+                            <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
+                            &mdash;
+                            {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+                
+                <div class="hidden-content">
+                    {% for item in site.data.education offset:2 %}
+                    <div class="work-item">
+                        <div class="work-bubble-with-date"> 
+                            <img src="{{ item.image.src | absolute_url }}" alt="{{ item.image.alt }}" class="work-bubble"/>
+                            {% if item.date %}
+                            <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
+                            {% endif %}
+                        </div>
+                        <div class="uia-card__container">
+                            <p class="work-text">
+                                <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
+                                &mdash;
+                                {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="show-more-btn">Show More</button>
+            </div>
+
+            <!-- Publications Section -->
+            <hr>
+            <br><h4 class="page-heading"><strong>PUBLICATIONS</strong></h4><br>
+            <div class="expandable-section">
+                {% for item in site.data.publication limit:2 %}
+                <div class="work-item">
+                    <div class="work-bubble-with-date">
+                        <img src="{{ item.image.src | absolute_url }}" alt="{{ item.image.alt }}" class="work-bubble"/>
+                        {% if item.date %}
+                        <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
+                        {% endif %}
+                    </div>
+                    <div class="uia-card__container">
+                        <p class="work-text">
+                            <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
+                            &mdash;
+                            {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+                
+                <div class="hidden-content">
+                    {% for item in site.data.publication offset:2 %}
+                    <div class="work-item">
+                        <div class="work-bubble-with-date">
+                            <img src="{{ item.image.src | absolute_url }}" alt="{{ item.image.alt }}" class="work-bubble"/>
+                            {% if item.date %}
+                            <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
+                            {% endif %}
+                        </div>
+                        <div class="uia-card__container">
+                            <p class="work-text">
+                                <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
+                                &mdash;
+                                {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="show-more-btn">Show More</button>
+            </div>
         </div>
-        <div class="uia-card__container">
-            <p class="work-text">
-                <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
-                &mdash;
-                {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
-            </p>
-        </div>
-        </div>
-        {% endfor %}
-        
-        <hr>
-        <br><h4 class="page-heading"><strong>PUBLICATIONS</strong></h4><br>
-        {% for item in site.data.publication %}
-        <div class="work-item">
-        <div class="work-bubble-with-date">
-            <img
-            src="{{ item.image.src | absolute_url }}"
-            alt="{{ item.image.alt }}"
-            class="work-bubble"
-            />
-            {% if item.date %}
-            <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
-            {% endif %}
-        </div>
-        <div class="uia-card__container">
-            <p class="work-text">
-                <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
-                &mdash;
-                {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}
-            </p>
-        </div>
-        </div>
-        {% endfor %}
-    </div>
     </div>
 </div>
-

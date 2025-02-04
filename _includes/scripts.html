@@ -157,14 +157,31 @@ $(function () {
 
 </script>
 
-  <script>
-    const row = document.querySelector('.row');
-    
-    document.addEventListener('mousemove', function(e) {
-        const mouseX = e.clientX;
-        const windowWidth = window.innerWidth;
-        const skewAmount = (mouseX / windowWidth - 0.5) * 6; // Adjust skew amount as needed
-        
-        row.style.transform = `skewY(${skewAmount}deg)`;
-    });
-  </script>
+<script>
+  const row = document.querySelector('.row');
+  
+  document.addEventListener('mousemove', function(e) {
+      const mouseX = e.clientX;
+      const windowWidth = window.innerWidth;
+      const skewAmount = (mouseX / windowWidth - 0.5) * 6; // Adjust skew amount as needed
+      
+      row.style.transform = `skewY(${skewAmount}deg)`;
+  });
+</script>
+
+<script>
+  // Add this script at the end of your body tag
+  document.addEventListener('DOMContentLoaded', function() {
+      const showMoreButtons = document.querySelectorAll('.show-more-btn');
+      
+      showMoreButtons.forEach(button => {
+          button.addEventListener('click', function() {
+              const section = button.closest('.expandable-section');
+              const hiddenContent = section.querySelector('.hidden-content');
+              
+              hiddenContent.classList.toggle('visible');
+              button.textContent = hiddenContent.classList.contains('visible') ? 'Show Less' : 'Show More';
+          });
+      });
+  });
+</script>
