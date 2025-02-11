@@ -154,18 +154,18 @@ h4.mb-3 {
   transform: translateY(0);
 }
 
-/* Futuristic button styling */
+/* Improved responsive styling for "Show More" button */
 .show-more-btn {
   display: block;
   margin: 20px auto;
-  padding: 10px 28px;
+  padding: 8px 20px; /* Slightly smaller padding for better responsiveness */
   background: linear-gradient(135deg, rgba(0, 2, 53, 0.3), rgba(0, 255, 255, 0.15));
   color: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
   cursor: pointer;
   font-family: "San Francisco", sans-serif;
-  font-size: 16px;
+  font-size: 1em; /* Adjusting font size dynamically */
   font-weight: 600;
   text-transform: uppercase;
   transition: all 0.4s ease;
@@ -173,6 +173,22 @@ h4.mb-3 {
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.2), 0 0 20px rgba(0, 255, 255, 0.15) inset;
 }
 
+/* Ensure button scales down on smaller screens */
+@media (max-width: 768px) {
+  .show-more-btn {
+    font-size: 0.9em; /* Reduce font size slightly */
+    padding: 6px 18px; /* Adjust padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .show-more-btn {
+    font-size: 0.85em; /* Further reduce font size for small devices */
+    padding: 5px 15px;
+  }
+}
+
+/* Hover effect */
 .show-more-btn:hover {
   background: linear-gradient(135deg, rgba(0, 2, 53, 0.5), rgba(0, 255, 255, 0.3));
   border-color: rgba(255, 255, 255, 0.5);
