@@ -1,12 +1,13 @@
 {%- if jekyll.environment == 'production' and site.analytics.enabled == true -%}  
+  <!-- Modify 'your-google-tracking-id' with your google tracking ID at 2 location in the following file -->
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0B45SLBC4K"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=your-google-tracking-id"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
   
-    gtag('config', 'G-0B45SLBC4K');
+    gtag('config', 'your-google-tracking-id');
   </script>
 {%- endif -%}
 
