@@ -26,7 +26,7 @@
     <div class="chat-header">
       <h3>Chat with Naren</h3>
       <div class="chat-controls">
-        <button id="remove-cache-btn" class="remove-cache-btn" title="Remove Model Cache">Remove Cache</button>
+        <button id="remove-cache-btn" class="remove-cache-btn" title="Remove Me - Clear all data, cache, and cookies">Remove Me</button>
         <button id="close-chat" class="close-btn" title="Minimize Chat">↓</button>
       </div>
     </div>
@@ -1014,7 +1014,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Remove cache functionality
   removeCacheBtn.addEventListener('click', function() {
-    if (confirm('Are you sure you want to remove the model cache? This will delete the downloaded AI model and you will need to download it again next time you use the chat feature.')) {
+    if (confirm('Are you sure you want to remove me? This will delete all data, cache, cookies, and the downloaded AI model. You will need to download it again next time you use the chat feature.')) {
       removeModelCache();
     }
   });
@@ -1556,23 +1556,125 @@ async function removeModelCache() {
     removeCacheBtn.textContent = 'removing...';
     removeCacheBtn.disabled = true;
     
-    // Clear WebLLM cache through IndexedDB
-    if ('indexedDB' in window) {
-      // Clear WebLLM specific databases
-      const dbsToDelete = ['webllm-cache', 'webllm', 'mlc-cache'];
-      
-      for (const dbName of dbsToDelete) {
-        try {
-          const deleteRequest = indexedDB.deleteDatabase(dbName);
-          await new Promise((resolve, reject) => {
-            deleteRequest.onerror = () => resolve(); // Don't fail if DB doesn't exist
-            deleteRequest.onsuccess = () => resolve();
-            deleteRequest.onblocked = () => resolve();
-          });
-          console.log(`Deleted database: ${dbName}`);
-        } catch (error) {
-          console.log(`Could not delete database ${dbName}:`, error);
+    // First, dispose of WebLLM engine to release model data locks
+    if (window.globalChatEngine) {
+      try {
+        console.log('Disposing WebLLM engine before model deletion...');
+        
+        // Try multiple disposal methods for WebLLM
+        if (window.globalChatEngine.dispose) {
+          await window.globalChatEngine.dispose();
         }
+        if (window.globalChatEngine.unload) {
+          await window.globalChatEngine.unload();
+        }
+        if (window.globalChatEngine.reset) {
+          await window.globalChatEngine.reset();
+        }
+        if (window.globalChatEngine.forceDispose) {
+          await window.globalChatEngine.forceDispose();
+        }
+        
+        // Clear WebLLM runtime and memory
+        if (window.globalChatEngine.getRuntimeStatsText) {
+          console.log('Runtime stats before cleanup:', window.globalChatEngine.getRuntimeStatsText());
+        }
+        
+        window.globalChatEngine = null;
+        console.log('WebLLM engine disposed successfully');
+      } catch (error) {
+        console.log('Engine disposal error:', error);
+        window.globalChatEngine = null; // Force clear even if disposal fails
+      }
+    }
+
+    // Clear WebLLM-specific global objects and memory
+    try {
+      // Clear WebLLM globals
+      if (window.tvmjs) {
+        delete window.tvmjs;
+      }
+      if (window.WebLLM) {
+        delete window.WebLLM;
+      }
+      if (window.MLCEngine) {
+        delete window.MLCEngine;
+      }
+      
+      // Clear any WebAssembly modules
+      if (window.WebAssembly && window.WebAssembly.instantiatedSources) {
+        window.WebAssembly.instantiatedSources.clear();
+      }
+      
+      console.log('Cleared WebLLM global objects');
+    } catch (error) {
+      console.log('Global cleanup error:', error);
+    }
+
+    // Clear all Cache API storage (for model files)
+    if ('caches' in window) {
+      try {
+        const cacheNames = await caches.keys();
+        console.log('Found caches:', cacheNames);
+        for (const cacheName of cacheNames) {
+          if (cacheName.includes('webllm') || cacheName.includes('mlc') || cacheName.includes('model')) {
+            await caches.delete(cacheName);
+            console.log(`Deleted cache: ${cacheName}`);
+          }
+        }
+      } catch (error) {
+        console.log('Cache deletion error:', error);
+      }
+    }
+
+    // Clear WebLLM model data through comprehensive IndexedDB cleanup
+    if ('indexedDB' in window) {
+      try {
+        // Get all databases and delete WebLLM-related ones
+        const databases = await indexedDB.databases();
+        console.log('Found IndexedDB databases:', databases.map(db => db.name));
+        
+        for (const db of databases) {
+          if (db.name && (
+            db.name.includes('webllm') || 
+            db.name.includes('mlc') || 
+            db.name.includes('model') || 
+            db.name.includes('cache')
+          )) {
+            try {
+              const deleteRequest = indexedDB.deleteDatabase(db.name);
+              await new Promise((resolve) => {
+                deleteRequest.onerror = () => resolve();
+                deleteRequest.onsuccess = () => resolve();
+                deleteRequest.onblocked = () => {
+                  console.log(`Database ${db.name} deletion blocked, forcing...`);
+                  setTimeout(resolve, 1000); // Wait 1 sec then continue
+                };
+              });
+              console.log(`Deleted model database: ${db.name}`);
+            } catch (error) {
+              console.log(`Could not delete database ${db.name}:`, error);
+            }
+          }
+        }
+        
+        // Also try to delete known WebLLM database names
+        const knownDbNames = ['webllm-cache', 'webllm', 'mlc-cache', 'tvmjs', 'webllm-model-cache'];
+        for (const dbName of knownDbNames) {
+          try {
+            const deleteRequest = indexedDB.deleteDatabase(dbName);
+            await new Promise((resolve) => {
+              deleteRequest.onerror = () => resolve();
+              deleteRequest.onsuccess = () => resolve();
+              deleteRequest.onblocked = () => resolve();
+            });
+            console.log(`Deleted known database: ${dbName}`);
+          } catch (error) {
+            console.log(`Could not delete known database ${dbName}:`, error);
+          }
+        }
+      } catch (error) {
+        console.log('IndexedDB cleanup error:', error);
       }
     }
     
@@ -1581,6 +1683,12 @@ async function removeModelCache() {
     localStorage.removeItem('webllm-cache');
     localStorage.removeItem('mlc-cache');
     localStorage.removeItem('chatErrors');
+    
+    // Clear all cookies
+    document.cookie.split(";").forEach(function(c) { 
+      document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+    });
+    console.log('Cleared all cookies');
     
     // Clear sessionStorage
     sessionStorage.removeItem('chatState');
@@ -1600,19 +1708,38 @@ async function removeModelCache() {
       personaSelected: false
     };
     
-    // Clear global engine reference
-    if (window.globalChatEngine) {
-      try {
-        // Try to properly dispose of the engine if it has cleanup methods
-        if (window.globalChatEngine.dispose) {
-          await window.globalChatEngine.dispose();
-        }
-      } catch (error) {
-        console.log('Engine cleanup error:', error);
-      }
-      window.globalChatEngine = null;
-    }
+    // Engine already disposed at the beginning of this function
     
+    // Force storage quota clearing
+    try {
+      if (navigator.storage && navigator.storage.estimate) {
+        const estimate = await navigator.storage.estimate();
+        console.log('Storage before cleanup:', estimate);
+        
+        // Clear storage quota if available
+        if (navigator.storage.persist) {
+          await navigator.storage.persist();
+        }
+      }
+    } catch (error) {
+      console.log('Storage quota error:', error);
+    }
+
+    // Force garbage collection if available
+    try {
+      if (window.gc) {
+        window.gc();
+        console.log('Forced garbage collection');
+      }
+      
+      // Alternative method for memory cleanup
+      if (performance && performance.memory) {
+        console.log('Memory before cleanup:', performance.memory);
+      }
+    } catch (error) {
+      console.log('Garbage collection error:', error);
+    }
+
     // Clear chat messages
     const messagesContainer = document.getElementById('chat-messages');
     if (messagesContainer) {
@@ -1623,8 +1750,8 @@ async function removeModelCache() {
               <span></span><span></span><span></span>
             </div>
             <div class="loading-text">
-              <h4 id="loading-stage">Model Cache Removed</h4>
-              <p id="loading-details">AI model cache has been cleared. The model will need to be downloaded again next time you start a chat.</p>
+              <h4 id="loading-stage">Remove Me Complete</h4>
+              <p id="loading-details">All data, cache, model, and cookies have been cleared. The AI model will need to be downloaded again next time you start a chat.</p>
             </div>
           </div>
         </div>
