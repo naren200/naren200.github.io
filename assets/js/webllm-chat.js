@@ -85,7 +85,7 @@ class DynamicChatManager {
     this.messages = [];
     this.isProcessing = false;
     this.engine = null;
-    this.userType = 'explorer'; // default
+    this.userType = window.chatState?.userType || 'explorer'; // Get from global state or default
     this.conversationStarted = false;
     this.currentPage = this.detectCurrentPage(); // Add page detection
     this.thinkingMessages = [
@@ -256,16 +256,35 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
       this.updateLoadingStage('Ready to Chat!', 'AI model loaded successfully. You can now start chatting.');
       this.updateProgress(100);
       
+      // Update background loading if it was shown
+      if (typeof updateBackgroundLoading === 'function') {
+        updateBackgroundLoading('AI model ready! ✅', 100);
+      }
+      
       this.initialized = true;
       console.log('DynamicChatManager: Initialization completed successfully');
       
-      // Small delay to show completion
-      setTimeout(() => {
-        this.hideLoading();
+      // Check if we're still in persona selector mode or if user already selected
+      const personaSelector = document.getElementById('persona-selector');
+      const isPersonaSelectorVisible = personaSelector && personaSelector.style.display !== 'none';
+      
+      if (isPersonaSelectorVisible) {
+        // Model is ready, but user hasn't selected persona yet
+        // Keep showing that model is ready, don't hide loading UI
+        console.log('Model ready, waiting for persona selection');
+        this.enableInput(); // Enable input so when persona is selected, it's ready
+      } else {
+        // User already selected persona, proceed normally but keep showing progress
         this.enableInput();
-        // Start with initial classification conversation
-        this.startInitialConversation();
-      }, 1000);
+        // Start with persona-specific conversation after a brief delay to show completion
+        setTimeout(() => {
+          this.startInitialConversation();
+          // Only hide loading UI after conversation starts
+          setTimeout(() => {
+            this.hideLoading();
+          }, 500);
+        }, 1000);
+      }
       
     } catch (error) {
       console.error('DynamicChatManager: Failed to initialize chat:', error);
@@ -305,6 +324,11 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
         console.log(`loadWebLLM: Starting WebLLM engine creation (attempt ${retryCount + 1}/${MAX_RETRIES})...`);
         this.updateLoadingStage('Initializing AI Model', `Fetching model configuration and preparing download... (Attempt ${retryCount + 1}/${MAX_RETRIES})`);
         
+        // Also update background loading if visible
+        if (typeof updateBackgroundLoading === 'function') {
+          updateBackgroundLoading('Connecting to AI model...', 5);
+        }
+        
         // Check if webllm is available
         if (!webllm || !webllm.CreateMLCEngine) {
           throw new Error('WebLLM library not loaded properly. Please refresh the page.');
@@ -318,24 +342,27 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
         // Use Llama 3.2 1B model with correct WebLLM model ID
         console.log('loadWebLLM: Creating MLC Engine with Llama-3.2-1B-Instruct-q4f16_1-MLC...');
         
-        // Create a timeout promise
+        // Create a timeout promise with better user messaging
         const timeoutPromise = new Promise((_, reject) => {
           setTimeout(() => {
-            reject(new Error(`Model loading timed out after ${TIMEOUT_MS / 1000} seconds. This may be due to slow network or large model size.`));
+            reject(new Error(`Model loading timed out after ${TIMEOUT_MS / 1000} seconds. The AI model is approximately 600MB and requires a stable internet connection.`));
           }, TIMEOUT_MS);
         });
         
-        // Track progress for timeout detection
+        // Track progress for timeout detection with better messaging
         let lastProgressTime = Date.now();
+        let slowDownloadWarningShown = false;
         let isStuck = false;
         
         const progressCheckInterval = setInterval(() => {
           const timeSinceLastProgress = Date.now() - lastProgressTime;
-          if (timeSinceLastProgress > 120000) { // 2 minutes without progress
-            isStuck = true;
-            this.updateLoadingStage('Download Seems Slow', 'Model download is taking longer than expected. Please be patient or try refreshing if stuck.');
+          if (timeSinceLastProgress > 90000 && !slowDownloadWarningShown) { // 1.5 minutes without progress
+            slowDownloadWarningShown = true;
+            this.updateLoadingStage('Slow Connection Detected', 'Download is taking longer than usual. The AI model is ~600MB. Please stay on this page while it downloads.');
+          } else if (timeSinceLastProgress > 180000) { // 3 minutes without progress
+            this.updateLoadingStage('Download Appears Stuck', 'The download seems to have stalled. Try refreshing the page or check your internet connection.');
           }
-        }, 30000); // Check every 30 seconds
+        }, 15000); // Check every 15 seconds
         
         // Create the engine with timeout
         const enginePromise = webllm.CreateMLCEngine(
@@ -353,26 +380,43 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
               
               console.log(`loadWebLLM: Progress update - ${progress}% - Report:`, report);
               
-              if (progress < 10) {
+              if (progress < 5) {
+                stage = 'Starting Download';
+                details = 'Establishing connection to model server...';
+              } else if (progress < 15) {
                 stage = 'Fetching Model Data';
                 details = 'Downloading model configuration and metadata...';
-              } else if (progress < 30) {
-                stage = 'Downloading Model';
-                details = 'Downloading AI model files from server... This may take several minutes.';
-              } else if (progress < 70) {
+              } else if (progress < 40) {
+                stage = 'Downloading Model (1/3)';
+                details = 'Downloading AI model files... This may take several minutes depending on your connection.';
+              } else if (progress < 65) {
+                stage = 'Downloading Model (2/3)';
+                details = 'Continuing download of AI model components...';
+              } else if (progress < 80) {
+                stage = 'Downloading Model (3/3)';
+                details = 'Finalizing model download and preparing for caching...';
+              } else if (progress < 90) {
                 stage = 'Caching Model';
                 details = 'Caching model data locally for faster future access...';
               } else if (progress < 95) {
-                stage = 'Initializing Model';
-                details = 'Loading model into memory and preparing for chat...';
+                stage = 'Loading into Memory';
+                details = 'Loading AI model into browser memory...';
+              } else if (progress < 98) {
+                stage = 'Initializing AI';
+                details = 'Preparing AI model for conversation...';
               } else {
-                stage = 'Finalizing Setup';
-                details = 'Completing initialization and setting up chat interface...';
+                stage = 'Almost Ready!';
+                details = 'Finalizing setup and preparing chat interface...';
               }
               
               console.log(`loadWebLLM: Stage - ${stage}: ${details}`);
               this.updateLoadingStage(stage, details);
               this.updateProgress(progress);
+              
+              // Also update background loading if visible
+              if (typeof updateBackgroundLoading === 'function') {
+                updateBackgroundLoading(stage, progress);
+              }
             }
           }
         );
@@ -474,41 +518,40 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
   }
   
   async startInitialConversation() {
-    // Get page-specific context for tailored welcome message
-    let pageContext = null;
-    let welcomeContent = '';
-    
-    if (narenContext && narenContext.page_contexts && narenContext.page_contexts[this.currentPage]) {
-      pageContext = narenContext.page_contexts[this.currentPage];
-      console.log(`DynamicChatManager: Using page-specific welcome for '${this.currentPage}' page`);
+    // Generate persona-specific welcome message
+    try {
+      console.log('startInitialConversation: Generating persona-specific greeting for:', this.userType);
+      const greeting = await this.generateDynamicGreeting(this.userType);
       
-      // Create page-specific welcome message
-      welcomeContent = `Hi there! 👋 I'm Naren, a robotics engineer with expertise in ROS2, autonomous systems, and AI integration.
-
-${pageContext.greeting_context}
-
-I recently completed my M.S. in Robotics at Arizona State University and worked as a Robotics Software Engineer at Padma Agrobotics.
-
-${pageContext.conversation_starters ? 
-  `Feel free to ask me about:\n${pageContext.conversation_starters.map(starter => `• ${starter}`).join('\n')}` : 
-  'What would you like to know?'}`;
-    } else {
-      // Fallback to general welcome
-      welcomeContent = `Hi there! 👋 I'm Naren, a robotics engineer with expertise in ROS2, autonomous systems, and AI integration.
-
-I recently completed my M.S. in Robotics at Arizona State University and worked as a Robotics Software Engineer at Padma Agrobotics.
-
-What brings you to my portfolio today?`;
+      const welcomeMessage = {
+        role: 'assistant',
+        content: greeting
+      };
+      
+      this.addMessage(welcomeMessage);
+      this.messages.push(welcomeMessage);
+      this.saveConversationState();
+      console.log('startInitialConversation: Persona-specific greeting generated successfully');
+    } catch (error) {
+      console.error('startInitialConversation: Error generating greeting:', error);
+      
+      // Fallback welcome based on persona
+      const fallbackGreetings = {
+        recruiter: "Hi! I'm Naren, a robotics engineer actively seeking opportunities. I recently completed my M.S. in Robotics at ASU and have experience with ROS2, autonomous systems, and AI/ML. What position are you looking to fill?",
+        colleague: "Hey there! Great to meet a fellow engineer! I'm Naren, specializing in robotics and autonomous systems. I work extensively with ROS2, computer vision, and multi-agent systems. What brings you here?",
+        explorer: "Hi! 👋 I'm Naren, a robotics engineer with expertise in ROS2, autonomous systems, and AI integration. I recently completed my M.S. in Robotics at Arizona State University. What would you like to know about my background?"
+      };
+      
+      const fallbackContent = fallbackGreetings[this.userType] || fallbackGreetings.explorer;
+      const fallbackMessage = {
+        role: 'assistant',
+        content: fallbackContent
+      };
+      
+      this.addMessage(fallbackMessage);
+      this.messages.push(fallbackMessage);
+      this.saveConversationState();
     }
-    
-    const pageAwareWelcome = {
-      role: 'assistant',
-      content: welcomeContent
-    };
-    
-    this.addMessage(pageAwareWelcome);
-    this.messages.push(pageAwareWelcome);
-    this.saveConversationState();
   }
   
   restoreConversationState() {
@@ -709,34 +752,10 @@ What brings you to my portfolio today?`;
     }
     
     try {
-      // Classify user type on first message
-      if (!this.conversationStarted) {
-        this.userType = this.classifyUserType(message);
-        this.conversationStarted = true;
-        console.log('sendMessage: User classified as:', this.userType);
-        
-        // Generate personalized greeting based on classification
-        this.showTyping();
-        
-        try {
-          console.log('sendMessage: Generating dynamic greeting...');
-          const greeting = await this.generateDynamicGreeting(this.userType);
-          this.hideTyping();
-          
-          // Add greeting to messages array first
-          const greetingMessage = { role: 'assistant', content: greeting };
-          this.messages.push(greetingMessage);
-          this.addMessage(greetingMessage);
-          this.saveConversationState();
-          console.log('sendMessage: Dynamic greeting generated successfully');
-        } catch (error) {
-          console.error('sendMessage: Greeting error:', error);
-          this.hideTyping();
-          showErrorMessage(`Failed to generate greeting: ${error.message || error}`);
-        }
-      }
+      // Mark conversation as started (no need for classification, persona already selected)
+      this.conversationStarted = true;
       
-      // Process the actual message
+      // Process the message directly
       this.showTyping();
       
       console.log('sendMessage: Processing user message with AI...');
@@ -877,6 +896,11 @@ What brings you to my portfolio today?`;
     const loadingMsg = document.getElementById('loading-message');
     if (loadingMsg) {
       loadingMsg.style.display = 'none';
+    }
+    
+    // Also hide background loading when appropriate
+    if (typeof hideBackgroundLoading === 'function') {
+      hideBackgroundLoading();
     }
   }
   
