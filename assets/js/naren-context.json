@@ -1,0 +1,237 @@
+{
+  "profile": {
+    "name": "Narendhiran Saravanane",
+    "nickname": "Naren",
+    "title": "Roboticist & AI Developer",
+    "current_status": "Recent M.S. Robotics graduate from Arizona State University (2024)",
+    "location": "Arizona, USA (Available for relocation, open to remote work)",
+    "pronunciation": "Neh-R-ehN",
+    "seeking": "Robotics Software Engineer or AI Engineer positions",
+    "contact": {
+      "email": "narendhiran2000@gmail.com",
+      "linkedin": "linkedin.com/in/narendhiran2000",
+      "github": "github.com/naren200",
+      "portfolio": "naren200.github.io",
+      "twitter": "narendhiran2000"
+    }
+  },
+  
+  "education": {
+    "masters": {
+      "degree": "M.S. in Robotics and Autonomous Systems",
+      "institution": "Arizona State University, Tempe, AZ",
+      "duration": "Aug 2022 - May 2024",
+      "gpa": "All A's in 10 courses, graduated with distinction",
+      "research_focus": "AI & ML, LLMs, Reinforcement Learning, Control synthesis of Multi-Agent Systems",
+      "advisor": "Prof. Zhe Xu"
+    },
+    "bachelors": {
+      "degree": "B.Tech in Mechanical Engineering",
+      "institution": "IIT Patna, India",
+      "duration": "Jul 2018 - Aug 2022",
+      "achievements": [
+        "Capstone Project recognized for technical excellence",
+        "Led IIT Patna's team to National Finalist Status (99.7 percentile)",
+        "JEE Advanced: 99.4 percentile (All India Rank 6973)"
+      ]
+    },
+    "certifications": {
+      "udacity": "Robotics Software Engineer Nanodegree (Dec 2022 - May 2023) - Scholarship recipient"
+    }
+  },
+  
+  "experience": {
+    "current": {
+      "title": "Robotics Software Engineer",
+      "company": "Padma Agrobotics",
+      "location": "Mesa, AZ",
+      "duration": "May 2024 - Oct 2024",
+      "type": "Contract",
+      "achievements": [
+        "Developed ROS2 systems for autonomous agricultural robots",
+        "Integrated GPS and sensor data for precision navigation",
+        "Optimized AI models for real-time crop monitoring",
+        "Configured motor controls and pneumatic systems",
+        "Automated data pipelines for improved efficiency"
+      ]
+    },
+    "research": {
+      "title": "Graduate Research Volunteer",
+      "institution": "Arizona State University (Zhe Xu Lab)",
+      "duration": "Nov 2022 - May 2024",
+      "work": [
+        "Implemented Differential Control Synthesis for Multi-Agent Systems",
+        "Developed ROS1 nodes for perception and RL architecture",
+        "Worked with Hello Robot Stretch R1",
+        "Contributed to NSF-funded research ($550,000 grant)"
+      ]
+    },
+    "internships": [
+      {
+        "title": "Robotics & AI Solutions Architect Intern",
+        "company": "Brainchip",
+        "location": "Laguna Hills, CA",
+        "duration": "May 2023 - Aug 2023",
+        "achievement": "Expedited development by 40% through novel Self-Balancing Bot with AI architecture"
+      },
+      {
+        "title": "Robotic Software Engineer Intern",
+        "company": "IIT Bombay - e-Yantra Program",
+        "duration": "May 2020 - Aug 2020",
+        "achievement": "Selected among 95 students (97.76 percentile) for prestigious internship"
+      },
+      {
+        "title": "Mechanical Engineer Intern",
+        "company": "Neyveli Lignite Corporation",
+        "location": "Tamil Nadu",
+        "duration": "May 2019 - Aug 2019",
+        "project": "Led team to assess water circulating pump efficiency improvement"
+      }
+    ]
+  },
+  
+  "skills": {
+    "programming": {
+      "Python": "90%",
+      "C/C++": "80%",
+      "MATLAB": "70%",
+      "Embedded_C": "90%"
+    },
+    "robotics": {
+      "ROS_ROS2": "95%",
+      "Gazebo": "90%",
+      "Carla_Simulator": "90%",
+      "V_Rep": "95%"
+    },
+    "ai_ml": {
+      "TensorFlow": "70%",
+      "PyTorch": "70%",
+      "Computer_Vision": "85%",
+      "LLM_Integration": "80%",
+      "Reinforcement_Learning": "75%"
+    },
+    "hardware": {
+      "Embedded_Systems": "90%",
+      "Sensor_Integration": "85%",
+      "Motor_Control": "80%",
+      "GPS_Systems": "85%"
+    },
+    "design": {
+      "SolidWorks": "100%",
+      "ANSYS": "100%"
+    },
+    "tools": {
+      "Docker": "75%",
+      "Git": "80%",
+      "Linux": "80%"
+    }
+  },
+  
+  "projects": {
+    "featured": [
+      {
+        "name": "GPT-Carla Autonomous Driving",
+        "description": "LLM-enhanced decision making in traffic scenarios",
+        "technologies": ["LLMs", "GPT", "Carla Simulator", "Autonomous Driving"],
+        "outcome": "Presented at ASU Symposium 2024",
+        "github": "Available on GitHub"
+      },
+      {
+        "name": "Enhanced Object Goal Navigation",
+        "description": "Improved semantic exploration using YOLOv7 and RRT algorithms",
+        "technologies": ["Computer Vision", "Path Planning", "YOLOv7", "RRT", "Reinforcement Learning"],
+        "outcome": "Improved success rates and SPL efficiency over Meta's baselines"
+      },
+      {
+        "name": "Speech-LLM-Speech Pipeline",
+        "description": "End-to-end conversational AI system with ROS2 integration",
+        "technologies": ["ROS2", "Docker", "Whisper.cpp", "C++", "TTS", "Ollama"],
+        "features": ["Multi-LLM support", "2.5s latency", "OpenAI/Gemini/Ollama integration"],
+        "achievement": "Containerized conversational AI pipeline"
+      },
+      {
+        "name": "DRDO Capstone Project",
+        "description": "Two-dimensional motion prediction for maritime objects",
+        "technologies": ["Multi-Body Dynamics", "Runge-Kutta", "Python GUI"],
+        "recognition": "Technical excellence award from Mechanical Engineering Department"
+      }
+    ],
+    "competitions": [
+      {
+        "name": "e-Yantra Robotics Competition",
+        "achievement": "National Finalists (99.7 percentile)",
+        "description": "Disaster response robot with autonomous navigation",
+        "technologies": ["V-rep", "Hardware", "Embedded C", "Path Planning", "3D Design"],
+        "leadership": "Led team of 4 students representing IIT Patna"
+      }
+    ]
+  },
+  
+  "publications": [
+    {
+      "title": "RHC approach for multi-agent systems with metric temporal logic (MTL)",
+      "venue": "IEEE Control Systems Society, American Control Conference",
+      "status": "Accepted",
+      "date": "Jan 2023 - Jan 2024",
+      "focus": "Distributed RHC, privacy-preserving control for multi-agent systems"
+    },
+    {
+      "title": "Design of Autonomous Carrier Robot - Task and Validation",
+      "venue": "Indian Institute of Science, Bangalore",
+      "date": "Nov 2021 - Jan 2022",
+      "application": "Production and healthcare environments, hospital operations"
+    },
+    {
+      "title": "Energy Efficient Coatings for Improved Wear and Tear Performance",
+      "venue": "Neyveli Lignite Corporation",
+      "date": "Aug 2021 - Nov 2021",
+      "achievement": "Increased pump efficiency from 84.17% to 88.42%"
+    }
+  ],
+  
+  "achievements": {
+    "recent": [
+      "Completed 6-month robotics engineering contract with Padma Agrobotics",
+      "Graduated with distinction from ASU Masters program",
+      "Achieved 100+ clones for personal portfolio website",
+      "Featured in ASU news report for Prof. Xu's NSF award ($550,000)"
+    ],
+    "academic": [
+      "Publication accepted at IEEE Control Systems Society Conference",
+      "National Finalists in e-Yantra International Robotics Competition",
+      "Udacity Scholarship recipient",
+      "Bachelor's Capstone recognized for technical excellence"
+    ]
+  },
+  
+  "research_interests": [
+    "Robotic Autonomy in Unstructured Environments",
+    "Robots for Ocean Exploration",
+    "Experiential Learning in Robotics",
+    "AI-Driven Precision Agriculture",
+    "Multi-Agent Systems with Temporal Logic",
+    "LLM Integration with Autonomous Systems"
+  ],
+  
+  "personality": {
+    "core_strengths": [
+      "Resilience: Overcame JEE setback to achieve 99.49 percentile",
+      "Curiosity: Eager to explore mechanics and technological advancements",
+      "Hacker Mindset: Innovative approaches to streamline development"
+    ],
+    "problem_solving_approach": [
+      "Prioritizes problem quality over quick solutions",
+      "Passion for machine learning and perception in robotics",
+      "Experience from competition-winning projects to long-term contributions",
+      "Versatile software engineering expertise"
+    ]
+  },
+  
+  "availability": {
+    "status": "Actively seeking opportunities",
+    "start_date": "Available immediately (within 2 weeks)",
+    "location_preference": "Open to relocation anywhere",
+    "work_type": ["Full-time", "Contract", "Remote", "Hybrid"],
+    "visa_status": "Details available upon request"
+  }
+}
