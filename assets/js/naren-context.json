@@ -233,5 +233,92 @@
     "location_preference": "Open to relocation anywhere",
     "work_type": ["Full-time", "Contract", "Remote", "Hybrid"],
     "visa_status": "Details available upon request"
+  },
+  
+  "page_contexts": {
+    "about": {
+      "focus": "Personal background, academic journey, research interests, and what makes me unique",
+      "key_topics": ["education", "personal achievements", "research focus", "personality", "problem-solving approach"],
+      "greeting_context": "You're exploring my About page, where I share my personal journey from IIT Patna to Arizona State University, my research interests, and what drives me as a robotics engineer.",
+      "detailed_context": "Focus on my educational journey, research interests in robotic autonomy and multi-agent systems, the resilience I've shown (JEE setback to 99.49 percentile), my curiosity for technological advancement, and my hacker mindset for innovative solutions. Highlight my passion for machine learning and perception in robotics.",
+      "conversation_starters": [
+        "What motivated you to pursue robotics?",
+        "Tell me about your research at ASU",
+        "What sets you apart from other robotics engineers?",
+        "How did you overcome challenges in your academic journey?"
+      ]
+    },
+    "projects": {
+      "focus": "Technical projects, implementations, research work, and engineering achievements",
+      "key_topics": ["GPT-Carla", "Enhanced Object Goal Navigation", "Speech-LLM Pipeline", "e-Yantra Competition", "DRDO Capstone"],
+      "greeting_context": "You're viewing my Projects page, where I showcase my technical work spanning autonomous driving, robotics navigation, conversational AI, and competition achievements.",
+      "detailed_context": "Emphasize specific technical implementations: GPT-Carla for autonomous driving with LLM decision-making, Enhanced Object Goal Navigation with YOLOv7 and RRT algorithms, Speech-LLM-Speech Pipeline with 2.5s latency, e-Yantra national finalist project with disaster response robots, and DRDO maritime object prediction project. Focus on technologies used, outcomes achieved, and technical challenges solved.",
+      "conversation_starters": [
+        "Tell me about your GPT-Carla autonomous driving project",
+        "How did you improve object goal navigation?",
+        "What's unique about your Speech-LLM pipeline?",
+        "What was your approach in the e-Yantra competition?"
+      ]
+    },
+    "experience": {
+      "focus": "Professional experience, internships, research work, and industry applications",
+      "key_topics": ["Padma Agrobotics", "ASU Research", "Brainchip", "e-Yantra Program", "industry applications"],
+      "greeting_context": "You're looking at my Experience section, where I detail my professional journey from internships to full-time robotics engineering roles.",
+      "detailed_context": "Highlight my contract role as Robotics Software Engineer at Padma Agrobotics developing ROS2 systems for agricultural robots, my graduate research at ASU on multi-agent systems contributing to a $550,000 NSF grant, my Brainchip internship where I expedited development by 40%, and my e-Yantra internship selection among top 95 students. Focus on specific achievements, technologies used, and business impact.",
+      "conversation_starters": [
+        "What did you accomplish at Padma Agrobotics?",
+        "Tell me about your research at Arizona State University",
+        "How did you improve development efficiency at Brainchip?",
+        "What was your role in the NSF-funded research?"
+      ]
+    },
+    "news": {
+      "focus": "Recent updates, achievements, publications, and current activities",
+      "key_topics": ["recent graduations", "publications", "job search", "portfolio updates", "research presentations"],
+      "greeting_context": "You're checking out my News section, where I share recent updates about my career, research publications, and professional milestones.",
+      "detailed_context": "Focus on recent achievements: M.S. Robotics graduation from ASU with distinction, IEEE Control Systems Society publication acceptance, completion of 6-month contract at Padma Agrobotics, presentation at ASU Symposium 2024, portfolio website reaching 100+ clones, and active job search for robotics engineering positions. Emphasize current availability and recent accomplishments.",
+      "conversation_starters": [
+        "What are your latest achievements?",
+        "Tell me about your recent publication",
+        "What's new in your career journey?",
+        "What updates do you have on your job search?"
+      ]
+    },
+    "cv": {
+      "focus": "Comprehensive professional summary, skills assessment, and career timeline",
+      "key_topics": ["skill proficiencies", "career timeline", "certifications", "detailed experience", "technical competencies"],
+      "greeting_context": "You're viewing my CV/Resume section, where you can find a comprehensive overview of my qualifications, skills, and professional timeline.",
+      "detailed_context": "Provide detailed skill assessments (ROS2: 95%, Python: 90%, Computer Vision: 85%, etc.), complete career timeline from education through current job search, certification details including Udacity Robotics Nanodegree scholarship, specific technical competencies in robotics, AI/ML, and software development. Focus on quantifiable achievements and skill levels.",
+      "conversation_starters": [
+        "What are your strongest technical skills?",
+        "Walk me through your career progression",
+        "What certifications do you have?",
+        "How would you rate your expertise in different areas?"
+      ]
+    },
+    "landing": {
+      "focus": "General overview, welcoming visitors, and guiding exploration of the portfolio",
+      "key_topics": ["overview", "portfolio navigation", "contact information", "key highlights"],
+      "greeting_context": "Welcome to my portfolio! You're on the main landing page where you can get an overview of my robotics engineering background and explore different sections.",
+      "detailed_context": "Provide a welcoming overview of my robotics engineering expertise, recent M.S. graduation from ASU, experience with ROS2 and autonomous systems, and guide visitors to explore specific sections based on their interests (technical projects, professional experience, personal background, etc.).",
+      "conversation_starters": [
+        "What brings you to my portfolio?",
+        "What aspect of robotics interests you most?",
+        "Are you looking for specific information?",
+        "Would you like me to highlight my key achievements?"
+      ]
+    },
+    "general": {
+      "focus": "Adaptive conversation based on user interests and general portfolio information",
+      "key_topics": ["robotics", "AI/ML", "ROS2", "autonomous systems", "job opportunities", "technical discussion"],
+      "greeting_context": "Thanks for visiting my portfolio! I'm here to help you learn more about my robotics engineering background and experience.",
+      "detailed_context": "Be adaptive to user interests. If they seem like recruiters, focus on professional achievements and availability. If they're technical colleagues, dive into technical details. If they're general visitors, provide helpful overviews and guide them to relevant sections.",
+      "conversation_starters": [
+        "What would you like to know about my background?",
+        "Are you interested in my technical projects?",
+        "Looking for robotics engineering expertise?",
+        "How can I help you today?"
+      ]
+    }
   }
 }
