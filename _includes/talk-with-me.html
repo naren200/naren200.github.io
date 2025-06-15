@@ -17,8 +17,11 @@
   </div>
 </div>
 
-<!-- Chat Modal - Hidden by default -->
-<div id="chat-modal" class="chat-modal" style="display: none;">
+<!-- Chat backdrop for mobile -->
+<div id="chat-backdrop" class="chat-backdrop"></div>
+
+<!-- Chat Modal - Slide up from bottom right -->
+<div id="chat-modal" class="chat-modal">
   <div class="chat-container">
     <div class="chat-header">
       <h3>Chat with Naren</h3>
@@ -28,7 +31,32 @@
       </div>
     </div>
     
-    <div class="chat-messages" id="chat-messages">
+    <!-- Persona Selector -->
+    <div id="persona-selector" class="persona-selector">
+      <div class="persona-header">
+        <h4>👋 Hi! I'm Naren. What brings you here?</h4>
+        <p>Choose your role to get a personalized conversation:</p>
+      </div>
+      <div class="persona-buttons">
+        <button class="persona-btn" data-persona="recruiter">
+          <span class="persona-icon">💼</span>
+          <span class="persona-title">Recruiter</span>
+          <span class="persona-desc">Looking to hire or learn about opportunities</span>
+        </button>
+        <button class="persona-btn" data-persona="colleague">
+          <span class="persona-icon">🤖</span>
+          <span class="persona-title">Fellow Engineer</span>
+          <span class="persona-desc">Technical discussions about robotics & AI</span>
+        </button>
+        <button class="persona-btn" data-persona="visitor">
+          <span class="persona-icon">🌟</span>
+          <span class="persona-title">Visitor</span>
+          <span class="persona-desc">Exploring my background and projects</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="chat-messages" id="chat-messages" style="display: none;">
       <div class="loading-message" id="loading-message">
         <div class="loading-container">
           <div class="typing-indicator">
@@ -48,7 +76,7 @@
       </div>
     </div>
     
-    <div class="chat-input-container">
+    <div class="chat-input-container" id="chat-input-container" style="display: none;">
       <input type="text" id="chat-input" placeholder="Ask me about my experience..." disabled>
       <button id="send-btn" disabled>Send</button>
       <button id="retry-btn" class="retry-btn" title="Retry Loading AI Chat" style="display: none;">🔄 Retry</button>
@@ -62,7 +90,7 @@
 .floating-chat-btn {
   position: fixed;
   bottom: 30px;
-  right: 80px;
+  right: 30px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
@@ -82,10 +110,10 @@
 /* Mini Response Display */
 .mini-response-display {
   position: fixed;
-  bottom: 120px;
-  right: 80px;
+  bottom: 100px;
+  right: 30px;
   width: 320px;
-  max-width: calc(100vw - 160px);
+  max-width: calc(100vw - 60px);
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -156,6 +184,15 @@
   }
 }
 
+@keyframes slideUpFromBottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 .floating-chat-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 25px rgba(0,0,0,0.4);
@@ -165,29 +202,42 @@
   font-size: 20px;
 }
 
-/* Modal Styles */
+/* Modal Styles - Slide up from bottom right, doesn't block page scrolling */
 .chat-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
+  bottom: 0;
+  right: 0;
+  width: 450px;
+  max-width: calc(100vw - 40px);
+  height: 0;
+  background: transparent;
   z-index: 2000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  pointer-events: none; /* Allow clicks to pass through when closed */
+}
+
+.chat-modal.open {
+  height: 650px;
+  pointer-events: auto; /* Enable interactions when open */
 }
 
 .chat-container {
-  width: 90%;
-  max-width: 500px;
-  height: 600px;
-  background: white;
-  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 15px 15px 0 0;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 -5px 30px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.4);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.chat-modal.open .chat-container {
+  transform: translateY(0);
 }
 
 .chat-header {
@@ -333,6 +383,78 @@
   }
 }
 
+/* Persona Selector Styles */
+.persona-selector {
+  padding: 30px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.persona-header h4 {
+  color: #333;
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.persona-header p {
+  color: #666;
+  margin: 0 0 25px 0;
+  font-size: 14px;
+}
+
+.persona-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.persona-btn {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.persona-btn:hover {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
+}
+
+.persona-icon {
+  font-size: 24px;
+  margin-right: 15px;
+  min-width: 40px;
+}
+
+.persona-title {
+  font-weight: 600;
+  color: #333;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.persona-desc {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.persona-btn-content {
+  flex: 1;
+}
+
 /* Enhanced thinking message styles */
 .thinking-message {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -449,11 +571,46 @@
   overflow-y: auto;
 }
 
+/* Backdrop overlay when chat is open - only on mobile to prevent page scroll */
+.chat-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+
+.chat-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Prevent body scroll when mobile chat is open */
+@media (max-width: 768px) {
+  body.chat-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-  .chat-container {
-    width: 95%;
-    height: 80vh;
+  .chat-modal {
+    width: 100%;
+    max-width: 100vw;
+    right: 0;
+  }
+  
+  .chat-modal.open {
+    height: 90vh;
   }
   
   .floating-chat-btn {
@@ -467,6 +624,49 @@
     width: calc(100vw - 40px);
     right: 20px;
     bottom: 90px;
+  }
+  
+  .chat-container {
+    border-radius: 0;
+  }
+  
+  .persona-buttons {
+    gap: 12px;
+  }
+  
+  .persona-btn {
+    padding: 15px;
+  }
+  
+  .persona-icon {
+    font-size: 20px;
+    margin-right: 12px;
+    min-width: 35px;
+  }
+  
+  .persona-title {
+    font-size: 15px;
+  }
+  
+  .persona-desc {
+    font-size: 12px;
+  }
+  
+  .background-loading {
+    margin-top: 10px;
+    padding: 10px;
+  }
+  
+  .loading-indicator {
+    gap: 8px;
+  }
+  
+  .loading-text {
+    font-size: 11px;
+  }
+  
+  .progress-text-small {
+    font-size: 10px;
   }
 }
 </style>
@@ -508,6 +708,28 @@ function saveChatState() {
   } catch (error) {
     console.warn('Failed to save chat state:', error);
   }
+}
+
+// Show persona selector
+function showPersonaSelector() {
+  const personaSelector = document.getElementById('persona-selector');
+  const chatMessages = document.getElementById('chat-messages');
+  const chatInputContainer = document.getElementById('chat-input-container');
+  
+  if (personaSelector) personaSelector.style.display = 'block';
+  if (chatMessages) chatMessages.style.display = 'none';
+  if (chatInputContainer) chatInputContainer.style.display = 'none';
+}
+
+// Show chat interface
+function showChatInterface() {
+  const personaSelector = document.getElementById('persona-selector');
+  const chatMessages = document.getElementById('chat-messages');
+  const chatInputContainer = document.getElementById('chat-input-container');
+  
+  if (personaSelector) personaSelector.style.display = 'none';
+  if (chatMessages) chatMessages.style.display = 'flex';
+  if (chatInputContainer) chatInputContainer.style.display = 'flex';
 }
 
 // Lightweight initialization - No WebLLM loading yet!
@@ -561,7 +783,15 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Restore modal state if it was open
       if (state.isOpen) {
-        chatModal.style.display = 'flex';
+        const backdrop = document.getElementById('chat-backdrop');
+        
+        // Show backdrop and prevent scroll on mobile
+        if (window.innerWidth <= 768) {
+          backdrop.classList.add('active');
+          document.body.classList.add('chat-open');
+        }
+        
+        chatModal.classList.add('open');
         window.chatState.isOpen = true;
       }
       
@@ -571,50 +801,131 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Show modal on button click
+  // Show modal on button click with slide-up animation
   chatBtn.addEventListener('click', function() {
-    chatModal.style.display = 'flex';
+    const backdrop = document.getElementById('chat-backdrop');
+    
+    // Show backdrop and prevent scroll on mobile
+    if (window.innerWidth <= 768) {
+      backdrop.classList.add('active');
+      document.body.classList.add('chat-open');
+    }
+    
+    // Trigger slide-up animation
+    chatModal.classList.add('open');
     window.chatState.isOpen = true;
     saveChatState();
     
-    // Initialize chat only when first opened
-    if (!window.chatState.initialized) {
-      // Add timeout detection to prevent infinite loading
-      setTimeout(() => {
-        if (!window.chatState.initialized && window.chatState.isOpen) {
-          console.warn('Chat initialization timed out after 60 seconds');
-          const retryBtn = document.getElementById('retry-btn');
-          if (retryBtn) {
-            retryBtn.style.display = 'inline-block';
-          }
-          showChatError('Initialization timed out. Please try the retry button.');
-        }
-      }, 60000); // 60 second timeout
-      
-      initializeChat();
-      window.chatState.initialized = true;
+    // Check if we have an existing conversation or if user has selected a persona
+    const hasConversation = window.chatState.conversationHistory && window.chatState.conversationHistory.length > 0;
+    const hasPersona = window.chatState.userType && window.chatState.userType !== 'explorer';
+    
+    if (hasConversation || hasPersona) {
+      // Show chat interface and restore/initialize
+      showChatInterface();
+      if (!window.chatState.initialized) {
+        initializeChat();
+      }
     } else {
-      // Chat was already initialized, just show existing conversation if any
-      if (window.chatState.conversationHistory && window.chatState.conversationHistory.length > 0) {
-        console.log('Chat already initialized, restoring existing conversation...');
-        // The conversation will be restored when the manager is created
+      // Show persona selector and start background model loading
+      showPersonaSelector();
+      
+      // Start downloading the model in background immediately
+      if (!window.chatState.initialized && !window.backgroundModelLoading) {
+        console.log('Starting background model download...');
+        window.backgroundModelLoading = true;
+        setTimeout(() => {
+          startBackgroundModelDownload();
+        }, 500); // Small delay to show UI first
       }
     }
   });
   
-  // Close modal
-  closeBtn.addEventListener('click', function() {
-    chatModal.style.display = 'none';
-    window.chatState.isOpen = false;
-    saveChatState();
+  // Persona selection handling
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('persona-btn') || e.target.closest('.persona-btn')) {
+      const btn = e.target.classList.contains('persona-btn') ? e.target : e.target.closest('.persona-btn');
+      const persona = btn.dataset.persona;
+      
+      // Map persona to userType
+      const userTypeMapping = {
+        'recruiter': 'recruiter',
+        'colleague': 'colleague', 
+        'visitor': 'explorer'
+      };
+      
+      window.chatState.userType = userTypeMapping[persona];
+      console.log('Persona selected:', persona, '-> userType:', window.chatState.userType);
+      
+      // Hide persona selector and show chat
+      showChatInterface();
+      
+      // Check if model is already loaded in background
+      if (window.chatState.initialized) {
+        console.log('Model already loaded, starting conversation immediately');
+        // Model is ready, start conversation immediately
+        if (window.chatState.manager) {
+          window.chatState.manager.userType = window.chatState.userType;
+          window.chatState.manager.startInitialConversation();
+        }
+      } else if (window.backgroundModelLoading) {
+        console.log('Model is loading in background, waiting for completion');
+        // Model is loading in background, show loading state
+        const loadingMsg = document.getElementById('loading-message');
+        if (loadingMsg) {
+          loadingMsg.style.display = 'block';
+          const loadingStage = document.getElementById('loading-stage');
+          const loadingDetails = document.getElementById('loading-details');
+          if (loadingStage) loadingStage.textContent = 'AI Model Loading...';
+          if (loadingDetails) loadingDetails.textContent = 'Please wait while the AI model finishes loading...';
+        }
+      } else {
+        console.log('Starting fresh model initialization');
+        // Initialize chat if not already done
+        setTimeout(() => {
+          if (!window.chatState.initialized && window.chatState.isOpen) {
+            console.warn('Chat initialization timed out after 60 seconds');
+            const retryBtn = document.getElementById('retry-btn');
+            if (retryBtn) {
+              retryBtn.style.display = 'inline-block';
+            }
+            showChatError('Initialization timed out. Please try the retry button.');
+          }
+        }, 60000);
+        
+        initializeChat();
+      }
+      
+      saveChatState();
+    }
   });
   
-  // Close on backdrop click
-  chatModal.addEventListener('click', function(e) {
-    if (e.target === chatModal) {
-      chatModal.style.display = 'none';
-      window.chatState.isOpen = false;
-      saveChatState();
+  // Close modal with slide-down animation
+  const closeChatModal = function() {
+    const backdrop = document.getElementById('chat-backdrop');
+    chatModal.classList.remove('open');
+    backdrop.classList.remove('active');
+    document.body.classList.remove('chat-open'); // Re-enable body scroll
+    window.chatState.isOpen = false;
+    saveChatState();
+  };
+  
+  closeBtn.addEventListener('click', closeChatModal);
+  
+  // Close on backdrop click (mobile)
+  const backdrop = document.getElementById('chat-backdrop');
+  backdrop.addEventListener('click', closeChatModal);
+  
+  // Close when clicking outside chat on desktop
+  document.addEventListener('click', function(e) {
+    if (window.chatState.isOpen && window.innerWidth > 768) {
+      const chatContainer = chatModal.querySelector('.chat-container');
+      const isClickInsideChat = chatContainer.contains(e.target);
+      const isClickOnButton = chatBtn.contains(e.target);
+      
+      if (!isClickInsideChat && !isClickOnButton) {
+        closeChatModal();
+      }
     }
   });
   
@@ -627,8 +938,18 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Mini response expand button
   expandBtn.addEventListener('click', function() {
+    const backdrop = document.getElementById('chat-backdrop');
+    
     miniResponse.style.display = 'none';
-    chatModal.style.display = 'flex';
+    
+    // Show backdrop and prevent scroll on mobile
+    if (window.innerWidth <= 768) {
+      backdrop.classList.add('active');
+      document.body.classList.add('chat-open');
+    }
+    
+    // Trigger slide-up animation
+    chatModal.classList.add('open');
     window.chatState.isOpen = true;
     window.chatState.miniMode = false;
     saveChatState();
@@ -706,14 +1027,35 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!document.hidden && window.chatState.isOpen) {
       // User came back to the page and chat was open
       const chatModal = document.getElementById('chat-modal');
-      if (chatModal.style.display !== 'flex') {
-        chatModal.style.display = 'flex';
+      if (!chatModal.classList.contains('open')) {
+        chatModal.classList.add('open');
+        
+        // Show backdrop on mobile
+        if (window.innerWidth <= 768) {
+          const backdrop = document.getElementById('chat-backdrop');
+          backdrop.classList.add('active');
+        }
       }
       
       // Check if there's a pending response and show notification
       if (window.chatState.isProcessing && window.chatState.manager) {
         showResponseReadyNotification();
       }
+    }
+  });
+  
+  // Handle window resize to adjust mobile/desktop behavior
+  window.addEventListener('resize', function() {
+    const backdrop = document.getElementById('chat-backdrop');
+    
+    if (window.innerWidth > 768) {
+      // Desktop: remove mobile-specific classes
+      backdrop.classList.remove('active');
+      document.body.classList.remove('chat-open');
+    } else if (window.chatState.isOpen) {
+      // Mobile: re-apply mobile classes if chat is open
+      backdrop.classList.add('active');
+      document.body.classList.add('chat-open');
     }
   });
 });
@@ -1102,7 +1444,14 @@ function showResponseReadyNotification() {
   // Click to open chat
   notification.addEventListener('click', function() {
     const chatModal = document.getElementById('chat-modal');
-    chatModal.style.display = 'flex';
+    const backdrop = document.getElementById('chat-backdrop');
+    
+    // Show backdrop on mobile
+    if (window.innerWidth <= 768) {
+      backdrop.classList.add('active');
+    }
+    
+    chatModal.classList.add('open');
     window.chatState.isOpen = true;
     notification.remove();
   });
@@ -1274,5 +1623,62 @@ function showDebugInfo() {
   }
   
   console.log('Debug Info:', debugInfo);
+}
+
+// Start background model download
+function startBackgroundModelDownload() {
+  console.log('startBackgroundModelDownload: Initiating background AI model loading...');
+  
+  // Update background loading UI
+  updateBackgroundLoading('Downloading AI model...', 0);
+  
+  // Add timeout detection for background loading
+  setTimeout(() => {
+    if (!window.chatState.initialized && window.chatState.isOpen && window.backgroundModelLoading) {
+      console.warn('Background model loading timed out after 60 seconds');
+      updateBackgroundLoading('Download taking longer than expected...', 50);
+      // Don't show retry button yet, just let it continue
+    }
+  }, 60000); // 60 second timeout warning
+  
+  // Start the actual initialization
+  initializeChat();
+}
+
+// Update background loading UI
+function updateBackgroundLoading(message, progress) {
+  const loadingText = document.querySelector('.loading-text');
+  const progressBarSmall = document.getElementById('progress-bar-small');
+  const progressFillSmall = document.getElementById('progress-fill-small');
+  const progressTextSmall = document.getElementById('progress-text-small');
+  
+  if (loadingText) {
+    loadingText.textContent = message;
+  }
+  
+  if (progress > 0) {
+    if (progressBarSmall) progressBarSmall.style.display = 'block';
+    if (progressFillSmall) progressFillSmall.style.width = `${progress}%`;
+    if (progressTextSmall) progressTextSmall.textContent = `${Math.round(progress)}%`;
+  }
+}
+
+// Hide background loading when model is ready (only call this when conversation actually starts)
+function hideBackgroundLoading() {
+  const backgroundLoading = document.getElementById('background-loading');
+  if (backgroundLoading) {
+    // Update to show completion before hiding
+    const loadingText = backgroundLoading.querySelector('.loading-text');
+    if (loadingText) {
+      loadingText.textContent = 'AI ready! Starting conversation... ✅';
+    }
+    // Hide after a brief delay to show completion
+    setTimeout(() => {
+      backgroundLoading.style.display = 'none';
+      window.backgroundModelLoading = false;
+    }, 1500);
+  } else {
+    window.backgroundModelLoading = false;
+  }
 }
 </script>
