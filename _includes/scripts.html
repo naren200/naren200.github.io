@@ -24,11 +24,13 @@ $(function () {
 <script>
     function rotateImage(deg, duration, callback) {
       const image = document.getElementById('rotating-image');
+      if (!image) return;
       const step = 1; // Rotation step in degrees
       let currentDeg = 0;
       const direction = deg > 0 ? 1 : -1;
   
       function rotateStep() {
+        if (!image) return;
         if ((direction === 1 && currentDeg < deg) || (direction === -1 && currentDeg > deg)) {
           currentDeg += step * direction;
           image.style.transform = `rotate(${currentDeg}deg)`;
@@ -44,26 +46,32 @@ $(function () {
     }
   
     function startRotationSequence() {
-      rotateImage(15, 4, () => {
-        rotateImage(-15, 4, () => {
-          setTimeout(() => {
-            startRotationSequence();
-          }, 300);
+      if (document.getElementById('rotating-image')) {
+        rotateImage(15, 4, () => {
+          rotateImage(-15, 4, () => {
+            setTimeout(() => {
+              startRotationSequence();
+            }, 300);
+          });
         });
-      });
+      }
     }
   
     startRotationSequence();
   </script>
   
   <script>
-    document.getElementById('play-button').addEventListener('click', function() {
-      var element = this;
-      element.classList.remove('bounce-animation'); // Remove the class first
-      void element.offsetWidth; // Trigger reflow to apply class removal
-      element.classList.add('bounce-animation'); // Add the class back
-      document.getElementById('person1').play();
-    });
+    const playButton = document.getElementById('play-button');
+    if (playButton) {
+      playButton.addEventListener('click', function() {
+        var element = this;
+        element.classList.remove('bounce-animation'); // Remove the class first
+        void element.offsetWidth; // Trigger reflow to apply class removal
+        element.classList.add('bounce-animation'); // Add the class back
+        const person1 = document.getElementById('person1');
+        if (person1) person1.play();
+      });
+    }
   </script>
     
   <audio id="person1" >
@@ -75,20 +83,22 @@ $(function () {
   <script>
     const scrollTopButton = document.getElementById("scrollTopButton");
   
-    // Show the button when the user scrolls down
-    window.addEventListener("scroll", () => {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollTopButton.style.display = "block";
-      } else {
-        scrollTopButton.style.display = "none";
-      }
-    });
-  
-    // Scroll to the top when the button is clicked
-    scrollTopButton.addEventListener("click", () => {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-    });
+    if (scrollTopButton) {
+      // Show the button when the user scrolls down
+      window.addEventListener("scroll", () => {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollTopButton.style.display = "block";
+        } else {
+          scrollTopButton.style.display = "none";
+        }
+      });
+    
+      // Scroll to the top when the button is clicked
+      scrollTopButton.addEventListener("click", () => {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+      });
+    }
   </script>
   
   <script>
@@ -113,23 +123,32 @@ $(function () {
     // Function to start scrolling and fade out the arrow
     function startScroll() {
         document.body.classList.add('scrolling'); // Add scrolling class to body
-        document.getElementById('arrow').style.opacity = '0.5'; // Hide arrow
+        const arrow = document.getElementById('arrow');
+        if (arrow) {
+          arrow.style.opacity = '0.5'; // Hide arrow
+        }
     }
 
     // Function to toggle arrow visibility
     function toggleArrow() {
         var arrow = document.getElementById('arrow');
-        arrow.style.opacity = arrow.style.opacity === '1' ? '0' : '1';
+        if (arrow) {
+          arrow.style.opacity = arrow.style.opacity === '1' ? '0' : '1';
+        }
     }
 
-    // Blink the arrow every 1 second
-    var blinkInterval = setInterval(toggleArrow, 1000);
+    // Only run arrow logic if arrow element exists
+    const arrowElement = document.getElementById('arrow');
+    if (arrowElement) {
+      // Blink the arrow every 1 second
+      var blinkInterval = setInterval(toggleArrow, 1000);
 
-    // Wait for 2 seconds and then start scrolling
-    setTimeout(function() {
-        clearInterval(blinkInterval); // Stop blinking
-        startScroll(); // Start scrolling and fade out arrow
-    }, 2000);
+      // Wait for 2 seconds and then start scrolling
+      setTimeout(function() {
+          clearInterval(blinkInterval); // Stop blinking
+          startScroll(); // Start scrolling and fade out arrow
+      }, 2000);
+    }
 
   </script>
 
@@ -137,36 +156,43 @@ $(function () {
 
 <script>   
    //Button for the scroll Down
-  document.querySelector('.scroll-down-btn').addEventListener('click', function() {
-      window.scrollBy({
-          top: window.innerHeight - 50, // Scroll down one full window height
-          behavior: 'smooth' // Smooth scroll
-      });
-  });
-  // Event listener for hiding the button on scroll
-  window.addEventListener('scroll', function() {
-    var scrollPos = window.scrollY || window.pageYOffset; // Current scroll position
-    var button = document.querySelector('.scroll-down-btn');
-    
-    if (scrollPos > 100) { // If the user scrolls down more than 100 pixels
-        button.style.display = 'none'; // Hide the scroll button
-    } else {
-        button.style.display = 'flex'; // Otherwise, show it
-    }
-  });
+  const scrollDownBtn = document.querySelector('.scroll-down-btn');
+  if (scrollDownBtn) {
+    scrollDownBtn.addEventListener('click', function() {
+        window.scrollBy({
+            top: window.innerHeight - 50, // Scroll down one full window height
+            behavior: 'smooth' // Smooth scroll
+        });
+    });
+    // Event listener for hiding the button on scroll
+    window.addEventListener('scroll', function() {
+      var scrollPos = window.scrollY || window.pageYOffset; // Current scroll position
+      var button = document.querySelector('.scroll-down-btn');
+      
+      if (button) {
+        if (scrollPos > 100) { // If the user scrolls down more than 100 pixels
+            button.style.display = 'none'; // Hide the scroll button
+        } else {
+            button.style.display = 'flex'; // Otherwise, show it
+        }
+      }
+    });
+  }
 
 </script>
 
 <script>
   const row = document.querySelector('.row');
   
-  document.addEventListener('mousemove', function(e) {
-      const mouseX = e.clientX;
-      const windowWidth = window.innerWidth;
-      const skewAmount = (mouseX / windowWidth - 0.5) * 6; // Adjust skew amount as needed
-      
-      row.style.transform = `skewY(${skewAmount}deg)`;
-  });
+  if (row) {
+    document.addEventListener('mousemove', function(e) {
+        const mouseX = e.clientX;
+        const windowWidth = window.innerWidth;
+        const skewAmount = (mouseX / windowWidth - 0.5) * 6; // Adjust skew amount as needed
+        
+        row.style.transform = `skewY(${skewAmount}deg)`;
+    });
+  }
 </script>
 
 <script>
