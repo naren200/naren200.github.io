@@ -27,7 +27,7 @@
       <h3>Chat with Naren</h3>
       <div class="chat-controls">
         <button id="remove-cache-btn" class="remove-cache-btn" title="Remove Model Cache">Remove Cache</button>
-        <button id="close-chat" class="close-btn">&times;</button>
+        <button id="close-chat" class="close-btn" title="Minimize Chat">↓</button>
       </div>
     </div>
     
@@ -88,8 +88,8 @@
 /* Floating Button - Lightweight CSS */
 .floating-chat-btn {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 60px;
+  right: 60px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
@@ -109,12 +109,12 @@
 /* Mini Response Display */
 .mini-response-display {
   position: fixed;
-  bottom: 100px;
-  right: 30px;
+  bottom: 130px;
+  right: 60px;
   width: 320px;
   max-width: calc(100vw - 60px);
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
   border-radius: 15px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   z-index: 1500;
@@ -204,10 +204,10 @@
 /* Modal Styles - Slide up from bottom right, doesn't block page scrolling */
 .chat-modal {
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 20px;
+  right: 40px;
   width: 450px;
-  max-width: calc(100vw - 40px);
+  max-width: calc(100vw - 80px);
   height: 0;
   background: transparent;
   z-index: 2000;
@@ -224,9 +224,9 @@
 .chat-container {
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(15px);
-  border-radius: 15px 15px 0 0;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 -5px 30px rgba(0,0,0,0.15);
@@ -241,11 +241,12 @@
 
 .chat-header {
   padding: 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: rgba(102, 126, 234, 0.3);
+  backdrop-filter: blur(20px);
   color: white;
   border-radius: 15px 15px 0 0;
 }
@@ -257,7 +258,8 @@
 }
 
 .remove-cache-btn {
-  background: #dc3545;
+  background: rgba(220, 53, 69, 0.3);
+  backdrop-filter: blur(20px);
   color: white;
   border: none;
   padding: 8px 12px;
@@ -271,40 +273,22 @@
 }
 
 .remove-cache-btn:hover {
-  background: #c82333;
+  background: rgba(200, 35, 51, 0.5);
+  backdrop-filter: blur(20px);
   opacity: 1;
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
 }
 
-.transparency-btn {
-  background: #28a745;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-  margin-right: 10px;
-}
-
-.transparency-btn:hover {
-  background: #218838;
-  opacity: 1;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
-}
 
 .close-btn {
   background: none;
   border: none;
   color: white;
-  font-size: 30px;
+  font-size: 24px;
   cursor: pointer;
   line-height: 1;
+  font-weight: bold;
 }
 
 .chat-messages {
@@ -319,26 +303,34 @@
 
 .loading-message {
   text-align: center;
-  color: #666;
+  color: white;
+  background: rgba(102, 126, 234, 0.15);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
 }
 
 .loading-container {
   max-width: 400px;
   margin: 0 auto;
+  padding: 10px;
 }
 
 .loading-text h4 {
   margin: 15px 0 5px 0;
-  color: #333;
-  font-size: 18px;
+  color: white;
+  font-size: 22px;
   font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .loading-text p {
   margin: 0 0 20px 0;
-  color: #666;
-  font-size: 14px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .progress-container {
@@ -363,9 +355,10 @@
 }
 
 .progress-text {
-  font-size: 12px;
-  color: #667eea;
+  font-size: 14px;
+  color: white;
   font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .typing-indicator {
@@ -375,31 +368,40 @@
 
 .typing-indicator span {
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  margin: 0 3px;
-  animation: thinkingBounce 1.6s infinite ease-in-out;
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 30%, rgba(255,255,255,0.3) 60%, rgba(255,255,255,0.1) 100%);
+  margin: 0 4px;
+  animation: waterDropletBounce 1.8s infinite ease-in-out;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.4), inset 0 1px 3px rgba(255,255,255,0.8);
+  filter: blur(0.5px);
+  border: 1px solid rgba(255,255,255,0.6);
 }
 
 .typing-indicator span:nth-child(2) {
-  animation-delay: 0.3s;
+  animation-delay: 0.4s;
 }
 
 .typing-indicator span:nth-child(3) {
-  animation-delay: 0.6s;
+  animation-delay: 0.8s;
 }
 
-@keyframes thinkingBounce {
+@keyframes waterDropletBounce {
   0%, 80%, 100% { 
     transform: translateY(0) scale(1);
-    opacity: 0.7;
+    opacity: 0.8;
+    filter: blur(0.5px);
   }
   40% { 
-    transform: translateY(-20px) scale(1.2);
+    transform: translateY(-25px) scale(1.3);
     opacity: 1;
+    filter: blur(0.2px);
+  }
+  60% {
+    transform: translateY(-15px) scale(1.1);
+    opacity: 0.9;
+    filter: blur(0.3px);
   }
 }
 
@@ -407,7 +409,8 @@
 .persona-selector {
   padding: 30px 20px;
   text-align: center;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: rgba(248, 249, 250, 0.3);
+  backdrop-filter: blur(20px);
 }
 
 .persona-header h4 {
@@ -435,8 +438,9 @@
   display: flex;
   align-items: center;
   padding: 20px;
-  background: white;
-  border: 2px solid #e9ecef;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -445,8 +449,9 @@
 }
 
 .persona-btn:hover {
-  border-color: #667eea;
-  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  border-color: rgba(102, 126, 234, 0.6);
+  background: rgba(248, 249, 255, 0.5);
+  backdrop-filter: blur(20px);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
 }
@@ -596,9 +601,9 @@
 /* Responsive */
 @media (max-width: 768px) {
   .chat-modal {
-    width: 100%;
-    max-width: 100vw;
-    right: 0;
+    width: calc(100% - 40px);
+    max-width: calc(100vw - 40px);
+    right: 20px;
   }
   
   .chat-modal.open {
@@ -606,16 +611,16 @@
   }
   
   .floating-chat-btn {
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 40px;
     padding: 12px 20px;
     font-size: 14px;
   }
   
   .mini-response-display {
-    width: calc(100vw - 40px);
-    right: 20px;
-    bottom: 90px;
+    width: calc(100vw - 80px);
+    right: 40px;
+    bottom: 120px;
   }
   
   .chat-container {
@@ -999,50 +1004,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Transparency mode toggle functionality
-  let transparencyMode = false;
-  
-  // Add transparency mode toggle button to chat header
-  setTimeout(() => {
-    const chatControls = document.querySelector('.chat-controls');
-    if (chatControls) {
-      const transparencyBtn = document.createElement('button');
-      transparencyBtn.id = 'transparency-toggle';
-      transparencyBtn.className = 'transparency-btn';
-      transparencyBtn.innerHTML = '👁️';
-      transparencyBtn.title = 'Toggle Transparency Mode';
-      transparencyBtn.addEventListener('click', toggleTransparencyMode);
-      chatControls.insertBefore(transparencyBtn, document.getElementById('close-chat'));
-    }
-  }, 100);
-  
-  function toggleTransparencyMode() {
-    transparencyMode = !transparencyMode;
-    const chatModal = document.getElementById('chat-modal');
-    const chatContainer = chatModal.querySelector('.chat-container');
-    const transparencyBtn = document.getElementById('transparency-toggle');
-    
-    if (transparencyMode) {
-      // Enable transparency mode
-      chatContainer.style.background = 'rgba(255, 255, 255, 0.3)';
-      chatContainer.style.backdropFilter = 'blur(5px)';
-      chatContainer.style.pointerEvents = 'auto';
-      chatModal.style.pointerEvents = 'none'; // Allow clicks to pass through modal background
-      chatContainer.style.pointerEvents = 'auto'; // But keep chat container interactive
-      transparencyBtn.innerHTML = '🔒';
-      transparencyBtn.title = 'Lock Chat (Disable Transparency)';
-      console.log('💾 Transparency mode enabled - chat will not auto-close');
-    } else {
-      // Disable transparency mode
-      chatContainer.style.background = 'rgba(255, 255, 255, 0.95)';
-      chatContainer.style.backdropFilter = 'blur(15px)';
-      chatModal.style.pointerEvents = 'auto';
-      chatContainer.style.pointerEvents = 'auto';
-      transparencyBtn.innerHTML = '👁️';
-      transparencyBtn.title = 'Toggle Transparency Mode';
-      console.log('💾 Transparency mode disabled');
-    }
-  }
+  // Transparency mode is now always enabled by default
+  console.log('💾 Transparency mode enabled by default - enhanced user experience');
   
   // DISABLED: Click outside to close functionality
   // The modal will no longer auto-close when clicking outside
