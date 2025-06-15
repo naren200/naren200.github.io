@@ -80,7 +80,6 @@
       <input type="text" id="chat-input" placeholder="Ask me about my experience..." disabled>
       <button id="send-btn" disabled>Send</button>
       <button id="retry-btn" class="retry-btn" title="Retry Loading AI Chat" style="display: none;">🔄 Retry</button>
-      <button id="debug-btn" class="debug-btn" title="Show Debug Info">🔍</button>
     </div>
   </div>
 </div>
@@ -517,22 +516,6 @@
   cursor: not-allowed;
 }
 
-.debug-btn {
-  padding: 12px;
-  background: #f8f9fa;
-  color: #666;
-  border: 1px solid #ddd;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-left: 5px;
-  transition: all 0.2s ease;
-}
-
-.debug-btn:hover {
-  background: #e9ecef;
-  color: #333;
-}
 
 .retry-btn {
   background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
@@ -558,18 +541,6 @@
   transform: none;
 }
 
-.debug-info {
-  background: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 10px;
-  padding: 15px;
-  margin: 10px 0;
-  font-family: 'Courier New', monospace;
-  font-size: 12px;
-  white-space: pre-wrap;
-  max-height: 200px;
-  overflow-y: auto;
-}
 
 /* Backdrop overlay when chat is open - only on mobile to prevent page scroll */
 .chat-backdrop {
@@ -682,7 +653,8 @@ window.chatState = window.chatState || {
   miniMode: false,
   conversationHistory: [],
   currentPage: null,
-  userType: 'explorer'
+  userType: null, // null means no selection made yet
+  personaSelected: false // track if user has selected a persona
 };
 
 // Create safe copy of chat state without circular references
@@ -695,7 +667,8 @@ function createSafeChatState() {
     miniMode: window.chatState.miniMode,
     conversationHistory: window.chatState.conversationHistory || [],
     currentPage: window.chatState.currentPage,
-    userType: window.chatState.userType
+    userType: window.chatState.userType,
+    personaSelected: window.chatState.personaSelected
     // Intentionally exclude 'manager' to avoid circular references
   };
 }
@@ -712,6 +685,11 @@ function saveChatState() {
 
 // Show persona selector
 function showPersonaSelector() {
+  console.log('❌ SHOWING PERSONA SELECTOR UI - This should only happen for first-time users');
+  console.log('Current state:', {
+    personaSelected: window.chatState?.personaSelected,
+    userType: window.chatState?.userType
+  });
   const personaSelector = document.getElementById('persona-selector');
   const chatMessages = document.getElementById('chat-messages');
   const chatInputContainer = document.getElementById('chat-input-container');
@@ -723,6 +701,11 @@ function showPersonaSelector() {
 
 // Show chat interface
 function showChatInterface() {
+  console.log('✅ SHOWING CHAT INTERFACE (persona selector hidden)');
+  console.log('Current state:', {
+    personaSelected: window.chatState?.personaSelected,
+    userType: window.chatState?.userType
+  });
   const personaSelector = document.getElementById('persona-selector');
   const chatMessages = document.getElementById('chat-messages');
   const chatInputContainer = document.getElementById('chat-input-container');
@@ -735,21 +718,13 @@ function showChatInterface() {
 // Lightweight initialization - No WebLLM loading yet!
 document.addEventListener('DOMContentLoaded', function() {
   
-  // Clear any corrupted cache state from previous versions
-  try {
-    const savedState = localStorage.getItem('chatState');
-    if (savedState) {
-      const state = JSON.parse(savedState);
-      // If old state has modelCached property, clear the cache
-      if (state.hasOwnProperty('modelCached')) {
-        console.log('Clearing old cache format...');
-        localStorage.removeItem('chatState');
-      }
-    }
-  } catch (error) {
-    console.log('Clearing corrupted localStorage...');
-    localStorage.removeItem('chatState');
-  }
+  // DEBUG: Clear cache for testing (REMOVE THIS AFTER TESTING)
+  // localStorage.removeItem('chatState');
+  // console.log('DEBUG: Cache cleared for testing - starting fresh');
+  
+  // Load and restore cached chat state
+  console.log('Loading cached chat state...');
+  
   const chatBtn = document.getElementById('talk-with-me-btn');
   const chatModal = document.getElementById('chat-modal');
   const closeBtn = document.getElementById('close-chat');
@@ -758,30 +733,37 @@ document.addEventListener('DOMContentLoaded', function() {
   const expandBtn = document.getElementById('expand-chat');
   const closeMiniBtn = document.getElementById('close-mini');
   
-  // Restore chat state from localStorage (conversation history only)
+  // Restore chat state from localStorage
   const savedState = localStorage.getItem('chatState');
   if (savedState) {
     try {
       const state = JSON.parse(savedState);
+      console.log('Found saved state:', state);
       
-      // Only restore conversation history and page context, not engine state
+      // Restore conversation history
       if (state.conversationHistory && state.conversationHistory.length > 0) {
         window.chatState.conversationHistory = state.conversationHistory;
         console.log('Restored conversation history with', state.conversationHistory.length, 'messages');
       }
       
-      // Restore page context and user type
+      // Restore page context
       if (state.currentPage) {
         window.chatState.currentPage = state.currentPage;
         console.log('Restored page context:', state.currentPage);
       }
       
+      // Restore user type and persona selection - THIS IS CRITICAL
       if (state.userType) {
         window.chatState.userType = state.userType;
-        console.log('Restored user type:', state.userType);
+        console.log('✅ Restored user type:', state.userType);
       }
       
-      // Restore modal state if it was open
+      if (state.personaSelected !== undefined) {
+        window.chatState.personaSelected = state.personaSelected;
+        console.log('✅ Restored persona selection status:', state.personaSelected);
+      }
+      
+      // Restore modal open/closed state
       if (state.isOpen) {
         const backdrop = document.getElementById('chat-backdrop');
         
@@ -793,12 +775,36 @@ document.addEventListener('DOMContentLoaded', function() {
         
         chatModal.classList.add('open');
         window.chatState.isOpen = true;
+        
+        console.log('✅ AUTO-OPENED: Restored chat modal to open state from previous session');
+        
+        // Always show chat interface for cached users (persona already selected)
+        if (window.chatState.personaSelected && window.chatState.userType) {
+          // User has already selected persona, show chat interface directly
+          showChatInterface();
+          
+          // Initialize chat to restore conversation or prepare for new messages
+          console.log('Chat was open with cached persona selection, initializing...');
+          setTimeout(() => initializeChat(), 100);
+        } else {
+          // User hasn't selected persona yet, show persona selector
+          showPersonaSelector();
+          
+          // Start background model loading
+          if (!window.chatState.initialized && !window.backgroundModelLoading) {
+            console.log('Starting background model download for open chat with no persona...');
+            window.backgroundModelLoading = true;
+            setTimeout(() => startBackgroundModelDownload(), 500);
+          }
+        }
       }
       
     } catch (error) {
       console.warn('Failed to parse saved chat state:', error);
       localStorage.removeItem('chatState'); // Clear corrupted state
     }
+  } else {
+    console.log('❌ No saved state found - first time user');
   }
   
   // Show modal on button click with slide-up animation
@@ -814,20 +820,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Trigger slide-up animation
     chatModal.classList.add('open');
     window.chatState.isOpen = true;
-    saveChatState();
     
-    // Check if we have an existing conversation or if user has selected a persona
-    const hasConversation = window.chatState.conversationHistory && window.chatState.conversationHistory.length > 0;
-    const hasPersona = window.chatState.userType && window.chatState.userType !== 'explorer';
+    // Check if we have cached persona selection - if so, NEVER show persona selector again
+    const hasPersona = window.chatState.personaSelected && window.chatState.userType;
     
-    if (hasConversation || hasPersona) {
-      // Show chat interface and restore/initialize
+    if (hasPersona) {
+      // User has already selected persona, show chat interface directly - NO persona selector
+      console.log('User has cached persona selection, going directly to chat interface');
       showChatInterface();
       if (!window.chatState.initialized) {
         initializeChat();
       }
     } else {
-      // Show persona selector and start background model loading
+      // First time user - show persona selector
+      console.log('First time user, showing persona selector');
       showPersonaSelector();
       
       // Start downloading the model in background immediately
@@ -839,6 +845,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500); // Small delay to show UI first
       }
     }
+    
+    // Save state after UI decisions are made
+    saveChatState();
   });
   
   // Persona selection handling
@@ -855,18 +864,24 @@ document.addEventListener('DOMContentLoaded', function() {
       };
       
       window.chatState.userType = userTypeMapping[persona];
-      console.log('Persona selected:', persona, '-> userType:', window.chatState.userType);
+      window.chatState.personaSelected = true; // Mark that user has selected a persona - this is PERMANENT
+      console.log('Persona selected:', persona, '-> userType:', window.chatState.userType, '(This selection is now permanently cached)');
       
       // Hide persona selector and show chat
       showChatInterface();
       
+      // Save the selection immediately so it persists
+      saveChatState();
+      console.log('Persona selection cached - user will never see selector again');
+      
       // Check if model is already loaded in background
       if (window.chatState.initialized) {
-        console.log('Model already loaded, starting conversation immediately');
-        // Model is ready, start conversation immediately
+        console.log('Model already loaded, ready for user input');
+        // Model is ready, but don't auto-start conversation
         if (window.chatState.manager) {
           window.chatState.manager.userType = window.chatState.userType;
-          window.chatState.manager.startInitialConversation();
+          console.log('Updated manager userType to:', window.chatState.userType);
+          // Don't call startInitialConversation() - wait for user input
         }
       } else if (window.backgroundModelLoading) {
         console.log('Model is loading in background, waiting for completion');
@@ -962,13 +977,6 @@ document.addEventListener('DOMContentLoaded', function() {
     saveChatState();
   });
   
-  // Debug button functionality
-  const debugBtn = document.getElementById('debug-btn');
-  if (debugBtn) {
-    debugBtn.addEventListener('click', function() {
-      showDebugInfo();
-    });
-  }
   
   // Retry button functionality
   const retryBtn = document.getElementById('retry-btn');
@@ -1518,7 +1526,10 @@ async function removeModelCache() {
       manager: null,
       lastResponse: null,
       miniMode: false,
-      conversationHistory: []
+      conversationHistory: [],
+      currentPage: null,
+      userType: null,
+      personaSelected: false
     };
     
     // Clear global engine reference
@@ -1567,8 +1578,11 @@ async function removeModelCache() {
       removeCacheBtn.disabled = false;
     }, 2000);
     
+    // Reset to show persona selector again since cache was cleared
+    showPersonaSelector();
+    
     // Optional: Show success notification
-    alert('Model cache removed successfully! The chat will need to download the AI model again next time you use it.');
+    alert('Model cache removed successfully! The chat will need to download the AI model again next time you use it. You will also need to select your role again.');
     
   } catch (error) {
     console.error('removeModelCache: Error removing cache:', error);
@@ -1583,47 +1597,6 @@ async function removeModelCache() {
   }
 }
 
-// Debug information display
-function showDebugInfo() {
-  const debugInfo = {
-    chatState: createSafeChatState(), // Use safe copy to avoid circular references
-    timestamp: new Date().toISOString(),
-    browser: {
-      userAgent: navigator.userAgent,
-      webGL: !!window.WebGLRenderingContext,
-      webAssembly: !!window.WebAssembly,
-      audioContext: !!(window.AudioContext || window.webkitAudioContext)
-    },
-    webllm: {
-      available: !!window.webllm,
-      createMLCEngine: !!(window.webllm && window.webllm.CreateMLCEngine)
-    },
-    errors: JSON.parse(localStorage.getItem('chatErrors') || '[]'),
-    localStorage: {
-      chatState: localStorage.getItem('chatState'),
-      storageQuota: navigator.storage ? 'Available' : 'Not Available'
-    }
-  };
-  
-  const messagesContainer = document.getElementById('chat-messages');
-  if (messagesContainer) {
-    const debugDiv = document.createElement('div');
-    debugDiv.className = 'debug-info';
-    debugDiv.innerHTML = `
-      <strong>🔍 Debug Information</strong>\n
-      ${JSON.stringify(debugInfo, null, 2)}
-      
-      <br><strong>Console Logs:</strong><br>
-      Check browser DevTools Console (F12) for detailed logs.
-      Look for messages starting with 'webllm-chat.js:' or 'DynamicChatManager:'
-    `;
-    
-    messagesContainer.appendChild(debugDiv);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-  }
-  
-  console.log('Debug Info:', debugInfo);
-}
 
 // Start background model download
 function startBackgroundModelDownload() {

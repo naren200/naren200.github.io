@@ -14,7 +14,8 @@ function createSafeChatState() {
     miniMode: window.chatState.miniMode,
     conversationHistory: window.chatState.conversationHistory || [],
     currentPage: window.chatState.currentPage,
-    userType: window.chatState.userType
+    userType: window.chatState.userType,
+    personaSelected: window.chatState.personaSelected
     // Intentionally exclude 'manager' to avoid circular references
   };
 }
@@ -59,21 +60,21 @@ async function loadContext() {
   }
 }
 
-// User classification system
+// User classification system - keywords removed to prevent auto-classification
 const userClassification = {
   recruiter: {
-    keywords: ["hire", "hiring", "position", "job", "opportunity", "candidate", "recruit", "salary", "compensation", "available", "resume", "cv"],
-    greeting_prompt: "A recruiter just opened chat. Give a professional welcome introducing yourself as Naren, highlighting your robotics engineering background and asking what role they're hiring for. Keep it under 80 words.",
+    keywords: [], // Removed auto-classification keywords
+    greeting_prompt: "", // Removed auto-greeting
     persona: "professional_showcase"
   },
   colleague: {
-    keywords: ["robotics", "ROS", "research", "technical", "developer", "algorithm", "autonomous", "navigation", "sensor", "simulation", "gazebo", "carla"],
-    greeting_prompt: "A fellow robotics engineer just opened chat. Give a friendly technical welcome as Naren, mentioning your ROS2 expertise and asking what robotics topic interests them. Keep it under 80 words.",
+    keywords: [], // Removed auto-classification keywords
+    greeting_prompt: "", // Removed auto-greeting
     persona: "technical_peer"
   },
   explorer: {
-    keywords: ["about", "projects", "portfolio", "curious", "hello", "hi", "tell me", "background", "experience", "learn"],
-    greeting_prompt: "A general visitor just opened chat. Give a warm welcome as Naren, briefly introducing your robotics background and asking what they'd like to know. Keep it under 80 words.",
+    keywords: [], // Removed auto-classification keywords
+    greeting_prompt: "", // Removed auto-greeting
     persona: "friendly_guide"
   }
 };
@@ -85,7 +86,9 @@ class DynamicChatManager {
     this.messages = [];
     this.isProcessing = false;
     this.engine = null;
-    this.userType = window.chatState?.userType || 'explorer'; // Get from global state or default
+    // Get userType from global state, handle null properly
+    this.userType = window.chatState?.userType || null;
+    console.log('DynamicChatManager: Constructor userType:', this.userType);
     this.conversationStarted = false;
     this.currentPage = this.detectCurrentPage(); // Add page detection
     this.thinkingMessages = [
@@ -196,7 +199,9 @@ PERSONA: Friendly portfolio guide
 - Be conversational and engaging`
     };
 
-    return basePrompt + personas[userClassification[userType].persona];
+    // Handle case where userType might be null
+    const userPersona = userType && userClassification[userType] ? userClassification[userType].persona : 'friendly_guide';
+    return basePrompt + personas[userPersona];
   }
   
   createFallbackPrompt(userType) {
@@ -226,12 +231,14 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
       initialized: this.initialized,
       currentPage: this.currentPage,
       conversationHistory: window.chatState?.conversationHistory?.length || 0,
-      globalInitialized: window.chatState?.initialized
+      globalInitialized: window.chatState?.initialized,
+      userType: window.chatState?.userType,
+      personaSelected: window.chatState?.personaSelected
     });
     
-    // Always try to restore state first if there's conversation history
-    if (window.chatState?.conversationHistory?.length > 0) {
-      console.log('DynamicChatManager: Found existing conversation, restoring...');
+    // Always try to restore state first if there's conversation history or cached user selection
+    if (window.chatState?.conversationHistory?.length > 0 || window.chatState?.personaSelected) {
+      console.log('DynamicChatManager: Found existing conversation or cached user selection, restoring...');
       this.restoreConversationState();
     }
     
@@ -268,6 +275,12 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
       const personaSelector = document.getElementById('persona-selector');
       const isPersonaSelectorVisible = personaSelector && personaSelector.style.display !== 'none';
       
+      // Make sure we have the latest userType from global state
+      if (window.chatState && window.chatState.userType && this.userType !== window.chatState.userType) {
+        this.userType = window.chatState.userType;
+        console.log('DynamicChatManager: Updated userType during initialization to:', this.userType);
+      }
+      
       if (isPersonaSelectorVisible) {
         // Model is ready, but user hasn't selected persona yet
         // Keep showing that model is ready, don't hide loading UI
@@ -276,13 +289,9 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
       } else {
         // User already selected persona, proceed normally but keep showing progress
         this.enableInput();
-        // Start with persona-specific conversation after a brief delay to show completion
+        // Don't auto-start conversation, just hide loading
         setTimeout(() => {
-          this.startInitialConversation();
-          // Only hide loading UI after conversation starts
-          setTimeout(() => {
-            this.hideLoading();
-          }, 500);
+          this.hideLoading();
         }, 1000);
       }
       
@@ -518,40 +527,9 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
   }
   
   async startInitialConversation() {
-    // Generate persona-specific welcome message
-    try {
-      console.log('startInitialConversation: Generating persona-specific greeting for:', this.userType);
-      const greeting = await this.generateDynamicGreeting(this.userType);
-      
-      const welcomeMessage = {
-        role: 'assistant',
-        content: greeting
-      };
-      
-      this.addMessage(welcomeMessage);
-      this.messages.push(welcomeMessage);
-      this.saveConversationState();
-      console.log('startInitialConversation: Persona-specific greeting generated successfully');
-    } catch (error) {
-      console.error('startInitialConversation: Error generating greeting:', error);
-      
-      // Fallback welcome based on persona
-      const fallbackGreetings = {
-        recruiter: "Hi! I'm Naren, a robotics engineer actively seeking opportunities. I recently completed my M.S. in Robotics at ASU and have experience with ROS2, autonomous systems, and AI/ML. What position are you looking to fill?",
-        colleague: "Hey there! Great to meet a fellow engineer! I'm Naren, specializing in robotics and autonomous systems. I work extensively with ROS2, computer vision, and multi-agent systems. What brings you here?",
-        explorer: "Hi! 👋 I'm Naren, a robotics engineer with expertise in ROS2, autonomous systems, and AI integration. I recently completed my M.S. in Robotics at Arizona State University. What would you like to know about my background?"
-      };
-      
-      const fallbackContent = fallbackGreetings[this.userType] || fallbackGreetings.explorer;
-      const fallbackMessage = {
-        role: 'assistant',
-        content: fallbackContent
-      };
-      
-      this.addMessage(fallbackMessage);
-      this.messages.push(fallbackMessage);
-      this.saveConversationState();
-    }
+    // Only start conversation when user actually sends a message
+    // No auto-greeting - wait for user input
+    console.log('startInitialConversation: Ready to receive messages, no auto-greeting');
   }
   
   restoreConversationState() {
@@ -563,63 +541,53 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
       messagesContainer.innerHTML = '';
     }
     
+    // Restore user type if available
+    if (window.chatState && window.chatState.userType) {
+      this.userType = window.chatState.userType;
+      console.log('DynamicChatManager: Restored user type:', this.userType);
+    } else {
+      console.log('DynamicChatManager: No userType to restore, current:', this.userType);
+    }
+    
     // Check if we're on a different page than the saved conversation
     const savedPage = window.chatState && window.chatState.currentPage;
     const pageChanged = savedPage && savedPage !== this.currentPage;
     
-    if (pageChanged) {
-      console.log(`DynamicChatManager: Page changed from '${savedPage}' to '${this.currentPage}', but keeping conversation and adding page context notice`);
+    if (pageChanged && window.chatState.conversationHistory && window.chatState.conversationHistory.length > 0) {
+      console.log(`DynamicChatManager: Page changed from '${savedPage}' to '${this.currentPage}', keeping conversation and adding page context notice`);
       
       // Keep the conversation but add a context change notice
-      if (window.chatState && window.chatState.conversationHistory && window.chatState.conversationHistory.length > 0) {
-        this.messages = [...window.chatState.conversationHistory];
-        this.conversationStarted = this.messages.length > 1;
+      this.messages = [...window.chatState.conversationHistory];
+      this.conversationStarted = this.messages.length > 1;
+      
+      // Restore messages to UI
+      this.messages.forEach(message => {
+        this.addMessage(message, false); // false = don't save state again
+      });
+      
+      // Add a page context change notice
+      const pageContexts = narenContext && narenContext.page_contexts ? narenContext.page_contexts : {};
+      const newPageContext = pageContexts[this.currentPage] || pageContexts.general;
+      
+      if (newPageContext) {
+        const contextNotice = {
+          role: 'assistant',
+          content: `📍 **Page Context Updated**\n\n${newPageContext.greeting_context}\n\nFeel free to continue our conversation with this new context in mind!`
+        };
         
-        // Restore user type if available
-        if (window.chatState.userType) {
-          this.userType = window.chatState.userType;
-        }
-        
-        // Restore messages to UI
-        this.messages.forEach(message => {
-          this.addMessage(message, false); // false = don't save state again
-        });
-        
-        // Add a page context change notice
-        const pageContexts = narenContext && narenContext.page_contexts ? narenContext.page_contexts : {};
-        const newPageContext = pageContexts[this.currentPage] || pageContexts.general;
-        
-        if (newPageContext) {
-          const contextNotice = {
-            role: 'assistant',
-            content: `📍 **Page Context Updated**\n\n${newPageContext.greeting_context}\n\nFeel free to continue our conversation with this new context in mind!`
-          };
-          
-          this.addMessage(contextNotice);
-          this.messages.push(contextNotice);
-        }
-        
-        console.log(`DynamicChatManager: Continued conversation with ${this.messages.length} messages on page '${this.currentPage}'`);
-        this.saveConversationState();
-        return;
-      } else {
-        // No conversation to continue, start fresh
-        this.messages = [];
-        this.conversationStarted = false;
-        this.startInitialConversation();
-        return;
+        this.addMessage(contextNotice);
+        this.messages.push(contextNotice);
       }
+      
+      console.log(`DynamicChatManager: Continued conversation with ${this.messages.length} messages on page '${this.currentPage}'`);
+      this.saveConversationState();
+      return;
     }
     
-    // Restore conversation history from global state if on same page
+    // Restore conversation history from global state
     if (window.chatState && window.chatState.conversationHistory && window.chatState.conversationHistory.length > 0) {
       this.messages = [...window.chatState.conversationHistory];
       this.conversationStarted = this.messages.length > 1; // Has user messages
-      
-      // Restore user type if available
-      if (window.chatState.userType) {
-        this.userType = window.chatState.userType;
-      }
       
       // Restore messages to UI
       this.messages.forEach(message => {
@@ -627,9 +595,16 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
       });
       
       console.log(`DynamicChatManager: Restored ${this.messages.length} messages for page '${this.currentPage}'`);
+    } else if (window.chatState && window.chatState.personaSelected && this.userType) {
+      // User has selected persona but no conversation yet
+      console.log('DynamicChatManager: User has selected persona but no conversation yet, ready for new conversation');
+      this.messages = [];
+      this.conversationStarted = false;
     } else {
-      // No previous conversation, start fresh
-      this.startInitialConversation();
+      // No previous conversation or persona selection
+      console.log('DynamicChatManager: No cached state, ready for new conversation');
+      this.messages = [];
+      this.conversationStarted = false;
     }
   }
   
@@ -638,10 +613,14 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
       window.chatState.conversationHistory = [...this.messages];
       window.chatState.currentPage = this.currentPage; // Save current page context
       window.chatState.userType = this.userType; // Save user type
+      if (this.userType) {
+        window.chatState.personaSelected = true; // Mark persona as selected when we have a user type
+      }
       console.log('DynamicChatManager: Saving conversation state:', {
         messages: this.messages.length,
         page: this.currentPage,
-        userType: this.userType
+        userType: this.userType,
+        personaSelected: window.chatState.personaSelected
       });
       saveChatState();
     } else {
@@ -650,52 +629,13 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
   }
   
   classifyUserType(message) {
-    const lowerMessage = message.toLowerCase();
-    
-    // Check for recruiter keywords
-    for (const keyword of userClassification.recruiter.keywords) {
-      if (lowerMessage.includes(keyword)) {
-        return 'recruiter';
-      }
-    }
-    
-    // Check for technical colleague keywords
-    for (const keyword of userClassification.colleague.keywords) {
-      if (lowerMessage.includes(keyword)) {
-        return 'colleague';
-      }
-    }
-    
-    // Default to explorer
-    return 'explorer';
+    // Use cached user type if available, otherwise default to explorer
+    return this.userType || 'explorer';
   }
   
   async generateDynamicGreeting(userType) {
-    try {
-      const greetingPrompt = userClassification[userType].greeting_prompt;
-      const systemPrompt = this.createSystemPrompt(userType);
-      
-      const response = await this.engine.chat.completions.create({
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: greetingPrompt }
-        ],
-        temperature: 0.8,
-        max_tokens: 100
-      });
-      
-      return response.choices[0].message.content;
-      
-    } catch (error) {
-      console.error('Greeting generation error:', error);
-      // Fallback greetings
-      const fallbacks = {
-        recruiter: "Thanks for your interest! I'm actively seeking robotics engineering opportunities. What role are you looking to fill?",
-        colleague: "Great to meet a fellow robotics enthusiast! What aspect of robotics are you working on?",
-        explorer: "Thanks for visiting! Feel free to ask me anything about my projects, experience, or robotics background."
-      };
-      return fallbacks[userType];
-    }
+    // Custom one-time greeting for first user interaction
+    return "Well, well, well. Who is knocking the door? ";
   }
   
   async sendMessage() {
@@ -752,7 +692,19 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
     }
     
     try {
-      // Mark conversation as started (no need for classification, persona already selected)
+      // Check if this is the very first message in the conversation
+      if (this.messages.length === 1) { // Only user message exists
+        // First message - add custom greeting
+        const customGreeting = {
+          role: 'assistant',
+          content: 'Well, well, well. Who is knocking the door? Good morning!'
+        };
+        this.messages.push(customGreeting);
+        this.addMessage(customGreeting);
+        this.saveConversationState();
+      }
+      
+      // Mark conversation as started
       this.conversationStarted = true;
       
       // Process the message directly
@@ -814,14 +766,27 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
       // Update thinking message to show we're generating
       this.updateThinkingMessage('🧠 Analyzing your message...');
       
-      // Note: User message already added to conversation history in sendMessage()
-      
       // Create conversation context with appropriate system prompt
       const systemPrompt = this.createSystemPrompt(this.userType);
+      
+      // Get conversation history excluding system messages and ensure it ends with current user message
+      const userMessages = this.messages.filter(msg => msg.role !== 'system');
+      
+      // Make sure the current user message is the last message in the conversation
+      // Remove any existing instance of this message and add it at the end
+      const filteredMessages = userMessages.filter(msg => !(msg.role === 'user' && msg.content === message));
       const conversation = [
         { role: "system", content: systemPrompt },
-        ...this.messages
+        ...filteredMessages,
+        { role: "user", content: message }
       ];
+      
+      // Debug logging
+      console.log('processUserMessage: Conversation structure:', {
+        totalMessages: conversation.length,
+        lastMessage: conversation[conversation.length - 1],
+        messageRoles: conversation.map(msg => msg.role)
+      });
       
       console.log('processUserMessage: Sending to AI model...');
       this.updateThinkingMessage('🤖 Generating response...');
