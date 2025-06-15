@@ -79,6 +79,7 @@ class DynamicChatManager {
     this.engine = null;
     this.userType = 'explorer'; // default
     this.conversationStarted = false;
+    this.modelCached = false;
     this.thinkingMessages = [
       "Feel free to explore my portfolio while I'm thinking... 🤔",
       "Browse through my projects while I craft a response! 🚀",
@@ -179,7 +180,21 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
   async initialize() {
     console.log('DynamicChatManager: Starting initialization...');
     if (this.initialized) {
-      console.log('DynamicChatManager: Already initialized, skipping...');
+      console.log('DynamicChatManager: Already initialized, restoring state...');
+      this.restoreConversationState();
+      return;
+    }
+    
+    // Check if we have a cached model from previous page load
+    if (window.chatState && window.chatState.modelCached && window.globalChatEngine) {
+      console.log('DynamicChatManager: Found cached model, reusing...');
+      this.engine = window.globalChatEngine;
+      this.modelCached = true;
+      this.initialized = true;
+      
+      this.hideLoading();
+      this.enableInput();
+      this.restoreConversationState();
       return;
     }
     
@@ -200,7 +215,13 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
       this.updateProgress(100);
       
       this.initialized = true;
+      this.modelCached = true;
       console.log('DynamicChatManager: Initialization completed successfully');
+      
+      // Cache the engine globally for reuse across page loads
+      window.globalChatEngine = this.engine;
+      window.chatState.modelCached = true;
+      saveChatState();
       
       // Small delay to show completion
       setTimeout(() => {
@@ -220,10 +241,13 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
         engineStatus: this.engine ? 'Created' : 'Not Created'
       });
       
-      // Show detailed error in UI
-      const errorMessage = `❌ **Chat Initialization Failed**\n\nError: ${error.message}\n\nThis could be due to:\n- Browser compatibility issues\n- Network connectivity problems\n- WebLLM model loading failure\n\nPlease check the browser console for detailed logs and try refreshing the page.`;
+      // Show detailed error in UI with fallback options
+      const errorMessage = `❌ **Chat Initialization Failed**\n\nError: ${error.message}\n\nThis could be due to:\n- Browser compatibility issues\n- Network connectivity problems\n- WebLLM model loading failure\n\n**Alternative Contact Methods:**\n📧 Email: narendhiran2000@gmail.com\n🔗 LinkedIn: linkedin.com/in/narendhiran2000\n\nPlease check the browser console for detailed logs and try refreshing the page.`;
       
       this.showError(errorMessage);
+      
+      // Enable fallback contact mode
+      this.enableFallbackMode();
       
       // Also add an error message to the chat
       setTimeout(() => {
@@ -236,55 +260,170 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
   }
   
   async loadWebLLM() {
-    try {
-      console.log('loadWebLLM: Starting WebLLM engine creation...');
-      this.updateLoadingStage('Initializing AI Model', 'Fetching model configuration and preparing download...');
-      
-      // Check if webllm is available
-      if (!webllm || !webllm.CreateMLCEngine) {
-        throw new Error('WebLLM library not loaded properly. Please refresh the page.');
-      }
-      
-      // Use Llama 3.2 1B model with correct WebLLM model ID
-      console.log('loadWebLLM: Creating MLC Engine with Llama-3.2-1B-Instruct-q4f16_1-MLC...');
-      this.engine = await webllm.CreateMLCEngine(
-        "Llama-3.2-1B-Instruct-q4f16_1-MLC", // Correct WebLLM model ID
-        {
-          initProgressCallback: (report) => {
-            // Detailed progress reporting based on WebLLM stages
-            const progress = Math.round(report.progress * 100);
-            let stage = 'Loading AI Model';
-            let details = '';
-            
-            console.log(`loadWebLLM: Progress update - ${progress}% - Report:`, report);
-            
-            if (progress < 10) {
-              stage = 'Fetching Model Data';
-              details = 'Downloading model configuration and metadata...';
-            } else if (progress < 30) {
-              stage = 'Downloading Model';
-              details = 'Downloading AI model files from server...';
-            } else if (progress < 70) {
-              stage = 'Caching Model';
-              details = 'Caching model data locally for faster future access...';
-            } else if (progress < 95) {
-              stage = 'Initializing Model';
-              details = 'Loading model into memory and preparing for chat...';
-            } else {
-              stage = 'Finalizing Setup';
-              details = 'Completing initialization and setting up chat interface...';
-            }
-            
-            console.log(`loadWebLLM: Stage - ${stage}: ${details}`);
-            this.updateLoadingStage(stage, details);
-            this.updateProgress(progress);
-          }
+    const MAX_RETRIES = 3;
+    const TIMEOUT_MS = 300000; // 5 minutes timeout
+    let retryCount = 0;
+    
+    while (retryCount < MAX_RETRIES) {
+      try {
+        console.log(`loadWebLLM: Starting WebLLM engine creation (attempt ${retryCount + 1}/${MAX_RETRIES})...`);
+        this.updateLoadingStage('Initializing AI Model', `Fetching model configuration and preparing download... (Attempt ${retryCount + 1}/${MAX_RETRIES})`);
+        
+        // Check if webllm is available
+        if (!webllm || !webllm.CreateMLCEngine) {
+          throw new Error('WebLLM library not loaded properly. Please refresh the page.');
         }
-      );
-      
+        
+        // Check network connectivity before starting
+        if (!navigator.onLine) {
+          throw new Error('No internet connection detected. Please check your network and try again.');
+        }
+        
+        // Use Llama 3.2 1B model with correct WebLLM model ID
+        console.log('loadWebLLM: Creating MLC Engine with Llama-3.2-1B-Instruct-q4f16_1-MLC...');
+        
+        // Create a timeout promise
+        const timeoutPromise = new Promise((_, reject) => {
+          setTimeout(() => {
+            reject(new Error(`Model loading timed out after ${TIMEOUT_MS / 1000} seconds. This may be due to slow network or large model size.`));
+          }, TIMEOUT_MS);
+        });
+        
+        // Track progress for timeout detection
+        let lastProgressTime = Date.now();
+        let isStuck = false;
+        
+        const progressCheckInterval = setInterval(() => {
+          const timeSinceLastProgress = Date.now() - lastProgressTime;
+          if (timeSinceLastProgress > 120000) { // 2 minutes without progress
+            isStuck = true;
+            this.updateLoadingStage('Download Seems Slow', 'Model download is taking longer than expected. Please be patient or try refreshing if stuck.');
+          }
+        }, 30000); // Check every 30 seconds
+        
+        // Create the engine with timeout
+        const enginePromise = webllm.CreateMLCEngine(
+          "Llama-3.2-1B-Instruct-q4f16_1-MLC", // Correct WebLLM model ID
+          {
+            initProgressCallback: (report) => {
+              // Update last progress time
+              lastProgressTime = Date.now();
+              isStuck = false;
+              
+              // Detailed progress reporting based on WebLLM stages
+              const progress = Math.round(report.progress * 100);
+              let stage = 'Loading AI Model';
+              let details = '';
+              
+              console.log(`loadWebLLM: Progress update - ${progress}% - Report:`, report);
+              
+              if (progress < 10) {
+                stage = 'Fetching Model Data';
+                details = 'Downloading model configuration and metadata...';
+              } else if (progress < 30) {
+                stage = 'Downloading Model';
+                details = 'Downloading AI model files from server... This may take several minutes.';
+              } else if (progress < 70) {
+                stage = 'Caching Model';
+                details = 'Caching model data locally for faster future access...';
+              } else if (progress < 95) {
+                stage = 'Initializing Model';
+                details = 'Loading model into memory and preparing for chat...';
+              } else {
+                stage = 'Finalizing Setup';
+                details = 'Completing initialization and setting up chat interface...';
+              }
+              
+              console.log(`loadWebLLM: Stage - ${stage}: ${details}`);
+              this.updateLoadingStage(stage, details);
+              this.updateProgress(progress);
+            }
+          }
+        );
+        
+        this.engine = await Promise.race([enginePromise, timeoutPromise]);
+        clearInterval(progressCheckInterval);
+        
+        // Success - break out of retry loop
+        break;
+        
+      } catch (error) {
+        retryCount++;
+        console.error(`loadWebLLM: WebLLM loading error (attempt ${retryCount}/${MAX_RETRIES}):`, error);
+        
+        // Clean up any intervals
+        if (typeof progressCheckInterval !== 'undefined') {
+          clearInterval(progressCheckInterval);
+        }
+        
+        // If this was the last attempt, throw the error
+        if (retryCount >= MAX_RETRIES) {
+          console.error('loadWebLLM: All retry attempts failed');
+          console.error('Error details:', {
+            message: error.message,
+            stack: error.stack,
+            webllmAvailable: !!webllm,
+            createMLCEngineAvailable: !!(webllm && webllm.CreateMLCEngine),
+            networkOnline: navigator.onLine,
+            retryCount: retryCount
+          });
+          
+          // Enhanced error message with troubleshooting steps
+          let errorMessage = `Failed to load AI model after ${MAX_RETRIES} attempts: ${error.message}`;
+          let troubleshootingSteps = '';
+          
+          if (error.message.includes('timeout')) {
+            troubleshootingSteps = `
+            
+**Troubleshooting Steps:**
+• Check your internet connection speed
+• Try refreshing the page and waiting longer
+• Clear browser cache and try again
+• Try switching to a different network`;
+          } else if (error.message.includes('network') || error.message.includes('fetch')) {
+            troubleshootingSteps = `
+            
+**Troubleshooting Steps:**
+• Check your internet connection
+• Disable ad blockers temporarily
+• Try refreshing the page
+• Check if firewall is blocking the request`;
+          } else if (error.message.includes('WebLLM')) {
+            troubleshootingSteps = `
+            
+**Troubleshooting Steps:**
+• Try refreshing the page
+• Clear browser cache and cookies
+• Try a different browser (Chrome, Firefox, Safari)
+• Ensure JavaScript is enabled`;
+          } else {
+            troubleshootingSteps = `
+            
+**Troubleshooting Steps:**
+• Try refreshing the page
+• Clear browser cache
+• Check console for detailed error logs
+• Try a different browser`;
+          }
+          
+          this.updateLoadingStage('❌ Error Loading Model', errorMessage + troubleshootingSteps);
+          this.showError(errorMessage);
+          
+          throw new Error(errorMessage);
+        }
+        
+        // Wait before retrying (exponential backoff)
+        const waitTime = Math.min(5000 * Math.pow(2, retryCount - 1), 30000); // Max 30 seconds
+        console.log(`loadWebLLM: Waiting ${waitTime}ms before retry...`);
+        this.updateLoadingStage('Retrying...', `Attempt failed. Retrying in ${waitTime / 1000} seconds...`);
+        
+        await new Promise(resolve => setTimeout(resolve, waitTime));
+      }
+    }
+    
+    // Test the engine with a simple message after successful loading
+    try {
       console.log('loadWebLLM: WebLLM AI model engine initialized successfully');
-      
-      // Test the engine with a simple message
       console.log('loadWebLLM: Testing engine with simple message...');
       const testResponse = await this.engine.chat.completions.create({
         messages: [{ role: "user", content: "Say hello" }],
@@ -292,22 +431,9 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
         max_tokens: 10
       });
       console.log('loadWebLLM: Engine test successful:', testResponse);
-      
-    } catch (error) {
-      console.error('loadWebLLM: WebLLM loading error:', error);
-      console.error('Error details:', {
-        message: error.message,
-        stack: error.stack,
-        webllmAvailable: !!webllm,
-        createMLCEngineAvailable: !!(webllm && webllm.CreateMLCEngine)
-      });
-      
-      this.updateLoadingStage('❌ Error Loading Model', `Failed to load AI model: ${error.message}. Check console for details.`);
-      
-      // Show the error in the UI
-      this.showError(`AI Model Loading Failed: ${error.message}`);
-      
-      throw new Error(`Failed to load AI model: ${error.message}`);
+    } catch (testError) {
+      console.warn('loadWebLLM: Engine test failed, but proceeding anyway:', testError);
+      // Don't throw here as the engine might still work for actual chat
     }
   }
   
@@ -324,6 +450,40 @@ What brings you to my portfolio today?`
     
     this.addMessage(generalWelcome);
     this.messages.push(generalWelcome);
+    this.saveConversationState();
+  }
+  
+  restoreConversationState() {
+    console.log('DynamicChatManager: Restoring conversation state...');
+    
+    // Clear current messages display
+    const messagesContainer = document.getElementById('chat-messages');
+    if (messagesContainer) {
+      messagesContainer.innerHTML = '';
+    }
+    
+    // Restore conversation history from global state
+    if (window.chatState && window.chatState.conversationHistory) {
+      this.messages = [...window.chatState.conversationHistory];
+      this.conversationStarted = this.messages.length > 1; // Has user messages
+      
+      // Restore messages to UI
+      this.messages.forEach(message => {
+        this.addMessage(message, false); // false = don't save state again
+      });
+      
+      console.log(`DynamicChatManager: Restored ${this.messages.length} messages`);
+    } else if (this.messages.length === 0) {
+      // No previous conversation, start fresh
+      this.startInitialConversation();
+    }
+  }
+  
+  saveConversationState() {
+    if (window.chatState) {
+      window.chatState.conversationHistory = [...this.messages];
+      saveChatState();
+    }
   }
   
   classifyUserType(message) {
@@ -402,6 +562,7 @@ What brings you to my portfolio today?`
     // Add user message
     this.addMessage({ role: 'user', content: message });
     input.value = '';
+    this.saveConversationState();
     
     // Update global state
     if (window.chatState) {
@@ -438,6 +599,7 @@ What brings you to my portfolio today?`
           this.hideTyping();
           this.addMessage({ role: 'assistant', content: greeting });
           this.messages.push({ role: 'assistant', content: greeting });
+          this.saveConversationState();
           console.log('sendMessage: Dynamic greeting generated successfully');
         } catch (error) {
           console.error('sendMessage: Greeting error:', error);
@@ -460,6 +622,7 @@ What brings you to my portfolio today?`
       console.log('sendMessage: AI response received:', response.substring(0, 100) + '...');
       this.hideTyping();
       this.addMessage({ role: 'assistant', content: response });
+      this.saveConversationState();
       
     } catch (error) {
       console.error('sendMessage: Processing error:', error);
@@ -712,7 +875,7 @@ What brings you to my portfolio today?`
     return content.trim();
   }
   
-  addMessage(message) {
+  addMessage(message, saveState = true) {
     const messagesContainer = document.getElementById('chat-messages');
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${message.role}-message`;
@@ -753,6 +916,11 @@ What brings you to my portfolio today?`
       } else if (!window.chatState.isOpen && typeof showResponseReadyNotification === 'function') {
         showResponseReadyNotification();
       }
+    }
+    
+    // Save conversation state if requested
+    if (saveState) {
+      this.saveConversationState();
     }
   }
   
@@ -857,6 +1025,150 @@ What brings you to my portfolio today?`
         }, 200);
       }
     }, 3000); // Change message every 3 seconds
+  }
+  
+  enableFallbackMode() {
+    console.log('enableFallbackMode: Enabling fallback contact mode...');
+    
+    // Hide loading indicators
+    this.hideLoading();
+    
+    // Enable input for fallback messaging
+    const input = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('send-btn');
+    
+    if (input) {
+      input.disabled = false;
+      input.placeholder = 'Ask about contacting Naren directly...';
+    }
+    if (sendBtn) {
+      sendBtn.disabled = false;
+      sendBtn.textContent = 'Send';
+    }
+    
+    // Set up fallback message handler
+    this.setupFallbackMessageHandler();
+    
+    // Show fallback welcome message
+    const fallbackWelcome = {
+      role: 'assistant',
+      content: `🤖 **AI Chat Currently Unavailable**
+
+I'm sorry, but the AI chat system couldn't load properly. However, you can still reach out to me directly!
+
+**Best Ways to Contact Naren:**
+📧 **Email**: narendhiran2000@gmail.com
+🔗 **LinkedIn**: linkedin.com/in/narendhiran2000
+
+**Quick Info:**
+• Recent M.S. Robotics graduate from Arizona State University
+• Experienced in ROS2, autonomous systems, and AI/ML integration
+• Currently seeking robotics and AI engineering opportunities
+
+Feel free to ask me anything below, and I'll provide contact information and basic details about my experience!`
+    };
+    
+    this.addMessage(fallbackWelcome);
+    this.messages = [fallbackWelcome]; // Reset messages for fallback mode
+  }
+  
+  setupFallbackMessageHandler() {
+    // Remove existing event listeners by cloning elements
+    const input = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('send-btn');
+    
+    if (input && sendBtn) {
+      // Clone to remove all event listeners
+      const newInput = input.cloneNode(true);
+      const newSendBtn = sendBtn.cloneNode(true);
+      
+      input.parentNode.replaceChild(newInput, input);
+      sendBtn.parentNode.replaceChild(newSendBtn, sendBtn);
+      
+      // Add fallback event listeners
+      const handleFallbackMessage = () => {
+        const message = newInput.value.trim();
+        if (!message) return;
+        
+        // Add user message
+        this.addMessage({ role: 'user', content: message });
+        newInput.value = '';
+        
+        // Generate fallback response based on message content
+        const response = this.generateFallbackResponse(message);
+        setTimeout(() => {
+          this.addMessage({ role: 'assistant', content: response });
+        }, 500);
+      };
+      
+      newInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          handleFallbackMessage();
+        }
+      });
+      
+      newSendBtn.addEventListener('click', handleFallbackMessage);
+    }
+  }
+  
+  generateFallbackResponse(message) {
+    const lowerMessage = message.toLowerCase();
+    
+    // Contact information responses
+    if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('reach')) {
+      return `📧 **Email**: narendhiran2000@gmail.com
+🔗 **LinkedIn**: linkedin.com/in/narendhiran2000
+
+I typically respond to emails within 24 hours and LinkedIn messages within a few days. Feel free to reach out anytime!`;
+    }
+    
+    // Experience/skills responses
+    if (lowerMessage.includes('experience') || lowerMessage.includes('skill') || lowerMessage.includes('background')) {
+      return `🎓 **Education**: M.S. Robotics, Arizona State University (2024)
+🤖 **Key Skills**: ROS2, Autonomous Systems, AI/ML, Python, C++
+🏢 **Experience**: Former Robotics Software Engineer at Padma Agrobotics
+📚 **Research**: Published in IEEE Control Systems Society
+
+📧 **For detailed information**: narendhiran2000@gmail.com`;
+    }
+    
+    // Job/opportunity responses
+    if (lowerMessage.includes('job') || lowerMessage.includes('hire') || lowerMessage.includes('opportunity') || lowerMessage.includes('position')) {
+      return `🚀 **Currently Available** for full-time robotics and AI engineering positions!
+
+**Areas of Interest:**
+• Autonomous Systems Development
+• ROS/ROS2 Integration
+• AI/ML in Robotics
+• Sensor Fusion & Navigation
+
+📧 **Send opportunities to**: narendhiran2000@gmail.com
+🔗 **Connect on LinkedIn**: linkedin.com/in/narendhiran2000`;
+    }
+    
+    // Technical questions
+    if (lowerMessage.includes('ros') || lowerMessage.includes('robot') || lowerMessage.includes('autonomous') || lowerMessage.includes('ai') || lowerMessage.includes('ml')) {
+      return `🤖 **Technical Expertise:**
+• **ROS2**: Advanced development and system integration
+• **Autonomous Navigation**: SLAM, path planning, sensor fusion
+• **AI/ML**: TensorFlow, PyTorch, computer vision
+• **Programming**: Python, C++, MATLAB
+
+For detailed technical discussions:
+📧 **Email**: narendhiran2000@gmail.com
+🔗 **LinkedIn**: linkedin.com/in/narendhiran2000`;
+    }
+    
+    // Default response
+    return `Thanks for your message! While the AI chat isn't working right now, I'd love to help you directly.
+
+**Best ways to reach me:**
+📧 **Email**: narendhiran2000@gmail.com  
+🔗 **LinkedIn**: linkedin.com/in/narendhiran2000
+
+I'm a robotics engineer with expertise in ROS2, autonomous systems, and AI/ML integration. Currently seeking new opportunities in robotics and AI!
+
+What would you like to know more about?`;
   }
 }
 

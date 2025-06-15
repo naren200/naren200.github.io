@@ -22,7 +22,10 @@
   <div class="chat-container">
     <div class="chat-header">
       <h3>Chat with Naren</h3>
-      <button id="close-chat" class="close-btn">&times;</button>
+      <div class="chat-controls">
+        <button id="remove-cache-btn" class="remove-cache-btn" title="Remove Model Cache">Remove Cache</button>
+        <button id="close-chat" class="close-btn">&times;</button>
+      </div>
     </div>
     
     <div class="chat-messages" id="chat-messages">
@@ -57,8 +60,8 @@
 /* Floating Button - Lightweight CSS */
 .floating-chat-btn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 80px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
@@ -78,10 +81,10 @@
 /* Mini Response Display */
 .mini-response-display {
   position: fixed;
-  bottom: 100px;
-  right: 20px;
+  bottom: 120px;
+  right: 80px;
   width: 320px;
-  max-width: calc(100vw - 40px);
+  max-width: calc(100vw - 160px);
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -195,6 +198,33 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border-radius: 15px 15px 0 0;
+}
+
+.chat-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.remove-cache-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: lowercase;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.remove-cache-btn:hover {
+  background: #c82333;
+  opacity: 1;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
 }
 
 .close-btn {
@@ -402,29 +432,31 @@
   }
   
   .floating-chat-btn {
-    bottom: 15px;
-    right: 15px;
+    bottom: 20px;
+    right: 20px;
     padding: 12px 20px;
     font-size: 14px;
   }
   
   .mini-response-display {
-    width: calc(100vw - 30px);
-    right: 15px;
-    bottom: 80px;
+    width: calc(100vw - 40px);
+    right: 20px;
+    bottom: 90px;
   }
 }
 </style>
 
 <script>
-// Global chat state management
-window.chatState = {
+// Global chat state management with persistence
+window.chatState = window.chatState || {
   initialized: false,
   isOpen: false,
   isProcessing: false,
   manager: null,
   lastResponse: null,
-  miniMode: false
+  miniMode: false,
+  modelCached: false,
+  conversationHistory: []
 };
 
 // Create safe copy of chat state without circular references
@@ -434,7 +466,9 @@ function createSafeChatState() {
     isOpen: window.chatState.isOpen,
     isProcessing: window.chatState.isProcessing,
     lastResponse: window.chatState.lastResponse,
-    miniMode: window.chatState.miniMode
+    miniMode: window.chatState.miniMode,
+    modelCached: window.chatState.modelCached,
+    conversationHistory: window.chatState.conversationHistory || []
     // Intentionally exclude 'manager' to avoid circular references
   };
 }
@@ -454,6 +488,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const chatBtn = document.getElementById('talk-with-me-btn');
   const chatModal = document.getElementById('chat-modal');
   const closeBtn = document.getElementById('close-chat');
+  const removeCacheBtn = document.getElementById('remove-cache-btn');
   const miniResponse = document.getElementById('mini-response');
   const expandBtn = document.getElementById('expand-chat');
   const closeMiniBtn = document.getElementById('close-mini');
@@ -463,15 +498,24 @@ document.addEventListener('DOMContentLoaded', function() {
   if (savedState) {
     try {
       const state = JSON.parse(savedState);
+      // Restore all state properties
+      Object.assign(window.chatState, state);
+      
       if (state.isOpen) {
         chatModal.style.display = 'flex';
         window.chatState.isOpen = true;
-        
-        // Re-initialize if it was processing
-        if (state.isProcessing && !window.chatState.initialized) {
-          initializeChat();
-          window.chatState.initialized = true;
-        }
+      }
+      
+      // Restore conversation history if available
+      if (state.conversationHistory && state.conversationHistory.length > 0) {
+        window.chatState.conversationHistory = state.conversationHistory;
+      }
+      
+      // Pre-initialize if model was cached or was processing
+      if ((state.modelCached || state.isProcessing) && !window.chatState.initialized) {
+        console.log('Model was cached, pre-initializing chat...');
+        initializeChat();
+        window.chatState.initialized = true;
       }
     } catch (error) {
       console.warn('Failed to parse saved chat state:', error);
@@ -505,6 +549,13 @@ document.addEventListener('DOMContentLoaded', function() {
       chatModal.style.display = 'none';
       window.chatState.isOpen = false;
       saveChatState();
+    }
+  });
+  
+  // Remove cache functionality
+  removeCacheBtn.addEventListener('click', function() {
+    if (confirm('Are you sure you want to remove the model cache? This will delete the downloaded AI model and you will need to download it again next time you use the chat feature.')) {
+      removeModelCache();
     }
   });
   
@@ -777,6 +828,117 @@ function showResponseReadyNotification() {
   // Play notification sound
   if (window.chatState.manager && window.chatState.manager.notificationSound) {
     window.chatState.manager.playNotificationSound();
+  }
+}
+
+// Remove Model Cache Function
+async function removeModelCache() {
+  try {
+    console.log('removeModelCache: Starting cache removal...');
+    
+    // Show loading state
+    const removeCacheBtn = document.getElementById('remove-cache-btn');
+    const originalText = removeCacheBtn.textContent;
+    removeCacheBtn.textContent = 'removing...';
+    removeCacheBtn.disabled = true;
+    
+    // Clear WebLLM cache through IndexedDB
+    if ('indexedDB' in window) {
+      // Clear WebLLM specific databases
+      const dbsToDelete = ['webllm-cache', 'webllm', 'mlc-cache'];
+      
+      for (const dbName of dbsToDelete) {
+        try {
+          const deleteRequest = indexedDB.deleteDatabase(dbName);
+          await new Promise((resolve, reject) => {
+            deleteRequest.onerror = () => resolve(); // Don't fail if DB doesn't exist
+            deleteRequest.onsuccess = () => resolve();
+            deleteRequest.onblocked = () => resolve();
+          });
+          console.log(`Deleted database: ${dbName}`);
+        } catch (error) {
+          console.log(`Could not delete database ${dbName}:`, error);
+        }
+      }
+    }
+    
+    // Clear localStorage chat state
+    localStorage.removeItem('chatState');
+    localStorage.removeItem('webllm-cache');
+    localStorage.removeItem('mlc-cache');
+    
+    // Clear sessionStorage
+    sessionStorage.removeItem('chatState');
+    sessionStorage.removeItem('webllm-cache');
+    
+    // Reset global state
+    window.chatState = {
+      initialized: false,
+      isOpen: false,
+      isProcessing: false,
+      manager: null,
+      modelCached: false
+    };
+    
+    // Clear global engine reference
+    if (window.globalChatEngine) {
+      try {
+        // Try to properly dispose of the engine if it has cleanup methods
+        if (window.globalChatEngine.dispose) {
+          await window.globalChatEngine.dispose();
+        }
+      } catch (error) {
+        console.log('Engine cleanup error:', error);
+      }
+      window.globalChatEngine = null;
+    }
+    
+    // Clear chat messages
+    const messagesContainer = document.getElementById('chat-messages');
+    if (messagesContainer) {
+      messagesContainer.innerHTML = `
+        <div class="loading-message" id="loading-message">
+          <div class="loading-container">
+            <div class="typing-indicator">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="loading-text">
+              <h4 id="loading-stage">Model Cache Removed</h4>
+              <p id="loading-details">AI model cache has been cleared. The model will need to be downloaded again next time you start a chat.</p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    
+    // Disable chat input
+    const chatInput = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('send-btn');
+    if (chatInput) chatInput.disabled = true;
+    if (sendBtn) sendBtn.disabled = true;
+    
+    // Show success message
+    console.log('removeModelCache: Cache removal completed successfully');
+    
+    // Reset button
+    setTimeout(() => {
+      removeCacheBtn.textContent = originalText;
+      removeCacheBtn.disabled = false;
+    }, 2000);
+    
+    // Optional: Show success notification
+    alert('Model cache removed successfully! The chat will need to download the AI model again next time you use it.');
+    
+  } catch (error) {
+    console.error('removeModelCache: Error removing cache:', error);
+    
+    // Reset button on error
+    const removeCacheBtn = document.getElementById('remove-cache-btn');
+    removeCacheBtn.textContent = 'remove cache';
+    removeCacheBtn.disabled = false;
+    
+    // Show error message
+    alert('Error removing cache: ' + error.message);
   }
 }
 
