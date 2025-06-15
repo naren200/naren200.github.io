@@ -271,6 +271,18 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
       this.initialized = true;
       console.log('DynamicChatManager: Initialization completed successfully');
       
+      // Add initial greeting if no conversation history exists
+      if (!window.chatState?.conversationHistory?.length) {
+        const greetingMessage = {
+          role: 'assistant',
+          content: 'Well, well, well. Who is knocking the door?'
+        };
+        this.messages.push(greetingMessage);
+        this.addMessage(greetingMessage);
+        this.saveConversationState();
+        console.log('DynamicChatManager: Added initial greeting message');
+      }
+      
       // Check if we're still in persona selector mode or if user already selected
       const personaSelector = document.getElementById('persona-selector');
       const isPersonaSelectorVisible = personaSelector && personaSelector.style.display !== 'none';
@@ -635,7 +647,7 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
   
   async generateDynamicGreeting(userType) {
     // Custom one-time greeting for first user interaction
-    return "Well, well, well. Who is knocking the door? ";
+    return "Well, well, well. Who is knocking the door?";
   }
   
   async sendMessage() {
@@ -692,17 +704,6 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
     }
     
     try {
-      // Check if this is the very first message in the conversation
-      if (this.messages.length === 1) { // Only user message exists
-        // First message - add custom greeting
-        const customGreeting = {
-          role: 'assistant',
-          content: 'Well, well, well. Who is knocking the door? Good morning!'
-        };
-        this.messages.push(customGreeting);
-        this.addMessage(customGreeting);
-        this.saveConversationState();
-      }
       
       // Mark conversation as started
       this.conversationStarted = true;
