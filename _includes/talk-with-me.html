@@ -1,0 +1,824 @@
+<!-- Floating Chat Button - Minimal Performance Impact -->
+<div id="talk-with-me-btn" class="floating-chat-btn">
+  <span class="chat-icon">💬</span>
+  <span class="chat-text">Talk with Me</span>
+</div>
+
+<!-- Minimized Response Display -->
+<div id="mini-response" class="mini-response-display" style="display: none;">
+  <div class="mini-response-content">
+    <div class="mini-response-header">
+      <span class="mini-naren-icon">🤖</span>
+      <span class="mini-response-title">Naren responded</span>
+      <button id="expand-chat" class="expand-btn">↑</button>
+      <button id="close-mini" class="close-mini-btn">&times;</button>
+    </div>
+    <div id="mini-response-text" class="mini-response-text">Loading...</div>
+  </div>
+</div>
+
+<!-- Chat Modal - Hidden by default -->
+<div id="chat-modal" class="chat-modal" style="display: none;">
+  <div class="chat-container">
+    <div class="chat-header">
+      <h3>Chat with Naren</h3>
+      <button id="close-chat" class="close-btn">&times;</button>
+    </div>
+    
+    <div class="chat-messages" id="chat-messages">
+      <div class="loading-message" id="loading-message">
+        <div class="loading-container">
+          <div class="typing-indicator">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="loading-text">
+            <h4 id="loading-stage">Initializing AI Chat...</h4>
+            <p id="loading-details">Preparing to load the AI model. This may take 30-60 seconds for the first time.</p>
+          </div>
+          <div class="progress-container" id="progress-container" style="display: none;">
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text" id="progress-text">0%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="chat-input-container">
+      <input type="text" id="chat-input" placeholder="Ask me about my experience..." disabled>
+      <button id="send-btn" disabled>Send</button>
+      <button id="debug-btn" class="debug-btn" title="Show Debug Info">🔍</button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Floating Button - Lightweight CSS */
+.floating-chat-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Mini Response Display */
+.mini-response-display {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 320px;
+  max-width: calc(100vw - 40px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  z-index: 1500;
+  border: 1px solid rgba(255,255,255,0.2);
+  animation: slideInUp 0.3s ease;
+}
+
+.mini-response-content {
+  padding: 15px;
+}
+
+.mini-response-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.mini-naren-icon {
+  font-size: 20px;
+}
+
+.mini-response-title {
+  flex: 1;
+  font-weight: 600;
+  color: #667eea;
+  font-size: 14px;
+}
+
+.expand-btn, .close-mini-btn {
+  background: none;
+  border: none;
+  color: #667eea;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.expand-btn:hover, .close-mini-btn:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.mini-response-text {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #333;
+  max-height: 150px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  word-wrap: break-word;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.floating-chat-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+}
+
+.chat-icon {
+  font-size: 20px;
+}
+
+/* Modal Styles */
+.chat-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-container {
+  width: 90%;
+  max-width: 500px;
+  height: 600px;
+  background: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.chat-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 15px 15px 0 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  scroll-behavior: smooth;
+}
+
+.loading-message {
+  text-align: center;
+  color: #666;
+}
+
+.loading-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.loading-text h4 {
+  margin: 15px 0 5px 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.loading-text p {
+  margin: 0 0 20px 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.progress-container {
+  margin: 20px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 12px;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.typing-indicator {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin: 0 3px;
+  animation: thinkingBounce 1.6s infinite ease-in-out;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes thinkingBounce {
+  0%, 80%, 100% { 
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  40% { 
+    transform: translateY(-20px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Enhanced thinking message styles */
+.thinking-message {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px 0;
+  text-align: center;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.thinking-message .thinking-text {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+  animation: fadeInOut 2s infinite;
+}
+
+.thinking-message .browse-suggestion {
+  color: #666;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.chat-input-container {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 10px;
+}
+
+#chat-input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+}
+
+#send-btn {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#send-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.debug-btn {
+  padding: 12px;
+  background: #f8f9fa;
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 5px;
+  transition: all 0.2s ease;
+}
+
+.debug-btn:hover {
+  background: #e9ecef;
+  color: #333;
+}
+
+.debug-info {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chat-container {
+    width: 95%;
+    height: 80vh;
+  }
+  
+  .floating-chat-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  .mini-response-display {
+    width: calc(100vw - 30px);
+    right: 15px;
+    bottom: 80px;
+  }
+}
+</style>
+
+<script>
+// Global chat state management
+window.chatState = {
+  initialized: false,
+  isOpen: false,
+  isProcessing: false,
+  manager: null,
+  lastResponse: null,
+  miniMode: false
+};
+
+// Create safe copy of chat state without circular references
+function createSafeChatState() {
+  return {
+    initialized: window.chatState.initialized,
+    isOpen: window.chatState.isOpen,
+    isProcessing: window.chatState.isProcessing,
+    lastResponse: window.chatState.lastResponse,
+    miniMode: window.chatState.miniMode
+    // Intentionally exclude 'manager' to avoid circular references
+  };
+}
+
+// Utility function to safely save chatState to localStorage
+function saveChatState() {
+  try {
+    const safeState = createSafeChatState();
+    localStorage.setItem('chatState', JSON.stringify(safeState));
+  } catch (error) {
+    console.warn('Failed to save chat state:', error);
+  }
+}
+
+// Lightweight initialization - No WebLLM loading yet!
+document.addEventListener('DOMContentLoaded', function() {
+  const chatBtn = document.getElementById('talk-with-me-btn');
+  const chatModal = document.getElementById('chat-modal');
+  const closeBtn = document.getElementById('close-chat');
+  const miniResponse = document.getElementById('mini-response');
+  const expandBtn = document.getElementById('expand-chat');
+  const closeMiniBtn = document.getElementById('close-mini');
+  
+  // Restore chat state from localStorage
+  const savedState = localStorage.getItem('chatState');
+  if (savedState) {
+    try {
+      const state = JSON.parse(savedState);
+      if (state.isOpen) {
+        chatModal.style.display = 'flex';
+        window.chatState.isOpen = true;
+        
+        // Re-initialize if it was processing
+        if (state.isProcessing && !window.chatState.initialized) {
+          initializeChat();
+          window.chatState.initialized = true;
+        }
+      }
+    } catch (error) {
+      console.warn('Failed to parse saved chat state:', error);
+      localStorage.removeItem('chatState'); // Clear corrupted state
+    }
+  }
+  
+  // Show modal on button click
+  chatBtn.addEventListener('click', function() {
+    chatModal.style.display = 'flex';
+    window.chatState.isOpen = true;
+    saveChatState();
+    
+    // Initialize chat only when first opened
+    if (!window.chatState.initialized) {
+      initializeChat();
+      window.chatState.initialized = true;
+    }
+  });
+  
+  // Close modal
+  closeBtn.addEventListener('click', function() {
+    chatModal.style.display = 'none';
+    window.chatState.isOpen = false;
+    saveChatState();
+  });
+  
+  // Close on backdrop click
+  chatModal.addEventListener('click', function(e) {
+    if (e.target === chatModal) {
+      chatModal.style.display = 'none';
+      window.chatState.isOpen = false;
+      saveChatState();
+    }
+  });
+  
+  // Mini response expand button
+  expandBtn.addEventListener('click', function() {
+    miniResponse.style.display = 'none';
+    chatModal.style.display = 'flex';
+    window.chatState.isOpen = true;
+    window.chatState.miniMode = false;
+    saveChatState();
+  });
+  
+  // Mini response close button
+  closeMiniBtn.addEventListener('click', function() {
+    miniResponse.style.display = 'none';
+    window.chatState.miniMode = false;
+    saveChatState();
+  });
+  
+  // Debug button functionality
+  const debugBtn = document.getElementById('debug-btn');
+  if (debugBtn) {
+    debugBtn.addEventListener('click', function() {
+      showDebugInfo();
+    });
+  }
+  
+  // Handle page visibility changes
+  document.addEventListener('visibilitychange', function() {
+    if (!document.hidden && window.chatState.isOpen) {
+      // User came back to the page and chat was open
+      const chatModal = document.getElementById('chat-modal');
+      if (chatModal.style.display !== 'flex') {
+        chatModal.style.display = 'flex';
+      }
+      
+      // Check if there's a pending response and show notification
+      if (window.chatState.isProcessing && window.chatState.manager) {
+        showResponseReadyNotification();
+      }
+    }
+  });
+});
+
+// This function loads WebLLM and heavy JavaScript ONLY when needed
+async function initializeChat() {
+  console.log('Initializing chat - Loading WebLLM...');
+  
+  // Update initial loading stage
+  const loadingStage = document.getElementById('loading-stage');
+  const loadingDetails = document.getElementById('loading-details');
+  
+  if (loadingStage) {
+    loadingStage.textContent = 'Loading Chat System';
+  }
+  if (loadingDetails) {
+    loadingDetails.textContent = 'Downloading AI chat components...';
+  }
+  
+  try {
+    // Load WebLLM script dynamically
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = '/assets/js/webllm-chat.js';
+    
+    script.onload = function() {
+      console.log('WebLLM script loaded successfully');
+      if (typeof startRecruiterChat === 'function') {
+        window.chatState.isProcessing = true;
+        saveChatState();
+        
+        // Store successful script load
+        const errors = JSON.parse(localStorage.getItem('chatErrors') || '[]');
+        errors.push({
+          timestamp: new Date().toISOString(),
+          type: 'info',
+          message: 'WebLLM script loaded successfully'
+        });
+        localStorage.setItem('chatErrors', JSON.stringify(errors.slice(-10))); // Keep last 10 entries
+        
+        startRecruiterChat();
+      } else {
+        const errorMsg = 'startRecruiterChat function not found after script load';
+        console.error(errorMsg);
+        
+        // Store error
+        const errors = JSON.parse(localStorage.getItem('chatErrors') || '[]');
+        errors.push({
+          timestamp: new Date().toISOString(),
+          type: 'error',
+          message: errorMsg
+        });
+        localStorage.setItem('chatErrors', JSON.stringify(errors.slice(-10)));
+        
+        showChatError('Failed to initialize chat system');
+      }
+    };
+    
+    script.onerror = function() {
+      const errorMsg = 'Failed to load webllm-chat.js script';
+      console.error(errorMsg);
+      
+      // Store error
+      const errors = JSON.parse(localStorage.getItem('chatErrors') || '[]');
+      errors.push({
+        timestamp: new Date().toISOString(),
+        type: 'error',
+        message: errorMsg + ' - Check network connectivity and script path'
+      });
+      localStorage.setItem('chatErrors', JSON.stringify(errors.slice(-10)));
+      
+      showChatError('Failed to load chat components');
+    };
+    
+    document.head.appendChild(script);
+    
+  } catch (error) {
+    console.error('Failed to load chat:', error);
+    showChatError('Failed to load chat. Please refresh and try again.');
+  }
+}
+
+function showChatError(message) {
+  const loadingStage = document.getElementById('loading-stage');
+  const loadingDetails = document.getElementById('loading-details');
+  
+  if (loadingStage) {
+    loadingStage.textContent = 'Error';
+    loadingStage.style.color = 'red';
+  }
+  if (loadingDetails) {
+    loadingDetails.textContent = message;
+    loadingDetails.style.color = 'red';
+  }
+}
+
+// Show mini response with latest AI message
+function showMiniResponse(responseText) {
+  const miniResponse = document.getElementById('mini-response');
+  const miniResponseText = document.getElementById('mini-response-text');
+  
+  if (miniResponse && miniResponseText) {
+    // Store the response
+    window.chatState.lastResponse = responseText;
+    
+    // Clean the response text first (remove JSON string formatting)
+    let cleanText = responseText;
+    if (typeof cleanText === 'string') {
+      // Remove wrapping quotes if the entire content is wrapped in quotes
+      if ((cleanText.startsWith('"') && cleanText.endsWith('"')) || 
+          (cleanText.startsWith("'") && cleanText.endsWith("'"))) {
+        cleanText = cleanText.slice(1, -1);
+      }
+      
+      // Remove any JSON string escaping
+      cleanText = cleanText.replace(/\\"/g, '"');
+      cleanText = cleanText.replace(/\\'/g, "'");
+      cleanText = cleanText.replace(/\\n/g, '\n');
+      cleanText = cleanText.replace(/\\t/g, '\t');
+      cleanText = cleanText.replace(/\\r/g, '\r');
+      cleanText = cleanText.replace(/\\\\/g, '\\');
+    }
+    
+    // Clean and truncate the response text
+    cleanText = cleanText.replace(/\*\*([^*]+)\*\*/g, '$1'); // Remove markdown bold
+    cleanText = cleanText.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'); // Remove markdown links
+    cleanText = cleanText.replace(/[\u{1f300}-\u{1f9ff}]/gu, ''); // Remove emojis
+    cleanText = cleanText.replace(/\n\n+/g, ' '); // Replace multiple newlines with space
+    cleanText = cleanText.replace(/\n/g, ' '); // Replace single newlines with space
+    cleanText = cleanText.trim();
+    
+    // Truncate if too long
+    if (cleanText.length > 200) {
+      cleanText = cleanText.substring(0, 200) + '...';
+    }
+    
+    if (miniResponseText) {
+      miniResponseText.textContent = cleanText;
+    }
+    if (miniResponse) {
+      miniResponse.style.display = 'block';
+    }
+    window.chatState.miniMode = true;
+    saveChatState();
+    
+    // Auto-hide after 15 seconds
+    setTimeout(() => {
+      if (window.chatState.miniMode && miniResponse && miniResponse.style.display === 'block') {
+        miniResponse.style.display = 'none';
+        window.chatState.miniMode = false;
+        saveChatState();
+      }
+    }, 15000);
+  }
+}
+
+// Response ready notification system
+function showResponseReadyNotification() {
+  // Check if chat is open, if not show mini response instead
+  if (!window.chatState.isOpen && window.chatState.lastResponse) {
+    showMiniResponse(window.chatState.lastResponse);
+    return;
+  }
+  
+  // Create floating notification
+  const notification = document.createElement('div');
+  notification.id = 'response-notification';
+  notification.innerHTML = `
+    <div style="
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 25px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      z-index: 3000;
+      font-weight: 600;
+      animation: slideInBounce 0.5s ease;
+      cursor: pointer;
+    ">
+      🤖 Naren has responded! Click to view
+    </div>
+  `;
+  
+  // Add animation keyframes
+  if (!document.getElementById('notification-styles')) {
+    const style = document.createElement('style');
+    style.id = 'notification-styles';
+    style.textContent = `
+      @keyframes slideInBounce {
+        0% { transform: translateX(100%) scale(0.8); opacity: 0; }
+        70% { transform: translateX(-10px) scale(1.05); }
+        100% { transform: translateX(0) scale(1); opacity: 1; }
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+  
+  document.body.appendChild(notification);
+  
+  // Add pulse animation
+  setTimeout(() => {
+    const notifDiv = notification.querySelector('div');
+    if (notifDiv && notifDiv.style) {
+      notifDiv.style.animation += ', pulse 2s infinite';
+    }
+  }, 500);
+  
+  // Click to open chat
+  notification.addEventListener('click', function() {
+    const chatModal = document.getElementById('chat-modal');
+    chatModal.style.display = 'flex';
+    window.chatState.isOpen = true;
+    notification.remove();
+  });
+  
+  // Auto-remove after 10 seconds
+  setTimeout(() => {
+    if (notification.parentNode) {
+      notification.remove();
+    }
+  }, 10000);
+  
+  // Play notification sound
+  if (window.chatState.manager && window.chatState.manager.notificationSound) {
+    window.chatState.manager.playNotificationSound();
+  }
+}
+
+// Debug information display
+function showDebugInfo() {
+  const debugInfo = {
+    chatState: createSafeChatState(), // Use safe copy to avoid circular references
+    timestamp: new Date().toISOString(),
+    browser: {
+      userAgent: navigator.userAgent,
+      webGL: !!window.WebGLRenderingContext,
+      webAssembly: !!window.WebAssembly,
+      audioContext: !!(window.AudioContext || window.webkitAudioContext)
+    },
+    webllm: {
+      available: !!window.webllm,
+      createMLCEngine: !!(window.webllm && window.webllm.CreateMLCEngine)
+    },
+    errors: JSON.parse(localStorage.getItem('chatErrors') || '[]'),
+    localStorage: {
+      chatState: localStorage.getItem('chatState'),
+      storageQuota: navigator.storage ? 'Available' : 'Not Available'
+    }
+  };
+  
+  const messagesContainer = document.getElementById('chat-messages');
+  if (messagesContainer) {
+    const debugDiv = document.createElement('div');
+    debugDiv.className = 'debug-info';
+    debugDiv.innerHTML = `
+      <strong>🔍 Debug Information</strong>\n
+      ${JSON.stringify(debugInfo, null, 2)}
+      
+      <br><strong>Console Logs:</strong><br>
+      Check browser DevTools Console (F12) for detailed logs.
+      Look for messages starting with 'webllm-chat.js:' or 'DynamicChatManager:'
+    `;
+    
+    messagesContainer.appendChild(debugDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+  
+  console.log('Debug Info:', debugInfo);
+}
+</script>
