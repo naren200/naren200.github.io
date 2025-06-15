@@ -51,6 +51,7 @@
     <div class="chat-input-container">
       <input type="text" id="chat-input" placeholder="Ask me about my experience..." disabled>
       <button id="send-btn" disabled>Send</button>
+      <button id="retry-btn" class="retry-btn" title="Retry Loading AI Chat" style="display: none;">🔄 Retry</button>
       <button id="debug-btn" class="debug-btn" title="Show Debug Info">🔍</button>
     </div>
   </div>
@@ -411,6 +412,30 @@
   color: #333;
 }
 
+.retry-btn {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 5px;
+  transition: all 0.2s ease;
+}
+
+.retry-btn:hover {
+  background: linear-gradient(135deg, #218838 0%, #17a2b8 100%);
+  transform: translateY(-1px);
+}
+
+.retry-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .debug-info {
   background: #f8f9fa;
   border: 1px solid #dee2e6;
@@ -455,8 +480,9 @@ window.chatState = window.chatState || {
   manager: null,
   lastResponse: null,
   miniMode: false,
-  modelCached: false,
-  conversationHistory: []
+  conversationHistory: [],
+  currentPage: null,
+  userType: 'explorer'
 };
 
 // Create safe copy of chat state without circular references
@@ -467,8 +493,9 @@ function createSafeChatState() {
     isProcessing: window.chatState.isProcessing,
     lastResponse: window.chatState.lastResponse,
     miniMode: window.chatState.miniMode,
-    modelCached: window.chatState.modelCached,
-    conversationHistory: window.chatState.conversationHistory || []
+    conversationHistory: window.chatState.conversationHistory || [],
+    currentPage: window.chatState.currentPage,
+    userType: window.chatState.userType
     // Intentionally exclude 'manager' to avoid circular references
   };
 }
@@ -485,6 +512,22 @@ function saveChatState() {
 
 // Lightweight initialization - No WebLLM loading yet!
 document.addEventListener('DOMContentLoaded', function() {
+  
+  // Clear any corrupted cache state from previous versions
+  try {
+    const savedState = localStorage.getItem('chatState');
+    if (savedState) {
+      const state = JSON.parse(savedState);
+      // If old state has modelCached property, clear the cache
+      if (state.hasOwnProperty('modelCached')) {
+        console.log('Clearing old cache format...');
+        localStorage.removeItem('chatState');
+      }
+    }
+  } catch (error) {
+    console.log('Clearing corrupted localStorage...');
+    localStorage.removeItem('chatState');
+  }
   const chatBtn = document.getElementById('talk-with-me-btn');
   const chatModal = document.getElementById('chat-modal');
   const closeBtn = document.getElementById('close-chat');
@@ -493,30 +536,35 @@ document.addEventListener('DOMContentLoaded', function() {
   const expandBtn = document.getElementById('expand-chat');
   const closeMiniBtn = document.getElementById('close-mini');
   
-  // Restore chat state from localStorage
+  // Restore chat state from localStorage (conversation history only)
   const savedState = localStorage.getItem('chatState');
   if (savedState) {
     try {
       const state = JSON.parse(savedState);
-      // Restore all state properties
-      Object.assign(window.chatState, state);
       
+      // Only restore conversation history and page context, not engine state
+      if (state.conversationHistory && state.conversationHistory.length > 0) {
+        window.chatState.conversationHistory = state.conversationHistory;
+        console.log('Restored conversation history with', state.conversationHistory.length, 'messages');
+      }
+      
+      // Restore page context and user type
+      if (state.currentPage) {
+        window.chatState.currentPage = state.currentPage;
+        console.log('Restored page context:', state.currentPage);
+      }
+      
+      if (state.userType) {
+        window.chatState.userType = state.userType;
+        console.log('Restored user type:', state.userType);
+      }
+      
+      // Restore modal state if it was open
       if (state.isOpen) {
         chatModal.style.display = 'flex';
         window.chatState.isOpen = true;
       }
       
-      // Restore conversation history if available
-      if (state.conversationHistory && state.conversationHistory.length > 0) {
-        window.chatState.conversationHistory = state.conversationHistory;
-      }
-      
-      // Pre-initialize if model was cached or was processing
-      if ((state.modelCached || state.isProcessing) && !window.chatState.initialized) {
-        console.log('Model was cached, pre-initializing chat...');
-        initializeChat();
-        window.chatState.initialized = true;
-      }
     } catch (error) {
       console.warn('Failed to parse saved chat state:', error);
       localStorage.removeItem('chatState'); // Clear corrupted state
@@ -531,8 +579,26 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize chat only when first opened
     if (!window.chatState.initialized) {
+      // Add timeout detection to prevent infinite loading
+      setTimeout(() => {
+        if (!window.chatState.initialized && window.chatState.isOpen) {
+          console.warn('Chat initialization timed out after 60 seconds');
+          const retryBtn = document.getElementById('retry-btn');
+          if (retryBtn) {
+            retryBtn.style.display = 'inline-block';
+          }
+          showChatError('Initialization timed out. Please try the retry button.');
+        }
+      }, 60000); // 60 second timeout
+      
       initializeChat();
       window.chatState.initialized = true;
+    } else {
+      // Chat was already initialized, just show existing conversation if any
+      if (window.chatState.conversationHistory && window.chatState.conversationHistory.length > 0) {
+        console.log('Chat already initialized, restoring existing conversation...');
+        // The conversation will be restored when the manager is created
+      }
     }
   });
   
@@ -583,6 +649,58 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
+  // Retry button functionality
+  const retryBtn = document.getElementById('retry-btn');
+  if (retryBtn) {
+    retryBtn.addEventListener('click', function() {
+      // Reset state and retry initialization
+      retryBtn.disabled = true;
+      retryBtn.textContent = '🔄 Retrying...';
+      
+      // Reset chat state
+      window.chatState.initialized = false;
+      window.chatState.isProcessing = false;
+      
+      // Clear error messages and show loading
+      const messagesContainer = document.getElementById('chat-messages');
+      if (messagesContainer) {
+        messagesContainer.innerHTML = `
+          <div class="loading-message" id="loading-message">
+            <div class="loading-container">
+              <div class="typing-indicator">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="loading-text">
+                <h4 id="loading-stage">Retrying AI Chat...</h4>
+                <p id="loading-details">Attempting to reload the AI model. Please wait...</p>
+              </div>
+              <div class="progress-container" id="progress-container" style="display: none;">
+                <div class="progress-bar">
+                  <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text" id="progress-text">0%</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      
+      // Disable input again
+      const input = document.getElementById('chat-input');
+      const sendBtn = document.getElementById('send-btn');
+      if (input) input.disabled = true;
+      if (sendBtn) sendBtn.disabled = true;
+      
+      // Hide retry button during retry
+      retryBtn.style.display = 'none';
+      
+      // Retry initialization after a short delay
+      setTimeout(() => {
+        initializeChat();
+      }, 1000);
+    });
+  }
+  
   // Handle page visibility changes
   document.addEventListener('visibilitychange', function() {
     if (!document.hidden && window.chatState.isOpen) {
@@ -603,6 +721,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // This function loads WebLLM and heavy JavaScript ONLY when needed
 async function initializeChat() {
   console.log('Initializing chat - Loading WebLLM...');
+  console.log('Current chat state:', {
+    initialized: window.chatState.initialized,
+    isOpen: window.chatState.isOpen,
+    conversationHistory: window.chatState.conversationHistory?.length || 0
+  });
   
   // Update initial loading stage
   const loadingStage = document.getElementById('loading-stage');
@@ -621,42 +744,64 @@ async function initializeChat() {
     script.type = 'module';
     script.src = '/assets/js/webllm-chat.js';
     
+    // Add timeout for script loading
+    let scriptLoadTimeout = setTimeout(() => {
+      console.error('Script loading timed out');
+      showChatError('Script loading timed out. Please refresh and try again.');
+      
+      // Store timeout error
+      const errors = JSON.parse(localStorage.getItem('chatErrors') || '[]');
+      errors.push({
+        timestamp: new Date().toISOString(),
+        type: 'error',
+        message: 'Script loading timed out after 30 seconds'
+      });
+      localStorage.setItem('chatErrors', JSON.stringify(errors.slice(-10)));
+    }, 30000); // 30 second timeout
+    
     script.onload = function() {
+      clearTimeout(scriptLoadTimeout);
       console.log('WebLLM script loaded successfully');
-      if (typeof startRecruiterChat === 'function') {
-        window.chatState.isProcessing = true;
-        saveChatState();
-        
-        // Store successful script load
-        const errors = JSON.parse(localStorage.getItem('chatErrors') || '[]');
-        errors.push({
-          timestamp: new Date().toISOString(),
-          type: 'info',
-          message: 'WebLLM script loaded successfully'
-        });
-        localStorage.setItem('chatErrors', JSON.stringify(errors.slice(-10))); // Keep last 10 entries
-        
-        startRecruiterChat();
-      } else {
-        const errorMsg = 'startRecruiterChat function not found after script load';
-        console.error(errorMsg);
-        
-        // Store error
-        const errors = JSON.parse(localStorage.getItem('chatErrors') || '[]');
-        errors.push({
-          timestamp: new Date().toISOString(),
-          type: 'error',
-          message: errorMsg
-        });
-        localStorage.setItem('chatErrors', JSON.stringify(errors.slice(-10)));
-        
-        showChatError('Failed to initialize chat system');
-      }
+      
+      // Wait a moment for the script to fully initialize
+      setTimeout(() => {
+        if (typeof startRecruiterChat === 'function') {
+          window.chatState.isProcessing = true;
+          saveChatState();
+          
+          // Store successful script load
+          const errors = JSON.parse(localStorage.getItem('chatErrors') || '[]');
+          errors.push({
+            timestamp: new Date().toISOString(),
+            type: 'info',
+            message: 'WebLLM script loaded successfully'
+          });
+          localStorage.setItem('chatErrors', JSON.stringify(errors.slice(-10))); // Keep last 10 entries
+          
+          startRecruiterChat();
+        } else {
+          const errorMsg = 'startRecruiterChat function not found after script load';
+          console.error(errorMsg);
+          
+          // Store error
+          const errors = JSON.parse(localStorage.getItem('chatErrors') || '[]');
+          errors.push({
+            timestamp: new Date().toISOString(),
+            type: 'error',
+            message: errorMsg
+          });
+          localStorage.setItem('chatErrors', JSON.stringify(errors.slice(-10)));
+          
+          showChatError('Failed to initialize chat system. Enabling fallback mode...');
+          enableFallbackContactMode();
+        }
+      }, 100); // Small delay to ensure script is fully parsed
     };
     
-    script.onerror = function() {
+    script.onerror = function(error) {
+      clearTimeout(scriptLoadTimeout);
       const errorMsg = 'Failed to load webllm-chat.js script';
-      console.error(errorMsg);
+      console.error(errorMsg, error);
       
       // Store error
       const errors = JSON.parse(localStorage.getItem('chatErrors') || '[]');
@@ -667,7 +812,8 @@ async function initializeChat() {
       });
       localStorage.setItem('chatErrors', JSON.stringify(errors.slice(-10)));
       
-      showChatError('Failed to load chat components');
+      showChatError('Failed to load chat components. Enabling fallback mode...');
+      enableFallbackContactMode();
     };
     
     document.head.appendChild(script);
@@ -681,6 +827,7 @@ async function initializeChat() {
 function showChatError(message) {
   const loadingStage = document.getElementById('loading-stage');
   const loadingDetails = document.getElementById('loading-details');
+  const retryBtn = document.getElementById('retry-btn');
   
   if (loadingStage) {
     loadingStage.textContent = 'Error';
@@ -690,6 +837,148 @@ function showChatError(message) {
     loadingDetails.textContent = message;
     loadingDetails.style.color = 'red';
   }
+  
+  // Show retry button for AI loading errors
+  if (retryBtn && message.includes('AI') || message.includes('model') || message.includes('script')) {
+    retryBtn.style.display = 'inline-block';
+  }
+}
+
+// Fallback contact mode when AI chat fails completely
+function enableFallbackContactMode() {
+  console.log('Enabling fallback contact mode...');
+  
+  // Hide loading message
+  const loadingMsg = document.getElementById('loading-message');
+  if (loadingMsg) {
+    loadingMsg.style.display = 'none';
+  }
+  
+  // Enable input
+  const input = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('send-btn');
+  
+  if (input) {
+    input.disabled = false;
+    input.placeholder = 'Ask about contacting Naren directly...';
+  }
+  if (sendBtn) {
+    sendBtn.disabled = false;
+    sendBtn.textContent = 'Send';
+  }
+  
+  // Add fallback welcome message
+  const messagesContainer = document.getElementById('chat-messages');
+  if (messagesContainer) {
+    const welcomeMessage = document.createElement('div');
+    welcomeMessage.className = 'message assistant-message';
+    welcomeMessage.innerHTML = `
+      <div class="message-content">
+        🤖 <strong>AI Chat Currently Unavailable</strong><br><br>
+        
+        I'm sorry, but the AI chat system couldn't load properly. However, you can still reach out to me directly!<br><br>
+        
+        <strong>Best Ways to Contact Naren:</strong><br>
+        📧 <strong>Email</strong>: narendhiran2000@gmail.com<br>
+        🔗 <strong>LinkedIn</strong>: <a href="https://linkedin.com/in/narendhiran2000" target="_blank">linkedin.com/in/narendhiran2000</a><br><br>
+        
+        <strong>Quick Info:</strong><br>
+        • Recent M.S. Robotics graduate from Arizona State University<br>
+        • Experienced in ROS2, autonomous systems, and AI/ML integration<br>
+        • Currently seeking robotics and AI engineering opportunities<br><br>
+        
+        Feel free to ask me anything below, and I'll provide contact information and basic details about my experience!
+      </div>
+    `;
+    messagesContainer.appendChild(welcomeMessage);
+  }
+  
+  // Set up simple fallback message handling
+  const handleFallbackMessage = () => {
+    const message = input.value.trim();
+    if (!message) return;
+    
+    // Add user message
+    const userMessage = document.createElement('div');
+    userMessage.className = 'message user-message';
+    userMessage.innerHTML = `<div class="message-content">${message}</div>`;
+    messagesContainer.appendChild(userMessage);
+    
+    input.value = '';
+    
+    // Generate and add response
+    const response = generateFallbackResponse(message);
+    setTimeout(() => {
+      const responseMessage = document.createElement('div');
+      responseMessage.className = 'message assistant-message';
+      responseMessage.innerHTML = `<div class="message-content">${response}</div>`;
+      messagesContainer.appendChild(responseMessage);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }, 500);
+    
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  };
+  
+  // Add event listeners
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      handleFallbackMessage();
+    }
+  });
+  
+  sendBtn.addEventListener('click', handleFallbackMessage);
+}
+
+function generateFallbackResponse(message) {
+  const lowerMessage = message.toLowerCase();
+  
+  // Contact information responses
+  if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('reach')) {
+    return `📧 <strong>Email</strong>: narendhiran2000@gmail.com<br>
+🔗 <strong>LinkedIn</strong>: <a href="https://linkedin.com/in/narendhiran2000" target="_blank">linkedin.com/in/narendhiran2000</a><br><br>
+I typically respond to emails within 24 hours and LinkedIn messages within a few days. Feel free to reach out anytime!`;
+  }
+  
+  // Experience/skills responses
+  if (lowerMessage.includes('experience') || lowerMessage.includes('skill') || lowerMessage.includes('background')) {
+    return `🎓 <strong>Education</strong>: M.S. Robotics, Arizona State University (2024)<br>
+🤖 <strong>Key Skills</strong>: ROS2, Autonomous Systems, AI/ML, Python, C++<br>
+🏢 <strong>Experience</strong>: Former Robotics Software Engineer at Padma Agrobotics<br>
+📚 <strong>Research</strong>: Published in IEEE Control Systems Society<br><br>
+📧 <strong>For detailed information</strong>: narendhiran2000@gmail.com`;
+  }
+  
+  // Job/opportunity responses
+  if (lowerMessage.includes('job') || lowerMessage.includes('hire') || lowerMessage.includes('opportunity') || lowerMessage.includes('position')) {
+    return `🚀 <strong>Currently Available</strong> for full-time robotics and AI engineering positions!<br><br>
+<strong>Areas of Interest:</strong><br>
+• Autonomous Systems Development<br>
+• ROS/ROS2 Integration<br>
+• AI/ML in Robotics<br>
+• Sensor Fusion & Navigation<br><br>
+📧 <strong>Send opportunities to</strong>: narendhiran2000@gmail.com<br>
+🔗 <strong>Connect on LinkedIn</strong>: <a href="https://linkedin.com/in/narendhiran2000" target="_blank">linkedin.com/in/narendhiran2000</a>`;
+  }
+  
+  // Technical questions
+  if (lowerMessage.includes('ros') || lowerMessage.includes('robot') || lowerMessage.includes('autonomous') || lowerMessage.includes('ai') || lowerMessage.includes('ml')) {
+    return `🤖 <strong>Technical Expertise:</strong><br>
+• <strong>ROS2</strong>: Advanced development and system integration<br>
+• <strong>Autonomous Navigation</strong>: SLAM, path planning, sensor fusion<br>
+• <strong>AI/ML</strong>: TensorFlow, PyTorch, computer vision<br>
+• <strong>Programming</strong>: Python, C++, MATLAB<br><br>
+For detailed technical discussions:<br>
+📧 <strong>Email</strong>: narendhiran2000@gmail.com<br>
+🔗 <strong>LinkedIn</strong>: <a href="https://linkedin.com/in/narendhiran2000" target="_blank">linkedin.com/in/narendhiran2000</a>`;
+  }
+  
+  // Default response
+  return `Thanks for your message! While the AI chat isn't working right now, I'd love to help you directly.<br><br>
+<strong>Best ways to reach me:</strong><br>
+📧 <strong>Email</strong>: narendhiran2000@gmail.com<br>
+🔗 <strong>LinkedIn</strong>: <a href="https://linkedin.com/in/narendhiran2000" target="_blank">linkedin.com/in/narendhiran2000</a><br><br>
+I'm a robotics engineer with expertise in ROS2, autonomous systems, and AI/ML integration. Currently seeking new opportunities in robotics and AI!<br><br>
+What would you like to know more about?`;
 }
 
 // Show mini response with latest AI message
@@ -866,6 +1155,7 @@ async function removeModelCache() {
     localStorage.removeItem('chatState');
     localStorage.removeItem('webllm-cache');
     localStorage.removeItem('mlc-cache');
+    localStorage.removeItem('chatErrors');
     
     // Clear sessionStorage
     sessionStorage.removeItem('chatState');
@@ -877,7 +1167,9 @@ async function removeModelCache() {
       isOpen: false,
       isProcessing: false,
       manager: null,
-      modelCached: false
+      lastResponse: null,
+      miniMode: false,
+      conversationHistory: []
     };
     
     // Clear global engine reference

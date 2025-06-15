@@ -11,7 +11,10 @@ function createSafeChatState() {
     isOpen: window.chatState.isOpen,
     isProcessing: window.chatState.isProcessing,
     lastResponse: window.chatState.lastResponse,
-    miniMode: window.chatState.miniMode
+    miniMode: window.chatState.miniMode,
+    conversationHistory: window.chatState.conversationHistory || [],
+    currentPage: window.chatState.currentPage,
+    userType: window.chatState.userType
     // Intentionally exclude 'manager' to avoid circular references
   };
 }
@@ -21,6 +24,11 @@ function saveChatState() {
   try {
     const safeState = createSafeChatState();
     localStorage.setItem('chatState', JSON.stringify(safeState));
+    console.log('saveChatState: Successfully saved to localStorage:', {
+      conversationLength: safeState.conversationHistory?.length || 0,
+      currentPage: safeState.currentPage,
+      userType: safeState.userType
+    });
   } catch (error) {
     console.warn('Failed to save chat state:', error);
   }
@@ -70,7 +78,7 @@ const userClassification = {
   }
 };
 
-// Dynamic Chat Manager with User Classification
+// Dynamic Chat Manager with User Classification and Page-Aware Context
 class DynamicChatManager {
   constructor() {
     this.initialized = false;
@@ -79,7 +87,7 @@ class DynamicChatManager {
     this.engine = null;
     this.userType = 'explorer'; // default
     this.conversationStarted = false;
-    this.modelCached = false;
+    this.currentPage = this.detectCurrentPage(); // Add page detection
     this.thinkingMessages = [
       "Feel free to explore my portfolio while I'm thinking... 🤔",
       "Browse through my projects while I craft a response! 🚀",
@@ -95,14 +103,49 @@ class DynamicChatManager {
     this.setupNotificationSound();
   }
   
-  // Create system prompts for different user types
+  // Detect current page context for tailored conversations
+  detectCurrentPage() {
+    const path = window.location.pathname.toLowerCase();
+    console.log('DynamicChatManager: Detecting page context from path:', path);
+    
+    if (path.includes('/about') || path.includes('about.html')) {
+      return 'about';
+    } else if (path.includes('/projects') || path.includes('projects.html')) {
+      return 'projects';
+    } else if (path.includes('/experience') || path.includes('experience.html') || path.includes('/blog') || path.includes('blog.html')) {
+      return 'experience';
+    } else if (path.includes('/news') || path.includes('news.html')) {
+      return 'news';
+    } else if (path.includes('/cv') || path.includes('cv.html') || path.includes('/resume')) {
+      return 'cv';
+    } else if (path === '/' || path.includes('index') || path === '') {
+      return 'landing';
+    } else {
+      return 'general';
+    }
+  }
+  
+  // Create system prompts for different user types with page-aware context
   createSystemPrompt(userType) {
     if (!narenContext) {
       console.warn('Context not loaded, using fallback');
       return this.createFallbackPrompt(userType);
     }
 
+    // Get page-specific context
+    const pageContext = narenContext.page_contexts && narenContext.page_contexts[this.currentPage] 
+      ? narenContext.page_contexts[this.currentPage] 
+      : narenContext.page_contexts.general;
+    
+    console.log(`DynamicChatManager: Using page context for '${this.currentPage}' page`);
+
     const basePrompt = `You are Narendhiran Saravanane (Naren), a robotics engineer chatting on your portfolio website.
+
+CURRENT PAGE CONTEXT: ${pageContext.greeting_context}
+
+PAGE FOCUS: ${pageContext.focus}
+
+CONVERSATION GUIDANCE: ${pageContext.detailed_context}
 
 BACKGROUND:
 - ${narenContext.profile.current_status}
@@ -179,22 +222,21 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
   
   async initialize() {
     console.log('DynamicChatManager: Starting initialization...');
-    if (this.initialized) {
-      console.log('DynamicChatManager: Already initialized, restoring state...');
+    console.log('DynamicChatManager: Current state:', {
+      initialized: this.initialized,
+      currentPage: this.currentPage,
+      conversationHistory: window.chatState?.conversationHistory?.length || 0,
+      globalInitialized: window.chatState?.initialized
+    });
+    
+    // Always try to restore state first if there's conversation history
+    if (window.chatState?.conversationHistory?.length > 0) {
+      console.log('DynamicChatManager: Found existing conversation, restoring...');
       this.restoreConversationState();
-      return;
     }
     
-    // Check if we have a cached model from previous page load
-    if (window.chatState && window.chatState.modelCached && window.globalChatEngine) {
-      console.log('DynamicChatManager: Found cached model, reusing...');
-      this.engine = window.globalChatEngine;
-      this.modelCached = true;
-      this.initialized = true;
-      
-      this.hideLoading();
-      this.enableInput();
-      this.restoreConversationState();
+    if (this.initialized) {
+      console.log('DynamicChatManager: Already initialized, done.');
       return;
     }
     
@@ -215,13 +257,7 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
       this.updateProgress(100);
       
       this.initialized = true;
-      this.modelCached = true;
       console.log('DynamicChatManager: Initialization completed successfully');
-      
-      // Cache the engine globally for reuse across page loads
-      window.globalChatEngine = this.engine;
-      window.chatState.modelCached = true;
-      saveChatState();
       
       // Small delay to show completion
       setTimeout(() => {
@@ -438,18 +474,40 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
   }
   
   async startInitialConversation() {
-    // Start with a general welcome and let user input determine type
-    const generalWelcome = {
-      role: 'assistant',
-      content: `Hi there! 👋 I'm Naren, a robotics engineer with expertise in ROS2, autonomous systems, and AI integration.
+    // Get page-specific context for tailored welcome message
+    let pageContext = null;
+    let welcomeContent = '';
+    
+    if (narenContext && narenContext.page_contexts && narenContext.page_contexts[this.currentPage]) {
+      pageContext = narenContext.page_contexts[this.currentPage];
+      console.log(`DynamicChatManager: Using page-specific welcome for '${this.currentPage}' page`);
+      
+      // Create page-specific welcome message
+      welcomeContent = `Hi there! 👋 I'm Naren, a robotics engineer with expertise in ROS2, autonomous systems, and AI integration.
+
+${pageContext.greeting_context}
 
 I recently completed my M.S. in Robotics at Arizona State University and worked as a Robotics Software Engineer at Padma Agrobotics.
 
-What brings you to my portfolio today?`
+${pageContext.conversation_starters ? 
+  `Feel free to ask me about:\n${pageContext.conversation_starters.map(starter => `• ${starter}`).join('\n')}` : 
+  'What would you like to know?'}`;
+    } else {
+      // Fallback to general welcome
+      welcomeContent = `Hi there! 👋 I'm Naren, a robotics engineer with expertise in ROS2, autonomous systems, and AI integration.
+
+I recently completed my M.S. in Robotics at Arizona State University and worked as a Robotics Software Engineer at Padma Agrobotics.
+
+What brings you to my portfolio today?`;
+    }
+    
+    const pageAwareWelcome = {
+      role: 'assistant',
+      content: welcomeContent
     };
     
-    this.addMessage(generalWelcome);
-    this.messages.push(generalWelcome);
+    this.addMessage(pageAwareWelcome);
+    this.messages.push(pageAwareWelcome);
     this.saveConversationState();
   }
   
@@ -462,18 +520,71 @@ What brings you to my portfolio today?`
       messagesContainer.innerHTML = '';
     }
     
-    // Restore conversation history from global state
-    if (window.chatState && window.chatState.conversationHistory) {
+    // Check if we're on a different page than the saved conversation
+    const savedPage = window.chatState && window.chatState.currentPage;
+    const pageChanged = savedPage && savedPage !== this.currentPage;
+    
+    if (pageChanged) {
+      console.log(`DynamicChatManager: Page changed from '${savedPage}' to '${this.currentPage}', but keeping conversation and adding page context notice`);
+      
+      // Keep the conversation but add a context change notice
+      if (window.chatState && window.chatState.conversationHistory && window.chatState.conversationHistory.length > 0) {
+        this.messages = [...window.chatState.conversationHistory];
+        this.conversationStarted = this.messages.length > 1;
+        
+        // Restore user type if available
+        if (window.chatState.userType) {
+          this.userType = window.chatState.userType;
+        }
+        
+        // Restore messages to UI
+        this.messages.forEach(message => {
+          this.addMessage(message, false); // false = don't save state again
+        });
+        
+        // Add a page context change notice
+        const pageContexts = narenContext && narenContext.page_contexts ? narenContext.page_contexts : {};
+        const newPageContext = pageContexts[this.currentPage] || pageContexts.general;
+        
+        if (newPageContext) {
+          const contextNotice = {
+            role: 'assistant',
+            content: `📍 **Page Context Updated**\n\n${newPageContext.greeting_context}\n\nFeel free to continue our conversation with this new context in mind!`
+          };
+          
+          this.addMessage(contextNotice);
+          this.messages.push(contextNotice);
+        }
+        
+        console.log(`DynamicChatManager: Continued conversation with ${this.messages.length} messages on page '${this.currentPage}'`);
+        this.saveConversationState();
+        return;
+      } else {
+        // No conversation to continue, start fresh
+        this.messages = [];
+        this.conversationStarted = false;
+        this.startInitialConversation();
+        return;
+      }
+    }
+    
+    // Restore conversation history from global state if on same page
+    if (window.chatState && window.chatState.conversationHistory && window.chatState.conversationHistory.length > 0) {
       this.messages = [...window.chatState.conversationHistory];
       this.conversationStarted = this.messages.length > 1; // Has user messages
+      
+      // Restore user type if available
+      if (window.chatState.userType) {
+        this.userType = window.chatState.userType;
+      }
       
       // Restore messages to UI
       this.messages.forEach(message => {
         this.addMessage(message, false); // false = don't save state again
       });
       
-      console.log(`DynamicChatManager: Restored ${this.messages.length} messages`);
-    } else if (this.messages.length === 0) {
+      console.log(`DynamicChatManager: Restored ${this.messages.length} messages for page '${this.currentPage}'`);
+    } else {
       // No previous conversation, start fresh
       this.startInitialConversation();
     }
@@ -482,7 +593,16 @@ What brings you to my portfolio today?`
   saveConversationState() {
     if (window.chatState) {
       window.chatState.conversationHistory = [...this.messages];
+      window.chatState.currentPage = this.currentPage; // Save current page context
+      window.chatState.userType = this.userType; // Save user type
+      console.log('DynamicChatManager: Saving conversation state:', {
+        messages: this.messages.length,
+        page: this.currentPage,
+        userType: this.userType
+      });
       saveChatState();
+    } else {
+      console.warn('DynamicChatManager: No window.chatState available to save to');
     }
   }
   
@@ -559,8 +679,10 @@ What brings you to my portfolio today?`
     sendBtn.disabled = true;
     sendBtn.textContent = 'Sending...';
     
-    // Add user message
-    this.addMessage({ role: 'user', content: message });
+    // Add user message to messages array first
+    const userMessage = { role: 'user', content: message };
+    this.messages.push(userMessage);
+    this.addMessage(userMessage);
     input.value = '';
     this.saveConversationState();
     
@@ -573,7 +695,10 @@ What brings you to my portfolio today?`
         isOpen: window.chatState.isOpen,
         isProcessing: window.chatState.isProcessing,
         lastResponse: window.chatState.lastResponse,
-        miniMode: window.chatState.miniMode
+        miniMode: window.chatState.miniMode,
+        currentPage: window.chatState.currentPage,
+        userType: window.chatState.userType,
+        conversationHistory: window.chatState.conversationHistory || []
         // Intentionally exclude 'manager' to avoid circular references
       };
       try {
@@ -597,8 +722,11 @@ What brings you to my portfolio today?`
           console.log('sendMessage: Generating dynamic greeting...');
           const greeting = await this.generateDynamicGreeting(this.userType);
           this.hideTyping();
-          this.addMessage({ role: 'assistant', content: greeting });
-          this.messages.push({ role: 'assistant', content: greeting });
+          
+          // Add greeting to messages array first
+          const greetingMessage = { role: 'assistant', content: greeting };
+          this.messages.push(greetingMessage);
+          this.addMessage(greetingMessage);
           this.saveConversationState();
           console.log('sendMessage: Dynamic greeting generated successfully');
         } catch (error) {
@@ -621,7 +749,11 @@ What brings you to my portfolio today?`
       const response = await this.processUserMessage(message);
       console.log('sendMessage: AI response received:', response.substring(0, 100) + '...');
       this.hideTyping();
-      this.addMessage({ role: 'assistant', content: response });
+      
+      // Add AI response to messages array first
+      const assistantMessage = { role: 'assistant', content: response };
+      this.messages.push(assistantMessage);
+      this.addMessage(assistantMessage);
       this.saveConversationState();
       
     } catch (error) {
@@ -663,8 +795,7 @@ What brings you to my portfolio today?`
       // Update thinking message to show we're generating
       this.updateThinkingMessage('🧠 Analyzing your message...');
       
-      // Add user message to conversation history
-      this.messages.push({ role: "user", content: message });
+      // Note: User message already added to conversation history in sendMessage()
       
       // Create conversation context with appropriate system prompt
       const systemPrompt = this.createSystemPrompt(this.userType);
@@ -687,8 +818,7 @@ What brings you to my portfolio today?`
       const aiResponse = response.choices[0].message.content;
       console.log('processUserMessage: AI response generated successfully');
       
-      // Add AI response to conversation history
-      this.messages.push({ role: "assistant", content: aiResponse });
+      // Note: AI response will be added to conversation history in sendMessage()
       
       return aiResponse;
       
@@ -839,7 +969,10 @@ What brings you to my portfolio today?`
         isOpen: window.chatState.isOpen,
         isProcessing: window.chatState.isProcessing,
         lastResponse: window.chatState.lastResponse,
-        miniMode: window.chatState.miniMode
+        miniMode: window.chatState.miniMode,
+        currentPage: window.chatState.currentPage,
+        userType: window.chatState.userType,
+        conversationHistory: window.chatState.conversationHistory || []
         // Intentionally exclude 'manager' to avoid circular references
       };
       try {
@@ -918,9 +1051,15 @@ What brings you to my portfolio today?`
       }
     }
     
-    // Save conversation state if requested
+    // Always save conversation state for every message to ensure persistence
     if (saveState) {
+      // Add the message to the messages array if not already there
+      const lastMessage = this.messages[this.messages.length - 1];
+      if (!lastMessage || lastMessage.content !== message.content || lastMessage.role !== message.role) {
+        this.messages.push(message);
+      }
       this.saveConversationState();
+      console.log('DynamicChatManager: Saved conversation state with', this.messages.length, 'messages');
     }
   }
   
@@ -1291,6 +1430,13 @@ document.head.insertAdjacentHTML('beforeend', messageStyles);
 // Initialize chat when this script loads
 window.startRecruiterChat = function() {
   console.log('startRecruiterChat: Function called, creating DynamicChatManager...');
+  console.log('startRecruiterChat: Current global chat state:', {
+    initialized: window.chatState?.initialized,
+    conversationHistory: window.chatState?.conversationHistory?.length || 0,
+    currentPage: window.chatState?.currentPage,
+    userType: window.chatState?.userType
+  });
+  
   const chatManager = new DynamicChatManager();
   
   // Store reference in global state
