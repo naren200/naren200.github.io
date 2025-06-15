@@ -277,6 +277,27 @@
   box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
 }
 
+.transparency-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+  margin-right: 10px;
+}
+
+.transparency-btn:hover {
+  background: #218838;
+  opacity: 1;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
 .close-btn {
   background: none;
   border: none;
@@ -678,6 +699,12 @@ function saveChatState() {
   try {
     const safeState = createSafeChatState();
     localStorage.setItem('chatState', JSON.stringify(safeState));
+    console.log('💾 Chat state saved successfully:', {
+      isOpen: safeState.isOpen,
+      personaSelected: safeState.personaSelected,
+      userType: safeState.userType,
+      conversationLength: safeState.conversationHistory?.length || 0
+    });
   } catch (error) {
     console.warn('Failed to save chat state:', error);
   }
@@ -722,6 +749,25 @@ document.addEventListener('DOMContentLoaded', function() {
   // localStorage.removeItem('chatState');
   // console.log('DEBUG: Cache cleared for testing - starting fresh');
   
+  // Disable click outside initially to prevent accidental closes during page load
+  window.chatRestoring = true;
+  setTimeout(() => {
+    window.chatRestoring = false;
+  }, 5000); // 5 seconds should be enough for page load and restoration
+  
+  // Detect page navigation and extend restoration period
+  window.addEventListener('beforeunload', () => {
+    window.chatRestoring = true;
+  });
+  
+  // Detect when user is navigating via history (back/forward buttons)
+  window.addEventListener('popstate', () => {
+    window.chatRestoring = true;
+    setTimeout(() => {
+      window.chatRestoring = false;
+    }, 3000);
+  });
+  
   // Load and restore cached chat state
   console.log('Loading cached chat state...');
   
@@ -765,38 +811,49 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Restore modal open/closed state
       if (state.isOpen) {
-        const backdrop = document.getElementById('chat-backdrop');
+        console.log('✅ AUTO-OPENING: Restoring chat modal to open state from previous session');
         
-        // Show backdrop and prevent scroll on mobile
-        if (window.innerWidth <= 768) {
-          backdrop.classList.add('active');
-          document.body.classList.add('chat-open');
-        }
-        
-        chatModal.classList.add('open');
-        window.chatState.isOpen = true;
-        
-        console.log('✅ AUTO-OPENED: Restored chat modal to open state from previous session');
+        // Delay the restoration slightly to ensure DOM is ready
+        setTimeout(() => {
+          const backdrop = document.getElementById('chat-backdrop');
+          
+          // Show backdrop and prevent scroll on mobile
+          if (window.innerWidth <= 768) {
+            backdrop.classList.add('active');
+            document.body.classList.add('chat-open');
+          }
+          
+          chatModal.classList.add('open');
+          window.chatState.isOpen = true;
+          
+          console.log('✅ AUTO-OPENED: Chat modal restored to open state');
+        }, 100);
         
         // Always show chat interface for cached users (persona already selected)
-        if (window.chatState.personaSelected && window.chatState.userType) {
-          // User has already selected persona, show chat interface directly
-          showChatInterface();
-          
-          // Initialize chat to restore conversation or prepare for new messages
-          console.log('Chat was open with cached persona selection, initializing...');
-          setTimeout(() => initializeChat(), 100);
-        } else {
-          // User hasn't selected persona yet, show persona selector
-          showPersonaSelector();
-          
-          // Start background model loading
-          if (!window.chatState.initialized && !window.backgroundModelLoading) {
-            console.log('Starting background model download for open chat with no persona...');
-            window.backgroundModelLoading = true;
-            setTimeout(() => startBackgroundModelDownload(), 500);
+        setTimeout(() => {
+          if (window.chatState.personaSelected && window.chatState.userType) {
+            // User has already selected persona, show chat interface directly
+            console.log('Showing chat interface for cached user with persona:', window.chatState.userType);
+            showChatInterface();
+            
+            // Initialize chat to restore conversation or prepare for new messages
+            if (!window.chatState.initialized) {
+              console.log('Chat was open with cached persona selection, initializing...');
+              setTimeout(() => initializeChat(), 200);
+            }
+          } else {
+            // User hasn't selected persona yet, show persona selector
+            console.log('Showing persona selector for user without cached selection');
+            showPersonaSelector();
+            
+            // Start background model loading
+            if (!window.chatState.initialized && !window.backgroundModelLoading) {
+              console.log('Starting background model download for open chat with no persona...');
+              window.backgroundModelLoading = true;
+              setTimeout(() => startBackgroundModelDownload(), 500);
+            }
           }
-        }
+        }, 150);
       }
       
     } catch (error) {
@@ -820,6 +877,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Trigger slide-up animation
     chatModal.classList.add('open');
     window.chatState.isOpen = true;
+    console.log('💾 Saving chat state - modal opened via button click');
     
     // Check if we have cached persona selection - if so, NEVER show persona selector again
     const hasPersona = window.chatState.personaSelected && window.chatState.userType;
@@ -922,27 +980,74 @@ document.addEventListener('DOMContentLoaded', function() {
     backdrop.classList.remove('active');
     document.body.classList.remove('chat-open'); // Re-enable body scroll
     window.chatState.isOpen = false;
+    
+    // Enhanced logging to debug unexpected closes
+    console.log('💾 MODAL CLOSED - Saving chat state');
+    console.trace('Modal close stack trace'); // This will show where the close was called from
     saveChatState();
   };
   
   closeBtn.addEventListener('click', closeChatModal);
   
-  // Close on backdrop click (mobile)
+  // Close on backdrop click (mobile) - with protection against accidental closes
   const backdrop = document.getElementById('chat-backdrop');
-  backdrop.addEventListener('click', closeChatModal);
-  
-  // Close when clicking outside chat on desktop
-  document.addEventListener('click', function(e) {
-    if (window.chatState.isOpen && window.innerWidth > 768) {
-      const chatContainer = chatModal.querySelector('.chat-container');
-      const isClickInsideChat = chatContainer.contains(e.target);
-      const isClickOnButton = chatBtn.contains(e.target);
-      
-      if (!isClickInsideChat && !isClickOnButton) {
-        closeChatModal();
-      }
+  backdrop.addEventListener('click', function(e) {
+    // Only close if clicking directly on backdrop, not on any child elements
+    if (e.target === backdrop) {
+      console.log('💾 Closing modal due to backdrop click - mobile mode');
+      closeChatModal();
     }
   });
+  
+  // Transparency mode toggle functionality
+  let transparencyMode = false;
+  
+  // Add transparency mode toggle button to chat header
+  setTimeout(() => {
+    const chatControls = document.querySelector('.chat-controls');
+    if (chatControls) {
+      const transparencyBtn = document.createElement('button');
+      transparencyBtn.id = 'transparency-toggle';
+      transparencyBtn.className = 'transparency-btn';
+      transparencyBtn.innerHTML = '👁️';
+      transparencyBtn.title = 'Toggle Transparency Mode';
+      transparencyBtn.addEventListener('click', toggleTransparencyMode);
+      chatControls.insertBefore(transparencyBtn, document.getElementById('close-chat'));
+    }
+  }, 100);
+  
+  function toggleTransparencyMode() {
+    transparencyMode = !transparencyMode;
+    const chatModal = document.getElementById('chat-modal');
+    const chatContainer = chatModal.querySelector('.chat-container');
+    const transparencyBtn = document.getElementById('transparency-toggle');
+    
+    if (transparencyMode) {
+      // Enable transparency mode
+      chatContainer.style.background = 'rgba(255, 255, 255, 0.3)';
+      chatContainer.style.backdropFilter = 'blur(5px)';
+      chatContainer.style.pointerEvents = 'auto';
+      chatModal.style.pointerEvents = 'none'; // Allow clicks to pass through modal background
+      chatContainer.style.pointerEvents = 'auto'; // But keep chat container interactive
+      transparencyBtn.innerHTML = '🔒';
+      transparencyBtn.title = 'Lock Chat (Disable Transparency)';
+      console.log('💾 Transparency mode enabled - chat will not auto-close');
+    } else {
+      // Disable transparency mode
+      chatContainer.style.background = 'rgba(255, 255, 255, 0.95)';
+      chatContainer.style.backdropFilter = 'blur(15px)';
+      chatModal.style.pointerEvents = 'auto';
+      chatContainer.style.pointerEvents = 'auto';
+      transparencyBtn.innerHTML = '👁️';
+      transparencyBtn.title = 'Toggle Transparency Mode';
+      console.log('💾 Transparency mode disabled');
+    }
+  }
+  
+  // DISABLED: Click outside to close functionality
+  // The modal will no longer auto-close when clicking outside
+  // Users must manually close it or use transparency mode
+  console.log('💾 Click-outside-to-close functionality disabled for better UX');
   
   // Remove cache functionality
   removeCacheBtn.addEventListener('click', function() {
