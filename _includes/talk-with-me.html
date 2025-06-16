@@ -317,6 +317,9 @@
   border: 1px solid rgba(255,255,255,0.4);
   transform: translateY(100%);
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
 }
 
 /* Light mode: Light pink gradient background */
@@ -339,7 +342,7 @@
   background: rgba(102, 126, 234, 0.3);
   backdrop-filter: blur(20px);
   color: white;
-  border-radius: 15px 15px 0 0;
+  border-radius: 14px 14px 0 0;
 }
 
 /* Light mode support for chat header text */
@@ -404,6 +407,7 @@
   flex-direction: column;
   gap: 15px;
   scroll-behavior: smooth;
+  margin: 0;
 }
 
 .loading-message {
@@ -533,6 +537,8 @@
 .persona-selector {
   padding: 30px 20px;
   text-align: center;
+  flex: 1;
+  overflow: hidden;
 }
 
 .persona-header h4 {
@@ -651,6 +657,7 @@
   border-top: 1px solid #eee;
   display: flex;
   gap: 10px;
+  border-radius: 0 0 14px 14px;
 }
 
 #chat-input {
@@ -777,7 +784,16 @@
   }
   
   .chat-container {
-    border-radius: 0;
+    border-radius: 15px !important;
+    overflow: hidden;
+  }
+  
+  .chat-header {
+    border-radius: 14px 14px 0 0 !important;
+  }
+  
+  .chat-input-container {
+    border-radius: 0 0 14px 14px !important;
   }
   
   .persona-buttons {
@@ -1637,7 +1653,7 @@ function showMiniResponse(responseText) {
   }
 }
 
-// Response ready notification system
+// Response ready notification system - Sound only, no visual popup
 function showResponseReadyNotification() {
   // Check if chat is open, if not show mini response instead
   if (!window.chatState.isOpen && window.chatState.lastResponse) {
@@ -1645,80 +1661,9 @@ function showResponseReadyNotification() {
     return;
   }
   
-  // Create floating notification
-  const notification = document.createElement('div');
-  notification.id = 'response-notification';
-  notification.innerHTML = `
-    <div style="
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 15px 20px;
-      border-radius: 25px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      z-index: 3000;
-      font-weight: 600;
-      animation: slideInBounce 0.5s ease;
-      cursor: pointer;
-    ">
-      🤖 Naren has responded! Click to view
-    </div>
-  `;
-  
-  // Add animation keyframes
-  if (!document.getElementById('notification-styles')) {
-    const style = document.createElement('style');
-    style.id = 'notification-styles';
-    style.textContent = `
-      @keyframes slideInBounce {
-        0% { transform: translateX(100%) scale(0.8); opacity: 0; }
-        70% { transform: translateX(-10px) scale(1.05); }
-        100% { transform: translateX(0) scale(1); opacity: 1; }
-      }
-      @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-      }
-    `;
-    document.head.appendChild(style);
-  }
-  
-  document.body.appendChild(notification);
-  
-  // Add pulse animation
-  setTimeout(() => {
-    const notifDiv = notification.querySelector('div');
-    if (notifDiv && notifDiv.style) {
-      notifDiv.style.animation += ', pulse 2s infinite';
-    }
-  }, 500);
-  
-  // Click to open chat
-  notification.addEventListener('click', function() {
-    const chatModal = document.getElementById('chat-modal');
-    const backdrop = document.getElementById('chat-backdrop');
-    
-    // Show backdrop on mobile
-    if (window.innerWidth <= 768) {
-      backdrop.classList.add('active');
-    }
-    
-    chatModal.classList.add('open');
-    window.chatState.isOpen = true;
-    notification.remove();
-  });
-  
-  // Auto-remove after 10 seconds
-  setTimeout(() => {
-    if (notification.parentNode) {
-      notification.remove();
-    }
-  }, 10000);
-  
+  // Just play sound notification, no visual popup
   // Note: Notification sound is already played by the chat manager in hideTyping()
-  // Don't play duplicate sound here
+  // This function now only handles the mini response display when chat is closed
 }
 
 // Remove Model Cache Function
