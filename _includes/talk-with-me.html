@@ -40,18 +40,24 @@
       <div class="persona-buttons">
         <button class="persona-btn" data-persona="recruiter">
           <span class="persona-icon">💼</span>
-          <span class="persona-title">Recruiter</span>
-          <span class="persona-desc">Looking to hire or learn about opportunities</span>
+          <div class="persona-btn-content">
+            <span class="persona-title">Recruiter</span>
+            <span class="persona-desc">Looking to hire or learn about opportunities</span>
+          </div>
         </button>
         <button class="persona-btn" data-persona="colleague">
           <span class="persona-icon">🤖</span>
-          <span class="persona-title">Fellow Engineer</span>
-          <span class="persona-desc">Technical discussions about robotics & AI</span>
+          <div class="persona-btn-content">
+            <span class="persona-title">Fellow Engineer</span>
+            <span class="persona-desc">Technical discussions about robotics & AI</span>
+          </div>
         </button>
         <button class="persona-btn" data-persona="visitor">
           <span class="persona-icon">🌟</span>
-          <span class="persona-title">Visitor</span>
-          <span class="persona-desc">Exploring my background and projects</span>
+          <div class="persona-btn-content">
+            <span class="persona-title">Visitor</span>
+            <span class="persona-desc">Exploring my background and projects</span>
+          </div>
         </button>
       </div>
     </div>
@@ -122,6 +128,55 @@
   animation: slideInUp 0.3s ease;
 }
 
+/* Light mode: Light pink gradient background */
+[data-theme="light"] .mini-response-display {
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.4) 0%, rgba(255, 192, 203, 0.3) 50%, rgba(255, 218, 185, 0.2) 100%);
+  border: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+/* Theme-responsive styling for mini response display - only text color */
+[data-theme="light"] .mini-response-display {
+  color: #333;
+}
+
+/* Ensure all text in light mode chat interface is black */
+[data-theme="light"] .chat-container {
+  color: #000;
+}
+
+[data-theme="light"] .chat-messages {
+  color: #000;
+}
+
+[data-theme="light"] .chat-messages * {
+  color: #000 !important;
+}
+
+/* Super specific override for all message content in light mode */
+[data-theme="light"] .message .message-content,
+[data-theme="light"] .message .message-content *,
+[data-theme="light"] .assistant-message,
+[data-theme="light"] .assistant-message *,
+[data-theme="light"] .assistant-message .message-content,
+[data-theme="light"] .assistant-message .message-content * {
+  color: #000 !important;
+}
+
+/* Override any inherited white text */
+[data-theme="light"] .chat-modal .chat-container .chat-messages .message .message-content {
+  color: #000 !important;
+}
+
+/* Theme-responsive styling for specific text elements */
+[data-theme="light"] .mini-response-title {
+  color: #333;
+}
+
+[data-theme="light"] .persona-header h4,
+[data-theme="light"] .persona-header p {
+  color: #333;
+}
+
 .mini-response-content {
   padding: 15px;
 }
@@ -142,8 +197,25 @@
 .mini-response-title {
   flex: 1;
   font-weight: 600;
-  color: #667eea;
+  color: white;
   font-size: 14px;
+}
+
+/* Light mode support */
+@media (prefers-color-scheme: light) {
+  .mini-response-title {
+    color: #333;
+  }
+  
+  .mini-response-display {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+}
+
+/* Additional light mode support using data-theme attribute */
+[data-theme="light"] .mini-response-title {
+  color: #000 !important;
 }
 
 .expand-btn, .close-mini-btn {
@@ -165,11 +237,23 @@
 .mini-response-text {
   font-size: 13px;
   line-height: 1.4;
-  color: #333;
+  color: white;
   max-height: 150px;
   overflow-y: auto;
   overflow-x: hidden;
   word-wrap: break-word;
+}
+
+/* Light mode support */
+@media (prefers-color-scheme: light) {
+  .mini-response-text {
+    color: #333;
+  }
+}
+
+/* Light mode support using data-theme attribute */
+[data-theme="light"] .mini-response-text {
+  color: #000 !important;
 }
 
 @keyframes slideInUp {
@@ -235,6 +319,13 @@
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+/* Light mode: Light pink gradient background */
+[data-theme="light"] .chat-container {
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.4) 0%, rgba(255, 192, 203, 0.3) 50%, rgba(255, 218, 185, 0.2) 100%);
+  border: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+
 .chat-modal.open .chat-container {
   transform: translateY(0);
 }
@@ -249,6 +340,15 @@
   backdrop-filter: blur(20px);
   color: white;
   border-radius: 15px 15px 0 0;
+}
+
+/* Light mode support for chat header text */
+[data-theme="light"] .chat-header {
+  color: black;
+}
+
+[data-theme="light"] .chat-header h3 {
+  color: black;
 }
 
 .chat-controls {
@@ -270,6 +370,11 @@
   text-transform: lowercase;
   transition: all 0.3s ease;
   opacity: 0.9;
+}
+
+/* Light mode support for Remove Me button */
+[data-theme="light"] .remove-cache-btn {
+  color: black;
 }
 
 .remove-cache-btn:hover {
@@ -310,6 +415,11 @@
   backdrop-filter: blur(10px);
 }
 
+/* Light mode support for loading message */
+[data-theme="light"] .loading-message {
+  color: black;
+}
+
 .loading-container {
   max-width: 400px;
   margin: 0 auto;
@@ -331,6 +441,15 @@
   font-weight: 500;
   line-height: 1.4;
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Light mode support for loading text */
+[data-theme="light"] .loading-text h4 {
+  color: black;
+}
+
+[data-theme="light"] .loading-text p {
+  color: black;
 }
 
 .progress-container {
@@ -359,6 +478,11 @@
   color: white;
   font-weight: 600;
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Light mode support for progress text */
+[data-theme="light"] .progress-text {
+  color: black;
 }
 
 .typing-indicator {
@@ -409,21 +533,21 @@
 .persona-selector {
   padding: 30px 20px;
   text-align: center;
-  background: rgba(248, 249, 250, 0.3);
-  backdrop-filter: blur(20px);
 }
 
 .persona-header h4 {
-  color: #333;
+  color: white;
   margin: 0 0 10px 0;
   font-size: 20px;
   font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .persona-header p {
-  color: #666;
+  color: white;
   margin: 0 0 25px 0;
   font-size: 14px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .persona-buttons {
@@ -436,7 +560,7 @@
 
 .persona-btn {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(20px);
@@ -446,6 +570,12 @@
   transition: all 0.3s ease;
   text-align: left;
   width: 100%;
+}
+
+/* Light mode: Light pink gradient background for persona buttons */
+[data-theme="light"] .persona-btn {
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.3) 0%, rgba(255, 192, 203, 0.2) 50%, rgba(255, 218, 185, 0.15) 100%);
+  border: 2px solid rgba(255, 182, 193, 0.4);
 }
 
 .persona-btn:hover {
@@ -460,6 +590,13 @@
   font-size: 24px;
   margin-right: 15px;
   min-width: 40px;
+  margin-top: 2px;
+}
+
+.persona-btn-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .persona-title {
@@ -467,17 +604,15 @@
   color: #333;
   font-size: 16px;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  order: 1;
 }
 
 .persona-desc {
   color: #666;
   font-size: 13px;
   line-height: 1.3;
-}
-
-.persona-btn-content {
-  flex: 1;
+  order: 2;
 }
 
 /* Enhanced thinking message styles */
@@ -525,6 +660,24 @@
   border-radius: 25px;
   outline: none;
   font-size: 14px;
+  background: white;
+  color: #333;
+}
+
+#chat-input:focus {
+  border-color: #667eea;
+  background: white;
+  color: #333;
+}
+
+/* Ensure input text is always visible regardless of browser's dark mode */
+#chat-input:-webkit-autofill,
+#chat-input:-webkit-autofill:hover,
+#chat-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #333 !important;
+  background-color: white !important;
+  color: #333 !important;
 }
 
 #send-btn {
@@ -1134,6 +1287,24 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.classList.add('chat-open');
     }
   });
+  
+  // Listen for theme changes to update mini-response text color
+  const themeObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        const miniResponseText = document.getElementById('mini-response-text');
+        if (miniResponseText) {
+          const isLightTheme = document.documentElement.getAttribute('data-theme') === 'light';
+          miniResponseText.style.color = isLightTheme ? '#000' : '';
+        }
+      }
+    });
+  });
+  
+  themeObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme']
+  });
 });
 
 // This function loads WebLLM and heavy JavaScript ONLY when needed
@@ -1441,6 +1612,13 @@ function showMiniResponse(responseText) {
     
     if (miniResponseText) {
       miniResponseText.textContent = cleanText;
+      
+      // Apply light mode text color if needed
+      if (document.documentElement.getAttribute('data-theme') === 'light') {
+        miniResponseText.style.color = '#000';
+      } else {
+        miniResponseText.style.color = '';
+      }
     }
     if (miniResponse) {
       miniResponse.style.display = 'block';
@@ -1539,10 +1717,8 @@ function showResponseReadyNotification() {
     }
   }, 10000);
   
-  // Play notification sound
-  if (window.chatState.manager && window.chatState.manager.notificationSound) {
-    window.chatState.manager.playNotificationSound();
-  }
+  // Note: Notification sound is already played by the chat manager in hideTyping()
+  // Don't play duplicate sound here
 }
 
 // Remove Model Cache Function

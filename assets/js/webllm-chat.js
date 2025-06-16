@@ -103,7 +103,50 @@ class DynamicChatManager {
     ];
     this.currentThinkingInterval = null;
     this.notificationSound = null;
+    this.lastNotificationMessageId = null; // Track last message that played sound
     this.setupNotificationSound();
+    
+    // Listen for theme changes to update text colors
+    this.setupThemeChangeListener();
+  }
+  
+  setupThemeChangeListener() {
+    // Watch for theme attribute changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+          this.updateMessageColors();
+        }
+      });
+    });
+    
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    });
+  }
+  
+  updateMessageColors() {
+    const isLightTheme = document.documentElement.getAttribute('data-theme') === 'light';
+    const assistantMessages = document.querySelectorAll('.assistant-message .message-content');
+    
+    assistantMessages.forEach(messageContent => {
+      if (isLightTheme) {
+        messageContent.style.color = '#000';
+        // Also apply to all child elements
+        const allElements = messageContent.querySelectorAll('*');
+        allElements.forEach(el => {
+          el.style.color = '#000';
+        });
+      } else {
+        // Remove inline styles to let CSS take over for dark theme
+        messageContent.style.color = '';
+        const allElements = messageContent.querySelectorAll('*');
+        allElements.forEach(el => {
+          el.style.color = '';
+        });
+      }
+    });
   }
   
   // Detect current page context for tailored conversations
@@ -694,6 +737,9 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
         this.addMessage(message, false); // false = don't save state again
       });
       
+      // Update colors for restored messages
+      setTimeout(() => this.updateMessageColors(), 100);
+      
       console.log(`DynamicChatManager: Restored ${this.messages.length} messages for page '${this.currentPage}'`);
     } else if (window.chatState && window.chatState.personaSelected && this.userType) {
       // User has selected persona but no conversation yet
@@ -1060,8 +1106,12 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
       }
     }
     
-    // Play notification sound when response is ready
-    this.playNotificationSound();
+    // Play notification sound when response is ready (only once per message)
+    const lastMessage = this.messages[this.messages.length - 1];
+    if (lastMessage && lastMessage.role === 'assistant') {
+      const messageId = `assistant_${lastMessage.content.substring(0, 50)}_${this.messages.length}`;
+      this.playNotificationSound(messageId);
+    }
   }
   
   cleanMessageContent(content) {
@@ -1102,6 +1152,19 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
         ${content.replace(/\n/g, '<br>')}
       </div>
     `;
+    
+    // Apply light mode text color immediately if in light theme
+    if (document.documentElement.getAttribute('data-theme') === 'light' && message.role === 'assistant') {
+      const messageContent = messageDiv.querySelector('.message-content');
+      if (messageContent) {
+        messageContent.style.color = '#000';
+        // Also apply to all child elements
+        const allElements = messageContent.querySelectorAll('*');
+        allElements.forEach(el => {
+          el.style.color = '#000';
+        });
+      }
+    }
     
     // Add fade-in animation for new messages
     messageDiv.style.opacity = '0';
@@ -1211,10 +1274,24 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
     }
   }
   
-  playNotificationSound() {
-    if (this.notificationSound) {
+  playNotificationSound(messageId = null) {
+    // Create a unique ID for the current message if not provided
+    if (!messageId && this.messages.length > 0) {
+      const lastMessage = this.messages[this.messages.length - 1];
+      messageId = `${lastMessage.role}_${lastMessage.content.substring(0, 50)}_${Date.now()}`;
+    }
+    
+    // Don't play sound if we already played it for this message
+    if (messageId && this.lastNotificationMessageId === messageId) {
+      console.log('Notification sound already played for this message, skipping');
+      return;
+    }
+    
+    if (this.notificationSound && messageId) {
       try {
         this.notificationSound();
+        this.lastNotificationMessageId = messageId;
+        console.log('Notification sound played for message:', messageId);
       } catch (error) {
         console.log('Could not play notification sound:', error);
       }
@@ -1403,8 +1480,10 @@ const messageStyles = `
 }
 
 .user-message .message-content {
+  background: #667eea;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
   padding: 12px 16px;
   border-radius: 18px 18px 4px 18px;
   font-size: 14px;
@@ -1418,6 +1497,20 @@ const messageStyles = `
   font-size: 14px;
   line-height: 1.5;
   border-left: 4px solid #667eea;
+}
+
+/* Theme-responsive styling for assistant messages - only text color */
+[data-theme="light"] .assistant-message .message-content {
+  color: #000 !important;
+}
+
+/* Ensure all text elements inside assistant messages are black in light mode */
+[data-theme="light"] .assistant-message .message-content,
+[data-theme="light"] .assistant-message .message-content *,
+[data-theme="light"] .assistant-message .message-content p,
+[data-theme="light"] .assistant-message .message-content div,
+[data-theme="light"] .assistant-message .message-content span {
+  color: #000 !important;
 }
 
 .assistant-message .message-content a {
@@ -1442,6 +1535,11 @@ const messageStyles = `
   text-align: center;
   border-left: 4px solid #667eea;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Theme-responsive styling for thinking messages - only text color */
+[data-theme="light"] .typing-message .thinking-message {
+  color: #000 !important;
 }
 
 .typing-message .typing-indicator {
