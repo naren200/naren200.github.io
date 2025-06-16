@@ -23,6 +23,15 @@
 <!-- Chat Modal - Slide up from bottom right -->
 <div id="chat-modal" class="chat-modal">
   <div class="chat-container">
+    <!-- Samsung-style minimize strip -->
+    <div class="minimize-strip" id="minimize-strip">
+      <div class="minimize-handle" id="minimize-handle"></div>
+      <div class="minimize-controls" id="minimize-controls">
+        <button class="minimize-control-btn" id="resize-btn" title="Resize">↔</button>
+        <button class="minimize-control-btn" id="transparency-btn" title="Transparency">👁</button>
+        <button class="minimize-control-btn" id="minimize-window-btn" title="Minimize">⤋</button>
+      </div>
+    </div>
     <div class="chat-header">
       <h3>Chat with Naren</h3>
       <div class="chat-controls">
@@ -283,6 +292,171 @@
 
 .chat-icon {
   font-size: 20px;
+}
+
+/* Samsung-style minimize strip */
+.minimize-strip {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.minimize-handle {
+  width: 60px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+[data-theme="light"] .minimize-handle {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.minimize-handle:hover {
+  background: rgba(255, 255, 255, 0.8);
+  height: 6px;
+  width: 80px;
+}
+
+[data-theme="light"] .minimize-handle:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.minimize-controls {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+[data-theme="light"] .minimize-controls {
+  background: rgba(240, 240, 240, 0.95);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.minimize-strip.expanded .minimize-controls {
+  opacity: 1;
+  visibility: visible;
+}
+
+.minimize-control-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #333;
+}
+
+.minimize-control-btn:hover {
+  background: rgba(0,0,0,0.1);
+  transform: scale(1.1);
+}
+
+/* Resize handles */
+.resize-handle {
+  position: absolute;
+  background: rgba(102, 126, 234, 0.6);
+  transition: all 0.2s ease;
+  z-index: 15;
+}
+
+.resize-handle:hover {
+  background: rgba(102, 126, 234, 0.9);
+}
+
+/* Corner handles */
+.resize-handle-se {
+  bottom: -5px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  cursor: se-resize;
+  border-radius: 0 0 10px 0;
+}
+
+.resize-handle-sw {
+  bottom: -5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  cursor: sw-resize;
+  border-radius: 0 0 0 10px;
+}
+
+.resize-handle-ne {
+  top: -5px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  cursor: ne-resize;
+  border-radius: 0 10px 0 0;
+}
+
+.resize-handle-nw {
+  top: -5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  cursor: nw-resize;
+  border-radius: 10px 0 0 0;
+}
+
+/* Edge handles */
+.resize-handle-n {
+  top: -3px;
+  left: 20px;
+  right: 20px;
+  height: 6px;
+  cursor: n-resize;
+}
+
+.resize-handle-s {
+  bottom: -3px;
+  left: 20px;
+  right: 20px;
+  height: 6px;
+  cursor: s-resize;
+}
+
+.resize-handle-e {
+  right: -3px;
+  top: 20px;
+  bottom: 20px;
+  width: 6px;
+  cursor: e-resize;
+}
+
+.resize-handle-w {
+  left: -3px;
+  top: 20px;
+  bottom: 20px;
+  width: 6px;
+  cursor: w-resize;
+}
+
+/* Resize mode indicator */
+.chat-modal.resize-mode {
+  border: 2px dashed rgba(102, 126, 234, 0.5);
 }
 
 /* Modal Styles - Slide up from bottom right, doesn't block page scrolling */
@@ -942,6 +1116,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 3000);
   });
   
+  // UI Settings cache management - Initialize BEFORE state restoration
+  const UI_SETTINGS_KEY = 'chatUISettings';
+  
+  // Default UI settings
+  let uiSettings = {
+    opacity: 1,
+    position: { right: '40px', bottom: '20px', left: 'auto', top: 'auto' },
+    size: { width: '450px', height: '650px' },
+    isMinimized: false
+  };
+  
+  // Load UI settings from cache
+  function loadUISettings() {
+    try {
+      const cached = localStorage.getItem(UI_SETTINGS_KEY);
+      if (cached) {
+        const parsedSettings = JSON.parse(cached);
+        uiSettings = { ...uiSettings, ...parsedSettings };
+        console.log('Loaded UI settings from cache:', uiSettings);
+        return true;
+      }
+    } catch (error) {
+      console.warn('Failed to load UI settings:', error);
+    }
+    return false;
+  }
+  
+  // Load UI settings IMMEDIATELY to ensure uiSettings is available
+  loadUISettings();
+  
   // Load and restore cached chat state
   console.log('Loading cached chat state...');
   
@@ -952,6 +1156,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const miniResponse = document.getElementById('mini-response');
   const expandBtn = document.getElementById('expand-chat');
   const closeMiniBtn = document.getElementById('close-mini');
+  
+  // Samsung-style minimize strip elements
+  const minimizeStrip = document.getElementById('minimize-strip');
+  const minimizeHandle = document.getElementById('minimize-handle');
+  const minimizeControls = document.getElementById('minimize-controls');
+  const resizeBtn = document.getElementById('resize-btn');
+  const transparencyBtn = document.getElementById('transparency-btn');
+  const minimizeWindowBtn = document.getElementById('minimize-window-btn');
   
   // Restore chat state from localStorage
   const savedState = localStorage.getItem('chatState');
@@ -983,8 +1195,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('✅ Restored persona selection status:', state.personaSelected);
       }
       
-      // Restore modal open/closed state
-      if (state.isOpen) {
+      // Restore modal open/closed state (but not if it was minimized)
+      if (state.isOpen && !uiSettings.isMinimized) {
         console.log('✅ AUTO-OPENING: Restoring chat modal to open state from previous session');
         
         // Delay the restoration slightly to ensure DOM is ready
@@ -1051,6 +1263,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Trigger slide-up animation
     chatModal.classList.add('open');
     window.chatState.isOpen = true;
+    
+    // Clear minimize state and reapply UI settings when opening
+    uiSettings.isMinimized = false;
+    applyUISettings();
+    saveUISettings();
+    
     console.log('💾 Saving chat state - modal opened via button click');
     
     // Check if we have cached persona selection - if so, NEVER show persona selector again
@@ -1204,6 +1422,12 @@ document.addEventListener('DOMContentLoaded', function() {
     chatModal.classList.add('open');
     window.chatState.isOpen = true;
     window.chatState.miniMode = false;
+    
+    // Clear minimize state and reapply UI settings when expanding
+    uiSettings.isMinimized = false;
+    applyUISettings();
+    saveUISettings();
+    
     saveChatState();
   });
   
@@ -1213,6 +1437,315 @@ document.addEventListener('DOMContentLoaded', function() {
     window.chatState.miniMode = false;
     saveChatState();
   });
+  
+  // Samsung-style minimize strip functionality
+  let isDragging = false;
+  let dragStartX = 0;
+  let dragStartY = 0;
+  let currentOpacity = 1;
+  
+  // UI Settings functionality (settings already loaded above)
+  
+  // Save UI settings to cache
+  function saveUISettings() {
+    try {
+      localStorage.setItem(UI_SETTINGS_KEY, JSON.stringify(uiSettings));
+      console.log('Saved UI settings to cache:', uiSettings);
+    } catch (error) {
+      console.warn('Failed to save UI settings:', error);
+    }
+  }
+  
+  // Apply UI settings to the modal
+  function applyUISettings() {
+    if (!chatModal) return;
+    
+    // Apply opacity
+    chatModal.style.opacity = uiSettings.opacity;
+    currentOpacity = uiSettings.opacity;
+    
+    // Apply position
+    chatModal.style.right = uiSettings.position.right;
+    chatModal.style.bottom = uiSettings.position.bottom;
+    chatModal.style.left = uiSettings.position.left;
+    chatModal.style.top = uiSettings.position.top;
+    
+    // Apply size
+    chatModal.style.width = uiSettings.size.width;
+    chatModal.style.height = uiSettings.size.height;
+    
+    // Update transparency button appearance
+    if (transparencyBtn) {
+      transparencyBtn.textContent = uiSettings.opacity === 1 ? '👁' : uiSettings.opacity === 0.7 ? '👁‍🗨️' : '👻';
+    }
+    
+    console.log('Applied UI settings:', uiSettings);
+  }
+  
+  // Apply cached UI settings (already loaded above)
+  applyUISettings();
+  
+  // Debug: Check if elements exist
+  console.log('Minimize strip elements check:', {
+    minimizeStrip: !!minimizeStrip,
+    minimizeHandle: !!minimizeHandle,
+    minimizeControls: !!minimizeControls,
+    resizeBtn: !!resizeBtn,
+    transparencyBtn: !!transparencyBtn,
+    minimizeWindowBtn: !!minimizeWindowBtn
+  });
+
+  // Show/hide controls on handle click/touch
+  if (minimizeHandle) {
+    minimizeHandle.addEventListener('click', function() {
+      console.log('Minimize handle clicked');
+      if (minimizeStrip) {
+        minimizeStrip.classList.toggle('expanded');
+        console.log('Strip expanded state:', minimizeStrip.classList.contains('expanded'));
+      }
+    });
+  } else {
+    console.error('Minimize handle not found!');
+  }
+  
+  // Auto-hide controls after timeout
+  let controlsTimeout;
+  function showControls() {
+    minimizeStrip.classList.add('expanded');
+    clearTimeout(controlsTimeout);
+    controlsTimeout = setTimeout(() => {
+      minimizeStrip.classList.remove('expanded');
+    }, 3000);
+  }
+  
+  minimizeHandle.addEventListener('mouseenter', showControls);
+  minimizeHandle.addEventListener('touchstart', showControls);
+  
+  // Move functionality - now on the minimize handle (thin white strip)
+  if (minimizeHandle) {
+    minimizeHandle.addEventListener('mousedown', startDrag);
+    minimizeHandle.addEventListener('touchstart', startDrag);
+    // Also add cursor style to indicate it's draggable
+    minimizeHandle.style.cursor = 'move';
+  } else {
+    console.error('Minimize handle not found!');
+  }
+  
+  function startDrag(e) {
+    e.preventDefault();
+    isDragging = true;
+    const event = e.touches ? e.touches[0] : e;
+    dragStartX = event.clientX - chatModal.offsetLeft;
+    dragStartY = event.clientY - chatModal.offsetTop;
+    
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', stopDrag);
+    document.addEventListener('touchmove', drag);
+    document.addEventListener('touchend', stopDrag);
+  }
+  
+  function drag(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    const event = e.touches ? e.touches[0] : e;
+    const newX = event.clientX - dragStartX;
+    const newY = event.clientY - dragStartY;
+    
+    // Keep within viewport bounds
+    const maxX = window.innerWidth - chatModal.offsetWidth;
+    const maxY = window.innerHeight - chatModal.offsetHeight;
+    
+    const finalX = Math.max(0, Math.min(newX, maxX));
+    const finalY = Math.max(0, Math.min(newY, maxY));
+    
+    chatModal.style.right = 'auto';
+    chatModal.style.bottom = 'auto';
+    chatModal.style.left = finalX + 'px';
+    chatModal.style.top = finalY + 'px';
+    
+    // Update settings cache
+    uiSettings.position = {
+      left: finalX + 'px',
+      top: finalY + 'px',
+      right: 'auto',
+      bottom: 'auto'
+    };
+  }
+  
+  function stopDrag() {
+    isDragging = false;
+    document.removeEventListener('mousemove', drag);
+    document.removeEventListener('mouseup', stopDrag);
+    document.removeEventListener('touchmove', drag);
+    document.removeEventListener('touchend', stopDrag);
+    
+    // Save position to cache when dragging stops
+    saveUISettings();
+  }
+  
+  // Resize functionality
+  let isResizeMode = false;
+  if (resizeBtn) {
+    resizeBtn.addEventListener('click', function() {
+    console.log('Resize button clicked');
+    isResizeMode = !isResizeMode;
+    
+    if (isResizeMode) {
+      chatModal.classList.add('resize-mode');
+      resizeBtn.textContent = '✓';
+      resizeBtn.style.background = 'rgba(34, 197, 94, 0.2)';
+      console.log('Resize mode activated');
+      
+      // Add resize handles
+      addResizeHandles();
+    } else {
+      chatModal.classList.remove('resize-mode');
+      resizeBtn.textContent = '↔';
+      resizeBtn.style.background = 'none';
+      console.log('Resize mode deactivated');
+      
+      // Remove resize handles
+      removeResizeHandles();
+    }
+    });
+  } else {
+    console.error('Resize button not found!');
+  }
+  
+  // Transparency functionality
+  if (transparencyBtn) {
+    transparencyBtn.addEventListener('click', function() {
+      console.log('Transparency button clicked');
+      currentOpacity = currentOpacity === 1 ? 0.7 : currentOpacity === 0.7 ? 0.4 : 1;
+      chatModal.style.opacity = currentOpacity;
+      transparencyBtn.textContent = currentOpacity === 1 ? '👁' : currentOpacity === 0.7 ? '👁‍🗨️' : '👻';
+      console.log('Opacity changed to:', currentOpacity);
+      
+      // Save transparency to cache
+      uiSettings.opacity = currentOpacity;
+      saveUISettings();
+    });
+  } else {
+    console.error('Transparency button not found!');
+  }
+  
+  // Minimize window functionality
+  if (minimizeWindowBtn) {
+    minimizeWindowBtn.addEventListener('click', function() {
+      console.log('Minimize button clicked');
+      uiSettings.isMinimized = true;
+      saveUISettings();
+      closeChatModal();
+    });
+  } else {
+    console.error('Minimize window button not found!');
+  }
+  
+  // Resize handles functionality
+  function addResizeHandles() {
+    // Remove existing handles first
+    removeResizeHandles();
+    
+    const handles = [
+      'resize-handle-se', // bottom-right
+      'resize-handle-sw', // bottom-left  
+      'resize-handle-ne', // top-right
+      'resize-handle-nw', // top-left
+      'resize-handle-n',  // top
+      'resize-handle-s',  // bottom
+      'resize-handle-e',  // right
+      'resize-handle-w'   // left
+    ];
+    
+    handles.forEach(handleClass => {
+      const handle = document.createElement('div');
+      handle.className = `resize-handle ${handleClass}`;
+      handle.addEventListener('mousedown', startResize);
+      handle.addEventListener('touchstart', startResize);
+      chatModal.appendChild(handle);
+    });
+    
+    console.log('Added', handles.length, 'resize handles');
+  }
+  
+  function removeResizeHandles() {
+    const handles = chatModal.querySelectorAll('.resize-handle');
+    handles.forEach(handle => handle.remove());
+    console.log('Removed resize handles');
+  }
+  
+  let isResizing = false;
+  let resizeDirection = '';
+  let startWidth, startHeight, startX, startY;
+  
+  function startResize(e) {
+    if (!isResizeMode) return;
+    
+    e.preventDefault();
+    e.stopPropagation();
+    isResizing = true;
+    
+    resizeDirection = e.target.className.split(' ')[1]; // get resize-handle-xx
+    const event = e.touches ? e.touches[0] : e;
+    
+    startX = event.clientX;
+    startY = event.clientY;
+    startWidth = parseInt(document.defaultView.getComputedStyle(chatModal).width, 10);
+    startHeight = parseInt(document.defaultView.getComputedStyle(chatModal).height, 10);
+    
+    document.addEventListener('mousemove', doResize);
+    document.addEventListener('mouseup', stopResize);
+    document.addEventListener('touchmove', doResize);
+    document.addEventListener('touchend', stopResize);
+    
+    console.log('Started resizing:', resizeDirection, 'from', startWidth + 'x' + startHeight);
+  }
+  
+  function doResize(e) {
+    if (!isResizing) return;
+    
+    e.preventDefault();
+    const event = e.touches ? e.touches[0] : e;
+    const dx = event.clientX - startX;
+    const dy = event.clientY - startY;
+    
+    let newWidth = startWidth;
+    let newHeight = startHeight;
+    
+    // Calculate new dimensions based on resize direction
+    if (resizeDirection.includes('e')) newWidth = startWidth + dx;
+    if (resizeDirection.includes('w')) newWidth = startWidth - dx;
+    if (resizeDirection.includes('s')) newHeight = startHeight + dy;
+    if (resizeDirection.includes('n')) newHeight = startHeight - dy;
+    
+    // Apply minimum constraints
+    newWidth = Math.max(350, Math.min(newWidth, window.innerWidth - 40));
+    newHeight = Math.max(400, Math.min(newHeight, window.innerHeight - 40));
+    
+    chatModal.style.width = newWidth + 'px';
+    chatModal.style.height = newHeight + 'px';
+  }
+  
+  function stopResize() {
+    if (!isResizing) return;
+    
+    isResizing = false;
+    resizeDirection = '';
+    
+    document.removeEventListener('mousemove', doResize);
+    document.removeEventListener('mouseup', stopResize);
+    document.removeEventListener('touchmove', doResize);
+    document.removeEventListener('touchend', stopResize);
+    
+    console.log('Stopped resizing. Final size:', chatModal.style.width, 'x', chatModal.style.height);
+    
+    // Save size to cache when resizing stops
+    uiSettings.size = {
+      width: chatModal.style.width,
+      height: chatModal.style.height
+    };
+    saveUISettings();
+  }
   
   
   // Retry button functionality
