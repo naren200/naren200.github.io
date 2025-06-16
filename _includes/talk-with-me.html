@@ -1196,20 +1196,83 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       // Restore modal open/closed state (but not if it was minimized)
-      if (state.isOpen && !uiSettings.isMinimized) {
+      if (state.isOpen && (!uiSettings || !uiSettings.isMinimized)) {
         console.log('✅ AUTO-OPENING: Restoring chat modal to open state from previous session');
         
         // Delay the restoration slightly to ensure DOM is ready
         setTimeout(() => {
+          // Re-query elements to ensure they exist
+          const currentChatModal = document.getElementById('chat-modal');
           const backdrop = document.getElementById('chat-backdrop');
+          
+          // Debug: Check if elements exist
+          console.log('🔍 DEBUG - Elements check:', {
+            originalChatModal: !!chatModal,
+            currentChatModal: !!currentChatModal,
+            backdrop: !!backdrop,
+            chatModalClasses: currentChatModal ? currentChatModal.className : 'N/A',
+            chatModalDisplay: currentChatModal ? getComputedStyle(currentChatModal).display : 'N/A',
+            chatModalHeight: currentChatModal ? getComputedStyle(currentChatModal).height : 'N/A'
+          });
           
           // Show backdrop and prevent scroll on mobile
           if (window.innerWidth <= 768) {
-            backdrop.classList.add('active');
+            if (backdrop) backdrop.classList.add('active');
             document.body.classList.add('chat-open');
           }
           
-          chatModal.classList.add('open');
+          const modalToUse = currentChatModal || chatModal;
+          if (modalToUse) {
+            modalToUse.classList.add('open');
+            console.log('✅ Added "open" class to chat modal');
+            console.log('🔍 Modal classes after open:', modalToUse.className);
+            console.log('🔍 Modal height after open:', getComputedStyle(modalToUse).height);
+            
+            // Verify the modal is actually visible after a short delay
+            setTimeout(() => {
+              const finalHeight = getComputedStyle(modalToUse).height;
+              const hasOpenClass = modalToUse.classList.contains('open');
+              console.log('🔍 Final verification:', {
+                hasOpenClass,
+                finalHeight,
+                isVisible: finalHeight !== '0px' && hasOpenClass
+              });
+              
+              // If restoration failed, mark state as closed and show visual indicator
+              if (finalHeight === '0px' || !hasOpenClass) {
+                console.error('❌ Modal restoration failed - UI not visible despite state restoration');
+                window.chatState.isOpen = false;
+                saveChatState();
+                
+                // Add visual indicator to the chat button
+                const chatBtn = document.getElementById('talk-with-me-btn');
+                if (chatBtn) {
+                  chatBtn.style.animation = 'pulse 2s infinite';
+                  chatBtn.title = 'Chat was open in previous session - click to restore';
+                  
+                  // Add pulsing animation if not already defined
+                  if (!document.querySelector('#chat-restoration-style')) {
+                    const style = document.createElement('style');
+                    style.id = 'chat-restoration-style';
+                    style.textContent = `
+                      @keyframes pulse {
+                        0% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7); }
+                        70% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
+                        100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
+                      }
+                    `;
+                    document.head.appendChild(style);
+                  }
+                }
+              }
+            }, 500);
+            
+          } else {
+            console.error('❌ No chatModal element found during restoration!');
+            window.chatState.isOpen = false;
+            saveChatState();
+          }
+          
           window.chatState.isOpen = true;
           
           console.log('✅ AUTO-OPENED: Chat modal restored to open state');
@@ -1253,6 +1316,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Show modal on button click with slide-up animation
   chatBtn.addEventListener('click', function() {
     const backdrop = document.getElementById('chat-backdrop');
+    
+    // Clear any restoration pulse animation
+    if (chatBtn) {
+      chatBtn.style.animation = '';
+      chatBtn.title = '';
+    }
     
     // Show backdrop and prevent scroll on mobile
     if (window.innerWidth <= 768) {
