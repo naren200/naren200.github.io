@@ -1012,6 +1012,57 @@
 </style>
 
 <script>
+// Compatibility detection functions
+function isMobileDevice() {
+  // Check for mobile user agents
+  const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+  const isMobileUserAgent = mobileRegex.test(navigator.userAgent);
+  
+  // Check for touch capability and screen size
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const isSmallScreen = window.innerWidth <= 768 || window.innerHeight <= 600;
+  
+  // Consider it mobile if it has mobile user agent OR (touch + small screen)
+  return isMobileUserAgent || (isTouchDevice && isSmallScreen);
+}
+
+async function hasWebGPUSupport() {
+  // Check if WebGPU is available
+  if (!navigator.gpu) {
+    return false;
+  }
+  
+  try {
+    // Try to get a WebGPU adapter
+    const adapter = await navigator.gpu.requestAdapter();
+    if (!adapter) {
+      return false;
+    }
+    
+    // Try to get a WebGPU device
+    const device = await adapter.requestDevice();
+    if (!device) {
+      return false;
+    }
+    
+    // Clean up the device
+    device.destroy();
+    return true;
+  } catch (error) {
+    console.log('WebGPU support check failed:', error);
+    return false;
+  }
+}
+
+function isCompatibleForAIChat() {
+  // Check if the current environment supports AI chat
+  const mobile = isMobileDevice();
+  
+  // For initial compatibility check (synchronous), just check mobile
+  // WebGPU check will be done asynchronously when needed
+  return !mobile;
+}
+
 // Global chat state management with persistence
 window.chatState = window.chatState || {
   initialized: false,
@@ -1023,7 +1074,9 @@ window.chatState = window.chatState || {
   conversationHistory: [],
   currentPage: null,
   userType: null, // null means no selection made yet
-  personaSelected: false // track if user has selected a persona
+  personaSelected: false, // track if user has selected a persona
+  isCompatible: null, // null = not checked, true/false = compatibility status
+  compatibilityReason: null // reason for incompatibility
 };
 
 // Create safe copy of chat state without circular references
@@ -1088,6 +1141,143 @@ function showChatInterface() {
   if (personaSelector) personaSelector.style.display = 'none';
   if (chatMessages) chatMessages.style.display = 'flex';
   if (chatInputContainer) chatInputContainer.style.display = 'flex';
+}
+
+// Show compatibility fallback interface
+function showCompatibilityFallback(reason) {
+  console.log('Showing compatibility fallback for reason:', reason);
+  const personaSelector = document.getElementById('persona-selector');
+  const chatMessages = document.getElementById('chat-messages');
+  const chatInputContainer = document.getElementById('chat-input-container');
+  
+  if (personaSelector) personaSelector.style.display = 'none';
+  if (chatMessages) chatMessages.style.display = 'flex';
+  if (chatInputContainer) chatInputContainer.style.display = 'flex';
+  
+  // Clear any existing messages and show compatibility message
+  const messagesContainer = document.getElementById('chat-messages');
+  if (messagesContainer) {
+    messagesContainer.innerHTML = '';
+    
+    // Create compatibility message based on reason
+    let title, message;
+    if (reason === 'mobile') {
+      title = 'My Brain Needs a Bigger Screen';
+      message = `Sorry, but my AI brain is a bit too sophisticated for mobile devices. It needs the computational power of a desktop or laptop browser to function properly.
+      <br><br>
+      Think of it like trying to fit a rocket engine into a bicycle - technically impressive, but practically problematic.
+      <br><br>
+      You can still explore my portfolio on mobile, but for the full conversational experience, please visit on a desktop or laptop computer with a modern browser.
+      <br><br>
+      <strong>Alternative Contact Methods:</strong><br>
+      📧 Email: <a href="mailto:narendhiran2000@gmail.com">narendhiran2000@gmail.com</a><br>
+      🔗 LinkedIn: <a href="https://linkedin.com/in/narendhiran2000" target="_blank">linkedin.com/in/narendhiran2000</a>
+      <br><br>
+      Thanks for understanding! My brain will be here waiting when you get to a bigger screen.`;
+    } else if (reason === 'webgpu') {
+      title = 'My Brain Requires Advanced Browser Technology';
+      message = `Looks like your browser doesn't support WebGPU, which is what powers my AI brain. It's like trying to run a supercomputer on a calculator - the hardware just isn't quite there yet.
+      <br><br>
+      My AI assistant requires WebGPU for the heavy lifting involved in natural language processing. This is available in modern versions of Chrome, Edge, and Firefox with the right settings enabled.
+      <br><br>
+      <strong>To enable WebGPU support:</strong><br>
+      • Chrome: Visit <code>chrome://flags</code> and enable "Unsafe WebGPU"<br>
+      • Firefox: Visit <code>about:config</code> and set <code>dom.webgpu.enabled</code> to true<br>
+      • Edge: Visit <code>edge://flags</code> and enable "Unsafe WebGPU"
+      <br><br>
+      <strong>Alternative Contact Methods:</strong><br>
+      📧 Email: <a href="mailto:narendhiran2000@gmail.com">narendhiran2000@gmail.com</a><br>
+      🔗 LinkedIn: <a href="https://linkedin.com/in/narendhiran2000" target="_blank">linkedin.com/in/narendhiran2000</a>
+      <br><br>
+      Don't worry - I'm still the same person, just with a slightly less chatty digital assistant!`;
+    } else {
+      title = 'My Digital Brain Has Some Requirements';
+      message = `It seems your current setup doesn't quite meet the requirements for my AI chat assistant. My digital brain is a bit picky about its computational environment.
+      <br><br>
+      <strong>What I need:</strong><br>
+      • Desktop or laptop computer (not mobile)<br>
+      • Modern browser with WebGPU support<br>
+      • Stable internet connection for model download
+      <br><br>
+      <strong>Alternative Contact Methods:</strong><br>
+      📧 Email: <a href="mailto:narendhiran2000@gmail.com">narendhiran2000@gmail.com</a><br>
+      🔗 LinkedIn: <a href="https://linkedin.com/in/narendhiran2000" target="_blank">linkedin.com/in/narendhiran2000</a>
+      <br><br>
+      Feel free to explore my portfolio, and reach out directly if you'd like to chat!`;
+    }
+    
+    const compatibilityMessage = document.createElement('div');
+    compatibilityMessage.className = 'message assistant-message';
+    compatibilityMessage.innerHTML = `
+      <div class="message-content">
+        <strong>${title}</strong><br><br>
+        ${message}
+      </div>
+    `;
+    messagesContainer.appendChild(compatibilityMessage);
+  }
+  
+  // Disable input since chat won't work
+  const input = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('send-btn');
+  if (input) {
+    input.disabled = true;
+    input.placeholder = 'Chat not available on this device/browser';
+  }
+  if (sendBtn) {
+    sendBtn.disabled = true;
+    sendBtn.textContent = 'Not Available';
+  }
+}
+
+// Check compatibility and show appropriate interface
+async function checkCompatibilityAndShowAppropriateInterface() {
+  // Quick mobile check first
+  const isMobile = isMobileDevice();
+  if (isMobile) {
+    window.chatState.isCompatible = false;
+    window.chatState.compatibilityReason = 'mobile';
+    showCompatibilityFallback('mobile');
+    return;
+  }
+  
+  // Check WebGPU support
+  const hasWebGPU = await hasWebGPUSupport();
+  if (!hasWebGPU) {
+    window.chatState.isCompatible = false;
+    window.chatState.compatibilityReason = 'webgpu';
+    showCompatibilityFallback('webgpu');
+    return;
+  }
+  
+  // Device is compatible, proceed with normal chat flow
+  window.chatState.isCompatible = true;
+  window.chatState.compatibilityReason = null;
+  
+  // Check if we have cached persona selection
+  const hasPersona = window.chatState.personaSelected && window.chatState.userType;
+  
+  if (hasPersona) {
+    // User has already selected persona, show chat interface directly
+    console.log('User has cached persona selection, going directly to chat interface');
+    showChatInterface();
+    if (!window.chatState.initialized) {
+      initializeChat();
+    }
+  } else {
+    // First time user - show persona selector
+    console.log('First time user, showing persona selector');
+    showPersonaSelector();
+    
+    // Start downloading the model in background immediately
+    if (!window.chatState.initialized && !window.backgroundModelLoading) {
+      console.log('Starting background model download...');
+      window.backgroundModelLoading = true;
+      setTimeout(() => {
+        startBackgroundModelDownload();
+      }, 500); // Small delay to show UI first
+    }
+  }
 }
 
 // Lightweight initialization - No WebLLM loading yet!
@@ -1215,30 +1405,9 @@ document.addEventListener('DOMContentLoaded', function() {
           console.log('✅ AUTO-OPENED: Chat modal restored to open state');
         }, 100);
         
-        // Always show chat interface for cached users (persona already selected)
-        setTimeout(() => {
-          if (window.chatState.personaSelected && window.chatState.userType) {
-            // User has already selected persona, show chat interface directly
-            console.log('Showing chat interface for cached user with persona:', window.chatState.userType);
-            showChatInterface();
-            
-            // Initialize chat to restore conversation or prepare for new messages
-            if (!window.chatState.initialized) {
-              console.log('Chat was open with cached persona selection, initializing...');
-              setTimeout(() => initializeChat(), 200);
-            }
-          } else {
-            // User hasn't selected persona yet, show persona selector
-            console.log('Showing persona selector for user without cached selection');
-            showPersonaSelector();
-            
-            // Start background model loading
-            if (!window.chatState.initialized && !window.backgroundModelLoading) {
-              console.log('Starting background model download for open chat with no persona...');
-              window.backgroundModelLoading = true;
-              setTimeout(() => startBackgroundModelDownload(), 500);
-            }
-          }
+        // Check compatibility before showing any interface
+        setTimeout(async () => {
+          await checkCompatibilityAndShowAppropriateInterface();
         }, 150);
       }
       
@@ -1250,54 +1419,42 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('❌ No saved state found - first time user');
   }
   
-  // Show modal on button click with slide-up animation
-  chatBtn.addEventListener('click', function() {
+  // Toggle modal on button click with slide-up/down animation
+  chatBtn.addEventListener('click', async function() {
     const backdrop = document.getElementById('chat-backdrop');
     
-    // Show backdrop and prevent scroll on mobile
-    if (window.innerWidth <= 768) {
-      backdrop.classList.add('active');
-      document.body.classList.add('chat-open');
-    }
-    
-    // Trigger slide-up animation
-    chatModal.classList.add('open');
-    window.chatState.isOpen = true;
-    
-    // Clear minimize state and reapply UI settings when opening
-    uiSettings.isMinimized = false;
-    applyUISettings();
-    saveUISettings();
-    
-    console.log('💾 Saving chat state - modal opened via button click');
-    
-    // Check if we have cached persona selection - if so, NEVER show persona selector again
-    const hasPersona = window.chatState.personaSelected && window.chatState.userType;
-    
-    if (hasPersona) {
-      // User has already selected persona, show chat interface directly - NO persona selector
-      console.log('User has cached persona selection, going directly to chat interface');
-      showChatInterface();
-      if (!window.chatState.initialized) {
-        initializeChat();
-      }
+    // Check if chat is already open and toggle accordingly
+    if (window.chatState.isOpen || chatModal.classList.contains('open')) {
+      // Close/minimize the chat
+      uiSettings.isMinimized = true;
+      saveUISettings();
+      closeChatModal();
+      console.log('💾 Chat minimized via button click');
     } else {
-      // First time user - show persona selector
-      console.log('First time user, showing persona selector');
-      showPersonaSelector();
-      
-      // Start downloading the model in background immediately
-      if (!window.chatState.initialized && !window.backgroundModelLoading) {
-        console.log('Starting background model download...');
-        window.backgroundModelLoading = true;
-        setTimeout(() => {
-          startBackgroundModelDownload();
-        }, 500); // Small delay to show UI first
+      // Open/maximize the chat
+      // Show backdrop and prevent scroll on mobile
+      if (window.innerWidth <= 768) {
+        backdrop.classList.add('active');
+        document.body.classList.add('chat-open');
       }
+      
+      // Trigger slide-up animation
+      chatModal.classList.add('open');
+      window.chatState.isOpen = true;
+      
+      // Clear minimize state and reapply UI settings when opening
+      uiSettings.isMinimized = false;
+      applyUISettings();
+      saveUISettings();
+      
+      console.log('💾 Saving chat state - modal opened via button click');
+      
+      // Check compatibility first
+      await checkCompatibilityAndShowAppropriateInterface();
+      
+      // Save state after UI decisions are made
+      saveChatState();
     }
-    
-    // Save state after UI decisions are made
-    saveChatState();
   });
   
   // Persona selection handling
@@ -1676,7 +1833,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   let isResizing = false;
   let resizeDirection = '';
-  let startWidth, startHeight, startX, startY;
+  let startWidth, startHeight, startX, startY, startLeft, startTop;
   
   function startResize(e) {
     if (!isResizeMode) return;
@@ -1692,6 +1849,8 @@ document.addEventListener('DOMContentLoaded', function() {
     startY = event.clientY;
     startWidth = parseInt(document.defaultView.getComputedStyle(chatModal).width, 10);
     startHeight = parseInt(document.defaultView.getComputedStyle(chatModal).height, 10);
+    startLeft = parseInt(chatModal.style.left, 10) || 0;
+    startTop = parseInt(chatModal.style.top, 10) || 0;
     
     document.addEventListener('mousemove', doResize);
     document.addEventListener('mouseup', stopResize);
@@ -1711,19 +1870,61 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let newWidth = startWidth;
     let newHeight = startHeight;
+    let newLeft = startLeft;
+    let newTop = startTop;
     
     // Calculate new dimensions based on resize direction
-    if (resizeDirection.includes('e')) newWidth = startWidth + dx;
-    if (resizeDirection.includes('w')) newWidth = startWidth - dx;
-    if (resizeDirection.includes('s')) newHeight = startHeight + dy;
-    if (resizeDirection.includes('n')) newHeight = startHeight - dy;
+    if (resizeDirection.includes('e')) {
+      newWidth = startWidth + dx;
+    }
+    if (resizeDirection.includes('w')) {
+      newWidth = startWidth - dx;
+      newLeft = startLeft + dx;
+    }
+    if (resizeDirection.includes('s')) {
+      newHeight = startHeight + dy;
+    }
+    if (resizeDirection.includes('n')) {
+      newHeight = startHeight - dy;
+      newTop = startTop + dy;
+    }
     
     // Apply minimum constraints
-    newWidth = Math.max(350, Math.min(newWidth, window.innerWidth - 40));
-    newHeight = Math.max(400, Math.min(newHeight, window.innerHeight - 40));
+    const minWidth = 350;
+    const minHeight = 400;
+    const maxWidth = window.innerWidth - 40;
+    const maxHeight = window.innerHeight - 40;
+    
+    if (newWidth < minWidth) {
+      if (resizeDirection.includes('w')) {
+        newLeft = newLeft - (minWidth - newWidth);
+      }
+      newWidth = minWidth;
+    }
+    if (newWidth > maxWidth) {
+      if (resizeDirection.includes('w')) {
+        newLeft = newLeft - (maxWidth - newWidth);
+      }
+      newWidth = maxWidth;
+    }
+    
+    if (newHeight < minHeight) {
+      if (resizeDirection.includes('n')) {
+        newTop = newTop - (minHeight - newHeight);
+      }
+      newHeight = minHeight;
+    }
+    if (newHeight > maxHeight) {
+      if (resizeDirection.includes('n')) {
+        newTop = newTop - (maxHeight - newHeight);
+      }
+      newHeight = maxHeight;
+    }
     
     chatModal.style.width = newWidth + 'px';
     chatModal.style.height = newHeight + 'px';
+    chatModal.style.left = newLeft + 'px';
+    chatModal.style.top = newTop + 'px';
   }
   
   function stopResize() {
@@ -1739,10 +1940,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Stopped resizing. Final size:', chatModal.style.width, 'x', chatModal.style.height);
     
-    // Save size to cache when resizing stops
+    // Auto-exit resize mode after resize operation (Samsung-style behavior)
+    isResizeMode = false;
+    chatModal.classList.remove('resize-mode');
+    if (resizeBtn) {
+      resizeBtn.textContent = '↔';
+      resizeBtn.style.background = 'none';
+    }
+    removeResizeHandles();
+    console.log('Resize mode automatically disabled after resize operation');
+    
+    // Save size and position to cache when resizing stops
     uiSettings.size = {
       width: chatModal.style.width,
       height: chatModal.style.height
+    };
+    uiSettings.position = {
+      left: chatModal.style.left,
+      top: chatModal.style.top
     };
     saveUISettings();
   }
@@ -1858,12 +2073,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // This function loads WebLLM and heavy JavaScript ONLY when needed
 async function initializeChat() {
-  console.log('Initializing chat - Loading WebLLM...');
+  console.log('Initializing chat - Checking compatibility first...');
   console.log('Current chat state:', {
     initialized: window.chatState.initialized,
     isOpen: window.chatState.isOpen,
     conversationHistory: window.chatState.conversationHistory?.length || 0
   });
+  
+  // Check compatibility before loading WebLLM
+  const isMobile = isMobileDevice();
+  if (isMobile) {
+    console.log('Mobile device detected, skipping WebLLM initialization');
+    showCompatibilityFallback('mobile');
+    return;
+  }
+  
+  const hasWebGPU = await hasWebGPUSupport();
+  if (!hasWebGPU) {
+    console.log('WebGPU not supported, skipping WebLLM initialization');
+    showCompatibilityFallback('webgpu');
+    return;
+  }
+  
+  console.log('Device is compatible, proceeding with WebLLM initialization...');
   
   // Update initial loading stage
   const loadingStage = document.getElementById('loading-stage');
