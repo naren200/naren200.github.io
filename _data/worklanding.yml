@@ -1,4 +1,12 @@
 - title: Robotics Software Engineer
+  company: DreamFace Technologies, Denver, USA
+  image:
+    src: /imgs/work/dreamface.jpg
+    alt: DreamFace Technologies
+  date: Mar '25 - Present
+  description: Orchestrated behavior engine managing LLM-driven decisions via lifecycle nodes, modular cum scalable actions. \n Designed micro-ROS framework on Teensy 4.0 microcontroller, established ZLAC motor control via RS485 protocol. \n Engineered automated health monitoring systems with per-node diagnostics, elevated system reliability by 10x. \n Configured Dynamixel & Feetech motors in daisy-chain topology for humanoid, integrated ros2_control framework.
+
+- title: Robotics Software Engineer
   company: Padma Agrobotics (USDA Funded Startup), Arizona
   image:
     src: /imgs/work/agrobotics.jpeg
@@ -22,13 +30,13 @@
   date: May '20 - Aug '20
   description: I was among 95 students (97.76 Percentile) to be awarded the e-Yantra Summer Internship Program at IIT Bombay. \n Led an 4-person team to develop a fiducial-marker-based localization model with calibration error of ≤ 0.5%. \n Amplified design, combined rule-based script, and unit tested to validate auto-evaluators with 95% coverage.
 
-- title: Robotics Engineer 
-  company: e-Yantra Educational Program, IIT Bombay (Ministry of Education Funded)
-  image:
-    src: /imgs/work/eyantra-logo.png
-    alt: e-Yantra
-  date: Oct '19 - Aug '20
-  description: Represented IIT Patna on National Stage for technical excellence. & Awarded National Finalists (99.7 Percentile). \n Built a robot from scratch possessing vision, picking, placing, and autonomous decision-making (A* & Dijkstra).
+# - title: Robotics Engineer 
+#   company: e-Yantra Educational Program, IIT Bombay (Ministry of Education Funded)
+#   image:
+#     src: /imgs/work/eyantra-logo.png
+#     alt: e-Yantra
+#   date: Oct '19 - Aug '20
+#   description: Represented IIT Patna on National Stage for technical excellence. & Awarded National Finalists (99.7 Percentile). \n Built a robot from scratch possessing vision, picking, placing, and autonomous decision-making (A* & Dijkstra).
 
 # - title: Robotics Engineer 
 #   company: ABU Robocon 2020, India

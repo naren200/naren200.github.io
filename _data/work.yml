@@ -1,4 +1,12 @@
 - title: Robotics Software Engineer
+  company: DreamFace Technologies, Denver, USA
+  image:
+    src: /imgs/work/dreamface.jpg
+    alt: DreamFace Technologies
+  date: Mar '25 - Present
+  description: Orchestrated behavior engine managing LLM-driven decisions via lifecycle nodes, modular cum scalable actions. Designed micro-ROS framework on Teensy 4.0 microcontroller, established ZLAC motor control via RS485 protocol. Engineered automated health monitoring systems with per-node diagnostics, elevated system reliability by 10x. Configured Dynamixel & Feetech motors in daisy-chain topology for humanoid, integrated ros2_control framework.
+
+- title: Robotics Software Engineer
   company: Padma Agrobotics, Mesa, AZ
   image:
     src: /imgs/work/agrobotics.jpeg
