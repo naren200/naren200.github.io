@@ -1,2 +1,15 @@
 _site/*
 .jekyll-metadata
+
+# SSH keys and other secrets — never commit these
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+*.pem
+*.key
+*.ppk
+*.pub
+*_rsa
+*_ed25519
+.ssh/
