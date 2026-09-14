@@ -373,6 +373,16 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
       this.restoreConversationState();
     }
     
+    // Check if model is already cached globally
+    if (window.globalChatEngine && window.chatState?.initialized) {
+      console.log('DynamicChatManager: Using cached model from previous session');
+      this.engine = window.globalChatEngine;
+      this.initialized = true;
+      this.enableInput();
+      this.hideLoading();
+      return;
+    }
+    
     if (this.initialized) {
       console.log('DynamicChatManager: Already initialized, done.');
       return;
@@ -466,15 +476,148 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
     }
   }
   
+  // Device detection and model selection
+  detectDevice() {
+    const userAgent = navigator.userAgent;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+    const isTablet = /iPad|Android(?=.*\bMobile\b)/i.test(userAgent);
+    const memoryInfo = navigator.deviceMemory || null;
+    
+    return {
+      isMobile: isMobile && !isTablet,
+      isTablet: isTablet,
+      isDesktop: !isMobile && !isTablet,
+      deviceMemory: memoryInfo,
+      userAgent: userAgent
+    };
+  }
+  
+  selectOptimalModel() {
+    const device = this.detectDevice();
+    
+    if (device.isMobile) {
+      return {
+        name: "Gemma-3-1B-it-q4f16_1-MLC",
+        displayName: "Gemma-3-1B",
+        ramUsage: "~529MB",
+        description: "Optimized for mobile devices"
+      };
+    } else {
+      return {
+        name: "Llama-3.2-1B-Instruct-q4f16_1-MLC",
+        displayName: "Llama-3.2-1B", 
+        ramUsage: "~750MB",
+        description: "Balanced performance for desktop"
+      };
+    }
+  }
+  
+  async showRAMWarning() {
+    const device = this.detectDevice();
+    const model = this.selectOptimalModel();
+    
+    let warningMessage = '';
+    let deviceType = '';
+    
+    if (device.isMobile) {
+      deviceType = "📱 Mobile Device";
+      warningMessage = `${deviceType} Detected\n\n⚠️ **RAM Usage Warning**\nThe AI chat will consume approximately **${model.ramUsage}** of RAM.\n\n📊 **Your Device:**\n• Type: Mobile Phone\n• Model: ${model.displayName}\n• Memory Usage: ${model.ramUsage}\n• Performance: ${model.description}\n\n**Impact on your phone:**\n• Other apps may run slower\n• Battery usage will increase\n• Background apps may close\n\n**Continue loading AI chat?**`;
+    } else if (device.isTablet) {
+      deviceType = "📱 Tablet Device";
+      warningMessage = `${deviceType} Detected\n\n⚠️ **RAM Usage Warning**\nThe AI chat will consume approximately **${model.ramUsage}** of RAM.\n\n📊 **Your Device:**\n• Type: Tablet\n• Model: ${model.displayName}\n• Memory Usage: ${model.ramUsage}\n• Performance: ${model.description}\n\n**Impact on your tablet:**\n• Multitasking may be affected\n• Other apps may run slower\n• Battery usage will increase\n\n**Continue loading AI chat?**`;
+    } else {
+      deviceType = "💻 Desktop/Laptop";
+      warningMessage = `${deviceType} Detected\n\nℹ️ **Memory Usage Information**\nThe AI chat will use approximately **${model.ramUsage}** of RAM.\n\n📊 **Your Setup:**\n• Type: Desktop/Laptop\n• Model: ${model.displayName}\n• Memory Usage: ${model.ramUsage}\n• Performance: ${model.description}\n\n**System Impact:**\n• Minimal impact on most systems\n• Recommended: 8GB+ total RAM\n• Model optimized for desktop use\n\n**Proceed with AI chat loading?**`;
+    }
+    
+    return new Promise((resolve) => {
+      // Show custom warning dialog
+      const warningDiv = document.createElement('div');
+      warningDiv.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      `;
+      
+      warningDiv.innerHTML = `
+        <div style="
+          background: white;
+          padding: 30px;
+          border-radius: 15px;
+          max-width: 500px;
+          margin: 20px;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+          text-align: center;
+        ">
+          <div style="font-size: 16px; line-height: 1.6; margin-bottom: 25px; white-space: pre-line; text-align: left; color: #333;">
+            ${warningMessage}
+          </div>
+          <div style="display: flex; gap: 15px; justify-content: center;">
+            <button id="ram-warning-cancel" style="
+              background: #f44336;
+              color: white;
+              border: none;
+              padding: 12px 24px;
+              border-radius: 8px;
+              cursor: pointer;
+              font-size: 16px;
+              font-weight: 500;
+            ">Cancel</button>
+            <button id="ram-warning-continue" style="
+              background: #4CAF50;
+              color: white;
+              border: none;
+              padding: 12px 24px;
+              border-radius: 8px;
+              cursor: pointer;
+              font-size: 16px;
+              font-weight: 500;
+            ">Continue</button>
+          </div>
+        </div>
+      `;
+      
+      document.body.appendChild(warningDiv);
+      
+      document.getElementById('ram-warning-continue').onclick = () => {
+        document.body.removeChild(warningDiv);
+        resolve(true);
+      };
+      
+      document.getElementById('ram-warning-cancel').onclick = () => {
+        document.body.removeChild(warningDiv);
+        resolve(false);
+      };
+    });
+  }
+
   async loadWebLLM() {
     const MAX_RETRIES = 3;
     const TIMEOUT_MS = 300000; // 5 minutes timeout
     let retryCount = 0;
     
+    // Show RAM warning before loading
+    const shouldContinue = await this.showRAMWarning();
+    if (!shouldContinue) {
+      throw new Error('User cancelled AI model loading due to RAM concerns.');
+    }
+    
+    // Select optimal model based on device
+    const selectedModel = this.selectOptimalModel();
+    console.log('loadWebLLM: Selected model for device:', selectedModel);
+    
     while (retryCount < MAX_RETRIES) {
       try {
         console.log(`loadWebLLM: Starting WebLLM engine creation (attempt ${retryCount + 1}/${MAX_RETRIES})...`);
-        this.updateLoadingStage('Initializing AI Model', `Fetching model configuration and preparing download... (Attempt ${retryCount + 1}/${MAX_RETRIES})`);
+        this.updateLoadingStage('Initializing AI Model', `Loading ${selectedModel.displayName} (${selectedModel.ramUsage})... (Attempt ${retryCount + 1}/${MAX_RETRIES})`);
         
         // Also update background loading if visible
         if (typeof updateBackgroundLoading === 'function') {
@@ -491,13 +634,13 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
           throw new Error('No internet connection detected. Please check your network and try again.');
         }
         
-        // Use Llama 3.2-1B - optimized for edge devices and browser deployment
-        console.log('loadWebLLM: Creating MLC Engine with Llama-3.2-1B-Instruct-q4f16_1-MLC...');
+        // Use selected model based on device type
+        console.log(`loadWebLLM: Creating MLC Engine with ${selectedModel.name}...`);
         
         // Create a timeout promise with better user messaging
         const timeoutPromise = new Promise((_, reject) => {
           setTimeout(() => {
-            reject(new Error(`Model loading timed out after ${TIMEOUT_MS / 1000} seconds. The AI model is approximately 750MB and requires a stable internet connection.`));
+            reject(new Error(`Model loading timed out after ${TIMEOUT_MS / 1000} seconds. The ${selectedModel.displayName} model is approximately ${selectedModel.ramUsage} and requires a stable internet connection.`));
           }, TIMEOUT_MS);
         });
         
@@ -510,15 +653,15 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
           const timeSinceLastProgress = Date.now() - lastProgressTime;
           if (timeSinceLastProgress > 90000 && !slowDownloadWarningShown) { // 1.5 minutes without progress
             slowDownloadWarningShown = true;
-            this.updateLoadingStage('Slow Connection Detected', 'Download is taking longer than usual. The AI model is ~750MB. Please stay on this page while it downloads.');
+            this.updateLoadingStage('Slow Connection Detected', `Download is taking longer than usual. The ${selectedModel.displayName} model is ${selectedModel.ramUsage}. Please stay on this page while it downloads.`);
           } else if (timeSinceLastProgress > 180000) { // 3 minutes without progress
             this.updateLoadingStage('Download Appears Stuck', 'The download seems to have stalled. Try refreshing the page or check your internet connection.');
           }
         }, 15000); // Check every 15 seconds
         
-        // Create the engine with timeout
+        // Create the engine with timeout using selected model
         const enginePromise = webllm.CreateMLCEngine(
-          "Llama-3.2-1B-Instruct-q4f16_1-MLC", // Optimized for edge devices and browser deployment
+          selectedModel.name, // Device-specific model selection
           {
             initProgressCallback: (report) => {
               // Update last progress time
@@ -540,7 +683,7 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
                 details = 'Downloading model configuration and metadata...';
               } else if (progress < 40) {
                 stage = 'Downloading Model (1/3)';
-                details = 'Downloading AI model files... This is a ~750MB model optimized for quality.';
+                details = `Downloading ${selectedModel.displayName} model files... (${selectedModel.ramUsage})`;
               } else if (progress < 65) {
                 stage = 'Downloading Model (2/3)';
                 details = 'Continuing download of AI model components...';
@@ -565,6 +708,13 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
               this.updateLoadingStage(stage, details);
               this.updateProgress(progress);
               
+              // Show caching overlay for full progress range
+              if (progress >= 0 && progress <= 100) {
+                if (typeof showCachingProgress === 'function') {
+                  showCachingProgress(stage, progress, details);
+                }
+              }
+              
               // Also update background loading if visible
               if (typeof updateBackgroundLoading === 'function') {
                 updateBackgroundLoading(stage, progress);
@@ -575,6 +725,9 @@ CONTACT: narendhiran2000@gmail.com, LinkedIn: narendhiran2000`;
         
         this.engine = await Promise.race([enginePromise, timeoutPromise]);
         clearInterval(progressCheckInterval);
+        
+        // Cache the engine globally for reuse
+        window.globalChatEngine = this.engine;
         
         // Success - break out of retry loop
         break;

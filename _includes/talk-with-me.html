@@ -10,7 +10,7 @@
     <div class="mini-response-header">
       <span class="mini-naren-icon">🤖</span>
       <span class="mini-response-title">Naren responded</span>
-      <button id="expand-chat" class="expand-btn">↑</button>
+      <button id="expand-chat" class="expand-btn">×</button>
       <button id="close-mini" class="close-mini-btn">&times;</button>
     </div>
     <div id="mini-response-text" class="mini-response-text">Loading...</div>
@@ -36,7 +36,7 @@
       <h3>Chat with Naren</h3>
       <div class="chat-controls">
         <button id="remove-cache-btn" class="remove-cache-btn" title="Remove Me - Clear all data, cache, and cookies">Remove Me</button>
-        <button id="close-chat" class="close-btn" title="Minimize Chat">↓</button>
+        <button id="close-chat" class="close-btn" title="Minimize Chat">×</button>
       </div>
     </div>
     
@@ -89,6 +89,22 @@
           </div>
         </div>
       </div>
+      <!-- Model caching progress overlay -->
+      <div class="caching-overlay" id="caching-overlay" style="display: none;">
+        <div class="caching-container">
+          <div class="caching-header">
+            <span class="cache-icon">💾</span>
+            <h4 id="caching-stage">AI Model Caching...</h4>
+          </div>
+          <div class="caching-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" id="caching-progress-fill"></div>
+            </div>
+            <div class="progress-text" id="caching-progress-text">0%</div>
+          </div>
+          <p id="caching-details">The AI model is being cached for faster access. You can continue browsing while this completes.</p>
+        </div>
+      </div>
     </div>
     
     <div class="chat-input-container" id="chat-input-container" style="display: none;">
@@ -119,6 +135,10 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.floating-chat-btn.hidden {
+  display: none;
 }
 
 /* Mini Response Display */
@@ -1009,6 +1029,127 @@
     font-size: 10px;
   }
 }
+
+/* Model Caching Overlay */
+.caching-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+[data-theme="light"] .caching-overlay {
+  background: rgba(255, 182, 193, 0.2);
+}
+
+.caching-container {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+[data-theme="light"] .caching-container {
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.3) 0%, rgba(255, 192, 203, 0.2) 100%);
+  border: 1px solid rgba(255, 182, 193, 0.4);
+}
+
+.caching-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.cache-icon {
+  font-size: 24px;
+  animation: pulse 2s infinite;
+}
+
+.caching-overlay h4 {
+  color: white;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+[data-theme="light"] .caching-overlay h4 {
+  color: #000;
+}
+
+.caching-progress {
+  margin: 15px 0;
+}
+
+.caching-overlay .progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.caching-overlay .progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.caching-overlay .progress-text {
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+}
+
+[data-theme="light"] .caching-overlay .progress-text {
+  color: #000;
+}
+
+.caching-overlay p {
+  color: white;
+  font-size: 12px;
+  margin: 10px 0 0 0;
+  line-height: 1.4;
+}
+
+[data-theme="light"] .caching-overlay p {
+  color: #333;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* Spacing improvements */
+.chat-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 </style>
 
 <script>
@@ -1228,6 +1369,9 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('🔍 Modal classes after open:', modalToUse.className);
             console.log('🔍 Modal height after open:', getComputedStyle(modalToUse).height);
             
+            // Hide Talk with Me button when chat is restored as open
+            updateTalkWithMeButtonVisibility();
+            
             // Verify the modal is actually visible after a short delay
             setTimeout(() => {
               const finalHeight = getComputedStyle(modalToUse).height;
@@ -1243,6 +1387,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('❌ Modal restoration failed - UI not visible despite state restoration');
                 window.chatState.isOpen = false;
                 saveChatState();
+                updateTalkWithMeButtonVisibility(); // Show button since modal failed to open
                 
                 // Add visual indicator to the chat button
                 const chatBtn = document.getElementById('talk-with-me-btn');
@@ -1288,6 +1433,13 @@ document.addEventListener('DOMContentLoaded', function() {
             // Initialize chat to restore conversation or prepare for new messages
             if (!window.chatState.initialized) {
               console.log('Chat was open with cached persona selection, initializing...');
+              
+              // If model is being re-cached on page navigation, show caching overlay while keeping conversation visible
+              if (!window.chatState.initialized && window.chatState.conversationHistory && window.chatState.conversationHistory.length > 0) {
+                console.log('Model re-caching detected - keeping conversation visible with caching overlay');
+                showCachingProgress('AI Model Re-initializing...', 0, 'Reconnecting to the cached AI model...');
+              }
+              
               setTimeout(() => initializeChat(), 200);
             }
           } else {
@@ -1313,6 +1465,16 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('❌ No saved state found - first time user');
   }
   
+  // Function to hide/show Talk with Me button based on chat state
+  function updateTalkWithMeButtonVisibility() {
+    const isModalOpen = chatModal && chatModal.classList.contains('open');
+    if (isModalOpen) {
+      chatBtn.classList.add('hidden');
+    } else {
+      chatBtn.classList.remove('hidden');
+    }
+  }
+
   // Show modal on button click with slide-up animation
   chatBtn.addEventListener('click', function() {
     const backdrop = document.getElementById('chat-backdrop');
@@ -1332,6 +1494,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Trigger slide-up animation
     chatModal.classList.add('open');
     window.chatState.isOpen = true;
+    
+    // Hide Talk with Me button when chat is open
+    updateTalkWithMeButtonVisibility();
     
     // Clear minimize state and reapply UI settings when opening
     uiSettings.isMinimized = false;
@@ -1441,6 +1606,9 @@ document.addEventListener('DOMContentLoaded', function() {
     backdrop.classList.remove('active');
     document.body.classList.remove('chat-open'); // Re-enable body scroll
     window.chatState.isOpen = false;
+    
+    // Show Talk with Me button when chat is closed
+    updateTalkWithMeButtonVisibility();
     
     // Enhanced logging to debug unexpected closes
     console.log('💾 MODAL CLOSED - Saving chat state');
@@ -2554,6 +2722,58 @@ function updateBackgroundLoading(message, progress) {
   }
 }
 
+// Show caching progress overlay
+function showCachingProgress(stage, percentage, details) {
+  const cachingOverlay = document.getElementById('caching-overlay');
+  const cachingStage = document.getElementById('caching-stage');
+  const cachingProgressFill = document.getElementById('caching-progress-fill');
+  const cachingProgressText = document.getElementById('caching-progress-text');
+  const cachingDetails = document.getElementById('caching-details');
+  
+  if (cachingOverlay) cachingOverlay.style.display = 'flex';
+  if (cachingStage) cachingStage.textContent = stage;
+  if (cachingProgressFill) cachingProgressFill.style.width = percentage + '%';
+  if (cachingProgressText) cachingProgressText.textContent = Math.round(percentage) + '%';
+  if (cachingDetails) cachingDetails.textContent = details;
+  
+  // Enable chat input while caching
+  enableChatInputDuringCaching();
+}
+
+// Hide caching progress overlay
+function hideCachingProgress() {
+  const cachingOverlay = document.getElementById('caching-overlay');
+  if (cachingOverlay) {
+    cachingOverlay.style.display = 'none';
+  }
+}
+
+// Enable chat input during caching with placeholder message
+function enableChatInputDuringCaching() {
+  const input = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('send-btn');
+  
+  if (input && sendBtn) {
+    input.disabled = false;
+    sendBtn.disabled = false;
+    input.placeholder = 'You can type while the AI model is caching...';
+    
+    // Store original placeholder if not already stored
+    if (!input.dataset.originalPlaceholder) {
+      input.dataset.originalPlaceholder = input.placeholder;
+    }
+  }
+}
+
+// Restore chat input after caching
+function restoreChatInputAfterCaching() {
+  const input = document.getElementById('chat-input');
+  
+  if (input && input.dataset.originalPlaceholder) {
+    input.placeholder = input.dataset.originalPlaceholder;
+  }
+}
+
 // Hide background loading when model is ready (only call this when conversation actually starts)
 function hideBackgroundLoading() {
   const backgroundLoading = document.getElementById('background-loading');
@@ -2567,9 +2787,15 @@ function hideBackgroundLoading() {
     setTimeout(() => {
       backgroundLoading.style.display = 'none';
       window.backgroundModelLoading = false;
-    }, 1500);
+      // Hide caching overlay when background loading completes
+      hideCachingProgress();
+      restoreChatInputAfterCaching();
+    }, 800);
   } else {
     window.backgroundModelLoading = false;
+    // Hide caching overlay immediately if no background loading
+    hideCachingProgress();
+    restoreChatInputAfterCaching();
   }
 }
 </script>
