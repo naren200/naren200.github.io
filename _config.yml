@@ -4,13 +4,20 @@ description         : >-
                       <b>Roboticists&emsp;| &emsp;AI Developer</b> <br>
 
 baseurl             :                      # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
+url                 : "https://naren200.github.io"
 repository          : naren200/naren200.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : naren200/naren200.github.io
+logo                : /imgs/naren_about.jpeg
 
 ### Plugins ###
 plugins:
   - jemoji
   - jekyll-seo-tag # SEO Tag: https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/installation.md
+  - jekyll-sitemap # Sitemap: https://github.com/jekyll/jekyll-sitemap
+
+### Twitter Card ###
+twitter:
+  username: narendhiran2000
 
 
 
@@ -24,7 +31,7 @@ nav_exclude:                                            # The following paths ar
 ### Author Info ###
 author:
   name              : Narendhiran Saravanane
-  image             : imgs/naren_about.png
+  image             : imgs/naren_about.jpeg
   # behance           : your_username
 # dribbble          : your_username
   email             : narendhiran2000@gmail.com

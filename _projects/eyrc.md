@@ -1,5 +1,5 @@
 ---
-name: IIT Bombay's Robotics Challenge - MoE, India
+title: IIT Bombay's Robotics Challenge - MoE, India
 tools: [Vrep, Hardware, Prototyping, Sensors, Troubleshooting, embedded C, Path Planning, 3D Design, Robot Communication, CNC]
 image: ../imgs/projects/cob-homeImage.webp
 description: Led team of 4 to design and implemented a disaster response robot, integrated sensors, navigation algorithms, and hardware implementation.

@@ -1,5 +1,5 @@
 ---
-name: Speech-LLM-Speech
+title: Speech-LLM-Speech
 tools: [LLM, Docker, ROS2, Whisper.cpp, C++, TTS, GPU, Ollama]
 image: ../imgs/projects/speech-llm-speech.png
 is_project_page: true

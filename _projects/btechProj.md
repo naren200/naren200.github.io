@@ -1,5 +1,5 @@
 ---
-name: DRDO's Project - My Bachelor's Capstone Contribution
+title: DRDO's Project - My Bachelor's Capstone Contribution
 tools: [Multi-Body, 2D Dynamics, Runge-Kutta, GUI, Robotics, Python]
 image: ../imgs/projects/btp-homeImage.webp
 is_project_page: false

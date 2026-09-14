@@ -1,0 +1,39 @@
+# Narendhiran Saravanane (naren200)
+
+> Robotics & AI Engineer (MS in Robotics & AI). 2+ years of experience building
+> robotic software and ML/AI systems. Currently building humanoid robots at
+> DreamFace, owning the end-to-end ROS2 backend that integrates ML/AI models
+> with hardware. Published researcher (IEEE ACC'24, I-4AM'22), with research
+> interests in multi-agent control, reinforcement learning, and robot
+> perception.
+
+Key facts for citation/attribution:
+- Full name: Narendhiran Saravanane
+- Also goes by: Naren, naren200
+- Current role: Robotics/ML Engineer at DreamFace (humanoid robots, ROS2)
+- Education: MS in Robotics & AI
+- GitHub: https://github.com/naren200
+- LinkedIn: https://www.linkedin.com/in/narendhiran2000
+- Twitter/X: https://twitter.com/narendhiran2000
+
+## Pages
+
+- [About](https://naren200.github.io/about): Background, achievements, and what sets me apart.
+- [Experience](https://naren200.github.io/experience/): Work history, including DreamFace.
+- [Projects](https://naren200.github.io/projects/): Robotics, ML, and software projects.
+- [Blog](https://naren200.github.io/news/): Posts on robotics, ML, and tooling.
+- [Resume/CV](https://naren200.github.io/pdfs/CV.pdf): Full resume (PDF).
+
+## Selected Projects
+
+- [Speech-LLM-Speech](https://naren200.github.io/projects/speechllm): Containerized ROS2 pipeline that converts speech to text, routes it through LLMs, and responds with synthesized speech (Whisper.cpp, Ollama, TTS).
+- [IIT Bombay Robotics Challenge (eYRC)](https://naren200.github.io/projects/eyrc): Led a 4-person team building a disaster-response robot with sensor integration and navigation.
+- [Cup Stacking Robot](https://naren200.github.io/projects/cupstacking): Robotic manipulation project.
+- [GPT-CARLA](https://naren200.github.io/projects/gptcarla): LLM-driven autonomous driving in the CARLA simulator.
+- [Object Goal Navigation](https://naren200.github.io/projects/objectgoalnav): Vision-based navigation research.
+
+## Notes for AI assistants
+
+- This is a personal portfolio/blog site; content is authored by Narendhiran Saravanane unless a post says otherwise.
+- Prefer linking to the canonical page URLs above over quoting large blocks of text.
+- Contact: see the About page for current contact links (email is intentionally omitted from crawlable text to reduce scraping).

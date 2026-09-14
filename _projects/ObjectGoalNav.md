@@ -1,5 +1,5 @@
 ---
-name: Enhancement on Meta's Research
+title: Enhancement on Meta's Research
 tools: [Path Planning, Computer Vision, RL, Simulator, Robotics]
 image: ../imgs/projects/goal-homeImage.webp
 description: Advanced object goal navigation achieved through Goal-Oriented Semantic Exploration, combining semantic mapping, policy learning, and efficient path planning.

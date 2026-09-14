@@ -1,26 +1,40 @@
 <head>
 
   {% assign title = page.title | default: site.title | escape %}
-  {% assign description = page.description | default: site.description | strip_html | strip_newlines | truncate: 160 %}
 
-  {% if page.name and page.collection == 'projects' %}
-    {% assign title = page.name | escape %}
-  {% endif %}
-  
   <meta name="google-site-verification" content="a_EMbZFV11aUw0TNGcOXf612e0NmsY0DwU4erXZk5QE" />
-  
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ title }}">
-  <meta property="og:description" content="{{ description }}">
-
   <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}">
 
   <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
+
+  <!-- Jekyll SEO Tag: canonical URL, meta description, Open Graph, Twitter Card, WebSite/Person JSON-LD -->
+  {% seo title=false %}
+
+  <!-- Explicit Person schema, included via head.html on every page so there is exactly
+       one definition of this entity (single source of truth) reused site-wide -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.url }}{{ site.baseurl }}/",
+    "image": "{{ site.url }}{{ site.baseurl }}/{{ site.author.image }}",
+    "jobTitle": "Robotics & AI Engineer",
+    "description": "Robotics & ML Engineer with an MS in Robotics & AI, building humanoid robots and ROS2 systems.",
+    "sameAs": [
+      "https://github.com/{{ site.author.github }}",
+      "https://www.linkedin.com/in/{{ site.author.linkedin }}",
+      "https://twitter.com/{{ site.author.twitter }}"
+    ]
+  }
+  </script>
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
   <!-- Theme style -->
   <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>

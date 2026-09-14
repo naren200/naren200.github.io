@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+description: Background and achievements of Narendhiran Saravanane — MS in Robotics & AI, 2+ years building robotics and ML/AI systems, published researcher (IEEE ACC'24, I-4AM'22).
 permalink: /about
 weight: 1
 ---

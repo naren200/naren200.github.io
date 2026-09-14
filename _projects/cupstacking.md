@@ -1,5 +1,5 @@
 ---
-name: Cup Stacking Robot
+title: Cup Stacking Robot
 tools: [NVIDIA GR00T, ACT, Imitation Learning, ROS2, Jetson Thor]
 image: ../imgs/projects/cupstacking.jpg
 description: Fine-tuned foundational models NVIDIA GR00T 1.5 and ACT for autonomous cup stacking on SO-101 robotic arm at Embodied AI Hackathon (Seeed Studio & NVIDIA)

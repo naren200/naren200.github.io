@@ -1,5 +1,5 @@
 ---
-name: Navigation of 4-Omini Wheeled using Gradient-based and Model Predictive Control
+title: Navigation of 4-Omini Wheeled using Gradient-based and Model Predictive Control
 tools: [Python, Optimization, MPC, Neural Networks]
 image: ../imgs/projects/omni.webp
 description: Achieved efficient control and trajectory optmization through MPC.
