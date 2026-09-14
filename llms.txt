@@ -1,16 +1,16 @@
 # Narendhiran Saravanane (naren200)
 
 > Robotics & AI Engineer (MS in Robotics & AI). 2+ years of experience building
-> robotic software and ML/AI systems. Currently building humanoid robots at
-> DreamFace, owning the end-to-end ROS2 backend that integrates ML/AI models
-> with hardware. Published researcher (IEEE ACC'24, I-4AM'22), with research
+> robotic software and ML/AI systems. Currently a founding engineer at a
+> stealth robotics startup, building tactile sensing systems for humanoid
+> robots. Published researcher (IEEE ACC'24, I-4AM'22), with research
 > interests in multi-agent control, reinforcement learning, and robot
 > perception.
 
 Key facts for citation/attribution:
 - Full name: Narendhiran Saravanane
 - Also goes by: Naren, naren200
-- Current role: Robotics/ML Engineer at DreamFace (humanoid robots, ROS2)
+- Current role: Founding Robotics & ML Engineer at a stealth robotics startup (tactile sensing for humanoid robots)
 - Education: MS in Robotics & AI
 - GitHub: https://github.com/naren200
 - LinkedIn: https://www.linkedin.com/in/narendhiran2000
@@ -19,7 +19,7 @@ Key facts for citation/attribution:
 ## Pages
 
 - [About](https://naren200.github.io/about): Background, achievements, and what sets me apart.
-- [Experience](https://naren200.github.io/experience/): Work history, including DreamFace.
+- [Experience](https://naren200.github.io/experience/): Full work history.
 - [Projects](https://naren200.github.io/projects/): Robotics, ML, and software projects.
 - [Blog](https://naren200.github.io/news/): Posts on robotics, ML, and tooling.
 - [Resume/CV](https://naren200.github.io/pdfs/CV.pdf): Full resume (PDF).

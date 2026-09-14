@@ -1,9 +1,17 @@
+- title: Founding Robotics & ML Engineer
+  company: Stealth Robotics Startup
+  image:
+    src: /imgs/work/stealth.svg
+    alt: Stealth Robotics Startup
+  date: May '26 - Present
+  description: Building tactile sensing systems for humanoid robots—developing touch sensors, signal processing, and sensor fusion pipelines. \n Giving robots real-time perception of force and contact, the missing piece for dexterous manipulation.
+
 - title: Robotics Software Engineer
   company: DreamFace Technologies, Denver, USA
   image:
     src: /imgs/work/dreamface.jpg
     alt: DreamFace Technologies
-  date: Mar '25 - Present
+  date: Mar '25 - Apr '26
   description: Orchestrated behavior engine managing LLM-driven decisions via lifecycle nodes, modular cum scalable actions. \n Designed micro-ROS framework on Teensy 4.0 microcontroller, established ZLAC motor control via RS485 protocol. \n Engineered automated health monitoring systems with per-node diagnostics, elevated system reliability by 10x. \n Configured Dynamixel & Feetech motors in daisy-chain topology for humanoid, integrated ros2_control framework.
 
 - title: Robotics Software Engineer

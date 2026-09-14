@@ -10,9 +10,30 @@
 }
 
 body.landing {
-	// background: linear-gradient(to right, rgb(5, 25, 55), rgb(0, 77, 122), rgb(0, 135, 147)) !important;//, #a8eb12);	
-	background-image: var(--background-img);
+	--background-img: url(../../imgs/assets/5.webp);
+	position: relative;
+	background-color: #050505;
 	text-align: left;
+}
+
+body.landing::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	background-image: var(--background-img);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	filter: grayscale(1) brightness(0.5) contrast(1.15);
+	z-index: -2;
+}
+
+body.landing::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+	z-index: -1;
 }
 
 
@@ -87,6 +108,10 @@ body.landing {
 .image-column img {
     max-width: 100%;  // Ensure the image does not overflow its container
     height: auto;  // Maintain aspect ratio
+    -webkit-mask-image: radial-gradient(ellipse 92% 94% at 50% 45%, #000 76%, transparent 100%);
+    mask-image: radial-gradient(ellipse 92% 94% at 50% 45%, #000 76%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
 /* Media query for smaller screens - makes image and container fit better */
