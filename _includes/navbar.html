@@ -58,7 +58,9 @@
 
       {% endfor %}
 
+      {%- unless page.layout == "landing" -%}
       <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+      {%- endunless -%}
     </div>
   </div>
 </div>

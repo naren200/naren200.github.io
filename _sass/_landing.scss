@@ -12,29 +12,11 @@
 body.landing {
 	--background-img: url(../../imgs/assets/5.webp);
 	position: relative;
-	background-color: #050505;
+	background-color: #000;   /* pure black hero ground */
 	text-align: left;
 }
 
-body.landing::before {
-	content: "";
-	position: fixed;
-	inset: 0;
-	background-image: var(--background-img);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	filter: grayscale(1) brightness(0.5) contrast(1.15);
-	z-index: -2;
-}
-
-body.landing::after {
-	content: "";
-	position: fixed;
-	inset: 0;
-	background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
-	z-index: -1;
-}
+/* hero background image removed — pure black ground (see emergent hero block below) */
 
 
 .idcontainer {
@@ -92,6 +74,70 @@ body.landing::after {
 	margin-bottom: 10px;
   }
 
+// Space the demoted personality line away from the credibility strip
+.body-hero--aside {
+	margin-top: 22px;
+	font-size: 15px;
+	opacity: 0.85;
+}
+
+// Credibility strip — fills the previously dead left space
+.cred-strip {
+	list-style: none;
+	margin: 18px 0 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	row-gap: 12px;
+}
+
+.cred-u {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 0 18px;
+}
+.cred-u:first-child { padding-left: 0; }
+
+.cred-ieee {
+	height: 20px;
+	width: auto;
+	flex: none;
+	display: block;
+}
+
+.cred-atom {
+	height: 40px;
+	width: 40px;
+	object-fit: contain;
+	flex: none;
+	display: block;
+}
+
+.cred-lab {
+	font-size: 15px;
+	font-weight: 700;
+	color: #f4f4f2;
+	white-space: nowrap;
+	letter-spacing: 0.3px;
+}
+.cred-lab small { color: #8b9aa0; font-weight: 500; letter-spacing: 0.1px; }
+.cred-role { font-weight: 600; }
+
+.cred-stack { display: flex; flex-direction: column; line-height: 1.15; }
+.cred-stack b { font-size: 15px; font-weight: 750; letter-spacing: 0.5px; color: #f4f4f2; }
+.cred-stack small {
+	font-size: 10.5px;
+	color: #8b9aa0;
+	font-weight: 600;
+	letter-spacing: 0.4px;
+	text-transform: uppercase;
+	margin-top: 2px;
+}
+
+.cred-dot { color: #4f585c; font-weight: 700; padding: 0 2px; }
+
 // .experience-page-heading {
 // 	margin-top: 0;
 // 	margin-bottom: 25px;
@@ -143,7 +189,18 @@ body.landing::after {
 		padding: 10px;
 		font-size: 15px;
 	}
-	
+
+	.cred-strip {
+		gap: 4px;
+	}
+	.cred-u { padding: 0 12px; }
+	.cred-lab, .cred-stack b { font-size: 13px; }
+	.cred-atom { height: 34px; width: 34px; }
+	.body-hero--aside {
+		font-size: 13px;
+		text-align: center;
+	}
+
 	.image-column {
 		flex: 1;  // Take up half of the container
 		max-width: 90%;  // Limit width to 50% of the parent container
@@ -161,6 +218,138 @@ body.landing::after {
 
 
   
+/* =========================================================
+   v3 "emergent" hero — bled-off portrait, flat text, black ground
+   (appended so it overrides the bubble-era rules above)
+   ========================================================= */
+body.landing {
+	background-color: #000 !important;   /* pure black ground */
+	background-image: none !important;   /* kill the base body 04.jpg woven texture */
+}
+body.landing::before { display: none !important; }
+body.landing::after  { display: none !important; }
+
+.idcontainer {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	height: 100vh;
+	min-height: 640px;
+	max-width: none;
+	margin: 0;
+	padding: 96px 0 40px;   /* top clearance so the headline never sits under the navbar */
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.div-text-l {
+	position: relative;
+	z-index: 30;
+	flex: 0 1 auto;
+	max-width: 900px;       /* wide column so the copy occupies the space, not the corner */
+	padding: 0 6vw;
+}
+
+/* Full portrait, uncropped, standing on the baseline. */
+.image-column {
+	position: absolute;
+	top: auto;
+	bottom: 0;
+	right: -2vw;            /* light-streak side just kisses the right edge */
+	height: 100vh;          /* top pixel meets the top of the viewport, baseline-anchored, no crop */
+	max-width: none;
+	display: block;
+	z-index: 10;
+}
+.image-column img {
+	height: 100%;
+	width: auto;
+	max-width: none;
+	-webkit-mask-image: none;
+	mask-image: none;
+}
+.image-column::after {   /* thin left-edge feather only — let the subject read, not a heavy scrim */
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, #000 0%, transparent 24%);
+	pointer-events: none;
+}
+
+/* flat text — remove the glass bubbles */
+.heading-3, .body-hero, .body-hero--aside {
+	background: none !important;
+	box-shadow: none !important;
+	backdrop-filter: none !important;
+	border-radius: 0;
+	padding: 0;
+}
+.heading-3 { display: block; margin-bottom: 24px; }
+.body-hero {
+	color: #b4b4b1;
+	max-width: 40ch;
+	margin-bottom: 26px;
+	font-size: clamp(17px, 1.5vw, 21px) !important;
+	line-height: 1.5;
+}
+.h1-frontpage {
+	font-size: clamp(38px, 4vw, 58px) !important;
+	font-weight: 700;
+	letter-spacing: -.02em;
+	line-height: 1.06;
+	max-width: 16ch;        /* headline stays a tight stack, not a full-width sprawl */
+}
+.h1-frontpage .thin { font-weight: 300; color: #a7a7a4; }
+
+
+/* CTA */
+.hero-cta { display: flex; gap: 12px; margin-top: 26px; }
+.hero-cta a {
+	font-size: 13px; letter-spacing: .04em; text-transform: uppercase;
+	text-decoration: none; padding: 11px 20px; border-radius: 2px; transition: .2s;
+}
+.hero-cta .solid { background: #f4f4f2; color: #000; }
+.hero-cta .solid:hover { background: #c9a06a; }
+.hero-cta .ghost { border: 1px solid #2a2a2c; color: #f4f4f2; }
+.hero-cta .ghost:hover { border-color: #a7a7a4; }
+
+/* ---- mobile: stack — photo top band faded into black, text readable below ---- */
+@media (max-width: 820px) {
+	.idcontainer {
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: flex-start;
+		height: auto;
+		min-height: 0;
+		overflow: visible;
+	}
+	.image-column {
+		position: relative;
+		right: auto;
+		bottom: auto;
+		height: 56vh;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		order: -1;            /* photo above the text */
+	}
+	.image-column img { height: 100%; width: auto; }
+	.image-column::after {
+		background: linear-gradient(180deg, transparent 52%, #000 100%);
+	}
+	.div-text-l {
+		max-width: 100%;
+		padding: 0 24px 64px;
+		margin-top: -2vh;     /* tuck under the fade, clear of the face */
+		transform: none;
+	}
+	.h1-frontpage { font-size: 28px; }
+	.cred-strip { justify-content: flex-start; }
+	.hero-cta { justify-content: flex-start; }
+}
+
 .about-me-title {
     margin-bottom: 30px;
 }

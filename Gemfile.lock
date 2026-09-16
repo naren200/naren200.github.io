@@ -48,7 +48,7 @@ GEM
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
-    ffi (1.17.0)
+    ffi (1.17.0-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
     github-pages (219)
@@ -229,7 +229,7 @@ GEM
       jekyll-seo-tag (~> 2.1)
     minitest (5.14.4)
     multipart-post (2.1.1)
-    nokogiri (1.15.7-x86_64-linux)
+    nokogiri (1.18.10-x86_64-linux-gnu)
       racc (~> 1.4)
     octokit (4.21.0)
       faraday (>= 0.9)
@@ -269,6 +269,7 @@ GEM
       unf_ext
     unf_ext (0.0.8)
     unicode-display_width (1.7.0)
+    webrick (1.9.2)
     zeitwerk (2.4.2)
 
 PLATFORMS
@@ -281,6 +282,7 @@ DEPENDENCIES
   github-pages
   jekyll-seo-tag
   logger
+  webrick
 
 BUNDLED WITH
    2.4.22
