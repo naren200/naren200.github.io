@@ -1,10 +1,13 @@
 .project.card {
+  position: relative;
   border-radius: $rounded-borders;
   text-decoration: none !important;
   margin: 0px auto;
   margin-top: 10px;
   margin-bottom: 10px !important;/* Adjust the margin-bottom value for more spacing */
-
+  background-color: var(--card-bg);
+  border: 1px solid var(--hairline);   /* the resting outer line */
+  overflow: hidden;                    /* clip the glossy sheen to rounded corners */
 
   .card-img-top {
     border-radius: $rounded-borders $rounded-borders 0 0;
@@ -13,11 +16,51 @@
     object-fit: cover;
   }
 
-  transition: transform 400ms;
+  /* glossy sheen — a soft diagonal highlight that brightens on hover */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.07) 0%,
+      rgba(255, 255, 255, 0.02) 24%,
+      rgba(255, 255, 255, 0) 48%
+    );
+    opacity: 0;
+    transition: opacity .25s ease;
+    z-index: 1;
+  }
+
+  transition: transform 400ms, border-color .2s ease, background .2s ease, box-shadow .25s ease;
 
   &:hover:not(.post) {
     transform: translateY(-8px);
-    box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.44);
+    border-color: var(--hairline-hover);   /* signal-blue outer line on hover */
+    background-color: var(--card-bg-hover);
+    box-shadow: 0 18px 44px -18px rgba(78, 161, 255, 0.35),
+                0 8px 24px -14px rgba(0, 0, 0, 0.6);
+
+    &::after { opacity: 1; }
+
+    /* divider glows brighter as the card lights up */
+    hr {
+      box-shadow: 0 0 10px 0 rgba(78, 161, 255, 0.7);
+    }
+  }
+
+  /* title / description divider — a crisp, even signal-blue accent line */
+  hr {
+    height: 1px;
+    border: none;
+    width: 50%;
+    margin: 0.6rem auto 0.9rem;
+    background: var(--accent);
+    opacity: 1;
+    box-shadow: 0 0 6px -1px rgba(78, 161, 255, 0.5);
+    transition: box-shadow .25s ease;
   }
 }
 
@@ -123,11 +166,16 @@
       object-fit: cover;
     }
   
-    transition: transform 400ms;
-  
+    transition: transform 400ms, border-color .2s ease, background .2s ease, box-shadow .25s ease;
+
     &:hover:not(.post) {
       transform: translateY(-8px);
-      box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
+      border-color: var(--hairline-hover);
+      background-color: var(--card-bg-hover);
+      box-shadow: 0 18px 44px -18px rgba(78, 161, 255, 0.35),
+                  0 8px 24px -14px rgba(0, 0, 0, 0.6);
+
+      &::after { opacity: 1; }
     }
   }
   
@@ -168,11 +216,16 @@ iframe {
       object-fit: cover;
     }
   
-    transition: transform 400ms;
-  
+    transition: transform 400ms, border-color .2s ease, background .2s ease, box-shadow .25s ease;
+
     &:hover:not(.post) {
       transform: translateY(-8px);
-      box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
+      border-color: var(--hairline-hover);
+      background-color: var(--card-bg-hover);
+      box-shadow: 0 18px 44px -18px rgba(78, 161, 255, 0.35),
+                  0 8px 24px -14px rgba(0, 0, 0, 0.6);
+
+      &::after { opacity: 1; }
     }
   }
 
@@ -197,11 +250,16 @@ iframe {
       object-fit: cover;
     }
   
-    transition: transform 400ms;
-  
+    transition: transform 400ms, border-color .2s ease, background .2s ease, box-shadow .25s ease;
+
     &:hover:not(.post) {
       transform: translateY(-8px);
-      box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
+      border-color: var(--hairline-hover);
+      background-color: var(--card-bg-hover);
+      box-shadow: 0 18px 44px -18px rgba(78, 161, 255, 0.35),
+                  0 8px 24px -14px rgba(0, 0, 0, 0.6);
+
+      &::after { opacity: 1; }
     }
   }
 
@@ -228,11 +286,16 @@ iframe {
       object-fit: cover;
     }
   
-    transition: transform 400ms;
-  
+    transition: transform 400ms, border-color .2s ease, background .2s ease, box-shadow .25s ease;
+
     &:hover:not(.post) {
       transform: translateY(-8px);
-      box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
+      border-color: var(--hairline-hover);
+      background-color: var(--card-bg-hover);
+      box-shadow: 0 18px 44px -18px rgba(78, 161, 255, 0.35),
+                  0 8px 24px -14px rgba(0, 0, 0, 0.6);
+
+      &::after { opacity: 1; }
     }
   }
 
