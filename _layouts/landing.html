@@ -8,6 +8,7 @@
 
 
 <html lang="en">
+  <script>document.documentElement.classList.add('js');</script>
   {% include head.html %}
   {% include navbar.html %}
 
@@ -34,7 +35,7 @@
               </span>
               <span class="cred-dot">·</span>
               <span class="cred-u">
-                <span class="cred-lab cred-role">First robotics hire <small>· physical AI</small></span>
+                <span class="cred-lab cred-role"><span class="live-dot" aria-hidden="true"></span>First robotics hire <small>· physical AI</small></span>
               </span>
             </div>
 
@@ -131,6 +132,52 @@
     });
   </script>
 
+
+  <script>
+    // Scroll-reveal: content arrives as it enters view instead of sitting
+    // static on load. Staggered per sibling group (cards reveal in sequence,
+    // not all at once) — a small nod to the sensor-signal theme.
+    (function () {
+      var groups = [
+        document.querySelectorAll('.landing-uia-card__container'),
+        document.querySelectorAll('.landing-project.landing-card'),
+        document.querySelectorAll('.connect-text, .connect-chamada')
+      ];
+
+      function revealAll() {
+        groups.forEach(function (list) {
+          list.forEach(function (el) { el.classList.add('reveal-visible'); });
+        });
+      }
+
+      try {
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduceMotion || !('IntersectionObserver' in window)) {
+          revealAll();
+          return;
+        }
+
+        var observer = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+        groups.forEach(function (list) {
+          list.forEach(function (el, i) {
+            el.style.animationDelay = (i * 90) + 'ms';
+            observer.observe(el);
+          });
+        });
+      } catch (e) {
+        // Never let a reveal failure leave content stuck invisible.
+        revealAll();
+      }
+    })();
+  </script>
 
   {% include analytics.html %}
   {% include scripts.html %}
