@@ -111,4 +111,5 @@ exclude:
   - CONTRIBUTING.md
   - LICENSE
   - "*.log"
+  - brand/
 

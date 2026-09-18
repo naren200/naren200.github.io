@@ -472,7 +472,7 @@ body.landing::after  { display: none !important; }
     max-width: 90%;
     text-align: center;
     font-size: 22px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.6;
     color: var(--ink-2);
     margin: 0 auto;
@@ -483,7 +483,9 @@ body.landing::after  { display: none !important; }
 	box-shadow: none;
 	backdrop-filter: none;
 }
-.about-me-text strong { font-weight: 400; color: var(--ink); }
+.about-me-text strong { font-weight: 600; color: var(--ink); }
+/* Lead sentence: brighter + a touch heavier so the block opens with a confident line */
+.about-me-text p:first-child { color: var(--ink); font-weight: 500; }
 
 .about-me-awards {
     list-style-type: none;

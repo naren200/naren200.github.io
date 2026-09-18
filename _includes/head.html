@@ -25,7 +25,7 @@
     "url": "{{ site.url }}{{ site.baseurl }}/",
     "image": "{{ site.url }}{{ site.baseurl }}/{{ site.author.image }}",
     "jobTitle": "Robotics & AI Engineer",
-    "description": "Robotics & ML Engineer with an MS in Robotics & AI, building humanoid robots and ROS2 systems.",
+    "description": "Robotics & ML Engineer with an MS in Robotics & AI, building tactile sensing for humanoid robots and ROS2 systems.",
     "sameAs": [
       "https://github.com/{{ site.author.github }}",
       "https://www.linkedin.com/in/{{ site.author.linkedin }}",
@@ -35,6 +35,41 @@
   </script>
 
   <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- Embed mode: when a page is loaded inside the in-page project viewer (?embed=1),
+       strip the site chrome so it reads as a nested panel, not the full site. Runs
+       before paint to avoid a navbar flash. -->
+  <script>
+    if (location.search.indexOf('embed=1') !== -1) {
+      document.documentElement.className += ' embed-view';
+      // Inside the viewer iframe, external links must open in a new tab —
+      // otherwise clicking one navigates the iframe to a site (e.g. GitHub)
+      // that refuses framing, breaking the drawer. Same-page fragments and
+      // same-origin links are left to behave normally.
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        if (href.charAt(0) === '#') return;
+        if (a.hostname && a.hostname !== location.hostname) {
+          a.target = '_blank';
+          a.rel = 'noopener';
+        }
+      }, true);
+    }
+  </script>
+  <style>
+    html.embed-view nav.navbar,
+    html.embed-view footer { display: none !important; }
+    html.embed-view body { background: transparent; }
+    /* Use the drawer's full width — drop Bootstrap's centered narrow column,
+       container max-width, and the project overlay's padding so content isn't
+       hemmed in by empty side margins. */
+    html.embed-view main.container { max-width: 100% !important; margin-top: 0 !important; padding: 0; }
+    html.embed-view .overlay { padding: 0 !important; backdrop-filter: none; border-radius: 0; }
+    html.embed-view .col-lg-10 { max-width: 100% !important; flex: 0 0 100% !important; margin-top: 0 !important; }
+    html.embed-view .post { padding: 20px 26px; }
+  </style>
 
   <!-- Theme style -->
   <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>

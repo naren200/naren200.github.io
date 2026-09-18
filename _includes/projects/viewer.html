@@ -1,0 +1,185 @@
+<!-- In-page project viewer — slide-over drawer. Shared by the projects page and the
+     landing page. Any card with data-viewer-url (local projects only) opens here
+     instead of navigating; the iframe loads the page with ?embed=1 so its navbar/
+     footer are stripped (see head.html). GitHub cards keep target="_blank". -->
+<div id="pv" class="pv-scrim" aria-hidden="true">
+  <aside class="pv-drawer" role="dialog" aria-modal="true" aria-labelledby="pv-title">
+    <header class="pv-head">
+      <span id="pv-title" class="pv-title"></span>
+      <div class="pv-actions">
+        <a id="pv-open" class="pv-btn" href="#" target="_blank" rel="noopener">Open&nbsp;↗</a>
+        <button type="button" id="pv-close" class="pv-btn pv-x" aria-label="Close viewer">✕</button>
+      </div>
+    </header>
+    <div class="pv-body">
+      <div id="pv-loading" class="pv-loading"><span class="pv-spin"></span></div>
+      <iframe id="pv-frame" class="pv-frame" title="Project preview"
+              referrerpolicy="no-referrer" loading="lazy"></iframe>
+    </div>
+  </aside>
+</div>
+
+<style>
+  /* Theme-aware, matching the site's teal/cyan palette. Tokens default to the
+     dark theme, then get overridden under [data-theme="light"] (theme.js stamps
+     data-theme on <html>). Accent: $dark-100 #00bf72 / hover cyan #97e9f8. */
+  #pv{
+    --pv-surface:#0c1a24;         /* drawer body — dark teal, not flat navy */
+    --pv-head:#0f2230;
+    --pv-ink:#f4fbff;
+    --pv-line:rgba(255,255,255,.12);
+    --pv-btn-bg:rgba(255,255,255,.06);
+    --pv-btn-line:rgba(255,255,255,.16);
+    --pv-accent:#00bf72;
+    --pv-accent-soft:rgba(0,191,114,.22);
+    --pv-accent-line:rgba(151,233,248,.55);
+    --pv-scrim:rgba(3,12,16,.58);
+    --pv-shadow:rgba(0,0,0,.55);
+  }
+  [data-theme="light"] #pv{
+    --pv-surface:#ffffff;
+    --pv-head:#f2fbf6;
+    --pv-ink:#0a1a12;
+    --pv-line:rgba(0,0,0,.12);
+    --pv-btn-bg:rgba(0,0,0,.04);
+    --pv-btn-line:rgba(0,0,0,.15);
+    --pv-accent:#00895a;
+    --pv-accent-soft:rgba(0,191,114,.16);
+    --pv-accent-line:rgba(0,137,90,.5);
+    --pv-scrim:rgba(20,64,88,.32);
+    --pv-shadow:rgba(20,64,88,.28);
+  }
+
+  .pv-scrim{
+    position:fixed; inset:0; z-index:1050; display:none;
+    background:var(--pv-scrim); backdrop-filter:blur(4px);
+    opacity:0; transition:opacity .25s ease;
+  }
+  .pv-scrim.pv-open{ display:block; }
+  .pv-scrim.pv-in{ opacity:1; }
+
+  .pv-drawer{
+    position:absolute; top:0; right:0; bottom:0;
+    width:min(66%,760px);
+    display:flex; flex-direction:column;
+    background:var(--pv-surface); color:var(--pv-ink);
+    border-left:1px solid var(--pv-line);
+    box-shadow:-30px 0 70px var(--pv-shadow);
+    transform:translateX(100%); transition:transform .28s cubic-bezier(.22,.61,.36,1);
+  }
+  .pv-scrim.pv-in .pv-drawer{ transform:translateX(0); }
+  @media(max-width:768px){ .pv-drawer{ width:100%; } }
+
+  .pv-head{
+    display:flex; align-items:center; gap:12px;
+    padding:13px 18px; flex:none;
+    background:var(--pv-head); border-bottom:1px solid var(--pv-line);
+  }
+  .pv-title{
+    font-weight:600; font-size:15px; margin-right:auto;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .pv-actions{ display:flex; gap:8px; flex:none; }
+  .pv-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:6px 13px; border-radius:8px; font-size:14px; line-height:1;
+    background:var(--pv-btn-bg); color:var(--pv-ink);
+    border:1px solid var(--pv-btn-line); cursor:pointer; text-decoration:none;
+    transition:background .15s,border-color .15s;
+  }
+  .pv-btn:hover{ background:var(--pv-accent-soft); border-color:var(--pv-accent-line); text-decoration:none; }
+  .pv-x{ font-size:15px; }
+  .pv-body{ position:relative; flex:1 1 auto; background:var(--pv-surface); }
+  .pv-frame{ width:100%; height:100%; border:0; display:block; visibility:hidden; }
+  .pv-loading{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+  .pv-spin{
+    width:26px; height:26px; border-radius:50%;
+    border:3px solid var(--pv-line); border-top-color:var(--pv-accent);
+    animation:pv-rot .8s linear infinite;
+  }
+  @keyframes pv-rot{ to{ transform:rotate(360deg); } }
+  @media(prefers-reduced-motion:reduce){
+    .pv-scrim,.pv-drawer{ transition:none; }
+    .pv-spin{ animation:none; }
+  }
+</style>
+
+<script>
+(function () {
+  var pv = document.getElementById('pv');
+  if (!pv || pv.dataset.pvInit) return;   // guard against double-include on one page
+  pv.dataset.pvInit = '1';
+  var frame   = document.getElementById('pv-frame');
+  var title   = document.getElementById('pv-title');
+  var openBtn = document.getElementById('pv-open');
+  var loading = document.getElementById('pv-loading');
+  var closeBtn = document.getElementById('pv-close');
+
+  function withEmbed(url) {
+    return url + (url.indexOf('?') === -1 ? '?' : '&') + 'embed=1';
+  }
+
+  var revealTimer = null, pollTimer = null;
+
+  function reveal() {
+    clearTimeout(revealTimer); clearInterval(pollTimer);
+    loading.style.display = 'none';
+    frame.style.visibility = 'visible';
+  }
+
+  function open(url, name) {
+    title.textContent = name || '';
+    openBtn.href = url;                 // "Open ↗" goes to the clean page, no ?embed
+    loading.style.display = '';
+    frame.style.visibility = 'hidden';
+    frame.src = withEmbed(url);
+    pv.classList.add('pv-open');
+    pv.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function () { pv.classList.add('pv-in'); });
+
+    // Reveal as soon as the page's DOM is parsed — don't wait for the full
+    // load event, which slow third-party embeds (video, iframes) can hold up
+    // for many seconds. The pages are same-origin, so we can read readyState.
+    clearTimeout(revealTimer); clearInterval(pollTimer);
+    pollTimer = setInterval(function () {
+      try {
+        var d = frame.contentDocument;
+        if (d && (d.readyState === 'interactive' || d.readyState === 'complete') && d.body && d.body.childNodes.length) {
+          reveal();
+        }
+      } catch (e) { /* cross-origin (shouldn't happen for local) — wait for load */ }
+    }, 80);
+    revealTimer = setTimeout(reveal, 2500);   // hard fallback
+  }
+
+  function close() {
+    pv.classList.remove('pv-in');
+    pv.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    setTimeout(function () {
+      pv.classList.remove('pv-open');
+      frame.src = 'about:blank';
+    }, 280);
+  }
+
+  frame.addEventListener('load', function () {
+    if (frame.src === 'about:blank') return;
+    reveal();
+  });
+
+  document.querySelectorAll('.custom-project-link[data-viewer-url]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      e.preventDefault();
+      open(a.getAttribute('data-viewer-url'), a.getAttribute('data-viewer-title'));
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  pv.addEventListener('click', function (e) { if (e.target === pv) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && pv.classList.contains('pv-open')) close();
+  });
+})();
+</script>

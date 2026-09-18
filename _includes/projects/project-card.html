@@ -2,7 +2,8 @@
 
 <!-- Light Mode -->
 <div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="{{ project_url }}" class="project card text-themed-light custom-project-link">
+  <a href="{{ project_url }}" class="project card text-themed-light custom-project-link"
+     {%- if project_type == "local" %} data-viewer-url="{{ project_url }}" data-viewer-title="{{ project_name | escape }}"{%- else %} target="_blank" rel="noopener"{%- endif %}>
     {%- if project_img -%}
     <img id="{{ project_id }}-img" class="card-img-top" src="{{ project_img }}" alt="{{ project_name }}" />
     {%- endif -%}

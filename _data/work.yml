@@ -1,8 +1,8 @@
-- title: Founding Robotics & ML Engineer
-  company: Stealth Robotics Startup
+- title: First Robotics & ML Engineer
+  company: Sensetics (UC Berkeley spin-out)
   image:
-    src: /imgs/work/stealth.svg
-    alt: Stealth Robotics Startup
+    src: /imgs/work/sensetics.png
+    alt: Sensetics — UC Berkeley spin-out
   date: May '26 - Present
   description: Building tactile sensing systems for humanoid robots—developing touch sensors, signal processing, and sensor fusion pipelines that let robots perceive force and contact in real time.
 
