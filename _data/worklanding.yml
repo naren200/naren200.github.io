@@ -1,5 +1,7 @@
 - title: First Robotics & ML Engineer
   company: Sensetics (UC Berkeley spin-out)
+  tier: hero
+  present: true
   image:
     src: /imgs/work/sensetics.png
     alt: Sensetics — UC Berkeley spin-out
@@ -8,11 +10,12 @@
 
 - title: Robotics Software Engineer
   company: DreamFace Technologies, Denver, USA
+  tier: hero
   image:
     src: /imgs/work/dreamface.jpg
     alt: DreamFace Technologies
   date: Mar '25 - Apr '26
-  description: Orchestrated behavior engine managing LLM-driven decisions via lifecycle nodes, modular cum scalable actions. \n Designed micro-ROS framework on Teensy 4.0 microcontroller, established ZLAC motor control via RS485 protocol. \n Engineered automated health monitoring systems with per-node diagnostics, elevated system reliability by 10x. \n Configured Dynamixel & Feetech motors in daisy-chain topology for humanoid, integrated ros2_control framework.
+  description: Orchestrated an LLM-driven behavior engine on ROS 2 lifecycle nodes, composing modular, scalable actions. \n Designed a micro-ROS framework on a Teensy 4.0 driving ZLAC motor control over RS485. \n Engineered per-node health diagnostics that surfaced faults automatically across the robot stack. \n Configured Dynamixel & Feetech motors in daisy-chain topology under ros2_control for a humanoid platform.
 
 - title: Robotics Software Engineer
   company: Padma Agrobotics (USDA Funded Startup), Arizona
@@ -22,21 +25,23 @@
   date: May '24 - Oct '24
   description: Led a 2-month solo on-site engineering effort with the CEO, delivering robotic solutions through AI, ROS and Docker tech. \n Achieved positional accuracy  ≤ 0.3 cm by fine-tuning Kalman filter & optimizing GPS-encoder-based localization for precision agriculture.  \n Collected on-field datasets & optimized AI models to enhance object detection under varying lighting conditions. \n Integrated Digital IO-Link Master using Ethernet/IP and EtherCAT across 3+ sensor modules through PLC. \n Designed a robot's software architecture to control actuators using PLC, and Embedded C++, integrating dynamic motor control, encoders, solenoids, and pumps powered by a joystick. 
 
-- title: Solutions Architect Intern (Robotics & AI Specialist)
+- title: Solutions Architect Intern
   company: Brainchip, California
+  tier: small
   image:
     src: /imgs/work/brainchip.jpg
     alt: Brainchip
   date: May '23 - Aug '23
-  description: Prototyped a Self-Balancing  AI-controlled bot entirely from the ground up and expedited development by 40%. \n Constructed 3D CAD models and ROS-joints controlled through Q-Learning, RL model operated on AKD1000 Chip. \n Transitioned from TF to BrainChip’s MetaTF framework, enriching customer acquisition.
+  description: Prototyped a self-balancing bot from the ground up, controlled by a Q-Learning RL policy running on the AKD1000 neuromorphic chip. \n Built the 3D CAD models and ROS joint control that drove the physical platform. \n Ported the model from TensorFlow to BrainChip's MetaTF framework to run inference on-chip.
 
-- title: Robotic Software Engineer Intern (Embedded C Specialist)
+- title: Robotic Software Engineer Intern
   company: e-Yantra Robotic Internship, IIT Bombay
+  tier: small
   image:
     src: /imgs/work/iitb-logo.png
-    alt: e-Yantra 
+    alt: e-Yantra
   date: May '20 - Aug '20
-  description: I was among 95 students (97.76 Percentile) to be awarded the e-Yantra Summer Internship Program at IIT Bombay. \n Led an 4-person team to develop a fiducial-marker-based localization model with calibration error of ≤ 0.5%. \n Amplified design, combined rule-based script, and unit tested to validate auto-evaluators with 95% coverage.
+  description: Selected for the e-Yantra Summer Internship at IIT Bombay (top 95 of the applicant pool, 97.76 percentile). \n Led a 4-person team building a fiducial-marker localization model with ≤ 0.5% calibration error. \n Built rule-based auto-evaluators validated by unit tests to 95% coverage.
 
 # - title: Robotics Engineer 
 #   company: e-Yantra Educational Program, IIT Bombay (Ministry of Education Funded)

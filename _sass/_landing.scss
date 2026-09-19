@@ -621,177 +621,199 @@ footer i:hover {
 // PROFESSIONAL EXPERIENCE
 // =================================================
 
-.landing-work-item {
-	clear: both;
-	overflow: hidden;
-	padding-bottom: 2em;
+/* ---- Experience timeline: spine + tiered boxed cards ---- */
+.lw-timeline {
+	position: relative;
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 4px 24px 4px 58px;
 	font-family: "San Francisco", sans-serif;
-	font-size: 21px; /* Adjust the font size as needed */
-	max-width: 1400px;
-	// display: flex; /* Add this line to activate flexbox behavior */
-	margin: 0 auto; /* Center the element horizontally */
-	padding: 5px;
-  }
-  
-  .landing-work-bubble {
-	width: 60px;
-	height: 60px;
-	object-fit: contain !important;
-	font-size: 2px; /* Adjust the font size as needed */
-    }
-  
-  .landing-work-bubble-with-date {
-	float: left;
-	padding-right: 20px;
-	
-	// padding-bottom: 1.5em;
-	width: 60 px;
-	text-align: center;
-	// height: 100px;
-	font-family: "San Francisco", sans-serif;
-	// font-size: 2px; /* Adjust the font size as needed */
-  }
-  .landing-work-bubble-with-date h6 {
-	font-size: 8px; /* Adjust the font size as needed for smaller screens */
-	text-transform: uppercase; /* Capitalize all text */
-	font-weight: bold; /* Make the font thicker */
-	color: #fff !important;
-	padding-top: 0.8em;
-  }
-  
-  .landing-work-text {
-	font-family: "San Francisco", sans-serif;
-	overflow: hidden;
-	font-size: 12px; /* Adjust the font size as needed */
-	padding-right: 2px;
-	color: #fff !important;
-	text-align: left;
-
-  }
-  .landing-uia-card__container ul {
-    padding-left: 0px; /* Reduce left padding for the list */
-    margin-left: 0; /* Ensure alignment to the left edge */
-    list-style-position: inside; /* Move the bullet points inside the padding */
-  }
-
-	.landing-uia-card__container li {
-		margin-bottom: 3px; /* Reduce spacing between list items */
-		padding-left: 10px; /* Minimize left padding for items */
-		color: #fff; /* Keep consistent color for list items */
-		font-size: 12px; /* Keep a uniform font size */
-		line-height: 1.4; /* Adjust line height for better readability */
-		text-align: left; /* Ensure text aligns to the left */
-	}
-
-  // .landing-uia-card__container li {
-  //   margin-bottom: 5px; /* Add some space between list items */
-  //   color: #fff; /* Ensure list items have the same color */
-  //   font-size: 12px; /* Ensure list items have the same font size */
-  // }
-
-
-
-
-  
-  /* Styles for screens with a min width of 1200px (adjust as needed) */
-  @media (min-width: 800px) {
-	  .landing-work-item {
-			clear: both;
-			overflow: hidden;
-			padding-bottom: 2em;
-			font-family: "San Francisco", sans-serif;
-			font-size: 21px; /* Adjust the font size as needed */
-			padding: 50px;
-		  }
-  
-	  .landing-work-bubble {
-		  width: 130px;
-		  height: 130px;
-		  object-fit: contain !important;
-		}
-  
-	  .landing-work-bubble-with-date {
-			float: left;
-			padding-right: 50px;
-			width: 120 px;
-			text-align: center;
-			font-family: "San Francisco", sans-serif;
-			font-size: 4px; /* Adjust the font size as needed */
-		  }
-  
-	  .landing-work-text {
-			font-family: "San Francisco", sans-serif;
-			overflow: hidden;
-			color: #fff !important;
-			text-align: left;
-		}
-  
-	  .landing-work-bubble-with-date h6 {
-			font-size: 18px; /* Larger font size for larger screens */
-			text-transform: uppercase; /* Capitalize all text */
-			font-weight: bold; /* Make the font thicker */
-			color: #fff !important;
-		}
-	  		
-	  .landing-uia-card__container li {
-      padding-left: 25px; /* Minimize left padding for items */ 
-			margin-bottom: 15px; /* Add some space between list items */
-			color: #fff; /* Ensure list items have the same color */
-			font-size: 21px; /* Ensure list items have the same font size */
-	  }
-		
-  }
-    
-  /* Styles for screens with a min width of 400px (adjust as needed) */
-  @media (min-width: 600px) {
-	.landing-work-item {
-		  clear: both;
-		  overflow: hidden;
-		  padding-bottom: 2em;
-		  font-family: "San Francisco", sans-serif;
-	      padding: 20px;
-
-		}
-
-	.landing-work-bubble {
-		width: 130px;
-		height: 130px;
-		object-fit: contain !important;
-	}
-
-	.landing-work-bubble-with-date {
-		  float: left;
-		  padding-right: 30px;
-		  width: 120 px;
-		  text-align: center;
-		  font-family: "San Francisco", sans-serif;
-		  font-size: 4px; /* Adjust the font size as needed */
-		}
-
-	.landing-work-text {
-		  font-family: "San Francisco", sans-serif;
-		  overflow: hidden;
-		  font-size: 21px; /* Adjust the font size as needed */
-		  color: #fff !important;
-		  text-align: left;
-		}
-
-	.landing-work-bubble-with-date h6 {
-		  font-size: 18px; /* Larger font size for larger screens */
-		  text-transform: uppercase; /* Capitalize all text */
-		  font-weight: bold; /* Make the font thicker */
-		  color: #fff !important;
-	  }
-	
-	.landing-uia-card__container li {
-    padding-left: 25px; /* Minimize left padding for items */ 
-		margin-bottom: 5px; /* Add some space between list items */
-		color: #fff; /* Ensure list items have the same color */
-		font-size: 21px; /* Ensure list items have the same font size */
-	  }
-	
 }
-  
+/* the spine — brighter near "now", fading into the past */
+.lw-timeline::before {
+	content: "";
+	position: absolute;
+	left: 26px;
+	top: 30px;
+	bottom: 30px;
+	width: 2px;
+	background: linear-gradient(180deg, var(--accent) 0%, rgba(78,161,255,.55) 30%, rgba(78,161,255,.18) 70%, transparent 100%);
+}
+
+.lw-item {
+	position: relative;
+	margin-bottom: 22px;
+}
+/* node dot sits ON the spine, centered on the logo row */
+/* timeline padding-left 58px, spine center at 27px → dot/tick offsets below place them ON the spine */
+.lw-item::before {
+	content: "";
+	position: absolute;
+	left: -37px;
+	top: 34px;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background: #0b1018;
+	border: 2px solid rgba(78,161,255,.5);
+	z-index: 3;
+}
+/* short connector tick from spine to card */
+.lw-item::after {
+	content: "";
+	position: absolute;
+	left: -31px;
+	top: 39px;
+	width: 31px;
+	height: 2px;
+	background: rgba(78,161,255,.25);
+	z-index: 1;
+}
+.lw-present::before {
+	border-color: var(--accent);
+	background: var(--accent);
+	box-shadow: 0 0 0 5px rgba(78,161,255,.16), 0 0 16px rgba(78,161,255,.55);
+}
+.lw-present::after { background: var(--accent); }
+
+/* card: drop the redundant blue left-edge (the spine is the vertical accent now) */
+.lw-card {
+	position: relative;
+	text-align: left;
+	border-inline-start: 1px solid var(--hairline);
+	padding: 1.4rem 1.6rem;
+}
+
+.lw-top {
+	display: flex;
+	gap: 18px;
+	align-items: center;
+}
+/* logos sit free on the dark ground — no cropping box */
+.lw-logo {
+	flex: none;
+	width: 64px;
+	height: 64px;
+	display: grid;
+	place-items: center;
+	overflow: hidden;
+	font-size: 0; /* suppress alt-text overflow if a logo ever fails to load */
+}
+.lw-logo img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+.lw-head { flex: 1; min-width: 0; }
+.lw-date {
+	font-size: 12px;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	color: var(--muted, #8592a6);
+	font-weight: 600;
+}
+.lw-title {
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--ink, #fff) !important;
+	margin: 4px 0 4px;
+	line-height: 1.25;
+}
+.lw-company {
+	color: var(--accent);
+	font-weight: 600;
+	font-size: 14.5px;
+}
+.lw-now {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 10px;
+	letter-spacing: .14em;
+	text-transform: uppercase;
+	color: var(--accent);
+	margin-left: 12px;
+	vertical-align: middle;
+	font-weight: 700;
+}
+.lw-now::before {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--accent);
+	box-shadow: 0 0 8px var(--accent);
+}
+
+.lw-bullets {
+	list-style: none;
+	margin: 14px 0 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.lw-bullets li {
+	position: relative;
+	padding-left: 18px;
+	color: #c3ccda;
+	font-size: 14.5px;
+	line-height: 1.55;
+	text-align: left;
+}
+.lw-bullets li::before {
+	content: "";
+	position: absolute;
+	left: 2px;
+	top: 9px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: var(--accent);
+	opacity: .85;
+}
+
+/* ---- HERO tier: bigger, brighter, clearly the headline roles ---- */
+.lw-hero .lw-card {
+	border: 1px solid rgba(78,161,255,.32);
+	border-radius: 14px;
+	background:
+		radial-gradient(120% 130% at 100% 0, rgba(78,161,255,.10), transparent 55%),
+		var(--card-bg);
+	box-shadow: 0 0 0 1px rgba(78,161,255,.05), 0 26px 60px -40px rgba(78,161,255,.5);
+	padding: 1.7rem 1.9rem;
+}
+.lw-hero .lw-logo { width: 74px; height: 74px; }
+.lw-hero .lw-title { font-size: 22px; }
+.lw-hero .lw-company { font-size: 15.5px; }
+.lw-hero .lw-bullets li { font-size: 15px; color: #cfd7e3; }
+
+/* ---- SMALL tier: genuinely condensed older roles ---- */
+.lw-small { margin-bottom: 12px; }
+.lw-small .lw-card {
+	border: 1px solid var(--hairline);
+	border-radius: 11px;
+	background: transparent;
+	padding: .9rem 1.2rem;
+}
+.lw-small .lw-logo { width: 40px; height: 40px; }
+.lw-small .lw-date { font-size: 11px; }
+.lw-small .lw-title { font-size: 14.5px; margin: 2px 0; }
+.lw-small .lw-company { font-size: 13px; }
+.lw-small .lw-bullets { margin-top: 8px; gap: 5px; }
+.lw-small .lw-bullets li { font-size: 13px; color: var(--muted, #8592a6); }
+.lw-small::before { top: 22px; width: 11px; height: 11px; border-color: rgba(133,146,166,.5); }
+.lw-small::after { top: 27px; background: var(--hairline); }
+
+@media (max-width: 640px) {
+	/* padding-left 34px, spine center at 15px */
+	.lw-timeline { padding-left: 34px; }
+	.lw-timeline::before { left: 14px; }
+	.lw-item::before { left: -25px; }
+	.lw-item::after { left: -19px; width: 19px; }
+	.lw-hero .lw-title { font-size: 19px; }
+}
+
   // Default heading size for smaller screens
   h4.page-heading {
 	font-size: 23px; // Default font size for smaller screens
@@ -846,10 +868,6 @@ footer i:hover {
 	transform: translateY(-3px);
 	box-shadow: 0 10px 28px -14px rgba(78,161,255,.25);
   }
-
-  /* company name carries the accent; title stays white */
-  .landing-work-text strong { color: var(--ink); }
-  .landing-work-text em { color: var(--accent); font-style: normal; font-weight: 600; }
 
 
 

@@ -1,29 +1,25 @@
+<div class="lw-timeline">
 {% for item in site.data.worklanding %}
-<div class="landing-work-item">
-<div class="landing-work-bubble-with-date">
-    <img
-    src="{{ item.image.src | absolute_url }}"
-    alt="{{ item.image.alt }}"
-    class="landing-work-bubble"
-    />
-    {% if item.date %}
-    <h6 style="font-size: 3; font-family: sans-serif;">{{ item.date }}</h6>
-    {% endif %}
-</div>
-<div class="landing-uia-card__container"> 
-    <p class="landing-work-text">
-        <strong>{{ item.title }}</strong> | <em>{{ item.company }}</em>
-        <!-- &mdash; -->
-        <!-- {{ item.description | markdownify | remove: '<p>' | remove: '</p>' | strip }} -->
-    </p>
-    
-    <ul>
-        {% assign description_lines = item.description | split: '\n' %}
-        {% for line in description_lines %}
-            <li>{{ line | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
-        {% endfor %}
+<div class="lw-item lw-{{ item.tier | default: 'base' }}{% if item.present %} lw-present{% endif %}">
+  <span class="lw-node"></span>
+  <div class="lw-card landing-uia-card__container">
+    <div class="lw-top">
+      <span class="lw-logo">
+        <img src="{{ item.image.src | absolute_url }}" alt="{{ item.image.alt }}" />
+      </span>
+      <div class="lw-head">
+        {% if item.date %}<div class="lw-date">{{ item.date }}</div>{% endif %}
+        <div class="lw-title"><strong>{{ item.title }}</strong>{% if item.present %}<span class="lw-now">Now</span>{% endif %}</div>
+        <div class="lw-company">{{ item.company }}</div>
+      </div>
+    </div>
+    <ul class="lw-bullets">
+      {% assign description_lines = item.description | split: '\n' %}
+      {% for line in description_lines %}
+        <li>{{ line | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+      {% endfor %}
     </ul>
-    
-</div>
+  </div>
 </div>
 {% endfor %}
+</div>
