@@ -2,6 +2,7 @@
 title: Speech-LLM-Speech
 tools: [LLM, Docker, ROS2, Whisper.cpp, C++, TTS, GPU, Ollama]
 image: ../imgs/projects/speech-llm-speech.png
+order: 2
 is_project_page: true
 description: "Modularly containerized ROS2 system that converts speech to text, processes it through multiple LLMs, and responds with synthesized speech."
 ---

@@ -35,8 +35,11 @@
 
   {% endfor %}
 
-  <!-- Local Projects -->
-  {% for project in site.projects %}
+  <!-- Local Projects — explicit display order via the `order` frontmatter field
+       (lower = first). Falls back gracefully: pages without `order` sort ahead but
+       are skipped anyway unless is_project_page is true. -->
+  {%- assign ordered_projects = site.projects | sort: 'order' -%}
+  {% for project in ordered_projects %}
   {%- assign is_project_page   = project.is_project_page -%}
     {% if project.is_project_page %}
 

@@ -3,7 +3,7 @@ title: Omni-Wheel MPC Navigation
 tools: [Python, Optimization, MPC, Neural Networks]
 image: ../imgs/projects/omni.webp
 description: Achieved efficient control and trajectory optmization through MPC.
-is_project_page: true
+is_project_page: false
 ---
 
 
@@ -27,7 +27,7 @@ is_project_page: true
 </head>
 <body>
 
-Consider a simple formulation of rocket landing where the rocket state \(\textbf{x}(t)\) is represented by velocity of the robot \(\dot{x}(t)\), \(\dot{y}(t)\), and angular velocity \(\dot{\theta}(t)\) followed by robot's coordinates \(x(t)\) and \(y(t)\), and orientation \(\theta(t)\), i.e., \(\textbf{x}(t) = [\dot{x}(t), \dot{y}(t), \dot{\theta}(t), x(t), y(t), \theta(t)]^T\), where \(t\) specifies time. The control input \(\textbf{u}(t)\) of the rocket includes angular velocity of each wheel of the robot \(\omega_{1}(t)\), \(\omega_{2}(t)\), \(\omega_{3}(t)\), and \(\omega_{4}(t)\).
+Consider a formulation of the 4-omni-wheel robot where the state \(\textbf{x}(t)\) is represented by the robot's velocities \(\dot{x}(t)\), \(\dot{y}(t)\), and angular velocity \(\dot{\theta}(t)\) followed by the robot's coordinates \(x(t)\) and \(y(t)\), and orientation \(\theta(t)\), i.e., \(\textbf{x}(t) = [\dot{x}(t), \dot{y}(t), \dot{\theta}(t), x(t), y(t), \theta(t)]^T\), where \(t\) specifies time. The control input \(\textbf{u}(t)\) includes the angular velocity of each wheel of the robot \(\omega_{1}(t)\), \(\omega_{2}(t)\), \(\omega_{3}(t)\), and \(\omega_{4}(t)\).
 
 </body>
 </html>

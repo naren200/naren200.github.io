@@ -16,7 +16,7 @@
         <div class="idcontainer">
           <div class="div-text-l">
             <h1 class="heading-4">
-              <span id="rotating-emoji" class="emoji"><strong class="bold-text">👋🏾</strong></span>
+              <!-- <span id="rotating-emoji" class="emoji"><strong class="bold-text">👋🏾</strong></span> -->
             </h1>
             <h1 class="heading-3">
                 <strong class="h1-frontpage">Robotics engineer <span class="thin">building the sense of touch for humanoid robots.</span></strong>
@@ -106,23 +106,71 @@
     <br><h1 class="experience-page-heading" style="text-align: center; color: #fff !important;">PROFESSIONAL EXPERIENCE</h1><br>
     {% include landing/work-exp.html %}
 
+    {% include landing/research.html %}
+
     <br><h1 class="project-page-heading" style="text-align: center; color: #fff !important;">PROJECTS</h1><br>
     {% include landing/project.html %} <br>
-
-  <br><a href="https://docs.google.com/viewerng/viewer?url=https://naren200.github.io/pdfs/CV.pdf" style="text-align: center; color: #fff !important;"><h3 class="resume-page-heading" >Take a copy of my resume</h3></a><br>
 
   <section class="landing-footer">
     <br><h1 class="contact-page-heading" style="text-align: center; color: #fff !important;">CONNECT</h1>
     {% include landing/footer.html %}
   </section>
   
+  <!-- Sticky ask: always one click away once the hero scrolls off -->
+  <a class="talk-pill" href="#contact" aria-label="Let's talk — jump to contact">
+    <span class="talk-pill__dot" aria-hidden="true"></span>Let&rsquo;s talk
+  </a>
+
   <br><br>
+  <script>
+    // Smooth in-page anchor scrolling, driven per-frame so the on-scroll
+    // navbar handler below can't interrupt it (native CSS smooth-scroll here
+    // gets aborted ~1/4 of the way). Re-asserts the scroll position every
+    // frame until it reaches the target.
+    (function () {
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function tweenTo(targetY, duration) {
+        var startY = window.pageYOffset;
+        var delta = targetY - startY;
+        var start = null;
+        function step(ts) {
+          if (start === null) start = ts;
+          var p = Math.min(1, (ts - start) / duration);
+          var eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+          window.scrollTo(0, startY + delta * eased);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      // Capture phase so this runs before any other handler can stop the
+      // event from bubbling, and before the native jump/smooth-scroll fires.
+      document.addEventListener('click', function (e) {
+        var link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+        var id = link.getAttribute('href');
+        if (id === '#' || id.length < 2) return;
+        var target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        history.pushState(null, '', id);
+        if (reduceMotion) {
+          target.scrollIntoView();
+        } else {
+          tweenTo(target.getBoundingClientRect().top + window.pageYOffset, 600);
+        }
+      }, true);
+    })();
+  </script>
+
   <script>
     var lastScrollTop = 0;
     var navbar = document.querySelector(".navbar");
+    var talkPill = document.querySelector(".talk-pill");
     navbar.style.position = "absolute";
     navbar.style.top = "-100px";
-    
+
     window.addEventListener("scroll", function() {
       var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -137,6 +185,11 @@
         navbar.style.top = "-100px";
         navbar.style.transition = "none"; // Remove transition effect
 
+      }
+
+      // Reveal the sticky "Let's talk" pill once the hero has scrolled off.
+      if (talkPill) {
+        talkPill.classList.toggle("talk-pill--visible", currentScroll > 700);
       }
 
       lastScrollTop = currentScroll;

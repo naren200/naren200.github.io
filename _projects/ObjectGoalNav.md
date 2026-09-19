@@ -1,15 +1,19 @@
 ---
-title: Enhancement on Meta's Research
-tools: [Path Planning, Computer Vision, RL, Simulator, Robotics]
+title: Perception-Swapped Object-Goal Navigation
+tools: [Semantic Mapping, YOLOv7, RRT, Policy Learning, Python]
 image: ../imgs/projects/goal-homeImage.webp
-description: Advanced object goal navigation achieved through Goal-Oriented Semantic Exploration, combining semantic mapping, policy learning, and efficient path planning.
+description: Rebuilt the SemExp object-goal-navigation stack and swapped its perception and planning modules (YOLOv7 + RRT) to study how detector quality drives semantic-map navigation.
 external_url: 
-is_project_page: true
+is_project_page: false
 ---
 
-### Enhancement on Meta's Research Work
+### Perception-Swapped Object-Goal Navigation (YOLOv7 + RRT on SemExp)
 
-Enhanced Meta's object goal navigation using Goal-Oriented Semantic Exploration, integrating Yolov7 and RRT. Implemented semantic mapping, goal-oriented policy, and deterministic local policy, outperforming baselines in exploration and planning. Achievements include improved success rates, SPL efficiency, and adaptability for real-world applications, contributing to the field of autonomous navigation. Technologies: Yolov7, RRT, semantic segmentation, Fast Marching Method, Python.
+Rebuilt the **SemExp** modular object-goal-navigation stack — the Goal-Oriented Semantic Exploration model from Chaplot et al. (NeurIPS 2020, winner of the CVPR-2020 Habitat ObjectNav Challenge) — and swapped in **YOLOv7** for detection and **RRT** for the local planner to study how perception quality propagates through a perception → semantic-map → policy pipeline.
+
+The system keeps the three-module structure: a **semantic mapping module** that builds an episodic top-down semantic map, a **goal-oriented semantic policy** that picks long-term goals, and a **deterministic local policy** for point-to-point navigation. My work isolates the perception/planning layer to measure its effect on exploration efficiency and SPL.
+
+**Honest scope:** this is a study and partial reproduction, not a new SOTA — the original trains for 10M timesteps; compute limits capped my runs at 1M, so the numbers below characterize the perception swap rather than claim a win over the baseline. Technologies: YOLOv7, RRT, semantic segmentation, Fast Marching Method, Python.
 
 **Proposed Changes**
 <img src="../imgs/projects/goal-ProposedChanges.png" alt="drawing" width="850"/>

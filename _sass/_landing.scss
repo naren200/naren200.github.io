@@ -5,8 +5,14 @@
 * {
 	margin: 0;
 	padding: 0;
-	scroll-behavior: auto;
 	text-emphasis-color: #fff !important;
+}
+
+// In-page anchor scrolling is handled by a custom rAF tween in landing.html.
+// Native CSS `scroll-behavior: smooth` gets interrupted here by the on-scroll
+// navbar handler (stops ~1/4 of the way), so we drive it in JS instead.
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
 }
 
 // =================================================
@@ -442,6 +448,7 @@ body.landing::after  { display: none !important; }
 .about-me-page-heading,
 .experience-page-heading,
 .project-page-heading,
+.research-page-heading,
 .contact-page-heading {
     display: block;
     text-shadow: none;
@@ -455,6 +462,7 @@ body.landing::after  { display: none !important; }
 .about-me-page-heading::after,
 .experience-page-heading::after,
 .project-page-heading::after,
+.research-page-heading::after,
 .contact-page-heading::after {
     content: "";
     position: absolute;
@@ -1155,8 +1163,250 @@ a:hover .resume-page-heading {
 	text-shadow: none;
 	color: var(--ink);
 }
+/* =================================================
+   CONNECT — Option A: POV close
+   Thesis line → one email CTA → muted secondary icons.
+   Globe/hit-counter removed (vanity metric, hobby-site tell).
+   ================================================= */
+.connect-thesis {
+	display: block;
+	max-width: 26ch;
+	margin: 6px auto 18px;
+	font-size: clamp(20px, 3vw, 30px);
+	line-height: 1.28;
+	font-weight: 600;
+	letter-spacing: -0.015em;
+	text-wrap: balance;
+	color: var(--ink);
+}
+.connect-thesis .accent { color: var(--accent); }
+
 .connect-chamada {
-	display: inline-block;
+	display: block;
 	text-shadow: none;
+	max-width: 52ch;
+	margin: 0 auto 30px;
+	font-size: 16px;
+	line-height: 1.6;
 	color: var(--ink-2);
+}
+
+/* Primary ask — the one unmissable action */
+.connect-cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	background: var(--accent);
+	color: #00121f;
+	font-weight: 700;
+	font-size: 16px;
+	text-decoration: none;
+	padding: 15px 30px;
+	border-radius: 12px;
+	transition: transform .15s ease, box-shadow .3s ease;
+}
+.connect-cta:hover,
+.connect-cta:focus-visible {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 34px -8px var(--accent-soft);
+	color: #00121f;
+}
+.connect-cta i { font-size: 17px; }
+
+/* Primary email + secondary résumé, stacked and centered */
+.connect-actions {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 14px;
+}
+.connect-resume {
+	color: var(--ink-3);
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: .01em;
+	text-decoration: none;
+	transition: color .15s ease;
+}
+.connect-resume:hover,
+.connect-resume:focus-visible {
+	color: var(--accent);
+}
+
+/* Secondary links — muted, uniform, hover to the one accent */
+.connect-social {
+	display: flex;
+	gap: 24px;
+	justify-content: center;
+	margin: 28px 0 34px;
+}
+.connect-social .landing-social {
+	color: var(--ink-3);
+	font-size: 21px;
+	line-height: 1;
+	transition: color .15s ease, transform .15s ease;
+}
+.connect-social .landing-social:hover,
+.connect-social .landing-social:focus-visible {
+	color: var(--accent);
+	transform: translateY(-2px);
+}
+
+.copyright {
+	color: #4a525a;
+	font-size: 12px;
+	letter-spacing: 0.05em;
+}
+
+/* =================================================
+   Sticky "Let's talk" pill — appears after the hero
+   scrolls off (toggled by .talk-pill--visible from JS).
+   Keeps the ask one click away without top-of-page clutter.
+   ================================================= */
+.talk-pill {
+	position: fixed;
+	right: 22px;
+	bottom: 22px;
+	z-index: 60;
+	display: inline-flex;
+	align-items: center;
+	gap: 9px;
+	background: var(--accent);
+	color: #00121f;
+	font-weight: 700;
+	font-size: 15px;
+	text-decoration: none;
+	padding: 13px 22px;
+	border-radius: 999px;
+	box-shadow: 0 12px 40px -8px rgba(78, 161, 255, .5);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(16px);
+	transition: opacity .3s ease, transform .3s ease, visibility .3s;
+}
+.talk-pill--visible {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+.talk-pill:hover,
+.talk-pill:focus-visible {
+	transform: translateY(-2px);
+	color: #00121f;
+}
+.talk-pill .talk-pill__dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #00121f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.connect-cta,
+	.connect-social .landing-social,
+	.talk-pill { transition: opacity .3s ease, visibility .3s; }
+	.connect-cta:hover,
+	.connect-social .landing-social:hover,
+	.talk-pill:hover { transform: none; }
+}
+
+/* ============================================================
+   RESEARCH — publications, honestly weighted.
+   Uses the site's centered-caps section heading (see the
+   shared .*-page-heading rule). ONE primary card (the ACC'24
+   peer-reviewed work) with the earlier undergrad paper
+   subordinated to a single line beneath — not co-equal.
+   Single signal-blue accent, no second accent color.
+   ============================================================ */
+.research {
+	width: 100%;
+	padding: 40px 0 10px;
+}
+.research-lede {
+	max-width: 60ch;
+	margin: 0 auto 40px;
+	padding: 0 20px;
+	text-align: center;
+	font-size: 1.1rem;
+	line-height: 1.5;
+	color: var(--ink-2);
+}
+.research-inner {
+	max-width: 760px;
+	width: 90%;
+	margin: 0 auto;
+	text-align: left;
+}
+.research-card {
+	display: flex;
+	flex-direction: column;
+	padding: 30px 34px 32px;
+	border-radius: 14px;
+	background: var(--card-bg);
+	border: 1px solid var(--hairline);
+	border-inline-start: 2px solid var(--accent);
+	transition: border-color .25s ease, background .25s ease;
+}
+.research-card:hover {
+	border-color: var(--hairline-hover);
+	border-inline-start-color: var(--accent);
+	background: var(--card-bg-hover);
+}
+.research-venue {
+	display: inline-block;
+	margin-bottom: 16px;
+	color: var(--accent);
+	font-weight: 700;
+	font-size: 12px;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+.research-card__title {
+	margin: 0 0 10px;
+	font-family: Georgia, "Times New Roman", serif;
+	font-weight: 700;
+	font-size: 1.35rem;
+	line-height: 1.28;
+	color: var(--ink);
+}
+.research-card__meta {
+	margin: 0 0 14px;
+	font-size: 0.9rem;
+	color: var(--ink-3);
+}
+.research-card__meta strong { color: var(--ink-2); font-weight: 600; }
+.research-card__desc {
+	margin: 0 0 24px;
+	font-size: 1rem;
+	line-height: 1.6;
+	color: var(--ink-2);
+}
+.research-card__cta {
+	align-self: flex-start;
+	color: var(--accent);
+	font-weight: 600;
+	font-size: 0.95rem;
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: border-color .2s ease;
+}
+.research-card__cta:hover { border-bottom-color: var(--accent); }
+.research-card__cta span { display: inline-block; transition: transform .2s ease; }
+.research-card__cta:hover span { transform: translateX(3px); }
+
+.research-earlier {
+	margin: 18px 0 0;
+	padding-inline-start: 2px;
+	font-size: 0.92rem;
+	line-height: 1.55;
+	color: var(--ink-3);
+}
+.research-earlier a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--hairline); }
+.research-earlier a:hover { color: var(--accent); border-bottom-color: var(--accent-soft); }
+
+@media (max-width: 820px) {
+	.research-card { padding: 24px 22px 26px; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.research-card__cta:hover span { transform: none; }
 }

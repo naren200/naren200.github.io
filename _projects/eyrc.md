@@ -1,10 +1,11 @@
 ---
-title: IIT Bombay's Robotics Challenge - MoE, India
-tools: [Vrep, Hardware, Prototyping, Sensors, Troubleshooting, embedded C, Path Planning, 3D Design, Robot Communication, CNC]
+title: Disaster-Response Robot
+tools: [Hardware, Gripper/Arm, Sensors, embedded C, Path Planning, 3D Design, Prototyping, Vrep]
 image: ../imgs/projects/cob-homeImage.webp
-description: Led team of 4 to design and implemented a disaster response robot, integrated sensors, navigation algorithms, and hardware implementation.
+description: Led a team of 4 to build a robot with a servo gripper and integrated sensing — National Finalist at IIT Bombay's e-Yantra, India's largest robotics competition.
 number: three
-is_project_page: false
+order: 3
+is_project_page: true
 
 ---
 
