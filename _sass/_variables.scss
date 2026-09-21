@@ -15,3 +15,53 @@ $text-black: #343a40;
 $text-white: rgba(white, .9);
 
 $rounded-borders: 15px;
+
+// =================================================
+// SHARED CARD TREATMENT — v3 signal-blue theme
+// One consistent card language across every page (about, experience,
+// blog, news, projects): near-black ground, hairline border, a
+// right-side light-blue accent, and on hover the whole block lifts,
+// goes light blue, glows, and a glossy diagonal sheen fades in.
+// Relies on the global :root tokens defined in _landing.scss
+// (--card-bg, --accent, etc.).
+// =================================================
+@mixin card-treatment {
+  position: relative;
+  overflow: hidden;                    /* clip the glossy sheen to rounded corners */
+  background-color: var(--card-bg, #0a0c0e);
+  border: 1px solid var(--hairline, rgba(255, 255, 255, 0.08));
+  border-right: 2px solid var(--accent-soft, rgba(78, 161, 255, 0.4));   /* right-side light-blue accent */
+  border-radius: 10px;
+  transition: transform 400ms, border-color 0.2s ease, background 0.2s ease, box-shadow 0.25s ease;
+
+  /* glossy sheen — a soft diagonal highlight that brightens on hover */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.07) 0%,
+      rgba(255, 255, 255, 0.02) 24%,
+      rgba(255, 255, 255, 0) 48%
+    );
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: 1;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: var(--hairline-hover, rgba(78, 161, 255, 0.4));   /* whole block goes light blue */
+    /* opaque dark base + a translucent blue wash layered on top, so the
+       card stays solid (never transparent) over textured backgrounds */
+    background-color: var(--card-bg-hover, #0c0f13);
+    background-image: linear-gradient(rgba(78, 161, 255, 0.1), rgba(78, 161, 255, 0.1));
+    box-shadow: 0 18px 44px -18px rgba(78, 161, 255, 0.35),
+                0 8px 24px -14px rgba(0, 0, 0, 0.6);
+
+    &::after { opacity: 1; }
+  }
+}

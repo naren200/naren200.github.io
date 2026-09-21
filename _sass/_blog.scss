@@ -27,33 +27,30 @@
   padding: 10px; /* Example padding */
 }
 .post.cardblog {
+  @include card-treatment;
   display: flex;
   flex-direction: column;
   justify-content: center; /* Center vertically */
   align-items: left; /* Center horizontally */
-  border-radius: $rounded-borders;
   text-decoration: none !important;
   margin: 0px auto;
-  background-color: rgba(0, 2, 53, 0.064); //rgba(0, 0, 0, 0.318);
-  // background-color: transparent;
-  backdrop-filter: blur(100px); /* Add a blur effect */
 
   .card-footer {
+    position: relative;
+    z-index: 2;
     font-size: 14px;
-    // margin: 0 -15px -15px -15px;
-    // padding: 10px 35px;
     width: 100%;
     height: auto;
     object-fit: cover;
     background-color: rgba(0, 2, 53, 0.139); //rgba(0, 0, 0, 0.318);
     border-radius: $rounded-borders;
   }
-  transition: transform 400ms;
 
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.44);
-    color: #6be9ff !important;
+  /* keep card content above the glossy sheen overlay */
+  & > *,
+  .card-body {
+    position: relative;
+    z-index: 2;
   }
 }
 

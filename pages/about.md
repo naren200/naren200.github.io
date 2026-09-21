@@ -52,29 +52,27 @@ chapters:
       My most recent public build is a [cup-stacking robot](/projects/cupstacking) from the NVIDIA × Seeed Embodied AI Hackathon — a public foundation model (GR00T 1.5 + ACT) taken all the way to a real arm on a Jetson Thor edge computer.
 
   - num: "04"
-    title: "Questions that excite me"
-    lead: "Why is the body the bottleneck, not the brain?"
+    title: "The question that excites me"
+    lead: "The one problem under everything I build."
     questions:
-      - num: "01"
-        title: "Why is the body the bottleneck, not the brain?"
+      - title: "Why is the body the bottleneck, not the brain?"
         desc: "Foundation models are racing ahead, yet robots still can't reliably grasp a cup without knocking it over. What does it take to give a machine a body that can touch, feel, and handle the world as fluently as it can reason about it?"
         link_text: "Related build &rarr;"
         link_url: "/projects/cupstacking"
-      - num: "02"
-        title: "Robotic autonomy in unstructured environments"
-        desc: "How do we get robots to navigate and act reliably in unpredictable, real-world settings — disaster zones, farms, homes — instead of tightly controlled labs?"
-        link_text: "Related work &rarr;"
-        link_url: "/projects/eyrc"
-      - num: "03"
-        title: "Experiential learning in robotics"
-        desc: "How can robots gain real-world experience to improve their performance and adaptability over time?"
-        link_text: "Related work &rarr;"
-        link_url: "/projects/objectgoalnav"
-      - num: "04"
-        title: "AI-driven precision agriculture"
-        desc: "How can AI-powered robots optimize crop yields while minimizing resource use and environmental impact?"
-        link_text: "Related work &rarr;"
-        link_url: "/projects/mambo"
-    body: |
-      Away from robots, I'm the person who wants to know how everyday things actually work — and someone who genuinely lights up at other people's craft. Nothing quite electrifies me like AC/DC tearing through "[Shoot to Thrill](https://youtu.be/xRQnJyP77tY)" on the drums, or Miles Teller's take on "[Great Balls of Fire](https://youtu.be/pVcMsjyKlaM)."
+      # Parked (2026-09-20): pared to one sharp question to avoid the novelty-chaser read.
+      # - title: "Robotic autonomy in unstructured environments"
+      #   desc: "How do we get robots to navigate and act reliably in unpredictable, real-world settings — disaster zones, farms, homes — instead of tightly controlled labs?"
+      #   link_text: "Related work &rarr;"
+      #   link_url: "/projects/eyrc"
+      # - title: "Experiential learning in robotics"
+      #   desc: "How can robots gain real-world experience to improve their performance and adaptability over time?"
+      #   link_text: "Related work &rarr;"
+      #   link_url: "/projects/objectgoalnav"
+      # - title: "AI-driven precision agriculture"
+      #   desc: "How can AI-powered robots optimize crop yields while minimizing resource use and environmental impact?"
+      #   link_text: "Related work &rarr;"
+      #   link_url: "/projects/mambo"
+
+coda: |
+  Away from robots, I can't leave everyday things un-taken-apart — and nothing electrifies me like AC/DC's "[Shoot to Thrill](https://youtu.be/xRQnJyP77tY)."
 ---

@@ -317,6 +317,9 @@ body.about-page::after {
 }
 
 .chapter-prose p {
+	/* override global p{font-size:24px} (_base.scss) that leaks into narrative prose */
+	font-size: 15.5px;
+	line-height: 1.75;
 	margin: 0 0 16px;
 }
 
@@ -357,16 +360,14 @@ body.about-page::after {
 }
 
 .about-question-card {
-	background: rgba(255, 255, 255, 0.025);
-	border: 1px solid rgba(255, 255, 255, 0.07);
-	border-radius: 10px;
+	@include card-treatment;
 	padding: 16px 18px;
-	transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-.about-question-card:hover {
-	border-color: rgba(78, 161, 255, 0.35);
-	background: rgba(78, 161, 255, 0.03);
+/* keep question text above the glossy sheen overlay */
+.about-question-card > * {
+	position: relative;
+	z-index: 2;
 }
 
 .about-question-title {
@@ -405,9 +406,39 @@ body.about-page::after {
 	color: #8ac0ff !important;
 }
 
+/* Personal coda — muted P.S. aside under a hairline (About-only) */
+.about-coda {
+	/* generous gap (not a hairline) is what separates it from the accordion dividers above */
+	margin: 64px auto 0;
+	max-width: 640px;
+	text-align: center;
+}
+
+.about-coda p {
+	/* explicit size — do NOT inherit; global p{font-size:24px} would blow it up */
+	font-size: 13.5px;
+	line-height: 1.7;
+	font-style: italic;
+	color: #6b7688;
+	margin: 0;
+}
+
+.about-coda a {
+	/* subtle: no persistent underline, reveal on hover only */
+	color: #8a97ab;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.about-coda a:hover {
+	color: #4ea1ff;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
 /* Bottom CTA in text column */
 .about-bottom-cta {
-	margin-top: 36px;
+	margin-top: 28px;
 	padding-left: 52px;
 	display: flex;
 	gap: 16px;

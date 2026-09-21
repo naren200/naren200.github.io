@@ -1,6 +1,6 @@
 .work-item {
   clear: both;
-  overflow: hidden;
+  display: flow-root;   /* contain the floated date/logo without clipping the lifted card */
   padding-bottom: 2em;
   font-family: "San Francisco", sans-serif;
   font-size: 21px; /* Adjust the font size as needed */
@@ -39,7 +39,7 @@
 @media (min-width: 800px) {
     .work-item {
           clear: both;
-          overflow: hidden;
+          display: flow-root;   /* contain the float without clipping the lifted card */
           padding-bottom: 2em;
           font-family: "San Francisco", sans-serif;
           font-size: 21px; /* Adjust the font size as needed */
@@ -108,19 +108,16 @@ h4.mb-3 {
 }
  
 .uia-card__container{
+  @include card-treatment;
   display: grid;
   gap: var(--uia-card-content-gap, .5rem);
   padding: var(--uia-card-padding, 1rem 1.75rem);
-  position: relative;
 
-  background-color: var(--uia-card-background-color);
-  border-inline-start:	var(--uia-card-border-thickness, 2px) var(--uia-card-border-style, solid) var(--uia-card-border-color, currentColor);
-  box-shadow: var(--uia-card-box-shadow, 0 4px 8px 0 rgba(0, 0, 0, .62), 0 1px 2px 0 rgba(0, 0, 0, .64));
-  border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
-  // background-color: transparent; /* Ensure the background is transparent */
-  background-color: rgba(0, 2, 53, 0.141); //rgba(0, 0, 0, 0.318);
-  backdrop-filter: blur(50px); /* Add a blur effect */
-
+  /* keep the work text above the glossy sheen overlay */
+  > * {
+    position: relative;
+    z-index: 2;
+  }
   }
   
 .uia-card__container::before {

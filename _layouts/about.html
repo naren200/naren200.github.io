@@ -67,7 +67,7 @@
                   {% for q in chapter.questions %}
                   <div class="about-question-card">
                     <div class="about-question-title">
-                      <span class="q-num">{{ q.num }}</span> {{ q.title }}
+                      {% if q.num %}<span class="q-num">{{ q.num }}</span> {% endif %}{{ q.title }}
                     </div>
                     <div class="about-question-desc">
                       {{ q.desc }}
@@ -87,6 +87,11 @@
         </div>
         {% endfor %}
       </div>
+
+      <!-- Personal coda — muted P.S. aside, below a hairline -->
+      {% if page.coda %}
+      <div class="about-coda">{{ page.coda | markdownify }}</div>
+      {% endif %}
 
       <!-- Bottom CTAs -->
       {% if page.cta %}

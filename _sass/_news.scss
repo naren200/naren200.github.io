@@ -144,12 +144,16 @@ margin-inline: var(--uia-card-time-divider-margin-inline, .15rem);
 }
 
 [data-uia-card-skin="1"] .uia-card__container{
+@include card-treatment;
 display: grid;
 gap: var(--uia-card-content-gap, .5rem);
 padding: var(--uia-card-padding, 1rem 1.75rem);
-backdrop-filter: blur(100px); /* Add a blur effect */
-background-color: var(--uia-card-background-color);
-border-radius: var(--uia-card-border-radius, 2px);
+
+/* keep news content above the glossy sheen overlay */
+> * {
+  position: relative;
+  z-index: 2;
+}
 }
 
 [data-uia-card-skin="1"] .uia-card__intro{
@@ -171,12 +175,7 @@ text-transform: var(--uia-card-time-text-transform, uppercase);
 color: var(--uia-card-time-color, currentColor);
 }
 
-[data-uia-card-skin="1"][data-uia-card-mod="1"] .uia-card__container{
-    border-inline-start:	var(--uia-card-border-thickness, 2px) var(--uia-card-border-style, solid) var(--uia-card-border-color, currentColor);
-    box-shadow: var(--uia-card-box-shadow, 0 4px 8px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
-    border-radius: var(--uia-card-border-radius, 10px); /* Adjust the radius as needed */
-    background-color: transparent; /* Ensure the background is transparent */
-}
+/* mod-1 shares the unified card treatment from the skin-1 rule above */
 
 /*
 =====
