@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<!--
+  naren200 Jekyll theme by Narendhiran Saravanane
+  About page layout — generic data-driven narrative chapters & bleed portrait
+  Adheres to Separation of Concerns, Single Responsibility, and Open/Closed principles.
+-->
+
+<html lang="en">
+  <script>document.documentElement.classList.add('js');</script>
+  {% include head.html %}
+  {% include navbar.html %}
+
+<body class="about-page">
+  <div class="about-container">
+    <div class="about-text-column">
+      
+      <!-- Eyebrow Identity Header -->
+      {% if page.eyebrow %}
+      <div class="about-eyebrow">
+        <span class="about-eyebrow__name">{{ page.eyebrow.name }}</span>
+        {% if page.eyebrow.call_me %}
+        <span class="about-eyebrow__sep">·</span>
+        <span class="about-eyebrow__callme">{{ page.eyebrow.call_me }}</span>
+        {% endif %}
+        {% if page.eyebrow.audio %}
+        <button type="button" class="about-audio-btn" id="about-pronounce-btn" aria-label="Listen to pronunciation of {{ page.eyebrow.phonetic }}">
+          <span class="audio-speaker-icon" aria-hidden="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="audio-phonetic">{{ page.eyebrow.phonetic }}</span>
+        </button>
+        <audio id="about-audio-player" preload="none">
+          <source src="{{ page.eyebrow.audio | relative_url }}" type="audio/aac">
+        </audio>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      <!-- Generic Chapters Loop -->
+      <div class="about-chapters" id="about-chapters">
+        {% for chapter in page.chapters %}
+        <div class="about-chapter {% if forloop.first %}active{% endif %}" id="chapter-{{ chapter.num }}" data-chapter="{{ forloop.index }}">
+          <button class="chapter-header" type="button" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="chapter-content-{{ chapter.num }}">
+            <span class="chapter-num">{{ chapter.num }}</span>
+            <span class="chapter-title">{{ chapter.title }}</span>
+            <span class="chapter-chevron" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="chapter-collapse" id="chapter-content-{{ chapter.num }}">
+            <div class="chapter-body">
+              {% if chapter.lead %}
+              <div class="chapter-lead">
+                {{ chapter.lead }}
+              </div>
+              {% endif %}
+              <div class="chapter-prose">
+                {% if chapter.questions %}
+                <div class="about-questions-list">
+                  {% for q in chapter.questions %}
+                  <div class="about-question-card">
+                    <div class="about-question-title">
+                      <span class="q-num">{{ q.num }}</span> {{ q.title }}
+                    </div>
+                    <div class="about-question-desc">
+                      {{ q.desc }}
+                    </div>
+                    {% if q.link_url %}
+                    <a href="{{ q.link_url }}" class="inline-work-link">{{ q.link_text | default: "Related work &rarr;" }}</a>
+                    {% endif %}
+                  </div>
+                  {% endfor %}
+                </div>
+                {% endif %}
+
+                {{ chapter.body | markdownify }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Bottom CTAs -->
+      {% if page.cta %}
+      <div class="about-bottom-cta">
+        {% if page.cta.solid %}
+        <a class="solid" href="{{ page.cta.solid.url }}">{{ page.cta.solid.text }}</a>
+        {% endif %}
+        {% if page.cta.ghost %}
+        <a class="ghost" href="{{ page.cta.ghost.url }}" target="_blank" rel="noopener">{{ page.cta.ghost.text }}</a>
+        {% endif %}
+      </div>
+      {% endif %}
+
+    </div>
+
+    <!-- Pinned Baseline Bleed Portrait -->
+    <div class="about-image-column" aria-hidden="true">
+      <img src="{{ page.image | default: '/imgs/landing/img_frontwaistup.png' | relative_url }}" alt="Narendhiran Saravanane">
+    </div>
+  </div>
+
+  {% include analytics.html %}
+  {% include scripts.html %}
+
+  <!-- Accordion & Pronunciation Audio Scripts -->
+  <script>
+    (function () {
+      // 1. Accordion logic: only one chapter open at a time, smooth toggle
+      var chapters = document.querySelectorAll('.about-chapter');
+      chapters.forEach(function (chapter) {
+        var header = chapter.querySelector('.chapter-header');
+        header.addEventListener('click', function () {
+          var isAlreadyActive = chapter.classList.contains('active');
+          
+          // Smoothly close all chapters
+          chapters.forEach(function (c) {
+            c.classList.remove('active');
+            var btn = c.querySelector('.chapter-header');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          });
+
+          // If was not active, open this one
+          if (!isAlreadyActive) {
+            chapter.classList.add('active');
+            header.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // 2. Pronunciation audio button
+      var audioBtn = document.getElementById('about-pronounce-btn');
+      var audio = document.getElementById('about-audio-player');
+      if (audioBtn && audio) {
+        audioBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          try {
+            audio.currentTime = 0;
+            audioBtn.classList.add('playing');
+            var playPromise = audio.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(function () {
+                audioBtn.classList.remove('playing');
+              });
+            }
+            audio.onended = function () {
+              audioBtn.classList.remove('playing');
+            };
+            audio.onpause = function () {
+              audioBtn.classList.remove('playing');
+            };
+          } catch (err) {
+            audioBtn.classList.remove('playing');
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

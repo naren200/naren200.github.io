@@ -1,0 +1,514 @@
+/* =========================================================
+   About page styles — narrative chapters, audio chip & bleed portrait
+   ========================================================= */
+
+body.about-page {
+	background-color: #000000 !important;
+	background-image: none !important;
+	color: #f4f4f2;
+	overflow-x: hidden;
+	min-height: 100vh;
+}
+
+body.about-page::before,
+body.about-page::after {
+	display: none !important;
+}
+
+/* Container */
+.about-container {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: stretch;
+	min-height: 100vh;
+	max-width: none;
+	margin: 0;
+	padding: 100px 0 60px;
+	box-sizing: border-box;
+}
+
+/* Left Content Column — generously wide so prose breathes and occupies space */
+.about-text-column {
+	position: relative;
+	z-index: 30;
+	flex: 1 1 auto;
+	width: 100%;
+	max-width: min(1060px, 58vw);
+	padding: 20px 2vw 80px 6vw;
+	box-sizing: border-box;
+}
+
+@media (min-width: 1500px) {
+	.about-text-column {
+		max-width: min(1140px, 60vw);
+	}
+}
+
+/* Right Bleed Portrait — fixed uncropped baseline */
+.about-image-column {
+	position: fixed;
+	bottom: 0;
+	right: -2vw;
+	height: 100vh;
+	max-width: none;
+	display: block;
+	z-index: 10;
+	pointer-events: none;
+}
+
+.about-image-column img {
+	height: 100%;
+	width: auto;
+	max-width: none;
+	display: block;
+	object-fit: contain;
+	object-position: bottom right;
+	-webkit-mask-image: none;
+	mask-image: none;
+}
+
+/* Left edge feather gradient into black background */
+.about-image-column::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.45) 16%, transparent 32%);
+	pointer-events: none;
+}
+
+/* Eyebrow / Identity Header */
+.about-eyebrow {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 6px 8px;
+	margin-bottom: 28px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	color: #8592a6;
+	text-transform: uppercase;
+}
+
+.about-eyebrow__name {
+	color: #cfd7e3;
+	letter-spacing: 0.14em;
+}
+
+.about-eyebrow__sep {
+	color: rgba(255, 255, 255, 0.25);
+}
+
+.about-eyebrow__callme {
+	color: #9ba7b7;
+	text-transform: none;
+	letter-spacing: normal;
+	font-size: 13.5px;
+	font-style: italic;
+}
+
+/* Audio Pronunciation Pill */
+.about-audio-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 4px 11px;
+	margin-left: 6px;
+	border-radius: 999px;
+	background: rgba(78, 161, 255, 0.12);
+	border: 1px solid rgba(78, 161, 255, 0.32);
+	color: #4ea1ff;
+	cursor: pointer;
+	text-transform: none;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: normal;
+	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	outline: none;
+}
+
+.about-audio-btn:hover {
+	background: rgba(78, 161, 255, 0.24);
+	border-color: #4ea1ff;
+	color: #ffffff;
+	transform: translateY(-1px);
+	box-shadow: 0 4px 12px rgba(78, 161, 255, 0.2);
+}
+
+.about-audio-btn:active {
+	transform: translateY(0);
+}
+
+.about-audio-btn.playing {
+	background: rgba(78, 161, 255, 0.35);
+	border-color: #4ea1ff;
+	color: #ffffff;
+	box-shadow: 0 0 16px rgba(78, 161, 255, 0.5);
+	animation: pulseAudio 1s infinite alternate;
+}
+
+@keyframes pulseAudio {
+	from { box-shadow: 0 0 8px rgba(78, 161, 255, 0.3); }
+	to { box-shadow: 0 0 20px rgba(78, 161, 255, 0.7); }
+}
+
+.about-audio-btn .audio-speaker-icon {
+	display: flex;
+	align-items: center;
+}
+
+.about-audio-btn .audio-phonetic {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	font-size: 11.5px;
+	letter-spacing: 0.04em;
+}
+
+/* Chapters Accordion */
+.about-chapters {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.about-chapter {
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
+	transition: border-color 0.25s ease;
+}
+
+.about-chapter:last-child {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.about-chapter.active {
+	border-color: rgba(78, 161, 255, 0.3);
+}
+
+/* Chapter Header */
+.chapter-header {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 24px 0;
+	background: transparent;
+	border: none;
+	text-align: left;
+	cursor: pointer;
+	user-select: none;
+	outline: none;
+	transition: all 0.2s ease;
+}
+
+.chapter-header:focus,
+.chapter-header:focus-visible {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.chapter-num {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	width: 52px;
+	flex-shrink: 0;
+	color: #525f73;
+	transition: color 0.25s ease, transform 0.2s ease;
+}
+
+.about-chapter.active .chapter-num {
+	color: #4ea1ff;
+	text-shadow: 0 0 14px rgba(78, 161, 255, 0.45);
+}
+
+.chapter-title {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	font-size: 26px;
+	font-weight: 700;
+	letter-spacing: -0.015em;
+	color: #8592a6;
+	flex: 1;
+	transition: color 0.25s ease;
+}
+
+.chapter-header:hover .chapter-title,
+.chapter-header:hover .chapter-num {
+	color: #ffffff;
+}
+
+.about-chapter.active .chapter-title {
+	color: #ffffff;
+}
+
+.chapter-chevron {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	color: #6b788c;
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s ease, background 0.25s ease;
+	flex-shrink: 0;
+	margin-left: 12px;
+}
+
+.chapter-header:hover .chapter-chevron {
+	color: #ffffff;
+	background: rgba(255, 255, 255, 0.08);
+	border-color: rgba(255, 255, 255, 0.15);
+}
+
+.about-chapter.active .chapter-chevron {
+	transform: rotate(180deg);
+	color: #4ea1ff;
+	background: rgba(78, 161, 255, 0.15);
+	border-color: rgba(78, 161, 255, 0.35);
+}
+
+/* Accordion Smooth Expand via CSS Grid */
+.chapter-collapse {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-chapter.active .chapter-collapse {
+	grid-template-rows: 1fr;
+}
+
+.chapter-body {
+	overflow: hidden;
+}
+
+/* Chapter Lead Callout — distinctive typography for the takeaway */
+.chapter-lead {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	font-size: 19px;
+	line-height: 1.5;
+	font-weight: 600;
+	color: #f4f4f2;
+	padding: 0 0 16px 52px;
+	position: relative;
+}
+
+.chapter-lead::before {
+	content: "";
+	position: absolute;
+	left: 36px;
+	top: 3px;
+	bottom: 18px;
+	width: 2px;
+	background: #4ea1ff;
+	border-radius: 2px;
+	box-shadow: 0 0 8px rgba(78, 161, 255, 0.6);
+}
+
+/* Chapter Prose Body — narrative text */
+.chapter-prose {
+	padding: 0 0 32px 52px;
+	font-size: 15.5px;
+	line-height: 1.75;
+	color: #b0bac9;
+}
+
+.chapter-prose p {
+	margin: 0 0 16px;
+}
+
+.chapter-prose p:last-child {
+	margin-bottom: 0;
+}
+
+.chapter-prose strong,
+.chapter-prose b {
+	color: #ffffff;
+	font-weight: 600;
+}
+
+.chapter-prose em,
+.chapter-prose i {
+	color: #d1d8e2;
+}
+
+.chapter-prose a {
+	color: #4ea1ff;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	text-decoration-color: rgba(78, 161, 255, 0.4);
+	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.chapter-prose a:hover {
+	color: #8ac0ff;
+	text-decoration-color: #8ac0ff;
+}
+
+/* Questions Box Grid in Chapter 04 */
+.about-questions-list {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	margin: 16px 0 24px;
+}
+
+.about-question-card {
+	background: rgba(255, 255, 255, 0.025);
+	border: 1px solid rgba(255, 255, 255, 0.07);
+	border-radius: 10px;
+	padding: 16px 18px;
+	transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.about-question-card:hover {
+	border-color: rgba(78, 161, 255, 0.35);
+	background: rgba(78, 161, 255, 0.03);
+}
+
+.about-question-title {
+	font-size: 15.5px;
+	font-weight: 700;
+	color: #ffffff;
+	margin-bottom: 6px;
+	display: flex;
+	align-items: baseline;
+	gap: 8px;
+}
+
+.about-question-title .q-num {
+	color: #4ea1ff;
+	font-size: 14px;
+}
+
+.about-question-desc {
+	font-size: 14.5px;
+	line-height: 1.6;
+	color: #a3afc2;
+	margin: 0 0 8px;
+}
+
+.inline-work-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	font-size: 13.5px;
+	font-weight: 600;
+	color: #4ea1ff !important;
+	text-decoration: none !important;
+}
+
+.inline-work-link:hover {
+	color: #8ac0ff !important;
+}
+
+/* Bottom CTA in text column */
+.about-bottom-cta {
+	margin-top: 36px;
+	padding-left: 52px;
+	display: flex;
+	gap: 16px;
+	align-items: center;
+}
+
+.about-bottom-cta a.solid {
+	background-color: #f4f4f2;
+	color: #0b1018;
+	font-weight: 600;
+	font-size: 14px;
+	padding: 10px 22px;
+	border-radius: 999px;
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+.about-bottom-cta a.solid:hover {
+	background-color: #ffffff;
+	box-shadow: 0 0 16px rgba(244, 244, 242, 0.3);
+}
+
+.about-bottom-cta a.ghost {
+	background: transparent;
+	color: #cfd7e3;
+	font-size: 14px;
+	padding: 10px 20px;
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	border-radius: 999px;
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+.about-bottom-cta a.ghost:hover {
+	border-color: #4ea1ff;
+	color: #4ea1ff;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 820px) {
+	.about-container {
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: flex-start;
+		height: auto;
+		min-height: 0;
+		overflow: visible;
+		padding: 70px 0 40px;
+	}
+
+	.about-image-column {
+		position: relative;
+		right: auto;
+		bottom: auto;
+		height: 52vh;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		order: -1;
+	}
+
+	.about-image-column img {
+		height: 100%;
+		width: auto;
+	}
+
+	.about-image-column::after {
+		background: linear-gradient(180deg, transparent 50%, #000 100%);
+	}
+
+	.about-text-column {
+		max-width: 100%;
+		padding: 0 20px 60px;
+		margin-top: -3vh;
+	}
+
+	.chapter-title {
+		font-size: 21px;
+	}
+
+	.chapter-num {
+		font-size: 17px;
+		width: 40px;
+	}
+
+	.chapter-lead {
+		font-size: 17px;
+		padding-left: 40px;
+	}
+
+	.chapter-lead::before {
+		left: 28px;
+	}
+
+	.chapter-prose {
+		padding-left: 40px;
+		font-size: 14.5px;
+	}
+
+	.about-bottom-cta {
+		padding-left: 0;
+		justify-content: flex-start;
+	}
+}
