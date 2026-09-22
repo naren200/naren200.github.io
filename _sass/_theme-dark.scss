@@ -349,18 +349,9 @@ $dark-900: #000000;
   }
 
   .post.cardblog {
-    background-color: rgba(187, 255, 213, 0.46);
-
-    .card-footer {
-      background-color: rgba(187, 255, 213, 0.733);
-    }
-    transition: transform 400ms;
-
-    &:hover {
-      transform: translateY(-8px);
-      box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.44);
-      color: #6be9ff !important;
-    }
+    /* same shared card language as projects: solid near-black ground,
+       hairline + right blue accent, blue lift/wash/glow on hover */
+    @include card-treatment;
   }
   
   // /* SCSS */

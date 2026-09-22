@@ -156,7 +156,7 @@ h4.mb-3 {
   display: block;
   margin: 20px auto;
   padding: 8px 20px; /* Slightly smaller padding for better responsiveness */
-  background: linear-gradient(135deg, rgba(0, 2, 53, 0.3), rgba(0, 255, 255, 0.15));
+  background: linear-gradient(135deg, rgba(0, 2, 53, 0.3), rgba(78, 161, 255, 0.15));
   color: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
@@ -167,7 +167,7 @@ h4.mb-3 {
   text-transform: uppercase;
   transition: all 0.4s ease;
   backdrop-filter: blur(32px);
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2), 0 0 20px rgba(0, 255, 255, 0.15) inset;
+  box-shadow: 0 0 10px rgba(78, 161, 255, 0.2), 0 0 20px rgba(78, 161, 255, 0.15) inset;
 }
 
 /* Ensure button scales down on smaller screens */
@@ -187,9 +187,9 @@ h4.mb-3 {
 
 /* Hover effect */
 .show-more-btn:hover {
-  background: linear-gradient(135deg, rgba(0, 2, 53, 0.5), rgba(0, 255, 255, 0.3));
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4), 0 0 25px rgba(0, 255, 255, 0.25) inset;
+  background: linear-gradient(135deg, rgba(0, 2, 53, 0.5), rgba(78, 161, 255, 0.3));
+  border-color: rgba(78, 161, 255, 0.5);
+  box-shadow: 0 0 15px rgba(78, 161, 255, 0.4), 0 0 25px rgba(78, 161, 255, 0.25) inset;
   transform: scale(1.05);
 }
 

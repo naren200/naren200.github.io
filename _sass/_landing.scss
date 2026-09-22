@@ -136,7 +136,7 @@ body.landing {
 	padding: 10px;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(78, 161, 255, 0.3);
 }
 .heading-3 {
 	margin-top: 0;
@@ -149,7 +149,7 @@ body.landing {
 	padding-bottom: 10px;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(78, 161, 255, 0.3);
   }
 
 .h1-frontpage {
@@ -782,6 +782,14 @@ footer i:hover {
 		var(--card-bg);
 	box-shadow: 0 0 0 1px rgba(78,161,255,.05), 0 26px 60px -40px rgba(78,161,255,.5);
 	padding: 1.7rem 1.9rem;
+	transition: transform 400ms, border-color .2s ease, box-shadow .25s ease;
+}
+/* interactive lift on hover — same signal-blue language as the shared cards,
+   but keeps the hero tier's radial-gradient ground and 14px radius */
+.lw-hero .lw-card:hover {
+	transform: translateY(-6px);
+	border-color: var(--hairline-hover);
+	box-shadow: 0 0 0 1px rgba(78,161,255,.12), 0 18px 44px -18px rgba(78,161,255,.35);
 }
 .lw-hero .lw-logo { width: 74px; height: 74px; }
 .lw-hero .lw-title { font-size: 22px; }
